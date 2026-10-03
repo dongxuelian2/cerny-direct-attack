@@ -212,8 +212,8 @@ def scratch():
     for e in source_manifest['entries']:
         if not (out/e['public_path']).exists():continue
         originals[e['source_sha256']]=e['public_path']
-        if e.get('historical_checkout_sha256'):
-            originals[e['historical_checkout_sha256']]=e['public_path']
+        for key in ('historical_checkout_sha256','source_lf_sha256','windows_crlf_sha256'):
+            if e.get(key):originals[e[key]]=e['public_path']
     pattern=re.compile(r'\b[0-9a-f]{64}\b')
     nodes={}
     # Frozen seals and submission receipts are historical objects, not active
