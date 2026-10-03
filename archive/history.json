@@ -2,811 +2,1297 @@
   {
     "commit": "5024b2eb15f77b3022c59800badbffc008d89fda",
     "author_date": "2026-10-03T15:46:43+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-03T15:46:43+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove primitive opposite-kernel square for arbitrary tail geometry"
   },
   {
     "commit": "e37988bf7e1f9831e1d3ccf606b791889d4cec37",
     "author_date": "2026-10-03T15:46:36+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-03T15:46:36+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove square for reordered opposite shadow paths with mixed remaining core"
   },
   {
     "commit": "5207b693b5e25eb645bc277d21cf34a1df5b779a",
     "author_date": "2026-10-03T15:28:35+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-03T15:28:35+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Audit open unpaired pressure and refute constant-eight and summed-row shortcuts"
   },
   {
     "commit": "23335901a9661ccd4982087f6a50ea91b2285165",
     "author_date": "2026-10-03T15:10:59+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-03T15:10:59+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Certify short-tail weighted minima controls with explicit exploratory scope"
   },
   {
     "commit": "340c8cb9b83d872a6278b6fe79a3536838266b35",
     "author_date": "2026-10-03T15:03:34+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-03T15:03:34+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Extend residue square proof to arbitrary paired root cycles"
   },
   {
     "commit": "5f2c792b210c3968d32f3a71db62c5c6411e135a",
     "author_date": "2026-10-03T14:35:42+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-03T14:35:42+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove arbitrary-kernel square when tail reaches the root cycle"
   },
   {
     "commit": "4312a0c9531244ae1b97ac096bbed94b504c756a",
     "author_date": "2026-10-03T14:23:30+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-03T14:23:30+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove all original order-two WEXT and square by residue stabilization"
   },
   {
     "commit": "ca894653738481fe5ae5865832be6d90c001441d",
     "author_date": "2026-10-03T14:12:44+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-03T14:12:44+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove period-rank payment and universal 17/16 bound for rooted order two"
   },
   {
     "commit": "10e6c3c3fb781e813fb0816d072cfa59e6c3ad71",
     "author_date": "2026-10-03T13:49:19+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-03T13:49:19+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "research: refute automatic weighted graph connectivity with literal nine-letter recovery"
   },
   {
     "commit": "e3f0feb1af2444f1ba77ebb6246b996e794ff4c9",
     "author_date": "2026-10-03T13:17:38+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-03T13:17:38+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "research: independently certify all M12 weighted graph resets and larger retained pressure"
   },
   {
     "commit": "9009d763f7408af5fa04c51297157ec545a8bccd",
     "author_date": "2026-10-03T13:01:02+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-03T13:01:02+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "research: prove weighted square criterion and all prime half-core order-two cases"
   },
   {
     "commit": "3d0b25f6d99096dcd6cfcefe1c30aefebe7647d0",
     "author_date": "2026-10-03T12:20:25+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-03T12:20:25+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "research: certify finite weighted order-two extensions and generalization barrier"
   },
   {
     "commit": "06a13eee7109322022ab69da22b7f15c8a1d4640",
     "author_date": "2026-10-03T11:51:22+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-03T11:51:22+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Close gcd-two rank-one tail gap with compulsory parity savings"
   },
   {
     "commit": "66d6a6be56490c378532ff49ba9bf51b42c160ac",
     "author_date": "2026-10-03T11:34:17+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-03T11:34:17+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove unbounded additive gap for three-a root-extension pools"
   },
   {
     "commit": "68fcae88c6456246d442dc41e6d492897672eafa",
     "author_date": "2026-10-03T11:09:46+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-03T11:09:46+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Extend root-return square criterion to arbitrary rank-one tails"
   },
   {
     "commit": "353e335122e496d56e65e7a4957b260c5ac708d5",
     "author_date": "2026-10-03T10:51:33+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-03T10:51:33+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove square bound for every positive kernel input with global root savings"
   },
   {
     "commit": "f9bee27d991cf227212435e554378f38e084306e",
     "author_date": "2026-10-03T10:30:57+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-03T10:30:57+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Refute three-a root-extension pool with infinite family and literal Lean cut"
   },
   {
     "commit": "ac948e7001bff5428c22d236f96974856452d34d",
     "author_date": "2026-10-03T09:52:39+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-03T09:54:16+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Finalize portable OpenMath release packaging and completion receipts"
   },
   {
     "commit": "b8d7362e3466d17b1dc611a7ef1bead90c878074",
     "author_date": "2026-10-03T09:21:29+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-03T09:21:29+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prepare scoped OpenMath submission with audited formal core"
   },
   {
     "commit": "f30afd64643d785dff7ec5d44c730cb36a80dce6",
     "author_date": "2026-10-02T22:38:36+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-02T22:38:36+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove strict quadratic resets from short original root returns"
   },
   {
     "commit": "a413b2ce57054c450bebb454c77696a46e4849ef",
     "author_date": "2026-10-02T22:03:31+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-02T22:03:31+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove square resets for arbitrary high-order moving-root cores"
   },
   {
     "commit": "c6358ab226434a12897f3f03a99886e0021dc78d",
     "author_date": "2026-10-02T20:54:40+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-02T20:54:40+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "research: prove reflection cost tradeoffs and linear resets with a formal cut"
   },
   {
     "commit": "59b8d84dbfcc89cdf1d6fdfb27f7f30c85a0a502",
     "author_date": "2026-10-02T20:36:40+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-02T20:36:40+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "research: classify mixed order-two synchronization and exact paid avoidance counts"
   },
   {
     "commit": "b5d3d621460ee3b0f5131291fcb93d860c69fcaa",
     "author_date": "2026-10-02T20:12:10+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-02T20:12:10+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "research: prove cheap root branches and audit truncated mixed-core budgets"
   },
   {
     "commit": "dd6fb5593e12883f217ac13622c5c9b1d3ab2730",
     "author_date": "2026-10-02T19:24:44+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-02T19:24:44+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "research: prove paid squares for core coset permutations and audit mixed boundary"
   },
   {
     "commit": "ed5b9fbe91f8d9c4e12764dcfdfd4a61fcdab836",
     "author_date": "2026-10-02T19:07:07+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-02T19:07:07+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "research: compensate arbitrary core permutations with the first paid growth"
   },
   {
     "commit": "85cfa05d66c2757de91d987ae5587f6b48923ab5",
     "author_date": "2026-10-02T18:54:57+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-02T18:54:57+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "research: amortize two-point returns for every moving-root parameter"
   },
   {
     "commit": "eaadaa76ec6b2fea634c8984abd6c87e0a7be0c5",
     "author_date": "2026-10-02T18:45:09+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-02T18:45:09+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "research: pay moving-root preparation and truncated returns inside the square"
   },
   {
     "commit": "7527bc69818efb4bb97f158eb578b8eb6acddd4e",
     "author_date": "2026-10-02T18:06:23+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-02T18:06:23+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "research: characterize the exact binary weighted-balancing boundary"
   },
   {
     "commit": "d4ee6d19b70262333a24acd19cdd46b3824e6d4f",
     "author_date": "2026-10-02T17:57:21+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-02T17:57:21+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "research: prove square from positive original one-step defect balance"
   },
   {
     "commit": "844c223f89862a35b7826d258d7a41f4b2f91a4d",
     "author_date": "2026-10-02T17:01:29+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-02T17:01:29+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "research: prove unbounded inverse shrink and exact product cost tradeoff"
   },
   {
     "commit": "7bd8e4b536587e6961f344a5f8b210efcc728f60",
     "author_date": "2026-10-02T16:22:10+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-02T16:22:10+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "research: formally prove literal Kari inverse shrink is unavoidable"
   },
   {
     "commit": "60646767142d6142e47abc5998154542d5a3f8d3",
     "author_date": "2026-10-02T15:51:22+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-02T15:51:22+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "research: extend fixed-root square to coprime displacement and audit seed overcost"
   },
   {
     "commit": "96929da460c83465b19b8d858dc46d4fa8cd7d5c",
     "author_date": "2026-10-02T15:32:55+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-02T15:32:55+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "research: prove compatible square for fixed-root cycle-routing class"
   },
   {
     "commit": "d16da3b49140209c87f561e7ab5ade3daa3eed97",
     "author_date": "2026-10-02T14:39:40+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-02T14:39:40+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "research: prove all bounded Cerny returns lose the square budget"
   },
   {
     "commit": "fbcfdcef1e2f4e53ff4c8292f2fb85cf88135330",
     "author_date": "2026-10-02T14:17:29+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-02T14:17:29+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "research: prove almost-circular return equivalence and audit paid obstruction"
   },
   {
     "commit": "04f257ceb3856bfa47a71e55f3e2e2c51a4f14c5",
     "author_date": "2026-10-02T14:05:08+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-02T14:05:08+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "research: isolate paid returns in an almost-circular two-letter class"
   },
   {
     "commit": "11b277697324b3558320c8918b244cfd40136e31",
     "author_date": "2026-10-02T13:54:45+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-02T13:54:45+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "research: prove sharp stationary-support counterfamily and record cycle-entry pressure"
   },
   {
     "commit": "eb96683d8bc7fbc9600125255d794e31a1587b26",
     "author_date": "2026-10-02T13:23:24+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-02T13:23:24+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "research: derive paid one-cluster word bounds and refute formula bridge"
   },
   {
     "commit": "7b9c91118bbbeb2d0cc4cc97a342eceffb8b59a2",
     "author_date": "2026-10-02T12:57:16+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-02T12:57:16+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "research: reconstruct one-cluster upper proof with fixed-seed audits"
   },
   {
     "commit": "30b4260a6925e28d0df58d66c213157718eaf2fa",
     "author_date": "2026-10-02T12:27:41+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-02T12:27:41+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "research: prove sharp weak-stationary singular word-cost boundary"
   },
   {
     "commit": "519c608b374da7d5f9ff75f18f9acb5cdde0cf10",
     "author_date": "2026-10-02T12:00:53+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-02T12:00:53+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "research: audit marked compression source error and general pair bounds"
   },
   {
     "commit": "e726f4a14209e254222e3b112b76a83d967ab2aa",
     "author_date": "2026-10-02T11:20:55+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-02T11:20:55+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Record complete binary n7 history pressure and saturation-route limitation"
   },
   {
     "commit": "e0abd74490d671ee39fdb351a9b583bd3c2e3fbf",
     "author_date": "2026-10-02T11:08:11+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-02T11:08:11+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove balanced history guard rigidity and audit all binary n6 histories"
   },
   {
     "commit": "5371069d42a8a6a3b6539aa7ec124d4f4d512979",
     "author_date": "2026-10-02T10:38:31+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-02T10:38:31+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Refine full-history hyperplane capacity and actual-letter guards"
   },
   {
     "commit": "df821b201070c2112c897d58f55af9a379e68adc",
     "author_date": "2026-10-02T10:07:56+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-02T10:07:56+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove low-dimension full-history cost bounds and record focused pressure"
   },
   {
     "commit": "ee9b99d337d023dc9c4e8b9035621f2e1dff1778",
     "author_date": "2026-10-02T09:41:07+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-02T09:41:07+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove sharp single-fiber stability boundary and minimum-rank costs"
   },
   {
     "commit": "26f860fbfe29f2d743b7bc2872aa94ff11bc056a",
     "author_date": "2026-10-01T23:58:06+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-01T23:58:06+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Refute unchanged multicluster annular descent with infinite original families"
   },
   {
     "commit": "fe29b6eaf4ec2886649edb231fc52b15fbfe7ae3",
     "author_date": "2026-10-01T23:19:45+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-01T23:19:45+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Construct shorter all-parameter reset with actual reflected returns"
   },
   {
     "commit": "067fe5312ab41d9b8f17463f58f9582b76ebcd08",
     "author_date": "2026-10-01T22:56:43+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-01T22:56:43+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove stable corank-one kernels and sharp canonical quotient size range"
   },
   {
     "commit": "524d936732abb25573efd4c335923ffd874d64f8",
     "author_date": "2026-10-01T22:18:44+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-01T22:18:44+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Formally verify layered pair-barrier certificate soundness in Lean"
   },
   {
     "commit": "2bc396215a8adbb9105c946fe62e6b660526c796",
     "author_date": "2026-10-01T22:12:15+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-01T22:12:15+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove exact all-parameter specified-state compression threshold in public family"
   },
   {
     "commit": "44e58e959daaf34d9c2218b580e336e52c0a0d82",
     "author_date": "2026-10-01T21:41:41+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-01T21:41:41+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove forward kernel closure costs and expose quotient injectivity failure"
   },
   {
     "commit": "c735014222536a7da3a17e140ed51d02388ece0d",
     "author_date": "2026-10-01T20:47:00+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-01T20:47:00+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove general nearest-completion necessity and all-n original-monoid obstruction"
   },
   {
     "commit": "2efd38d9dde80ad73a9a30cfb71320ebd02498f7",
     "author_date": "2026-10-01T20:11:44+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-01T20:11:44+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove infinitely sharp avoid-or-compress bounds for every cardinality gap"
   },
   {
     "commit": "ce806695657629559040d73887f9a058280452db",
     "author_date": "2026-10-01T19:41:06+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-01T19:41:06+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove sharp avoid-or-compress bounds on an infinite third face"
   },
   {
     "commit": "e40d0531b6126061aa5090bfb1ee1f3f334b3ab4",
     "author_date": "2026-10-01T19:19:17+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-01T19:19:17+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove sharp avoid-or-compress bounds on two cardinality faces"
   },
   {
     "commit": "27c1ef823defc99244acb619367d6444312ee630",
     "author_date": "2026-10-01T18:46:27+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-01T18:46:27+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove full singleton observability for minimal corank-one DFAs"
   },
   {
     "commit": "efadbe5da6503ff76447a403413b66524a1cacbe",
     "author_date": "2026-10-01T18:34:10+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-01T18:34:10+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove two neutral singular steps are mandatory in a simple circular family"
   },
   {
     "commit": "2402104d3a52c24c1329596b753d1a04d736a33c",
     "author_date": "2026-10-01T17:38:14+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-01T17:38:14+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Record failed costly-carry inflation after the all-optimal counter theorem"
   },
   {
     "commit": "b1e971129de71570fc6174805c626c30c300c927",
     "author_date": "2026-10-01T17:31:15+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-01T17:31:15+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove all optimal histories can have logarithmic dimension in Eulerian completely reachable DFAs"
   },
   {
     "commit": "4993f03456e3fa3ae118dc304dccf07dfa8ec57b",
     "author_date": "2026-10-01T17:05:53+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-01T17:05:53+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove saturation transfer and audit all low-dimensional optimal histories at n7 and n15"
   },
   {
     "commit": "139dbfe11599e093d3715e29d46fdfc34bd54180",
     "author_date": "2026-10-01T16:32:58+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-01T16:32:58+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove unique shortest binary reset can force dependent growth in a simple DFA"
   },
   {
     "commit": "769144d4bb8102c9835fbb72f02f8a496aa5cfce",
     "author_date": "2026-10-01T16:11:51+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-01T16:11:51+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Refute independent optimal actual-image phases and audit every shortest reset word"
   },
   {
     "commit": "038ab01e3d9f1bc4bfefb588bfd80321a13b8954",
     "author_date": "2026-10-01T15:50:41+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-01T15:50:41+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Independently audit every optimal n7 history and its original reset word"
   },
   {
     "commit": "4b832a7d9a2c84b50f15eb3bd0d3ac7c9a68e14d",
     "author_date": "2026-10-01T15:33:25+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-01T15:33:25+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Exclude maximal-jump and full-history linear dimension repairs"
   },
   {
     "commit": "b351845ff7a63005a8d400797e93aaa9639b4257",
     "author_date": "2026-10-01T15:09:00+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-01T15:09:00+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Realize logarithmic dimension in Eulerian shortest-image histories"
   },
   {
     "commit": "6e2f3dbe0e20393cfb264067f2cf9c3154b9281e",
     "author_date": "2026-10-01T14:34:30+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-01T14:34:30+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove compatible shortest-image policy for the direct binary family"
   },
   {
     "commit": "bb255c43da74293dc364a0134c2c38ca9d26590b",
     "author_date": "2026-10-01T14:08:30+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-01T14:08:30+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove direct binary quadratic image extension and reset interval"
   },
   {
     "commit": "27021ecf3155c2acf15273bd2b9d5973bd54c089",
     "author_date": "2026-10-01T13:45:37+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-01T13:45:37+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Refute binary linear image extension with exact double-cycle costs"
   },
   {
     "commit": "b538d22690d914dd6b419cbac96ea3f97bc348f1",
     "author_date": "2026-10-01T13:08:14+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-01T13:08:14+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Construct optimal shortest-image policies for the quadratic fold obstruction"
   },
   {
     "commit": "5dea03d474c04463e7a73ade985f1a164ca439d0",
     "author_date": "2026-10-01T10:42:16+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-01T10:42:16+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Refute universal linear image extension and prove the connected-transposition square"
   },
   {
     "commit": "3d9b9e37bcf8a725eb67cd1fd14a78a6ebc6443d",
     "author_date": "2026-10-01T09:58:04+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-01T09:58:04+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Refute short rooted words and the single-letter square power template"
   },
   {
     "commit": "6fb5d1e52a6360075ded85677dcafa0dddaa3c14",
     "author_date": "2026-10-01T09:40:53+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-01T09:40:53+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Construct charged rooted resets for the published compress-with-another family"
   },
   {
     "commit": "9031da0a505d1bf866168e548341768d7c992ea9",
     "author_date": "2026-10-01T08:57:15+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-01T08:57:15+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove quadratic word-cost barrier for exact uniform permutation averaging"
   },
   {
     "commit": "c5e7b994efe8bffb526b803afc9103604946f8f9",
     "author_date": "2026-10-01T08:33:16+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-10-01T08:33:16+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove local-rank quotient lifts and audit confined returns and terminal-window barriers"
   },
   {
     "commit": "c05a8c49b286bb5cc8c6a5ff468a9636052c89fa",
     "author_date": "2026-09-30T22:38:15+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-30T22:38:15+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Refine every-rank compression by terminal kernels and constrain uniform congruences"
   },
   {
     "commit": "0fe7ab402ddec498b2a44d2359f0f6400f08b15e",
     "author_date": "2026-09-30T21:17:35+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-30T21:17:35+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove short return monoid generation under bijective fiber transport"
   },
   {
     "commit": "ccc61ba0a8ff25d97b8acf5689ee9aea2e06433d",
     "author_date": "2026-09-30T20:36:16+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-30T20:36:16+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Seal research results, four deterministic replays and 79-check audit provenance"
   },
   {
     "commit": "f4208ca2248938abdffa8604a764346d3c4525f1",
     "author_date": "2026-09-30T20:32:46+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-30T20:32:46+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Pressure universal image extension with mixed singular ranks and independent policy arrays"
   },
   {
     "commit": "8e1bc6b5a70ec9f0b2582e8b56daa0f770eebbed",
     "author_date": "2026-09-30T20:32:18+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-30T20:32:18+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove sharp congruence-class compression and strengthen minimal-counterexample reduction"
   },
   {
     "commit": "ed3421623dc2931a53e7d76846a2412aaa6cfd20",
     "author_date": "2026-09-30T16:09:01+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-30T16:09:01+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove rainbow first-drop bounds and audit low-rank image extension"
   },
   {
     "commit": "e8aca607eb850aff274cdf4303e845dcb557d24d",
     "author_date": "2026-09-30T14:31:38+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-30T14:31:38+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove rank-two period bounds and audit image extension searches"
   },
   {
     "commit": "16561d3307bb9be11537edd7c5a1f201929e85ce",
     "author_date": "2026-09-30T09:53:57+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-30T09:53:57+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove pair-truncated lift excludes all small congruence classes"
   },
   {
     "commit": "384ba2f5c01316e143628efdb2a1eed8ec5e41e7",
     "author_date": "2026-09-30T09:48:05+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-30T09:48:05+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove rank-truncated quotient lift with charged fiber transport"
   },
   {
     "commit": "52d28cad5b4cf1563a0988ed1f3c9cf2674bdaa7",
     "author_date": "2026-09-30T09:41:55+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-30T09:41:55+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Refute naive quotient fiber lift at four states"
   },
   {
     "commit": "14196fc345fbce44c71f5dbde81943dd31d81562",
     "author_date": "2026-09-30T09:37:22+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-30T09:37:22+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Audit extremal congruences and sharpen fiber lift to strict bound"
   },
   {
     "commit": "7a2f2a082b42b6d0772c4250be4a827abc8c7428",
     "author_date": "2026-09-30T09:32:11+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-30T09:32:11+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove bounded-fiber quotient lift and restrict minimal counterexamples"
   },
   {
     "commit": "ad362535e0831f025547d0bd34ed1116c095a856",
     "author_date": "2026-09-29T23:40:34+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T23:40:34+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Seal prefix and rank-skipping proofs with 61 independent checks"
   },
   {
     "commit": "bad84abc8e50357d40a619f17f58d551b232c572",
     "author_date": "2026-09-29T23:37:34+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T23:37:34+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Audit corank-five compression search and certify reachable protected peak"
   },
   {
     "commit": "10a46ae5a0cafaf8ca1b157369b69bb4a438e96b",
     "author_date": "2026-09-29T23:28:29+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T23:28:29+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove linear rank-skipping bypass and resets for published hard-reaching family"
   },
   {
     "commit": "544817d751d6814428738aeb84cbddc269ba770a",
     "author_date": "2026-09-29T23:02:10+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T23:02:10+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove exact PU prefix extension graph and all-odd-state obstruction"
   },
   {
     "commit": "28a11ec92028a15ee407ff443ebb165ed55c6dab",
     "author_date": "2026-09-29T22:39:51+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T22:39:51+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "research: seal 59-check single-permutation square and policy boundary checkpoint"
   },
   {
     "commit": "dbd424515e27ce676302a37c8eb721fda0a0d79f",
     "author_date": "2026-09-29T22:38:35+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T22:38:35+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "research: refute commuting-permutation policy repair with exact six-state witness"
   },
   {
     "commit": "a52646ad24b1c129a85cd02b4000176b88cba133",
     "author_date": "2026-09-29T22:22:19+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T22:22:19+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "research: refute idempotent generalization and audit unreachable extension parents"
   },
   {
     "commit": "4587337cf30f4f64c689fedc709b09e6e3618a3d",
     "author_date": "2026-09-29T22:10:50+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T22:10:50+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "research: prove cycle-sensitive extension and square bounds for one permutation plus units"
   },
   {
     "commit": "9ff0c8c315338a370a8c99aebf5fd9ec02b15a59",
     "author_date": "2026-09-29T22:04:15+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T22:04:15+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "research: prove all-target all-tie exactness for single-permutation unit policies"
   },
   {
     "commit": "a8c2326098ff699362b0a8b07ae08d80ad79a6c5",
     "author_date": "2026-09-29T21:36:27+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T21:36:27+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Seal unit-letter and rank-area research with 55 independent checks"
   },
   {
     "commit": "4220c72874e69c86ae8283c160665a5fbd9fcd41",
     "author_date": "2026-09-29T21:30:22+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T21:30:22+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Classify all binary SC unit-letter automata and construct square reset words"
   },
   {
     "commit": "f82459b889f24ddf27ecb4ec7625d485587c1600",
     "author_date": "2026-09-29T21:29:27+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T21:29:27+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove cubic barrier for all reset rank trajectories on Cerny automata"
   },
   {
     "commit": "87efeb1cb02d22ce88d31da73c6d3e99e9ff8af0",
     "author_date": "2026-09-29T21:09:28+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T21:09:28+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Seal short-reset policy research with 53 checks and complete provenance"
   },
   {
     "commit": "cd52e5439224183e021fbcf12afdcbf00ba390e2",
     "author_date": "2026-09-29T19:39:16+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T19:39:16+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Refine universal seed budgets by the complete reset rank trajectory"
   },
   {
     "commit": "0d192904b9fbf00193084f077f5a84227f3ed752",
     "author_date": "2026-09-29T19:33:07+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T19:33:07+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove binary irreducible policy cost n minus two with reset threshold three"
   },
   {
     "commit": "ac8d82d1a102e62d36d0f4e9e1ece5524ada688b",
     "author_date": "2026-09-29T19:13:30+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T19:13:30+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Exhaust all arbitrary single-letter additions on near-extremals"
   },
   {
     "commit": "0dec8cfb67c2c37f3b942e695add270d6f9a6e22",
     "author_date": "2026-09-29T19:03:01+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T19:03:01+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Bound every seed policy tie using an existing reset length"
   },
   {
     "commit": "4a08e522bf6793e5d28859aaa05999bcaae6354b",
     "author_date": "2026-09-29T19:02:44+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T19:02:44+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove global policy cost n with reset threshold three"
   },
   {
     "commit": "03e9c1fb29df5ae72305af5f1614d6872be517e4",
     "author_date": "2026-09-29T19:02:27+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T19:02:27+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Attack global image policy with 400000 fixed-short-reset mutations"
   },
   {
     "commit": "9c206e5ca85973c0b6e2c96609c31a02dacef0ac",
     "author_date": "2026-09-29T18:31:54+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T18:31:54+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Seal seed-policy research with 49 checks and exact provenance"
   },
   {
     "commit": "249136752b4c5856549248368429b6fe91e5d01d",
     "author_date": "2026-09-29T18:27:49+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T18:27:49+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Refute inclusion-maximal seed optimality at state-minimal five"
   },
   {
     "commit": "20d67b61c9ef392f1b4872ce85990de578754fb0",
     "author_date": "2026-09-29T18:26:32+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T18:26:32+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove unbounded largest-seed penalty with reset threshold two"
   },
   {
     "commit": "a344e1664904c12e88121bd35d1591549b0ac159",
     "author_date": "2026-09-29T18:26:19+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T18:26:19+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Archive exact seed-budget covers and 500000 adversarial mutations"
   },
   {
     "commit": "5f9215bb9266294007a81c7753d0e733ad2d5576",
     "author_date": "2026-09-29T18:19:37+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T18:19:37+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Certify minimal largest-seed and future-tie policy obstructions"
   },
   {
     "commit": "8794b04fd1c104d865937f6ab8361a5a53040df5",
     "author_date": "2026-09-29T18:19:14+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T18:19:14+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove first-drop and exact nearest-seed image policy normal forms"
   },
   {
     "commit": "df4e7a708b789fd0a54590b62ef604c72b68093b",
     "author_date": "2026-09-29T18:08:42+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T18:08:42+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Add exact one-letter seed budgets to sparse policy protocol"
   },
   {
     "commit": "e2d876aca51b61121146f4748273dcf20f35b4c8",
     "author_date": "2026-09-29T17:14:02+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T17:14:02+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Seal 42 passing audits and coefficient-two extension research checkpoint"
   },
   {
     "commit": "279ce4e267590064346fb42086e4ec67c7d7de8d",
     "author_date": "2026-09-29T17:11:48+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T17:11:48+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Independently audit all five frame distances in ternary lower proof"
   },
   {
     "commit": "9f8a9d4304e27b8434adc3c14d7d9722b5e7a57b",
     "author_date": "2026-09-29T17:09:28+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T17:09:28+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove ternary parameter image-extension maximum 2n minus 1"
   },
   {
     "commit": "fa4557234203eb02fa192b0072dbd9256ced38dd",
     "author_date": "2026-09-29T17:09:01+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T17:09:01+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Exhaust designated ternary transpositions and independently audit 21 peaks"
   },
   {
     "commit": "6b24d5b4d0a94d2bc039d14b01c9462f6a93d431",
     "author_date": "2026-09-29T16:56:16+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T16:56:16+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Clarify letters versus cycle rotations in singleton lower proof"
   },
   {
     "commit": "62faad5d269d0f9a86d8fbeb89958000ff1156e2",
     "author_date": "2026-09-29T16:55:41+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T16:55:41+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Audit and replay 630000 rank-bounded linear-extension adversarial trials"
   },
   {
     "commit": "9f3f2f3bcec0da17f1d6a1d4cc0cf2a59028f845",
     "author_date": "2026-09-29T16:55:23+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T16:55:23+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Sharpen parameter image-extension maximum to 2n minus 2"
   },
   {
     "commit": "668378cdf5939b875f542f4f02e724ccb05df548",
     "author_date": "2026-09-29T16:55:10+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T16:55:10+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove asymptotic coefficient-two image-extension obstruction"
   },
   {
     "commit": "c2d17f06ec9de0012c8c5b5362bd185814852337",
     "author_date": "2026-09-29T16:54:55+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T16:54:55+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Add exact sparse reachable-image policy kernel through 63 states"
   },
   {
     "commit": "3ecd52f042dd2eb8b6ccf631d0354fe6fed36602",
     "author_date": "2026-09-29T16:12:11+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T16:12:11+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Seal 35 independent audits and current proof boundaries"
   },
   {
     "commit": "091752b265ef74a0ef80a3e989e86112fdce1427",
     "author_date": "2026-09-29T16:11:04+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T16:11:04+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Exhaust simultaneous generated unit-defect shortcut pairs"
   },
   {
     "commit": "49968edcd56347016f3eac00e3e9130bbae26752",
     "author_date": "2026-09-29T16:08:28+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T16:08:28+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove universal union-defect accounting with tight obstructions"
   },
   {
     "commit": "b4a230ba6fcbc4cee2790e4f7831b1034fb24c31",
     "author_date": "2026-09-29T16:00:52+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T16:00:52+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Exhaust generated-map shortcuts on retained near-extremal bases"
   },
   {
     "commit": "1cc46dcae218671f6ef5d75af8dd06cb74a83427",
     "author_date": "2026-09-29T15:55:23+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T15:55:23+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Refute union cost transfer on completely reachable binary automata"
   },
   {
     "commit": "b67f24d2b195fa7ca91ec8420c342674b3d3bd69",
     "author_date": "2026-09-29T15:47:46+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T15:47:46+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove infinite constant-word shortcut obstruction with exact family audits"
   },
   {
     "commit": "452da44c73179681ab20407eda427d2f7a31fcb1",
     "author_date": "2026-09-29T15:47:43+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T15:47:43+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Add independently audited complete-reachability inverse policy kernel"
   },
   {
     "commit": "bf63d27dc409619cf603f07e5d9bbf3fe74df0b1",
     "author_date": "2026-09-29T15:47:39+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T15:47:39+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove reachable-fiber anchored bound and counterexample rank constraints"
   },
   {
     "commit": "59491a297a15603c1a45d5cdd5f31036e80c2d88",
     "author_date": "2026-09-29T15:47:36+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T15:47:36+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Refute image-policy monotonicity under alphabet and word shortcuts"
   },
   {
     "commit": "144918e05e32bffe6308649626bdb88926ba80c9",
     "author_date": "2026-09-29T14:01:24+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T14:01:24+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Seal 27 independent audits and explicit provenance for template and heredity results"
   },
   {
     "commit": "c6e90d1da4b85ce77971db8af6249fef12f70681",
     "author_date": "2026-09-29T13:59:44+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T13:59:44+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Attack the two-n image extension target with frozen exact native searches"
   },
   {
     "commit": "100de41142abc2cbe7578b0c9fa9d35f7dc42844",
     "author_date": "2026-09-29T13:59:16+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T13:59:16+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Preserve seeded corank-four and five bottleneck searches without upgrading negative evidence"
   },
   {
     "commit": "633cb8a01702cf95016e56061640e203d508d2e3",
     "author_date": "2026-09-29T13:58:51+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T13:58:51+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Refute proper image heredity minimally and in an infinite unit-defect family"
   },
   {
     "commit": "b58ee583a3681828add8bcc9c45b6d12057c473e",
     "author_date": "2026-09-29T13:58:26+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T13:58:26+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove alternating image templates and linear extension with independent layer checks"
   },
   {
     "commit": "5012d186f406a5bf5e8bd4f9c0cec8dc6a870aa7",
     "author_date": "2026-09-29T12:50:18+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T12:50:18+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Seal twenty-five independent audits and corrected image-policy boundaries"
   },
   {
     "commit": "c2a7b5d7bc5e01fc8c6420cfc4c577a36e92041a",
     "author_date": "2026-09-29T12:48:22+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T12:48:22+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Complete seven and eight-state permutation defect image-policy covers"
   },
   {
     "commit": "6e6b0d36dbdc52d901a0099b256fa51e3b417f56",
     "author_date": "2026-09-29T12:47:16+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T12:47:16+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Refute singleton policy transport at binary-minimal four states"
   },
   {
     "commit": "a1a9059658f074a1eb8095a1bb7de2721281b89c",
     "author_date": "2026-09-29T12:47:10+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T12:47:10+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove exact fixed-singleton image policies on every Cerny automaton"
   },
   {
     "commit": "7dbfc07355ba58f088d2e860994035074d043bed",
     "author_date": "2026-09-29T12:47:04+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T12:47:04+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Refute local image-policy potential and capacity union transfer"
   },
   {
     "commit": "d4ea3f552ccb30cd84ab7ebb287e63d8cddb0793",
     "author_date": "2026-09-29T11:44:08+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T11:44:08+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Seal cycle and image-extension research with independent audits and deterministic replay"
   },
   {
     "commit": "78c1add5cb238f711dc7ded0dc38e0186bc407d3",
     "author_date": "2026-09-29T11:42:22+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T11:42:22+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Define and adversarially audit an all-tie reachable image-extension policy"
   },
   {
     "commit": "b534cc95f310821ed5f75840a95bfac2d40206fd",
     "author_date": "2026-09-29T11:36:00+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T11:36:00+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Certify reachable image-extension costs and a five-state coefficient obstruction"
   },
   {
     "commit": "d2bc3a6d43b324b82b230c7303ac5e4603c37b6a",
     "author_date": "2026-09-29T11:13:39+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-29T11:13:39+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove protected-point cycle insertion and a corank-three harmonic obstruction"
   },
   {
     "commit": "14a21a81f6bf6083014a18ea3bbca57a955ac6fd",
     "author_date": "2026-09-28T23:24:46+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-28T23:24:46+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Archive extremal profiles, failed routes, literature attribution and reproducible audits"
   },
   {
     "commit": "40fe773250926000e883b0daef4fff115027dd42",
     "author_date": "2026-09-28T23:21:14+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-28T23:21:14+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Lift a reachable corank-two compression obstruction to unbounded state size"
   },
   {
     "commit": "1a111c7d7bcdd15c4e9652d3a261ee10f17683ea",
     "author_date": "2026-09-28T23:07:18+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-28T23:07:18+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Certify inverse-history dimension loss and bidirectional greedy obstructions"
   },
   {
     "commit": "01bed22219e1049cb827bf98e70ef74d5e1c0ea2",
     "author_date": "2026-09-28T22:56:30+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-28T22:56:30+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove exact kernel bridge costs for every fixed positive rank excess"
   },
   {
     "commit": "62eeda8a523dd49b5b4d23594d173cb169813bc0",
     "author_date": "2026-09-28T22:47:54+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-28T22:47:54+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove a quadratic kernel-bridge obstruction with independent certificates"
   },
   {
     "commit": "88b4654c2e41c2b6d6311834448506e2c15c6cec",
     "author_date": "2026-09-28T22:40:10+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-28T22:40:10+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Reconstruct a universal kernel bridge and certify greedy compression failures"
   },
   {
     "commit": "168ffff8f8c0de968ecde3fd7fcea4bea6e364b6",
     "author_date": "2026-09-28T19:31:44+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-28T19:31:44+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Assemble the full research manuscript and reproducible sprint archive"
   },
   {
     "commit": "3d23ce9c971839ee8602a07acb46f838a0fb67a7",
     "author_date": "2026-09-28T19:31:00+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-28T19:31:00+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove the sharp dyadic optimal-language threshold and three layout orders"
   },
   {
     "commit": "f16cd96691f3c6b3fc7fe9f16b0f4ed89eb99e32",
     "author_date": "2026-09-28T18:44:43+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-28T18:44:43+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Fix Lean simulation binder and record a fully successful kernel build"
   },
   {
     "commit": "955fe526d5e1c6821a83000d0b13aaffec7ae9a2",
     "author_date": "2026-09-28T18:44:00+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-28T18:44:00+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove layout order separation and kernel-check quotient and genealogy cores"
   },
   {
     "commit": "d709146868a0b45d67ac995c172613ef7da89aff",
     "author_date": "2026-09-28T18:12:43+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-28T18:12:43+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove the all-parameter anchor formula by genealogy and a capacity-two schedule"
   },
   {
     "commit": "bdd2d35d6a6a9ce96192ddf158a52b9c2b405430",
     "author_date": "2026-09-28T14:34:41+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-28T14:34:41+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Keep affine certificate hashes stable across Windows and Git checkouts"
   },
   {
     "commit": "888ddfceee716565e12daf196a923eb4e7424ca3",
     "author_date": "2026-09-28T14:33:02+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-28T14:33:02+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove fixed-anchor eventual linearity and certify binary-depth formulas through r17"
   },
   {
     "commit": "ee6012a221f567ff07f64bafae6b0d31e430dd37",
     "author_date": "2026-09-28T14:18:41+08:00",
+    "author_name": "dongxuelian2",
+    "committer_date": "2026-09-28T14:18:41+08:00",
+    "committer_name": "dongxuelian2",
     "subject": "Prove the three-anchor formula and describe the exact window quotient"
   },
   {
     "commit": "0435d217e4fcad48a0f9bf89e47d69229104ae94",
     "author_date": "2026-09-28T10:07:19+08:00",
+    "author_name": "Codex",
+    "committer_date": "2026-09-28T10:08:40+08:00",
+    "committer_name": "Codex",
     "subject": "Record post-baseline audit and r-anchor reconnaissance"
   },
   {
     "commit": "b36adeac34a5088a7e2cd588f8c55221d04bd6eb",
     "author_date": "2026-09-28T09:42:00+08:00",
+    "author_name": "Codex",
+    "committer_date": "2026-09-28T09:42:00+08:00",
+    "committer_name": "Codex",
     "subject": "Freeze imported ORION pre-research baseline"
   }
 ]
