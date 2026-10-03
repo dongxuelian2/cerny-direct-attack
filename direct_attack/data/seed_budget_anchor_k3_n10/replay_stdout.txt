@@ -1,0 +1,12 @@
+{"source": "seed:0", "value": [-68, 0], "P": 13, "F": 13, "Fk": 13, "Wk": 19, "rt": 11, "seconds": 0.18699999999989814}
+{"source": "seed:23", "value": [-67, 0], "P": 14, "F": 14, "Fk": 14, "Wk": 14, "rt": 14, "seconds": 0.18699999999989814}
+{"source": "seed:28", "value": [-63, 0], "P": 18, "F": 18, "Fk": 18, "Wk": 29, "rt": 15, "seconds": 0.2029999999995198}
+{"source": "seed:61", "value": [-59, 0], "P": 19, "F": 19, "Fk": 22, "Wk": 23, "rt": 16, "seconds": 0.2029999999995198}
+{"source": "seed:123", "value": [-56, 0], "P": 25, "F": 25, "Fk": 25, "Wk": 28, "rt": 21, "seconds": 0.2180000000007567}
+{"source": "seed:247", "value": [-52, 0], "P": 29, "F": 29, "Fk": 29, "Wk": 33, "rt": 23, "seconds": 0.25}
+{"source": "mutation:27284", "value": [-51, 0], "P": 30, "F": 30, "Fk": 30, "Wk": 33, "rt": 23, "seconds": 4.014999999999418}
+{"source": "mutation:27320", "value": [-50, 0], "P": 31, "F": 31, "Fk": 31, "Wk": 33, "rt": 21, "seconds": 4.031000000000859}
+{"source": "mutation:57221", "value": [-49, 0], "P": 32, "F": 32, "Fk": 32, "Wk": 33, "rt": 31, "seconds": 8.686999999999898}
+{"source": "mutation:109524", "value": [-46, 0], "P": 35, "F": 35, "Fk": 35, "Wk": 39, "rt": 23, "seconds": 16.061999999999898}
+{"source": "mutation:109539", "value": [-45, 0], "P": 36, "F": 36, "Fk": 36, "Wk": 39, "rt": 23, "seconds": 16.07799999999952}
+{"arguments": {"n": 10, "alphabet": 3, "count": 200000, "seed": 20261022, "restart": 500, "mode": "adversarial", "objective": "anchor", "out": "<LOCAL_PATH>", "minimum_kappa": 3}, "counts": {"tested": 200365, "sc_synchronizing": 188847, "below_minimum_kappa": 20614}, "best": [-45, 0], "records": ["witness_000.json", "witness_001.json", "witness_002.json", "witness_003.json", "witness_004.json", "witness_005.json", "witness_006.json", "witness_007.json", "witness_008.json", "witness_009.json", "witness_010.json"], "seconds": 29.85900000000038, "scope": "Distinct-letter binary cover with overlap or exhaustive designated alphabets; random/adversarial modes are sampled, not nonexistence proofs."}

@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.venv/
+.lake/
+*.olean
+*.ilean
+results/

@@ -1,0 +1,10 @@
+{"source": "seed:0", "P": 4, "rt": 3, "R": 316, "seconds": 0.01599999999962165}
+{"source": "seed:12", "P": 5, "rt": 3, "R": 106, "seconds": 0.01599999999962165}
+{"source": "seed:18", "P": 6, "rt": 3, "R": 186, "seconds": 0.01599999999962165}
+{"source": "mutation:179", "P": 7, "rt": 3, "R": 131, "seconds": 0.030999999999039574}
+{"source": "mutation:220", "P": 8, "rt": 3, "R": 161, "seconds": 0.030999999999039574}
+{"source": "mutation:635", "P": 9, "rt": 3, "R": 81, "seconds": 0.046999999998661224}
+{"source": "mutation:1097", "P": 10, "rt": 3, "R": 41, "seconds": 0.07800000000133878}
+{"source": "mutation:1267", "P": 13, "rt": 3, "R": 51, "seconds": 0.07800000000133878}
+{"source": "mutation:1339", "P": 14, "rt": 3, "R": 51, "seconds": 0.09400000000096043}
+{"arguments": {"n": 10, "rank": 6, "alphabet": 3, "count": 100000, "seed": 20261027, "restart": 500, "out": "direct_attack\\data\\short_reset_policy_n10"}, "counts": {"tested": 100128, "exact": 100128, "twice_rt_refutations": 36955}, "max_policy": 14, "records": ["witness_000.json", "witness_001.json", "witness_002.json", "witness_003.json", "witness_004.json", "witness_005.json", "witness_006.json", "witness_007.json", "witness_008.json"], "seconds": 5.28099999999904, "scope": "Sampled restricted automata only. b is a full cycle; a fixes 0,1 and sends 2 to 1; other letters fix 0,1. Every word of length <=2 preserves at least two states, while aba resets. Thus rt=3 on every sampled input by paper proof."}

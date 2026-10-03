@@ -1,0 +1,678 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\C}{\mathcal C}
+\newcommand{\bits}{\{0,1\}}
+\newcommand{\wt}{\operatorname{wt}}
+\title{Exact distances in marked-state information quotients\newline of the \v{C}ern\'{y} automata}
+\author{ORION SyncLab research draft}
+\date{28 September 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+For the \v{C}ern\'{y} automaton, retain subset cardinality and membership at
+the consecutive marked states $0,n-1,\ldots,n-r+1$. Let $B_r(n)$ be the
+distance from the full-set class to singleton classes in the existential
+information quotient. We prove, for every $r\ge2$ and $n\ge r+2$,
+\[
+B_r(n)=3n+E(r)-2r-3,
+\]
+where $E(r)$ is the minimum external path length of a full binary tree with
+$r$ leaves. A merger genealogy yields the lower bound through delayed
+binary releases. An explicit reverse schedule achieves the bound with only
+two hidden occupied states, with every input proved realizable. We derive
+exact dyadic information increments and all fixed-codimension boundaries.
+We also show that the same anchor count admits orders $n$, $n\log n$, and
+$n^2$, by changing positions. The general formula is proved on paper;
+the full optimal word language has a separate, sharp dyadic capacity
+threshold, which we also determine.
+Selected graph, potential, and timing lemmas are independently kernel-checked
+in Lean. This is an abstraction theorem, not a proof of the \v{C}ern\'{y}
+conjecture. Publication priority remains incompletely audited.
+\end{abstract}
+
+\section{Definitions and the exact quotient}
+The automaton $\C_n$ has states $Q=\{0,\ldots,n-1\}$ and letters
+$a(q)=q+1\pmod n$, $b(n-1)=0$, $b(q)=q$ otherwise. For an anchor set $A$,
+let $\alpha_A(S)$ record $|S|$ and all memberships $q\in S$, $q\in A$,
+for nonempty $S\subseteq Q$. A quotient edge $x\xrightarrow{c}y$ exists
+if some $S$ has $\alpha_A(S)=x$ and $\alpha_A(Sc)=y$. Representatives may
+change independently between successive edges. Write $B_A(n)$ for the
+shortest quotient path from $\alpha_A(Q)$ to any singleton feature.
+For $A_r=(0,n-1,\ldots,n-r+1)$ write $B_r(n)$.
+
+Put $m=n-r$. A vertex is $(j,x)$, where $0\le j\le m$ counts occupied
+hidden sites $1,\ldots,m$, $x\in\bits^r$ records the anchors in that order,
+and $j+\wt(x)>0$. Writing $x=(x_0,\ldots,x_{r-1})$, its exact edges are
+\begin{align}
+(j,x)&\xrightarrow a
+(j+x_0-t,(x_1,\ldots,x_{r-1},t)),
+\quad t\le j\le m-1+t,\quad t\in\bits;\label{eq:a}\\
+(j,x)&\xrightarrow b (j,(x_0\vee x_1,0,x_2,\ldots,x_{r-1})).\label{eq:b}
+\end{align}
+Indeed $t$ is occupancy of the exiting hidden site $m$. The other $m-1$
+hidden sites may contain precisely $j-t$ particles, giving the displayed
+necessary and sufficient condition. Letter $b$ acts only on the first two
+anchors. Singleton goals satisfy $j+\wt(x)=1$.
+
+\begin{proposition}[Orbit semantics]
+For any finite DFA and any $A$, this quotient distance equals paid-letter
+distance in the concrete power graph augmented with free permutations of
+$Q\setminus A$ fixing $A$ pointwise.
+\end{proposition}
+\begin{proof}
+Feature classes are exactly the orbits of that symmetric group: two sets
+have identical observed parts and equal hidden cardinality precisely when
+a hidden permutation takes one to the other. Augmented paths project to
+quotient paths. Conversely, before each quotient edge, a free permutation
+takes the current representative to its edge witness. Its letter realizes
+that edge. Full-set and singleton endpoints are preserved. Commutation of
+letters with permutations is unnecessary. The same statement holds for any
+group whose orbits are the feature classes.
+\end{proof}
+
+\section{Main theorem and a short genealogy lower bound}
+\begin{theorem}\label{thm:main}
+For $r\ge2$, $n\ge r+2$, and $L=\lfloor\log_2(r-1)\rfloor$,
+\[
+B_r(n)=3n+Lr-2^{L+1}-3=3n+E(r)-2r-3.
+\]
+\end{theorem}
+
+Lift any quotient path using orbit semantics, labelling each initial
+particle and labelling every merged particle by the union of its ancestral
+labels. An effective $b$ merges the occupied particles at $0,n-1$.
+There are exactly $n-1$ effective letters on a path to a singleton, forming
+a full binary genealogy. Count all other letters, including ineffective
+$b$ letters, in a clock of total duration $T$. The path length is $n-1+T$.
+
+\begin{lemma}[Timing constraints]\label{lem:timing}
+Successive effective events differ by at least two clock units. A particle
+created by merging at $0$ must wait at least $r$ clock units to participate
+again at $n-1$, and at least $r+1$ to participate again at $0$.
+\end{lemma}
+\begin{proof}
+After an effective $b$ the first two bits are $10$. One $a$ makes the first
+bit zero; one ineffective $b$ leaves $10$. Neither permits another merge.
+Contract the hidden block to $H$. A tracked particle moves at most one
+step per clock letter around
+\[
+0\longrightarrow H\longrightarrow n-r+1\longrightarrow\cdots
+\longrightarrow n-1\longrightarrow0.
+\]
+Hidden permutations stay at $H$, and effective events not involving that
+particle leave it fixed. Reaching $n-1$ from $0$ needs $r$ steps. To merge
+again at $0$ it cannot simply remain there: replenishing the emptied $n-1$
+requires $a$, which moves it out of $0$. It must complete the cycle of
+length $r+1$. An ineffective $b$ moving $n-1$ to $0$ is one clock step and
+does not evade either bound.
+\end{proof}
+
+Read the genealogy backwards. Let $s_i$ be the clock of its $i$th split,
+$1\le i\le M=n-1$. We have $s_1\ge0$ and $s_{i+1}\ge s_i+2$.
+Each split releases its children for splitting no earlier than $s_i+r$
+and $s_i+r+1$. These relaxed release times are ordered in parent order:
+\[
+0;\ s_1+r,s_1+r+1;\ s_2+r,s_2+r+1;\ldots .
+\]
+Every split consumes a distinct available genealogical particle. Even if
+some children are never split, the $k$th consumption cannot precede the
+$k$th relaxed release. Hence
+\begin{equation}\label{eq:release}
+s_k\ge s_{\lfloor k/2\rfloor}+r+(k\bmod2),\qquad k\ge2.
+\end{equation}
+In particular $s_{2i}\ge s_i+r$. Induction yields $s_{2^d}\ge dr$ for
+$2^d\le M$. Spacing the remaining events gives
+\[
+T\ge s_M\ge dr+2(M-2^d).
+\]
+Take $d=L$, allowed since $2^L\le r-1\le M$. Adding $M=n-1$ proves
+\begin{equation}\label{eq:lower}
+B_r(n)\ge3n+Lr-2^{L+1}-3.
+\end{equation}
+This lower bound is valid even for $n=r+1$.
+
+For completeness, the earliest relaxed clock recurrence
+$t_1=0$, $t_k=\max(t_{k-1}+2,t_{\lfloor k/2\rfloor}+r+(k\bmod2))$
+has the stronger exact solution
+\[
+t_k=2(k-1)+\max_{0\le d\le\lfloor\log_2k\rfloor}
+\bigl(dr-2^{d+1}+2\bigr).
+\]
+To check it, subtract $2(k-1)$: only even indices create new maxima, giving
+$f_k=\max(0,\max_{i\le k/2}(f_i+r-2i))$. A chain of $d$ choices has
+indices at least $2^{d-1},\ldots,1$; the powers-of-two chain attains their
+minimum sum $2^d-1$. This relaxed earliest schedule may exceed hidden
+capacity two. We use a different schedule for the upper bound.
+
+\section{A realizable capacity-two construction}
+Set $K=r+1$, $C=Lr-2^{L+1}$, and
+\[
+F(i)=\min_{d\ge0}\bigl(2^{d+1}i-dr\bigr),\quad
+s_i=C+F(i)\ (1\le i\le K),\quad A=s_K=C+2K.
+\]
+The minimum exists since the expressions eventually increase without
+bound. Start at a singleton at anchor $0$ in the reverse quotient, with
+hidden occupancy zero. Split it by reversing $b$ at clock zero. For every
+integer $1\le t\le A$, reverse $a$ with input $u_t=1$ precisely when
+$t\in\{s_2,\ldots,s_K\}$; otherwise use $u_t=0$. After every input one,
+reverse $b$ to split at $0$.
+
+The reverse rotation has exact input condition
+\begin{equation}\label{eq:reverse}
+u\le j\le1+u,
+\end{equation}
+and sends $(j,x)$ to $(j-u+x_{r-1},(u,x_0,\ldots,x_{r-2}))$.
+Reverse splitting is legal exactly when the first two bits are $10$.
+We prove all these requirements, including the upper bound in
+\eqref{eq:reverse}; conservation alone would not suffice.
+
+\begin{lemma}[Clock arithmetic]\label{lem:clock}
+$s_1=0$, $s_{i+1}\ge s_i+2$, and $F(i)=2i$ when $2i\ge r$.
+For every even $2p\le K$,
+\[
+s_{2p}-s_p=r,
+\]
+except when $r$ is odd and $2p=r+1$, where the difference is $r+1$.
+\end{lemma}
+\begin{proof}
+Consecutive expressions in the defining minimum differ by $2^{d+1}i-r$.
+The sign change gives $F(1)=2^{L+1}-Lr$, and gives $F(i)=2i$ when
+$2i\ge r$. All affine expressions have slope at least two, so the same
+spacing bound holds for their minimum. If $2p\le r$, a minimizing index
+for $F(p)$ can be chosen at least one, since its $d=1$ term is no larger
+than its $d=0$ term. Reindexing that minimum gives $F(2p)=F(p)+r$.
+In the sole remaining case $2p=r+1$, both $F(p)=2p$ and $F(2p)=4p$,
+giving the difference $r+1$.
+\end{proof}
+
+\begin{lemma}[Interlacing and realizability]\label{lem:buffer}
+Every scheduled reverse edge is realizable at hidden capacity two.
+\end{lemma}
+\begin{proof}
+A split at $s_p$ produces particles at $0,n-1$. Subsequent reverse
+rotations release them into the hidden block after $r$ and $r-1$ steps,
+respectively; their first legal input times are therefore $s_p+r+1$ and
+$s_p+r$. Later splits fill an empty site $n-1$ and do not change these
+trajectories. Include a dummy root ready time $q_1=0$. The ordered input
+ready times are
+\[
+q_{2p}=s_p+r,\qquad q_{2p+1}=s_p+r+1.
+\]
+Spacing makes this list strictly increasing. Lemma~\ref{lem:clock} gives
+$q_k\le s_k$ for $2\le k\le K$: even indices are immediate and odd
+indices follow by spacing. It also gives $s_{k-1}\le q_k$ for
+$2\le k\le K$. For even $k=2p$, use
+$s_{2p-1}\le s_{2p}-2\le s_p+r-1$; for odd $k=2p+1$, use
+$s_{2p}\le s_p+r+1$.
+
+The endpoint index must be checked separately. If $r=2p$, then
+$q_{K+1}=s_{p+1}+r=A$ and $q_{K+2}=s_{p+1}+r+1=A+1$.
+If $r=2p+1$, then $q_{K+1}=s_{p+1}+r+1=A$ and
+$q_{K+2}=s_{p+2}+r=A+1$. All involved $F$ values lie in the $2i$ regime.
+Thus $s_K\le q_{K+1}$ holds as equality.
+
+Let $R(t)=\#\{q_i\le t\}$ and $N(t)=\#\{s_i\le t\}$. Interlacing gives
+\[
+N(t)\le R(t)\le N(t)+1\qquad(0\le t\le A).
+\]
+Before rotating at time $t\ge1$, the hidden count is
+$j_{t-1}=R(t)-N(t-1)$: exits occur one unit before input readiness and
+previous inputs are exactly previous non-root splits. The dummy root and
+its split cancel in this count. If $u_t=1$, then
+$N(t)=N(t-1)+1$, giving $1\le j_{t-1}\le2$. If $u_t=0$, the counts
+agree, giving $0\le j_{t-1}\le1$. This is precisely
+\eqref{eq:reverse}. These identities validate the process inductively.
+Finally, before each non-root split the preceding input was zero, since
+split clocks differ by at least two. The first two bits after its rotation
+are consequently $10$, so the reverse $b$ is legal too.
+\end{proof}
+
+\begin{lemma}[Full endpoint]
+The construction ends at the all-one anchor window with hidden count two.
+\end{lemma}
+\begin{proof}
+For $i>r/2$, $s_i=C+2i$. A split fills consecutive stream positions
+$s_i,s_i-1$. There are at least $\lceil r/2\rceil+1$ terminal splits in
+this regime, so the last $r$ positions $A,A-1,\ldots,A-r+1$ are all filled.
+Each split adds one particle, and there are $K=r+1$ splits from one initial
+particle. Thus $r+2$ particles are present, of which $r$ occupy anchors;
+exactly two are hidden. Equivalently the strict release ordering and
+$q_{K+2}=A+1$ give hidden count $R(A+1)-N(A)=2$.
+\end{proof}
+
+The reverse path has $A$ rotations and $K$ splits, hence length
+$A+K=C+3K=(L+3)r-2^{L+1}+3$. This meets \eqref{eq:lower} at $n=r+2$.
+For arbitrary $m\ge2$, prepend $m-2$ forward $baa$ cycles, reducing the
+full window's hidden count from $m$ to two. Formula~\eqref{eq:a} shows a
+path valid at capacity two is valid at every larger capacity. Adding
+$3(m-2)$ proves Theorem~\ref{thm:main}.
+
+\section{Binary trees and the information hierarchy}
+\begin{lemma}[Classical external path length]
+For $r\ge2$, $h=\lceil\log_2r\rceil$,
+$E(r)=(h+1)r-2^h$.
+\end{lemma}
+\begin{proof}
+If an optimal full binary tree has a shallowest leaf at depth $d$ and
+deepest leaves at depth $D\ge d+2$, choose a deepest sibling pair. Replace
+that pair by its parent leaf and split the shallow leaf. The leaf count is
+unchanged and the external path length changes by $d-D+1<0$, a
+contradiction. Thus depths differ by at most one. Kraft equality gives
+$2^h-r$ leaves at depth $h-1$ and $2r-2^h$ at depth $h$, with the usual
+all-equal case when $r$ is a power of two. Such a tree exists: split
+$r-2^{h-1}$ leaves of the complete tree at depth $h-1$. Summing depths
+gives the formula. This is the equal-weight prefix-code optimization
+problem, not a new coding theorem.
+\end{proof}
+
+\begin{corollary}
+For $2^{h-1}<r\le2^h$ and $n\ge r+2$,
+\[
+B_r(n)=3n+(h-1)r-2^h-3.
+\]
+For $2\le r\le n-3$, $B_{r+1}(n)-B_r(n)=\lfloor\log_2r\rfloor$.
+For fixed $k\ge2$, $n\ge k+2$, setting $h=\lceil\log_2(n-k)\rceil$ gives
+\[
+B_{n-k}(n)=n+2k-3+E(n-k)=(h+2)n-(h-1)k-2^h-3.
+\]
+In particular $B_{n-2}(n)=n+1+E(n-2)=\Theta(n\log n)$.
+\end{corollary}
+These follow directly by substitution; $E(r+1)-E(r)=\lfloor\log_2r\rfloor+2$,
+including the powers-of-two boundary. For $r=n-1$ the feature is injective,
+so the classical threshold theorem \cite{volkov} gives
+$B_{n-1}(n)=(n-1)^2$. The last increment is therefore
+$n^2-3n-E(n-2)=\Theta(n^2)$ for $n\ge4$.
+The dependence on hidden capacity stabilizes exactly at two:
+$B_r(n+1)-B_r(n)=3$ for every $n\ge r+2$.
+
+Writing $x=r/2^h\in(1/2,1]$ also gives
+$E(r)=r\log_2r+r(1-1/x-\log_2x)$.
+The parenthesized nonnegative term attains its maximum
+$1-1/\ln2-\log_2(\ln2)$ at $x=\ln2$, by differentiation. Thus the
+linear error contains an explicitly bounded dyadic oscillation.
+
+\section{Optimal genealogies and the full optimal word language}
+\begin{proposition}[Greatest relaxed schedule]
+For $r,K\ge1$, consider $s_1\ge0$, $s_{i+1}\ge s_i+2$, and
+$s_{2i}\ge s_i+r$ whenever $2i\le K$. The minimum final clock is
+\[
+T(r,K)=2K+\max_{0\le d\le\lfloor\log_2K\rfloor}(dr-2^{d+1}).
+\]
+For every deadline $A\ge T(r,K)$ the unique componentwise greatest
+feasible vector is
+\[
+g_i=A-2K+\min_{2^di\le K}(2^{d+1}i-dr).
+\]
+\end{proposition}
+\begin{proof}
+Repeated doubling and final spacing give
+$s_i+dr\le s_{2^di}\le A-2(K-2^di)$, so $s_i\le g_i$.
+Write the minimum as $G(i)$. Its domain shrinks with $i$, and every term
+has slope at least two, proving spacing. Reindexing gives
+$G(2i)=r+\min_{e\ge1,2^ei\le K}(2^{e+1}i-er)\ge r+G(i)$.
+Finally $g_K=A$ and $g_1=A-T(r,K)\ge0$, proving feasibility and
+attainment. A smaller deadline makes $g_1<0$, impossible.
+For $K\ge r\ge2$, this specializes to $T=2K+C$, $g_i=C+F(i)$.
+The minimum has an unrestricted minimizer with $2^di\le r-1\le K$,
+or $d=0$ in the $2i\ge r$ regime.
+\end{proof}
+
+\begin{theorem}[Rigidity and no wasted letters]\label{thm:rigidity}
+Put $p=2^L$. Every optimal quotient path, $n\ge r+2$, has reverse clocks
+\[
+s_{2^d}=dr\ (0\le d\le L),\qquad s_i=C+2i\ (p\le i\le n-1).
+\]
+All its $b$ letters are effective. It starts with $(baa)^{n-1-p}b$.
+For $r=2,3,4$ its optimal letter word is unique:
+\[
+(baa)^{n-2}b;\qquad (baa)^{n-3}ba^3b;\qquad(baa)^{n-3}ba^4b,
+\]
+respectively, although representatives need not be unique.
+\end{theorem}
+\begin{proof}
+Equality in $T\ge s_{n-1}\ge s_p+2(n-1-p)\ge Lr+2(n-1-p)$ forces
+the dense tail and every doubling step of the spine. It also forces
+$s_1=0$ and $s_{n-1}=T$, so there are no clock letters beyond the event
+interval. Label the strictly ordered relaxed releases by root entry one,
+the $n-1$ child of event $i$ as entry $2i$, and its $0$ child as entry
+$2i+1$. If $s_k=q_k$, no release entry beyond $k$ can have supplied any
+of the first $k$ consumed particles. Thus exactly entries $1,\ldots,k$
+were consumed, and entry $k$ must be consumed by event $k$ itself, since
+earlier clocks are less than its readiness bound. For $k=2^d$ we have
+$s_k=s_{k/2}+r=q_k$, so the dyadic event is the actual $n-1$ child of
+its predecessor on the spine. Its waiting time $r$ is tight. Traversing
+the $r$ directed window steps in $r$ clock letters uses only $a$: an
+ineffective $b$ either stays fixed or returns $n-1$ to $0$. These intervals
+cover clocks zero through $s_p$.
+Every remaining gap is two clock letters. From post-merge bits $10$,
+neither $ab$, $ba$, nor $bb$ with ineffective $b$ permits another merge;
+only $aa$ can. Thus every clock letter is $a$. The dense tail becomes
+the asserted forward prefix. For $r=2,3,4$, all event indices are forced,
+so the listed words are the only possibilities.
+\end{proof}
+
+Set $K_0=r+1$, $A_0=C+2K_0$. Let $W_r$ consist of letter words whose
+reverse split clocks satisfy $s_1=0$, $s_{K_0}=A_0$, spacing two, and
+even releases $s_{2i}\ge s_i+r$. Odd releases follow by spacing.
+For hidden capacity $m\ge2$, every optimum starts with $(baa)^{m-2}$.
+Strip that prefix and call its reduced language $R_r(m)$.
+
+\begin{theorem}[Sharp language stabilization]\label{thm:language}
+The languages increase as
+$R_r(2)\subseteq R_r(3)\subseteq\cdots\subseteq W_r$.
+The least capacity $M_r$ from which they equal $W_r$ is
+\[
+M_2=2,\qquad M_r=1+2^{L-1}\quad(r\ge3).
+\]
+\end{theorem}
+\begin{proof}
+Necessity follows from timing and rigidity: the first $r+1$ reverse
+events of every optimum have deadline $A_0$. Padding gives the nesting.
+For $r\ge3$, write $p=2^L$, $M=p/2+1$. Take any $W_r$ vector and
+append $m-2$ dense events, giving $K=r+m-1$. The extended vector still
+satisfies even releases: for a new child $2i>r+1$, its parent is at most
+$C+F(i)=C+2i$ and its clock is $C+4i$. Run input one at splits and zero
+elsewhere. With the ordered releases $q$ and counts $R,N$, $N(t)\le R(t)$
+and hidden count before rotation is $j=R(t)-N(t-1)$. This proves the
+input lower bound; spacing proves the split bits $10$.
+
+Here are the upper bounds, retaining the crucial one-unit difference
+between zero and one input. Put $a=s_p=Lr$. If $t<a$, then
+$i=N(t-r)\le p/2-1$, $R(t)\le1+2i$, $N(t-1)\ge i$, so $j\le p/2$.
+Negative arguments of $N$ are interpreted as zero. At $t=a$, $j=1$.
+For $t=a+\delta$, $1\le\delta<r$, spacing from event $p/2$ gives
+\[
+i=N(t-r)\le\min(p-1,p/2+\lfloor\delta/2\rfloor),\quad
+N(t-1)=p+\lfloor(\delta-1)/2\rfloor.
+\]
+At even $\delta=2z$, a split, this yields
+$j\le2\min(p-1,p/2+z)-p-z+2\le p/2+1=M$.
+At odd $\delta=2z+1$ it yields
+$j\le2\min(p-1,p/2+z)-p-z+1\le p/2=M-1$.
+Both inequalities follow by splitting at $z=p/2$.
+For $\delta\ge r$, the dense parents release one particle per clock:
+$R(t)=2p+\delta-r$. At $\delta=2z$ or $2z+1$, $j=p-r+z+1$.
+A split has $z\le K-p$, hence $j\le m$; a nonsplit has
+$z\le K-p-1$, hence $j\le m-1$. Thus every input is realizable for
+$m\ge M$. The last $K-p+1$ dense splits fill
+$2(r+m-p)\ge r$ stream positions; the endpoint has full window and
+$K+1=n$ particles, so hidden count $m$. This proves $R_r(m)=W_r$.
+
+For the matching obstruction, let $r\ge5$, $m=M-1=p/2$, and choose
+the earliest relaxed recurrence, extended to $K=r+m-1$. All its inputs
+are forced: split input is one, the immediately preceding input is zero,
+and in any longer waiting gap the next split waits for its next release,
+so hidden occupancy at all other inputs is zero. In particular no
+unpaired input can avert overflow. The earliest formula gives
+$s_{p-1}=(L-1)r+p-2$. At the nonsplit clock
+$t^*=Lr+p-1$, immediately before event $p+p/2$ (which exists since
+$r\ge p+1$),
+\[
+q_{2p-1}=t^*<q_{2p},\quad R(t^*)=2p-1,\quad
+N(t^*-1)=3p/2-1,\quad j=p/2=m.
+\]
+Its forced zero input requires $j\le m-1$, impossible. Hence this $W_r$
+word is missing at $M-1$. For $r=3,4$ the upper threshold is already
+the minimum allowed capacity two; $r=2$ follows from its unique word.
+\end{proof}
+
+The first strict enlargement is $r=5$: the word
+$(baa)^2ba^3ba^2ba^5b$ of length 20 is impossible at capacity two, but
+prepending $baa$ gives an optimal capacity-three word of length 23.
+Its reverse clocks are $0,5,7,10,12,14$; before clock 13 the hidden count
+is two and the split at 14 forces input zero, violating capacity two.
+At capacity three, append a split at 16 and all inputs are realizable.
+Thus value stabilization and optimal-language stabilization are distinct.
+
+\begin{proposition}[End-of-regime language bijections]
+For $L\ge2$, $p=2^L$, the languages $W_{2p-2},W_{2p-1},W_{2p}$ have
+explicit bijections and common size $C_L\ge2^{p/2-1}$.
+\end{proposition}
+\begin{proof}
+For $i=2^d+a<p$, normalize clocks as
+$s_i=dr+2a+z_i$; set $z_i=0$ at every power of two, and at indices
+$i\ge p$. The common conditions on the nonnegative integer array are
+monotonicity within each binary-index level and
+$z_i\le z_{2i}+2a$. All children $2i$ of indices $i<p$ exist for the
+three indicated $r$. Iteration gives
+$z_i\le2a(2^{L-d}-1)$, so the remaining boundary spacing condition
+$z_{2^{d+1}-1}\le r-2^{d+1}$ is automatic:
+\[
+2(2^d-1)(2^{L-d}-1)
+=2p-2^{d+1}-2^{L-d+1}+2\le2p-2-2^{d+1}.
+\]
+Tail constraints are automatic as well. Thus this same finite array set
+parametrizes each language bijectively. For the lower count set upper
+levels to zero and choose arbitrary bits $b_1,\ldots,b_{p/2-1}$ on the
+bottom level through $z_{p/2+a}=\sum_{j\le a}b_j$. These satisfy all
+conditions and yield the stated number of distinct arrays. Complete finite
+enumeration gives $C_2=3,C_3=279$; no general numerical count is claimed.
+\end{proof}
+
+\section{Anchor placement and a transferable lower-bound principle}
+\begin{proposition}[Observed interval charge]
+If an anchor layout contains an interior interval $I\subseteq\{1,\ldots,n-2\}$,
+then $B_A(n)\ge n-1+|I|$.
+\end{proposition}
+\begin{proof}
+Truncate any synchronizing quotient path after its last effective $b$.
+Its goal is the singleton at $0$. The occupied count in $I$ is feature
+determined, is fixed by $b$, and decreases by at most one per $a$ (only the
+last interval site can exit). It starts at $|I|$ and ends at zero, requiring
+at least $|I|$ rotations in addition to $n-1$ effective letters. Truncation
+cannot increase length. For the empty interval this is the cardinality bound.
+\end{proof}
+
+\begin{theorem}[An exact linear family]\label{thm:linear}
+For $2\le k\le n-1$, hide $H=\{1,\ldots,k-1,n-1\}$ and observe its
+complement $A=\{0,k,\ldots,n-2\}$. Then
+\[
+B_A(n)=2n-k-2=n+|A|-2.
+\]
+\end{theorem}
+\begin{proof}
+The observed interval $I=\{k,\ldots,n-2\}$ has size $n-k-1$, giving the
+lower bound. A matching abstract word is $b^{k-1}(ab)^{n-k-1}b$.
+The first $k-1$ effective letters leave all anchors full and hidden count
+one: choose $n-1$ among the hidden occupants of each witness. In each
+following rotation choose that unique hidden occupant at $n-1$.
+Anchor $0$ stays occupied, its particle enters hidden site $1$, and the
+occupied suffix of $I$ shifts right, losing its final particle into hidden
+$n-1$. Hidden count becomes two, while the observed interval count drops
+by one. For its ensuing effective $b$ choose hidden sites $\{1,n-1\}$;
+hidden count returns to one and anchors are unchanged. After $n-k-1$ pairs
+the interval is empty. The final effective $b$ leaves singleton $0$.
+All witnesses exist because $k\ge2$. The length is $2n-k-2$.
+\end{proof}
+
+\begin{proposition}[One observed state]
+For $n\ge2$, $B_{\{0\}}(n)=n-1$ and $B_{\{n-1\}}(n)=2n-3$.
+For $n\ge3$ and $1\le q\le n-2$, $B_{\{q\}}(n)=n$.
+\end{proposition}
+\begin{proof}
+Cardinality needs at least $n-1$ effective letters. When only $0$ is
+marked, every effective $b$ edge after the first is witnessed by a subset
+of the required size containing both endpoints, giving $n-1$.
+When only $n-1$ is marked with bit $v$, the potential
+$P(k,v)=2k-2-v$ for $k\ge2$, and zero for $k=1$, drops by at most one
+per edge. Rotation changes $v$ by at most one; an effective $b$ sends
+$(k,1)$ to $(k-1,0)$; ineffective cases also satisfy the inequality.
+Its full value is $2n-3$. The matching path is $b(ab)^{n-2}$: each rotation
+edge from $(k,0)$ to $(k,1)$ has a witness containing $n-2$ and excluding
+$n-1$, and each $b$ edge has an endpoint-pair witness.
+For interior $q$, a path of length $n-1$ would consist entirely of
+effective $b$ letters, preserving the marked bit one. Its last two-set
+would need to be $\{0,n-1\}$, which has marked bit zero, impossible.
+For the upper bound, use $n-2$ effective $b$ edges down to cardinality two
+with marked bit one, witnessed by sets containing $\{q,0,n-1\}$ before
+each decrease. A two-set containing $q$ and excluding $q-1$ witnesses a
+rotation to marked bit zero; a final endpoint-pair witness merges it.
+The length is $n$.
+\end{proof}
+
+\begin{proposition}[Feature-resolved monotone simulation]\label{prop:sim}
+Let $D$ be a synchronizing DFA and $D_D(U)$ its subset reset distance.
+Suppose a nonempty-subset map $V(S)$ is determined by the source feature,
+sends source goals to distance-zero subsets, and each concrete source
+edge $S\to S'$ admits a subset $U$ reached from $V(S)$ by zero or one
+$D$-letter with $U\subseteq V(S')$. Then $D_D(V(S))$ is a quotient
+potential, and its initial value is a lower bound on quotient distance.
+\end{proposition}
+\begin{proof}
+Subset reset distance is monotone under inclusion: any word resetting a
+larger subset resets every smaller nonempty subset. Thus
+$D_D(V(S))\le1+D_D(U)\le1+D_D(V(S'))$. Feature dependence transfers this
+inequality to every existential edge, and telescoping proves the claim.
+\end{proof}
+
+\begin{theorem}[Position changes the asymptotic order]
+If $g\ge2$ divides $n$ and all hidden states lie in one residue class
+modulo $g$, then $B_A(n)\ge(g-1)^2$.
+Consequently, for even $n$ and hidden states $\{q,q+n/2\}$,
+$B_A(n)=\Theta(n^2)$. With the same number $n-2$ of anchors but hidden
+states $\{1,2\}$, the value is $\Theta(n\log n)$; with hidden states
+$\{1,n-1\}$ it is exactly $2n-4$.
+\end{theorem}
+\begin{proof}
+Let $V(S)=\{q\bmod g:q\in S\}$. The feature determines $V(S)$:
+every residue except the hidden residue is entirely observed, and the
+hidden residue's occupancy is determined by its observed bits together
+with whether hidden occupancy is positive. Projection commutes with $a$.
+If $n-1\notin S$, the concrete $b$ is a loop and choose $U=V(S)$.
+If $n-1\in S$, take $U=V(S)b_{\C_g}$; then $U\subseteq V(Sb)$, because
+other representatives of residue $g-1$ may remain and the new zero is
+present. Proposition~\ref{prop:sim} gives the classical full distance
+$D_{\C_g}(Q_g)=(g-1)^2$ as a lower bound. For antipodal hidden states
+choose $g=n/2$; the concrete reset word gives upper bound $(n-1)^2$.
+The adjacent hidden pair is precisely $A_{n-2}$, covered by the main
+theorem; the linear family is Theorem~\ref{thm:linear}. These are statements
+along even $n$ tending to infinity.
+\end{proof}
+More generally, fix any $k\ge2$. Along $n\ge2k$ divisible by $k$, let $g=n/k$
+and hide the progression $\{q,q+g,\ldots,q+(k-1)g\}$, $0\le q<g$.
+Then $B_A(n)\ge(n/k-1)^2$ and $B_A(n)=\Theta(n^2)$. At the same count
+$n-k$, hiding $\{1,\ldots,k\}$ gives $\Theta(n\log n)$, while hiding
+$\{1,\ldots,k-1,n-1\}$ gives the exact linear value $2n-k-2$.
+
+\section{Verification, limitations, and related work}
+\paragraph{Mathematical status.}
+Theorem~\ref{thm:main} and the layout theorems are \textbf{PROVED} by the
+arguments above. No finite experiment is used as an induction hypothesis.
+The complete formula is not labelled \textbf{FORMALLY VERIFIED}.
+\paragraph{Independent computations.}
+The search-free clock construction was checked by a concrete-set image
+verifier at 111 values of $r$, including $2,3$, and numerous dyadic
+boundaries through $1025$. It enumerates hidden-site choices and does not
+use the quotient edge formula to validate witnesses. A different backward
+latest-schedule recurrence agrees with the direct minimum formula.
+Release interlacing arithmetic was checked at boundary values through
+$r=65537$. In 1750 sampled complete abstract paths with random prefixes,
+including 18446 ineffective $b$ letters, a labelled-particle checker found
+no violation of the timing inequalities. Complete quotient BFS at
+capacity two for $r=18,\ldots,23$ gave lengths $97,104,111,118,125,132$.
+An independent concrete-subset enumeration checked all single-anchor
+positions for $2\le n\le12$ and all hidden pairs for $4\le n\le12$.
+The exact endpoint family was additionally checked by complete concrete
+quotient BFS at 55 parameter points through $n=12$, and by explicit
+set-image witnesses through $n=1000$.
+These statements are \textbf{COMPUTATIONALLY VERIFIED} finite evidence.
+For optimal-language claims, all optimal-path edges were explored in
+66 small models: 3579 vertices and 3659 edges obeyed the forced-prefix
+and no-wasted-$b$ restrictions. Complete enumeration of all 1352 relaxed
+clock vectors for $r=2,\ldots,16$ at all relevant capacities matches the
+sharp threshold. An additional 2700 random clock/capacity witnesses and
+135 concrete-set reverse checks through $r=1025$ verified its upper
+construction; the universal earliest obstruction occurred at exactly
+the predicted clock for every tested $r\ge5$.
+
+\paragraph{Kernel boundary.}
+Lean 4.19.0 checks existential edge and arbitrary-walk potential theorems,
+the monotone-simulation transfer, finite dyadic release/spacing arithmetic,
+capacity-two input arithmetic, and two/three-anchor symbolic potential
+inequalities, optimal-tail rigidity, and sharp dyadic buffer arithmetic.
+It also checks the $3n-4$ lower bound for every walk in the
+explicit three-anchor count/window graph, and concrete optimal subset
+paths for $\C_3,\C_4$. No proof holes, added axioms, or
+\texttt{native\_decide} are used. The general genealogy lifting/timing
+bridge, closed-form clock interlacing, and window endpoint remain paper
+proofs. No formal proof of the full main equality is claimed.
+
+\paragraph{Reproduction.}
+From the repository root, run
+\begin{verbatim}
+python post_baseline/check_uniform.py
+python post_baseline/layout_experiments.py
+python post_baseline/endpoint_layout.py
+python post_baseline/check_normal_form.py
+python post_baseline/check_language_stabilization.py
+python post_baseline/check_sharp_language.py
+python post_baseline/check_language_counts.py
+python post_baseline/uniform_construction.py --r 33 --m 2
+./post_baseline/lean_sprint/check.ps1 -LeanExe lean
+\end{verbatim}
+The Python theorem checkers use only the standard library. Optional SMT
+explorations require Z3 but are unnecessary for the construction or proof.
+The checked Lean source, individual compiler exit codes and axiom logs,
+finite BFS data, failed-route diagnoses, and detailed proof companions are
+retained in \texttt{post\_baseline/}. Frozen baseline files are unchanged.
+
+\paragraph{Prior work and novelty.}
+The quadratic threshold of $\C_n$ is classical \cite{volkov}, and exact
+power-automaton search is established \cite{search}. Concrete subset
+synchronization and compression are different questions surveyed in
+\cite{openproblems}. Prefix-code decoders already have a substantial
+synchronization theory \cite{huffman}; a general claim that binary trees
+and synchronization are newly connected would be incorrect. Delayed
+genealogies also resemble lopsided-tree broadcast models \cite{lopsided}.
+The orbit semantics and simulation potential are standard arguments;
+permutation-group synchronization is established \cite{groups}.
+A bounded literature search located no matching all-parameter theorem for
+this particular information quotient, capacity-two realization, or
+same-count layout order separation. Their novelty is \emph{plausible but
+not fully confirmed}, including the sharp optimal-language threshold.
+In particular, priority for the isolated relaxed
+event recurrence remains open pending a deeper scheduling-literature
+comparison. This draft makes no first-discovery claim.
+
+\paragraph{Open mathematical and formal questions.}
+Determine exact values for general anchor layouts, especially antipodal
+hidden pairs; characterize layouts with linear, $n\log n$, or quadratic
+information distances; extend the capacity scheduling theorem to more
+general feature partitions and automaton families; complete the Lean
+genealogy and construction interfaces. The main contiguous-anchor formula
+and sharp optimal-language threshold
+have no remaining paper-proof gap, but these generalizations and full
+formal verification are \textbf{OPEN}.
+
+\begin{thebibliography}{9}
+\bibitem{volkov} M. V. Volkov.
+Synchronization of finite automata.
+\emph{Russian Math. Surveys} 77(5), 819--891, 2022.
+\href{https://www.mathnet.ru/eng/rm10005}{doi:10.4213/rm10005e}.
+\bibitem{openproblems} M. Szyku{\l}a.
+Synchronizing Automata: Open Problems, 2026.
+\href{https://arxiv.org/abs/2608.24245}{arXiv:2608.24245}.
+\bibitem{search} A. Kisielewicz, J. Kowalski, M. Szyku{\l}a.
+Computing the shortest reset words of synchronizing automata.
+\emph{J. Combin. Optim.} 29, 88--124, 2015.
+\href{https://doi.org/10.1007/s10878-013-9682-0}{doi:10.1007/s10878-013-9682-0}.
+\bibitem{huffman} M. V. Berlinkov, M. Szyku{\l}a.
+Algebraic synchronization criterion and computing reset words.
+\emph{Information Sciences} 369, 718--730, 2016.
+\href{https://arxiv.org/abs/1412.8363}{arXiv:1412.8363}.
+\bibitem{lopsided} M. Golin, A. Schuster.
+Optimal point-to-point broadcast algorithms via lopsided trees.
+\emph{Discrete Applied Math.} 93(2--3), 233--263, 1999.
+\href{https://doi.org/10.1016/S0166-218X(99)00107-9}{doi:10.1016/S0166-218X(99)00107-9}.
+\bibitem{groups} J. Ara{\'u}jo, P. J. Cameron, B. Steinberg.
+Between primitive and 2-transitive: Synchronization and its friends.
+\emph{EMS Surv. Math. Sci.} 4, 101--184, 2017.
+\href{https://doi.org/10.4171/EMSS/4-2-1}{doi:10.4171/EMSS/4-2-1}.
+\end{thebibliography}
+\end{document}

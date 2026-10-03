@@ -1,0 +1,19 @@
+{"source": "seed:0", "max_extension": 61, "P": 3, "rt": 3, "reachable": 248, "seconds": 1.235000000000582}
+{"source": "seed:129", "max_extension": 62, "P": 23, "rt": 23, "reachable": 966, "seconds": 1.25}
+{"source": "seed:2576", "max_extension": 91, "P": 67, "rt": 67, "reachable": 2784, "seconds": 2.125}
+{"source": "seed:2836", "max_extension": 122, "P": 64, "rt": 64, "reachable": 248, "seconds": 2.25}
+{"mutations": 0, "best": [122, 64], "seconds": 2.25}
+{"source": "mutation:1094", "max_extension": 123, "P": 65, "rt": 65, "reachable": 250, "seconds": 2.360000000000582}
+{"mutations": 5000, "best": [123, 65], "seconds": 2.7659999999996217}
+{"mutations": 15000, "best": [123, 65], "seconds": 4.015999999999622}
+{"mutations": 20000, "best": [123, 65], "seconds": 4.563000000001921}
+{"mutations": 25000, "best": [123, 65], "seconds": 5.140999999999622}
+{"mutations": 30000, "best": [123, 65], "seconds": 5.78099999999904}
+{"mutations": 45000, "best": [123, 65], "seconds": 7.5}
+{"mutations": 50000, "best": [123, 65], "seconds": 8.110000000000582}
+{"mutations": 65000, "best": [123, 65], "seconds": 9.75}
+{"mutations": 80000, "best": [123, 65], "seconds": 11.43800000000192}
+{"mutations": 85000, "best": [123, 65], "seconds": 12.03099999999904}
+{"mutations": 90000, "best": [123, 65], "seconds": 12.65599999999904}
+{"mutations": 95000, "best": [123, 65], "seconds": 13.21900000000096}
+{"arguments": {"n": 63, "count": 100000, "seed": 20261014, "restart": 500, "out": "direct_attack/data/rank_three_extension_n63", "family_seed": true, "elite": true, "permutation_mutations": true}, "seeds": 2837, "counts": {"tested": 100000, "rank_three_sc": 80025, "synchronizing_sc": 80021, "permutation_mutations": 25055}, "best": [123, 65], "records": ["witness_000.json", "witness_001.json", "witness_002.json", "witness_003.json", "witness_004.json"], "seconds": 13.765999999999622, "scope": "Sampled rank-three colorings and optional permutation swaps/elite restarts; exact scoring, not exhaustive map coverage."}
