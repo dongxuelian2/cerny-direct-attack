@@ -208,27 +208,42 @@ def scratch():
     # Explicit metadata migration for the derived public tree. Certificates and
     # Lean statements are not altered; expected historical file digests change.
     source_manifest = json.loads((ROOT/'archive/source_manifest.json').read_text(encoding='utf-8'))
-    originals={e['source_sha256']:e['public_path'] for e in source_manifest['entries']
-               if (out/e['public_path']).exists()}
+    originals={}
+    for e in source_manifest['entries']:
+        if not (out/e['public_path']).exists():continue
+        originals[e['source_sha256']]=e['public_path']
+        if e.get('historical_checkout_sha256'):
+            originals[e['historical_checkout_sha256']]=e['public_path']
     pattern=re.compile(r'\b[0-9a-f]{64}\b')
     nodes={}
-    for folder in ('direct_attack','post_baseline','submission','src'):
+    # Frozen seals and submission receipts are historical objects, not active
+    # expectations to reseal; preserve their identities and validation dates.
+    for folder in ('direct_attack','post_baseline','src'):
         for p in (out/folder).rglob('*'):
             if p.suffix not in ('.py','.json'): continue
+            if p.name in ('sha256_manifest.json','SHA256.json'):continue
             content=p.read_text(encoding='utf-8')
             if any(m[0] in originals for m in pattern.finditer(content)):
                 nodes[p]=content
-    # Source summaries can depend on other path-redacted summaries. Propagate
-    # hashes through that metadata dependency graph, not just one replacement.
-    for iteration in range(20):
-        translation={old:digest(out/rel) for old,rel in originals.items()}
-        changed=False
-        for p,base in nodes.items():
-            content=pattern.sub(lambda m:translation.get(m[0],m[0]),base)
-            if content!=p.read_text(encoding='utf-8'):
-                p.write_text(content,encoding='utf-8',newline='\n');changed=True
-        if not changed:break
-    else:raise RuntimeError('Historical hash migration did not converge; inspect metadata dependencies')
+    # Some historical capture chains exceed twenty links. Visit dependencies
+    # first instead of repeatedly hashing the entire tree until it settles.
+    cache={};visiting=set();done=set()
+    def current(rel):
+        if rel not in cache:cache[rel]=digest(out/rel)
+        return cache[rel]
+    def migrate(p):
+        if p in done:return
+        if p in visiting:raise RuntimeError('Cyclic active hash metadata: '+p.relative_to(out).as_posix())
+        visiting.add(p);base=nodes[p]
+        refs={originals[m[0]] for m in pattern.finditer(base) if m[0] in originals}
+        for rel in sorted(refs):
+            dependency=out/rel
+            if dependency in nodes:migrate(dependency)
+        content=pattern.sub(lambda m:current(originals[m[0]]) if m[0] in originals else m[0],base)
+        p.write_text(content,encoding='utf-8',newline='\n')
+        cache[p.relative_to(out).as_posix()]=digest(p)
+        visiting.remove(p);done.add(p)
+    for p in nodes:migrate(p)
     (out/'direct_attack/native_build').mkdir(exist_ok=True)
     return out
 
