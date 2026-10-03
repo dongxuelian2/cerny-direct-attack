@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "<PYTHON_RUNTIME>\\python.exe",
+    "-m",
+    "direct_attack.rank_bounded_extension_search",
+    "--n",
+    "24",
+    "--rank",
+    "4",
+    "--count",
+    "100000",
+    "--seed",
+    "20261015",
+    "--out",
+    "direct_attack/data/rank_bounded_extension_n24_r4"
+  ],
+  "cwd": "<CHECKOUT>",
+  "returncode": 0,
+  "seconds": 8.96900000000096
+}

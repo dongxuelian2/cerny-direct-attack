@@ -1,0 +1,81 @@
+{
+  "verified": true,
+  "counts": {
+    "automata": 67,
+    "transformations": 1387,
+    "proper_union_instances": 39309,
+    "sufficient_transfers": 11125,
+    "failed_transfers": 392,
+    "equality_failures": 368
+  },
+  "equality_examples": [
+    {
+      "rows": [
+        [
+          2,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        3
+      ],
+      "T": [
+        2,
+        3
+      ],
+      "word": [
+        0,
+        0
+      ],
+      "gain": 1,
+      "missing_overlap": 1,
+      "defects": [
+        0,
+        0,
+        0
+      ],
+      "penalty": 1
+    },
+    {
+      "rows": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          1
+        ]
+      ],
+      "S": [
+        1
+      ],
+      "T": [
+        2
+      ],
+      "word": [
+        1
+      ],
+      "gain": 1,
+      "missing_overlap": 0,
+      "defects": [
+        1,
+        0,
+        0
+      ],
+      "penalty": 1
+    }
+  ],
+  "boundary": "Complete binary first-map covering inputs n2/3 that synchronize every state to every singleton, plus four fixed n4 inputs; all generated transformations and proper unions checked. The universal result is proved on paper."
+}

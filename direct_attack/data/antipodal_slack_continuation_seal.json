@@ -1,0 +1,59 @@
+{
+  "verified": true,
+  "checks": 108,
+  "regeneration_commands": 192,
+  "archived": [
+    {
+      "path": "direct_attack/data/antipodal_slack_continuation_provenance/audit_run.json",
+      "sha256": "e80f9423f9b49423662acf08f6a609c28b4db7fe095534b79dd6b6a85a2482ae"
+    },
+    {
+      "path": "direct_attack/data/antipodal_slack_continuation_provenance/reproduction_commands.json",
+      "sha256": "aae829add176bc4f2ff4f83b50c40bc3b27bc44e78e126aebc6e8f0f890696da"
+    },
+    {
+      "path": "direct_attack/data/antipodal_slack_continuation_provenance/sha256_manifest.json",
+      "sha256": "d5c7352cdfacd4d10a8236446f21bab9869df2ed5163e3d6f864b402cedcefe2"
+    }
+  ],
+  "native_builds": [
+    {
+      "metadata": "direct_attack/data/alternating_frame_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/alternating_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/class_reset_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/complete_policy_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/sparse_policy_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/weighted_class_reset_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    }
+  ],
+  "generation_and_replay": "direct_attack/data/antipodal_slack_generation_captures.json",
+  "audit_boundary": "previous 107-check record preserved verbatim; new independent antipodal balanced-fiber/two-neutral obstruction, literal rooted macro, full inverse ordinary and 0/1 BFS, bounded-slack search and seven corruption checks; deterministic generation and replay; not a full 108-check rerun",
+  "mathematical_status": "PROVED paper EVERY odd m>=3: simple SC circular binary n=2m automaton with rank n-1 singular letter; all reset words require >=n singular occurrences at m3 and >=n+1 for m>=5. Two neutral steps mandatory in latter scopes, refuting zero total-corank slack. Actual rooted word has charged reset16 at n6, otherwise2m^2-m-3 below square. General Cerny and slack-aware length bounds OPEN; finite exact rt/minimum-f n6/10/14/18, all-n minimum-f upper CONJECTURED, no formal verification"
+}

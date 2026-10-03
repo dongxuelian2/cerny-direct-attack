@@ -1,0 +1,47 @@
+{
+  "n": 5,
+  "scope": "one first-permutation cycle representative; all second permutations and labeled rank-three maps",
+  "counts": {
+    "tested": 1260000,
+    "finite_collision": 1239264,
+    "over_n_minus_1": 0,
+    "stall_then_collision": 0
+  },
+  "best": {
+    "a": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "c": [
+      1,
+      2,
+      3,
+      4,
+      0
+    ],
+    "b": [
+      0,
+      1,
+      2,
+      0,
+      1
+    ],
+    "start": [
+      0,
+      1,
+      2
+    ],
+    "first_collision": 3,
+    "component_counts": [
+      3,
+      2,
+      1,
+      1,
+      1
+    ]
+  },
+  "first_stall": null
+}

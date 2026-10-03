@@ -1,0 +1,5 @@
+{"source": "seed:0", "P": 3, "rt": 3, "R": 46, "seconds": 0.014999999999417923}
+{"source": "seed:6", "P": 4, "rt": 3, "R": 46, "seconds": 0.014999999999417923}
+{"source": "seed:31", "P": 5, "rt": 3, "R": 46, "seconds": 0.030999999999039574}
+{"source": "seed:34", "P": 6, "rt": 3, "R": 25, "seconds": 0.030999999999039574}
+{"arguments": {"n": 6, "rank": 4, "alphabet": 3, "count": 100000, "seed": 20261025, "restart": 500, "out": "<LOCAL_PATH>"}, "counts": {"tested": 100128, "exact": 100128, "twice_rt_refutations": 16448}, "max_policy": 6, "records": ["witness_000.json", "witness_001.json", "witness_002.json", "witness_003.json"], "seconds": 2.9689999999991414, "scope": "Sampled restricted automata only. b is a full cycle; a fixes 0,1 and sends 2 to 1; other letters fix 0,1. Every word of length <=2 preserves at least two states, while aba resets. Thus rt=3 on every sampled input by paper proof."}

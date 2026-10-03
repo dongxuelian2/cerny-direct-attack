@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "<PYTHON_RUNTIME>\\python.exe",
+    "-m",
+    "direct_attack.check_rank_area"
+  ],
+  "cwd": "<CHECKOUT>",
+  "start_utc": "2026-09-29T13:35:18.044839+00:00",
+  "seconds": 0.375,
+  "returncode": 0,
+  "stdout": "{\"vertices\": 32751, \"edges\": 65502, \"cases\": 13, \"corruptions_rejected\": [\"potential\", \"parent\", \"word\", \"parent_high_bit\", \"negative_word_token\"], \"seconds\": 0.3280000000013388}\n",
+  "stderr": ""
+}

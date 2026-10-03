@@ -1,0 +1,31 @@
+{
+  "verified": true,
+  "checks": 134,
+  "regeneration_commands": 215,
+  "archived": [
+    {
+      "path": "direct_attack/data/kari_inverse_shrink_continuation_provenance/audit_run.json",
+      "sha256": "0d09cc4301d5b759c6e7cbc6a27c643eb4a6c246691d279efebcab33ba5b3337"
+    },
+    {
+      "path": "direct_attack/data/kari_inverse_shrink_continuation_provenance/reproduction_commands.json",
+      "sha256": "117fa1aee1b6eab38ac81f1dfca2639df02d50faabf69f88d2d2e920dc7e62ff"
+    },
+    {
+      "path": "direct_attack/data/kari_inverse_shrink_continuation_provenance/sha256_manifest.json",
+      "sha256": "6c9110569b10eea912c7e6a98d15d3f4229928bb41eefdabd2f4f009d4c7c276"
+    }
+  ],
+  "native_builds": [
+    "direct_attack/data/alternating_frame_build.json",
+    "direct_attack/data/alternating_native_build.json",
+    "direct_attack/data/binary_n6_history_cover_native_build.json",
+    "direct_attack/data/class_reset_native_build.json",
+    "direct_attack/data/complete_policy_build.json",
+    "direct_attack/data/native_build.json",
+    "direct_attack/data/sparse_policy_build.json",
+    "direct_attack/data/weighted_class_reset_native_build.json"
+  ],
+  "mathematical_status": "FORMALLY VERIFIED concrete literal Kari ALL-word inverse-shrink necessity and one-shrink cost25 witness; ordinary cost25 lower bound COMPUTATIONALLY VERIFIED; arbitrary-n coprime fixed-root square PROVED paper; general Cerny OPEN.",
+  "audit_boundary": "checkpoint133 preserved verbatim; ONE new independent literal Kari64-mask checker:35-state cut/70 edges58 nondecreasing,126 lexicographic and114 ordinary Bellman edges,1902 particle-letter controls, row relabeling and eight rejected corruptions. Lean4.19 Std kernel verifies literal rows, ALL-word cut and exact minimum shrink1 with cost25 witness. Cost25 lower bound only computational; arbitrary-n subclass only paper. No full134 rerun, general Cerny OPEN."
+}

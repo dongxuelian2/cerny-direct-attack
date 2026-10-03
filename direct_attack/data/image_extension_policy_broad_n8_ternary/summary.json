@@ -1,0 +1,24 @@
+{
+  "arguments": {
+    "n": 8,
+    "alphabet": 3,
+    "count": 100000,
+    "seed": 20261001,
+    "restart": 1000,
+    "out": "direct_attack/data/image_extension_policy_broad_n8_ternary"
+  },
+  "counts": {
+    "tested": 100000,
+    "strongly_connected": 93396,
+    "synchronizing_sc": 93251
+  },
+  "seeds": 619,
+  "seed_max": 49,
+  "best_policy": 49,
+  "best_rt_at_policy_peak": 49,
+  "records": [
+    "witness_000.json"
+  ],
+  "seconds": 37.82800000000043,
+  "scope": "Exact scoring of frozen seeds and sampled mutations, not exhaustive."
+}

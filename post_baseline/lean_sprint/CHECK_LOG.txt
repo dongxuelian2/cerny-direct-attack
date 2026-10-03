@@ -1,0 +1,40 @@
+Lean (version 4.19.0, x86_64-w64-windows-gnu, commit 6caaee842e94, Release)
+FILE ResearchCore.lean EXIT 0
+'OrionResearch.potential_lower_bound' depends on axioms: [propext, Quot.sound]
+'OrionResearch.quotient_local' does not depend on any axioms
+'OrionResearch.monotone_simulation_transfer' depends on axioms: [propext, Quot.sound]
+'OrionResearch.genealogy_clock_lower' depends on axioms: [propext, Quot.sound]
+'OrionResearch.genealogy_clock_lower_finite' depends on axioms: [propext, Quot.sound]
+'OrionResearch.genealogy_tail_rigidity' depends on axioms: [propext, Quot.sound]
+'OrionResearch.buffer_two_realizable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OrionResearch.sharp_buffer_split' depends on axioms: [propext, Quot.sound]
+'OrionResearch.sharp_buffer_nonsplit' depends on axioms: [propext, Quot.sound]
+'OrionResearch.sharp_capacity_obstruction' depends on axioms: [propext, Quot.sound]
+'OrionResearch.eventually_constant_nat' depends on axioms: [propext, Classical.choice, Quot.sound]
+FILE AnchorPotentials.lean EXIT 0
+<CHECKOUT>\post_baseline\lean_sprint\AnchorPotentials.lean:64:43: warning: unused variable `hk`
+note: this linter can be disabled with `set_option linter.unusedVariables false`
+'OrionAnchors.p2_rotation' depends on axioms: [propext, Quot.sound]
+'OrionAnchors.p2_merge' depends on axioms: [propext, Quot.sound]
+'OrionAnchors.p3_rotation' depends on axioms: [propext, Quot.sound]
+'OrionAnchors.p3_merge' depends on axioms: [propext, Quot.sound]
+'OrionAnchors.p3_full_value' depends on axioms: [propext, Quot.sound]
+FILE ThreeAnchorGraph.lean EXIT 0
+'OrionThreeGraph.one_step' depends on axioms: [propext, Quot.sound]
+'OrionThreeGraph.full_lower_bound' depends on axioms: [propext, Quot.sound]
+FILE Cerny3Checked.lean EXIT 0
+<CHECKOUT>\post_baseline\lean_sprint\Cerny3Checked.lean:43:12: warning: try 'simp' instead of 'simpa'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+'Orion.potential_along_word' depends on axioms: [propext]
+'Orion.lower_bound' depends on axioms: [propext]
+'Orion.cardinality_limit' depends on axioms: [propext]
+'OrionExample.one_step_fidelity' depends on axioms: [propext]
+'OrionExample.optimal_subset_path' depends on axioms: [propext]
+FILE Cerny4Checked.lean EXIT 0
+<CHECKOUT>\post_baseline\lean_sprint\Cerny4Checked.lean:43:12: warning: try 'simp' instead of 'simpa'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+'Orion.potential_along_word' depends on axioms: [propext]
+'Orion.lower_bound' depends on axioms: [propext]
+'Orion.cardinality_limit' depends on axioms: [propext]
+'OrionExample.one_step_fidelity' depends on axioms: [propext]
+'OrionExample.optimal_subset_path' depends on axioms: [propext]

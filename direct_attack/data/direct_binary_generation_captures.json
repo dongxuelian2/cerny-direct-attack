@@ -1,0 +1,38 @@
+{
+  "verified": true,
+  "runs": [
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.direct_binary_image_obstruction"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T06:08:04.899466+00:00",
+      "seconds": 0.0779999999977008,
+      "returncode": 0,
+      "stdout": "{\"parameters\": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 100, 128, 256, 512, 1024], \"literal_parameters\": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24], \"forward_parameters\": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], \"inverse_parameters\": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], \"maximum_n\": 2049}\n",
+      "stderr": "",
+      "output_sha256": "bc3f47789ef60ba83b0b4297d8ddc4c64e8f0b0760c988456c0b442e0df47614"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.direct_binary_image_obstruction",
+        "--out",
+        "<CHECKOUT>\\direct_attack\\native_build\\direct_binary_replay.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T06:08:04.987440+00:00",
+      "seconds": 0.09400000000096043,
+      "returncode": 0,
+      "stdout": "{\"parameters\": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 100, 128, 256, 512, 1024], \"literal_parameters\": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24], \"forward_parameters\": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], \"inverse_parameters\": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], \"maximum_n\": 2049}\n",
+      "stderr": "",
+      "output_sha256": "4bc6b73d4fee3012703ff747f6f92ddbf174ec0da6a26d772e5bad3a18f798e3"
+    }
+  ],
+  "parsed_records_equal": true,
+  "normalization": "only arguments.out differs on ignored replay output",
+  "generator_sha256": "a5271629011c7697d31a283fab1e7377da649270c5f43540a11e3056711ad549"
+}

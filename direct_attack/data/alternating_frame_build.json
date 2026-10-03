@@ -1,0 +1,17 @@
+{
+  "argv": [
+    "<CXX_BIN>\\g++.EXE",
+    "-O3",
+    "-std=c++11",
+    "-static-libgcc",
+    "-static-libstdc++",
+    "<CHECKOUT>\\direct_attack\\alternating_frame.cpp",
+    "-o",
+    "<CHECKOUT>\\direct_attack\\native_build\\alternating_frame_73ad9dcd87d7cf3f.exe"
+  ],
+  "stdout": "",
+  "stderr": "",
+  "returncode": 0,
+  "source_sha256": "73ad9dcd87d7cf3fc4fb3728d0d8a755716bfa14a104afcf5a4e674103439b8f",
+  "binary_sha256": "89a6a3f1c970a95d1e68eac7cf6a71a493ad93a14e2232a50ba008ef19f0a2e3"
+}

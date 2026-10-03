@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "<PYTHON_RUNTIME>\\python.exe",
+    "-m",
+    "direct_attack.short_reset_policy_attack",
+    "--n",
+    "12",
+    "--rank",
+    "6",
+    "--alphabet",
+    "4",
+    "--count",
+    "100000",
+    "--seed",
+    "20261028",
+    "--out",
+    "direct_attack\\data\\short_reset_policy_n12"
+  ],
+  "cwd": "<CHECKOUT>",
+  "start_utc": "2026-09-29T10:37:21.869400+00:00",
+  "seconds": 10.01600000000326,
+  "returncode": 0
+}

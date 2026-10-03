@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "<PYTHON_RUNTIME>\\python.exe",
+    "-m",
+    "direct_attack.irreducible_short_reset"
+  ],
+  "cwd": "<CHECKOUT>",
+  "start_utc": "2026-09-29T11:30:35.311545+00:00",
+  "seconds": 0.3280000000013388,
+  "returncode": 0,
+  "stdout": "{\"cases\": 167, \"maximum_n\": 63, \"verified_native_formulas\": true}\n",
+  "stderr": ""
+}

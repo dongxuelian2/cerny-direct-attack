@@ -1,0 +1,76 @@
+{
+  "n": 3,
+  "rows": [
+    [
+      1,
+      2,
+      0
+    ],
+    [
+      0,
+      1,
+      0
+    ]
+  ],
+  "critical": [
+    {
+      "start": 5,
+      "size": 2,
+      "extension": 3,
+      "policy": 3,
+      "reach_word": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "start": 7,
+      "size": 3,
+      "extension": null,
+      "policy": 0,
+      "reach_word": []
+    }
+  ],
+  "singletons": [
+    {
+      "state": 0,
+      "extension": 1,
+      "policy": 4,
+      "reset_word": [
+        1,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "state": 1,
+      "extension": 2,
+      "policy": 5,
+      "reset_word": [
+        1,
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "state": 2,
+      "extension": 3,
+      "policy": 6,
+      "reset_word": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
+    }
+  ],
+  "mean_sum": 15,
+  "square_sum": 12,
+  "verified": true
+}

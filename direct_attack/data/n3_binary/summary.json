@@ -1,0 +1,43 @@
+{
+  "arguments": {
+    "n": 3,
+    "mode": "exhaustive",
+    "alphabet": 2,
+    "count": 10000,
+    "seed": 20260928,
+    "out": "direct_attack/data/n3_binary"
+  },
+  "counters": {
+    "tested": 351,
+    "strongly_connected": 147,
+    "analyzed_sc": 28,
+    "sync_analyzed": 21
+  },
+  "rt_histogram": {
+    "1": 3,
+    "2": 13,
+    "3": 3,
+    "4": 2
+  },
+  "maxima": {
+    "rt": 4,
+    "greedy_min": 4,
+    "greedy_max": 4,
+    "gap": 3,
+    "avoiding": 3
+  },
+  "max_compression_by_rank": [
+    -1,
+    -1,
+    3,
+    1
+  ],
+  "max_reachable_compression_by_rank": [
+    -1,
+    -1,
+    3,
+    1
+  ],
+  "seconds": 0.004655361175537109,
+  "symmetry_note": "n<=4 exact state/alphabet classes; first-map-orbits covers all binary DFAs but counts overlap"
+}

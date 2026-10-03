@@ -1,0 +1,19 @@
+{"source": "seed:0", "max_extension": 61, "P": 3, "rt": 3, "reachable": 248, "seconds": 1.2960000000002765}
+{"source": "seed:129", "max_extension": 62, "P": 23, "rt": 23, "reachable": 966, "seconds": 1.3279999999995198}
+{"source": "seed:2576", "max_extension": 91, "P": 67, "rt": 67, "reachable": 2784, "seconds": 2.20299999999952}
+{"source": "seed:2836", "max_extension": 122, "P": 64, "rt": 64, "reachable": 248, "seconds": 2.3430000000007567}
+{"mutations": 0, "best": [122, 64], "seconds": 2.3430000000007567}
+{"source": "mutation:1094", "max_extension": 123, "P": 65, "rt": 65, "reachable": 250, "seconds": 2.45299999999952}
+{"mutations": 5000, "best": [123, 65], "seconds": 2.9060000000008586}
+{"mutations": 15000, "best": [123, 65], "seconds": 4.311999999999898}
+{"mutations": 20000, "best": [123, 65], "seconds": 4.9210000000002765}
+{"mutations": 25000, "best": [123, 65], "seconds": 5.5460000000002765}
+{"mutations": 30000, "best": [123, 65], "seconds": 6.264999999999418}
+{"mutations": 45000, "best": [123, 65], "seconds": 8.171000000000276}
+{"mutations": 50000, "best": [123, 65], "seconds": 8.811999999999898}
+{"mutations": 65000, "best": [123, 65], "seconds": 10.639999999999418}
+{"mutations": 80000, "best": [123, 65], "seconds": 12.5}
+{"mutations": 85000, "best": [123, 65], "seconds": 13.156000000000859}
+{"mutations": 90000, "best": [123, 65], "seconds": 13.859000000000378}
+{"mutations": 95000, "best": [123, 65], "seconds": 14.436999999999898}
+{"arguments": {"n": 63, "count": 100000, "seed": 20261014, "restart": 500, "out": "<LOCAL_PATH>", "family_seed": true, "elite": true, "permutation_mutations": true}, "seeds": 2837, "counts": {"tested": 100000, "rank_three_sc": 80025, "synchronizing_sc": 80021, "permutation_mutations": 25055}, "best": [123, 65], "records": ["witness_000.json", "witness_001.json", "witness_002.json", "witness_003.json", "witness_004.json"], "seconds": 15.031000000000859, "scope": "Sampled rank-three colorings and optional permutation swaps/elite restarts; exact scoring, not exhaustive map coverage."}

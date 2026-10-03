@@ -1,0 +1,7 @@
+{
+  "polynomials": 1603,
+  "models": 514,
+  "sync": 468,
+  "high_order": 360360,
+  "scope": "Every cycle partition n2..18 for the operator identity; every partition n2..14 plus specified large partitions for unit-cycle models. Prefix graph checks cover every subset, using the proved complete-reachability equivalence; resets are explicit words."
+}

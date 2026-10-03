@@ -1,0 +1,1306 @@
+{
+  "suite": "baseline",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "runs": [
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:25.712881+00:00",
+      "seconds": 0.265999999999849,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_128_random_cases (test_lab.LabTests.test_128_random_cases) ... ok\ntest_all_729_binary_three_state_automata (test_lab.LabTests.test_all_729_binary_three_state_automata) ... ok\ntest_cerny_2_through_10 (test_lab.LabTests.test_cerny_2_through_10) ... ok\ntest_exact_requires_equal_bounds (test_lab.LabTests.test_exact_requires_equal_bounds) ... ok\ntest_features_and_cardinality_obstruction (test_lab.LabTests.test_features_and_cardinality_obstruction) ... ok\ntest_landmark_refinement_and_full_information (test_lab.LabTests.test_landmark_refinement_and_full_information) ... ok\ntest_marked_closed_form_every_subset (test_lab.LabTests.test_marked_closed_form_every_subset) ... ok\ntest_nonsynchronizing_permutations (test_lab.LabTests.test_nonsynchronizing_permutations) ... ok\ntest_one_state_empty_word (test_lab.LabTests.test_one_state_empty_word) ... ok\ntest_reject_bad_transition (test_lab.LabTests.test_reject_bad_transition) ... ok\ntest_reject_false_nonsynchronizing_invariant (test_lab.LabTests.test_reject_false_nonsynchronizing_invariant) ... ok\ntest_reject_invalid_word (test_lab.LabTests.test_reject_invalid_word) ... ok\ntest_reject_truncated_potential (test_lab.LabTests.test_reject_truncated_potential) ... ok\ntest_reject_wrong_local_bound (test_lab.LabTests.test_reject_wrong_local_bound) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.189s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\compare_C8\\cardinality.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:25.989353+00:00",
+      "seconds": 0.06200000000012551,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"bounds\",\n  \"n\": 8,\n  \"lower_bound\": 7,\n  \"upper_bound\": 49,\n  \"checked_edges\": 510\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\compare_C8\\gap_multiset.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:26.045782+00:00",
+      "seconds": 0.047000000000025466,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"bounds\",\n  \"n\": 8,\n  \"lower_bound\": 7,\n  \"upper_bound\": 49,\n  \"checked_edges\": 510\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\compare_C8\\identity.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:26.100488+00:00",
+      "seconds": 0.06299999999987449,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 8,\n  \"lower_bound\": 49,\n  \"upper_bound\": 49,\n  \"checked_edges\": 510\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\compare_C8\\marked.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:26.156082+00:00",
+      "seconds": 0.047000000000025466,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"bounds\",\n  \"n\": 8,\n  \"lower_bound\": 19,\n  \"upper_bound\": 49,\n  \"checked_edges\": 510\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\compare_C8\\maxgap.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:26.211772+00:00",
+      "seconds": 0.06199999999989814,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"bounds\",\n  \"n\": 8,\n  \"lower_bound\": 7,\n  \"upper_bound\": 49,\n  \"checked_edges\": 510\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\demo\\C10.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:26.272324+00:00",
+      "seconds": 0.06300000000010186,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 10,\n  \"lower_bound\": 81,\n  \"upper_bound\": 81,\n  \"checked_edges\": 2046\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\demo\\C2.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:26.333765+00:00",
+      "seconds": 0.06199999999989814,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 2,\n  \"lower_bound\": 1,\n  \"upper_bound\": 1,\n  \"checked_edges\": 6\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\demo\\C3.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:26.385352+00:00",
+      "seconds": 0.047000000000025466,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 3,\n  \"lower_bound\": 4,\n  \"upper_bound\": 4,\n  \"checked_edges\": 14\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\demo\\C4.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:26.440934+00:00",
+      "seconds": 0.06200000000012551,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 4,\n  \"lower_bound\": 9,\n  \"upper_bound\": 9,\n  \"checked_edges\": 30\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\demo\\C5.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:26.505794+00:00",
+      "seconds": 0.06299999999987449,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 5,\n  \"lower_bound\": 16,\n  \"upper_bound\": 16,\n  \"checked_edges\": 62\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\demo\\C6.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:26.559068+00:00",
+      "seconds": 0.06200000000012551,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 25,\n  \"upper_bound\": 25,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\demo\\C7.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:26.624085+00:00",
+      "seconds": 0.047000000000025466,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 7,\n  \"lower_bound\": 36,\n  \"upper_bound\": 36,\n  \"checked_edges\": 254\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\demo\\C8.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:26.677497+00:00",
+      "seconds": 0.06299999999987449,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 8,\n  \"lower_bound\": 49,\n  \"upper_bound\": 49,\n  \"checked_edges\": 510\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\demo\\C9.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:26.732784+00:00",
+      "seconds": 0.06200000000012551,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 9,\n  \"lower_bound\": 64,\n  \"upper_bound\": 64,\n  \"checked_edges\": 1022\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\landmarks_C8\\r0.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:26.795010+00:00",
+      "seconds": 0.06299999999987449,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"bounds\",\n  \"n\": 8,\n  \"lower_bound\": 7,\n  \"upper_bound\": 49,\n  \"checked_edges\": 510\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\landmarks_C8\\r1.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:26.863762+00:00",
+      "seconds": 0.06200000000012551,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"bounds\",\n  \"n\": 8,\n  \"lower_bound\": 7,\n  \"upper_bound\": 49,\n  \"checked_edges\": 510\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\landmarks_C8\\r2.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:26.921762+00:00",
+      "seconds": 0.047000000000025466,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"bounds\",\n  \"n\": 8,\n  \"lower_bound\": 19,\n  \"upper_bound\": 49,\n  \"checked_edges\": 510\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\landmarks_C8\\r3.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:26.975910+00:00",
+      "seconds": 0.06299999999987449,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"bounds\",\n  \"n\": 8,\n  \"lower_bound\": 20,\n  \"upper_bound\": 49,\n  \"checked_edges\": 510\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\landmarks_C8\\r4.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:27.036443+00:00",
+      "seconds": 0.06200000000012551,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"bounds\",\n  \"n\": 8,\n  \"lower_bound\": 21,\n  \"upper_bound\": 49,\n  \"checked_edges\": 510\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\landmarks_C8\\r5.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:27.094011+00:00",
+      "seconds": 0.04699999999979809,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"bounds\",\n  \"n\": 8,\n  \"lower_bound\": 23,\n  \"upper_bound\": 49,\n  \"checked_edges\": 510\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\landmarks_C8\\r6.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:27.149590+00:00",
+      "seconds": 0.06300000000010186,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"bounds\",\n  \"n\": 8,\n  \"lower_bound\": 25,\n  \"upper_bound\": 49,\n  \"checked_edges\": 510\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\landmarks_C8\\r7.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:27.212413+00:00",
+      "seconds": 0.06199999999989814,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 8,\n  \"lower_bound\": 49,\n  \"upper_bound\": 49,\n  \"checked_edges\": 510\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\landmarks_C8\\r8.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:27.273005+00:00",
+      "seconds": 0.06300000000010186,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 8,\n  \"lower_bound\": 49,\n  \"upper_bound\": 49,\n  \"checked_edges\": 510\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter0_state0_to0.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:27.330935+00:00",
+      "seconds": 0.06199999999989814,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 5,\n  \"upper_bound\": 5,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter0_state0_to2.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:27.385815+00:00",
+      "seconds": 0.06300000000010186,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 16,\n  \"upper_bound\": 16,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter0_state0_to3.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:27.450727+00:00",
+      "seconds": 0.06199999999989814,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 10,\n  \"upper_bound\": 10,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter0_state0_to4.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:27.510067+00:00",
+      "seconds": 0.047000000000025466,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 6,\n  \"upper_bound\": 6,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter0_state0_to5.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:27.566434+00:00",
+      "seconds": 0.06200000000012551,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 5,\n  \"upper_bound\": 5,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter0_state1_to0.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:27.626608+00:00",
+      "seconds": 0.06299999999987449,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"nonsynchronizing\",\n  \"n\": 6,\n  \"invariant_states\": 8\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter0_state1_to1.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:27.682688+00:00",
+      "seconds": 0.047000000000025466,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 5,\n  \"upper_bound\": 5,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter0_state1_to3.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:27.740195+00:00",
+      "seconds": 0.06200000000012551,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 16,\n  \"upper_bound\": 16,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter0_state1_to4.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:27.795724+00:00",
+      "seconds": 0.047000000000025466,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 9,\n  \"upper_bound\": 9,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter0_state1_to5.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:27.851671+00:00",
+      "seconds": 0.06299999999987449,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 5,\n  \"upper_bound\": 5,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter0_state2_to0.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:27.906911+00:00",
+      "seconds": 0.06200000000012551,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"nonsynchronizing\",\n  \"n\": 6,\n  \"invariant_states\": 6\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter0_state2_to1.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:27.969487+00:00",
+      "seconds": 0.04699999999979809,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"nonsynchronizing\",\n  \"n\": 6,\n  \"invariant_states\": 9\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter0_state2_to2.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:28.025002+00:00",
+      "seconds": 0.06300000000010186,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 5,\n  \"upper_bound\": 5,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter0_state2_to4.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:28.080772+00:00",
+      "seconds": 0.06199999999989814,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 16,\n  \"upper_bound\": 16,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter0_state2_to5.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:28.141695+00:00",
+      "seconds": 0.06300000000010186,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 9,\n  \"upper_bound\": 9,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter0_state3_to0.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:28.198684+00:00",
+      "seconds": 0.04600000000004911,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"nonsynchronizing\",\n  \"n\": 6,\n  \"invariant_states\": 4\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter0_state3_to1.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:28.254266+00:00",
+      "seconds": 0.06299999999987449,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"nonsynchronizing\",\n  \"n\": 6,\n  \"invariant_states\": 6\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter0_state3_to2.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:28.309897+00:00",
+      "seconds": 0.047000000000025466,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"nonsynchronizing\",\n  \"n\": 6,\n  \"invariant_states\": 8\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter0_state3_to3.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:28.365397+00:00",
+      "seconds": 0.06200000000012551,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 5,\n  \"upper_bound\": 5,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter0_state3_to5.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:28.429759+00:00",
+      "seconds": 0.06299999999987449,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 16,\n  \"upper_bound\": 16,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter0_state4_to0.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:28.488809+00:00",
+      "seconds": 0.06200000000012551,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"nonsynchronizing\",\n  \"n\": 6,\n  \"invariant_states\": 2\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter0_state4_to1.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:28.546484+00:00",
+      "seconds": 0.06299999999987449,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"nonsynchronizing\",\n  \"n\": 6,\n  \"invariant_states\": 3\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter0_state4_to2.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:28.608655+00:00",
+      "seconds": 0.047000000000025466,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"nonsynchronizing\",\n  \"n\": 6,\n  \"invariant_states\": 4\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter0_state4_to3.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:28.664762+00:00",
+      "seconds": 0.06200000000012551,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"nonsynchronizing\",\n  \"n\": 6,\n  \"invariant_states\": 5\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter0_state4_to4.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:28.719754+00:00",
+      "seconds": 0.06299999999987449,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 5,\n  \"upper_bound\": 5,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter0_state5_to1.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:28.775540+00:00",
+      "seconds": 0.06200000000012551,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"nonsynchronizing\",\n  \"n\": 6,\n  \"invariant_states\": 3\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter0_state5_to2.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:28.838147+00:00",
+      "seconds": 0.04699999999979809,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 17,\n  \"upper_bound\": 17,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter0_state5_to3.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:28.893430+00:00",
+      "seconds": 0.06300000000010186,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 13,\n  \"upper_bound\": 13,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter0_state5_to4.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:28.953762+00:00",
+      "seconds": 0.06199999999989814,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 9,\n  \"upper_bound\": 9,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter0_state5_to5.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:29.011964+00:00",
+      "seconds": 0.047000000000025466,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 5,\n  \"upper_bound\": 5,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter1_state0_to1.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:29.069792+00:00",
+      "seconds": 0.06200000000012551,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 14,\n  \"upper_bound\": 14,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter1_state0_to2.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:29.123023+00:00",
+      "seconds": 0.047000000000025466,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 11,\n  \"upper_bound\": 11,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter1_state0_to3.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:29.178339+00:00",
+      "seconds": 0.06299999999987449,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 10,\n  \"upper_bound\": 10,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter1_state0_to4.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:29.241752+00:00",
+      "seconds": 0.06200000000012551,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 9,\n  \"upper_bound\": 9,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter1_state0_to5.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:29.296466+00:00",
+      "seconds": 0.047000000000025466,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"nonsynchronizing\",\n  \"n\": 6,\n  \"invariant_states\": 1\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter1_state1_to0.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:29.352169+00:00",
+      "seconds": 0.06299999999987449,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 7,\n  \"upper_bound\": 7,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter1_state1_to2.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:29.411845+00:00",
+      "seconds": 0.06200000000012551,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 17,\n  \"upper_bound\": 17,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter1_state1_to3.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:29.474099+00:00",
+      "seconds": 0.06299999999987449,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 8,\n  \"upper_bound\": 8,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter1_state1_to4.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:29.530559+00:00",
+      "seconds": 0.06200000000012551,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 11,\n  \"upper_bound\": 11,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter1_state1_to5.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:29.588220+00:00",
+      "seconds": 0.04699999999979809,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 8,\n  \"upper_bound\": 8,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter1_state2_to0.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:29.643851+00:00",
+      "seconds": 0.06300000000010186,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 7,\n  \"upper_bound\": 7,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter1_state2_to1.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:29.706290+00:00",
+      "seconds": 0.06199999999989814,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 7,\n  \"upper_bound\": 7,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter1_state2_to3.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:29.765091+00:00",
+      "seconds": 0.047000000000025466,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"nonsynchronizing\",\n  \"n\": 6,\n  \"invariant_states\": 7\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter1_state2_to4.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:29.817460+00:00",
+      "seconds": 0.06200000000012551,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 12,\n  \"upper_bound\": 12,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter1_state2_to5.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:29.874165+00:00",
+      "seconds": 0.06299999999987449,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 10,\n  \"upper_bound\": 10,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter1_state3_to0.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:29.935752+00:00",
+      "seconds": 0.06200000000012551,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 11,\n  \"upper_bound\": 11,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter1_state3_to1.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:29.997241+00:00",
+      "seconds": 0.047000000000025466,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 10,\n  \"upper_bound\": 10,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter1_state3_to2.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:30.054055+00:00",
+      "seconds": 0.06299999999987449,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 7,\n  \"upper_bound\": 7,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter1_state3_to4.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:30.116248+00:00",
+      "seconds": 0.06200000000012551,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 17,\n  \"upper_bound\": 17,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter1_state3_to5.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:30.171825+00:00",
+      "seconds": 0.06299999999987449,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 10,\n  \"upper_bound\": 10,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter1_state4_to0.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:30.236330+00:00",
+      "seconds": 0.06200000000012551,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 11,\n  \"upper_bound\": 11,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter1_state4_to1.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:30.296878+00:00",
+      "seconds": 0.047000000000025466,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 12,\n  \"upper_bound\": 12,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter1_state4_to2.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:30.352627+00:00",
+      "seconds": 0.07799999999997453,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 9,\n  \"upper_bound\": 9,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter1_state4_to3.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:30.417840+00:00",
+      "seconds": 0.06299999999987449,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 7,\n  \"upper_bound\": 7,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter1_state4_to5.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:30.478356+00:00",
+      "seconds": 0.047000000000025466,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 14,\n  \"upper_bound\": 14,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter1_state5_to1.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:30.533070+00:00",
+      "seconds": 0.06200000000012551,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"nonsynchronizing\",\n  \"n\": 6,\n  \"invariant_states\": 49\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter1_state5_to2.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:30.595642+00:00",
+      "seconds": 0.06299999999987449,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"nonsynchronizing\",\n  \"n\": 6,\n  \"invariant_states\": 27\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter1_state5_to3.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:30.659023+00:00",
+      "seconds": 0.06200000000012551,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"nonsynchronizing\",\n  \"n\": 6,\n  \"invariant_states\": 49\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter1_state5_to4.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:30.713743+00:00",
+      "seconds": 0.04699999999979809,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"exact\",\n  \"n\": 6,\n  \"lower_bound\": 9,\n  \"upper_bound\": 9,\n  \"checked_edges\": 126\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "src/check_certificate.py",
+        "<CHECKOUT>\\reference_results\\mutations_C6\\certificates\\C6_letter1_state5_to5.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:30.769486+00:00",
+      "seconds": 0.06300000000010186,
+      "returncode": 0,
+      "stdout": "{\n  \"verified\": true,\n  \"kind\": \"nonsynchronizing\",\n  \"n\": 6,\n  \"invariant_states\": 1\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "run.py",
+        "demo",
+        "--out",
+        "<CHECKOUT>\\results\\openmath\\baseline-demo"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:30.830996+00:00",
+      "seconds": 0.14000000000010004,
+      "returncode": 0,
+      "stdout": "C2: lower=1 upper=1 VERIFIED\nC3: lower=4 upper=4 VERIFIED\nC4: lower=9 upper=9 VERIFIED\nC5: lower=16 upper=16 VERIFIED\nC6: lower=25 upper=25 VERIFIED\nC7: lower=36 upper=36 VERIFIED\nC8: lower=49 upper=49 VERIFIED\nOutput: <CHECKOUT>\\results\\openmath\\baseline-demo\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "run.py",
+        "compare",
+        "--n",
+        "8",
+        "--out",
+        "<CHECKOUT>\\results\\openmath\\baseline-compare"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:30.971234+00:00",
+      "seconds": 0.07799999999997453,
+      "returncode": 0,
+      "stdout": "cardinality    classes=    8 lower=   7 optimal=  49\nmarked         classes=   27 lower=  19 optimal=  49\nmaxgap         classes=   20 lower=   7 optimal=  49\ngap_multiset   classes=   22 lower=   7 optimal=  49\nidentity       classes=  255 lower=  49 optimal=  49\nOutput: <CHECKOUT>\\results\\openmath\\baseline-compare\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "run.py",
+        "landmarks",
+        "--n",
+        "8",
+        "--out",
+        "<CHECKOUT>\\results\\openmath\\baseline-landmarks"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:31.047206+00:00",
+      "seconds": 0.09399999999982356,
+      "returncode": 0,
+      "stdout": "r= 0 classes=    8 lower=   7 optimal=  49\nr= 1 classes=   15 lower=   7 optimal=  49\nr= 2 classes=   27 lower=  19 optimal=  49\nr= 3 classes=   47 lower=  20 optimal=  49\nr= 4 classes=   79 lower=  21 optimal=  49\nr= 5 classes=  127 lower=  23 optimal=  49\nr= 6 classes=  191 lower=  25 optimal=  49\nr= 7 classes=  255 lower=  49 optimal=  49\nr= 8 classes=  255 lower=  49 optimal=  49\nOutput: <CHECKOUT>\\results\\openmath\\baseline-landmarks\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "run.py",
+        "mutate",
+        "--n",
+        "6",
+        "--out",
+        "<CHECKOUT>\\results\\openmath\\baseline-mutate"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:31.139545+00:00",
+      "seconds": 0.09400000000005093,
+      "returncode": 0,
+      "stdout": "Scanned 60 labelled one-transition changes. All certificates checked.\nOutput: <CHECKOUT>\\results\\openmath\\baseline-mutate\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "run.py",
+        "export-lean",
+        "reference_results/demo/C2.json",
+        "--out",
+        "<CHECKOUT>\\results\\openmath\\ExportC2.lean"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:31.245506+00:00",
+      "seconds": 0.06299999999987449,
+      "returncode": 0,
+      "stdout": "Lean source generated: <CHECKOUT>\\results\\openmath\\ExportC2.lean\nSTATUS: source draft; compile with the pinned Lean toolchain before making a formal-verification claim.\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<LEAN_TOOLCHAIN>\\bin\\lean.exe",
+        "<CHECKOUT>\\results\\openmath\\ExportC2.lean"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:31.311261+00:00",
+      "seconds": 0.609000000000151,
+      "returncode": 0,
+      "stdout": "<CHECKOUT>\\results\\openmath\\ExportC2.lean:42:12: warning: try 'simp' instead of 'simpa'\nnote: this linter can be disabled with `set_option linter.unnecessarySimpa false`\n'Orion.potential_along_word' depends on axioms: [propext]\n'Orion.lower_bound' depends on axioms: [propext]\n'Orion.cardinality_limit' depends on axioms: [propext]\n'OrionExample.one_step_fidelity' depends on axioms: [propext]\n'OrionExample.optimal_subset_path' depends on axioms: [propext]\n",
+      "stderr": ""
+    },
+    {
+      "check": "generated_export",
+      "n": 2,
+      "source_sha256": "bccae57e1675d3cbcf741e0ead4b34856e6343d33372b6428a53f0f1a8ddc3b3",
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "run.py",
+        "export-lean",
+        "reference_results/demo/C3.json",
+        "--out",
+        "<CHECKOUT>\\results\\openmath\\ExportC3.lean"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:31.928619+00:00",
+      "seconds": 0.07799999999997453,
+      "returncode": 0,
+      "stdout": "Lean source generated: <CHECKOUT>\\results\\openmath\\ExportC3.lean\nSTATUS: source draft; compile with the pinned Lean toolchain before making a formal-verification claim.\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<LEAN_TOOLCHAIN>\\bin\\lean.exe",
+        "<CHECKOUT>\\results\\openmath\\ExportC3.lean"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:31.996947+00:00",
+      "seconds": 0.6720000000000255,
+      "returncode": 0,
+      "stdout": "<CHECKOUT>\\results\\openmath\\ExportC3.lean:42:12: warning: try 'simp' instead of 'simpa'\nnote: this linter can be disabled with `set_option linter.unnecessarySimpa false`\n'Orion.potential_along_word' depends on axioms: [propext]\n'Orion.lower_bound' depends on axioms: [propext]\n'Orion.cardinality_limit' depends on axioms: [propext]\n'OrionExample.one_step_fidelity' depends on axioms: [propext]\n'OrionExample.optimal_subset_path' depends on axioms: [propext]\n",
+      "stderr": ""
+    },
+    {
+      "check": "generated_export",
+      "n": 3,
+      "source_sha256": "cb9d1be52f42ca9daa0457c21f10b84fa2d742d746e6ba0e82e2ad9d0120bc8d",
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "run.py",
+        "export-lean",
+        "reference_results/demo/C4.json",
+        "--out",
+        "<CHECKOUT>\\results\\openmath\\ExportC4.lean"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:32.666432+00:00",
+      "seconds": 0.06299999999987449,
+      "returncode": 0,
+      "stdout": "Lean source generated: <CHECKOUT>\\results\\openmath\\ExportC4.lean\nSTATUS: source draft; compile with the pinned Lean toolchain before making a formal-verification claim.\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<LEAN_TOOLCHAIN>\\bin\\lean.exe",
+        "<CHECKOUT>\\results\\openmath\\ExportC4.lean"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:32.735710+00:00",
+      "seconds": 0.8279999999999745,
+      "returncode": 0,
+      "stdout": "<CHECKOUT>\\results\\openmath\\ExportC4.lean:42:12: warning: try 'simp' instead of 'simpa'\nnote: this linter can be disabled with `set_option linter.unnecessarySimpa false`\n'Orion.potential_along_word' depends on axioms: [propext]\n'Orion.lower_bound' depends on axioms: [propext]\n'Orion.cardinality_limit' depends on axioms: [propext]\n'OrionExample.one_step_fidelity' depends on axioms: [propext]\n'OrionExample.optimal_subset_path' depends on axioms: [propext]\n",
+      "stderr": ""
+    },
+    {
+      "check": "generated_export",
+      "n": 4,
+      "source_sha256": "7db6fa24d9ba0d40e554f15490173b7bae7c5f005e4b6119a9f84abdfc8c0ee8",
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "run.py",
+        "export-lean",
+        "reference_results/demo/C5.json",
+        "--out",
+        "<CHECKOUT>\\results\\openmath\\ExportC5.lean"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:33.559506+00:00",
+      "seconds": 0.06200000000012551,
+      "returncode": 0,
+      "stdout": "Lean source generated: <CHECKOUT>\\results\\openmath\\ExportC5.lean\nSTATUS: source draft; compile with the pinned Lean toolchain before making a formal-verification claim.\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<LEAN_TOOLCHAIN>\\bin\\lean.exe",
+        "<CHECKOUT>\\results\\openmath\\ExportC5.lean"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T00:52:33.628102+00:00",
+      "seconds": 1.25,
+      "returncode": 0,
+      "stdout": "<CHECKOUT>\\results\\openmath\\ExportC5.lean:42:12: warning: try 'simp' instead of 'simpa'\nnote: this linter can be disabled with `set_option linter.unnecessarySimpa false`\n'Orion.potential_along_word' depends on axioms: [propext]\n'Orion.lower_bound' depends on axioms: [propext]\n'Orion.cardinality_limit' depends on axioms: [propext]\n'OrionExample.one_step_fidelity' depends on axioms: [propext]\n'OrionExample.optimal_subset_path' depends on axioms: [propext]\n",
+      "stderr": ""
+    },
+    {
+      "check": "generated_export",
+      "n": 5,
+      "source_sha256": "b7cb7757f78371c0b89aa0914961b71bebc0488fe35802a310ec33005d9ac9a6",
+      "returncode": 0
+    }
+  ],
+  "all_passed": true
+}

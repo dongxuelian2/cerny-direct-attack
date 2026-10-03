@@ -1,0 +1,38 @@
+{
+  "verified": true,
+  "runs": [
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.log_dimension_history"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T07:02:47.115461+00:00",
+      "seconds": 0.1720000000022992,
+      "returncode": 0,
+      "stdout": "{\"parameters\": 10, \"max_n\": 4095}\n",
+      "stderr": "",
+      "output_sha256": "aa82c058ab557a4341171f3356095573cee427b90aa4489ada83aa32529e58b8"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.log_dimension_history",
+        "--out",
+        "<CHECKOUT>\\direct_attack\\native_build\\log_dimension_replay.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T07:02:47.299332+00:00",
+      "seconds": 0.15599999999903957,
+      "returncode": 0,
+      "stdout": "{\"parameters\": 10, \"max_n\": 4095}\n",
+      "stderr": "",
+      "output_sha256": "aa82c058ab557a4341171f3356095573cee427b90aa4489ada83aa32529e58b8"
+    }
+  ],
+  "parsed_records_equal": true,
+  "normalization": "none",
+  "generator_sha256": "0db328420d971c2c06cbadb28ff61c0014f2b506c3c427569655849f10d70076"
+}

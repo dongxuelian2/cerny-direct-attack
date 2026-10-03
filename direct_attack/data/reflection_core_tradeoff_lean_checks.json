@@ -1,0 +1,41 @@
+{
+  "verified": true,
+  "status": "FORMALLY VERIFIED",
+  "compiler_version": "Lean (version 4.19.0, x86_64-w64-windows-gnu, commit 6caaee842e94, Release)",
+  "compiler_path": "<LEAN_TOOLCHAIN>\\bin\\lean.exe",
+  "compiler_sha256": "f59b0c515f65dbf96526279d77fb43152f76bdd77f5fb94f387b75139fafe68c",
+  "source": "direct_attack/ReflectionCoreCut.lean",
+  "source_sha256": "5a2df90e8b17785c21270b98a2c7949e4670923b1c774cb4572ead90b4c8727d",
+  "argv": [
+    "<LEAN_TOOLCHAIN>\\bin\\lean.exe",
+    "<CHECKOUT>\\direct_attack\\ReflectionCoreCut.lean"
+  ],
+  "cwd": "<CHECKOUT>",
+  "start_utc": "2026-10-02T12:50:28.209038+00:00",
+  "seconds": 2.0460000000020955,
+  "returncode": 0,
+  "stdout": "'ReflectionCoreCut.cut_closed' depends on axioms: [propext, Quot.sound]\n'ReflectionCoreCut.run_in_layers' depends on axioms: [propext, Quot.sound]\n'ReflectionCoreCut.no_avoid_first_eight' depends on axioms: [propext, Quot.sound]\n'ReflectionCoreCut.witness_prefix_holes' depends on axioms: [propext]\n'ReflectionCoreCut.witness_final_unsafe' depends on axioms: [propext, Quot.sound]\n",
+  "stderr": "",
+  "printed_axioms": {
+    "ReflectionCoreCut.cut_closed": [
+      "propext",
+      "Quot.sound"
+    ],
+    "ReflectionCoreCut.run_in_layers": [
+      "propext",
+      "Quot.sound"
+    ],
+    "ReflectionCoreCut.no_avoid_first_eight": [
+      "propext",
+      "Quot.sound"
+    ],
+    "ReflectionCoreCut.witness_prefix_holes": [
+      "propext"
+    ],
+    "ReflectionCoreCut.witness_final_unsafe": [
+      "propext",
+      "Quot.sound"
+    ]
+  },
+  "boundary": "Lean4.19 Std/kernel decide, no native_decide/custom axioms/sorry/admit. Abstract integer-hole recurrence closed cut and induction quantify over ALL words of length<=8; ninth-letter abstract witness is unsafe. Parameter transfer to literal arbitrary-M automata, small-M enumeration, avoidance metric comparison and linear reset theorem are NOT formally verified by this source; they have separate paper/finite checks. General Cerny OPEN."
+}

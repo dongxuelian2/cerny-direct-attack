@@ -1,0 +1,129 @@
+{
+  "n": 4,
+  "rows": [
+    [
+      1,
+      2,
+      3,
+      0
+    ],
+    [
+      0,
+      1,
+      2,
+      0
+    ]
+  ],
+  "critical": [
+    {
+      "start": 9,
+      "size": 2,
+      "extension": 4,
+      "policy": 8,
+      "reach_word": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "start": 11,
+      "size": 3,
+      "extension": 4,
+      "policy": 4,
+      "reach_word": [
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "start": 15,
+      "size": 4,
+      "extension": null,
+      "policy": 0,
+      "reach_word": []
+    }
+  ],
+  "singletons": [
+    {
+      "state": 0,
+      "extension": 1,
+      "policy": 9,
+      "reset_word": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "state": 1,
+      "extension": 2,
+      "policy": 10,
+      "reset_word": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "state": 2,
+      "extension": 3,
+      "policy": 11,
+      "reset_word": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "state": 3,
+      "extension": 4,
+      "policy": 12,
+      "reset_word": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "mean_sum": 42,
+  "square_sum": 36,
+  "verified": true
+}

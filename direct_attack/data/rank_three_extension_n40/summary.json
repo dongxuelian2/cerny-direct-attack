@@ -1,0 +1,33 @@
+{
+  "arguments": {
+    "n": 40,
+    "count": 100000,
+    "seed": 20261013,
+    "restart": 500,
+    "out": "direct_attack/data/rank_three_extension_n40"
+  },
+  "seeds": 1108,
+  "counts": {
+    "tested": 100000,
+    "rank_three_sc": 99482,
+    "synchronizing_sc": 99482
+  },
+  "best": [
+    58,
+    47
+  ],
+  "records": [
+    "witness_000.json",
+    "witness_001.json",
+    "witness_002.json",
+    "witness_003.json",
+    "witness_004.json",
+    "witness_005.json",
+    "witness_006.json",
+    "witness_007.json",
+    "witness_008.json",
+    "witness_009.json"
+  ],
+  "seconds": 18.04699999999866,
+  "scope": "Sampled colorings/mutations with fixed three-cycle permutation types; exact scoring, not exhaustive map coverage."
+}

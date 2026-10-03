@@ -1,0 +1,30 @@
+{
+  "arguments": {
+    "source": null,
+    "n": 6,
+    "count": 1000,
+    "seed": 20260929,
+    "mode": "first-map-orbits",
+    "out": "direct_attack/data/image_extension_n6"
+  },
+  "counts": {
+    "tested": 6065150,
+    "strongly_connected": 1165941,
+    "synchronizing": 1122529,
+    "over_n": 22348,
+    "over_ceil_3n_over_2": 236,
+    "over_2n": 0
+  },
+  "maxima": {
+    "6": 11
+  },
+  "records": [
+    "n6_cost6.json",
+    "n6_cost7.json",
+    "n6_cost9.json",
+    "n6_cost10.json",
+    "n6_cost11.json"
+  ],
+  "seconds": 258.5,
+  "scope": "Complete binary inputs only for exhaustive/first-map-orbits; source retention and random sampling are not exhaustive."
+}

@@ -1,0 +1,26 @@
+{
+  "arguments": {
+    "n": 4,
+    "alphabet": 3,
+    "mode": "exhaustive",
+    "count": 10000,
+    "seed": 20261001,
+    "out": "direct_attack/data/image_extension_policy_local_n4_ternary"
+  },
+  "counts": {
+    "tested": 2763520,
+    "strongly_connected": 1844068,
+    "synchronizing_sc": 1825392
+  },
+  "max_excess": 0,
+  "records": [
+    "witness_000.json",
+    "witness_001.json",
+    "witness_002.json",
+    "witness_003.json",
+    "witness_004.json"
+  ],
+  "seconds": 64.14000000000033,
+  "proposed": "G(S)<=n(n-|S|) for EVERY reachable S",
+  "scope": "Complete distinct-letter inputs only if exhaustive/first-map-orbits finishes without early refutation; overlap not class counts."
+}

@@ -1,0 +1,35 @@
+{
+  "verified": true,
+  "status": "FORMALLY VERIFIED",
+  "compiler_version": "Lean (version 4.19.0, x86_64-w64-windows-gnu, commit 6caaee842e94, Release)",
+  "compiler_path": "<LEAN_TOOLCHAIN>\\bin\\lean.exe",
+  "compiler_sha256": "f59b0c515f65dbf96526279d77fb43152f76bdd77f5fb94f387b75139fafe68c",
+  "source": "direct_attack/LayeredPairBarrier.lean",
+  "source_sha256": "2c3fa3ced68e0c5e8b230d9977f3bec2ad0492a30b8974a2f817971a6e692a34",
+  "start_utc": "2026-10-01T14:18:23.237965+00:00",
+  "seconds": 0.7350000000005821,
+  "argv": [
+    "<LEAN_TOOLCHAIN>\\bin\\lean.exe",
+    "<CHECKOUT>\\direct_attack\\LayeredPairBarrier.lean"
+  ],
+  "cwd": "<CHECKOUT>",
+  "returncode": 0,
+  "stdout": "'Orion.DirectAttack.layered_invariants' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Orion.DirectAttack.first_collapse_cost' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "stderr": "",
+  "printed_axioms": {
+    "Orion.DirectAttack.layered_invariants": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Orion.DirectAttack.first_collapse_cost": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "imported_modules": [
+    "Std"
+  ],
+  "boundary": "Lean kernel verifies only abstract layered graph-certificate soundness from explicit local entrance hypotheses. The concrete all-p family conditions remain PROVED paper plus finite computational controls; not a formal automaton instantiation, no unrestricted reset bound, priority and general Cerny OPEN."
+}

@@ -1,0 +1,75 @@
+{
+  "arguments": {
+    "n": 6,
+    "mode": "first-map-orbits",
+    "alphabet": 2,
+    "count": 10000,
+    "seed": 20260928,
+    "out": "direct_attack/data/n6_binary_cover"
+  },
+  "counters": {
+    "tested": 6065150,
+    "strongly_connected": 1165941,
+    "analyzed_sc": 1165941,
+    "sync_analyzed": 1122529,
+    "violates_greedy_optimal": 163502,
+    "violates_reachable_compression_n": 66343,
+    "violates_global_rank_gap_n": 7338,
+    "violates_rank_telescoping": 2143,
+    "violates_worst_greedy_square": 82,
+    "violates_best_greedy_square": 78
+  },
+  "rt_histogram": {
+    "1": 731,
+    "2": 39391,
+    "3": 180896,
+    "4": 237685,
+    "5": 215848,
+    "6": 137309,
+    "7": 107937,
+    "8": 67578,
+    "9": 47199,
+    "10": 28503,
+    "11": 19952,
+    "12": 14274,
+    "13": 10235,
+    "14": 5787,
+    "15": 3504,
+    "16": 2090,
+    "17": 1544,
+    "18": 913,
+    "19": 420,
+    "20": 310,
+    "21": 206,
+    "22": 131,
+    "23": 32,
+    "25": 54
+  },
+  "maxima": {
+    "rt": 25,
+    "greedy_min": 27,
+    "greedy_max": 27,
+    "gap": 13,
+    "avoiding": 9
+  },
+  "max_compression_by_rank": [
+    -1,
+    -1,
+    15,
+    9,
+    6,
+    3,
+    1
+  ],
+  "max_reachable_compression_by_rank": [
+    -1,
+    -1,
+    15,
+    9,
+    6,
+    3,
+    1
+  ],
+  "seconds": 476.07822489738464,
+  "symmetry_note": "n<=4 exact state/alphabet classes; first-map-orbits covers all binary DFAs but counts overlap"
+}

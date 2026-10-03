@@ -1,0 +1,36 @@
+{
+  "verified": true,
+  "checks": 145,
+  "regeneration_commands": 226,
+  "archived": [
+    {
+      "path": "direct_attack/data/moving_root_all_high_order_continuation_provenance/audit_run.json",
+      "sha256": "67f3e454e8c3faa70924a63de23c16cd32b2e0d5091a1a27ae1e121c40c8f276"
+    },
+    {
+      "path": "direct_attack/data/moving_root_all_high_order_continuation_provenance/reproduction_commands.json",
+      "sha256": "fa58178ecb9898cb775b0adc44c73ad8cd2d5f0995951846a7677e9d3dcfa072"
+    },
+    {
+      "path": "direct_attack/data/moving_root_all_high_order_continuation_provenance/sha256_manifest.json",
+      "sha256": "a606c4e6b98c8f163a16b714db779f513b72615a453f485a9be40bb2768e7620"
+    }
+  ],
+  "native_builds": [
+    "direct_attack/data/alternating_frame_build.json",
+    "direct_attack/data/alternating_native_build.json",
+    "direct_attack/data/binary_n6_history_cover_native_build.json",
+    "direct_attack/data/class_reset_native_build.json",
+    "direct_attack/data/complete_policy_build.json",
+    "direct_attack/data/native_build.json",
+    "direct_attack/data/sparse_policy_build.json",
+    "direct_attack/data/weighted_class_reset_native_build.json"
+  ],
+  "formal_guards": [
+    "kari_inverse_shrink_lean_checks.json",
+    "kari_shrink_products_lean_checks.json",
+    "reflection_core_tradeoff_lean_checks.json"
+  ],
+  "mathematical_status": "PROVED paper all t>=3 remaining-core model square; finite independent controls COMPUTATIONALLY VERIFIED; general Cerny/order-two mixed square OPEN; no full all-n FORMALLY VERIFIED claim.",
+  "audit_boundary": "checkpoint144 preserved verbatim; ONE new independent12147-input audit with ALL11568 new noncoprime t>=3 permutations M6..9,540384 root-present/37120 whole-core controls,76722918 particles,664415 compatible extensions,100 arithmetic exceptions,18 seed compensations and10 corruptions. Entire arbitrary-A high-order model square PROVED paper via three-a row/paid endpoint dichotomy or literal root policy/seed saving; not FORMALLY VERIFIED. General Cerny and mixed SYNC order-two square OPEN. Native M12 complete pressure EXPLORATORY without independent coverage audit; no full145 rerun,8 prior registered builds/Kari/Reflection Lean unchanged."
+}

@@ -1,0 +1,31 @@
+{
+  "verified": true,
+  "checks": 135,
+  "regeneration_commands": 216,
+  "archived": [
+    {
+      "path": "direct_attack/data/kari_shrink_products_continuation_provenance/audit_run.json",
+      "sha256": "cbabbe13128f238f6b918be68bb1a5bcbe152cdbc62a8bc24771f42266ddba3a"
+    },
+    {
+      "path": "direct_attack/data/kari_shrink_products_continuation_provenance/reproduction_commands.json",
+      "sha256": "74d4fda9f05e208a50fc9ba7345305e2a05fdb5ff6dfff7fa20d4699cc1e81ce"
+    },
+    {
+      "path": "direct_attack/data/kari_shrink_products_continuation_provenance/sha256_manifest.json",
+      "sha256": "a5982704224c72e0f52855b848fb38c256433078d4fc5ca31fe792d699451cd9"
+    }
+  ],
+  "native_builds": [
+    "direct_attack/data/alternating_frame_build.json",
+    "direct_attack/data/alternating_native_build.json",
+    "direct_attack/data/binary_n6_history_cover_native_build.json",
+    "direct_attack/data/class_reset_native_build.json",
+    "direct_attack/data/complete_policy_build.json",
+    "direct_attack/data/native_build.json",
+    "direct_attack/data/sparse_policy_build.json",
+    "direct_attack/data/weighted_class_reset_native_build.json"
+  ],
+  "mathematical_status": "PROVED paper arbitrary-d independent Cartesian product exact inverse-shrink/count/cost/max-loss tradeoff; literal n6 all-word basis FORMALLY VERIFIED; retained finite certificates COMPUTATIONALLY VERIFIED. No fixed-alphabet/corank-one/novelty claim; general Cerny OPEN.",
+  "audit_boundary": "checkpoint134 preserved verbatim; ONE new independent Kari-product checker:128 base cut/362 Bellman edges,744 base/191640 symbolic/608424 literal controls,20 parameters ALL Cartesian states d1..4, complete4096-node d2 rectangle graph81900 Bellman edges, ten rejected corruptions. Lean4.19 kernel verifies literal base ALL-word25 lower, last bridges,27 conditional lower and25/27 witnesses. ALL-d exact count/cost/max-loss tradeoff is PROVED paper, not formal; no full135 rerun, no corank-one/fixed-alphabet/novelty/general proof. General Cerny OPEN."
+}

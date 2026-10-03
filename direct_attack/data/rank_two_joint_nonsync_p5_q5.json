@@ -1,0 +1,98 @@
+{
+  "scope": "fixed disjoint-cycle a; every unordered distinct pair of rank-two rows each nonsynchronizing with a",
+  "p": 5,
+  "q": 5,
+  "n": 10,
+  "nonsync_single_letter_candidates": 800,
+  "counts": {
+    "tested_pairs": 319600,
+    "strongly_connected": 319300,
+    "synchronizing": 255000,
+    "rt_over_n_plus_1": 0,
+    "e_over_2n": 0
+  },
+  "best_rt": {
+    "max_e": 5,
+    "target": 16,
+    "rt": 5,
+    "images": 21,
+    "a": [
+      1,
+      2,
+      3,
+      4,
+      0,
+      6,
+      7,
+      8,
+      9,
+      5
+    ],
+    "b": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "c": [
+      0,
+      0,
+      0,
+      6,
+      0,
+      6,
+      6,
+      6,
+      6,
+      0
+    ]
+  },
+  "best_e": {
+    "max_e": 5,
+    "target": 16,
+    "rt": 2,
+    "images": 21,
+    "a": [
+      1,
+      2,
+      3,
+      4,
+      0,
+      6,
+      7,
+      8,
+      9,
+      5
+    ],
+    "b": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "c": [
+      6,
+      6,
+      6,
+      6,
+      0,
+      6,
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

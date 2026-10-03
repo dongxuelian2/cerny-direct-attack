@@ -1,0 +1,38 @@
+{
+  "verified": true,
+  "runs": [
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.two_cycle_image_obstruction"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T05:44:51.816089+00:00",
+      "seconds": 0.0930000000007567,
+      "returncode": 0,
+      "stdout": "{\"parameters\": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 100, 128, 256, 512, 1024], \"literal_parameters\": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], \"ternary_forward_parameters\": [2, 3, 4, 5, 6, 7, 8, 9], \"ternary_inverse_parameters\": [2, 3, 4, 5, 6, 7, 8, 9], \"binary_forward_parameters\": [2, 3, 4, 5, 6, 7, 8], \"binary_inverse_parameters\": [2, 3, 4, 5, 6], \"maximum_ternary_n\": 2049, \"maximum_binary_n\": 6147}\n",
+      "stderr": "",
+      "output_sha256": "1e9cdb298e0da12e2aa5d7091be3e5cabaffac701f15608c5bd054514e5d22fa"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.two_cycle_image_obstruction",
+        "--out",
+        "<CHECKOUT>\\direct_attack\\native_build\\two_cycle_replay.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T05:44:51.921116+00:00",
+      "seconds": 0.09400000000096043,
+      "returncode": 0,
+      "stdout": "{\"parameters\": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 100, 128, 256, 512, 1024], \"literal_parameters\": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], \"ternary_forward_parameters\": [2, 3, 4, 5, 6, 7, 8, 9], \"ternary_inverse_parameters\": [2, 3, 4, 5, 6, 7, 8, 9], \"binary_forward_parameters\": [2, 3, 4, 5, 6, 7, 8], \"binary_inverse_parameters\": [2, 3, 4, 5, 6], \"maximum_ternary_n\": 2049, \"maximum_binary_n\": 6147}\n",
+      "stderr": "",
+      "output_sha256": "387ebc77c5ac0d3e14eab3438c02ceb02e7fa8bb3b8b78aab8691064f4d5a378"
+    }
+  ],
+  "parsed_records_equal": true,
+  "normalization": "only arguments.out differs on ignored replay output",
+  "generator_sha256": "d22cd4577395ee52051aba43e18f142f40d951582e4fc4f9c724251d9edd0569"
+}

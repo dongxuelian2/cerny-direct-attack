@@ -1,0 +1,17 @@
+{
+  "verified": true,
+  "scopes": 4,
+  "ordered_form_pairs": 176088,
+  "boolean_vertex_product_controls": 15756432,
+  "free_restriction_pair_controls": 176088,
+  "covering_pairs": 32,
+  "corruptions_rejected": [
+    "zero_sum_nonzero_forms",
+    "covering_pairs",
+    "vertices_sha256",
+    "semantic_sha256",
+    "ordered_form_pairs",
+    "boolean_vertices"
+  ],
+  "boundary": "independent exact finite integer-form Boolean covering controls only; the arbitrary-real classification and saturated-history implication are paper proofs, not formal or all-DFA verification. General Cerny and unrestricted cost/rank OPEN; separate negative pressure not part of this checker."
+}

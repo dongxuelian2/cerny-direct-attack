@@ -1,0 +1,59 @@
+{
+  "verified": true,
+  "checks": 101,
+  "regeneration_commands": 185,
+  "archived": [
+    {
+      "path": "direct_attack/data/log_dimension_continuation_provenance/audit_run.json",
+      "sha256": "c7ca5262070558f88bc20f159615612d5a48a7be99cf915e7e7c6f4eafe13a83"
+    },
+    {
+      "path": "direct_attack/data/log_dimension_continuation_provenance/reproduction_commands.json",
+      "sha256": "a7ec2368562fc8feb7d7411a735d88ee0480d1f6b377984d00c6edd667d6e720"
+    },
+    {
+      "path": "direct_attack/data/log_dimension_continuation_provenance/sha256_manifest.json",
+      "sha256": "6c24adb589483378f20718053c89bb9789915e57083ff98d4178cea0ac0e30a0"
+    }
+  ],
+  "native_builds": [
+    {
+      "metadata": "direct_attack/data/alternating_frame_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/alternating_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/class_reset_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/complete_policy_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/sparse_policy_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/weighted_class_reset_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    }
+  ],
+  "generation_and_replay": "direct_attack/data/log_dimension_generation_captures.json",
+  "audit_boundary": "previous 100-check record preserved verbatim; one new independent original-map, exact-rank and actual-image check with deterministic generator/replay; not a full 101-check rerun",
+  "mathematical_status": "paper all-d SC Eulerian completely reachable log-rank shortest actual-image histories; unconditional linear-in-stages dimension REFUTED; phases e1 and P=rt2, chosen chain not globally optimal; optimized-history dimension/slow-phase tradeoff/general Cerny/global policy square OPEN; no formal verification"
+}

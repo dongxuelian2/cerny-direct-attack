@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "<PYTHON_RUNTIME>\\python.exe",
+    "-m",
+    "direct_attack.unit_tail_family"
+  ],
+  "cwd": "<CHECKOUT>",
+  "start_utc": "2026-09-29T13:25:14.661899+00:00",
+  "seconds": 1.5930000000007567,
+  "returncode": 0,
+  "stdout": "{\"cases\": 352, \"sync\": 222, \"max_n\": 12}\n",
+  "stderr": ""
+}

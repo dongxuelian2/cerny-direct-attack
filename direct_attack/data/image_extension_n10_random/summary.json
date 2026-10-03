@@ -1,0 +1,32 @@
+{
+  "arguments": {
+    "source": null,
+    "n": 10,
+    "count": 10000,
+    "seed": 20260929,
+    "mode": "random",
+    "out": "direct_attack/data/image_extension_n10_random"
+  },
+  "counts": {
+    "tested": 10000,
+    "strongly_connected": 4121,
+    "synchronizing": 4108,
+    "over_n": 8,
+    "over_ceil_3n_over_2": 0,
+    "over_2n": 0
+  },
+  "maxima": {
+    "10": 12
+  },
+  "records": [
+    "n10_cost5.json",
+    "n10_cost6.json",
+    "n10_cost7.json",
+    "n10_cost9.json",
+    "n10_cost10.json",
+    "n10_cost11.json",
+    "n10_cost12.json"
+  ],
+  "seconds": 16.921999999999798,
+  "scope": "Complete binary inputs only for exhaustive/first-map-orbits; source retention and random sampling are not exhaustive."
+}

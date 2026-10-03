@@ -1,0 +1,173 @@
+{
+  "verified": true,
+  "retained_certificates": 21,
+  "ordinary_vertices": 75204,
+  "weighted_vertices": 507,
+  "tiny_complete_inputs": 5816,
+  "tiny_synchronizing": 5336,
+  "tiny_ordinary_vertices": 111128,
+  "tiny_weighted_vertices": 36840,
+  "retained_budget_violations": 0,
+  "corruptions_rejected": [
+    "class_rt",
+    "rt",
+    "weighted_vertices",
+    "return_transformations",
+    "word",
+    "return_block",
+    "cycle"
+  ],
+  "source_sha256": "df0530e5c703716743be988b72730f2532a411dc9a0b07c3fa985c30989bf264",
+  "tiny_source_sha256": "90ae1377a5a6e1c17a21304c94d61580abb7cdfbfa9ce425d81305b2d110a030",
+  "independent": "ordinary-set complete forward BFS; separate literal weighted Dijkstra; forward/reverse O(n) state connectivity",
+  "scope": "all saved peaks and complete tiny fixed-schema cover only; sampled proposals are not a cover; universal proposal OPEN",
+  "retained_details": [
+    {
+      "ordinary_vertices": 107,
+      "weighted_vertices": 7,
+      "return_transformations": 5,
+      "class_rt": 52,
+      "budget_violation": false
+    },
+    {
+      "ordinary_vertices": 252,
+      "weighted_vertices": 7,
+      "return_transformations": 9,
+      "class_rt": 13,
+      "budget_violation": false
+    },
+    {
+      "ordinary_vertices": 395,
+      "weighted_vertices": 7,
+      "return_transformations": 6,
+      "class_rt": 196,
+      "budget_violation": false
+    },
+    {
+      "ordinary_vertices": 779,
+      "weighted_vertices": 7,
+      "return_transformations": 6,
+      "class_rt": 388,
+      "budget_violation": false
+    },
+    {
+      "ordinary_vertices": 1547,
+      "weighted_vertices": 7,
+      "return_transformations": 5,
+      "class_rt": 772,
+      "budget_violation": false
+    },
+    {
+      "ordinary_vertices": 3852,
+      "weighted_vertices": 7,
+      "return_transformations": 9,
+      "class_rt": 707,
+      "budget_violation": false
+    },
+    {
+      "ordinary_vertices": 7692,
+      "weighted_vertices": 7,
+      "return_transformations": 12,
+      "class_rt": 1953,
+      "budget_violation": false
+    },
+    {
+      "ordinary_vertices": 15372,
+      "weighted_vertices": 7,
+      "return_transformations": 9,
+      "class_rt": 1962,
+      "budget_violation": false
+    },
+    {
+      "ordinary_vertices": 411,
+      "weighted_vertices": 15,
+      "return_transformations": 32,
+      "class_rt": 15,
+      "budget_violation": false
+    },
+    {
+      "ordinary_vertices": 795,
+      "weighted_vertices": 15,
+      "return_transformations": 27,
+      "class_rt": 22,
+      "budget_violation": false
+    },
+    {
+      "ordinary_vertices": 1563,
+      "weighted_vertices": 15,
+      "return_transformations": 16,
+      "class_rt": 89,
+      "budget_violation": false
+    },
+    {
+      "ordinary_vertices": 2071,
+      "weighted_vertices": 15,
+      "return_transformations": 7,
+      "class_rt": 774,
+      "budget_violation": false
+    },
+    {
+      "ordinary_vertices": 4119,
+      "weighted_vertices": 15,
+      "return_transformations": 8,
+      "class_rt": 1539,
+      "budget_violation": false
+    },
+    {
+      "ordinary_vertices": 1138,
+      "weighted_vertices": 31,
+      "return_transformations": 42,
+      "class_rt": 20,
+      "budget_violation": false
+    },
+    {
+      "ordinary_vertices": 1327,
+      "weighted_vertices": 31,
+      "return_transformations": 9,
+      "class_rt": 328,
+      "budget_violation": false
+    },
+    {
+      "ordinary_vertices": 4217,
+      "weighted_vertices": 31,
+      "return_transformations": 89,
+      "class_rt": 44,
+      "budget_violation": false
+    },
+    {
+      "ordinary_vertices": 5167,
+      "weighted_vertices": 31,
+      "return_transformations": 13,
+      "class_rt": 46,
+      "budget_violation": false
+    },
+    {
+      "ordinary_vertices": 2611,
+      "weighted_vertices": 63,
+      "return_transformations": 50,
+      "class_rt": 18,
+      "budget_violation": false
+    },
+    {
+      "ordinary_vertices": 3167,
+      "weighted_vertices": 63,
+      "return_transformations": 16,
+      "class_rt": 68,
+      "budget_violation": false
+    },
+    {
+      "ordinary_vertices": 6239,
+      "weighted_vertices": 63,
+      "return_transformations": 11,
+      "class_rt": 970,
+      "budget_violation": false
+    },
+    {
+      "ordinary_vertices": 12383,
+      "weighted_vertices": 63,
+      "return_transformations": 12,
+      "class_rt": 1916,
+      "budget_violation": false
+    }
+  ]
+}

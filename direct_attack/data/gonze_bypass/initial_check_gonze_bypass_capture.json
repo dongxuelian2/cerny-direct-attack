@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "<PYTHON_RUNTIME>\\python.exe",
+    "-m",
+    "direct_attack.check_gonze_bypass"
+  ],
+  "cwd": "<CHECKOUT>",
+  "start_unix": 1790695330.680485,
+  "seconds": 0.13249707221984863,
+  "returncode": 0,
+  "stdout": "{\"verified\": true, \"records\": [{\"n\": 7, \"exact_reaching\": 15, \"into_upper\": 6, \"bypass_rank\": 3, \"reset_length\": 19}, {\"n\": 11, \"exact_reaching\": 38, \"into_upper\": 9, \"bypass_rank\": 7, \"reset_length\": 30}, {\"n\": 15, \"exact_reaching\": 69, \"into_upper\": 12, \"bypass_rank\": 11, \"reset_length\": 41}, {\"n\": 19, \"exact_reaching\": 108, \"into_upper\": 15, \"bypass_rank\": 15, \"reset_length\": 52}, {\"n\": 23, \"exact_reaching\": 155, \"into_upper\": 18, \"bypass_rank\": 19, \"reset_length\": 63}, {\"n\": 27, \"exact_reaching\": 210, \"into_upper\": 21, \"bypass_rank\": 23, \"reset_length\": 74}, {\"n\": 31, \"exact_reaching\": 273, \"into_upper\": 24, \"bypass_rank\": 27, \"reset_length\": 85}, {\"n\": 35, \"exact_reaching\": 344, \"into_upper\": 27, \"bypass_rank\": 31, \"reset_length\": 96}, {\"n\": 39, \"exact_reaching\": 423, \"into_upper\": 30, \"bypass_rank\": 35, \"reset_length\": 107}, {\"n\": 63, \"exact_reaching\": 1065, \"into_upper\": 48, \"bypass_rank\": 59, \"reset_length\": 173}, {\"n\": 103, \"exact_reaching\": 2775, \"into_upper\": 78, \"bypass_rank\": 99, \"reset_length\": 283}], \"ordinary_all_source_arrays\": 1, \"general_linear_extension_refutation\": false, \"shortest_into_formula_all_n\": false}\n",
+  "stderr": ""
+}

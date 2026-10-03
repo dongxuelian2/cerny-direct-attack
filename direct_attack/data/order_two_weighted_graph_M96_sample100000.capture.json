@@ -1,0 +1,21 @@
+{
+  "source_sha256": "6b4613d7d066e0e4febc26d29794d0f2d8fc5e2e98b8efa82276edb118552abf",
+  "binary_sha256": "39a39d9dcbb547145c0e2f7943d51799c5bb3e0a92e5d1531390e657a9d33f31",
+  "residual_tsv_sha256": "ec5c71c8503acf60ff2e2b3792c538017c1faba9833ab82acd7a86349266e55e",
+  "counter_sha256": "abdfbffecbe18ed94df9829819e596ee285b52a94aa108514452a9121721c789",
+  "run": {
+    "argv": [
+      "<CHECKOUT>\\direct_attack\\native_build\\order_two_weighted_graph_pressure.exe",
+      "96",
+      "100000",
+      "<CHECKOUT>\\direct_attack\\data\\order_two_weighted_graph_M96_sample100000.tsv",
+      "<CHECKOUT>\\direct_attack\\data\\order_two_weighted_graph_M96_sample100000.counter.json"
+    ],
+    "cwd": "<CHECKOUT>",
+    "start_utc": "2026-10-03T05:09:37.993019+00:00",
+    "seconds": 0.1720000000022992,
+    "returncode": 0,
+    "stdout": "{\"inputs\":100000,\"sync\":100000,\"primitive_triangular\":100000,\"residual_retained\":0,\"criterion_failure\":false,\"native_scope\":\"EXPLORATORY late-two sample\"}\n",
+    "stderr": ""
+  }
+}

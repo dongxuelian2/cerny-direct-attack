@@ -1,0 +1,132 @@
+{
+  "method": "independent pair-orbit BFS and all-source policy graph",
+  "records": [
+    {
+      "source": "direct_attack\\data\\rank_two_joint_nonsync_p4_q4.json",
+      "peak": "best_rt",
+      "rt": 5,
+      "P": 5,
+      "max_e": 5,
+      "word": [
+        2,
+        0,
+        0,
+        0,
+        1
+      ],
+      "pair": 72,
+      "singleton": 1,
+      "first_letter": 2,
+      "last_letter": 1
+    },
+    {
+      "source": "direct_attack\\data\\rank_two_joint_nonsync_p4_q4.json",
+      "peak": "best_e",
+      "rt": 2,
+      "P": 2,
+      "max_e": 8,
+      "word": [
+        1,
+        2
+      ],
+      "pair": 3,
+      "singleton": 1,
+      "first_letter": 1,
+      "last_letter": 2
+    },
+    {
+      "source": "direct_attack\\data\\rank_two_joint_nonsync_p4_q5.json",
+      "peak": "best_rt",
+      "rt": 2,
+      "P": 2,
+      "max_e": 6,
+      "word": [
+        1,
+        2
+      ],
+      "pair": 3,
+      "singleton": 16,
+      "first_letter": 1,
+      "last_letter": 2
+    },
+    {
+      "source": "direct_attack\\data\\rank_two_joint_nonsync_p4_q5.json",
+      "peak": "best_e",
+      "rt": 2,
+      "P": 2,
+      "max_e": 6,
+      "word": [
+        1,
+        2
+      ],
+      "pair": 3,
+      "singleton": 16,
+      "first_letter": 1,
+      "last_letter": 2
+    },
+    {
+      "source": "direct_attack\\data\\rank_two_joint_nonsync_p5_q5.json",
+      "peak": "best_rt",
+      "rt": 5,
+      "P": 5,
+      "max_e": 5,
+      "word": [
+        1,
+        0,
+        0,
+        0,
+        2
+      ],
+      "pair": 264,
+      "singleton": 64,
+      "first_letter": 1,
+      "last_letter": 2
+    },
+    {
+      "source": "direct_attack\\data\\rank_two_joint_nonsync_p5_q5.json",
+      "peak": "best_e",
+      "rt": 2,
+      "P": 2,
+      "max_e": 5,
+      "word": [
+        1,
+        2
+      ],
+      "pair": 33,
+      "singleton": 64,
+      "first_letter": 1,
+      "last_letter": 2
+    },
+    {
+      "source": "direct_attack\\data\\rank_two_joint_nonsync_p5_q6.json",
+      "peak": "best_rt",
+      "rt": 2,
+      "P": 2,
+      "max_e": 6,
+      "word": [
+        2,
+        1
+      ],
+      "pair": 96,
+      "singleton": 1,
+      "first_letter": 2,
+      "last_letter": 1
+    },
+    {
+      "source": "direct_attack\\data\\rank_two_joint_nonsync_p5_q6.json",
+      "peak": "best_e",
+      "rt": 2,
+      "P": 2,
+      "max_e": 6,
+      "word": [
+        2,
+        1
+      ],
+      "pair": 96,
+      "singleton": 1,
+      "first_letter": 2,
+      "last_letter": 1
+    }
+  ],
+  "verified": true
+}

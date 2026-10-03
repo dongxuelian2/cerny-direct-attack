@@ -1,0 +1,375 @@
+{
+  "n": 4,
+  "rows": [
+    [
+      1,
+      2,
+      0,
+      0
+    ],
+    [
+      3,
+      2,
+      0,
+      1
+    ]
+  ],
+  "extension": {
+    "1": 1,
+    "2": 2,
+    "3": 1,
+    "4": 3,
+    "5": 1,
+    "6": 2,
+    "7": 1,
+    "8": 2,
+    "9": 2,
+    "10": 3,
+    "11": 3,
+    "12": 2,
+    "13": 2,
+    "14": 4
+  },
+  "best": {
+    "15": 0,
+    "7": 1,
+    "11": 3,
+    "13": 2,
+    "14": 4,
+    "3": 3,
+    "5": 5,
+    "6": 4,
+    "9": 6,
+    "10": 7,
+    "12": 4,
+    "1": 5,
+    "2": 6,
+    "4": 7,
+    "8": 6
+  },
+  "worst": {
+    "15": 0,
+    "7": 1,
+    "11": 3,
+    "13": 2,
+    "14": 4,
+    "3": 3,
+    "5": 5,
+    "6": 4,
+    "9": 6,
+    "10": 7,
+    "12": 4,
+    "1": 5,
+    "2": 6,
+    "4": 7,
+    "8": 6
+  },
+  "best_policy": 5,
+  "worst_policy": 7,
+  "rt": 5,
+  "reset_word": [
+    0,
+    1,
+    0,
+    1,
+    0
+  ],
+  "phases": [
+    {
+      "start": 1,
+      "larger": 12,
+      "word": [
+        0
+      ]
+    },
+    {
+      "start": 12,
+      "larger": 13,
+      "word": [
+        0,
+        1
+      ]
+    },
+    {
+      "start": 13,
+      "larger": 15,
+      "word": [
+        0,
+        1
+      ]
+    }
+  ],
+  "seed_budget": {
+    "n": 4,
+    "rows": [
+      [
+        1,
+        2,
+        0,
+        0
+      ],
+      [
+        3,
+        2,
+        0,
+        1
+      ]
+    ],
+    "best_policy": 5,
+    "worst_policy": 7,
+    "rt": 5,
+    "reachable": 15,
+    "max_extension": 4,
+    "extension_start": 14,
+    "max_proper_rank": 3,
+    "truncated": false,
+    "kappa": 2,
+    "seed_best": 5,
+    "anchor_best": 5,
+    "anchor_worst": 5,
+    "seed_image": 12,
+    "anchor_image": 12
+  },
+  "one_letter_images": [
+    {
+      "image": 12,
+      "size": 2,
+      "labels": [
+        {
+          "letter": 0,
+          "target": 1
+        }
+      ],
+      "reach_word": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "G": 4,
+      "W": 4
+    }
+  ],
+  "seed_best_chain": {
+    "start": 12,
+    "key": "best",
+    "word": [
+      0,
+      1,
+      0,
+      1
+    ],
+    "phases": [
+      {
+        "start": 12,
+        "larger": 13,
+        "word": [
+          0,
+          1
+        ]
+      },
+      {
+        "start": 13,
+        "larger": 15,
+        "word": [
+          0,
+          1
+        ]
+      }
+    ],
+    "merged_image": 12,
+    "merge_letter": 0,
+    "target": 1,
+    "reset_word": [
+      0,
+      1,
+      0,
+      1,
+      0
+    ],
+    "budget": 5
+  },
+  "anchor_best_chain": {
+    "start": 12,
+    "key": "best",
+    "word": [
+      0,
+      1,
+      0,
+      1
+    ],
+    "phases": [
+      {
+        "start": 12,
+        "larger": 13,
+        "word": [
+          0,
+          1
+        ]
+      },
+      {
+        "start": 13,
+        "larger": 15,
+        "word": [
+          0,
+          1
+        ]
+      }
+    ],
+    "merged_image": 12,
+    "merge_letter": 0,
+    "target": 1,
+    "reset_word": [
+      0,
+      1,
+      0,
+      1,
+      0
+    ],
+    "budget": 5
+  },
+  "anchor_worst_chain": {
+    "start": 12,
+    "key": "worst",
+    "word": [
+      0,
+      1,
+      0,
+      1
+    ],
+    "phases": [
+      {
+        "start": 12,
+        "larger": 13,
+        "word": [
+          0,
+          1
+        ]
+      },
+      {
+        "start": 13,
+        "larger": 15,
+        "word": [
+          0,
+          1
+        ]
+      }
+    ],
+    "merged_image": 12,
+    "merge_letter": 0,
+    "target": 1,
+    "reset_word": [
+      0,
+      1,
+      0,
+      1,
+      0
+    ],
+    "budget": 5
+  },
+  "seed_worst_chain": {
+    "start": 12,
+    "key": "worst",
+    "word": [
+      0,
+      1,
+      0,
+      1
+    ],
+    "phases": [
+      {
+        "start": 12,
+        "larger": 13,
+        "word": [
+          0,
+          1
+        ]
+      },
+      {
+        "start": 13,
+        "larger": 15,
+        "word": [
+          0,
+          1
+        ]
+      }
+    ],
+    "merged_image": 12,
+    "merge_letter": 0,
+    "target": 1,
+    "reset_word": [
+      0,
+      1,
+      0,
+      1,
+      0
+    ],
+    "budget": 5
+  },
+  "inclusion_maximal_images": [
+    12
+  ],
+  "inclusion_best_chain": {
+    "start": 12,
+    "key": "best",
+    "word": [
+      0,
+      1,
+      0,
+      1
+    ],
+    "phases": [
+      {
+        "start": 12,
+        "larger": 13,
+        "word": [
+          0,
+          1
+        ]
+      },
+      {
+        "start": 13,
+        "larger": 15,
+        "word": [
+          0,
+          1
+        ]
+      }
+    ],
+    "merged_image": 12,
+    "merge_letter": 0,
+    "target": 1,
+    "reset_word": [
+      0,
+      1,
+      0,
+      1,
+      0
+    ],
+    "budget": 5
+  },
+  "inclusion_budget": 5,
+  "forward": {
+    "15": 0,
+    "7": 1,
+    "13": 2,
+    "3": 3,
+    "11": 3,
+    "6": 4,
+    "12": 4,
+    "14": 4,
+    "5": 5,
+    "1": 5,
+    "9": 6,
+    "2": 6,
+    "8": 6,
+    "10": 7,
+    "4": 7
+  },
+  "antitone_witness": {
+    "smaller": 1,
+    "larger": 9,
+    "G_smaller": 5,
+    "G_larger": 6
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "verified": true,
+  "checks": 117,
+  "regeneration_commands": 200,
+  "archived": [
+    {
+      "path": "direct_attack/data/compress_other_short_reset_continuation_provenance/audit_run.json",
+      "sha256": "05bf6e6ea035accc62330c2c2ef7a9c4971415e9aedebbf2ca456fe980ae2973"
+    },
+    {
+      "path": "direct_attack/data/compress_other_short_reset_continuation_provenance/reproduction_commands.json",
+      "sha256": "a2c6225d91a3f0e9ad81cd4fc2bd1d5a3be1e6d5d7a95334259c5109f733c12c"
+    },
+    {
+      "path": "direct_attack/data/compress_other_short_reset_continuation_provenance/sha256_manifest.json",
+      "sha256": "8f1503ce0eeb0e4d5df747b5e63df9b5a1698ac69478ec52b06c642e799ec443"
+    }
+  ],
+  "native_builds": [
+    {
+      "metadata": "direct_attack/data/alternating_frame_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/alternating_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/class_reset_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/complete_policy_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/sparse_policy_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/weighted_class_reset_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    }
+  ],
+  "generation_and_replay": "direct_attack/data/compress_other_short_reset_generation_captures.json",
+  "audit_boundary": "previous116-check record preserved verbatim; new independent original-row controls for actual pure reflection return and shorter reset,67 parameters throughn3072,35850770 macro state-letter controls and867768 literal reset controls, five COMPLETE forward/reverse subset graphs and ten corruptions; deterministic generation and replay; not a full117 rerun",
+  "mathematical_status": "PROVED paper EVERY p>=3 Figure3 actual reflection a^3(ba)^(p-2) and reset upper3p^2+4p-1, all original costs paid. Exact ordinary rt equality only finitep3..7, all-p equality CONJECTURED; separate mu0=4p paper proof preserved. General Cerny and priority OPEN; no formal concrete family theorem"
+}

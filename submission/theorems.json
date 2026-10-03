@@ -1,0 +1,1053 @@
+{
+  "compiler_version": "Lean (version 4.19.0, x86_64-w64-windows-gnu, commit 6caaee842e94, Release)",
+  "compiler_sha256": "f59b0c515f65dbf96526279d77fb43152f76bdd77f5fb94f387b75139fafe68c",
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "modules": [
+    {
+      "source": "lean/CertificateCore.lean",
+      "source_sha256": "f9cbcd5ab271759ee309919195fb8c84c1f612a3afb20e924ff6a9ba355dd445",
+      "imports": [
+        "Std"
+      ],
+      "theorems": [
+        {
+          "name": "Orion.potential_along_word",
+          "line": 15,
+          "statement": "theorem potential_along_word {S A : Type} (step : S → A → S)\n    (d : S → Nat) (edge : ∀ s a, d s ≤ d (step s a) + 1)\n    (w : List A) (s : S) : d s ≤ w.length + d (run step s w)",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "Orion.lower_bound",
+          "line": 29,
+          "statement": "theorem lower_bound {S A : Type} (step : S → A → S) (goal : S → Prop)\n    (d : S → Nat) (edge : ∀ s a, d s ≤ d (step s a) + 1)\n    (terminal : ∀ s, goal s → d s = 0) (s : S) (w : List A)\n    (hgoal : goal (run step s w)) : d s ≤ w.length",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "Orion.cardinality_limit",
+          "line": 37,
+          "statement": "theorem cardinality_limit (f : Nat → Nat) (hbase : f 1 = 0)\n    (hslope : ∀ k, f (k + 2) ≤ f (k + 1) + 1) :\n    ∀ k, f (k + 1) ≤ k",
+          "axioms": [
+            "propext"
+          ]
+        }
+      ],
+      "status": "FORMALLY VERIFIED"
+    },
+    {
+      "source": "post_baseline/lean_sprint/ResearchCore.lean",
+      "source_sha256": "2f5c58ffce695fe35d8efe4db84acbb4f6d0e1e0974e931b3abed0ca65cff884",
+      "imports": [
+        "Std"
+      ],
+      "theorems": [
+        {
+          "name": "OrionResearch.potential_along_walk",
+          "line": 11,
+          "statement": "theorem potential_along_walk {S : Type} {edge : S → S → Prop}\n    (p : S → Nat) (edge_bound : ∀ x y, edge x y → p x ≤ p y + 1)\n    {x z k} (w : Walk edge x z k) : p x ≤ k + p z",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "OrionResearch.potential_lower_bound",
+          "line": 18,
+          "statement": "theorem potential_lower_bound {S : Type} {edge : S → S → Prop}\n    (p : S → Nat) (edge_bound : ∀ x y, edge x y → p x ≤ p y + 1)\n    {x z k} (w : Walk edge x z k) (terminal : p z = 0) : p x ≤ k",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "OrionResearch.quotient_local",
+          "line": 24,
+          "statement": "theorem quotient_local {S A F : Type} (step : S → A → S) (alpha : S → F)\n    (p : F → Nat) (h : ∀ s a, p (alpha s) ≤ p (alpha (step s a)) + 1) :\n    ∀ x y, QuotientEdge step alpha x y → p x ≤ p y + 1",
+          "axioms": []
+        },
+        {
+          "name": "OrionResearch.monotone_simulation_transfer",
+          "line": 32,
+          "statement": "theorem monotone_simulation_transfer {S A F T : Type}\n    (step : S → A → S) (alpha : S → F) (view : S → T)\n    (small order : T → T → Prop) (p : F → Nat) (d : T → Nat)\n    (resolved : ∀ s, p (alpha s) = d (view s))\n    (mono : ∀ x y, order x y → d x ≤ d y)\n    (edgeCost : ∀ x y, small x y → d x ≤ d y + 1)\n    (simulation : ∀ s a, ∃ y, small (view s) y ∧ order y (view (step s a))) :\n    ∀ x y, QuotientEdge step alpha x y → p x ≤ p y + 1",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "OrionResearch.power2_pos",
+          "line": 52,
+          "statement": "theorem power2_pos (d : Nat) : 1 ≤ power2 d",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "OrionResearch.power2_eq",
+          "line": 57,
+          "statement": "theorem power2_eq (d : Nat) : power2 d = 2^d",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "OrionResearch.spaced_events",
+          "line": 62,
+          "statement": "theorem spaced_events (s : Nat → Nat) (step : ∀ i, s i + 2 ≤ s (i+1)) :\n    ∀ i d, s i + 2*d ≤ s (i+d)",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "OrionResearch.dyadic_release",
+          "line": 72,
+          "statement": "theorem dyadic_release (s : Nat → Nat) (r : Nat)\n    (release : ∀ i, 1 ≤ i → s i + r ≤ s (2*i)) :\n    ∀ d, d*r ≤ s (power2 d)",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "OrionResearch.genealogy_clock_lower",
+          "line": 84,
+          "statement": "theorem genealogy_clock_lower (s : Nat → Nat) (r K d : Nat)\n    (step : ∀ i, s i + 2 ≤ s (i+1))\n    (release : ∀ i, 1 ≤ i → s i + r ≤ s (2*i))\n    (index : power2 d ≤ K) : d*r + 2*(K-power2 d) ≤ s K",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "OrionResearch.genealogy_word_lower",
+          "line": 94,
+          "statement": "theorem genealogy_word_lower (s : Nat → Nat) (r K d totalClock : Nat)\n    (step : ∀ i, s i + 2 ≤ s (i+1))\n    (release : ∀ i, 1 ≤ i → s i + r ≤ s (2*i))\n    (index : power2 d ≤ K) (last : s K ≤ totalClock) :\n    K + d*r + 2*(K-power2 d) ≤ K+totalClock",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "OrionResearch.spaced_events_finite",
+          "line": 103,
+          "statement": "theorem spaced_events_finite (s : Nat → Nat) (K : Nat)\n    (step : ∀ i, 1 ≤ i → i < K → s i + 2 ≤ s (i+1)) :\n    ∀ i d, 1 ≤ i → i+d ≤ K → s i + 2*d ≤ s (i+d)",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "OrionResearch.dyadic_release_finite",
+          "line": 117,
+          "statement": "theorem dyadic_release_finite (s : Nat → Nat) (r K : Nat)\n    (release : ∀ i, 1 ≤ i → 2*i ≤ K → s i + r ≤ s (2*i)) :\n    ∀ d, power2 d ≤ K → d*r ≤ s (power2 d)",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "OrionResearch.genealogy_clock_lower_finite",
+          "line": 132,
+          "statement": "theorem genealogy_clock_lower_finite (s : Nat → Nat) (r K d : Nat)\n    (step : ∀ i, 1 ≤ i → i < K → s i + 2 ≤ s (i+1))\n    (release : ∀ i, 1 ≤ i → 2*i ≤ K → s i + r ≤ s (2*i))\n    (index : power2 d ≤ K) : d*r + 2*(K-power2 d) ≤ s K",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "OrionResearch.genealogy_tail_rigidity",
+          "line": 144,
+          "statement": "theorem genealogy_tail_rigidity (s : Nat → Nat) (r K d : Nat)\n    (step : ∀ i, 1 ≤ i → i < K → s i + 2 ≤ s (i+1))\n    (release : ∀ i, 1 ≤ i → 2*i ≤ K → s i + r ≤ s (2*i))\n    (index : power2 d ≤ K)\n    (optimal : s K ≤ d*r+2*(K-power2 d)) :\n    ∀ i, power2 d ≤ i → i ≤ K → s i = d*r+2*(i-power2 d)",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "OrionResearch.buffer_two_realizable",
+          "line": 163,
+          "statement": "theorem buffer_two_realizable (before now ready input : Nat)\n    (bit : input ≤ 1) (change : now = before+input)\n    (interlace : now ≤ ready ∧ ready ≤ now+1) :\n    input ≤ ready-before ∧ ready-before ≤ 1+input",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "OrionResearch.sharp_buffer_split",
+          "line": 169,
+          "statement": "theorem sharp_buffer_split (h z i ready : Nat) (hh : 1 ≤ h) (hz : 1 ≤ z)\n    (parents : i ≤ 2*h-1 ∧ i ≤ h+z) (releaseCount : ready ≤ 2*i+1) :\n    ready-(2*h+z-1) ≤ h+1",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "OrionResearch.sharp_buffer_nonsplit",
+          "line": 175,
+          "statement": "theorem sharp_buffer_nonsplit (h z i ready : Nat) (hh : 1 ≤ h)\n    (parents : i ≤ 2*h-1 ∧ i ≤ h+z) (releaseCount : ready ≤ 2*i+1) :\n    ready-(2*h+z) ≤ h",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "OrionResearch.sharp_capacity_obstruction",
+          "line": 180,
+          "statement": "theorem sharp_capacity_obstruction (h : Nat) (hh : 2 ≤ h) :\n    ¬ ((4*h-1)-(3*h-1) ≤ h-1)",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "OrionResearch.eventually_constant_nat",
+          "line": 183,
+          "statement": "theorem eventually_constant_nat (f : Nat → Nat)\n    (mono : ∀ i j, i ≤ j → f j ≤ f i) :\n    ∃ N, ∀ n, N ≤ n → f n = f N",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        }
+      ],
+      "status": "FORMALLY VERIFIED"
+    },
+    {
+      "source": "post_baseline/lean_sprint/AnchorPotentials.lean",
+      "source_sha256": "b4cee113a3998656d31d545ffcefe3d4b597aeed86e35b3b33053f61dfd8dee1",
+      "imports": [
+        "Std"
+      ],
+      "theorems": [
+        {
+          "name": "OrionAnchors.p2_rotation",
+          "line": 8,
+          "statement": "theorem p2_rotation (k : Nat) (u v t : Bool) (hk : 1 ≤ k)\n    (valid : bit u + bit v + bit t ≤ k) : p2 k u v ≤ p2 k v t + 1",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "OrionAnchors.p2_merge",
+          "line": 13,
+          "statement": "theorem p2_merge (k : Nat) (u v : Bool) (hk : 1 ≤ k)\n    (valid : bit u + bit v ≤ k) :\n    p2 k u v ≤ p2 (k-bit (u && v)) (u || v) false + 1",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "OrionAnchors.p3_rotation",
+          "line": 57,
+          "statement": "theorem p3_rotation (k : Nat) (u v w t : Bool) (hk : 1 ≤ k)\n    (valid : bit u + bit v + bit w + bit t ≤ k) :\n    p3 k u v w ≤ p3 k v w t + 1",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "OrionAnchors.p3_merge",
+          "line": 64,
+          "statement": "theorem p3_merge (k : Nat) (u v w : Bool) (hk : 1 ≤ k)\n    (valid : bit u + bit v + bit w ≤ k) :\n    p3 k u v w ≤ p3 (k-bit (u && v)) (u || v) false w + 1",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "OrionAnchors.p3_full_value",
+          "line": 78,
+          "statement": "theorem p3_full_value (n : Nat) (hn : 5 ≤ n) : p3 n true true true = 3*n-4",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        }
+      ],
+      "status": "FORMALLY VERIFIED"
+    },
+    {
+      "source": "post_baseline/lean_sprint/ThreeAnchorGraph.lean",
+      "source_sha256": "96d9461d44ca3d16442e0bcecf51726af7c19518bfb8620b77bc47bf4b1c4a34",
+      "imports": [
+        "ResearchCore",
+        "AnchorPotentials"
+      ],
+      "theorems": [
+        {
+          "name": "OrionThreeGraph.rotate_card",
+          "line": 25,
+          "statement": "theorem rotate_card (x : Feature) (t : Bool) (valid : bit t ≤ x.hidden) :\n    cardinality (rotate x t) = cardinality x",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "OrionThreeGraph.merge_card",
+          "line": 30,
+          "statement": "theorem merge_card (x : Feature) :\n    cardinality (merge x) = cardinality x - bit (x.u && x.v)",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "OrionThreeGraph.one_step",
+          "line": 37,
+          "statement": "theorem one_step (m : Nat) (x y : Feature) (edge : Edge m x y) :\n    potential x ≤ potential y + 1",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "OrionThreeGraph.full_lower_bound",
+          "line": 54,
+          "statement": "theorem full_lower_bound (n : Nat) (hn : 5 ≤ n) (goal : Feature) (length : Nat)\n    (walk : Walk (Edge (n-3)) ⟨n-3, true, true, true⟩ goal length)\n    (terminal : cardinality goal = 1) : 3*n-4 ≤ length",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        }
+      ],
+      "status": "FORMALLY VERIFIED"
+    },
+    {
+      "source": "post_baseline/lean_sprint/Cerny3Checked.lean",
+      "source_sha256": "59b4820de7231c0afe4921e3bb425f8793a249939f352e32cb45ec8b4c14e18d",
+      "imports": [
+        "Std"
+      ],
+      "theorems": [
+        {
+          "name": "Orion.potential_along_word",
+          "line": 16,
+          "statement": "theorem potential_along_word {S A : Type} (step : S → A → S)\n    (d : S → Nat) (edge : ∀ s a, d s ≤ d (step s a) + 1)\n    (w : List A) (s : S) : d s ≤ w.length + d (run step s w)",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "Orion.lower_bound",
+          "line": 30,
+          "statement": "theorem lower_bound {S A : Type} (step : S → A → S) (goal : S → Prop)\n    (d : S → Nat) (edge : ∀ s a, d s ≤ d (step s a) + 1)\n    (terminal : ∀ s, goal s → d s = 0) (s : S) (w : List A)\n    (hgoal : goal (run step s w)) : d s ≤ w.length",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "Orion.cardinality_limit",
+          "line": 38,
+          "statement": "theorem cardinality_limit (f : Nat → Nat) (hbase : f 1 = 0)\n    (hslope : ∀ k, f (k + 2) ≤ f (k + 1) + 1) :\n    ∀ k, f (k + 1) ≤ k",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "OrionExample.one_step_fidelity",
+          "line": 80,
+          "statement": "theorem one_step_fidelity : ∀ (s : State) (a : Bool) (j : Fin 3),\n    bitOn (move s a).val j.val =\n    (List.finRange 3).any (fun q => bitOn s.val q.val &&\n      decide (transition q.val a = j.val))",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "OrionExample.local_bound",
+          "line": 85,
+          "statement": "theorem local_bound : ∀ s a, potential s ≤ potential (move s a) + 1",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "OrionExample.terminal_zero",
+          "line": 87,
+          "statement": "theorem terminal_zero : ∀ s, goal s → potential s = 0",
+          "axioms": []
+        },
+        {
+          "name": "OrionExample.witness_reaches_goal",
+          "line": 93,
+          "statement": "theorem witness_reaches_goal : goal (run move initial witness)",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "OrionExample.optimal_subset_path",
+          "line": 97,
+          "statement": "theorem optimal_subset_path :\n    goal (run move initial witness) ∧\n    ∀ w : List Bool, goal (run move initial w) → witness.length ≤ w.length",
+          "axioms": [
+            "propext"
+          ]
+        }
+      ],
+      "status": "FORMALLY VERIFIED"
+    },
+    {
+      "source": "post_baseline/lean_sprint/Cerny4Checked.lean",
+      "source_sha256": "5abcbabfd2549273b8e0b58bd40407c19f415d9212bab6db229203caaf075e8c",
+      "imports": [
+        "Std"
+      ],
+      "theorems": [
+        {
+          "name": "Orion.potential_along_word",
+          "line": 16,
+          "statement": "theorem potential_along_word {S A : Type} (step : S → A → S)\n    (d : S → Nat) (edge : ∀ s a, d s ≤ d (step s a) + 1)\n    (w : List A) (s : S) : d s ≤ w.length + d (run step s w)",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "Orion.lower_bound",
+          "line": 30,
+          "statement": "theorem lower_bound {S A : Type} (step : S → A → S) (goal : S → Prop)\n    (d : S → Nat) (edge : ∀ s a, d s ≤ d (step s a) + 1)\n    (terminal : ∀ s, goal s → d s = 0) (s : S) (w : List A)\n    (hgoal : goal (run step s w)) : d s ≤ w.length",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "Orion.cardinality_limit",
+          "line": 38,
+          "statement": "theorem cardinality_limit (f : Nat → Nat) (hbase : f 1 = 0)\n    (hslope : ∀ k, f (k + 2) ≤ f (k + 1) + 1) :\n    ∀ k, f (k + 1) ≤ k",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "OrionExample.one_step_fidelity",
+          "line": 80,
+          "statement": "theorem one_step_fidelity : ∀ (s : State) (a : Bool) (j : Fin 4),\n    bitOn (move s a).val j.val =\n    (List.finRange 4).any (fun q => bitOn s.val q.val &&\n      decide (transition q.val a = j.val))",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "OrionExample.local_bound",
+          "line": 85,
+          "statement": "theorem local_bound : ∀ s a, potential s ≤ potential (move s a) + 1",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "OrionExample.terminal_zero",
+          "line": 87,
+          "statement": "theorem terminal_zero : ∀ s, goal s → potential s = 0",
+          "axioms": []
+        },
+        {
+          "name": "OrionExample.witness_reaches_goal",
+          "line": 93,
+          "statement": "theorem witness_reaches_goal : goal (run move initial witness)",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "OrionExample.optimal_subset_path",
+          "line": 97,
+          "statement": "theorem optimal_subset_path :\n    goal (run move initial witness) ∧\n    ∀ w : List Bool, goal (run move initial w) → witness.length ≤ w.length",
+          "axioms": [
+            "propext"
+          ]
+        }
+      ],
+      "status": "FORMALLY VERIFIED"
+    },
+    {
+      "source": "direct_attack/LayeredPairBarrier.lean",
+      "source_sha256": "2c3fa3ced68e0c5e8b230d9977f3bec2ad0492a30b8974a2f817971a6e692a34",
+      "imports": [
+        "Std"
+      ],
+      "theorems": [
+        {
+          "name": "Orion.DirectAttack.layered_invariants",
+          "line": 42,
+          "statement": "theorem layered_invariants {S : Type u} {edge : S → S → Prop}\n    (c : LayeredCertificate edge) (start : S)\n    (hindex : c.index start = 0)\n    (hC0 : ¬ c.C start) (hH0 : ¬ c.H start)\n    (hK0 : ¬ c.K start) (hU0 : ¬ c.U start)\n    {q : S} {t : Nat} (path : Walk edge start q t) :\n    c.index q ≤ t ∧\n    (c.C q → c.phiC q ≤ t) ∧\n    (c.H q → c.phiH q ≤ t) ∧\n    (c.K q → c.bound ≤ t + 1) ∧\n    (c.U q → c.bound ≤ t)",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "Orion.DirectAttack.first_collapse_cost",
+          "line": 94,
+          "statement": "theorem first_collapse_cost {S : Type u} {edge : S → S → Prop}\n    (c : LayeredCertificate edge) (start : S)\n    (hindex : c.index start = 0)\n    (hC0 : ¬ c.C start) (hH0 : ¬ c.H start)\n    (hK0 : ¬ c.K start) (hU0 : ¬ c.U start)\n    {q : S} {t : Nat} (path : Walk edge start q t)\n    (terminal : c.K q ∨ c.U q) : c.bound ≤ t + 1",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        }
+      ],
+      "status": "FORMALLY VERIFIED"
+    },
+    {
+      "source": "direct_attack/KariInverseShrink.lean",
+      "source_sha256": "6d82c55ffbb1ba7daf153d24f26f8cb3c1d3ae81e79877025173c3d5eea4b602",
+      "imports": [
+        "Std"
+      ],
+      "theorems": [
+        {
+          "name": "KariInverseShrink.preMask_bound",
+          "line": 29,
+          "statement": "theorem preMask_bound :\n    ∀ S : Fin 64, ∀ letter : Fin 2, preMask letter.val S.val < 64",
+          "axioms": []
+        },
+        {
+          "name": "KariInverseShrink.literal_preimage_correct",
+          "line": 42,
+          "statement": "theorem literal_preimage_correct :\n    ∀ S : Fin 64, ∀ letter : Fin 2, ∀ q : Fin 6,\n      member (step letter S).val q.val ↔ member S.val (transition letter q)",
+          "axioms": []
+        },
+        {
+          "name": "KariInverseShrink.singleton_bound",
+          "line": 52,
+          "statement": "theorem singleton_bound : ∀ q : Fin 6, 2^q.val < 64",
+          "axioms": []
+        },
+        {
+          "name": "KariInverseShrink.seed_in_cut",
+          "line": 56,
+          "statement": "theorem seed_in_cut : ∀ q : Fin 6, (singleton q).val ∈ cut",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "KariInverseShrink.full_not_in_cut",
+          "line": 58,
+          "statement": "theorem full_not_in_cut : ¬ 63 ∈ cut",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "KariInverseShrink.cut_closed",
+          "line": 60,
+          "statement": "theorem cut_closed :\n    ∀ S : Fin 64, ∀ letter : Fin 2,\n      S.val ∈ cut → card S.val ≤ card (step letter S).val →\n      (step letter S).val ∈ cut",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "KariInverseShrink.run_preserves_cut",
+          "line": 75,
+          "statement": "theorem run_preserves_cut (word : List (Fin 2)) :\n    ∀ S : Fin 64, S.val ∈ cut → MonotoneRun S word → (run S word).val ∈ cut",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "KariInverseShrink.no_monotone_inverse_reset",
+          "line": 86,
+          "statement": "theorem no_monotone_inverse_reset (q : Fin 6) (word : List (Fin 2))\n    (hRun : MonotoneRun (singleton q) word) :\n    (run (singleton q) word).val ≠ 63",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "KariInverseShrink.zero_shrinks_monotone",
+          "line": 100,
+          "statement": "theorem zero_shrinks_monotone (word : List (Fin 2)) :\n    ∀ S : Fin 64, shrinkCount S word = 0 → MonotoneRun S word",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "KariInverseShrink.reset_needs_shrink",
+          "line": 115,
+          "statement": "theorem reset_needs_shrink (q : Fin 6) (word : List (Fin 2))\n    (hFull : (run (singleton q) word).val = 63) :\n    1 ≤ shrinkCount (singleton q) word",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "KariInverseShrink.witness_resets",
+          "line": 126,
+          "statement": "theorem witness_resets : (run (singleton 4) inverseWitness).val = 63",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "KariInverseShrink.witness_one_shrink",
+          "line": 128,
+          "statement": "theorem witness_one_shrink : shrinkCount (singleton 4) inverseWitness = 1",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "KariInverseShrink.witness_cost",
+          "line": 130,
+          "statement": "theorem witness_cost : inverseWitness.length = 25",
+          "axioms": [
+            "propext"
+          ]
+        }
+      ],
+      "status": "FORMALLY VERIFIED"
+    },
+    {
+      "source": "direct_attack/KariShrinkProducts.lean",
+      "source_sha256": "3ce2361202c7ba27745f9da05492d2251a6d80cc0a58ffa3034a27e5f2fb7e3f",
+      "imports": [
+        "Std"
+      ],
+      "theorems": [
+        {
+          "name": "KariInverseShrink.preMask_bound",
+          "line": 29,
+          "statement": "theorem preMask_bound :\n    ∀ S : Fin 64, ∀ letter : Fin 2, preMask letter.val S.val < 64",
+          "axioms": []
+        },
+        {
+          "name": "KariInverseShrink.literal_preimage_correct",
+          "line": 42,
+          "statement": "theorem literal_preimage_correct :\n    ∀ S : Fin 64, ∀ letter : Fin 2, ∀ q : Fin 6,\n      member (step letter S).val q.val ↔ member S.val (transition letter q)",
+          "axioms": []
+        },
+        {
+          "name": "KariInverseShrink.singleton_bound",
+          "line": 52,
+          "statement": "theorem singleton_bound : ∀ q : Fin 6, 2^q.val < 64",
+          "axioms": []
+        },
+        {
+          "name": "KariInverseShrink.seed_in_cut",
+          "line": 56,
+          "statement": "theorem seed_in_cut : ∀ q : Fin 6, (singleton q).val ∈ cut",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "KariInverseShrink.full_not_in_cut",
+          "line": 58,
+          "statement": "theorem full_not_in_cut : ¬ 63 ∈ cut",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "KariInverseShrink.cut_closed",
+          "line": 60,
+          "statement": "theorem cut_closed :\n    ∀ S : Fin 64, ∀ letter : Fin 2,\n      S.val ∈ cut → card S.val ≤ card (step letter S).val →\n      (step letter S).val ∈ cut",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "KariInverseShrink.run_preserves_cut",
+          "line": 75,
+          "statement": "theorem run_preserves_cut (word : List (Fin 2)) :\n    ∀ S : Fin 64, S.val ∈ cut → MonotoneRun S word → (run S word).val ∈ cut",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "KariInverseShrink.no_monotone_inverse_reset",
+          "line": 86,
+          "statement": "theorem no_monotone_inverse_reset (q : Fin 6) (word : List (Fin 2))\n    (hRun : MonotoneRun (singleton q) word) :\n    (run (singleton q) word).val ≠ 63",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "KariInverseShrink.zero_shrinks_monotone",
+          "line": 100,
+          "statement": "theorem zero_shrinks_monotone (word : List (Fin 2)) :\n    ∀ S : Fin 64, shrinkCount S word = 0 → MonotoneRun S word",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "KariInverseShrink.reset_needs_shrink",
+          "line": 115,
+          "statement": "theorem reset_needs_shrink (q : Fin 6) (word : List (Fin 2))\n    (hFull : (run (singleton q) word).val = 63) :\n    1 ≤ shrinkCount (singleton q) word",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "KariInverseShrink.witness_resets",
+          "line": 126,
+          "statement": "theorem witness_resets : (run (singleton 4) inverseWitness).val = 63",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "KariInverseShrink.witness_one_shrink",
+          "line": 128,
+          "statement": "theorem witness_one_shrink : shrinkCount (singleton 4) inverseWitness = 1",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "KariInverseShrink.witness_cost",
+          "line": 130,
+          "statement": "theorem witness_cost : inverseWitness.length = 25",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "KariProductBase.full_step_bound",
+          "line": 149,
+          "statement": "theorem full_step_bound : ∀ S : Fin 64, ∀ l : Fin 2,\n    fullPotential S ≤ 1 + fullPotential (step l S)",
+          "axioms": []
+        },
+        {
+          "name": "KariProductBase.prefix_step_bound",
+          "line": 152,
+          "statement": "theorem prefix_step_bound : ∀ S : Fin 64, ∀ l : Fin 2,\n    prefixPotential S ≤ 1 + prefixPotential (step l S)",
+          "axioms": []
+        },
+        {
+          "name": "KariProductBase.mono_step_bound",
+          "line": 155,
+          "statement": "theorem mono_step_bound : ∀ S : Fin 64, ∀ l : Fin 2,\n    card S.val ≤ card (step l S).val →\n    monoPotential S ≤ 1 + monoPotential (step l S)",
+          "axioms": []
+        },
+        {
+          "name": "KariProductBase.potential_path",
+          "line": 159,
+          "statement": "theorem potential_path (p : Fin 64 → Nat)\n    (hStep : ∀ S : Fin 64, ∀ l : Fin 2, p S ≤ 1 + p (step l S))\n    (word : List (Fin 2)) : ∀ S : Fin 64,\n    p S ≤ word.length + p (run S word)",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "KariProductBase.monotone_potential_path",
+          "line": 172,
+          "statement": "theorem monotone_potential_path (word : List (Fin 2)) : ∀ S : Fin 64,\n    MonotoneRun S word →\n    monoPotential S ≤ word.length + monoPotential (run S word)",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "KariProductBase.reset_length_lower",
+          "line": 184,
+          "statement": "theorem reset_length_lower (q : Fin 6) (word : List (Fin 2))\n    (hFull : run (singleton q) word = 63) : 25 ≤ word.length",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "KariProductBase.to45_length_lower",
+          "line": 193,
+          "statement": "theorem to45_length_lower (q : Fin 6) (word : List (Fin 2))\n    (hTarget : run (singleton q) word = 45) : 16 ≤ word.length",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "KariProductBase.mono44_length_lower",
+          "line": 202,
+          "statement": "theorem mono44_length_lower (word : List (Fin 2))\n    (hMono : MonotoneRun 44 word) (hFull : run 44 word = 63) :\n    10 ≤ word.length",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "KariProductBase.last44_length_lower",
+          "line": 211,
+          "statement": "theorem last44_length_lower (q : Fin 6) (lead suffix : List (Fin 2))\n    (hPre : run (singleton q) lead = 45)\n    (hMono : MonotoneRun 44 suffix) (hPost : run 44 suffix = 63) :\n    27 ≤ lead.length + 1 + suffix.length",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "KariProductBase.co_cut_backward",
+          "line": 219,
+          "statement": "theorem co_cut_backward : ∀ S : Fin 64, ∀ l : Fin 2,\n    card S.val ≤ card (step l S).val → (step l S).val ∈ coCut →\n    S.val ∈ coCut",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "KariProductBase.run_to_co_cut",
+          "line": 223,
+          "statement": "theorem run_to_co_cut (word : List (Fin 2)) : ∀ S : Fin 64,\n    MonotoneRun S word → (run S word).val ∈ coCut → S.val ∈ coCut",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "KariProductBase.last_negative_bridge",
+          "line": 231,
+          "statement": "theorem last_negative_bridge : ∀ S : Fin 64, ∀ l : Fin 2,\n    card (step l S).val < card S.val → (step l S).val ∈ coCut →\n    (S.val = 45 ∧ (step l S).val = 44) ∨\n    (S.val = 47 ∧ (step l S).val = 60)",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "KariProductBase.last_negative_word",
+          "line": 236,
+          "statement": "theorem last_negative_word (S : Fin 64) (l : Fin 2) (suffix : List (Fin 2))\n    (hNeg : card (step l S).val < card S.val)\n    (hMono : MonotoneRun (step l S) suffix)\n    (hFull : run (step l S) suffix = 63) :\n    (S.val = 45 ∧ (step l S).val = 44) ∨\n    (S.val = 47 ∧ (step l S).val = 60)",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "KariProductBase.one_bridge",
+          "line": 245,
+          "statement": "theorem one_bridge : ∀ S : Fin 64, ∀ l : Fin 2,\n    S.val ∈ cut → card (step l S).val < card S.val →\n    (step l S).val ∈ coCut → S.val = 47 ∧ (step l S).val = 60",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "KariProductBase.single_negative_word",
+          "line": 249,
+          "statement": "theorem single_negative_word (q : Fin 6) (lead suffix : List (Fin 2)) (l : Fin 2)\n    (hPre : MonotoneRun (singleton q) lead)\n    (hNeg : card (step l (run (singleton q) lead)).val < card (run (singleton q) lead).val)\n    (hPost : MonotoneRun (step l (run (singleton q) lead)) suffix)\n    (hFull : run (step l (run (singleton q) lead)) suffix = 63) :\n    (run (singleton q) lead).val = 47 ∧\n    (step l (run (singleton q) lead)).val = 60",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "KariProductBase.one_phase_witness",
+          "line": 267,
+          "statement": "theorem one_phase_witness :\n    run (singleton 4) onePrefix = 60 ∧ shrinkCount (singleton 4) onePrefix = 1 ∧\n    MonotoneRun 60 oneSuffix ∧ run 60 oneSuffix = 63 ∧\n    onePrefix.length + oneSuffix.length = 25",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "KariProductBase.two_phase_witness",
+          "line": 274,
+          "statement": "theorem two_phase_witness :\n    run (singleton 4) twoPrefix = 44 ∧ shrinkCount (singleton 4) twoPrefix = 2 ∧\n    MonotoneRun 44 twoSuffix ∧ run 44 twoSuffix = 63 ∧\n    twoPrefix.length + twoSuffix.length = 27",
+          "axioms": [
+            "propext"
+          ]
+        }
+      ],
+      "status": "FORMALLY VERIFIED"
+    },
+    {
+      "source": "direct_attack/ReflectionCoreCut.lean",
+      "source_sha256": "5a2df90e8b17785c21270b98a2c7949e4670923b1c774cb4572ead90b4c8727d",
+      "imports": [
+        "Std"
+      ],
+      "theorems": [
+        {
+          "name": "ReflectionCoreCut.seed",
+          "line": 31,
+          "statement": "theorem seed : ([] : List Int) ∈ layer 0",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "ReflectionCoreCut.letter_in_letters",
+          "line": 35,
+          "statement": "theorem letter_in_letters : ∀ letter : Fin 2, letter ∈ letters",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "ReflectionCoreCut.finite_cut_certificate",
+          "line": 41,
+          "statement": "theorem finite_cut_certificate : ∀ k : Fin 8, layerOK k.val = true",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "ReflectionCoreCut.cut_closed",
+          "line": 43,
+          "statement": "theorem cut_closed :\n    ∀ k : Fin 8, ∀ H ∈ layer k.val, ∀ letter : Fin 2,\n      safe H ∧ step letter H ∈ layer (k.val + 1)",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "ReflectionCoreCut.run_in_layers",
+          "line": 62,
+          "statement": "theorem run_in_layers (word : List (Fin 2)) :\n    ∀ k H, k + word.length ≤ 8 → H ∈ layer k →\n      SafeRun H word ∧ run H word ∈ layer (k + word.length)",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "ReflectionCoreCut.no_avoid_first_eight",
+          "line": 78,
+          "statement": "theorem no_avoid_first_eight (word : List (Fin 2)) (hLength : word.length ≤ 8) :\n    SafeRun [] word",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "ReflectionCoreCut.witness_prefix_holes",
+          "line": 84,
+          "statement": "theorem witness_prefix_holes : run [] witnessPrefix = [0,1,3]",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "ReflectionCoreCut.witness_final_unsafe",
+          "line": 86,
+          "statement": "theorem witness_final_unsafe : ¬ safe (run [] witnessPrefix)",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        }
+      ],
+      "status": "FORMALLY VERIFIED"
+    }
+  ],
+  "archival": [
+    {
+      "source": "lean/Cerny3.lean",
+      "source_sha256": "fcf8be9a59f7d5e91dc37d533cf153022162e97999eae5a11393fb6b7e8dc01d",
+      "imports": [
+        "Std"
+      ],
+      "theorems": [
+        {
+          "name": "Orion.potential_along_word",
+          "line": 15,
+          "statement": "theorem potential_along_word {S A : Type} (step : S → A → S)\n    (d : S → Nat) (edge : ∀ s a, d s ≤ d (step s a) + 1)\n    (w : List A) (s : S) : d s ≤ w.length + d (run step s w)"
+        },
+        {
+          "name": "Orion.lower_bound",
+          "line": 29,
+          "statement": "theorem lower_bound {S A : Type} (step : S → A → S) (goal : S → Prop)\n    (d : S → Nat) (edge : ∀ s a, d s ≤ d (step s a) + 1)\n    (terminal : ∀ s, goal s → d s = 0) (s : S) (w : List A)\n    (hgoal : goal (run step s w)) : d s ≤ w.length"
+        },
+        {
+          "name": "Orion.cardinality_limit",
+          "line": 37,
+          "statement": "theorem cardinality_limit (f : Nat → Nat) (hbase : f 1 = 0)\n    (hslope : ∀ k, f (k + 2) ≤ f (k + 1) + 1) :\n    ∀ k, f (k + 1) ≤ k"
+        },
+        {
+          "name": "OrionExample.one_step_fidelity",
+          "line": 80,
+          "statement": "theorem one_step_fidelity : ∀ (s : State) (a : Bool) (j : Fin 3),\n    bitOn (move s a).val j.val =\n    (List.finRange 3).any (fun q => bitOn s.val q.val &&\n      decide (transition q.val a = j.val))"
+        },
+        {
+          "name": "OrionExample.local_bound",
+          "line": 85,
+          "statement": "theorem local_bound : ∀ s a, potential s ≤ potential (move s a) + 1"
+        },
+        {
+          "name": "OrionExample.terminal_zero",
+          "line": 87,
+          "statement": "theorem terminal_zero : ∀ s, goal s → potential s = 0"
+        },
+        {
+          "name": "OrionExample.witness_reaches_goal",
+          "line": 89,
+          "statement": "theorem witness_reaches_goal : goal (run move initial witness)"
+        },
+        {
+          "name": "OrionExample.optimal_subset_path",
+          "line": 92,
+          "statement": "theorem optimal_subset_path :\n    goal (run move initial witness) ∧\n    ∀ w : List Bool, goal (run move initial w) → witness.length ≤ w.length"
+        }
+      ],
+      "status": "EXCLUDED: frozen noncompiling draft",
+      "returncode": 1
+    },
+    {
+      "source": "lean/Cerny4.lean",
+      "source_sha256": "8e328a0ed6d6084a85434d1b5a7fb65b373294c39df28e29636c61b115b64cf1",
+      "imports": [
+        "Std"
+      ],
+      "theorems": [
+        {
+          "name": "Orion.potential_along_word",
+          "line": 15,
+          "statement": "theorem potential_along_word {S A : Type} (step : S → A → S)\n    (d : S → Nat) (edge : ∀ s a, d s ≤ d (step s a) + 1)\n    (w : List A) (s : S) : d s ≤ w.length + d (run step s w)"
+        },
+        {
+          "name": "Orion.lower_bound",
+          "line": 29,
+          "statement": "theorem lower_bound {S A : Type} (step : S → A → S) (goal : S → Prop)\n    (d : S → Nat) (edge : ∀ s a, d s ≤ d (step s a) + 1)\n    (terminal : ∀ s, goal s → d s = 0) (s : S) (w : List A)\n    (hgoal : goal (run step s w)) : d s ≤ w.length"
+        },
+        {
+          "name": "Orion.cardinality_limit",
+          "line": 37,
+          "statement": "theorem cardinality_limit (f : Nat → Nat) (hbase : f 1 = 0)\n    (hslope : ∀ k, f (k + 2) ≤ f (k + 1) + 1) :\n    ∀ k, f (k + 1) ≤ k"
+        },
+        {
+          "name": "OrionExample.one_step_fidelity",
+          "line": 80,
+          "statement": "theorem one_step_fidelity : ∀ (s : State) (a : Bool) (j : Fin 4),\n    bitOn (move s a).val j.val =\n    (List.finRange 4).any (fun q => bitOn s.val q.val &&\n      decide (transition q.val a = j.val))"
+        },
+        {
+          "name": "OrionExample.local_bound",
+          "line": 85,
+          "statement": "theorem local_bound : ∀ s a, potential s ≤ potential (move s a) + 1"
+        },
+        {
+          "name": "OrionExample.terminal_zero",
+          "line": 87,
+          "statement": "theorem terminal_zero : ∀ s, goal s → potential s = 0"
+        },
+        {
+          "name": "OrionExample.witness_reaches_goal",
+          "line": 89,
+          "statement": "theorem witness_reaches_goal : goal (run move initial witness)"
+        },
+        {
+          "name": "OrionExample.optimal_subset_path",
+          "line": 92,
+          "statement": "theorem optimal_subset_path :\n    goal (run move initial witness) ∧\n    ∀ w : List Bool, goal (run move initial w) → witness.length ≤ w.length"
+        }
+      ],
+      "status": "EXCLUDED: frozen noncompiling draft",
+      "returncode": 1
+    }
+  ]
+}

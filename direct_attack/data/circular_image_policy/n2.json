@@ -1,0 +1,44 @@
+{
+  "n": 2,
+  "rows": [
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      0
+    ]
+  ],
+  "critical": [
+    {
+      "start": 3,
+      "size": 2,
+      "extension": null,
+      "policy": 0,
+      "reach_word": []
+    }
+  ],
+  "singletons": [
+    {
+      "state": 0,
+      "extension": 1,
+      "policy": 1,
+      "reset_word": [
+        1
+      ]
+    },
+    {
+      "state": 1,
+      "extension": 2,
+      "policy": 2,
+      "reset_word": [
+        1,
+        0
+      ]
+    }
+  ],
+  "mean_sum": 3,
+  "square_sum": 2,
+  "verified": true
+}

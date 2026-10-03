@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "<CHECKOUT>\\direct_attack\\native_build\\short_tail_opposite_weighted_pressure.exe",
+    "8",
+    "<CHECKOUT>\\direct_attack\\data\\short_tail_opposite_weighted_M8.json"
+  ],
+  "cwd": "<CHECKOUT>",
+  "start_utc": "2026-10-03T06:55:41.627273+00:00",
+  "seconds": 0.03200000000288128,
+  "returncode": 0,
+  "stdout": "{\"M\":8,\"peak\":7,\"proposals_EXPLORATORY\":2160,\"sync_EXPLORATORY\":1152,\"targets_EXPLORATORY\":32256}\n",
+  "stderr": "peak=6 M=8 tau=3 h=2 accepted=1\npeak=7 M=8 tau=3 h=2 accepted=1\n",
+  "source_sha256": "86a0cc819b8bc4512f3ee088d72a0bdb12941cd9b8dc7a73309d46b999a819a3",
+  "binary_sha256": "fa8d1ba28d7d51b331755e6ae78d45ce625a023266e82890b9f3baa7e3a838ff",
+  "output_sha256": "7494ee410b1b57e429b601031f3a2225a49a5dcdefa2a842eaf178a337ae7087"
+}

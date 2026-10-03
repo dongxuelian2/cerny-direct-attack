@@ -1,0 +1,1 @@
+{"scope":"NEW higher-tail, excluded criterion, M3..8 enumeration until first counterexample","counts":{"inputs":5882,"synchronizing":5720,"root_controls":67496,"maximum_minimum":9},"stopped_on_counterexample":false,"counterexample":null,"coverage_status":"EXPLORATORY; driver counters have no separate complete-coverage audit","general_Cerny":"OPEN"}

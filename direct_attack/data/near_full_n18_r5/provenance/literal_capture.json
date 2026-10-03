@@ -1,0 +1,27 @@
+{
+  "argv": [
+    "<PYTHON_RUNTIME>\\python.exe",
+    "-m",
+    "direct_attack.near_full_search",
+    "--n",
+    "18",
+    "--corank",
+    "5",
+    "--iterations",
+    "100000",
+    "--minimum-protected",
+    "14",
+    "--restart",
+    "1500",
+    "--seed",
+    "20261029",
+    "--out",
+    "direct_attack/data/near_full_n18_r5"
+  ],
+  "cwd": "<CHECKOUT>",
+  "start_unix": 1790694199.4421299,
+  "seconds": 492.8777549266815,
+  "returncode": 0,
+  "stdout": "{\"iteration\": 1, \"best\": [6, 8], \"seconds\": 0.005517005920410156}\n{\"iteration\": 2, \"best\": [7, 8], \"seconds\": 0.015869140625}\n{\"iteration\": 4, \"best\": [7, 9], \"seconds\": 0.034610748291015625}\n{\"iteration\": 5, \"best\": [7, 10], \"seconds\": 0.04775834083557129}\n{\"iteration\": 73, \"best\": [8, 10], \"seconds\": 0.2781965732574463}\n{\"iteration\": 110, \"best\": [10, 10], \"seconds\": 0.72463059425354}\n{\"iteration\": 379, \"best\": [10, 11], \"seconds\": 2.4665184020996094}\n{\"iteration\": 420, \"best\": [11, 11], \"seconds\": 2.921638011932373}\n{\"iteration\": 48401, \"best\": [11, 12], \"seconds\": 245.10693550109863}\n{\"iteration\": 48470, \"best\": [12, 12], \"seconds\": 245.4873776435852}\n{\"arguments\": {\"n\": 18, \"corank\": 5, \"iterations\": 100000, \"minimum_protected\": 14, \"source\": null, \"restart\": 1500, \"seed\": 20261029, \"out\": \"direct_attack/data/near_full_n18_r5\"}, \"counts\": {\"proposals\": 100000, \"sync_sc\": 87197}, \"best\": [12, 12], \"seconds\": 492.7915999889374}\n",
+  "stderr": ""
+}

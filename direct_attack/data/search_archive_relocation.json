@@ -1,0 +1,8 @@
+{
+  "reason": "Preserve the earlier seed-20260929 archive after a seed-20261003 run reused its output directory.",
+  "original_run_directory": "direct_attack/data/near_full_n16_r4",
+  "archived_run_directory": "direct_attack/data/near_full_n16_r4_seed20261003",
+  "raw_summary_arguments_preserved": true,
+  "seeded_followup_frozen_input": "direct_attack/data/near_full_n16_r4_seeded/input/seed.json",
+  "reproduction": "reproduce.py overrides archived output and uses the frozen seed; original argv is recorded separately."
+}

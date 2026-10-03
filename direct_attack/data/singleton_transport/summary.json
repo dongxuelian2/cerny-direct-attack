@@ -1,0 +1,23 @@
+{
+  "counts": {
+    "2": {
+      "tested": 9,
+      "synchronizing_sc": 4,
+      "completed": true
+    },
+    "3": {
+      "tested": 182,
+      "synchronizing_sc": 59,
+      "completed": true
+    },
+    "4": {
+      "tested": 873,
+      "synchronizing_sc": 103,
+      "completed": false
+    }
+  },
+  "first_n": 4,
+  "status": "REFUTED",
+  "proposed": "G({q a})<=G({q})+1 for every state-edge",
+  "scope": "Binary-minimal within SC synchronization; higher-n cover stops on first refutation."
+}

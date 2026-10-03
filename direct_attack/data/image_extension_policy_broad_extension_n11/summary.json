@@ -1,0 +1,31 @@
+{
+  "arguments": {
+    "n": 11,
+    "alphabet": 2,
+    "count": 30000,
+    "seed": 20261007,
+    "restart": 1000,
+    "objective": "extension",
+    "out": "direct_attack/data/image_extension_policy_broad_extension_n11"
+  },
+  "counts": {
+    "tested": 30000,
+    "strongly_connected": 23173,
+    "synchronizing_sc": 23123
+  },
+  "seeds": 856,
+  "seed_max": 100,
+  "best_policy": 55,
+  "best_rt_at_policy_peak": 55,
+  "local_excess_at_peak": -36,
+  "objective_score": [
+    18,
+    55
+  ],
+  "records": [
+    "witness_000.json",
+    "witness_001.json"
+  ],
+  "seconds": 169.17200000000048,
+  "scope": "Exact scoring of frozen seeds and sampled mutations, not exhaustive."
+}

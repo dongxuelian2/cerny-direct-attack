@@ -1,0 +1,45 @@
+{
+  "byte_identical": true,
+  "files": [
+    {
+      "path": "direct_attack/data/research_pressure_124/rooted_cycle_full_history.cpp",
+      "sha256": "b4098ae49338913df026a3abcf17fe89856f7bbaf5f2ef9026f57854216c49d7"
+    },
+    {
+      "path": "direct_attack/data/research_pressure_124/rooted_cycle_full_history.py",
+      "sha256": "9ec9713523fadaea8e1abdc4db71b98966a85db02589c0791ef7972e167e9396"
+    },
+    {
+      "path": "direct_attack/data/research_pressure_124/rooted_cycle_full_history.json",
+      "sha256": "c4d9eae7550770befdb9c0c46f47b7eb97675415035e22719e798b6bf5d47163"
+    },
+    {
+      "path": "direct_attack/data/research_pressure_124/rooted_cycle_full_history.analysis.json",
+      "sha256": "11d32c63f6aeea9726c8f3da8755f0f9bc3a7791a2ea92b9215e1f67df5ac01c"
+    },
+    {
+      "path": "direct_attack/data/research_pressure_124/third_letter_n6_history.cpp",
+      "sha256": "2604a4d3573165dc38aff8474bd10dfaa0446ee3fe3a54e192fda5f346411155"
+    },
+    {
+      "path": "direct_attack/data/research_pressure_124/third_letter_n6_history.py",
+      "sha256": "e307baf8f75342cb69ce6cb857d1bdf1fdca2e0b7742511a69f05289c0a1a8e2"
+    },
+    {
+      "path": "direct_attack/data/research_pressure_124/third_letter_n6_history.json",
+      "sha256": "b1690c137d6e3b1f9d80c8738c665aa9de35ea1f18976cb467efbdb59a9a1c42"
+    },
+    {
+      "path": "direct_attack/data/research_pressure_124/third_letter_n6_history.analysis.json",
+      "sha256": "67d0e59363877ce2c1f1015088029b1622a995253e9147452a17bebf698b0f0b"
+    },
+    {
+      "path": "direct_attack/data/research_pressure_124/third_letter_n6_history.in",
+      "sha256": "bba241b99f919d4aa7c929f1be278f7aba7618f1b9a852bc0d6778e55268f2b6"
+    }
+  ],
+  "rooted_native_binary_sha256": "e8849e01cca3d8bc93e102bfcd8a00a48df5e48f9a23f854f282f8aa1651d4cd",
+  "third_native_binary_sha256": "f2fd52f3ff565c52f24a1154d97bf9f3892c81e18fd60a9957543847e210c689",
+  "scope": "NEW fixed-rooted-cycle n7/n8 all-second-row pressure and arbitrary third row on37 n6 bases, after checkpoint122 commit; labeled/designated overlaps explicit",
+  "boundary": "both fresh scans/ALL-shortest queries EXPLORATORY, not independently audited; they are separate from the newly audited complete binary n6 history cover. General Cerny and ALL/SOME history cost/rank OPEN"
+}

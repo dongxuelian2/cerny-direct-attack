@@ -1,0 +1,34 @@
+{
+  "profiles": 4,
+  "checked_subsets": 44,
+  "reports": [
+    {
+      "file": "direct_attack\\data\\pair_information\\n3_high.profile.json",
+      "n": 3,
+      "rt": 4,
+      "subsets": 7,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\pair_information\\n3_low.profile.json",
+      "n": 3,
+      "rt": 3,
+      "subsets": 7,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\pair_information\\n4_high.profile.json",
+      "n": 4,
+      "rt": 6,
+      "subsets": 15,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\pair_information\\n4_low.profile.json",
+      "n": 4,
+      "rt": 4,
+      "subsets": 15,
+      "verified": true
+    }
+  ]
+}

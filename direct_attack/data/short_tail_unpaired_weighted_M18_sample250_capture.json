@@ -1,0 +1,17 @@
+{
+  "argv": [
+    "<CHECKOUT>\\direct_attack\\native_build\\short_tail_unpaired_weighted_pressure.exe",
+    "18",
+    "<CHECKOUT>\\direct_attack\\data\\short_tail_unpaired_weighted_M18_sample250.json",
+    "250"
+  ],
+  "cwd": "<CHECKOUT>",
+  "start_utc": "2026-10-03T07:12:15.585701+00:00",
+  "seconds": 23.420999999998457,
+  "returncode": 0,
+  "stdout": "{\"M\":18,\"peak\":9,\"proposals_EXPLORATORY\":2000,\"sync_EXPLORATORY\":1066,\"targets_EXPLORATORY\":1087320}\n",
+  "stderr": "peak=6 M=18 tau=9 h=7 accepted=1\npeak=7 M=18 tau=14 h=2 accepted=3\npeak=8 M=18 tau=6 h=2 accepted=50\npeak=9 M=18 tau=8 h=7 accepted=147\n",
+  "source_sha256": "9b9616248fecca6f6e70a8aa50ca481196ead513dd5e6dfc1fa7573e2ec556c6",
+  "binary_sha256": "c31a6ca54f851059e739c7a8c32ab299aeeeb6bc434fc678be7537a61ec03085",
+  "output_sha256": "b58ebd2bc65e54c4755da6b57fc4540d0a1fd9d166b416147d73a44c96afcd81"
+}

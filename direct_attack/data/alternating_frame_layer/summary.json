@@ -1,0 +1,161 @@
+{
+  "arguments": {
+    "max_n": 37,
+    "out": "direct_attack/data/alternating_frame_layer"
+  },
+  "records": [
+    {
+      "n": 5,
+      "rank": 2,
+      "frame_vertices": 30,
+      "max_cost": 10,
+      "missing_index": 1,
+      "rotation": 4,
+      "seconds": 0.09399999999914144
+    },
+    {
+      "n": 7,
+      "rank": 3,
+      "frame_vertices": 98,
+      "max_cost": 12,
+      "missing_index": 1,
+      "rotation": 6,
+      "seconds": 0.0
+    },
+    {
+      "n": 9,
+      "rank": 4,
+      "frame_vertices": 270,
+      "max_cost": 16,
+      "missing_index": 3,
+      "rotation": 6,
+      "seconds": 0.01600000000144064
+    },
+    {
+      "n": 11,
+      "rank": 5,
+      "frame_vertices": 682,
+      "max_cost": 18,
+      "missing_index": 3,
+      "rotation": 8,
+      "seconds": 0.014999999999417923
+    },
+    {
+      "n": 13,
+      "rank": 6,
+      "frame_vertices": 1638,
+      "max_cost": 22,
+      "missing_index": 5,
+      "rotation": 8,
+      "seconds": 0.0
+    },
+    {
+      "n": 15,
+      "rank": 7,
+      "frame_vertices": 3810,
+      "max_cost": 26,
+      "missing_index": 6,
+      "rotation": 10,
+      "seconds": 0.01599999999962165
+    },
+    {
+      "n": 17,
+      "rank": 8,
+      "frame_vertices": 8670,
+      "max_cost": 30,
+      "missing_index": 7,
+      "rotation": 12,
+      "seconds": 0.0
+    },
+    {
+      "n": 19,
+      "rank": 9,
+      "frame_vertices": 19418,
+      "max_cost": 34,
+      "missing_index": 8,
+      "rotation": 14,
+      "seconds": 0.01599999999962165
+    },
+    {
+      "n": 21,
+      "rank": 10,
+      "frame_vertices": 42966,
+      "max_cost": 38,
+      "missing_index": 9,
+      "rotation": 16,
+      "seconds": 0.015000000001236913
+    },
+    {
+      "n": 23,
+      "rank": 11,
+      "frame_vertices": 94162,
+      "max_cost": 42,
+      "missing_index": 10,
+      "rotation": 18,
+      "seconds": 0.0
+    },
+    {
+      "n": 25,
+      "rank": 12,
+      "frame_vertices": 204750,
+      "max_cost": 46,
+      "missing_index": 11,
+      "rotation": 20,
+      "seconds": 0.01599999999962165
+    },
+    {
+      "n": 27,
+      "rank": 13,
+      "frame_vertices": 442314,
+      "max_cost": 50,
+      "missing_index": 12,
+      "rotation": 22,
+      "seconds": 0.01599999999962165
+    },
+    {
+      "n": 29,
+      "rank": 14,
+      "frame_vertices": 950214,
+      "max_cost": 54,
+      "missing_index": 13,
+      "rotation": 24,
+      "seconds": 0.031000000000858563
+    },
+    {
+      "n": 31,
+      "rank": 15,
+      "frame_vertices": 2031554,
+      "max_cost": 58,
+      "missing_index": 14,
+      "rotation": 26,
+      "seconds": 0.046999999998661224
+    },
+    {
+      "n": 33,
+      "rank": 16,
+      "frame_vertices": 4325310,
+      "max_cost": 62,
+      "missing_index": 15,
+      "rotation": 28,
+      "seconds": 0.0930000000007567
+    },
+    {
+      "n": 35,
+      "rank": 17,
+      "frame_vertices": 9174970,
+      "max_cost": 66,
+      "missing_index": 16,
+      "rotation": 30,
+      "seconds": 0.21899999999914144
+    },
+    {
+      "n": 37,
+      "rank": 18,
+      "frame_vertices": 19398582,
+      "max_cost": 70,
+      "missing_index": 17,
+      "rotation": 32,
+      "seconds": 0.4850000000005821
+    }
+  ]
+}

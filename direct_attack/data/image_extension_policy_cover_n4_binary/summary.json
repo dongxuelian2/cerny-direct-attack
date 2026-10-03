@@ -1,0 +1,22 @@
+{
+  "arguments": {
+    "n": 4,
+    "alphabet": 2,
+    "mode": "exhaustive",
+    "count": 10000,
+    "seed": 20260930,
+    "out": "direct_attack/data/image_extension_policy_cover_n4_binary"
+  },
+  "counts": {
+    "tested": 32640,
+    "strongly_connected": 10476,
+    "synchronizing": 9324,
+    "certified_by_rank_sum": 8244,
+    "exact_policy_required": 1080
+  },
+  "max_rank_sum": 13,
+  "max_policy_in_unpruned_cases": 9,
+  "seconds": 0.75,
+  "scope": "Distinct-letter inputs: exhaustive is complete, first-map-orbits is a complete binary cover with overlap, random is sampling.",
+  "shortcut": "Every phase has positive cardinality gain, so any greedy policy costs at most the sum over ranks of maximum e(S)."
+}

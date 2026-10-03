@@ -1,0 +1,38 @@
+{
+  "verified": true,
+  "runs": [
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.optimal_counter_history"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T09:30:56.554731+00:00",
+      "seconds": 0.5149999999994179,
+      "returncode": 0,
+      "stdout": "{\"parameters\": 11, \"maximum_n\": 4095, \"total_proper_stages\": 8155, \"all_parameter_status\": \"PROVED paper; independent checker and no formal kernel\"}\n",
+      "stderr": "",
+      "output_sha256": "69b5492c9dd936a36efbbedd69c5a9e73b487f2d5871a37240e4c1306129e3ef"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.optimal_counter_history",
+        "--out",
+        "<CHECKOUT>\\direct_attack\\native_build\\optimal_counter_replay.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T09:30:57.078929+00:00",
+      "seconds": 0.5310000000026776,
+      "returncode": 0,
+      "stdout": "{\"parameters\": 11, \"maximum_n\": 4095, \"total_proper_stages\": 8155, \"all_parameter_status\": \"PROVED paper; independent checker and no formal kernel\"}\n",
+      "stderr": "",
+      "output_sha256": "69b5492c9dd936a36efbbedd69c5a9e73b487f2d5871a37240e4c1306129e3ef"
+    }
+  ],
+  "parsed_records_equal": true,
+  "normalization": "none",
+  "generator_sha256": "0f7be12ce763e216ff9d85979d6e4ed852e2e4e29576af7a5bfbae6ab3fb01c3"
+}

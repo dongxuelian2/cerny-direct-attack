@@ -1,0 +1,107 @@
+{
+  "scope": "endpoint words, graph criterion and finite square resets only; automatic connectivity OPEN",
+  "runs": [
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.order_two_weighted_endpoints"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T05:00:35.903656+00:00",
+      "seconds": 0.06199999999989814,
+      "returncode": 0,
+      "stdout": "{\"endpoint_inputs\": 792, \"complete_M8\": 720, \"barrier_controls\": 6}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_order_two_weighted_endpoints"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T05:00:35.970105+00:00",
+      "seconds": 0.6880000000001019,
+      "returncode": 0,
+      "stdout": "{\"barrier_forward_particles\": 14355, \"complete_M8\": 720, \"corruptions_rejected\": [0, 1, 2, 3, 4], \"cost_M_words\": 80, \"endpoint_inputs\": 792, \"endpoint_particles\": 422639, \"nonsync\": 49, \"status\": \"Finite controls COMPUTATIONALLY VERIFIED. Endpoint and infinite barrier proofs paper, not formal. General weighted extension and Cerny OPEN.\", \"sync_endpoint_inputs\": 743, \"verified\": true, \"weighted_three_a_canonical\": 82368, \"weighted_three_a_successes\": 48, \"zero_one_two_a_controls\": 1658}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.order_two_weighted_graph_criterion"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T05:00:36.659438+00:00",
+      "seconds": 1.6869999999998981,
+      "returncode": 0,
+      "stdout": "{\"records\": 772, \"complete_M8\": 672, \"primitive\": 738, \"residual\": 34, \"maximum_n\": 257}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_order_two_weighted_graph_criterion"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-03T05:00:38.342477+00:00",
+      "seconds": 1.0630000000001019,
+      "returncode": 0,
+      "stdout": "{\"complete_M8\": 672, \"corruptions_rejected\": [0, 1, 2, 3, 4], \"maximum_n\": 257, \"original_stages\": 11204, \"records\": 772, \"reset_forward_particles\": 9189235, \"residual_edge_words\": 1615, \"residual_inputs\": 34, \"status\": \"Finite criteria and ORIGINAL resets COMPUTATIONALLY VERIFIED. General sufficient theorem PROVED paper; automatic connectivity and Cerny OPEN; not formal.\", \"verified\": true}\n",
+      "stderr": ""
+    }
+  ],
+  "sha256": {
+    "direct_attack/order_two_weighted_endpoints.py": "952249f9512eb567e296cddb1fe149532186c4e13e82a344c547326999de7196",
+    "direct_attack/check_order_two_weighted_endpoints.py": "35c3143bb2cf0c58a9de6fa0a917f92c05121dce409da944a6640d1b18083ead",
+    "direct_attack/order_two_weighted_graph_criterion.py": "899afe8ddedb722ee23418721f53a930bb10ee8445719c7e46e80ccb88634209",
+    "direct_attack/check_order_two_weighted_graph_criterion.py": "75d9a730e5fdb5141962ca27620e2d3791e0452884350ab08692a0114028826d",
+    "direct_attack/WEIGHTED_GRAPH_SQUARE.md": "077d0796c41c4ee10e79c3661ca3a7d0803e9b1b39cef774c6a859b86c18b450",
+    "direct_attack/data/order_two_weighted_endpoints.json": "7a3fad7c498f9f99dd369080f8d819fcba38a3a6112ec1bd0a43c4433774a88b",
+    "direct_attack/data/order_two_weighted_graph_criterion.json": "6d6ac3b8a707fea2d69338b3e8e2ff075c7081ffd4837b4e849edde6d0b32794"
+  },
+  "protected_release_and_lean_sha256": {
+    "OPENMATH_SUBMISSION.md": "cc4a64371ddf2797b58f1ecb3b6835e8b7c405437b8481b93a29a841b8fd5d9d",
+    "direct_attack/KariInverseShrink.lean": "6d82c55ffbb1ba7daf153d24f26f8cb3c1d3ae81e79877025173c3d5eea4b602",
+    "direct_attack/KariShrinkProducts.lean": "3ce2361202c7ba27745f9da05492d2251a6d80cc0a58ffa3034a27e5f2fb7e3f",
+    "direct_attack/LayeredPairBarrier.lean": "2c3fa3ced68e0c5e8b230d9977f3bec2ad0492a30b8974a2f817971a6e692a34",
+    "direct_attack/ReflectionCoreCut.lean": "5a2df90e8b17785c21270b98a2c7949e4670923b1c774cb4572ead90b4c8727d",
+    "direct_attack/post_release/OrderTwoThreeABarrier.lean": "26e2d6a11ceb9a897a12290e1c3338f8e1715b4fd29fe7d62cfac4257b7c0da5",
+    "lean/Cerny3.lean": "fcf8be9a59f7d5e91dc37d533cf153022162e97999eae5a11393fb6b7e8dc01d",
+    "lean/Cerny4.lean": "8e328a0ed6d6084a85434d1b5a7fb65b373294c39df28e29636c61b115b64cf1",
+    "lean/CertificateCore.lean": "f9cbcd5ab271759ee309919195fb8c84c1f612a3afb20e924ff6a9ba355dd445",
+    "post_baseline/lean_sprint/AnchorPotentials.lean": "b4cee113a3998656d31d545ffcefe3d4b597aeed86e35b3b33053f61dfd8dee1",
+    "post_baseline/lean_sprint/Cerny3Checked.lean": "59b4820de7231c0afe4921e3bb425f8793a249939f352e32cb45ec8b4c14e18d",
+    "post_baseline/lean_sprint/Cerny4Checked.lean": "5abcbabfd2549273b8e0b58bd40407c19f415d9212bab6db229203caaf075e8c",
+    "post_baseline/lean_sprint/ResearchCore.lean": "2f5c58ffce695fe35d8efe4db84acbb4f6d0e1e0974e931b3abed0ca65cff884",
+    "post_baseline/lean_sprint/ThreeAnchorGraph.lean": "96d9461d44ca3d16442e0bcecf51726af7c19518bfb8620b77bc47bf4b1c4a34",
+    "submission/COMPLETION.json": "6eeed44f151c6b43fa4de6072381e84e5dd18c59e1e194e72856f33c65f410ec",
+    "submission/COMPLETION.md": "dffdf5884f4776efa7868e044ba0e94b5428a2608f81ad745fc32ecd7445d626",
+    "submission/HISTORICAL_EOL.json": "42bd3dcd544c9e7325be381a85ffb0867ad9b14d805f15950fb6d47aa2f5056f",
+    "submission/PATH_MIGRATIONS.json": "3c4ff42ad26b5e79242e4925503cf468bba4422a11816671365059621e3a0aaf",
+    "submission/SHA256.json": "c0cccc437ae34baed9817eb2c1f92e075c2e0309c150757655d41fc56437e245",
+    "submission/THEOREMS.md": "8ba206933d539962f0d6489ddbab5446a573745be8eddb082fb0e6fc37818a7b",
+    "submission/VALIDATION.md": "2aa73921fbcf7d9bb926346543ace7d6729ca1b74315a4fade70826d7c8c6c8a",
+    "submission/audit.py": "a385908412213add37c5808f77d06520b7e32c155205ae05919365e7da23f538",
+    "submission/check.py": "6506b5f1a862f1747674ab82086f64f1436a475595276a329d454bddc6b04151",
+    "submission/package.py": "ddcec0d27fab51c48f356553b3cac378f3b69b54dffa365e0b63880286dda6dd",
+    "submission/seal.py": "7a7eed2a271ac446ce09b47d92ad482f3d81d55d61ed2914aee12661c4f6e482",
+    "submission/theorems.json": "49a932c2d33a3aa6efc73677e673fe4a04695c5b74ec3a4d8b888962fd527a78",
+    "submission/validation_baseline.json": "f64ec825bcc9b55caa45a3a1630cf471c914761594fcbc149d859ac3d7025074",
+    "submission/validation_direct.json": "9bff775a8ad21d1a5194cf5ca7abde79f3f61071f4fcafa9ca043c655e9b9bc0",
+    "submission/validation_formal.json": "0216e00985b1e0d489da01f38b37851e7adf85b15bf345c2ba8ed05448844f5f",
+    "submission/validation_integrity_preseal.json": "f009d599b39e9a2456d247d566cf3b8494dc22c36111919c6c274890e7192c25",
+    "submission/validation_native.json": "a2119fda24170a813e38cd58dc030b75f8c0e1299c145b09276ad6fee12765a5",
+    "submission/validation_post.json": "f41a73e1ec214f4125cafa22f4d0a9acaf6c04616432c2a5c79d7749da24d741",
+    "submission/validation_sprint_build.log": "2bdbc8347de897d9630c45040cabbc2977c3c1d25399585051650286b805d3c3",
+    "submission/validation_windows_launcher.json": "b84fbc2792e7eedf61d059c412ad334b473c5767b10db90cf45dca75d9d11005",
+    "submission/validation_windows_launcher.log": "ff508d7b815cf404ab6188be34598c9203820946ba9f6a5d73da029feb83a13f"
+  },
+  "full_historical_rerun": false,
+  "historical_registry_modified": false,
+  "formally_verified": false,
+  "general_Cerny": "OPEN"
+}

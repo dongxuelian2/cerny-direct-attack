@@ -1,0 +1,59 @@
+{
+  "verified": true,
+  "checks": 94,
+  "regeneration_commands": 181,
+  "archived": [
+    {
+      "path": "direct_attack/data/rooted_continuation_provenance/audit_run.json",
+      "sha256": "6ee1e186c3d2126dbcf241012c9f989d2f18465f4cd826c934fa609f755f2614"
+    },
+    {
+      "path": "direct_attack/data/rooted_continuation_provenance/reproduction_commands.json",
+      "sha256": "72cd13d3d542bf33f698b72a7133d7710fed786fb8696cdc5925b27e8b22f4da"
+    },
+    {
+      "path": "direct_attack/data/rooted_continuation_provenance/sha256_manifest.json",
+      "sha256": "20e67819c797090a4dae53a57d657b44fdb2ce4cb4576f1278cd7e3ab2e79bb5"
+    }
+  ],
+  "native_builds": [
+    {
+      "metadata": "direct_attack/data/alternating_frame_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/alternating_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/class_reset_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/complete_policy_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/sparse_policy_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/weighted_class_reset_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    }
+  ],
+  "generation_and_replay": "direct_attack/data/compress_other_family_generation_captures.json",
+  "audit_boundary": "previous 92-check record preserved verbatim; two new literal checks; new deterministic generator and replay independently compared; not a full 94-check rerun",
+  "mathematical_status": "paper family synchronization and reflected-return theorem; bounded independent audits; general Cerny and all-n q0 lower bound OPEN; no new formal verification"
+}

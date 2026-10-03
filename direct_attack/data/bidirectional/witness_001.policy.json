@@ -1,0 +1,46 @@
+{
+  "n": 7,
+  "rows": [
+    [
+      1,
+      4,
+      0,
+      2,
+      5,
+      6,
+      3
+    ],
+    [
+      4,
+      1,
+      2,
+      3,
+      6,
+      5,
+      3
+    ]
+  ],
+  "rt": 12,
+  "cost": 14,
+  "prefix": [
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+  ],
+  "suffix": [],
+  "forward_meeting": 8,
+  "backward_meeting": 8,
+  "forward_greedy_best": 14,
+  "backward_greedy_best": 18
+}

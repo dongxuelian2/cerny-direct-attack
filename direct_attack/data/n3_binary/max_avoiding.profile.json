@@ -1,0 +1,144 @@
+{
+  "n": 3,
+  "rows": [
+    [
+      0,
+      0,
+      1
+    ],
+    [
+      2,
+      0,
+      0
+    ]
+  ],
+  "distance": [
+    -1,
+    0,
+    0,
+    1,
+    0,
+    2,
+    1,
+    2
+  ],
+  "forward": [
+    -1,
+    2,
+    4,
+    1,
+    3,
+    1,
+    -1,
+    0
+  ],
+  "compression": [
+    -1,
+    -1,
+    -1,
+    1,
+    -1,
+    2,
+    1,
+    1
+  ],
+  "greedy_min": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    2,
+    1,
+    2
+  ],
+  "greedy_max": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    2,
+    1,
+    3
+  ],
+  "lambda_corank": [
+    0,
+    1,
+    2
+  ],
+  "gaps": [
+    1,
+    1
+  ],
+  "avoiding": [
+    3,
+    1,
+    1
+  ],
+  "word": [
+    0,
+    0
+  ],
+  "rt": 2,
+  "max_compression_by_rank": [
+    -1,
+    -1,
+    2,
+    1
+  ],
+  "max_reachable_compression_by_rank": [
+    -1,
+    -1,
+    2,
+    1
+  ],
+  "bottleneck": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    2,
+    1,
+    1
+  ],
+  "capped_n": [
+    null,
+    0,
+    0,
+    1,
+    0,
+    2,
+    1,
+    2
+  ],
+  "optimal_bottleneck": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    2,
+    1,
+    1
+  ],
+  "extension": [
+    -1,
+    1,
+    3,
+    1,
+    2,
+    1,
+    3,
+    -1
+  ],
+  "semigroup_size": 12,
+  "semigroup_complete": true,
+  "semigroup_rank_distribution": [
+    0,
+    3,
+    8,
+    1
+  ]
+}

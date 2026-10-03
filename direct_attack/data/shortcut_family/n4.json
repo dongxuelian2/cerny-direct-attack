@@ -1,0 +1,110 @@
+{
+  "n": 4,
+  "base": {
+    "n": 4,
+    "rows": [
+      [
+        1,
+        0,
+        0,
+        2
+      ],
+      [
+        1,
+        2,
+        3,
+        0
+      ]
+    ],
+    "best_policy": 4,
+    "worst_policy": 7,
+    "rt": 4,
+    "reachable": 15,
+    "local_excess": -1,
+    "local_start": 13,
+    "unit_defect": true,
+    "singleton_extension": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "singleton_best": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "singleton_worst": [
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "augmented": {
+    "n": 4,
+    "rows": [
+      [
+        1,
+        0,
+        0,
+        2
+      ],
+      [
+        1,
+        2,
+        3,
+        0
+      ],
+      [
+        2,
+        0,
+        1,
+        2
+      ]
+    ],
+    "best_policy": 5,
+    "worst_policy": 7,
+    "rt": 4,
+    "reachable": 15,
+    "local_excess": -1,
+    "local_start": 13,
+    "unit_defect": true,
+    "singleton_extension": [
+      1,
+      2,
+      1,
+      2
+    ],
+    "singleton_best": [
+      5,
+      6,
+      6,
+      7
+    ],
+    "singleton_worst": [
+      5,
+      7,
+      6,
+      7
+    ]
+  },
+  "extra_word": [
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    0
+  ],
+  "reset_word": [
+    0,
+    0,
+    1,
+    0
+  ],
+  "seconds": 0.9220000000004802,
+  "scope": "Exact full-cube native result; arbitrary-parameter exact P formula remains conjectured."
+}

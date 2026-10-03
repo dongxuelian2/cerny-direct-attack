@@ -1,0 +1,290 @@
+{
+  "n": 5,
+  "rows": [
+    [
+      1,
+      2,
+      3,
+      4,
+      0
+    ],
+    [
+      0,
+      1,
+      2,
+      3,
+      0
+    ]
+  ],
+  "r": 4,
+  "reachable": 31,
+  "area": 33,
+  "length": 16,
+  "word": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1
+  ],
+  "budget": 40,
+  "nodes": {
+    "1": {
+      "area": 33,
+      "length": 16,
+      "parent": [
+        17,
+        1
+      ]
+    },
+    "2": {
+      "area": 36,
+      "length": 17,
+      "parent": [
+        1,
+        0
+      ]
+    },
+    "3": {
+      "area": 18,
+      "length": 11,
+      "parent": [
+        19,
+        1
+      ]
+    },
+    "4": {
+      "area": 39,
+      "length": 18,
+      "parent": [
+        2,
+        0
+      ]
+    },
+    "5": {
+      "area": 12,
+      "length": 7,
+      "parent": [
+        21,
+        1
+      ]
+    },
+    "6": {
+      "area": 21,
+      "length": 12,
+      "parent": [
+        3,
+        0
+      ]
+    },
+    "7": {
+      "area": 7,
+      "length": 6,
+      "parent": [
+        23,
+        1
+      ]
+    },
+    "8": {
+      "area": 42,
+      "length": 19,
+      "parent": [
+        4,
+        0
+      ]
+    },
+    "9": {
+      "area": 16,
+      "length": 10,
+      "parent": [
+        25,
+        1
+      ]
+    },
+    "10": {
+      "area": 15,
+      "length": 8,
+      "parent": [
+        5,
+        0
+      ]
+    },
+    "11": {
+      "area": 6,
+      "length": 5,
+      "parent": [
+        27,
+        1
+      ]
+    },
+    "12": {
+      "area": 24,
+      "length": 13,
+      "parent": [
+        6,
+        0
+      ]
+    },
+    "13": {
+      "area": 5,
+      "length": 4,
+      "parent": [
+        29,
+        1
+      ]
+    },
+    "14": {
+      "area": 9,
+      "length": 7,
+      "parent": [
+        7,
+        0
+      ]
+    },
+    "15": {
+      "area": 1,
+      "length": 1,
+      "parent": [
+        31,
+        1
+      ]
+    },
+    "16": {
+      "area": 45,
+      "length": 20,
+      "parent": [
+        8,
+        0
+      ]
+    },
+    "17": {
+      "area": 30,
+      "length": 15,
+      "parent": [
+        24,
+        0
+      ]
+    },
+    "18": {
+      "area": 19,
+      "length": 11,
+      "parent": [
+        9,
+        0
+      ]
+    },
+    "19": {
+      "area": 15,
+      "length": 10,
+      "parent": [
+        25,
+        0
+      ]
+    },
+    "20": {
+      "area": 18,
+      "length": 9,
+      "parent": [
+        10,
+        0
+      ]
+    },
+    "21": {
+      "area": 9,
+      "length": 6,
+      "parent": [
+        26,
+        0
+      ]
+    },
+    "22": {
+      "area": 8,
+      "length": 6,
+      "parent": [
+        11,
+        0
+      ]
+    },
+    "23": {
+      "area": 5,
+      "length": 5,
+      "parent": [
+        27,
+        0
+      ]
+    },
+    "24": {
+      "area": 27,
+      "length": 14,
+      "parent": [
+        12,
+        0
+      ]
+    },
+    "25": {
+      "area": 13,
+      "length": 9,
+      "parent": [
+        28,
+        0
+      ]
+    },
+    "26": {
+      "area": 7,
+      "length": 5,
+      "parent": [
+        13,
+        0
+      ]
+    },
+    "27": {
+      "area": 4,
+      "length": 4,
+      "parent": [
+        29,
+        0
+      ]
+    },
+    "28": {
+      "area": 11,
+      "length": 8,
+      "parent": [
+        14,
+        0
+      ]
+    },
+    "29": {
+      "area": 3,
+      "length": 3,
+      "parent": [
+        30,
+        0
+      ]
+    },
+    "30": {
+      "area": 2,
+      "length": 2,
+      "parent": [
+        15,
+        0
+      ]
+    },
+    "31": {
+      "area": 0,
+      "length": 0,
+      "parent": null
+    }
+  },
+  "formula_status": "Exact minimum-area formula is COMPUTATIONALLY VERIFIED only; paper proves matching cubic leading term and failure of every trajectory budget for all n>=3."
+}

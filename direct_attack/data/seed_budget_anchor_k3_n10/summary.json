@@ -1,0 +1,129 @@
+{
+  "arguments": {
+    "n": 10,
+    "alphabet": 3,
+    "count": 200000,
+    "seed": 20261022,
+    "restart": 500,
+    "mode": "adversarial",
+    "objective": "anchor",
+    "out": "direct_attack/data/seed_budget_anchor_k3_n10",
+    "minimum_kappa": 3
+  },
+  "counts": {
+    "tested": 200365,
+    "sc_synchronizing": 188847,
+    "below_minimum_kappa": 20614
+  },
+  "best": [
+    -45,
+    0
+  ],
+  "records": [
+    "witness_000.json",
+    "witness_001.json",
+    "witness_002.json",
+    "witness_003.json",
+    "witness_004.json",
+    "witness_005.json",
+    "witness_006.json",
+    "witness_007.json",
+    "witness_008.json",
+    "witness_009.json",
+    "witness_010.json"
+  ],
+  "seconds": 37.71799999999712,
+  "histogram": [
+    {
+      "normal_gap": 0,
+      "anchor_gap": 0,
+      "count": 57654
+    },
+    {
+      "normal_gap": 0,
+      "anchor_gap": 1,
+      "count": 34606
+    },
+    {
+      "normal_gap": 0,
+      "anchor_gap": 2,
+      "count": 28090
+    },
+    {
+      "normal_gap": 0,
+      "anchor_gap": 3,
+      "count": 18337
+    },
+    {
+      "normal_gap": 0,
+      "anchor_gap": 4,
+      "count": 11698
+    },
+    {
+      "normal_gap": 0,
+      "anchor_gap": 5,
+      "count": 7175
+    },
+    {
+      "normal_gap": 0,
+      "anchor_gap": 6,
+      "count": 4459
+    },
+    {
+      "normal_gap": 0,
+      "anchor_gap": 7,
+      "count": 2678
+    },
+    {
+      "normal_gap": 0,
+      "anchor_gap": 8,
+      "count": 1594
+    },
+    {
+      "normal_gap": 0,
+      "anchor_gap": 9,
+      "count": 827
+    },
+    {
+      "normal_gap": 0,
+      "anchor_gap": 10,
+      "count": 520
+    },
+    {
+      "normal_gap": 0,
+      "anchor_gap": 11,
+      "count": 285
+    },
+    {
+      "normal_gap": 0,
+      "anchor_gap": 12,
+      "count": 150
+    },
+    {
+      "normal_gap": 0,
+      "anchor_gap": 13,
+      "count": 84
+    },
+    {
+      "normal_gap": 0,
+      "anchor_gap": 14,
+      "count": 34
+    },
+    {
+      "normal_gap": 0,
+      "anchor_gap": 15,
+      "count": 26
+    },
+    {
+      "normal_gap": 0,
+      "anchor_gap": 16,
+      "count": 10
+    },
+    {
+      "normal_gap": 0,
+      "anchor_gap": 17,
+      "count": 6
+    }
+  ],
+  "scope": "Distinct-letter binary cover with overlap or exhaustive designated alphabets; random/adversarial modes are sampled, not nonexistence proofs."
+}

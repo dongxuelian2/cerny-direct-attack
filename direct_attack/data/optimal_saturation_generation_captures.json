@@ -1,0 +1,38 @@
+{
+  "verified": true,
+  "runs": [
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.optimal_saturation_history"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T09:05:19.770019+00:00",
+      "seconds": 0.25,
+      "returncode": 0,
+      "stdout": "[{\"d\": 3, \"n\": 7, \"rt\": 6, \"P\": 6, \"proper_stage_count\": 5, \"normalized_proper_rank\": 2, \"shortest_original_word_count\": 3, \"optimal_endpoint_chain_count\": 3}, {\"d\": 4, \"n\": 15, \"rt\": 14, \"P\": 14, \"proper_stage_count\": 13, \"normalized_proper_rank\": 3, \"shortest_original_word_count\": 8, \"optimal_endpoint_chain_count\": 1}]\n",
+      "stderr": "",
+      "output_sha256": "c902f5b072610074007ce85c55de84c11206b5e4ef51f44dced03130f79254b1"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.optimal_saturation_history",
+        "--out",
+        "<CHECKOUT>\\direct_attack\\native_build\\optimal_saturation_replay.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T09:05:20.019484+00:00",
+      "seconds": 0.18699999999807915,
+      "returncode": 0,
+      "stdout": "[{\"d\": 3, \"n\": 7, \"rt\": 6, \"P\": 6, \"proper_stage_count\": 5, \"normalized_proper_rank\": 2, \"shortest_original_word_count\": 3, \"optimal_endpoint_chain_count\": 3}, {\"d\": 4, \"n\": 15, \"rt\": 14, \"P\": 14, \"proper_stage_count\": 13, \"normalized_proper_rank\": 3, \"shortest_original_word_count\": 8, \"optimal_endpoint_chain_count\": 1}]\n",
+      "stderr": "",
+      "output_sha256": "c902f5b072610074007ce85c55de84c11206b5e4ef51f44dced03130f79254b1"
+    }
+  ],
+  "parsed_records_equal": true,
+  "normalization": "none",
+  "generator_sha256": "3007c92225c3da0de017a49841080b781e390e9a4ee264389201f34bba536ae0"
+}

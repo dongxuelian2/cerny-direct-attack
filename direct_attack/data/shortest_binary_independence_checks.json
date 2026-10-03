@@ -1,0 +1,53 @@
+{
+  "verified": true,
+  "records": [
+    {
+      "n": 5,
+      "rt": 4,
+      "unique_shortest_original_word": "abaa",
+      "strongly_connected": true,
+      "simple": true,
+      "inverse_growth_tree_vertices": 11,
+      "actual_images": 19,
+      "inverse_sets": [
+        2,
+        6,
+        7,
+        30,
+        31
+      ],
+      "proper_normalized_rank": 2,
+      "full_raw_rank": 4
+    },
+    {
+      "n": 3,
+      "rt": 2,
+      "unique_shortest_original_word": "ba",
+      "strongly_connected": true,
+      "simple": null,
+      "inverse_growth_tree_vertices": 6,
+      "actual_images": 6,
+      "inverse_sets": [
+        1,
+        6,
+        7
+      ],
+      "proper_normalized_rank": 1,
+      "full_raw_rank": 2
+    }
+  ],
+  "all_subset_rank_defect_controls": 76,
+  "determinant_rank_checks": 6,
+  "all_shortest_length_words_literally_tested": 20,
+  "boundary": "n5 proper-stage independence REFUTED on a unique globally shortest word; n3 full-history including seed is a different convention; no long-phase bound or Cerny proof",
+  "status": "COMPUTATIONALLY VERIFIED finite; paper proofs separate; no formal kernel",
+  "rejected_corruptions": [
+    "shortest_word",
+    "rank",
+    "independent_exists",
+    "threshold",
+    "omitted_test_word",
+    "n3_convention",
+    "simplicity_pair_word"
+  ]
+}

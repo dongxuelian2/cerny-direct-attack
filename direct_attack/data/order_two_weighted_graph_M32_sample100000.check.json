@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "<CHECKOUT>\\direct_attack\\native_build\\check_order_two_weighted_graph_native.exe",
+    "<CHECKOUT>\\direct_attack\\data\\order_two_weighted_graph_M32_sample100000.tsv"
+  ],
+  "cwd": "<CHECKOUT>",
+  "start_utc": "2026-10-03T05:16:13.789263+00:00",
+  "seconds": 0.030999999999039574,
+  "returncode": 0,
+  "stdout": "{\"verified\":true,\"complete_scope\":false,\"M\":32,\"inputs_checked\":20,\"sync\":20,\"nonsync\":0,\"residuals\":20,\"literal_edge_words\":113,\"original_stages\":0,\"reset_particles\":0,\"maximum_reset_cost\":0,\"reset_scope\":\"every sync full input and retained sampled M<=20; larger samples graph/edge only\",\"automatic_all_n\":\"CONJECTURED/OPEN\",\"general_Cerny\":\"OPEN\"}\n",
+  "stderr": "",
+  "source_sha256": "ebff917b87ca4dc18d5a5121649d8761f023d8b7ad1ac0725117eaeb7ae600a3",
+  "binary_sha256": "4bad6f217b0fc327bf5b7667d9e79811ae24eed5c9573b44b8ba9185d410509d",
+  "data_sha256": "d929ea57cac2fe016141c1d18b713934daedecf0d079b235bbd218b6135d1f41"
+}

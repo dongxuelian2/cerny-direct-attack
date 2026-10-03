@@ -1,0 +1,116 @@
+{
+  "n": 4,
+  "rows": [
+    [
+      0,
+      1,
+      1,
+      0
+    ],
+    [
+      1,
+      2,
+      3,
+      0
+    ],
+    [
+      0,
+      1,
+      1,
+      2
+    ]
+  ],
+  "best_policy": 4,
+  "worst_policy": 6,
+  "rt": 3,
+  "reachable": 15,
+  "max_extension": 3,
+  "extension_start": 13,
+  "max_proper_rank": 3,
+  "truncated": false,
+  "extension": {
+    "3": 1,
+    "7": 1,
+    "6": 1,
+    "14": 2,
+    "2": 1,
+    "12": 2,
+    "13": 3,
+    "4": 2,
+    "9": 3,
+    "11": 1,
+    "8": 3,
+    "1": 1,
+    "5": 3,
+    "10": 2
+  },
+  "best": {
+    "15": 0,
+    "3": 1,
+    "7": 1,
+    "6": 3,
+    "14": 2,
+    "2": 4,
+    "12": 4,
+    "13": 3,
+    "4": 5,
+    "9": 5,
+    "11": 1,
+    "8": 6,
+    "1": 6,
+    "5": 5,
+    "10": 4
+  },
+  "worst": {
+    "15": 0,
+    "3": 4,
+    "7": 1,
+    "6": 3,
+    "14": 2,
+    "2": 4,
+    "12": 4,
+    "13": 3,
+    "4": 5,
+    "9": 5,
+    "11": 1,
+    "8": 6,
+    "1": 6,
+    "5": 5,
+    "10": 4
+  },
+  "forward": {
+    "15": 0,
+    "3": 1,
+    "7": 1,
+    "6": 2,
+    "14": 2,
+    "2": 3,
+    "12": 3,
+    "13": 3,
+    "4": 4,
+    "9": 4,
+    "11": 4,
+    "8": 5,
+    "1": 5,
+    "5": 5,
+    "10": 6
+  },
+  "flipped": true,
+  "known_reset_word": [
+    0,
+    1,
+    0
+  ],
+  "critical_triple": 14,
+  "critical_reach_word": [
+    2,
+    1
+  ],
+  "scope": "Paper theorem even n>=6: P=n, rt=3, max e=n-1. Single-transition controls have P=3 and identical full R. Odd parameters have P=3; n4 is a separate finite boundary.",
+  "policy_word": [
+    2,
+    1,
+    2,
+    0
+  ]
+}

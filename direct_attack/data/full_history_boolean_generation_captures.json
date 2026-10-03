@@ -1,0 +1,38 @@
+{
+  "verified": true,
+  "runs": [
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.full_history_boolean_capacity"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T02:07:11.006382+00:00",
+      "seconds": 0.23500000000012733,
+      "returncode": 0,
+      "stdout": "{\"faces\": 11132, \"partition_scopes\": 66, \"nonpartition_scopes\": 11, \"arithmetic_controls\": 12281, \"boundary\": \"PROVED paper ANY globally shortest full inverse history: length <= cube-vertex count minus all available singleton directions minus1; partition/nonpartition capacity gap; cost/rank inequality for d<=3 all n and d4 n>=5. Real-space sharpness examples are NOT DFA-history realizations. General Cerny and unrestricted ALL/SOME cost/rank hypotheses OPEN; no formal claim.\"}\n",
+      "stderr": "",
+      "output_sha256": "029c1ef8839a87b83d24b5103f9aaa3f412958db9571d8f68f7ba1941bcbadf3"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.full_history_boolean_capacity",
+        "--out",
+        "<CHECKOUT>\\direct_attack\\native_build\\full_history_boolean_capacity_replay.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T02:07:11.238163+00:00",
+      "seconds": 0.21900000000005093,
+      "returncode": 0,
+      "stdout": "{\"faces\": 11132, \"partition_scopes\": 66, \"nonpartition_scopes\": 11, \"arithmetic_controls\": 12281, \"boundary\": \"PROVED paper ANY globally shortest full inverse history: length <= cube-vertex count minus all available singleton directions minus1; partition/nonpartition capacity gap; cost/rank inequality for d<=3 all n and d4 n>=5. Real-space sharpness examples are NOT DFA-history realizations. General Cerny and unrestricted ALL/SOME cost/rank hypotheses OPEN; no formal claim.\"}\n",
+      "stderr": "",
+      "output_sha256": "029c1ef8839a87b83d24b5103f9aaa3f412958db9571d8f68f7ba1941bcbadf3"
+    }
+  ],
+  "parsed_records_equal": true,
+  "normalization": "none",
+  "generator_sha256": "9ed69132f7a53dc6deec873834113d11a2c2fc9860c86e7cc4629c31fb22095c"
+}

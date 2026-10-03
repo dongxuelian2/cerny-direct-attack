@@ -1,0 +1,30 @@
+{
+  "arguments": {
+    "n": 8,
+    "alphabet": 2,
+    "count": 200000,
+    "seed": 20261001,
+    "restart": 1000,
+    "objective": "local",
+    "out": "direct_attack/data/image_extension_policy_local_broad_n8"
+  },
+  "counts": {
+    "tested": 200000,
+    "strongly_connected": 160721,
+    "synchronizing_sc": 158139
+  },
+  "seeds": 598,
+  "seed_max": 49,
+  "best_policy": 49,
+  "best_rt_at_policy_peak": 49,
+  "local_excess_at_peak": 0,
+  "objective_score": [
+    0,
+    49
+  ],
+  "records": [
+    "witness_000.json"
+  ],
+  "seconds": 56.46900000000005,
+  "scope": "Exact scoring of frozen seeds and sampled mutations, not exhaustive."
+}

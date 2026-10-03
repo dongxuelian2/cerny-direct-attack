@@ -1,0 +1,47 @@
+{
+  "schema": "orion.sync-certificate.v1",
+  "kind": "exact",
+  "automaton": {
+    "n": 3,
+    "letters": [
+      "a",
+      "b",
+      "c"
+    ],
+    "transitions": [
+      [
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        2,
+        1
+      ],
+      [
+        2,
+        0,
+        0
+      ]
+    ]
+  },
+  "potential": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    2,
+    1,
+    3
+  ],
+  "word": [
+    0,
+    1,
+    0
+  ],
+  "lower_bound": 3,
+  "upper_bound": 3,
+  "method": "direct_attack_reverse_bfs"
+}

@@ -1,0 +1,139 @@
+{
+  "method": "independent pair-orbit BFS/components and ordinary all-source image transport",
+  "records": [
+    {
+      "source": "direct_attack\\data\\rank_two_two_perm_cover_n4.json",
+      "peak": "best_rt",
+      "n": 4,
+      "rt": 4,
+      "P": 4,
+      "max_e": 3,
+      "first_collision": 2,
+      "component_counts": [
+        3,
+        2,
+        1
+      ],
+      "orbit_pairs": 3
+    },
+    {
+      "source": "direct_attack\\data\\rank_two_two_perm_cover_n4.json",
+      "peak": "best_e",
+      "n": 4,
+      "rt": 4,
+      "P": 4,
+      "max_e": 5,
+      "first_collision": 2,
+      "component_counts": [
+        3,
+        2,
+        1
+      ],
+      "orbit_pairs": 6
+    },
+    {
+      "source": "direct_attack\\data\\rank_two_two_perm_cover_n5.json",
+      "peak": "best_rt",
+      "n": 5,
+      "rt": 6,
+      "P": 6,
+      "max_e": 5,
+      "first_collision": 4,
+      "component_counts": [
+        4,
+        3,
+        2,
+        1,
+        1
+      ],
+      "orbit_pairs": 5
+    },
+    {
+      "source": "direct_attack\\data\\rank_two_two_perm_cover_n5.json",
+      "peak": "best_e",
+      "n": 5,
+      "rt": 6,
+      "P": 6,
+      "max_e": 7,
+      "first_collision": 4,
+      "component_counts": [
+        4,
+        3,
+        2,
+        1,
+        1
+      ],
+      "orbit_pairs": 10
+    },
+    {
+      "source": "direct_attack\\data\\rank_two_two_perm_cover_n6.json",
+      "peak": "best_rt",
+      "n": 6,
+      "rt": 6,
+      "P": 6,
+      "max_e": 5,
+      "first_collision": 4,
+      "component_counts": [
+        5,
+        4,
+        3,
+        2,
+        1
+      ],
+      "orbit_pairs": 5
+    },
+    {
+      "source": "direct_attack\\data\\rank_two_two_perm_cover_n6.json",
+      "peak": "best_e",
+      "n": 6,
+      "rt": 6,
+      "P": 6,
+      "max_e": 9,
+      "first_collision": 4,
+      "component_counts": [
+        5,
+        4,
+        3,
+        1,
+        1
+      ],
+      "orbit_pairs": 15
+    },
+    {
+      "source": "direct_attack\\data\\rank_two_group_probe_n8.json",
+      "peak": "best_rt",
+      "n": 8,
+      "rt": 7,
+      "P": 7,
+      "max_e": 7,
+      "first_collision": 5,
+      "component_counts": [
+        7,
+        5,
+        4,
+        3,
+        2,
+        1
+      ],
+      "orbit_pairs": 8
+    },
+    {
+      "source": "direct_attack\\data\\rank_two_group_probe_n8.json",
+      "peak": "best_e",
+      "n": 8,
+      "rt": 6,
+      "P": 6,
+      "max_e": 10,
+      "first_collision": 4,
+      "component_counts": [
+        7,
+        6,
+        5,
+        4,
+        3
+      ],
+      "orbit_pairs": 28
+    }
+  ],
+  "verified": true
+}

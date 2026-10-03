@@ -1,0 +1,48 @@
+{
+  "verified": true,
+  "inputs": 12147,
+  "complete_new_inputs": 11568,
+  "maximum_n": 257,
+  "maximum_literal_reset": 7947,
+  "branches": {
+    "low_half": 6056,
+    "high_half": 6067,
+    "preceding_coprime": 24
+  },
+  "seeds": {
+    "f_b_f": 1008,
+    "three_a": 3480,
+    "f_squared": 1579
+  },
+  "low_completions": {
+    "paid_preparation": 6017,
+    "root_policy": 39
+  },
+  "rules": {
+    "three_a": 39616,
+    "core_return": 34961,
+    "root_coset": 15932,
+    "root_keep": 573906
+  },
+  "literal_particle_controls": 76722918,
+  "neutral_class_particle_controls": 495428,
+  "low_arithmetic_exception_controls": 100,
+  "literal_extension_controls": 664415,
+  "compatible_reset_words": 12147,
+  "root_present_controls": 540384,
+  "whole_core_controls": 37120,
+  "extra_seed_letter_compensations": 18,
+  "status": "PROVED paper ALL t>=3 arbitrary remaining-core model square; finite independent literal/row/coverage controls COMPUTATIONALLY VERIFIED, not FORMALLY VERIFIED. Mixed SYNC order-two and general Cerny OPEN. Native full M12 pressure EXPLORATORY.",
+  "corruptions_rejected": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ]
+}

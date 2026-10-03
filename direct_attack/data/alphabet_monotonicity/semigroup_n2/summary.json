@@ -1,0 +1,16 @@
+{
+  "arguments": {
+    "n": 2,
+    "kind": "semigroup",
+    "out": "direct_attack\\data\\alphabet_monotonicity\\semigroup_n2"
+  },
+  "counts": {
+    "binary_inputs": 9,
+    "synchronizing_sc_bases": 4,
+    "augmentation_tests": 15
+  },
+  "first_failure": null,
+  "seconds": 0.0,
+  "scope": "Binary first-map cover and all extra maps/generated transformations; n4 stops at first failure. Counts overlap.",
+  "complete": true
+}

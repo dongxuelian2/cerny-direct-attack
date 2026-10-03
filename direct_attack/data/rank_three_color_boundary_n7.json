@@ -1,0 +1,66 @@
+{
+  "n": 7,
+  "trials": 100000,
+  "seed": 20261002,
+  "inspected": 100000,
+  "best": {
+    "trial": 7992,
+    "permutations": [
+      [
+        1,
+        2,
+        4,
+        3,
+        0,
+        6,
+        5
+      ],
+      [
+        6,
+        2,
+        0,
+        1,
+        4,
+        3,
+        5
+      ]
+    ],
+    "rank_three": [
+      6,
+      3,
+      5,
+      6,
+      3,
+      5,
+      3
+    ],
+    "component_counts": [
+      5,
+      4,
+      3,
+      1,
+      1
+    ],
+    "start": [
+      3,
+      5,
+      6
+    ],
+    "first_collision": 4,
+    "permutation_word": [
+      1,
+      0,
+      0,
+      0
+    ],
+    "final_triple": [
+      0,
+      3,
+      6
+    ],
+    "visited_triples": 15
+  },
+  "stall_witness": null,
+  "found_over_n_minus_1": false,
+  "scope": "deterministic random rank-three map and two permutations"
+}

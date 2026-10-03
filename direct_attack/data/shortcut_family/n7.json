@@ -1,0 +1,146 @@
+{
+  "n": 7,
+  "base": {
+    "n": 7,
+    "rows": [
+      [
+        1,
+        0,
+        0,
+        2,
+        3,
+        4,
+        5
+      ],
+      [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        0
+      ]
+    ],
+    "best_policy": 7,
+    "worst_policy": 17,
+    "rt": 7,
+    "reachable": 127,
+    "local_excess": -3,
+    "local_start": 119,
+    "unit_defect": true,
+    "singleton_extension": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "singleton_best": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "singleton_worst": [
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ]
+  },
+  "augmented": {
+    "n": 7,
+    "rows": [
+      [
+        1,
+        0,
+        0,
+        2,
+        3,
+        4,
+        5
+      ],
+      [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        0
+      ],
+      [
+        2,
+        4,
+        5,
+        1,
+        0,
+        3,
+        2
+      ]
+    ],
+    "best_policy": 9,
+    "worst_policy": 14,
+    "rt": 7,
+    "reachable": 127,
+    "local_excess": -3,
+    "local_start": 123,
+    "unit_defect": true,
+    "singleton_extension": [
+      1,
+      2,
+      1,
+      2,
+      3,
+      2,
+      3
+    ],
+    "singleton_best": [
+      9,
+      10,
+      10,
+      11,
+      11,
+      11,
+      12
+    ],
+    "singleton_worst": [
+      11,
+      12,
+      12,
+      13,
+      14,
+      13,
+      14
+    ]
+  },
+  "extra_word": [
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    0
+  ],
+  "reset_word": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+  ],
+  "seconds": 0.014999999999417923,
+  "scope": "Exact full-cube native result; arbitrary-parameter exact P formula remains conjectured."
+}

@@ -1,0 +1,45 @@
+{
+  "verified": true,
+  "parameters": 11,
+  "maximum_n": 4095,
+  "original_row_state_controls": 163716,
+  "all_counter_phase_label_controls": 163584,
+  "all_subset_bad_invariant_edges": 31448,
+  "literal_whole_reset_letters": 494,
+  "finite_all_subset_scopes": [
+    {
+      "d": 2,
+      "n": 3,
+      "all_subset_vertices": 7,
+      "optimal_vertices": 3,
+      "all_shortest_labeled_words": 1,
+      "augmented_actual_images": 7
+    },
+    {
+      "d": 3,
+      "n": 7,
+      "all_subset_vertices": 127,
+      "optimal_vertices": 7,
+      "all_shortest_labeled_words": 2,
+      "augmented_actual_images": 127
+    },
+    {
+      "d": 4,
+      "n": 15,
+      "all_subset_vertices": 32767,
+      "optimal_vertices": 15,
+      "all_shortest_labeled_words": 24,
+      "augmented_actual_images": 32767
+    }
+  ],
+  "boundary": "all-d theorem is PAPER; parameter controls through n4095 and exhaustive all-subset scopes n3/7/15 are computational, not a formal kernel",
+  "status": "COMPUTATIONALLY VERIFIED independent bounded controls; all-d proof paper, not formal",
+  "rejected_corruptions": [
+    "dimension",
+    "word_count",
+    "wrong_carry",
+    "reset_letter",
+    "row_hash",
+    "actual_count"
+  ]
+}

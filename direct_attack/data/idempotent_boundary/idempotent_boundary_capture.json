@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "<PYTHON_RUNTIME>\\python.exe",
+    "-m",
+    "direct_attack.idempotent_boundary"
+  ],
+  "cwd": "<CHECKOUT>",
+  "start_utc": "2026-09-29T14:18:50.673650+00:00",
+  "seconds": 0.20300000000133878,
+  "returncode": 0,
+  "stdout": "{\"n\": 2, \"tested\": 6, \"accepted\": 2, \"rejected\": 4, \"violations\": 0, \"sha256\": \"ba3c83dac7a374cc959fcc86ad0b0bae3c31c2410918248d98df412bb9f8bc2b\"}\n{\"n\": 3, \"tested\": 30, \"accepted\": 9, \"rejected\": 21, \"violations\": 0, \"sha256\": \"e4266ec60fa0e754b7f2537c2888a95dc3a427c4f449aefea034c91ebd0e6ba7\"}\n{\"n\": 4, \"tested\": 205, \"accepted\": 28, \"rejected\": 177, \"violations\": 0, \"sha256\": \"ec021e38d25db4ab31336d67ff45c0a63bb545792b8e5aea9707fe89262a96d7\"}\n{\"n\": 5, \"tested\": 1372, \"accepted\": 225, \"rejected\": 1147, \"violations\": 44, \"sha256\": \"7ac368d3fa742c3c3b22c394711f2471ff8d184dad7babeb608dcb494ed42b5e\"}\n{\"cover\": [{\"n\": 2, \"tested\": 6, \"accepted\": 2, \"rejected\": 4, \"violations\": 0, \"sha256\": \"ba3c83dac7a374cc959fcc86ad0b0bae3c31c2410918248d98df412bb9f8bc2b\"}, {\"n\": 3, \"tested\": 30, \"accepted\": 9, \"rejected\": 21, \"violations\": 0, \"sha256\": \"e4266ec60fa0e754b7f2537c2888a95dc3a427c4f449aefea034c91ebd0e6ba7\"}, {\"n\": 4, \"tested\": 205, \"accepted\": 28, \"rejected\": 177, \"violations\": 0, \"sha256\": \"ec021e38d25db4ab31336d67ff45c0a63bb545792b8e5aea9707fe89262a96d7\"}, {\"n\": 5, \"tested\": 1372, \"accepted\": 225, \"rejected\": 1147, \"violations\": 44, \"sha256\": \"7ac368d3fa742c3c3b22c394711f2471ff8d184dad7babeb608dcb494ed42b5e\"}], \"ordinary_all_arrays\": 264, \"all_source_witnesses\": 2, \"verified\": true, \"scope\": \"All permutation cycle types times ALL idempotent maps n2..5, including identity/constant controls. The n5 minimum is within binary permutation/idempotent DFAs, not arbitrary larger alphabets. Every accepted array has ordinary reverse BFS; witnesses also ALL-SOURCE.\"}\n",
+  "stderr": ""
+}

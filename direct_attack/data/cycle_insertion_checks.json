@@ -1,0 +1,93 @@
+{
+  "checked": 8,
+  "records": [
+    {
+      "file": "direct_attack\\data\\cycle_insertion\\n12.json",
+      "n": 12,
+      "exact_compression": 9,
+      "short_images": 24,
+      "reachable": true,
+      "synchronizing": true,
+      "strongly_connected": true,
+      "reset_length": 86,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\cycle_insertion\\n16.json",
+      "n": 16,
+      "exact_compression": 9,
+      "short_images": 24,
+      "reachable": true,
+      "synchronizing": true,
+      "strongly_connected": true,
+      "reset_length": 6570,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\cycle_insertion\\n18.json",
+      "n": 18,
+      "exact_compression": 9,
+      "short_images": 24,
+      "reachable": true,
+      "synchronizing": true,
+      "strongly_connected": true,
+      "reset_length": 17780,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\cycle_insertion\\n22.json",
+      "n": 22,
+      "exact_compression": 9,
+      "short_images": 24,
+      "reachable": true,
+      "synchronizing": true,
+      "strongly_connected": true,
+      "reset_length": 68376,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\cycle_insertion\\n28.json",
+      "n": 28,
+      "exact_compression": 9,
+      "short_images": 24,
+      "reachable": true,
+      "synchronizing": true,
+      "strongly_connected": true,
+      "reset_length": 74562,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\cycle_insertion\\n34.json",
+      "n": 34,
+      "exact_compression": 9,
+      "short_images": 24,
+      "reachable": true,
+      "synchronizing": true,
+      "strongly_connected": true,
+      "reset_length": 298080,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\cycle_insertion\\n46.json",
+      "n": 46,
+      "exact_compression": 9,
+      "short_images": 24,
+      "reachable": true,
+      "synchronizing": true,
+      "strongly_connected": true,
+      "reset_length": 689640,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\cycle_insertion\\n58.json",
+      "n": 58,
+      "exact_compression": 9,
+      "short_images": 24,
+      "reachable": true,
+      "synchronizing": true,
+      "strongly_connected": true,
+      "reset_length": 1243056,
+      "verified": true
+    }
+  ]
+}

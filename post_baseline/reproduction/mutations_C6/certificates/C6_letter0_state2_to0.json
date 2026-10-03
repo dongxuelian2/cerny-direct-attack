@@ -1,0 +1,38 @@
+{
+  "schema": "orion.sync-certificate.v1",
+  "automaton": {
+    "name": "C6_letter0_state2_to0",
+    "n": 6,
+    "letters": [
+      "a",
+      "b"
+    ],
+    "transitions": [
+      [
+        1,
+        2,
+        0,
+        4,
+        5,
+        0
+      ],
+      [
+        0,
+        1,
+        2,
+        3,
+        4,
+        0
+      ]
+    ]
+  },
+  "kind": "nonsynchronizing",
+  "closed_masks": [
+    7,
+    23,
+    31,
+    39,
+    55,
+    63
+  ]
+}

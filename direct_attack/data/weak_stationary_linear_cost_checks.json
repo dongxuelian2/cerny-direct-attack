@@ -1,0 +1,465 @@
+{
+  "verified": true,
+  "parameters": 63,
+  "maximum_n": 257,
+  "closed_row_vertices": 7308,
+  "closure_edges": 14616,
+  "all_short_singular_row_classes": 6031,
+  "permutation_row_classes": 63,
+  "supported_words": 2427,
+  "literal_particle_letter_controls": 23497012,
+  "checks": [
+    {
+      "n": 4,
+      "closed_row_orbit": 8,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 4,
+      "exact_stationary_maximum_cost": 5
+    },
+    {
+      "n": 5,
+      "closed_row_orbit": 14,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 5,
+      "exact_stationary_maximum_cost": 7
+    },
+    {
+      "n": 6,
+      "closed_row_orbit": 17,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 6,
+      "exact_stationary_maximum_cost": 8
+    },
+    {
+      "n": 7,
+      "closed_row_orbit": 20,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 7,
+      "exact_stationary_maximum_cost": 10
+    },
+    {
+      "n": 8,
+      "closed_row_orbit": 23,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 8,
+      "exact_stationary_maximum_cost": 11
+    },
+    {
+      "n": 9,
+      "closed_row_orbit": 26,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 9,
+      "exact_stationary_maximum_cost": 13
+    },
+    {
+      "n": 10,
+      "closed_row_orbit": 29,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 10,
+      "exact_stationary_maximum_cost": 14
+    },
+    {
+      "n": 11,
+      "closed_row_orbit": 32,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 11,
+      "exact_stationary_maximum_cost": 16
+    },
+    {
+      "n": 12,
+      "closed_row_orbit": 35,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 12,
+      "exact_stationary_maximum_cost": 17
+    },
+    {
+      "n": 13,
+      "closed_row_orbit": 38,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 13,
+      "exact_stationary_maximum_cost": 19
+    },
+    {
+      "n": 14,
+      "closed_row_orbit": 41,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 14,
+      "exact_stationary_maximum_cost": 20
+    },
+    {
+      "n": 15,
+      "closed_row_orbit": 44,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 15,
+      "exact_stationary_maximum_cost": 22
+    },
+    {
+      "n": 16,
+      "closed_row_orbit": 47,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 16,
+      "exact_stationary_maximum_cost": 23
+    },
+    {
+      "n": 17,
+      "closed_row_orbit": 50,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 17,
+      "exact_stationary_maximum_cost": 25
+    },
+    {
+      "n": 18,
+      "closed_row_orbit": 53,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 18,
+      "exact_stationary_maximum_cost": 26
+    },
+    {
+      "n": 19,
+      "closed_row_orbit": 56,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 19,
+      "exact_stationary_maximum_cost": 28
+    },
+    {
+      "n": 20,
+      "closed_row_orbit": 59,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 20,
+      "exact_stationary_maximum_cost": 29
+    },
+    {
+      "n": 21,
+      "closed_row_orbit": 62,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 21,
+      "exact_stationary_maximum_cost": 31
+    },
+    {
+      "n": 22,
+      "closed_row_orbit": 65,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 22,
+      "exact_stationary_maximum_cost": 32
+    },
+    {
+      "n": 23,
+      "closed_row_orbit": 68,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 23,
+      "exact_stationary_maximum_cost": 34
+    },
+    {
+      "n": 24,
+      "closed_row_orbit": 71,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 24,
+      "exact_stationary_maximum_cost": 35
+    },
+    {
+      "n": 25,
+      "closed_row_orbit": 74,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 25,
+      "exact_stationary_maximum_cost": 37
+    },
+    {
+      "n": 26,
+      "closed_row_orbit": 77,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 26,
+      "exact_stationary_maximum_cost": 38
+    },
+    {
+      "n": 27,
+      "closed_row_orbit": 80,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 27,
+      "exact_stationary_maximum_cost": 40
+    },
+    {
+      "n": 28,
+      "closed_row_orbit": 83,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 28,
+      "exact_stationary_maximum_cost": 41
+    },
+    {
+      "n": 29,
+      "closed_row_orbit": 86,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 29,
+      "exact_stationary_maximum_cost": 43
+    },
+    {
+      "n": 30,
+      "closed_row_orbit": 89,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 30,
+      "exact_stationary_maximum_cost": 44
+    },
+    {
+      "n": 31,
+      "closed_row_orbit": 92,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 31,
+      "exact_stationary_maximum_cost": 46
+    },
+    {
+      "n": 32,
+      "closed_row_orbit": 95,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 32,
+      "exact_stationary_maximum_cost": 47
+    },
+    {
+      "n": 33,
+      "closed_row_orbit": 98,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 33,
+      "exact_stationary_maximum_cost": 49
+    },
+    {
+      "n": 34,
+      "closed_row_orbit": 101,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 34,
+      "exact_stationary_maximum_cost": 50
+    },
+    {
+      "n": 35,
+      "closed_row_orbit": 104,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 35,
+      "exact_stationary_maximum_cost": 52
+    },
+    {
+      "n": 36,
+      "closed_row_orbit": 107,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 36,
+      "exact_stationary_maximum_cost": 53
+    },
+    {
+      "n": 37,
+      "closed_row_orbit": 110,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 37,
+      "exact_stationary_maximum_cost": 55
+    },
+    {
+      "n": 38,
+      "closed_row_orbit": 113,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 38,
+      "exact_stationary_maximum_cost": 56
+    },
+    {
+      "n": 39,
+      "closed_row_orbit": 116,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 39,
+      "exact_stationary_maximum_cost": 58
+    },
+    {
+      "n": 40,
+      "closed_row_orbit": 119,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 40,
+      "exact_stationary_maximum_cost": 59
+    },
+    {
+      "n": 41,
+      "closed_row_orbit": 122,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 41,
+      "exact_stationary_maximum_cost": 61
+    },
+    {
+      "n": 42,
+      "closed_row_orbit": 125,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 42,
+      "exact_stationary_maximum_cost": 62
+    },
+    {
+      "n": 43,
+      "closed_row_orbit": 128,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 43,
+      "exact_stationary_maximum_cost": 64
+    },
+    {
+      "n": 44,
+      "closed_row_orbit": 131,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 44,
+      "exact_stationary_maximum_cost": 65
+    },
+    {
+      "n": 45,
+      "closed_row_orbit": 134,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 45,
+      "exact_stationary_maximum_cost": 67
+    },
+    {
+      "n": 46,
+      "closed_row_orbit": 137,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 46,
+      "exact_stationary_maximum_cost": 68
+    },
+    {
+      "n": 47,
+      "closed_row_orbit": 140,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 47,
+      "exact_stationary_maximum_cost": 70
+    },
+    {
+      "n": 48,
+      "closed_row_orbit": 143,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 48,
+      "exact_stationary_maximum_cost": 71
+    },
+    {
+      "n": 49,
+      "closed_row_orbit": 146,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 49,
+      "exact_stationary_maximum_cost": 73
+    },
+    {
+      "n": 50,
+      "closed_row_orbit": 149,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 50,
+      "exact_stationary_maximum_cost": 74
+    },
+    {
+      "n": 51,
+      "closed_row_orbit": 152,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 51,
+      "exact_stationary_maximum_cost": 76
+    },
+    {
+      "n": 52,
+      "closed_row_orbit": 155,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 52,
+      "exact_stationary_maximum_cost": 77
+    },
+    {
+      "n": 53,
+      "closed_row_orbit": 158,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 53,
+      "exact_stationary_maximum_cost": 79
+    },
+    {
+      "n": 54,
+      "closed_row_orbit": 161,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 54,
+      "exact_stationary_maximum_cost": 80
+    },
+    {
+      "n": 55,
+      "closed_row_orbit": 164,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 55,
+      "exact_stationary_maximum_cost": 82
+    },
+    {
+      "n": 56,
+      "closed_row_orbit": 167,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 56,
+      "exact_stationary_maximum_cost": 83
+    },
+    {
+      "n": 57,
+      "closed_row_orbit": 170,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 57,
+      "exact_stationary_maximum_cost": 85
+    },
+    {
+      "n": 58,
+      "closed_row_orbit": 173,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 58,
+      "exact_stationary_maximum_cost": 86
+    },
+    {
+      "n": 59,
+      "closed_row_orbit": 176,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 59,
+      "exact_stationary_maximum_cost": 88
+    },
+    {
+      "n": 60,
+      "closed_row_orbit": 179,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 60,
+      "exact_stationary_maximum_cost": 89
+    },
+    {
+      "n": 61,
+      "closed_row_orbit": 182,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 61,
+      "exact_stationary_maximum_cost": 91
+    },
+    {
+      "n": 62,
+      "closed_row_orbit": 185,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 62,
+      "exact_stationary_maximum_cost": 92
+    },
+    {
+      "n": 63,
+      "closed_row_orbit": 188,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 63,
+      "exact_stationary_maximum_cost": 94
+    },
+    {
+      "n": 64,
+      "closed_row_orbit": 191,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 64,
+      "exact_stationary_maximum_cost": 95
+    },
+    {
+      "n": 127,
+      "closed_row_orbit": 380,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 127,
+      "exact_stationary_maximum_cost": 190
+    },
+    {
+      "n": 257,
+      "closed_row_orbit": 770,
+      "all_parameter_scope": "finite original-row closure only",
+      "exact_rt": 257,
+      "exact_stationary_maximum_cost": 385
+    }
+  ],
+  "boundary": "Independent exact complete full-Q ROW orbit closure and Bellman shortest costs in63 retained parameters, covering ALL words in each fixed family input. Exact separator and rational stationary mixture, literal reset and support SC/sync. All-n theorem separately PROVED paper, not formal or all-parameter computational proof. General Cerny OPEN; only universal maximum support n bridge refuted.",
+  "corruptions_rejected": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "argv": [
+    "<PYTHON_RUNTIME>\\python.exe",
+    "-m",
+    "direct_attack.extremal_arbitrary_letters"
+  ],
+  "cwd": "<CHECKOUT>",
+  "start_utc": "2026-09-29T11:06:55.294347+00:00",
+  "seconds": 6.187999999998283,
+  "returncode": 0
+}

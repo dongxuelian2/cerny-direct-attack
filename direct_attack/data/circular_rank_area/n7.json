@@ -1,0 +1,1082 @@
+{
+  "n": 7,
+  "rows": [
+    [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      0
+    ],
+    [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      0
+    ]
+  ],
+  "r": 6,
+  "reachable": 127,
+  "area": 110,
+  "length": 36,
+  "word": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+  ],
+  "budget": 126,
+  "nodes": {
+    "1": {
+      "area": 110,
+      "length": 36,
+      "parent": [
+        65,
+        1
+      ]
+    },
+    "2": {
+      "area": 115,
+      "length": 37,
+      "parent": [
+        1,
+        0
+      ]
+    },
+    "3": {
+      "area": 75,
+      "length": 29,
+      "parent": [
+        67,
+        1
+      ]
+    },
+    "4": {
+      "area": 120,
+      "length": 38,
+      "parent": [
+        2,
+        0
+      ]
+    },
+    "5": {
+      "area": 53,
+      "length": 23,
+      "parent": [
+        69,
+        1
+      ]
+    },
+    "6": {
+      "area": 80,
+      "length": 30,
+      "parent": [
+        3,
+        0
+      ]
+    },
+    "7": {
+      "area": 46,
+      "length": 22,
+      "parent": [
+        71,
+        1
+      ]
+    },
+    "8": {
+      "area": 125,
+      "length": 39,
+      "parent": [
+        4,
+        0
+      ]
+    },
+    "9": {
+      "area": 45,
+      "length": 17,
+      "parent": [
+        73,
+        1
+      ]
+    },
+    "10": {
+      "area": 58,
+      "length": 24,
+      "parent": [
+        5,
+        0
+      ]
+    },
+    "11": {
+      "area": 31,
+      "length": 16,
+      "parent": [
+        75,
+        1
+      ]
+    },
+    "12": {
+      "area": 85,
+      "length": 31,
+      "parent": [
+        6,
+        0
+      ]
+    },
+    "13": {
+      "area": 30,
+      "length": 16,
+      "parent": [
+        77,
+        1
+      ]
+    },
+    "14": {
+      "area": 50,
+      "length": 23,
+      "parent": [
+        7,
+        0
+      ]
+    },
+    "15": {
+      "area": 24,
+      "length": 15,
+      "parent": [
+        79,
+        1
+      ]
+    },
+    "16": {
+      "area": 130,
+      "length": 40,
+      "parent": [
+        8,
+        0
+      ]
+    },
+    "17": {
+      "area": 51,
+      "length": 21,
+      "parent": [
+        81,
+        1
+      ]
+    },
+    "18": {
+      "area": 50,
+      "length": 18,
+      "parent": [
+        9,
+        0
+      ]
+    },
+    "19": {
+      "area": 30,
+      "length": 14,
+      "parent": [
+        83,
+        1
+      ]
+    },
+    "20": {
+      "area": 63,
+      "length": 25,
+      "parent": [
+        10,
+        0
+      ]
+    },
+    "21": {
+      "area": 22,
+      "length": 10,
+      "parent": [
+        85,
+        1
+      ]
+    },
+    "22": {
+      "area": 35,
+      "length": 17,
+      "parent": [
+        11,
+        0
+      ]
+    },
+    "23": {
+      "area": 16,
+      "length": 9,
+      "parent": [
+        87,
+        1
+      ]
+    },
+    "24": {
+      "area": 90,
+      "length": 32,
+      "parent": [
+        12,
+        0
+      ]
+    },
+    "25": {
+      "area": 28,
+      "length": 13,
+      "parent": [
+        89,
+        1
+      ]
+    },
+    "26": {
+      "area": 34,
+      "length": 17,
+      "parent": [
+        13,
+        0
+      ]
+    },
+    "27": {
+      "area": 15,
+      "length": 9,
+      "parent": [
+        91,
+        1
+      ]
+    },
+    "28": {
+      "area": 54,
+      "length": 24,
+      "parent": [
+        14,
+        0
+      ]
+    },
+    "29": {
+      "area": 14,
+      "length": 9,
+      "parent": [
+        93,
+        1
+      ]
+    },
+    "30": {
+      "area": 27,
+      "length": 16,
+      "parent": [
+        15,
+        0
+      ]
+    },
+    "31": {
+      "area": 9,
+      "length": 8,
+      "parent": [
+        95,
+        1
+      ]
+    },
+    "32": {
+      "area": 135,
+      "length": 41,
+      "parent": [
+        16,
+        0
+      ]
+    },
+    "33": {
+      "area": 71,
+      "length": 28,
+      "parent": [
+        97,
+        1
+      ]
+    },
+    "34": {
+      "area": 56,
+      "length": 22,
+      "parent": [
+        17,
+        0
+      ]
+    },
+    "35": {
+      "area": 43,
+      "length": 21,
+      "parent": [
+        99,
+        1
+      ]
+    },
+    "36": {
+      "area": 55,
+      "length": 19,
+      "parent": [
+        18,
+        0
+      ]
+    },
+    "37": {
+      "area": 28,
+      "length": 15,
+      "parent": [
+        101,
+        1
+      ]
+    },
+    "38": {
+      "area": 34,
+      "length": 15,
+      "parent": [
+        19,
+        0
+      ]
+    },
+    "39": {
+      "area": 22,
+      "length": 14,
+      "parent": [
+        103,
+        1
+      ]
+    },
+    "40": {
+      "area": 68,
+      "length": 26,
+      "parent": [
+        20,
+        0
+      ]
+    },
+    "41": {
+      "area": 27,
+      "length": 13,
+      "parent": [
+        105,
+        1
+      ]
+    },
+    "42": {
+      "area": 26,
+      "length": 11,
+      "parent": [
+        21,
+        0
+      ]
+    },
+    "43": {
+      "area": 14,
+      "length": 8,
+      "parent": [
+        107,
+        1
+      ]
+    },
+    "44": {
+      "area": 39,
+      "length": 18,
+      "parent": [
+        22,
+        0
+      ]
+    },
+    "45": {
+      "area": 13,
+      "length": 8,
+      "parent": [
+        109,
+        1
+      ]
+    },
+    "46": {
+      "area": 19,
+      "length": 10,
+      "parent": [
+        23,
+        0
+      ]
+    },
+    "47": {
+      "area": 8,
+      "length": 7,
+      "parent": [
+        111,
+        1
+      ]
+    },
+    "48": {
+      "area": 95,
+      "length": 33,
+      "parent": [
+        24,
+        0
+      ]
+    },
+    "49": {
+      "area": 40,
+      "length": 20,
+      "parent": [
+        113,
+        1
+      ]
+    },
+    "50": {
+      "area": 32,
+      "length": 14,
+      "parent": [
+        25,
+        0
+      ]
+    },
+    "51": {
+      "area": 20,
+      "length": 13,
+      "parent": [
+        115,
+        1
+      ]
+    },
+    "52": {
+      "area": 38,
+      "length": 18,
+      "parent": [
+        26,
+        0
+      ]
+    },
+    "53": {
+      "area": 12,
+      "length": 7,
+      "parent": [
+        117,
+        1
+      ]
+    },
+    "54": {
+      "area": 18,
+      "length": 10,
+      "parent": [
+        27,
+        0
+      ]
+    },
+    "55": {
+      "area": 7,
+      "length": 6,
+      "parent": [
+        119,
+        1
+      ]
+    },
+    "56": {
+      "area": 58,
+      "length": 25,
+      "parent": [
+        28,
+        0
+      ]
+    },
+    "57": {
+      "area": 18,
+      "length": 12,
+      "parent": [
+        121,
+        1
+      ]
+    },
+    "58": {
+      "area": 17,
+      "length": 10,
+      "parent": [
+        29,
+        0
+      ]
+    },
+    "59": {
+      "area": 6,
+      "length": 5,
+      "parent": [
+        123,
+        1
+      ]
+    },
+    "60": {
+      "area": 30,
+      "length": 17,
+      "parent": [
+        30,
+        0
+      ]
+    },
+    "61": {
+      "area": 5,
+      "length": 4,
+      "parent": [
+        125,
+        1
+      ]
+    },
+    "62": {
+      "area": 11,
+      "length": 9,
+      "parent": [
+        31,
+        0
+      ]
+    },
+    "63": {
+      "area": 1,
+      "length": 1,
+      "parent": [
+        127,
+        1
+      ]
+    },
+    "64": {
+      "area": 140,
+      "length": 42,
+      "parent": [
+        32,
+        0
+      ]
+    },
+    "65": {
+      "area": 105,
+      "length": 35,
+      "parent": [
+        96,
+        0
+      ]
+    },
+    "66": {
+      "area": 76,
+      "length": 29,
+      "parent": [
+        33,
+        0
+      ]
+    },
+    "67": {
+      "area": 70,
+      "length": 28,
+      "parent": [
+        97,
+        0
+      ]
+    },
+    "68": {
+      "area": 61,
+      "length": 23,
+      "parent": [
+        34,
+        0
+      ]
+    },
+    "69": {
+      "area": 48,
+      "length": 22,
+      "parent": [
+        98,
+        0
+      ]
+    },
+    "70": {
+      "area": 47,
+      "length": 22,
+      "parent": [
+        35,
+        0
+      ]
+    },
+    "71": {
+      "area": 42,
+      "length": 21,
+      "parent": [
+        99,
+        0
+      ]
+    },
+    "72": {
+      "area": 60,
+      "length": 20,
+      "parent": [
+        36,
+        0
+      ]
+    },
+    "73": {
+      "area": 40,
+      "length": 16,
+      "parent": [
+        100,
+        0
+      ]
+    },
+    "74": {
+      "area": 32,
+      "length": 16,
+      "parent": [
+        37,
+        0
+      ]
+    },
+    "75": {
+      "area": 27,
+      "length": 15,
+      "parent": [
+        101,
+        0
+      ]
+    },
+    "76": {
+      "area": 38,
+      "length": 16,
+      "parent": [
+        38,
+        0
+      ]
+    },
+    "77": {
+      "area": 26,
+      "length": 15,
+      "parent": [
+        102,
+        0
+      ]
+    },
+    "78": {
+      "area": 25,
+      "length": 15,
+      "parent": [
+        39,
+        0
+      ]
+    },
+    "79": {
+      "area": 21,
+      "length": 14,
+      "parent": [
+        103,
+        0
+      ]
+    },
+    "80": {
+      "area": 73,
+      "length": 27,
+      "parent": [
+        40,
+        0
+      ]
+    },
+    "81": {
+      "area": 46,
+      "length": 20,
+      "parent": [
+        104,
+        0
+      ]
+    },
+    "82": {
+      "area": 31,
+      "length": 14,
+      "parent": [
+        41,
+        0
+      ]
+    },
+    "83": {
+      "area": 26,
+      "length": 13,
+      "parent": [
+        105,
+        0
+      ]
+    },
+    "84": {
+      "area": 30,
+      "length": 12,
+      "parent": [
+        42,
+        0
+      ]
+    },
+    "85": {
+      "area": 18,
+      "length": 9,
+      "parent": [
+        106,
+        0
+      ]
+    },
+    "86": {
+      "area": 17,
+      "length": 9,
+      "parent": [
+        43,
+        0
+      ]
+    },
+    "87": {
+      "area": 13,
+      "length": 8,
+      "parent": [
+        107,
+        0
+      ]
+    },
+    "88": {
+      "area": 43,
+      "length": 19,
+      "parent": [
+        44,
+        0
+      ]
+    },
+    "89": {
+      "area": 24,
+      "length": 12,
+      "parent": [
+        108,
+        0
+      ]
+    },
+    "90": {
+      "area": 16,
+      "length": 9,
+      "parent": [
+        45,
+        0
+      ]
+    },
+    "91": {
+      "area": 12,
+      "length": 8,
+      "parent": [
+        109,
+        0
+      ]
+    },
+    "92": {
+      "area": 22,
+      "length": 11,
+      "parent": [
+        46,
+        0
+      ]
+    },
+    "93": {
+      "area": 11,
+      "length": 8,
+      "parent": [
+        110,
+        0
+      ]
+    },
+    "94": {
+      "area": 10,
+      "length": 8,
+      "parent": [
+        47,
+        0
+      ]
+    },
+    "95": {
+      "area": 7,
+      "length": 7,
+      "parent": [
+        111,
+        0
+      ]
+    },
+    "96": {
+      "area": 100,
+      "length": 34,
+      "parent": [
+        48,
+        0
+      ]
+    },
+    "97": {
+      "area": 66,
+      "length": 27,
+      "parent": [
+        112,
+        0
+      ]
+    },
+    "98": {
+      "area": 44,
+      "length": 21,
+      "parent": [
+        49,
+        0
+      ]
+    },
+    "99": {
+      "area": 39,
+      "length": 20,
+      "parent": [
+        113,
+        0
+      ]
+    },
+    "100": {
+      "area": 36,
+      "length": 15,
+      "parent": [
+        50,
+        0
+      ]
+    },
+    "101": {
+      "area": 24,
+      "length": 14,
+      "parent": [
+        114,
+        0
+      ]
+    },
+    "102": {
+      "area": 23,
+      "length": 14,
+      "parent": [
+        51,
+        0
+      ]
+    },
+    "103": {
+      "area": 19,
+      "length": 13,
+      "parent": [
+        115,
+        0
+      ]
+    },
+    "104": {
+      "area": 42,
+      "length": 19,
+      "parent": [
+        52,
+        0
+      ]
+    },
+    "105": {
+      "area": 23,
+      "length": 12,
+      "parent": [
+        116,
+        0
+      ]
+    },
+    "106": {
+      "area": 15,
+      "length": 8,
+      "parent": [
+        53,
+        0
+      ]
+    },
+    "107": {
+      "area": 11,
+      "length": 7,
+      "parent": [
+        117,
+        0
+      ]
+    },
+    "108": {
+      "area": 21,
+      "length": 11,
+      "parent": [
+        54,
+        0
+      ]
+    },
+    "109": {
+      "area": 10,
+      "length": 7,
+      "parent": [
+        118,
+        0
+      ]
+    },
+    "110": {
+      "area": 9,
+      "length": 7,
+      "parent": [
+        55,
+        0
+      ]
+    },
+    "111": {
+      "area": 6,
+      "length": 6,
+      "parent": [
+        119,
+        0
+      ]
+    },
+    "112": {
+      "area": 62,
+      "length": 26,
+      "parent": [
+        56,
+        0
+      ]
+    },
+    "113": {
+      "area": 36,
+      "length": 19,
+      "parent": [
+        120,
+        0
+      ]
+    },
+    "114": {
+      "area": 21,
+      "length": 13,
+      "parent": [
+        57,
+        0
+      ]
+    },
+    "115": {
+      "area": 17,
+      "length": 12,
+      "parent": [
+        121,
+        0
+      ]
+    },
+    "116": {
+      "area": 20,
+      "length": 11,
+      "parent": [
+        58,
+        0
+      ]
+    },
+    "117": {
+      "area": 9,
+      "length": 6,
+      "parent": [
+        122,
+        0
+      ]
+    },
+    "118": {
+      "area": 8,
+      "length": 6,
+      "parent": [
+        59,
+        0
+      ]
+    },
+    "119": {
+      "area": 5,
+      "length": 5,
+      "parent": [
+        123,
+        0
+      ]
+    },
+    "120": {
+      "area": 33,
+      "length": 18,
+      "parent": [
+        60,
+        0
+      ]
+    },
+    "121": {
+      "area": 15,
+      "length": 11,
+      "parent": [
+        124,
+        0
+      ]
+    },
+    "122": {
+      "area": 7,
+      "length": 5,
+      "parent": [
+        61,
+        0
+      ]
+    },
+    "123": {
+      "area": 4,
+      "length": 4,
+      "parent": [
+        125,
+        0
+      ]
+    },
+    "124": {
+      "area": 13,
+      "length": 10,
+      "parent": [
+        62,
+        0
+      ]
+    },
+    "125": {
+      "area": 3,
+      "length": 3,
+      "parent": [
+        126,
+        0
+      ]
+    },
+    "126": {
+      "area": 2,
+      "length": 2,
+      "parent": [
+        63,
+        0
+      ]
+    },
+    "127": {
+      "area": 0,
+      "length": 0,
+      "parent": null
+    }
+  },
+  "formula_status": "Exact minimum-area formula is COMPUTATIONALLY VERIFIED only; paper proves matching cubic leading term and failure of every trajectory budget for all n>=3."
+}

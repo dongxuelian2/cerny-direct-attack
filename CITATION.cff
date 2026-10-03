@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Please cite the repository version and exact result/source you use; publication priority remains open."
+type: software
+title: "Černý direct attack: proof boundaries and reproducible certificates"
+version: 0.1.0
+date-released: 2026-10-03
+repository-code: "https://github.com/dongxuelian2/cerny-direct-attack"
+url: "https://github.com/dongxuelian2/cerny-direct-attack"
+license: MIT
+authors:
+  - name: "dongxuelian2"
+    alias: "dongxuelian2"
+abstract: "Partial research on synchronizing automata, including scoped Lean proofs, paper arguments, computational certificates and negative method results. The general Černý conjecture remains open."
+keywords:
+  - synchronizing automata
+  - Černý conjecture
+  - Lean
+  - reproducible research

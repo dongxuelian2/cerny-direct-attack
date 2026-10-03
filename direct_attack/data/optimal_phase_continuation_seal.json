@@ -1,0 +1,59 @@
+{
+  "verified": true,
+  "checks": 104,
+  "regeneration_commands": 188,
+  "archived": [
+    {
+      "path": "direct_attack/data/optimal_phase_continuation_provenance/audit_run.json",
+      "sha256": "ba78eceb3dee91b839cb255fae1abd1a061023b9a5dc2231ffb24a18cde7d3be"
+    },
+    {
+      "path": "direct_attack/data/optimal_phase_continuation_provenance/reproduction_commands.json",
+      "sha256": "91e161083ff8c5a94b7f7301719b1d108dc76daa2df6396fce8f5e19e7d661f9"
+    },
+    {
+      "path": "direct_attack/data/optimal_phase_continuation_provenance/sha256_manifest.json",
+      "sha256": "7d3c8493713f36673ba8728b5de79f2dbb1547c179c8b96c8009de7652e99538"
+    }
+  ],
+  "native_builds": [
+    {
+      "metadata": "direct_attack/data/alternating_frame_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/alternating_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/class_reset_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/complete_policy_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/sparse_policy_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/weighted_class_reset_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    }
+  ],
+  "generation_and_replay": "direct_attack/data/optimal_phase_generation_captures.json",
+  "audit_boundary": "previous 103-check record preserved verbatim; one new independent finite all-source transport, shortest-word DAG, determinant-minor and all-optimal-chain check with deterministic generator/replay; not a full 104-check rerun",
+  "mathematical_status": "COMPUTATIONALLY VERIFIED n5 counterexamples: unique dependent optimal actual-image policy chains, including completely reachable binary rt=P14; all five shortest original reset words audited, independent nongreedy histories exist; PROVED paper n5 state-minimality; general Cerny, global policy square and weaker optimized-dimension tradeoffs OPEN; no formal verification"
+}

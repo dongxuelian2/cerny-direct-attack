@@ -1,0 +1,38 @@
+{
+  "verified": true,
+  "runs": [
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.optimal_phase_independence"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T08:11:31.855201+00:00",
+      "seconds": 0.09400000000096043,
+      "returncode": 0,
+      "stdout": "[{\"source\": \"direct_attack/data/n5_extremal/extremal_004.profile.json\", \"rt\": 15, \"P\": 15, \"optimal_endpoint_histories\": 1, \"independent_optimal_chain\": false, \"shortest_original_word_count\": 3, \"independent_shortest_record_history\": true}, {\"source\": \"direct_attack/data/n5_extremal/extremal_005.profile.json\", \"rt\": 14, \"P\": 14, \"optimal_endpoint_histories\": 1, \"independent_optimal_chain\": false, \"shortest_original_word_count\": 2, \"independent_shortest_record_history\": true}]\n",
+      "stderr": "",
+      "output_sha256": "db444a661f9210f00090910ab946cbf036b4d131126ef2de77656c3d86b81f15"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.optimal_phase_independence",
+        "--out",
+        "<CHECKOUT>\\direct_attack\\native_build\\optimal_phase_replay.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T08:11:31.955213+00:00",
+      "seconds": 0.09400000000096043,
+      "returncode": 0,
+      "stdout": "[{\"source\": \"direct_attack/data/n5_extremal/extremal_004.profile.json\", \"rt\": 15, \"P\": 15, \"optimal_endpoint_histories\": 1, \"independent_optimal_chain\": false, \"shortest_original_word_count\": 3, \"independent_shortest_record_history\": true}, {\"source\": \"direct_attack/data/n5_extremal/extremal_005.profile.json\", \"rt\": 14, \"P\": 14, \"optimal_endpoint_histories\": 1, \"independent_optimal_chain\": false, \"shortest_original_word_count\": 2, \"independent_shortest_record_history\": true}]\n",
+      "stderr": "",
+      "output_sha256": "db444a661f9210f00090910ab946cbf036b4d131126ef2de77656c3d86b81f15"
+    }
+  ],
+  "parsed_records_equal": true,
+  "normalization": "none",
+  "generator_sha256": "965c485537507cc74d8af3570408456d351e7063db78d20e15ebe268998e773f"
+}

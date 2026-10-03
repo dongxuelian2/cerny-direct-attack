@@ -1,0 +1,522 @@
+{
+  "verified": true,
+  "parameters": 67,
+  "maximum_n": 3072,
+  "pair_edge_controls": 11928406,
+  "literal_upper_state_letter_controls": 32776,
+  "small_forward_and_reverse_scopes": 10,
+  "literal_n9_words_below_lower_bound": 4094,
+  "corruptions_rejected": 10,
+  "reports": [
+    {
+      "p": 3,
+      "n": 9,
+      "pair_edge_controls": 66,
+      "literal_upper_state_letter_controls": 24,
+      "small_pair_computations": {
+        "minimum": 12,
+        "reachable_pairs": 42,
+        "distinct_pairs": 33
+      }
+    },
+    {
+      "p": 4,
+      "n": 12,
+      "pair_edge_controls": 120,
+      "literal_upper_state_letter_controls": 32,
+      "small_pair_computations": {
+        "minimum": 16,
+        "reachable_pairs": 68,
+        "distinct_pairs": 56
+      }
+    },
+    {
+      "p": 5,
+      "n": 15,
+      "pair_edge_controls": 190,
+      "literal_upper_state_letter_controls": 40,
+      "small_pair_computations": {
+        "minimum": 20,
+        "reachable_pairs": 99,
+        "distinct_pairs": 84
+      }
+    },
+    {
+      "p": 6,
+      "n": 18,
+      "pair_edge_controls": 276,
+      "literal_upper_state_letter_controls": 48,
+      "small_pair_computations": {
+        "minimum": 24,
+        "reachable_pairs": 135,
+        "distinct_pairs": 117
+      }
+    },
+    {
+      "p": 7,
+      "n": 21,
+      "pair_edge_controls": 378,
+      "literal_upper_state_letter_controls": 56,
+      "small_pair_computations": {
+        "minimum": 28,
+        "reachable_pairs": 176,
+        "distinct_pairs": 155
+      }
+    },
+    {
+      "p": 8,
+      "n": 24,
+      "pair_edge_controls": 496,
+      "literal_upper_state_letter_controls": 64,
+      "small_pair_computations": {
+        "minimum": 32,
+        "reachable_pairs": 222,
+        "distinct_pairs": 198
+      }
+    },
+    {
+      "p": 9,
+      "n": 27,
+      "pair_edge_controls": 630,
+      "literal_upper_state_letter_controls": 72,
+      "small_pair_computations": {
+        "minimum": 36,
+        "reachable_pairs": 273,
+        "distinct_pairs": 246
+      }
+    },
+    {
+      "p": 10,
+      "n": 30,
+      "pair_edge_controls": 780,
+      "literal_upper_state_letter_controls": 80,
+      "small_pair_computations": {
+        "minimum": 40,
+        "reachable_pairs": 329,
+        "distinct_pairs": 299
+      }
+    },
+    {
+      "p": 11,
+      "n": 33,
+      "pair_edge_controls": 946,
+      "literal_upper_state_letter_controls": 88,
+      "small_pair_computations": {
+        "minimum": 44,
+        "reachable_pairs": 390,
+        "distinct_pairs": 357
+      }
+    },
+    {
+      "p": 12,
+      "n": 36,
+      "pair_edge_controls": 1128,
+      "literal_upper_state_letter_controls": 96,
+      "small_pair_computations": {
+        "minimum": 48,
+        "reachable_pairs": 456,
+        "distinct_pairs": 420
+      }
+    },
+    {
+      "p": 13,
+      "n": 39,
+      "pair_edge_controls": 1326,
+      "literal_upper_state_letter_controls": 104,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 14,
+      "n": 42,
+      "pair_edge_controls": 1540,
+      "literal_upper_state_letter_controls": 112,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 15,
+      "n": 45,
+      "pair_edge_controls": 1770,
+      "literal_upper_state_letter_controls": 120,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 16,
+      "n": 48,
+      "pair_edge_controls": 2016,
+      "literal_upper_state_letter_controls": 128,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 17,
+      "n": 51,
+      "pair_edge_controls": 2278,
+      "literal_upper_state_letter_controls": 136,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 18,
+      "n": 54,
+      "pair_edge_controls": 2556,
+      "literal_upper_state_letter_controls": 144,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 19,
+      "n": 57,
+      "pair_edge_controls": 2850,
+      "literal_upper_state_letter_controls": 152,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 20,
+      "n": 60,
+      "pair_edge_controls": 3160,
+      "literal_upper_state_letter_controls": 160,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 21,
+      "n": 63,
+      "pair_edge_controls": 3486,
+      "literal_upper_state_letter_controls": 168,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 22,
+      "n": 66,
+      "pair_edge_controls": 3828,
+      "literal_upper_state_letter_controls": 176,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 23,
+      "n": 69,
+      "pair_edge_controls": 4186,
+      "literal_upper_state_letter_controls": 184,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 24,
+      "n": 72,
+      "pair_edge_controls": 4560,
+      "literal_upper_state_letter_controls": 192,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 25,
+      "n": 75,
+      "pair_edge_controls": 4950,
+      "literal_upper_state_letter_controls": 200,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 26,
+      "n": 78,
+      "pair_edge_controls": 5356,
+      "literal_upper_state_letter_controls": 208,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 27,
+      "n": 81,
+      "pair_edge_controls": 5778,
+      "literal_upper_state_letter_controls": 216,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 28,
+      "n": 84,
+      "pair_edge_controls": 6216,
+      "literal_upper_state_letter_controls": 224,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 29,
+      "n": 87,
+      "pair_edge_controls": 6670,
+      "literal_upper_state_letter_controls": 232,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 30,
+      "n": 90,
+      "pair_edge_controls": 7140,
+      "literal_upper_state_letter_controls": 240,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 31,
+      "n": 93,
+      "pair_edge_controls": 7626,
+      "literal_upper_state_letter_controls": 248,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 32,
+      "n": 96,
+      "pair_edge_controls": 8128,
+      "literal_upper_state_letter_controls": 256,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 33,
+      "n": 99,
+      "pair_edge_controls": 8646,
+      "literal_upper_state_letter_controls": 264,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 34,
+      "n": 102,
+      "pair_edge_controls": 9180,
+      "literal_upper_state_letter_controls": 272,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 35,
+      "n": 105,
+      "pair_edge_controls": 9730,
+      "literal_upper_state_letter_controls": 280,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 36,
+      "n": 108,
+      "pair_edge_controls": 10296,
+      "literal_upper_state_letter_controls": 288,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 37,
+      "n": 111,
+      "pair_edge_controls": 10878,
+      "literal_upper_state_letter_controls": 296,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 38,
+      "n": 114,
+      "pair_edge_controls": 11476,
+      "literal_upper_state_letter_controls": 304,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 39,
+      "n": 117,
+      "pair_edge_controls": 12090,
+      "literal_upper_state_letter_controls": 312,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 40,
+      "n": 120,
+      "pair_edge_controls": 12720,
+      "literal_upper_state_letter_controls": 320,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 41,
+      "n": 123,
+      "pair_edge_controls": 13366,
+      "literal_upper_state_letter_controls": 328,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 42,
+      "n": 126,
+      "pair_edge_controls": 14028,
+      "literal_upper_state_letter_controls": 336,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 43,
+      "n": 129,
+      "pair_edge_controls": 14706,
+      "literal_upper_state_letter_controls": 344,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 44,
+      "n": 132,
+      "pair_edge_controls": 15400,
+      "literal_upper_state_letter_controls": 352,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 45,
+      "n": 135,
+      "pair_edge_controls": 16110,
+      "literal_upper_state_letter_controls": 360,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 46,
+      "n": 138,
+      "pair_edge_controls": 16836,
+      "literal_upper_state_letter_controls": 368,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 47,
+      "n": 141,
+      "pair_edge_controls": 17578,
+      "literal_upper_state_letter_controls": 376,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 48,
+      "n": 144,
+      "pair_edge_controls": 18336,
+      "literal_upper_state_letter_controls": 384,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 49,
+      "n": 147,
+      "pair_edge_controls": 19110,
+      "literal_upper_state_letter_controls": 392,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 50,
+      "n": 150,
+      "pair_edge_controls": 19900,
+      "literal_upper_state_letter_controls": 400,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 51,
+      "n": 153,
+      "pair_edge_controls": 20706,
+      "literal_upper_state_letter_controls": 408,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 52,
+      "n": 156,
+      "pair_edge_controls": 21528,
+      "literal_upper_state_letter_controls": 416,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 53,
+      "n": 159,
+      "pair_edge_controls": 22366,
+      "literal_upper_state_letter_controls": 424,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 54,
+      "n": 162,
+      "pair_edge_controls": 23220,
+      "literal_upper_state_letter_controls": 432,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 55,
+      "n": 165,
+      "pair_edge_controls": 24090,
+      "literal_upper_state_letter_controls": 440,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 56,
+      "n": 168,
+      "pair_edge_controls": 24976,
+      "literal_upper_state_letter_controls": 448,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 57,
+      "n": 171,
+      "pair_edge_controls": 25878,
+      "literal_upper_state_letter_controls": 456,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 58,
+      "n": 174,
+      "pair_edge_controls": 26796,
+      "literal_upper_state_letter_controls": 464,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 59,
+      "n": 177,
+      "pair_edge_controls": 27730,
+      "literal_upper_state_letter_controls": 472,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 60,
+      "n": 180,
+      "pair_edge_controls": 28680,
+      "literal_upper_state_letter_controls": 480,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 61,
+      "n": 183,
+      "pair_edge_controls": 29646,
+      "literal_upper_state_letter_controls": 488,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 62,
+      "n": 186,
+      "pair_edge_controls": 30628,
+      "literal_upper_state_letter_controls": 496,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 63,
+      "n": 189,
+      "pair_edge_controls": 31626,
+      "literal_upper_state_letter_controls": 504,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 64,
+      "n": 192,
+      "pair_edge_controls": 32640,
+      "literal_upper_state_letter_controls": 512,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 100,
+      "n": 300,
+      "pair_edge_controls": 79800,
+      "literal_upper_state_letter_controls": 800,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 128,
+      "n": 384,
+      "pair_edge_controls": 130816,
+      "literal_upper_state_letter_controls": 1024,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 256,
+      "n": 768,
+      "pair_edge_controls": 523776,
+      "literal_upper_state_letter_controls": 2048,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 512,
+      "n": 1536,
+      "pair_edge_controls": 2096128,
+      "literal_upper_state_letter_controls": 4096,
+      "small_pair_computations": {}
+    },
+    {
+      "p": 1024,
+      "n": 3072,
+      "pair_edge_controls": 8386560,
+      "literal_upper_state_letter_controls": 8192,
+      "small_pair_computations": {}
+    }
+  ],
+  "boundary": "PROVED paper EVERY p>=3, n3p: exact specified-state mu0=4p, general layered directed-pair lower certificate. Only recorded finite scopes COMPUTATIONALLY VERIFIED; prior actual square reset unchanged, ordinary all-n rt and general Cerny OPEN, priority OPEN, no formal kernel"
+}

@@ -1,0 +1,46 @@
+{
+  "verified": true,
+  "runs": [
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_weighted_class_reset_pressure",
+        "--source",
+        "<CHECKOUT>\\direct_attack\\data\\weighted_class_reset_pressure.json",
+        "--out",
+        "<CHECKOUT>\\direct_attack\\data\\weighted_class_reset_pressure_checks.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T00:29:22.261256+00:00",
+      "seconds": 0.45299999999997453,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"retained_certificates\": 21, \"ordinary_vertices\": 65827, \"weighted_vertices\": 507, \"tiny_complete_inputs\": 5816, \"tiny_synchronizing\": 5336, \"tiny_ordinary_vertices\": 111128, \"tiny_weighted_vertices\": 36840, \"retained_budget_violations\": 0, \"corruptions_rejected\": [\"class_rt\", \"rt\", \"weighted_vertices\", \"return_transformations\", \"word\", \"return_block\", \"cycle\"], \"source_sha256\": \"9fad997bb1fba8b85cac5a00d1e9c6b40047638807fe8d7497b4ac1ea8bc3555\", \"tiny_source_sha256\": \"90ae1377a5a6e1c17a21304c94d61580abb7cdfbfa9ce425d81305b2d110a030\", \"independent\": \"ordinary-set complete forward BFS; separate literal weighted Dijkstra; forward/reverse O(n) state connectivity\", \"scope\": \"all saved peaks and complete tiny fixed-schema cover only; sampled proposals are not a cover; universal proposal OPEN\"}\n",
+      "stderr": "",
+      "source_sha256": "9fad997bb1fba8b85cac5a00d1e9c6b40047638807fe8d7497b4ac1ea8bc3555",
+      "checker_sha256": "a75de230c25fd889d8d9427e5a99a0e78537cd64559ec4cfaa8426275238e75b",
+      "report_sha256": "55ea7fff1db908a70b8dc723a0efa801898dd89fe41463f17e154d2d263faf62"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_weighted_class_reset_pressure",
+        "--source",
+        "<CHECKOUT>\\direct_attack\\data\\weighted_class_reset_pressure_pilot.json",
+        "--out",
+        "<CHECKOUT>\\direct_attack\\data\\weighted_class_reset_pressure_pilot_checks.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T00:29:22.720131+00:00",
+      "seconds": 0.46900000000005093,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"retained_certificates\": 21, \"ordinary_vertices\": 75204, \"weighted_vertices\": 507, \"tiny_complete_inputs\": 5816, \"tiny_synchronizing\": 5336, \"tiny_ordinary_vertices\": 111128, \"tiny_weighted_vertices\": 36840, \"retained_budget_violations\": 0, \"corruptions_rejected\": [\"class_rt\", \"rt\", \"weighted_vertices\", \"return_transformations\", \"word\", \"return_block\", \"cycle\"], \"source_sha256\": \"df0530e5c703716743be988b72730f2532a411dc9a0b07c3fa985c30989bf264\", \"tiny_source_sha256\": \"90ae1377a5a6e1c17a21304c94d61580abb7cdfbfa9ce425d81305b2d110a030\", \"independent\": \"ordinary-set complete forward BFS; separate literal weighted Dijkstra; forward/reverse O(n) state connectivity\", \"scope\": \"all saved peaks and complete tiny fixed-schema cover only; sampled proposals are not a cover; universal proposal OPEN\"}\n",
+      "stderr": "",
+      "source_sha256": "df0530e5c703716743be988b72730f2532a411dc9a0b07c3fa985c30989bf264",
+      "checker_sha256": "a75de230c25fd889d8d9427e5a99a0e78537cd64559ec4cfaa8426275238e75b",
+      "report_sha256": "ba00695ca4c4fe4c82a9edcf619cd0d7f2b04d28e8a8b0d8c9b2ce6f7c55b9c3"
+    }
+  ],
+  "scope": "all 21 main and 21 separately saved pilot records; tiny cover has 5816 unique designations"
+}

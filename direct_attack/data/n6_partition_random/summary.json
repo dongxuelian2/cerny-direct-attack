@@ -1,0 +1,32 @@
+{
+  "arguments": {
+    "n": 6,
+    "mode": "random",
+    "count": 20000,
+    "out": "direct_attack/data/n6_partition_random",
+    "stop_on_refutation": true
+  },
+  "counters": {
+    "automata": 20000,
+    "sync_automata": 16150,
+    "partition_subset_tests": 114390450
+  },
+  "maxima": {
+    "2,2": 5,
+    "3,2": 10,
+    "4,2": 12,
+    "5,2": 14,
+    "6,2": 15,
+    "3,3": 4,
+    "4,3": 8,
+    "5,3": 9,
+    "6,3": 9,
+    "4,4": 3,
+    "5,4": 6,
+    "6,4": 6,
+    "5,5": 2,
+    "6,5": 3,
+    "6,6": 1
+  },
+  "complete": true
+}

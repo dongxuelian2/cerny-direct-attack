@@ -1,0 +1,43 @@
+{
+  "schema": "orion.sync-certificate.v1",
+  "automaton": {
+    "name": "Cerny C3",
+    "n": 3,
+    "letters": [
+      "a",
+      "b"
+    ],
+    "transitions": [
+      [
+        1,
+        2,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ]
+    ]
+  },
+  "kind": "exact",
+  "potential": [
+    0,
+    0,
+    0,
+    3,
+    0,
+    1,
+    2,
+    4
+  ],
+  "word": [
+    1,
+    0,
+    0,
+    1
+  ],
+  "lower_bound": 4,
+  "upper_bound": 4,
+  "method": "reverse_bfs"
+}

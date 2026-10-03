@@ -1,0 +1,23 @@
+{
+  "source_sha256": "260a8ecd4eb41f6bf4e105e9a5efd575b97e0fc950a8643a83a4ba368f4ca0fb",
+  "dependency_sha256": "6b4613d7d066e0e4febc26d29794d0f2d8fc5e2e98b8efa82276edb118552abf",
+  "binary_sha256": "9a5ebbcbef9e49065c3c3fa5294790743a922ea40d58ea4606565610eee8bd02",
+  "build": {
+    "argv": [
+      "<CXX_BIN>/g++.exe",
+      "-O3",
+      "-std=c++11",
+      "-static-libgcc",
+      "-static-libstdc++",
+      "<CHECKOUT>\\direct_attack\\order_two_weighted_late_block_pressure.cpp",
+      "-o",
+      "<CHECKOUT>\\direct_attack\\native_build\\order_two_weighted_late_block_pressure.exe"
+    ],
+    "cwd": "<CHECKOUT>",
+    "start_utc": "2026-10-03T05:23:39.693733+00:00",
+    "seconds": 1.0619999999980791,
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+}

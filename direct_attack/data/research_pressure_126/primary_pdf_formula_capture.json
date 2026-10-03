@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "<PYTHON_RUNTIME>\\python.exe",
+    "-c",
+    "import hashlib,json\nfrom pathlib import Path\nfrom pypdf import PdfReader\np=Path(\"direct_attack/native_build/szykula_2608_24245_v1.pdf\")\nh=hashlib.sha256(p.read_bytes()).hexdigest()\nassert h==\"62fcce9693c7e44f209f65c95939c48a08d5cf035627ffe67f56b7da59889208\"\ntext=PdfReader(p).pages[3].extract_text();compact=\"\".join(text.split())\nassert \"Proposition7.\" in compact and \"δ(p,c)=q0\" in compact and \"δ(Q\\\\{p})=q⌊n/2⌋\" in compact\nprint(json.dumps(dict(verified_primary_pdf=True,pdf_sha256=h,zero_based_page=3,page_text_sha256=hashlib.sha256(text.encode()).hexdigest(),literal_formulas_present=True,boundary=\"primary formula verification, not a refutation of the existential proposition\")))\n"
+  ],
+  "cwd": "<CHECKOUT>",
+  "start_utc": "2026-10-02T04:00:31.226845+00:00",
+  "seconds": 0.23500000000058208,
+  "returncode": 0,
+  "stdout": "{\"verified_primary_pdf\": true, \"pdf_sha256\": \"62fcce9693c7e44f209f65c95939c48a08d5cf035627ffe67f56b7da59889208\", \"zero_based_page\": 3, \"page_text_sha256\": \"15432fad6b8beb3c02a0538b10eea2da5ff6cbb36fd3ec42cab6c912b28cff1f\", \"literal_formulas_present\": true, \"boundary\": \"primary formula verification, not a refutation of the existential proposition\"}\n",
+  "stderr": ""
+}

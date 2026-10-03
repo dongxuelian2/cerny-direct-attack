@@ -1,0 +1,22 @@
+[
+  {
+    "field": "capacity",
+    "rejected": true
+  },
+  {
+    "field": "distance",
+    "rejected": true
+  },
+  {
+    "field": "reachability",
+    "rejected": true
+  },
+  {
+    "field": "extension_word",
+    "rejected": true
+  },
+  {
+    "field": "policy_reset_word",
+    "rejected": true
+  }
+]

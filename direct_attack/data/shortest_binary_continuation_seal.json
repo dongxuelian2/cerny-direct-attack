@@ -1,0 +1,59 @@
+{
+  "verified": true,
+  "checks": 105,
+  "regeneration_commands": 189,
+  "archived": [
+    {
+      "path": "direct_attack/data/shortest_binary_continuation_provenance/audit_run.json",
+      "sha256": "5c0f77f56e0d23f9dd7855ad6c1f3d1fb85b2b1b44d1b2db3f8cd368aecf6826"
+    },
+    {
+      "path": "direct_attack/data/shortest_binary_continuation_provenance/reproduction_commands.json",
+      "sha256": "bc11c6ca9447122c1500bd64f9d1d45bae0d20aac569d50932b04dc6e059839f"
+    },
+    {
+      "path": "direct_attack/data/shortest_binary_continuation_provenance/sha256_manifest.json",
+      "sha256": "cb909531cf00a2090bc6c9609e01920435674af5b09f323220fa37528af726ce"
+    }
+  ],
+  "native_builds": [
+    {
+      "metadata": "direct_attack/data/alternating_frame_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/alternating_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/class_reset_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/complete_policy_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/sparse_policy_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/weighted_class_reset_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    }
+  ],
+  "generation_and_replay": "direct_attack/data/shortest_binary_generation_captures.json",
+  "audit_boundary": "previous 104-check record preserved verbatim; one new independent finite rank-defect inverse growth tree, literal original-state words, determinant-minor and simplicity certificate check with deterministic generator/replay; not a full 105-check rerun",
+  "mathematical_status": "PROVED paper simple SC irreducibly synchronizing binary n5 obstruction: unique shortest original abaa, rt=P4, dependent proper growth and full inverse history; proper-stage n5 minimality; separate seed-inclusive n3 convention control; COMPUTATIONALLY VERIFIED all literal short words, inverse trees, ranks and simplicity certificates; positive-fraction/expensive-phase dimension, general Cerny and policy square OPEN; no formal verification"
+}

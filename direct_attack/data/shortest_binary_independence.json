@@ -1,0 +1,215 @@
+{
+  "status": "paper proof plus finite original-word certificate; independent checker required",
+  "main": {
+    "n": 5,
+    "rows": [
+      [
+        2,
+        1,
+        1,
+        4,
+        3
+      ],
+      [
+        3,
+        0,
+        1,
+        1,
+        2
+      ]
+    ],
+    "original_letter_ranks": [
+      4,
+      4
+    ],
+    "actual_images": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      15,
+      16,
+      18,
+      20,
+      22,
+      26,
+      30,
+      31
+    ],
+    "reset_threshold": 4,
+    "all_length_rt_words": [
+      {
+        "word": "aaaa",
+        "image": 26
+      },
+      {
+        "word": "aaab",
+        "image": 7
+      },
+      {
+        "word": "aaba",
+        "image": 6
+      },
+      {
+        "word": "aabb",
+        "image": 11
+      },
+      {
+        "word": "abaa",
+        "image": 2
+      },
+      {
+        "word": "abab",
+        "image": 3
+      },
+      {
+        "word": "abba",
+        "image": 22
+      },
+      {
+        "word": "abbb",
+        "image": 11
+      },
+      {
+        "word": "baaa",
+        "image": 18
+      },
+      {
+        "word": "baab",
+        "image": 3
+      },
+      {
+        "word": "baba",
+        "image": 6
+      },
+      {
+        "word": "babb",
+        "image": 11
+      },
+      {
+        "word": "bbaa",
+        "image": 10
+      },
+      {
+        "word": "bbab",
+        "image": 7
+      },
+      {
+        "word": "bbba",
+        "image": 22
+      },
+      {
+        "word": "bbbb",
+        "image": 11
+      }
+    ],
+    "shortest_reset_words": [
+      {
+        "word": "abaa",
+        "forward_sets": [
+          31,
+          30,
+          7,
+          6,
+          2
+        ],
+        "inverse_sets": [
+          2,
+          6,
+          7,
+          30,
+          31
+        ],
+        "normalized_proper_dimension": 2,
+        "raw_full_inverse_dimension": 4
+      }
+    ],
+    "independent_proper_history": false,
+    "independent_full_inverse_history": false,
+    "pair_to_12_words": {
+      "0,1": "a",
+      "0,2": "a",
+      "0,3": "ab",
+      "0,4": "aaba",
+      "1,2": "",
+      "1,3": "ba",
+      "1,4": "ba",
+      "2,3": "aba",
+      "2,4": "b",
+      "3,4": "b"
+    }
+  },
+  "initial_singleton_boundary": {
+    "n": 3,
+    "rows": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        2,
+        1
+      ]
+    ],
+    "original_letter_ranks": [
+      2,
+      2
+    ],
+    "actual_images": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      7
+    ],
+    "reset_threshold": 2,
+    "all_length_rt_words": [
+      {
+        "word": "aa",
+        "image": 3
+      },
+      {
+        "word": "ab",
+        "image": 6
+      },
+      {
+        "word": "ba",
+        "image": 1
+      },
+      {
+        "word": "bb",
+        "image": 6
+      }
+    ],
+    "shortest_reset_words": [
+      {
+        "word": "ba",
+        "forward_sets": [
+          7,
+          6,
+          1
+        ],
+        "inverse_sets": [
+          1,
+          6,
+          7
+        ],
+        "normalized_proper_dimension": 1,
+        "raw_full_inverse_dimension": 2
+      }
+    ],
+    "independent_proper_history": true,
+    "independent_full_inverse_history": false
+  },
+  "boundary": "n5 refutes independent proper record-growth history among ALL globally shortest resets; n3 only refutes full histories including initial singleton; no long-phase or general Cerny conclusion"
+}

@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "<PYTHON_RUNTIME>\\python.exe",
+    "-m",
+    "direct_attack.rank_three_extension_search",
+    "--n",
+    "63",
+    "--count",
+    "100000",
+    "--seed",
+    "20261014",
+    "--restart",
+    "500",
+    "--family-seed",
+    "--elite",
+    "--permutation-mutations",
+    "--out",
+    "direct_attack/data/rank_three_extension_n63"
+  ],
+  "cwd": "<CHECKOUT>",
+  "returncode": 0,
+  "seconds": 13.842999999997119
+}

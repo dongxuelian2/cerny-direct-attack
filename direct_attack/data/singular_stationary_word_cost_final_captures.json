@@ -1,0 +1,31 @@
+{
+  "runs": [
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.singular_stationary_word_cost"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T04:18:23.858037+00:00",
+      "seconds": 1.375,
+      "returncode": 0,
+      "stdout": "{\"short_word_scopes\": 15, \"all_literal_words\": 131053, \"attainment_scopes\": 34, \"maximum_attainment_n\": 257, \"boundary\": \"PROVED paper ALL n>=2: at costs<=n-1, full-Q stationary nonnegative average cannot positively use ANY singular word in Cerny automata; sharp maximum support cost n with synchronizing support. Weak full-row condition, not required J/n. Expected cost can approach0. No general Cerny proof, no novelty claim, no formal verification.\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_singular_stationary_word_cost"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T04:18:25.229667+00:00",
+      "seconds": 1.4839999999985594,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"all_literal_words\": 131053, \"all_suffix_pair_paths\": 65519, \"strictly_separated_singular_words\": 130918, \"attainment_scopes\": 34, \"paid_support_state_letters\": 9830808, \"paid_reset_state_letters\": 19369452, \"corruptions\": 12}\n",
+      "stderr": ""
+    }
+  ],
+  "reason": "added projected invariant-space conditional theorem and example after the original successful obstruction controls"
+}

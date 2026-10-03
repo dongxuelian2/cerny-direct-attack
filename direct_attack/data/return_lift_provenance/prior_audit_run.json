@@ -1,0 +1,966 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "executable": "<PYTHON_RUNTIME>\\python.exe",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "full_regeneration": false,
+  "runs": [
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_profiles"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:39:25.846204+00:00",
+      "seconds": 24.89099999999962,
+      "returncode": 0,
+      "stdout": "{\"profiles\": 88, \"checked_subsets\": 10968}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_bridges"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:39:50.733906+00:00",
+      "seconds": 0.7649999999994179,
+      "returncode": 0,
+      "stdout": "{\"certificates\": 11, \"vertices\": 109238, \"mutation_rejections\": 4}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_histories"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:39:51.501897+00:00",
+      "seconds": 0.06300000000192085,
+      "returncode": 0,
+      "stdout": "{\"witnesses\": 14, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_bidirectional"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:39:51.569026+00:00",
+      "seconds": 0.07800000000133878,
+      "returncode": 0,
+      "stdout": "{\"witnesses\": 4, \"reports\": [{\"file\": \"direct_attack\\\\data\\\\bidirectional\\\\witness_000.policy.json\", \"n\": 6, \"rt\": 25, \"minimum_policy_cost\": 26, \"policy_nodes\": 40, \"square_failure\": true, \"verified\": true}, {\"file\": \"direct_attack\\\\data\\\\bidirectional\\\\witness_001.policy.json\", \"n\": 7, \"rt\": 12, \"minimum_policy_cost\": 14, \"policy_nodes\": 25, \"square_failure\": false, \"verified\": true}, {\"file\": \"direct_attack\\\\data\\\\bidirectional\\\\witness_002.policy.json\", \"n\": 7, \"rt\": 17, \"minimum_policy_cost\": 20, \"policy_nodes\": 39, \"square_failure\": false, \"verified\": true}, {\"file\": \"direct_attack\\\\data\\\\bidirectional\\\\witness_003.policy.json\", \"n\": 7, \"rt\": 16, \"minimum_policy_cost\": 20, \"policy_nodes\": 27, \"square_failure\": false, \"verified\": true}]}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_padding"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:39:51.635703+00:00",
+      "seconds": 0.25,
+      "returncode": 0,
+      "stdout": "{\"certificates\": 11, \"records\": [{\"n\": 11, \"exact_compression\": 6, \"verified\": true}, {\"n\": 12, \"exact_compression\": 6, \"verified\": true}, {\"n\": 14, \"exact_compression\": 6, \"verified\": true}, {\"n\": 15, \"exact_compression\": 6, \"verified\": true}, {\"n\": 17, \"exact_compression\": 6, \"verified\": true}, {\"n\": 18, \"exact_compression\": 6, \"verified\": true}, {\"n\": 20, \"exact_compression\": 6, \"verified\": true}, {\"n\": 30, \"exact_compression\": 6, \"verified\": true}, {\"n\": 60, \"exact_compression\": 6, \"verified\": true}, {\"n\": 8, \"exact_compression\": 6, \"verified\": true}, {\"n\": 9, \"exact_compression\": 6, \"verified\": true}], \"minimal_harmonic_refutation_n\": 8}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.audit_unary"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:39:51.898487+00:00",
+      "seconds": 0.7029999999977008,
+      "returncode": 0,
+      "stdout": "[{\"n\": 2, \"counters\": {\"maps\": 4, \"synchronizing_maps\": 2, \"partition_subset_tests\": 2}, \"rank_excess_violations\": 0, \"complete\": true}, {\"n\": 3, \"counters\": {\"maps\": 27, \"synchronizing_maps\": 9, \"partition_subset_tests\": 117}, \"rank_excess_violations\": 0, \"complete\": true}, {\"n\": 4, \"counters\": {\"maps\": 256, \"synchronizing_maps\": 64, \"partition_subset_tests\": 6912}, \"rank_excess_violations\": 0, \"complete\": true}, {\"n\": 5, \"counters\": {\"maps\": 3125, \"synchronizing_maps\": 625, \"partition_subset_tests\": 531875}, \"rank_excess_violations\": 0, \"complete\": true}]\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_near_full"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:39:52.594815+00:00",
+      "seconds": 0.09400000000096043,
+      "returncode": 0,
+      "stdout": "{\"checked\": 67, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_cycle_insertion"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:39:52.685070+00:00",
+      "seconds": 3.2340000000003783,
+      "returncode": 0,
+      "stdout": "{\"checked\": 8, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_vertex_covers"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:39:55.915986+00:00",
+      "seconds": 0.6879999999982829,
+      "returncode": 0,
+      "stdout": "{\"n_max\": 5, \"graph_budget_forbidden_cases\": 38610, \"verified\": true, \"scope\": \"Complete cover existence decision; protected-subset mining uses heuristic filler states.\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.audit_cycle_mutations"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:39:56.617186+00:00",
+      "seconds": 0.07800000000133878,
+      "returncode": 0,
+      "stdout": "{\"mutations\": 8, \"all_rejected\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_image_extension"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:39:56.687563+00:00",
+      "seconds": 27.76599999999962,
+      "returncode": 0,
+      "stdout": "{\"checked\": 93, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_image_policy"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:40:24.449204+00:00",
+      "seconds": 7.109000000000378,
+      "returncode": 0,
+      "stdout": "{\"checked\": 91, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.audit_image_mutations"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:40:31.564596+00:00",
+      "seconds": 0.06199999999807915,
+      "returncode": 0,
+      "stdout": "{\"mutations\": 5, \"all_rejected\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.top_rank_boundary"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:40:31.633413+00:00",
+      "seconds": 0.06300000000192085,
+      "returncode": 0,
+      "stdout": "{\"instances\": 11, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.replay_image_search"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:40:31.688962+00:00",
+      "seconds": 13.328000000001339,
+      "returncode": 0,
+      "stdout": "{\"certificates_matched\": 6, \"counts_matched\": true, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_native_policy"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:40:45.014180+00:00",
+      "seconds": 0.35899999999674037,
+      "returncode": 0,
+      "stdout": "{\"checked\": 91, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.audit_native_small"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:40:45.368999+00:00",
+      "seconds": 0.3440000000009604,
+      "returncode": 0,
+      "stdout": "{\"first_map_orbits\": 3, \"covering_pairs\": 12}\n{\"first_map_orbits\": 7, \"covering_pairs\": 189}\n{\"first_map_orbits\": 19, \"covering_pairs\": 4864}\n[{\"n\": 2, \"tested\": 9, \"sc\": 6, \"synchronizing_sc\": 4, \"verified\": true}, {\"n\": 3, \"tested\": 182, \"sc\": 76, \"synchronizing_sc\": 59, \"verified\": true}, {\"n\": 4, \"tested\": 4845, \"sc\": 1503, \"synchronizing_sc\": 1240, \"verified\": true}]\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_new_image_results"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:40:45.712766+00:00",
+      "seconds": 4.610000000000582,
+      "returncode": 0,
+      "stdout": "{\"file\": \"direct_attack\\\\data\\\\local_rank_family\\\\n10.json\", \"reachable\": 1022, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\local_rank_family\\\\n11.json\", \"reachable\": 2046, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\local_rank_family\\\\n12.json\", \"reachable\": 4094, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\local_rank_family\\\\n5.json\", \"reachable\": 30, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\local_rank_family\\\\n6.json\", \"reachable\": 62, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\local_rank_family\\\\n7.json\", \"reachable\": 126, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\local_rank_family\\\\n8.json\", \"reachable\": 254, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\local_rank_family\\\\n9.json\", \"reachable\": 510, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\fixed_arm_family\\\\n10.json\", \"reachable\": 960, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\fixed_arm_family\\\\n11.json\", \"reachable\": 1920, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\fixed_arm_family\\\\n12.json\", \"reachable\": 3840, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\fixed_arm_family\\\\n5.json\", \"reachable\": 30, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\fixed_arm_family\\\\n6.json\", \"reachable\": 60, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\fixed_arm_family\\\\n7.json\", \"reachable\": 120, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\fixed_arm_family\\\\n8.json\", \"reachable\": 240, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\fixed_arm_family\\\\n9.json\", \"reachable\": 480, \"verified\": true}\n{\"family_instances\": 16, \"critical\": 3, \"union_verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.audit_rank_cover"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:40:50.329422+00:00",
+      "seconds": 0.48400000000037835,
+      "returncode": 0,
+      "stdout": "{\"conjugation\": [{\"n\": 2, \"labeled_pairs\": 4, \"canonical_cycle_types\": 2, \"verified\": true}, {\"n\": 3, \"labeled_pairs\": 108, \"canonical_cycle_types\": 3, \"verified\": true}, {\"n\": 4, \"labeled_pairs\": 3456, \"canonical_cycle_types\": 5, \"verified\": true}, {\"n\": 5, \"labeled_pairs\": 144000, \"canonical_cycle_types\": 7, \"verified\": true}], \"covers\": [{\"file\": \"direct_attack\\\\data\\\\image_extension_policy_rank_cover_n7\\\\summary.json\", \"tested\": 453600, \"verified\": true}, {\"file\": \"direct_attack\\\\data\\\\image_extension_policy_rank_cover_n8\\\\summary.json\", \"tested\": 6350400, \"verified\": true}]}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.replay_policy_broad"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:40:50.815397+00:00",
+      "seconds": 8.921999999998661,
+      "returncode": 0,
+      "stdout": "{\"certificates_matched\": 1, \"counts_matched\": true, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.circular_image_policy"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:40:59.739225+00:00",
+      "seconds": 1.9060000000026776,
+      "returncode": 0,
+      "stdout": "{\"n\": 2, \"reachable\": 3, \"best_policy\": 1, \"worst_policy\": 2, \"verified\": true}\n{\"n\": 3, \"reachable\": 7, \"best_policy\": 4, \"worst_policy\": 6, \"verified\": true}\n{\"n\": 4, \"reachable\": 15, \"best_policy\": 9, \"worst_policy\": 12, \"verified\": true}\n{\"n\": 5, \"reachable\": 31, \"best_policy\": 16, \"worst_policy\": 20, \"verified\": true}\n{\"n\": 6, \"reachable\": 63, \"best_policy\": 25, \"worst_policy\": 30, \"verified\": true}\n{\"n\": 7, \"reachable\": 127, \"best_policy\": 36, \"worst_policy\": 42, \"verified\": true}\n{\"n\": 8, \"reachable\": 255, \"best_policy\": 49, \"worst_policy\": 56, \"verified\": true}\n{\"n\": 9, \"reachable\": 511, \"best_policy\": 64, \"worst_policy\": 72, \"verified\": true}\n{\"n\": 10, \"reachable\": 1023, \"best_policy\": 81, \"worst_policy\": 90, \"verified\": true}\n{\"n\": 11, \"reachable\": 2047, \"best_policy\": 100, \"worst_policy\": 110, \"verified\": true}\n{\"n\": 12, \"reachable\": 4095, \"best_policy\": 121, \"worst_policy\": 132, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.policy_potentials"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:41:01.647428+00:00",
+      "seconds": 0.09399999999732245,
+      "returncode": 0,
+      "stdout": "{\"checked\": 90, \"failures\": 2, \"worst\": 1}\n{\"file\": \"direct_attack\\\\data\\\\image_extension_policy_local_n5\\\\witness_005.json\", \"n\": 5, \"start\": 28, \"size\": 3, \"cost\": 11, \"proposed_bound\": 10, \"excess\": 1}\n{\"file\": \"direct_attack\\\\data\\\\image_extension_policy_local_n6\\\\witness_005.json\", \"n\": 6, \"start\": 56, \"size\": 3, \"cost\": 19, \"proposed_bound\": 18, \"excess\": 1}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_singleton_transport"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:41:01.733070+00:00",
+      "seconds": 0.0470000000022992,
+      "returncode": 0,
+      "stdout": "{\"n\": 4, \"source\": 0, \"target\": 1, \"source_policy\": 2, \"target_policy\": 4, \"target_reset_distance\": 3, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_alternating"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:41:01.788933+00:00",
+      "seconds": 0.4059999999990396,
+      "returncode": 0,
+      "stdout": "{\"file\": \"direct_attack\\\\data\\\\alternating_frame_layer\\\\n11.json\", \"n\": 11, \"cost\": 18, \"vertices\": 237, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\alternating_frame_layer\\\\n13.json\", \"n\": 13, \"cost\": 22, \"vertices\": 473, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\alternating_frame_layer\\\\n15.json\", \"n\": 15, \"cost\": 26, \"vertices\": 725, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\alternating_frame_layer\\\\n17.json\", \"n\": 17, \"cost\": 30, \"vertices\": 1021, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\alternating_frame_layer\\\\n19.json\", \"n\": 19, \"cost\": 34, \"vertices\": 1365, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\alternating_frame_layer\\\\n21.json\", \"n\": 21, \"cost\": 38, \"vertices\": 1757, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\alternating_frame_layer\\\\n23.json\", \"n\": 23, \"cost\": 42, \"vertices\": 2197, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\alternating_frame_layer\\\\n25.json\", \"n\": 25, \"cost\": 46, \"vertices\": 2685, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\alternating_frame_layer\\\\n27.json\", \"n\": 27, \"cost\": 50, \"vertices\": 3221, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\alternating_frame_layer\\\\n29.json\", \"n\": 29, \"cost\": 54, \"vertices\": 3805, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\alternating_frame_layer\\\\n31.json\", \"n\": 31, \"cost\": 58, \"vertices\": 4437, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\alternating_frame_layer\\\\n33.json\", \"n\": 33, \"cost\": 62, \"vertices\": 5117, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\alternating_frame_layer\\\\n35.json\", \"n\": 35, \"cost\": 66, \"vertices\": 5845, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\alternating_frame_layer\\\\n37.json\", \"n\": 37, \"cost\": 70, \"vertices\": 6621, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\alternating_frame_layer\\\\n5.json\", \"n\": 5, \"cost\": 10, \"vertices\": 17, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\alternating_frame_layer\\\\n7.json\", \"n\": 7, \"cost\": 12, \"vertices\": 57, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\alternating_frame_layer\\\\n9.json\", \"n\": 9, \"cost\": 16, \"vertices\": 140, \"verified\": true}\n{\"peaks\": 17, \"complete_layer_cross_checks\": 11, \"structure_cases\": 6, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_heredity"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:41:02.193854+00:00",
+      "seconds": 0.10900000000037835,
+      "returncode": 0,
+      "stdout": "{\"checked\": 22, \"corruptions_rejected\": 4, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_alphabet_monotonicity"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:41:02.300124+00:00",
+      "seconds": 0.06299999999828287,
+      "returncode": 0,
+      "stdout": "{\"records\": [{\"directory\": \"direct_attack\\\\data\\\\alphabet_monotonicity\\\\arbitrary_n4\", \"n\": 4, \"kind\": \"arbitrary\", \"base_policy\": 3, \"augmented_policy\": 4, \"base_rt\": 3, \"augmented_rt\": 3, \"same_images\": false, \"monoid_size\": null, \"shortest_shortcut_length\": null, \"exact_distance_improvements\": 5, \"increased_policy_images\": [1, 2, 3, 4, 8, 10, 12], \"verified\": true}, {\"directory\": \"direct_attack\\\\data\\\\alphabet_monotonicity\\\\semigroup_n4\", \"n\": 4, \"kind\": \"semigroup\", \"base_policy\": 4, \"augmented_policy\": 5, \"base_rt\": 4, \"augmented_rt\": 4, \"same_images\": true, \"monoid_size\": 176, \"shortest_shortcut_length\": 7, \"exact_distance_improvements\": 64, \"increased_policy_images\": [1, 2, 6, 9, 12], \"verified\": true}], \"complete_binary_runs\": [{\"file\": \"direct_attack\\\\data\\\\alphabet_monotonicity\\\\arbitrary_n2\\\\summary.json\", \"counts\": {\"binary_inputs\": 9, \"synchronizing_sc_bases\": 4, \"augmentation_tests\": 16}}, {\"file\": \"direct_attack\\\\data\\\\alphabet_monotonicity\\\\arbitrary_n3\\\\summary.json\", \"counts\": {\"binary_inputs\": 182, \"synchronizing_sc_bases\": 59, \"augmentation_tests\": 1593}}, {\"file\": \"direct_attack\\\\data\\\\alphabet_monotonicity\\\\semigroup_n2\\\\summary.json\", \"counts\": {\"binary_inputs\": 9, \"synchronizing_sc_bases\": 4, \"augmentation_tests\": 15}}, {\"file\": \"direct_attack\\\\data\\\\alphabet_monotonicity\\\\semigroup_n3\\\\summary.json\", \"counts\": {\"binary_inputs\": 182, \"synchronizing_sc_bases\": 59, \"augmentation_tests\": 899}}], \"corruptions_rejected\": [\"shortcut_word\", \"extra_transformation\", \"global_policy\"], \"negative_count_boundary\": \"Counts copied from generator; independent policy proof and n<=3 paper optimality establish minimality.\", \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_anchored_bound"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:41:02.362216+00:00",
+      "seconds": 0.15600000000267755,
+      "returncode": 0,
+      "stdout": "{\"cases\": 94, \"rank_sum_refutation\": {\"n\": 4, \"kappa\": 2, \"old_bound\": 13, \"new_bound\": 10, \"policy\": 8, \"verified\": true}, \"corruptions_rejected\": 3, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.audit_complete_policy"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:41:02.522135+00:00",
+      "seconds": 1.5309999999990396,
+      "returncode": 0,
+      "stdout": "{\"first_map_orbits\": 3, \"covering_pairs\": 12}\n{\"first_map_orbits\": 7, \"covering_pairs\": 189}\n{\"first_map_orbits\": 19, \"covering_pairs\": 4864}\n{\"counts\": {\"tested\": 8023, \"complete\": 1262, \"incomplete_rejected\": 6761, \"ordinary_set_policy_checks\": 1200}, \"records\": [{\"scope\": \"binary first-map n2\", \"counts\": {\"tested\": 9, \"complete\": 4, \"incomplete_rejected\": 5, \"ordinary_set_policy_checks\": 4}}, {\"scope\": \"binary first-map n3\", \"counts\": {\"tested\": 182, \"complete\": 24, \"incomplete_rejected\": 158, \"ordinary_set_policy_checks\": 24}}, {\"scope\": \"binary first-map n4\", \"counts\": {\"tested\": 4845, \"complete\": 164, \"incomplete_rejected\": 4681, \"ordinary_set_policy_checks\": 164}}, {\"scope\": \"all distinct-letter ternary n3\", \"counts\": {\"tested\": 2925, \"complete\": 1008, \"incomplete_rejected\": 1917, \"ordinary_set_policy_checks\": 1008}}, {\"scope\": \"Cerny with general added map n6\", \"counts\": {\"tested\": 20, \"complete\": 20, \"incomplete_rejected\": 0, \"ordinary_set_policy_checks\": 0}}, {\"scope\": \"Cerny with general added map n8\", \"counts\": {\"tested\": 20, \"complete\": 20, \"incomplete_rejected\": 0, \"ordinary_set_policy_checks\": 0}}, {\"scope\": \"Cerny with general added map n10\", \"counts\": {\"tested\": 20, \"complete\": 20, \"incomplete_rejected\": 0, \"ordinary_set_policy_checks\": 0}}], \"seconds\": 1.4530000000013388, \"all_agreed\": true, \"boundary\": \"All binary covers through n4 and ternary n3 have independent ordinary-set checks. Larger cases compare two native algorithms; this is not a larger complete automaton enumeration.\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_shortcut_family"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:41:04.051224+00:00",
+      "seconds": 1.25,
+      "returncode": 0,
+      "stdout": "{\"n\": 4, \"rank_drop_vertices\": [3, 3], \"reset_upper\": 4, \"old_forward_kernel_agrees\": true, \"sparse_cache\": 8, \"sparse_inverse_vertices\": 52, \"independent_exact_singletons\": true}\n{\"n\": 5, \"rank_drop_vertices\": [4, 4], \"reset_upper\": 5, \"old_forward_kernel_agrees\": true, \"sparse_cache\": 11, \"sparse_inverse_vertices\": 72, \"independent_exact_singletons\": true}\n{\"n\": 6, \"rank_drop_vertices\": [5, 5], \"reset_upper\": 6, \"target\": [0, 2, 5], \"transport_lower\": 5, \"global_policy_lower\": 7, \"old_forward_kernel_agrees\": true, \"sparse_cache\": 14, \"sparse_inverse_vertices\": 162, \"independent_exact_singletons\": true}\n{\"n\": 7, \"rank_drop_vertices\": [6, 6], \"reset_upper\": 7, \"target\": [0, 3, 6], \"transport_lower\": 6, \"global_policy_lower\": 8, \"old_forward_kernel_agrees\": true, \"sparse_cache\": 17, \"sparse_inverse_vertices\": 165, \"independent_exact_singletons\": true}\n{\"n\": 8, \"rank_drop_vertices\": [7, 7], \"reset_upper\": 8, \"target\": [0, 4, 7], \"transport_lower\": 7, \"global_policy_lower\": 9, \"old_forward_kernel_agrees\": true, \"sparse_cache\": 20, \"sparse_inverse_vertices\": 254, \"independent_exact_singletons\": true}\n{\"n\": 9, \"rank_drop_vertices\": [8, 8], \"reset_upper\": 9, \"target\": [0, 5, 8], \"transport_lower\": 8, \"global_policy_lower\": 10, \"old_forward_kernel_agrees\": true, \"sparse_cache\": 26, \"sparse_inverse_vertices\": 338, \"independent_exact_singletons\": true}\n{\"n\": 10, \"rank_drop_vertices\": [9, 9], \"reset_upper\": 10, \"target\": [0, 6, 9], \"transport_lower\": 9, \"global_policy_lower\": 11, \"old_forward_kernel_agrees\": true, \"sparse_cache\": 31, \"sparse_inverse_vertices\": 487, \"independent_exact_singletons\": true}\n{\"n\": 11, \"rank_drop_vertices\": [10, 10], \"reset_upper\": 11, \"target\": [0, 7, 10], \"transport_lower\": 10, \"global_policy_lower\": 12, \"old_forward_kernel_agrees\": true, \"sparse_cache\": 39, \"sparse_inverse_vertices\": 622, \"independent_exact_singletons\": true}\n{\"n\": 12, \"rank_drop_vertices\": [11, 11], \"reset_upper\": 12, \"target\": [0, 8, 11], \"transport_lower\": 11, \"global_policy_lower\": 13, \"old_forward_kernel_agrees\": true, \"sparse_cache\": 50, \"sparse_inverse_vertices\": 933, \"independent_exact_singletons\": true}\n{\"n\": 13, \"rank_drop_vertices\": [12, 12], \"reset_upper\": 13, \"target\": [0, 9, 12], \"transport_lower\": 12, \"global_policy_lower\": 14, \"sparse_cache\": 57, \"sparse_inverse_vertices\": 1120, \"independent_exact_singletons\": true}\n{\"n\": 14, \"rank_drop_vertices\": [13, 13], \"reset_upper\": 14, \"target\": [0, 10, 13], \"transport_lower\": 13, \"global_policy_lower\": 15, \"sparse_cache\": 77, \"sparse_inverse_vertices\": 1669, \"independent_exact_singletons\": true}\n{\"n\": 15, \"rank_drop_vertices\": [14, 14], \"reset_upper\": 15, \"target\": [0, 11, 14], \"transport_lower\": 14, \"global_policy_lower\": 16, \"sparse_cache\": 84, \"sparse_inverse_vertices\": 1877, \"independent_exact_singletons\": true}\n{\"n\": 16, \"rank_drop_vertices\": [15, 15], \"reset_upper\": 16, \"target\": [0, 12, 15], \"transport_lower\": 15, \"global_policy_lower\": 17, \"sparse_cache\": 117, \"sparse_inverse_vertices\": 2822, \"independent_exact_singletons\": true}\n{\"n\": 17, \"rank_drop_vertices\": [16, 16], \"reset_upper\": 17, \"target\": [0, 13, 16], \"transport_lower\": 16, \"global_policy_lower\": 18, \"sparse_cache\": 123, \"sparse_inverse_vertices\": 3070, \"independent_exact_singletons\": true}\n{\"n\": 18, \"rank_drop_vertices\": [17, 17], \"reset_upper\": 18, \"target\": [0, 14, 17], \"transport_lower\": 17, \"global_policy_lower\": 19, \"sparse_cache\": 172, \"sparse_inverse_vertices\": 4482, \"independent_exact_singletons\": true}\n{\"n\": 19, \"rank_drop_vertices\": [18, 18], \"reset_upper\": 19, \"target\": [0, 15, 18], \"transport_lower\": 18, \"global_policy_lower\": 20, \"sparse_cache\": 179, \"sparse_inverse_vertices\": 4850, \"independent_exact_singletons\": true}\n{\"n\": 20, \"rank_drop_vertices\": [19, 19], \"reset_upper\": 20, \"target\": [0, 16, 19], \"transport_lower\": 19, \"global_policy_lower\": 21, \"sparse_cache\": 262, \"sparse_inverse_vertices\": 7367, \"independent_exact_singletons\": true}\n{\"n\": 21, \"rank_drop_vertices\": [20, 20], \"reset_upper\": 21, \"target\": [0, 17, 20], \"transport_lower\": 20, \"global_policy_lower\": 22, \"sparse_cache\": 273, \"sparse_inverse_vertices\": 7940, \"independent_exact_singletons\": true}\n{\"n\": 22, \"rank_drop_vertices\": [21, 21], \"reset_upper\": 22, \"target\": [0, 18, 21], \"transport_lower\": 21, \"global_policy_lower\": 23, \"sparse_cache\": 404, \"sparse_inverse_vertices\": 11878, \"independent_exact_singletons\": true}\n{\"cases\": 19, \"independent_exact_through\": 22, \"scaled_controls\": 9, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_complete_union"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:41:05.299811+00:00",
+      "seconds": 0.06299999999828287,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"records\": {\"S\": {\"set\": [0, 3], \"cost\": 3, \"examined_vertices\": 7}, \"T\": {\"set\": [2, 3], \"cost\": 3, \"examined_vertices\": 10}, \"U\": {\"set\": [0, 2, 3], \"cost\": 2, \"examined_vertices\": 6}}, \"word\": [0, 0], \"word_image\": [0, 2], \"modular_capacity\": true, \"boundary\": \"Complete reachability implies rho(X)=|X|. State minimum n4 is proved on paper over arbitrary alphabets; this scan is only a fixed-cycle binary search.\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_extremal_shortcuts"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:41:05.357630+00:00",
+      "seconds": 4.1560000000026776,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"bases\": 20, \"tested\": 76676, \"increased\": 0, \"ordinary_set_certificates\": 40, \"boundary\": \"All transformation closures independently enumerated; every score histogram replayed by the previously audited unrestricted native kernel. Ordinary-set policy BFS checks 40 base/peak certificates, not every scored addition.\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_extremal_shortcuts",
+        "--pairs"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:41:09.520848+00:00",
+      "seconds": 122.64099999999962,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"bases\": 20, \"tested\": 2444342, \"increased\": 0, \"ordinary_set_certificates\": 40, \"boundary\": \"All transformation closures independently enumerated; every score histogram replayed by the previously audited unrestricted native kernel. Ordinary-set policy BFS checks 40 base/peak certificates, not every scored addition.\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_union_defects"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:43:12.156782+00:00",
+      "seconds": 0.10900000000037835,
+      "returncode": 0,
+      "stdout": "{\"first_map_orbits\": 3, \"covering_pairs\": 12}\n{\"first_map_orbits\": 7, \"covering_pairs\": 189}\n{\"verified\": true, \"counts\": {\"automata\": 67, \"transformations\": 1387, \"proper_union_instances\": 39309, \"sufficient_transfers\": 11125, \"failed_transfers\": 392, \"equality_failures\": 368}, \"equality_examples\": [{\"rows\": [[2, 0, 0, 1], [1, 2, 3, 0]], \"S\": [0, 3], \"T\": [2, 3], \"word\": [0, 0], \"gain\": 1, \"missing_overlap\": 1, \"defects\": [0, 0, 0], \"penalty\": 1}, {\"rows\": [[0, 0, 0], [1, 2, 1]], \"S\": [1], \"T\": [2], \"word\": [1], \"gain\": 1, \"missing_overlap\": 0, \"defects\": [1, 0, 0], \"penalty\": 1}], \"boundary\": \"Complete binary first-map covering inputs n2/3 that synchronize every state to every singleton, plus four fixed n4 inputs; all generated transformations and proper unions checked. The universal result is proved on paper.\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.audit_sparse_policy"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:43:12.261778+00:00",
+      "seconds": 15.4529999999977,
+      "returncode": 0,
+      "stdout": "{\"first_map_orbits\": 3, \"covering_pairs\": 12}\n{\"first_map_orbits\": 7, \"covering_pairs\": 189}\n{\"first_map_orbits\": 19, \"covering_pairs\": 4864}\n{\"verified\": true, \"counts\": {\"tested\": 8808, \"accepted\": 4041, \"rejected\": 4767, \"ordinary_inverse_checks\": 1303, \"stored_input_cases\": 757, \"large_ordinary_forward_checks\": 4}, \"limit_rejection_checked\": true, \"boundary\": \"All small accepted binary inputs through n4 have ordinary inverse-set certificates; ternary n3 and retained/random cases compare native kernels. Four n>12 rank-three cases have independent ordinary all-source forward distances, including 63-bit masks.\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_three_image_family"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:43:27.717191+00:00",
+      "seconds": 0.5940000000009604,
+      "returncode": 0,
+      "stdout": "{\"cases\": 60, \"max_n\": 63, \"all_entries_checked\": true, \"corruptions_rejected\": [\"extension_word\", \"max_extension\", \"rows\"], \"seconds\": 0.5159999999996217}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_one_fixed_family"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:43:28.319618+00:00",
+      "seconds": 2.1409999999996217,
+      "returncode": 0,
+      "stdout": "{\"cases\": 60, \"scan_parameters\": 147, \"corruptions_rejected\": [\"extension_word\", \"rt\", \"target\"], \"seconds\": 2.0309999999990396}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_rank_three_search"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:43:30.448088+00:00",
+      "seconds": 6.484000000000378,
+      "returncode": 0,
+      "stdout": "{\"file\": \"direct_attack/data/rank_three_extension_n12/witness_000.json\", \"verified\": true, \"images\": 44}\n{\"file\": \"direct_attack/data/rank_three_extension_n12/witness_001.json\", \"verified\": true, \"images\": 84}\n{\"file\": \"direct_attack/data/rank_three_extension_n12/witness_002.json\", \"verified\": true, \"images\": 48}\n{\"file\": \"direct_attack/data/rank_three_extension_n12/witness_003.json\", \"verified\": true, \"images\": 120}\n{\"file\": \"direct_attack/data/rank_three_extension_n12/witness_004.json\", \"verified\": true, \"images\": 44}\n{\"file\": \"direct_attack/data/rank_three_extension_n20/witness_000.json\", \"verified\": true, \"images\": 76}\n{\"file\": \"direct_attack/data/rank_three_extension_n20/witness_001.json\", \"verified\": true, \"images\": 136}\n{\"file\": \"direct_attack/data/rank_three_extension_n20/witness_002.json\", \"verified\": true, \"images\": 252}\n{\"file\": \"direct_attack/data/rank_three_extension_n20/witness_003.json\", \"verified\": true, \"images\": 154}\n{\"file\": \"direct_attack/data/rank_three_extension_n20/witness_004.json\", \"verified\": true, \"images\": 204}\n{\"file\": \"direct_attack/data/rank_three_extension_n20/witness_005.json\", \"verified\": true, \"images\": 204}\n{\"file\": \"direct_attack/data/rank_three_extension_n20/witness_006.json\", \"verified\": true, \"images\": 204}\n{\"file\": \"direct_attack/data/rank_three_extension_n20/witness_007.json\", \"verified\": true, \"images\": 204}\n{\"file\": \"direct_attack/data/rank_three_extension_n20/witness_008.json\", \"verified\": true, \"images\": 150}\n{\"file\": \"direct_attack/data/rank_three_extension_n20/witness_009.json\", \"verified\": true, \"images\": 150}\n{\"file\": \"direct_attack/data/rank_three_extension_n20/witness_010.json\", \"verified\": true, \"images\": 204}\n{\"file\": \"direct_attack/data/rank_three_extension_n20/witness_011.json\", \"verified\": true, \"images\": 102}\n{\"file\": \"direct_attack/data/rank_three_extension_n20/witness_012.json\", \"verified\": true, \"images\": 352}\n{\"file\": \"direct_attack/data/rank_three_extension_n30/witness_000.json\", \"verified\": true, \"images\": 116}\n{\"file\": \"direct_attack/data/rank_three_extension_n30/witness_001.json\", \"verified\": true, \"images\": 116}\n{\"file\": \"direct_attack/data/rank_three_extension_n30/witness_002.json\", \"verified\": true, \"images\": 168}\n{\"file\": \"direct_attack/data/rank_three_extension_n30/witness_003.json\", \"verified\": true, \"images\": 480}\n{\"file\": \"direct_attack/data/rank_three_extension_n30/witness_004.json\", \"verified\": true, \"images\": 111}\n{\"file\": \"direct_attack/data/rank_three_extension_n30/witness_005.json\", \"verified\": true, \"images\": 672}\n{\"file\": \"direct_attack/data/rank_three_extension_n30/witness_006.json\", \"verified\": true, \"images\": 96}\n{\"file\": \"direct_attack/data/rank_three_extension_n40/witness_000.json\", \"verified\": true, \"images\": 156}\n{\"file\": \"direct_attack/data/rank_three_extension_n40/witness_001.json\", \"verified\": true, \"images\": 420}\n{\"file\": \"direct_attack/data/rank_three_extension_n40/witness_002.json\", \"verified\": true, \"images\": 320}\n{\"file\": \"direct_attack/data/rank_three_extension_n40/witness_003.json\", \"verified\": true, \"images\": 141}\n{\"file\": \"direct_attack/data/rank_three_extension_n40/witness_004.json\", \"verified\": true, \"images\": 141}\n{\"file\": \"direct_attack/data/rank_three_extension_n40/witness_005.json\", \"verified\": true, \"images\": 407}\n{\"file\": \"direct_attack/data/rank_three_extension_n40/witness_006.json\", \"verified\": true, \"images\": 1190}\n{\"file\": \"direct_attack/data/rank_three_extension_n40/witness_007.json\", \"verified\": true, \"images\": 1190}\n{\"file\": \"direct_attack/data/rank_three_extension_n40/witness_008.json\", \"verified\": true, \"images\": 1190}\n{\"file\": \"direct_attack/data/rank_three_extension_n40/witness_009.json\", \"verified\": true, \"images\": 1190}\n{\"file\": \"direct_attack/data/rank_three_extension_n63/witness_000.json\", \"verified\": true, \"images\": 248}\n{\"file\": \"direct_attack/data/rank_three_extension_n63/witness_001.json\", \"verified\": true, \"images\": 966}\n{\"file\": \"direct_attack/data/rank_three_extension_n63/witness_002.json\", \"verified\": true, \"images\": 2784}\n{\"file\": \"direct_attack/data/rank_three_extension_n63/witness_003.json\", \"verified\": true, \"images\": 248}\n{\"file\": \"direct_attack/data/rank_three_extension_n63/witness_004.json\", \"verified\": true, \"images\": 250}\n{\"file\": \"direct_attack/data/rank_bounded_extension_n24_r4/witness_000.json\", \"verified\": true, \"images\": 176}\n{\"file\": \"direct_attack/data/rank_bounded_extension_n24_r4/witness_001.json\", \"verified\": true, \"images\": 180}\n{\"file\": \"direct_attack/data/rank_bounded_extension_n24_r4/witness_002.json\", \"verified\": true, \"images\": 180}\n{\"file\": \"direct_attack/data/rank_bounded_extension_n24_r4/witness_003.json\", \"verified\": true, \"images\": 180}\n{\"file\": \"direct_attack/data/rank_bounded_extension_n40_r5/witness_000.json\", \"verified\": true, \"images\": 592}\n{\"file\": \"direct_attack/data/rank_bounded_extension_n40_r5/witness_001.json\", \"verified\": true, \"images\": 600}\n{\"file\": \"direct_attack/data/rank_bounded_extension_n40_r5/witness_002.json\", \"verified\": true, \"images\": 864}\n{\"file\": \"direct_attack/data/rank_bounded_extension_n40_r5/witness_003.json\", \"verified\": true, \"images\": 864}\n{\"cases\": 48, \"all_entries_checked\": true, \"corruptions_rejected\": [\"extension_start\", \"best_policy\", \"forward\"], \"seconds\": 6.389999999999418}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.replay_rank_three_search"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:43:36.932793+00:00",
+      "seconds": 94.82800000000134,
+      "returncode": 0,
+      "stdout": "{\"root\": \"direct_attack\\\\data\\\\rank_three_extension_n12\", \"verified\": true, \"seconds\": 1.3130000000019209}\n{\"root\": \"direct_attack\\\\data\\\\rank_three_extension_n20\", \"verified\": true, \"seconds\": 6.140999999999622}\n{\"root\": \"direct_attack\\\\data\\\\rank_three_extension_n30\", \"verified\": true, \"seconds\": 11.420999999998457}\n{\"root\": \"direct_attack\\\\data\\\\rank_three_extension_n40\", \"verified\": true, \"seconds\": 19.40599999999904}\n{\"root\": \"direct_attack\\\\data\\\\rank_three_extension_n63\", \"verified\": true, \"seconds\": 14.703000000001339}\n{\"root\": \"direct_attack\\\\data\\\\rank_bounded_extension_n24_r4\", \"verified\": true, \"seconds\": 8.218999999997322}\n{\"root\": \"direct_attack\\\\data\\\\rank_bounded_extension_n40_r5\", \"verified\": true, \"seconds\": 33.51600000000326}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_adjacent_swap_family"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:45:11.769243+00:00",
+      "seconds": 0.8909999999996217,
+      "returncode": 0,
+      "stdout": "{\"cases\": 60, \"full_array_cases\": 17, \"seconds\": 0.7659999999996217, \"corruptions_rejected\": [\"extension_word\", \"max_extension\", \"forward\"]}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_transposition_extension_scan"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:45:12.649961+00:00",
+      "seconds": 11.389999999999418,
+      "returncode": 0,
+      "stdout": "{\"tested\": 2676, \"independent_peak_arrays\": 21, \"seconds\": 11.2970000000023}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_first_drop"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:45:24.044983+00:00",
+      "seconds": 10.015999999999622,
+      "returncode": 0,
+      "stdout": "{\"first_map_orbits\": 3, \"covering_pairs\": 12}\n{\"first_map_orbits\": 7, \"covering_pairs\": 189}\n{\"first_map_orbits\": 19, \"covering_pairs\": 4864}\n{\"verified\": true, \"counts\": {\"tested\": 8382, \"accepted\": 3727, \"rejected\": 4655, \"proper_images\": 50017, \"winning_sources\": 77718, \"shortest_first_letters\": 82177, \"budget_seed_targets\": 5832, \"short_reset_budget_cases\": 2286, \"rank_profile_square_cases\": 2721, \"rank_profile_extra_square_cases\": 435, \"rank_profile_improved_bounds\": 1064, \"rank_profile_new_vs_rank_budget\": 335}, \"seconds\": 9.9220000000023, \"protocol_limit_recovery\": true, \"boundary\": \"Each accepted case independently recomputes every e/G/W entry, exact rt and every winning source with ordinary ALL-SOURCE distances; first-letter condition, complete boundary-parent equality, singleton formulas, reset-length-dependent and reset-rank-profile-dependent all-seed budgets checked. Each rank budget uses an explicitly reconstructed shortest reset word. Computational scope is finite; universal results are paper proofs.\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_seed_budget",
+        "--out",
+        "reverse_independent_checks.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:45:34.066811+00:00",
+      "seconds": 32.84400000000096,
+      "returncode": 0,
+      "stdout": "{\"cases\": 45, \"corruptions_rejected\": [\"seed_budget\", \"one_letter_images\", \"anchor_worst_chain\"], \"seconds\": 32.76599999999962, \"methods\": {\"ordinary_all_source_forward\": 18, \"ordinary_per_target_reverse\": 27}}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.audit_seed_binary_cover"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:46:06.913235+00:00",
+      "seconds": 7.702999999997701,
+      "returncode": 0,
+      "stdout": "{\"first_map_orbits\": 3, \"covering_pairs\": 12}\n{\"n\": 2, \"counts\": {\"tested\": 9, \"sc_synchronizing\": 4}, \"verified\": true, \"seconds\": 0.0}\n{\"first_map_orbits\": 7, \"covering_pairs\": 189}\n{\"n\": 3, \"counts\": {\"tested\": 182, \"sc_synchronizing\": 59}, \"verified\": true, \"seconds\": 0.0}\n{\"first_map_orbits\": 19, \"covering_pairs\": 4864}\n{\"n\": 4, \"counts\": {\"tested\": 4845, \"sc_synchronizing\": 1240}, \"verified\": true, \"seconds\": 0.14099999999962165}\n{\"first_map_orbits\": 47, \"covering_pairs\": 146875}\n{\"n\": 5, \"counts\": {\"tested\": 146828, \"sc_synchronizing\": 32588}, \"verified\": true, \"seconds\": 7.625}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.replay_seed_budget_attack"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:46:14.605938+00:00",
+      "seconds": 128.35900000000038,
+      "returncode": 0,
+      "stdout": "{\"root\": \"direct_attack\\\\data\\\\seed_budget_adversarial_n8\", \"verified\": true, \"seconds\": 5.046999999998661}\n{\"root\": \"direct_attack\\\\data\\\\seed_budget_anchor_adversarial_n10\", \"verified\": true, \"seconds\": 12.906000000002678}\n{\"root\": \"direct_attack\\\\data\\\\seed_budget_anchor_k3_n10\", \"verified\": true, \"seconds\": 27.78099999999904}\n{\"root\": \"direct_attack\\\\data\\\\seed_budget_anchor_k3_n12\", \"verified\": true, \"seconds\": 27.125}\n{\"root\": \"direct_attack\\\\data\\\\seed_budget_binary_n2\", \"verified\": true, \"seconds\": 0.10900000000037835}\n{\"root\": \"direct_attack\\\\data\\\\seed_budget_binary_n3\", \"verified\": true, \"seconds\": 0.11000000000058208}\n{\"root\": \"direct_attack\\\\data\\\\seed_budget_binary_n4\", \"verified\": true, \"seconds\": 0.18699999999807915}\n{\"root\": \"direct_attack\\\\data\\\\seed_budget_binary_n5\", \"verified\": true, \"seconds\": 2.672000000002299}\n{\"root\": \"direct_attack\\\\data\\\\seed_budget_ternary_n4\", \"verified\": true, \"seconds\": 52.31299999999828}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_maximum_seed_family"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:48:22.964289+00:00",
+      "seconds": 0.1720000000022992,
+      "returncode": 0,
+      "stdout": "{\"cases\": 13, \"corruptions_rejected\": [\"valid_parameter\", \"seed_reach_word\", \"seed_budget\"], \"seconds\": 0.10900000000037835}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_seed_inclusion"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:48:23.144134+00:00",
+      "seconds": 7.73399999999674,
+      "returncode": 0,
+      "stdout": "{\"first_map_orbits\": 3, \"covering_pairs\": 12}\n{\"first_map_orbits\": 7, \"covering_pairs\": 189}\n{\"first_map_orbits\": 19, \"covering_pairs\": 4864}\n{\"first_map_orbits\": 47, \"covering_pairs\": 146875}\n{\"cases\": [{\"file\": \"antitone_minimum_n4.json\", \"n\": 4, \"P\": 5, \"Fmax\": 5, \"images\": 15, \"words\": true}, {\"file\": \"inclusion_minimum_n5.json\", \"n\": 5, \"P\": 3, \"Fmax\": 4, \"images\": 26, \"words\": true}, {\"file\": \"inclusion_gap_two_n5.json\", \"n\": 5, \"P\": 5, \"Fmax\": 7, \"images\": 30, \"words\": true}, {\"file\": \"search_peak_000.json\", \"n\": 5, \"P\": 3, \"Fmax\": 4, \"images\": 26, \"words\": false}, {\"file\": \"search_peak_001.json\", \"n\": 5, \"P\": 5, \"Fmax\": 7, \"images\": 30, \"words\": false}], \"binary_covers\": [{\"n\": 2, \"counts\": {\"tested\": 9, \"sc_synchronizing\": 4}}, {\"n\": 3, \"counts\": {\"tested\": 182, \"sc_synchronizing\": 59}}, {\"n\": 4, \"counts\": {\"tested\": 4845, \"sc_synchronizing\": 1240}}, {\"n\": 5, \"counts\": {\"tested\": 146828, \"sc_synchronizing\": 32588}}], \"corruptions_rejected\": [\"inclusion_maximal_images\", \"inclusion_budget\", \"inclusion_best_chain\"], \"seconds\": 7.640999999999622}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.replay_seed_inclusion"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:48:30.869298+00:00",
+      "seconds": 13.06300000000192,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"argv\": [\"<PYTHON_RUNTIME>\\\\python.exe\", \"-m\", \"direct_attack.seed_inclusion_attack\", \"--count\", \"200000\", \"--seed\", \"20261024\", \"--out\", \"<LOCAL_PATH>\"], \"cwd\": \"<LOCAL_PATH>\", \"returncode\": 0, \"seconds\": 13.0, \"frozen_seed_sha256\": \"588ec0b5fc71c3ff041cbc4d3e9b774746b4a70aaaad880ede45a1b5fd8d06a5\", \"records\": 2, \"certificates\": 3}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_short_reset"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:48:43.946233+00:00",
+      "seconds": 1.1559999999990396,
+      "returncode": 0,
+      "stdout": "{\"cases\": 90, \"corruptions_rejected\": [\"best\", \"critical_reach_word\", \"policy_word\"], \"seconds\": 1.0629999999982829}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.replay_short_reset"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:48:45.089306+00:00",
+      "seconds": 22.39099999999962,
+      "returncode": 0,
+      "stdout": "{\"root\": \"direct_attack\\\\data\\\\short_reset_policy_n10\", \"argv\": [\"<PYTHON_RUNTIME>\\\\python.exe\", \"-m\", \"direct_attack.short_reset_policy_attack\", \"--n\", \"10\", \"--rank\", \"6\", \"--alphabet\", \"3\", \"--count\", \"100000\", \"--seed\", \"20261027\", \"--restart\", \"500\", \"--out\", \"<LOCAL_PATH>\"], \"cwd\": \"<LOCAL_PATH>\", \"verified\": true, \"returncode\": 0, \"seconds\": 5.686999999998079, \"witnesses\": 9, \"seed_sha256\": \"f08a0671cab3667656e25119c26a0852519a54dc6061cdf7973d888c60836b20\"}\n{\"root\": \"direct_attack\\\\data\\\\short_reset_policy_n12\", \"argv\": [\"<PYTHON_RUNTIME>\\\\python.exe\", \"-m\", \"direct_attack.short_reset_policy_attack\", \"--n\", \"12\", \"--rank\", \"6\", \"--alphabet\", \"4\", \"--count\", \"100000\", \"--seed\", \"20261028\", \"--restart\", \"500\", \"--out\", \"<LOCAL_PATH>\"], \"cwd\": \"<LOCAL_PATH>\", \"verified\": true, \"returncode\": 0, \"seconds\": 10.9220000000023, \"witnesses\": 9, \"seed_sha256\": \"d92c43be4d73bcb1d24c096c168a3382abd6a57ddef6ba2103f9353d2ca0faed\"}\n{\"root\": \"direct_attack\\\\data\\\\short_reset_policy_n6\", \"argv\": [\"<PYTHON_RUNTIME>\\\\python.exe\", \"-m\", \"direct_attack.short_reset_policy_attack\", \"--n\", \"6\", \"--rank\", \"4\", \"--alphabet\", \"3\", \"--count\", \"100000\", \"--seed\", \"20261025\", \"--restart\", \"500\", \"--out\", \"<LOCAL_PATH>\"], \"cwd\": \"<LOCAL_PATH>\", \"verified\": true, \"returncode\": 0, \"seconds\": 2.812999999998283, \"witnesses\": 4, \"seed_sha256\": \"13349b830d198673dbf9be44c364dc0f64900a50a80a7554de3487de6c621f4e\"}\n{\"root\": \"direct_attack\\\\data\\\\short_reset_policy_n8\", \"argv\": [\"<PYTHON_RUNTIME>\\\\python.exe\", \"-m\", \"direct_attack.short_reset_policy_attack\", \"--n\", \"8\", \"--rank\", \"4\", \"--alphabet\", \"3\", \"--count\", \"100000\", \"--seed\", \"20261026\", \"--restart\", \"500\", \"--out\", \"<LOCAL_PATH>\"], \"cwd\": \"<LOCAL_PATH>\", \"verified\": true, \"returncode\": 0, \"seconds\": 2.9059999999990396, \"witnesses\": 5, \"seed_sha256\": \"769cebac59471ce1aee0b1b2cf85f0cc4d72b7f68f801115feb261259f974c5c\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_extremal_arbitrary"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:49:07.493028+00:00",
+      "seconds": 19.281000000002678,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"bases\": 20, \"tested\": 236624, \"increased\": 0, \"square_failures\": 0, \"short_reset_budget_cases\": 39878, \"ordinary_all_source_certificates\": 40, \"per_input_kernel_agreement\": true, \"seconds\": 19.20300000000134, \"scope\": \"Every arbitrary single-addition score/histogram independently replayed with the previously audited FULL-CUBE transport kernel (generator uses sparse full-image graph). Forty base/peak arrays separately use ordinary ALL-SOURCE BFS. No all-input ordinary BFS claim; multiple arbitrary additions not covered.\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_irreducible_short_reset"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:49:26.771074+00:00",
+      "seconds": 1.4059999999990396,
+      "returncode": 0,
+      "stdout": "{\"cases\": 167, \"all_source_cross_checks\": 14, \"corruptions_rejected\": [\"j\", \"policy_word\", \"best\"], \"seconds\": 1.3280000000013388}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_rank_area"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:49:28.179521+00:00",
+      "seconds": 0.39099999999962165,
+      "returncode": 0,
+      "stdout": "{\"vertices\": 32751, \"edges\": 65502, \"cases\": 13, \"corruptions_rejected\": [\"potential\", \"parent\", \"word\", \"parent_high_bit\", \"negative_word_token\"], \"seconds\": 0.3120000000017171}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_unit_tail"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:49:28.563283+00:00",
+      "seconds": 140.53099999999904,
+      "returncode": 0,
+      "stdout": "{\"cases\": 352, \"sync\": 222, \"full_map_cover\": [{\"n\": 2, \"tested\": 4, \"sc\": 2, \"sync\": 2}, {\"n\": 3, \"tested\": 27, \"sc\": 5, \"sync\": 4}, {\"n\": 4, \"tested\": 256, \"sc\": 18, \"sync\": 12}, {\"n\": 5, \"tested\": 3125, \"sc\": 84, \"sync\": 60}, {\"n\": 6, \"tested\": 46656, \"sc\": 480, \"sync\": 288}], \"corruptions_rejected\": [\"j\", \"reset_word\", \"best\"], \"seconds\": 140.43799999999828}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_permutation_units"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:51:49.090766+00:00",
+      "seconds": 8.7970000000023,
+      "returncode": 0,
+      "stdout": "{\"kind\": \"single\", \"n\": 2, \"tested\": 6, \"accepted\": 4}\n{\"kind\": \"single\", \"n\": 3, \"tested\": 189, \"accepted\": 117}\n{\"kind\": \"single\", \"n\": 4, \"tested\": 20475, \"accepted\": 14780}\n{\"kind\": \"single\", \"n\": 5, \"tested\": 9450, \"accepted\": 2160}\n{\"kind\": \"single\", \"n\": 6, \"tested\": 49775, \"accepted\": 7751}\n{\"kind\": \"arbitrary\", \"n\": 2, \"tested\": 9, \"accepted\": 7}\n{\"kind\": \"arbitrary\", \"n\": 3, \"tested\": 3969, \"accepted\": 3762}\n{\"verified\": true, \"replays\": [{\"kind\": \"single\", \"n\": 2, \"tested\": 6, \"accepted\": 4}, {\"kind\": \"single\", \"n\": 3, \"tested\": 189, \"accepted\": 117}, {\"kind\": \"single\", \"n\": 4, \"tested\": 20475, \"accepted\": 14780}, {\"kind\": \"single\", \"n\": 5, \"tested\": 9450, \"accepted\": 2160}, {\"kind\": \"single\", \"n\": 6, \"tested\": 49775, \"accepted\": 7751}, {\"kind\": \"arbitrary\", \"n\": 2, \"tested\": 9, \"accepted\": 7}, {\"kind\": \"arbitrary\", \"n\": 3, \"tested\": 3969, \"accepted\": 3762}], \"ordinary_small_full_arrays\": 18670, \"ordinary_samples\": 251, \"all_source_samples\": 9, \"all_source_counterexample\": true, \"corruptions_rejected\": [\"rows\", \"extension\", \"best\", \"worst\", \"forward\", \"rt\", \"best_policy\"], \"seconds\": 8.7029999999977, \"single_cycle_sensitive_bound_checked\": true, \"scope\": \"All small designated inputs independently enumerated and ordinary-set reverse checked; all larger inputs hash replayed with native scorer; retained larger samples ordinary reverse checked. EVERY accepted single-permutation input checks e<=n-c+1 and rt<=1+(n-2)(n-c+1); all-n claims have a separate paper proof.\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_unit_averaging"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:51:57.898502+00:00",
+      "seconds": 0.9219999999986612,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"polynomials\": 1603, \"models\": 514, \"sync\": 468, \"ordinary_all_arrays\": 57, \"previous_single_alphabet_samples\": 214, \"corruptions_rejected\": [\"bound\", \"max_extension\", \"reset_word\", \"phases_inverse_order\", \"coefficients\"], \"seconds\": 0.8430000000007567, \"scope\": \"Every operator entry by independent basis counting; every model prefix graph by ALL-SOURCE closure with a preceding non-growth witness, every explicit inverse phase and reset word; ordinary full arrays n<=8. All-n statements follow the paper proof, not finite extrapolation.\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_idempotent_boundary"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:51:58.810360+00:00",
+      "seconds": 0.14099999999962165,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"cover\": [{\"n\": 2, \"tested\": 6, \"accepted\": 2, \"rejected\": 4, \"violations\": 0}, {\"n\": 3, \"tested\": 30, \"accepted\": 9, \"rejected\": 21, \"violations\": 0}, {\"n\": 4, \"tested\": 205, \"accepted\": 28, \"rejected\": 177, \"violations\": 0}, {\"n\": 5, \"tested\": 1372, \"accepted\": 225, \"rejected\": 1147, \"violations\": 44}], \"all_source_witnesses\": 2, \"certificate\": {\"target\": 24, \"unrestricted_preimage_cost\": 5, \"actual_image_cost\": 10, \"unreachable_preimages\": [{\"mask\": 19, \"forward_word\": [0, 1, 1, 1, 1]}]}, \"boundary\": \"State minimum n5 in the binary permutation/idempotent class. All actual-capacity arrays checked. Full preimages at the earlier cost are explicitly unreachable; no unrestricted square refutation.\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_commuting_unit_boundary"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:51:58.956289+00:00",
+      "seconds": 27.82800000000134,
+      "returncode": 0,
+      "stdout": "{\"n\": 2, \"tested\": 3, \"accepted\": 3, \"rejected\": 0, \"sha256\": \"fab85032c57e74963c7758fbd3b1de2c04096c279a51e9028d054674f827ca96\"}\n{\"n\": 3, \"tested\": 246, \"accepted\": 171, \"rejected\": 75, \"sha256\": \"a9fe63954bdbeb552db90af82d9d4b4847508b6724d650015e7a070d2a6d779b\"}\n{\"n\": 4, \"tested\": 14304, \"accepted\": 7536, \"rejected\": 6768, \"sha256\": \"86004a9d13aa55ce4ac98af8b4b17e985b12237f1640f8e8f745d1fd0788460a\"}\n{\"n\": 5, \"tested\": 486000, \"accepted\": 161940, \"rejected\": 324060, \"sha256\": \"b7ec9d73cca9874c3c4e8ac2f217c6760c83f7cf0676b2c2aff75be550090b1c\"}\n{\"verified\": true, \"replays\": [{\"n\": 2, \"tested\": 3, \"accepted\": 3, \"rejected\": 0, \"sha256\": \"fab85032c57e74963c7758fbd3b1de2c04096c279a51e9028d054674f827ca96\"}, {\"n\": 3, \"tested\": 246, \"accepted\": 171, \"rejected\": 75, \"sha256\": \"a9fe63954bdbeb552db90af82d9d4b4847508b6724d650015e7a070d2a6d779b\"}, {\"n\": 4, \"tested\": 14304, \"accepted\": 7536, \"rejected\": 6768, \"sha256\": \"86004a9d13aa55ce4ac98af8b4b17e985b12237f1640f8e8f745d1fd0788460a\"}, {\"n\": 5, \"tested\": 486000, \"accepted\": 161940, \"rejected\": 324060, \"sha256\": \"b7ec9d73cca9874c3c4e8ac2f217c6760c83f7cf0676b2c2aff75be550090b1c\"}], \"ordinary_small\": 7710, \"two_kernel_n5_inputs\": 486000, \"all_source_counterexample\": true, \"reset_word\": [2, 3, 1, 2, 1, 1, 2, 3], \"rt\": 8, \"P\": 9, \"scope\": \"Complete designated covers: TWO distinct commuting permutation letters and one to three distinct unitary letters at n2..5. State minimum6 ONLY in this restricted class. The n6 search was adaptive first-refutation exploration, not a complete cover; its old terminal stdout was not persisted and its trial count is not used as a durable result.\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_pu_prefix"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:52:26.775100+00:00",
+      "seconds": 4.40599999999904,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"pair_records\": 18214, \"certificates\": 198, \"ordinary_full_arrays\": 168, \"covers\": [{\"n\": 2, \"bases\": 1, \"cuts\": 1, \"quadruples\": 0}, {\"n\": 3, \"bases\": 14, \"cuts\": 28, \"quadruples\": 0}, {\"n\": 4, \"bases\": 411, \"cuts\": 1233, \"quadruples\": 8855}], \"corruptions_rejected\": [0, 1, 2, 3, 4, 5], \"minimum_scope\": \"Every PU alphabet, n<=4; n5 violates e<=n; no minimum for unrestricted DFA.\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_gonze_bypass"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:52:31.190017+00:00",
+      "seconds": 0.14099999999962165,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"records\": [{\"n\": 7, \"exact_reaching\": 15, \"into_upper\": 6, \"bypass_rank\": 3, \"reset_length\": 19}, {\"n\": 11, \"exact_reaching\": 38, \"into_upper\": 9, \"bypass_rank\": 7, \"reset_length\": 30}, {\"n\": 15, \"exact_reaching\": 69, \"into_upper\": 12, \"bypass_rank\": 11, \"reset_length\": 41}, {\"n\": 19, \"exact_reaching\": 108, \"into_upper\": 15, \"bypass_rank\": 15, \"reset_length\": 52}, {\"n\": 23, \"exact_reaching\": 155, \"into_upper\": 18, \"bypass_rank\": 19, \"reset_length\": 63}, {\"n\": 27, \"exact_reaching\": 210, \"into_upper\": 21, \"bypass_rank\": 23, \"reset_length\": 74}, {\"n\": 31, \"exact_reaching\": 273, \"into_upper\": 24, \"bypass_rank\": 27, \"reset_length\": 85}, {\"n\": 35, \"exact_reaching\": 344, \"into_upper\": 27, \"bypass_rank\": 31, \"reset_length\": 96}, {\"n\": 39, \"exact_reaching\": 423, \"into_upper\": 30, \"bypass_rank\": 35, \"reset_length\": 107}, {\"n\": 63, \"exact_reaching\": 1065, \"into_upper\": 48, \"bypass_rank\": 59, \"reset_length\": 173}, {\"n\": 103, \"exact_reaching\": 2775, \"into_upper\": 78, \"bypass_rank\": 99, \"reset_length\": 283}], \"ordinary_all_source_arrays\": 1, \"general_linear_extension_refutation\": false, \"shortest_into_formula_all_n\": false}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_quotient_fiber"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:52:31.325284+00:00",
+      "seconds": 0.5459999999984575,
+      "returncode": 0,
+      "stdout": "{\"checked\": 230, \"profiles\": 10, \"higher_profiles\": 5440, \"seven_profiles\": 105, \"small_class_profiles\": 28112, \"three_class_profiles\": 5911, \"max_tail\": 8}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_congruence_extremal"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:52:31.868583+00:00",
+      "seconds": 0.06300000000192085,
+      "returncode": 0,
+      "stdout": "{\"checked\": 22, \"simple\": 22, \"square_extremal\": 5}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_quotient_lift_counter"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:52:31.945550+00:00",
+      "seconds": 0.23400000000037835,
+      "returncode": 0,
+      "stdout": "{\"counter_n\": 4, \"counter_rt\": 3, \"quotient_rt\": 1, \"n3_alphabets_up_to3_qualifying\": 3714, \"n3_violations\": 0}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_rank_two_period",
+        "--out",
+        "direct_attack/data/rank_two_period_independent_checks.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:52:32.176966+00:00",
+      "seconds": 0.09400000000096043,
+      "returncode": 0,
+      "stdout": "{\"method\": \"full-powerset inverse capacity with literal word evaluation\", \"inverse_capacity_peak_checks\": 18, \"max_n\": 8, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_rank_two_multi_perm",
+        "--out",
+        "direct_attack/data/rank_two_multi_perm_independent_checks.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:52:32.263510+00:00",
+      "seconds": 0.14099999999962165,
+      "returncode": 0,
+      "stdout": "{\"checked\": 7, \"max_e\": 18}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_one_fixed_all_permutations",
+        "--out",
+        "direct_attack/data/one_fixed_all_permutations_n8_independent_checks.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:52:32.399818+00:00",
+      "seconds": 0.0779999999977008,
+      "returncode": 0,
+      "stdout": "{\"method\": \"ordinary all-source forward transport and policy recurrence\", \"source\": \"direct_attack\\\\data\\\\one_fixed_all_permutations_n8.json\", \"n\": 8, \"peak_e\": 15, \"peak_target\": 96, \"rt\": 10, \"best_policy\": 10, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_rank_two_permutation_alphabet",
+        "--out",
+        "direct_attack/data/rank_two_permutation_alphabet_checks.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:52:32.485709+00:00",
+      "seconds": 0.10900000000037835,
+      "returncode": 0,
+      "stdout": "{\"checked\": 8, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_rank_two_only_nonperm",
+        "--out",
+        "direct_attack/data/rank_two_only_nonperm_checks.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:52:32.588710+00:00",
+      "seconds": 0.3600000000005821,
+      "returncode": 0,
+      "stdout": "{\"checked\": 8, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_permutation_rainbow_first_drop",
+        "--out",
+        "direct_attack/data/permutation_rainbow_first_drop_checks.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:52:32.947757+00:00",
+      "seconds": 0.10900000000037835,
+      "returncode": 0,
+      "stdout": "{\"family_cases\": 100, \"spans\": [{\"n\": 6, \"span_ranks\": [1, 3, 4], \"component_counts\": [4, 1, 1]}, {\"n\": 7, \"span_ranks\": [1, 3, 5], \"component_counts\": [5, 1, 1]}], \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_rank_three_color_boundary",
+        "--out",
+        "direct_attack/data/rank_three_color_boundary_n6_independent_checks.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:52:33.066135+00:00",
+      "seconds": 0.14099999999962165,
+      "returncode": 0,
+      "stdout": "{\"first_collision\": 3, \"component_counts\": [4, 1, 1, 1], \"reset_length\": 9, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_rank_three_color_boundary",
+        "--source",
+        "direct_attack/data/rank_three_color_stall_sc_n7.json",
+        "--out",
+        "direct_attack/data/rank_three_color_boundary_n7_independent_checks.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:52:33.206328+00:00",
+      "seconds": 0.07800000000133878,
+      "returncode": 0,
+      "stdout": "{\"first_collision\": 3, \"component_counts\": [5, 1, 1, 1], \"reset_length\": 7, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-c",
+        "import json; from pathlib import Path; from direct_attack.check_bridges import verify; ps=sorted(Path(\"direct_attack/data/generalized_bridge\").glob(\"C*.json\")); rs=[verify(json.loads(p.read_text())) for p in ps]; print(json.dumps(dict(certificates=len(rs),vertices=sum(r[\"vertices\"] for r in rs),verified=True)))"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:52:33.279353+00:00",
+      "seconds": 1.2179999999971187,
+      "returncode": 0,
+      "stdout": "{\"certificates\": 11, \"vertices\": 173196, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-c",
+        "from direct_attack.abstract_profile import profile,audit; rs=[audit(n,profile(n)) for n in [10,20,50,100,200,500,1000,2000]]; print({\"abstract_inequality_instances\":len(rs),\"verified\":True})"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T07:52:34.498737+00:00",
+      "seconds": 0.11000000000058208,
+      "returncode": 0,
+      "stdout": "{'abstract_inequality_instances': 8, 'verified': True}\n",
+      "stderr": ""
+    }
+  ],
+  "all_passed": true
+}

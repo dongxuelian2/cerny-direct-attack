@@ -1,0 +1,21 @@
+{
+  "seed": 2026100121,
+  "exhaustive": {
+    "2": {
+      "total": 16,
+      "sc": 9
+    },
+    "3": {
+      "total": 576,
+      "sc": 260
+    },
+    "4": {
+      "total": 28224,
+      "sc": 12282
+    }
+  },
+  "sampled_sc": 76052,
+  "seconds": 35.0,
+  "counter": null,
+  "boundary": "exploratory only; no universal or independent computational claim"
+}

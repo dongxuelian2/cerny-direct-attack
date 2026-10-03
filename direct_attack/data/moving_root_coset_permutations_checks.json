@@ -1,0 +1,22 @@
+{
+  "verified": true,
+  "inputs": 151,
+  "proper_core_and_chain_extensions": 18098,
+  "two_point_controls": 788,
+  "nonidentity_coset_permutations": 59,
+  "literal_particle_controls": 40885565,
+  "boundary_bellman_edges": 212,
+  "boundary": "Independent named noncoprime parameter cover with sampled coset/within-coset permutations, exact full-Q/class rows, original-r endpoint, forced first saving, proportional compatible square M^2-g+1. Mixed seven-state old-return pool fails TWO-growth but complete128-subset Bellman certifies alternative core extension5. No generator/solver import, universal noncoprime arbitrary-A proof, novelty or formal claim; general Cerny OPEN.",
+  "corruptions_rejected": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ]
+}

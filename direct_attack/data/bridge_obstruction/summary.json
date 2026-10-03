@@ -1,0 +1,167 @@
+[
+  {
+    "label": "C7_excess_one",
+    "n": 7,
+    "start": 21,
+    "partition": [
+      71,
+      56
+    ],
+    "exact_distance": 13,
+    "paper_lower_bound": 13,
+    "linear_bound": 12,
+    "kernel_word_length": 33,
+    "states": 63,
+    "status": "REFUTED"
+  },
+  {
+    "label": "C6_balanced",
+    "n": 6,
+    "start": 21,
+    "partition": [
+      7,
+      56
+    ],
+    "exact_distance": 8,
+    "paper_lower_bound": 8,
+    "linear_bound": 10,
+    "kernel_word_length": 28,
+    "states": 41,
+    "status": "within_candidate_bound"
+  },
+  {
+    "label": "C12_balanced",
+    "n": 12,
+    "start": 273,
+    "partition": [
+      63,
+      4032
+    ],
+    "exact_distance": 28,
+    "paper_lower_bound": 28,
+    "linear_bound": 22,
+    "kernel_word_length": 130,
+    "states": 298,
+    "status": "REFUTED"
+  },
+  {
+    "label": "C18_balanced",
+    "n": 18,
+    "start": 4161,
+    "partition": [
+      511,
+      261632
+    ],
+    "exact_distance": 60,
+    "paper_lower_bound": 60,
+    "linear_bound": 34,
+    "kernel_word_length": 304,
+    "states": 987,
+    "status": "REFUTED"
+  },
+  {
+    "label": "C24_balanced",
+    "n": 24,
+    "start": 65793,
+    "partition": [
+      4095,
+      16773120
+    ],
+    "exact_distance": 104,
+    "paper_lower_bound": 104,
+    "linear_bound": 46,
+    "kernel_word_length": 550,
+    "states": 2324,
+    "status": "REFUTED"
+  },
+  {
+    "label": "C30_balanced",
+    "n": 30,
+    "start": 1049601,
+    "partition": [
+      32767,
+      1073709056
+    ],
+    "exact_distance": 160,
+    "paper_lower_bound": 160,
+    "linear_bound": 58,
+    "kernel_word_length": 868,
+    "states": 4525,
+    "status": "REFUTED"
+  },
+  {
+    "label": "C36_balanced",
+    "n": 36,
+    "start": 16781313,
+    "partition": [
+      262143,
+      68719214592
+    ],
+    "exact_distance": 228,
+    "paper_lower_bound": 228,
+    "linear_bound": 70,
+    "kernel_word_length": 1258,
+    "states": 7806,
+    "status": "REFUTED"
+  },
+  {
+    "label": "C42_balanced",
+    "n": 42,
+    "start": 268451841,
+    "partition": [
+      2097151,
+      4398044413952
+    ],
+    "exact_distance": 308,
+    "paper_lower_bound": 308,
+    "linear_bound": 82,
+    "kernel_word_length": 1720,
+    "states": 12383,
+    "status": "REFUTED"
+  },
+  {
+    "label": "C48_balanced",
+    "n": 48,
+    "start": 4295032833,
+    "partition": [
+      16777215,
+      281474959933440
+    ],
+    "exact_distance": 400,
+    "paper_lower_bound": 400,
+    "linear_bound": 94,
+    "kernel_word_length": 2254,
+    "states": 18472,
+    "status": "REFUTED"
+  },
+  {
+    "label": "C54_balanced",
+    "n": 54,
+    "start": 68719738881,
+    "partition": [
+      134217727,
+      18014398375264256
+    ],
+    "exact_distance": 504,
+    "paper_lower_bound": 504,
+    "linear_bound": 106,
+    "kernel_word_length": 2860,
+    "states": 26289,
+    "status": "REFUTED"
+  },
+  {
+    "label": "C60_balanced",
+    "n": 60,
+    "start": 1099512676353,
+    "partition": [
+      1073741823,
+      1152921503533105152
+    ],
+    "exact_distance": 620,
+    "paper_lower_bound": 620,
+    "linear_bound": 118,
+    "kernel_word_length": 3538,
+    "states": 36050,
+    "status": "REFUTED"
+  }
+]

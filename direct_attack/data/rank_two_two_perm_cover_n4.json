@@ -1,0 +1,59 @@
+{
+  "n": 4,
+  "scope": "one first-permutation cycle representative; all second permutations and rank-two rows",
+  "counts": {
+    "tested": 10080,
+    "strongly_connected": 7506,
+    "synchronizing": 6868,
+    "rt_over_n_plus_1": 0,
+    "e_over_2n": 0
+  },
+  "best_rt": {
+    "max_e": 3,
+    "target": 8,
+    "rt": 4,
+    "images": 8,
+    "a": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "c": [
+      0,
+      2,
+      3,
+      1
+    ],
+    "b": [
+      1,
+      0,
+      0,
+      1
+    ]
+  },
+  "best_e": {
+    "max_e": 5,
+    "target": 12,
+    "rt": 4,
+    "images": 11,
+    "a": [
+      0,
+      2,
+      3,
+      1
+    ],
+    "c": [
+      1,
+      0,
+      3,
+      2
+    ],
+    "b": [
+      1,
+      0,
+      0,
+      0
+    ]
+  }
+}

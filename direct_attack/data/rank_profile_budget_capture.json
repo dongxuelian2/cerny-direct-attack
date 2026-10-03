@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "<PYTHON_RUNTIME>\\python.exe",
+    "-m",
+    "direct_attack.check_first_drop"
+  ],
+  "cwd": "<CHECKOUT>",
+  "start_utc": "2026-09-29T11:37:47.687456+00:00",
+  "seconds": 12.734000000000378,
+  "returncode": 0,
+  "stdout": "{\"first_map_orbits\": 3, \"covering_pairs\": 12}\n{\"first_map_orbits\": 7, \"covering_pairs\": 189}\n{\"first_map_orbits\": 19, \"covering_pairs\": 4864}\n{\"verified\": true, \"counts\": {\"tested\": 8276, \"accepted\": 3658, \"rejected\": 4618, \"proper_images\": 43774, \"winning_sources\": 71155, \"shortest_first_letters\": 75614, \"budget_seed_targets\": 5760, \"short_reset_budget_cases\": 2283, \"rank_profile_square_cases\": 2711, \"rank_profile_extra_square_cases\": 428, \"rank_profile_improved_bounds\": 1000, \"rank_profile_new_vs_rank_budget\": 330}, \"seconds\": 12.578000000001339, \"protocol_limit_recovery\": true, \"boundary\": \"Each accepted case independently recomputes every e/G/W entry, exact rt and every winning source with ordinary ALL-SOURCE distances; first-letter condition, complete boundary-parent equality, singleton formulas, reset-length-dependent and reset-rank-profile-dependent all-seed budgets checked. Each rank budget uses an explicitly reconstructed shortest reset word. Computational scope is finite; universal results are paper proofs.\"}\n",
+  "stderr": ""
+}

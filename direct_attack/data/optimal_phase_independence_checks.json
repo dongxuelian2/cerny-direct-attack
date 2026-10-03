@@ -1,0 +1,164 @@
+{
+  "verified": true,
+  "records": [
+    {
+      "source": "direct_attack/data/n5_extremal/extremal_004.profile.json",
+      "actual_images": 30,
+      "rt": 15,
+      "P": 15,
+      "all_source_vertices": 571,
+      "transport_entries": 900,
+      "optimal_chain": {
+        "sets": [
+          1,
+          18,
+          22,
+          27,
+          31
+        ],
+        "phase_costs": [
+          1,
+          5,
+          6,
+          3
+        ],
+        "proper_stages": 3,
+        "normalized_dimension": 2
+      },
+      "shortest_words": [
+        {
+          "word": "baabaaabaabaaab",
+          "record_sets": [
+            18,
+            19,
+            27,
+            31
+          ],
+          "record_costs": [
+            1,
+            7,
+            4,
+            3
+          ],
+          "normalized_dimension": 3,
+          "full_inverse_raw_dimension": 5
+        },
+        {
+          "word": "baababaaabbaaab",
+          "record_sets": [
+            18,
+            22,
+            27,
+            31
+          ],
+          "record_costs": [
+            1,
+            5,
+            6,
+            3
+          ],
+          "normalized_dimension": 2,
+          "full_inverse_raw_dimension": 5
+        },
+        {
+          "word": "baababaababaaab",
+          "record_sets": [
+            18,
+            26,
+            27,
+            31
+          ],
+          "record_costs": [
+            1,
+            6,
+            5,
+            3
+          ],
+          "normalized_dimension": 3,
+          "full_inverse_raw_dimension": 5
+        }
+      ],
+      "independent_optimal_chain": false,
+      "independent_shortest_record_history": true
+    },
+    {
+      "source": "direct_attack/data/n5_extremal/extremal_005.profile.json",
+      "actual_images": 31,
+      "rt": 14,
+      "P": 14,
+      "all_source_vertices": 606,
+      "transport_entries": 961,
+      "optimal_chain": {
+        "sets": [
+          1,
+          3,
+          7,
+          27,
+          31
+        ],
+        "phase_costs": [
+          1,
+          5,
+          5,
+          3
+        ],
+        "proper_stages": 3,
+        "normalized_dimension": 2
+      },
+      "shortest_words": [
+        {
+          "word": "abbabbaababbba",
+          "record_sets": [
+            3,
+            19,
+            27,
+            31
+          ],
+          "record_costs": [
+            1,
+            6,
+            4,
+            3
+          ],
+          "normalized_dimension": 3,
+          "full_inverse_raw_dimension": 5
+        },
+        {
+          "word": "abbabbababbbba",
+          "record_sets": [
+            3,
+            7,
+            27,
+            31
+          ],
+          "record_costs": [
+            1,
+            5,
+            5,
+            3
+          ],
+          "normalized_dimension": 2,
+          "full_inverse_raw_dimension": 5
+        }
+      ],
+      "independent_optimal_chain": false,
+      "independent_shortest_record_history": true
+    }
+  ],
+  "all_source_vertices": 1177,
+  "transport_entries": 1861,
+  "exact_minor_rank_checks": 19,
+  "literal_shortest_reset_words": 5,
+  "literal_original_letters": 73,
+  "interpretation": "existence of independent optimal locally shortest policy stages REFUTED at n5; nongreedy shortest-word independence survives these examples",
+  "status": "COMPUTATIONALLY VERIFIED finite; paper state-minimality lemma separate; no formal proof kernel",
+  "rejected_corruptions": [
+    "independent_optimum",
+    "chain_count",
+    "omitted_shortest_word",
+    "nongreedy_phase_cost",
+    "normalized_rank",
+    "parent",
+    "reset_threshold"
+  ]
+}

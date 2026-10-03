@@ -1,0 +1,78 @@
+{
+  "arguments": {
+    "n": 10,
+    "mode": "random",
+    "alphabet": 3,
+    "count": 12000,
+    "seed": 20260928,
+    "out": "direct_attack/data/n10_ternary_random"
+  },
+  "counters": {
+    "tested": 12000,
+    "strongly_connected": 8691,
+    "analyzed_sc": 8691,
+    "sync_analyzed": 8691,
+    "violates_greedy_optimal": 1945
+  },
+  "rt_histogram": {
+    "2": 1,
+    "3": 124,
+    "4": 642,
+    "5": 1150,
+    "6": 697,
+    "7": 294,
+    "8": 73,
+    "9": 655,
+    "10": 829,
+    "11": 1126,
+    "12": 1025,
+    "13": 872,
+    "14": 590,
+    "15": 299,
+    "16": 173,
+    "17": 79,
+    "18": 34,
+    "19": 12,
+    "20": 8,
+    "21": 4,
+    "22": 1,
+    "23": 1,
+    "26": 1,
+    "27": 1
+  },
+  "maxima": {
+    "rt": 27,
+    "greedy_min": 28,
+    "greedy_max": 37,
+    "gap": 6,
+    "avoiding": 7
+  },
+  "max_compression_by_rank": [
+    -1,
+    -1,
+    8,
+    7,
+    6,
+    6,
+    5,
+    4,
+    3,
+    2,
+    1
+  ],
+  "max_reachable_compression_by_rank": [
+    -1,
+    -1,
+    8,
+    7,
+    6,
+    6,
+    5,
+    4,
+    3,
+    2,
+    1
+  ],
+  "seconds": 88.5301125049591,
+  "symmetry_note": "n<=4 exact state/alphabet classes; first-map-orbits covers all binary DFAs but counts overlap"
+}

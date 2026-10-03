@@ -1,0 +1,4996 @@
+{
+  "records": [
+    {
+      "n": 5,
+      "label": "n5_extremal_000",
+      "rows": [
+        [
+          0,
+          0,
+          2,
+          3,
+          4
+        ],
+        [
+          2,
+          0,
+          3,
+          4,
+          1
+        ]
+      ],
+      "source": "direct_attack\\data\\n5_extremal\\summary.json",
+      "source_sha256": "604067b34305fd72e612c6988fb5e406e5dbd020665a55241535fbf8ab26bafa",
+      "base_policy": 16,
+      "base_rt": 16,
+      "tested": 3125,
+      "increased": 0,
+      "peak_policy": 16,
+      "peak_extra": [
+        0,
+        0,
+        2,
+        3,
+        4
+      ],
+      "policy_square_failures": [],
+      "short_reset_budget_cases": 791,
+      "histogram": [
+        {
+          "P": 1,
+          "rt": 1,
+          "count": 5
+        },
+        {
+          "P": 2,
+          "rt": 2,
+          "count": 222
+        },
+        {
+          "P": 3,
+          "rt": 3,
+          "count": 541
+        },
+        {
+          "P": 4,
+          "rt": 3,
+          "count": 21
+        },
+        {
+          "P": 4,
+          "rt": 4,
+          "count": 595
+        },
+        {
+          "P": 5,
+          "rt": 3,
+          "count": 2
+        },
+        {
+          "P": 5,
+          "rt": 4,
+          "count": 58
+        },
+        {
+          "P": 5,
+          "rt": 5,
+          "count": 497
+        },
+        {
+          "P": 6,
+          "rt": 4,
+          "count": 16
+        },
+        {
+          "P": 6,
+          "rt": 5,
+          "count": 49
+        },
+        {
+          "P": 6,
+          "rt": 6,
+          "count": 454
+        },
+        {
+          "P": 7,
+          "rt": 5,
+          "count": 13
+        },
+        {
+          "P": 7,
+          "rt": 6,
+          "count": 49
+        },
+        {
+          "P": 7,
+          "rt": 7,
+          "count": 236
+        },
+        {
+          "P": 8,
+          "rt": 5,
+          "count": 6
+        },
+        {
+          "P": 8,
+          "rt": 6,
+          "count": 11
+        },
+        {
+          "P": 8,
+          "rt": 7,
+          "count": 46
+        },
+        {
+          "P": 8,
+          "rt": 8,
+          "count": 111
+        },
+        {
+          "P": 9,
+          "rt": 6,
+          "count": 2
+        },
+        {
+          "P": 9,
+          "rt": 7,
+          "count": 8
+        },
+        {
+          "P": 9,
+          "rt": 8,
+          "count": 5
+        },
+        {
+          "P": 9,
+          "rt": 9,
+          "count": 66
+        },
+        {
+          "P": 10,
+          "rt": 8,
+          "count": 1
+        },
+        {
+          "P": 10,
+          "rt": 9,
+          "count": 10
+        },
+        {
+          "P": 10,
+          "rt": 10,
+          "count": 47
+        },
+        {
+          "P": 11,
+          "rt": 10,
+          "count": 1
+        },
+        {
+          "P": 11,
+          "rt": 11,
+          "count": 28
+        },
+        {
+          "P": 12,
+          "rt": 11,
+          "count": 1
+        },
+        {
+          "P": 12,
+          "rt": 12,
+          "count": 13
+        },
+        {
+          "P": 13,
+          "rt": 13,
+          "count": 6
+        },
+        {
+          "P": 14,
+          "rt": 13,
+          "count": 1
+        },
+        {
+          "P": 14,
+          "rt": 14,
+          "count": 1
+        },
+        {
+          "P": 16,
+          "rt": 16,
+          "count": 3
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "label": "n5_extremal_001",
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          2,
+          2
+        ],
+        [
+          1,
+          4,
+          2,
+          0,
+          3
+        ]
+      ],
+      "source": "direct_attack\\data\\n5_extremal\\summary.json",
+      "source_sha256": "604067b34305fd72e612c6988fb5e406e5dbd020665a55241535fbf8ab26bafa",
+      "base_policy": 16,
+      "base_rt": 15,
+      "tested": 3125,
+      "increased": 0,
+      "peak_policy": 16,
+      "peak_extra": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "policy_square_failures": [],
+      "short_reset_budget_cases": 835,
+      "histogram": [
+        {
+          "P": 1,
+          "rt": 1,
+          "count": 5
+        },
+        {
+          "P": 2,
+          "rt": 2,
+          "count": 222
+        },
+        {
+          "P": 3,
+          "rt": 3,
+          "count": 580
+        },
+        {
+          "P": 4,
+          "rt": 3,
+          "count": 26
+        },
+        {
+          "P": 4,
+          "rt": 4,
+          "count": 602
+        },
+        {
+          "P": 5,
+          "rt": 3,
+          "count": 2
+        },
+        {
+          "P": 5,
+          "rt": 4,
+          "count": 64
+        },
+        {
+          "P": 5,
+          "rt": 5,
+          "count": 498
+        },
+        {
+          "P": 6,
+          "rt": 4,
+          "count": 21
+        },
+        {
+          "P": 6,
+          "rt": 5,
+          "count": 82
+        },
+        {
+          "P": 6,
+          "rt": 6,
+          "count": 349
+        },
+        {
+          "P": 7,
+          "rt": 4,
+          "count": 1
+        },
+        {
+          "P": 7,
+          "rt": 5,
+          "count": 34
+        },
+        {
+          "P": 7,
+          "rt": 6,
+          "count": 70
+        },
+        {
+          "P": 7,
+          "rt": 7,
+          "count": 165
+        },
+        {
+          "P": 8,
+          "rt": 5,
+          "count": 6
+        },
+        {
+          "P": 8,
+          "rt": 6,
+          "count": 30
+        },
+        {
+          "P": 8,
+          "rt": 7,
+          "count": 31
+        },
+        {
+          "P": 8,
+          "rt": 8,
+          "count": 99
+        },
+        {
+          "P": 9,
+          "rt": 5,
+          "count": 1
+        },
+        {
+          "P": 9,
+          "rt": 6,
+          "count": 4
+        },
+        {
+          "P": 9,
+          "rt": 7,
+          "count": 17
+        },
+        {
+          "P": 9,
+          "rt": 8,
+          "count": 23
+        },
+        {
+          "P": 9,
+          "rt": 9,
+          "count": 53
+        },
+        {
+          "P": 10,
+          "rt": 7,
+          "count": 2
+        },
+        {
+          "P": 10,
+          "rt": 8,
+          "count": 12
+        },
+        {
+          "P": 10,
+          "rt": 9,
+          "count": 10
+        },
+        {
+          "P": 10,
+          "rt": 10,
+          "count": 37
+        },
+        {
+          "P": 11,
+          "rt": 9,
+          "count": 2
+        },
+        {
+          "P": 11,
+          "rt": 10,
+          "count": 7
+        },
+        {
+          "P": 11,
+          "rt": 11,
+          "count": 28
+        },
+        {
+          "P": 12,
+          "rt": 10,
+          "count": 4
+        },
+        {
+          "P": 12,
+          "rt": 11,
+          "count": 1
+        },
+        {
+          "P": 12,
+          "rt": 12,
+          "count": 14
+        },
+        {
+          "P": 13,
+          "rt": 12,
+          "count": 5
+        },
+        {
+          "P": 13,
+          "rt": 13,
+          "count": 6
+        },
+        {
+          "P": 14,
+          "rt": 13,
+          "count": 3
+        },
+        {
+          "P": 14,
+          "rt": 14,
+          "count": 2
+        },
+        {
+          "P": 15,
+          "rt": 13,
+          "count": 1
+        },
+        {
+          "P": 15,
+          "rt": 14,
+          "count": 2
+        },
+        {
+          "P": 15,
+          "rt": 15,
+          "count": 1
+        },
+        {
+          "P": 16,
+          "rt": 15,
+          "count": 3
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "label": "n5_extremal_002",
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          2,
+          2
+        ],
+        [
+          2,
+          4,
+          0,
+          1,
+          3
+        ]
+      ],
+      "source": "direct_attack\\data\\n5_extremal\\summary.json",
+      "source_sha256": "604067b34305fd72e612c6988fb5e406e5dbd020665a55241535fbf8ab26bafa",
+      "base_policy": 15,
+      "base_rt": 15,
+      "tested": 3125,
+      "increased": 0,
+      "peak_policy": 15,
+      "peak_extra": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "policy_square_failures": [],
+      "short_reset_budget_cases": 839,
+      "histogram": [
+        {
+          "P": 1,
+          "rt": 1,
+          "count": 5
+        },
+        {
+          "P": 2,
+          "rt": 2,
+          "count": 222
+        },
+        {
+          "P": 3,
+          "rt": 3,
+          "count": 601
+        },
+        {
+          "P": 4,
+          "rt": 3,
+          "count": 10
+        },
+        {
+          "P": 4,
+          "rt": 4,
+          "count": 634
+        },
+        {
+          "P": 5,
+          "rt": 3,
+          "count": 1
+        },
+        {
+          "P": 5,
+          "rt": 4,
+          "count": 35
+        },
+        {
+          "P": 5,
+          "rt": 5,
+          "count": 533
+        },
+        {
+          "P": 6,
+          "rt": 4,
+          "count": 10
+        },
+        {
+          "P": 6,
+          "rt": 5,
+          "count": 51
+        },
+        {
+          "P": 6,
+          "rt": 6,
+          "count": 377
+        },
+        {
+          "P": 7,
+          "rt": 5,
+          "count": 7
+        },
+        {
+          "P": 7,
+          "rt": 6,
+          "count": 38
+        },
+        {
+          "P": 7,
+          "rt": 7,
+          "count": 207
+        },
+        {
+          "P": 8,
+          "rt": 6,
+          "count": 6
+        },
+        {
+          "P": 8,
+          "rt": 7,
+          "count": 31
+        },
+        {
+          "P": 8,
+          "rt": 8,
+          "count": 114
+        },
+        {
+          "P": 9,
+          "rt": 7,
+          "count": 8
+        },
+        {
+          "P": 9,
+          "rt": 8,
+          "count": 10
+        },
+        {
+          "P": 9,
+          "rt": 9,
+          "count": 81
+        },
+        {
+          "P": 10,
+          "rt": 9,
+          "count": 10
+        },
+        {
+          "P": 10,
+          "rt": 10,
+          "count": 50
+        },
+        {
+          "P": 11,
+          "rt": 9,
+          "count": 2
+        },
+        {
+          "P": 11,
+          "rt": 10,
+          "count": 1
+        },
+        {
+          "P": 11,
+          "rt": 11,
+          "count": 29
+        },
+        {
+          "P": 12,
+          "rt": 10,
+          "count": 1
+        },
+        {
+          "P": 12,
+          "rt": 11,
+          "count": 2
+        },
+        {
+          "P": 12,
+          "rt": 12,
+          "count": 24
+        },
+        {
+          "P": 13,
+          "rt": 12,
+          "count": 1
+        },
+        {
+          "P": 13,
+          "rt": 13,
+          "count": 5
+        },
+        {
+          "P": 14,
+          "rt": 14,
+          "count": 10
+        },
+        {
+          "P": 15,
+          "rt": 14,
+          "count": 1
+        },
+        {
+          "P": 15,
+          "rt": 15,
+          "count": 8
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "label": "n5_extremal_003",
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2
+        ],
+        [
+          1,
+          2,
+          0,
+          3,
+          0
+        ]
+      ],
+      "source": "direct_attack\\data\\n5_extremal\\summary.json",
+      "source_sha256": "604067b34305fd72e612c6988fb5e406e5dbd020665a55241535fbf8ab26bafa",
+      "base_policy": 15,
+      "base_rt": 15,
+      "tested": 3125,
+      "increased": 0,
+      "peak_policy": 15,
+      "peak_extra": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "policy_square_failures": [],
+      "short_reset_budget_cases": 855,
+      "histogram": [
+        {
+          "P": 1,
+          "rt": 1,
+          "count": 5
+        },
+        {
+          "P": 2,
+          "rt": 2,
+          "count": 222
+        },
+        {
+          "P": 3,
+          "rt": 3,
+          "count": 605
+        },
+        {
+          "P": 4,
+          "rt": 3,
+          "count": 21
+        },
+        {
+          "P": 4,
+          "rt": 4,
+          "count": 664
+        },
+        {
+          "P": 5,
+          "rt": 3,
+          "count": 2
+        },
+        {
+          "P": 5,
+          "rt": 4,
+          "count": 43
+        },
+        {
+          "P": 5,
+          "rt": 5,
+          "count": 557
+        },
+        {
+          "P": 6,
+          "rt": 4,
+          "count": 15
+        },
+        {
+          "P": 6,
+          "rt": 5,
+          "count": 58
+        },
+        {
+          "P": 6,
+          "rt": 6,
+          "count": 346
+        },
+        {
+          "P": 7,
+          "rt": 4,
+          "count": 2
+        },
+        {
+          "P": 7,
+          "rt": 5,
+          "count": 10
+        },
+        {
+          "P": 7,
+          "rt": 6,
+          "count": 54
+        },
+        {
+          "P": 7,
+          "rt": 7,
+          "count": 178
+        },
+        {
+          "P": 8,
+          "rt": 6,
+          "count": 10
+        },
+        {
+          "P": 8,
+          "rt": 7,
+          "count": 34
+        },
+        {
+          "P": 8,
+          "rt": 8,
+          "count": 85
+        },
+        {
+          "P": 9,
+          "rt": 7,
+          "count": 4
+        },
+        {
+          "P": 9,
+          "rt": 8,
+          "count": 3
+        },
+        {
+          "P": 9,
+          "rt": 9,
+          "count": 75
+        },
+        {
+          "P": 10,
+          "rt": 9,
+          "count": 4
+        },
+        {
+          "P": 10,
+          "rt": 10,
+          "count": 49
+        },
+        {
+          "P": 11,
+          "rt": 10,
+          "count": 4
+        },
+        {
+          "P": 11,
+          "rt": 11,
+          "count": 25
+        },
+        {
+          "P": 12,
+          "rt": 12,
+          "count": 25
+        },
+        {
+          "P": 13,
+          "rt": 12,
+          "count": 1
+        },
+        {
+          "P": 13,
+          "rt": 13,
+          "count": 7
+        },
+        {
+          "P": 14,
+          "rt": 13,
+          "count": 1
+        },
+        {
+          "P": 14,
+          "rt": 14,
+          "count": 8
+        },
+        {
+          "P": 15,
+          "rt": 15,
+          "count": 8
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "label": "n5_extremal_004",
+      "rows": [
+        [
+          0,
+          2,
+          3,
+          4,
+          1
+        ],
+        [
+          1,
+          0,
+          3,
+          2,
+          0
+        ]
+      ],
+      "source": "direct_attack\\data\\n5_extremal\\summary.json",
+      "source_sha256": "604067b34305fd72e612c6988fb5e406e5dbd020665a55241535fbf8ab26bafa",
+      "base_policy": 15,
+      "base_rt": 15,
+      "tested": 3125,
+      "increased": 0,
+      "peak_policy": 15,
+      "peak_extra": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "policy_square_failures": [],
+      "short_reset_budget_cases": 845,
+      "histogram": [
+        {
+          "P": 1,
+          "rt": 1,
+          "count": 5
+        },
+        {
+          "P": 2,
+          "rt": 2,
+          "count": 222
+        },
+        {
+          "P": 3,
+          "rt": 3,
+          "count": 596
+        },
+        {
+          "P": 4,
+          "rt": 3,
+          "count": 22
+        },
+        {
+          "P": 4,
+          "rt": 4,
+          "count": 594
+        },
+        {
+          "P": 5,
+          "rt": 4,
+          "count": 41
+        },
+        {
+          "P": 5,
+          "rt": 5,
+          "count": 551
+        },
+        {
+          "P": 6,
+          "rt": 4,
+          "count": 27
+        },
+        {
+          "P": 6,
+          "rt": 5,
+          "count": 64
+        },
+        {
+          "P": 6,
+          "rt": 6,
+          "count": 368
+        },
+        {
+          "P": 7,
+          "rt": 4,
+          "count": 1
+        },
+        {
+          "P": 7,
+          "rt": 5,
+          "count": 42
+        },
+        {
+          "P": 7,
+          "rt": 6,
+          "count": 51
+        },
+        {
+          "P": 7,
+          "rt": 7,
+          "count": 176
+        },
+        {
+          "P": 8,
+          "rt": 5,
+          "count": 8
+        },
+        {
+          "P": 8,
+          "rt": 6,
+          "count": 24
+        },
+        {
+          "P": 8,
+          "rt": 7,
+          "count": 33
+        },
+        {
+          "P": 8,
+          "rt": 8,
+          "count": 85
+        },
+        {
+          "P": 9,
+          "rt": 6,
+          "count": 1
+        },
+        {
+          "P": 9,
+          "rt": 7,
+          "count": 10
+        },
+        {
+          "P": 9,
+          "rt": 8,
+          "count": 13
+        },
+        {
+          "P": 9,
+          "rt": 9,
+          "count": 73
+        },
+        {
+          "P": 10,
+          "rt": 9,
+          "count": 2
+        },
+        {
+          "P": 10,
+          "rt": 10,
+          "count": 42
+        },
+        {
+          "P": 11,
+          "rt": 9,
+          "count": 3
+        },
+        {
+          "P": 11,
+          "rt": 10,
+          "count": 2
+        },
+        {
+          "P": 11,
+          "rt": 11,
+          "count": 22
+        },
+        {
+          "P": 12,
+          "rt": 9,
+          "count": 1
+        },
+        {
+          "P": 12,
+          "rt": 10,
+          "count": 1
+        },
+        {
+          "P": 12,
+          "rt": 11,
+          "count": 1
+        },
+        {
+          "P": 12,
+          "rt": 12,
+          "count": 23
+        },
+        {
+          "P": 13,
+          "rt": 12,
+          "count": 4
+        },
+        {
+          "P": 13,
+          "rt": 13,
+          "count": 7
+        },
+        {
+          "P": 14,
+          "rt": 13,
+          "count": 1
+        },
+        {
+          "P": 14,
+          "rt": 14,
+          "count": 6
+        },
+        {
+          "P": 15,
+          "rt": 15,
+          "count": 3
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "label": "n5_extremal_005",
+      "rows": [
+        [
+          0,
+          0,
+          2,
+          4,
+          3
+        ],
+        [
+          2,
+          0,
+          3,
+          4,
+          1
+        ]
+      ],
+      "source": "direct_attack\\data\\n5_extremal\\summary.json",
+      "source_sha256": "604067b34305fd72e612c6988fb5e406e5dbd020665a55241535fbf8ab26bafa",
+      "base_policy": 14,
+      "base_rt": 14,
+      "tested": 3125,
+      "increased": 0,
+      "peak_policy": 14,
+      "peak_extra": [
+        0,
+        0,
+        2,
+        3,
+        4
+      ],
+      "policy_square_failures": [],
+      "short_reset_budget_cases": 851,
+      "histogram": [
+        {
+          "P": 1,
+          "rt": 1,
+          "count": 5
+        },
+        {
+          "P": 2,
+          "rt": 2,
+          "count": 222
+        },
+        {
+          "P": 3,
+          "rt": 3,
+          "count": 601
+        },
+        {
+          "P": 4,
+          "rt": 3,
+          "count": 23
+        },
+        {
+          "P": 4,
+          "rt": 4,
+          "count": 663
+        },
+        {
+          "P": 5,
+          "rt": 4,
+          "count": 48
+        },
+        {
+          "P": 5,
+          "rt": 5,
+          "count": 545
+        },
+        {
+          "P": 6,
+          "rt": 4,
+          "count": 21
+        },
+        {
+          "P": 6,
+          "rt": 5,
+          "count": 51
+        },
+        {
+          "P": 6,
+          "rt": 6,
+          "count": 404
+        },
+        {
+          "P": 7,
+          "rt": 4,
+          "count": 2
+        },
+        {
+          "P": 7,
+          "rt": 5,
+          "count": 10
+        },
+        {
+          "P": 7,
+          "rt": 6,
+          "count": 51
+        },
+        {
+          "P": 7,
+          "rt": 7,
+          "count": 191
+        },
+        {
+          "P": 8,
+          "rt": 5,
+          "count": 8
+        },
+        {
+          "P": 8,
+          "rt": 6,
+          "count": 7
+        },
+        {
+          "P": 8,
+          "rt": 7,
+          "count": 22
+        },
+        {
+          "P": 8,
+          "rt": 8,
+          "count": 68
+        },
+        {
+          "P": 9,
+          "rt": 6,
+          "count": 1
+        },
+        {
+          "P": 9,
+          "rt": 7,
+          "count": 3
+        },
+        {
+          "P": 9,
+          "rt": 8,
+          "count": 7
+        },
+        {
+          "P": 9,
+          "rt": 9,
+          "count": 70
+        },
+        {
+          "P": 10,
+          "rt": 9,
+          "count": 6
+        },
+        {
+          "P": 10,
+          "rt": 10,
+          "count": 42
+        },
+        {
+          "P": 11,
+          "rt": 10,
+          "count": 6
+        },
+        {
+          "P": 11,
+          "rt": 11,
+          "count": 25
+        },
+        {
+          "P": 12,
+          "rt": 11,
+          "count": 1
+        },
+        {
+          "P": 12,
+          "rt": 12,
+          "count": 11
+        },
+        {
+          "P": 13,
+          "rt": 12,
+          "count": 1
+        },
+        {
+          "P": 13,
+          "rt": 13,
+          "count": 5
+        },
+        {
+          "P": 14,
+          "rt": 12,
+          "count": 1
+        },
+        {
+          "P": 14,
+          "rt": 13,
+          "count": 1
+        },
+        {
+          "P": 14,
+          "rt": 14,
+          "count": 3
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "label": "n5_extremal_006",
+      "rows": [
+        [
+          0,
+          0,
+          3,
+          4,
+          2
+        ],
+        [
+          2,
+          0,
+          3,
+          4,
+          1
+        ]
+      ],
+      "source": "direct_attack\\data\\n5_extremal\\summary.json",
+      "source_sha256": "604067b34305fd72e612c6988fb5e406e5dbd020665a55241535fbf8ab26bafa",
+      "base_policy": 14,
+      "base_rt": 14,
+      "tested": 3125,
+      "increased": 0,
+      "peak_policy": 14,
+      "peak_extra": [
+        0,
+        0,
+        3,
+        4,
+        2
+      ],
+      "policy_square_failures": [],
+      "short_reset_budget_cases": 865,
+      "histogram": [
+        {
+          "P": 1,
+          "rt": 1,
+          "count": 5
+        },
+        {
+          "P": 2,
+          "rt": 2,
+          "count": 222
+        },
+        {
+          "P": 3,
+          "rt": 3,
+          "count": 624
+        },
+        {
+          "P": 4,
+          "rt": 3,
+          "count": 14
+        },
+        {
+          "P": 4,
+          "rt": 4,
+          "count": 700
+        },
+        {
+          "P": 5,
+          "rt": 4,
+          "count": 45
+        },
+        {
+          "P": 5,
+          "rt": 5,
+          "count": 598
+        },
+        {
+          "P": 6,
+          "rt": 4,
+          "count": 8
+        },
+        {
+          "P": 6,
+          "rt": 5,
+          "count": 36
+        },
+        {
+          "P": 6,
+          "rt": 6,
+          "count": 379
+        },
+        {
+          "P": 7,
+          "rt": 4,
+          "count": 1
+        },
+        {
+          "P": 7,
+          "rt": 5,
+          "count": 6
+        },
+        {
+          "P": 7,
+          "rt": 6,
+          "count": 29
+        },
+        {
+          "P": 7,
+          "rt": 7,
+          "count": 188
+        },
+        {
+          "P": 8,
+          "rt": 5,
+          "count": 3
+        },
+        {
+          "P": 8,
+          "rt": 6,
+          "count": 5
+        },
+        {
+          "P": 8,
+          "rt": 7,
+          "count": 17
+        },
+        {
+          "P": 8,
+          "rt": 8,
+          "count": 61
+        },
+        {
+          "P": 9,
+          "rt": 7,
+          "count": 1
+        },
+        {
+          "P": 9,
+          "rt": 8,
+          "count": 8
+        },
+        {
+          "P": 9,
+          "rt": 9,
+          "count": 72
+        },
+        {
+          "P": 10,
+          "rt": 9,
+          "count": 4
+        },
+        {
+          "P": 10,
+          "rt": 10,
+          "count": 38
+        },
+        {
+          "P": 11,
+          "rt": 9,
+          "count": 3
+        },
+        {
+          "P": 11,
+          "rt": 10,
+          "count": 4
+        },
+        {
+          "P": 11,
+          "rt": 11,
+          "count": 20
+        },
+        {
+          "P": 12,
+          "rt": 11,
+          "count": 1
+        },
+        {
+          "P": 12,
+          "rt": 12,
+          "count": 17
+        },
+        {
+          "P": 13,
+          "rt": 12,
+          "count": 1
+        },
+        {
+          "P": 13,
+          "rt": 13,
+          "count": 9
+        },
+        {
+          "P": 14,
+          "rt": 14,
+          "count": 6
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "label": "n5_extremal_007",
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          4
+        ]
+      ],
+      "source": "direct_attack\\data\\n5_extremal\\summary.json",
+      "source_sha256": "604067b34305fd72e612c6988fb5e406e5dbd020665a55241535fbf8ab26bafa",
+      "base_policy": 14,
+      "base_rt": 14,
+      "tested": 3125,
+      "increased": 0,
+      "peak_policy": 14,
+      "peak_extra": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "policy_square_failures": [],
+      "short_reset_budget_cases": 863,
+      "histogram": [
+        {
+          "P": 1,
+          "rt": 1,
+          "count": 5
+        },
+        {
+          "P": 2,
+          "rt": 2,
+          "count": 222
+        },
+        {
+          "P": 3,
+          "rt": 3,
+          "count": 610
+        },
+        {
+          "P": 4,
+          "rt": 3,
+          "count": 24
+        },
+        {
+          "P": 4,
+          "rt": 4,
+          "count": 673
+        },
+        {
+          "P": 5,
+          "rt": 3,
+          "count": 2
+        },
+        {
+          "P": 5,
+          "rt": 4,
+          "count": 59
+        },
+        {
+          "P": 5,
+          "rt": 5,
+          "count": 592
+        },
+        {
+          "P": 6,
+          "rt": 4,
+          "count": 10
+        },
+        {
+          "P": 6,
+          "rt": 5,
+          "count": 68
+        },
+        {
+          "P": 6,
+          "rt": 6,
+          "count": 353
+        },
+        {
+          "P": 7,
+          "rt": 5,
+          "count": 4
+        },
+        {
+          "P": 7,
+          "rt": 6,
+          "count": 29
+        },
+        {
+          "P": 7,
+          "rt": 7,
+          "count": 167
+        },
+        {
+          "P": 8,
+          "rt": 6,
+          "count": 5
+        },
+        {
+          "P": 8,
+          "rt": 7,
+          "count": 9
+        },
+        {
+          "P": 8,
+          "rt": 8,
+          "count": 89
+        },
+        {
+          "P": 9,
+          "rt": 7,
+          "count": 1
+        },
+        {
+          "P": 9,
+          "rt": 8,
+          "count": 8
+        },
+        {
+          "P": 9,
+          "rt": 9,
+          "count": 76
+        },
+        {
+          "P": 10,
+          "rt": 9,
+          "count": 10
+        },
+        {
+          "P": 10,
+          "rt": 10,
+          "count": 53
+        },
+        {
+          "P": 11,
+          "rt": 9,
+          "count": 1
+        },
+        {
+          "P": 11,
+          "rt": 10,
+          "count": 3
+        },
+        {
+          "P": 11,
+          "rt": 11,
+          "count": 16
+        },
+        {
+          "P": 12,
+          "rt": 10,
+          "count": 1
+        },
+        {
+          "P": 12,
+          "rt": 11,
+          "count": 1
+        },
+        {
+          "P": 12,
+          "rt": 12,
+          "count": 15
+        },
+        {
+          "P": 13,
+          "rt": 11,
+          "count": 1
+        },
+        {
+          "P": 13,
+          "rt": 12,
+          "count": 2
+        },
+        {
+          "P": 13,
+          "rt": 13,
+          "count": 8
+        },
+        {
+          "P": 14,
+          "rt": 12,
+          "count": 1
+        },
+        {
+          "P": 14,
+          "rt": 14,
+          "count": 7
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "label": "n5_extremal_008",
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2
+        ],
+        [
+          1,
+          2,
+          4,
+          0,
+          0
+        ]
+      ],
+      "source": "direct_attack\\data\\n5_extremal\\summary.json",
+      "source_sha256": "604067b34305fd72e612c6988fb5e406e5dbd020665a55241535fbf8ab26bafa",
+      "base_policy": 14,
+      "base_rt": 14,
+      "tested": 3125,
+      "increased": 0,
+      "peak_policy": 14,
+      "peak_extra": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "policy_square_failures": [],
+      "short_reset_budget_cases": 861,
+      "histogram": [
+        {
+          "P": 1,
+          "rt": 1,
+          "count": 5
+        },
+        {
+          "P": 2,
+          "rt": 2,
+          "count": 222
+        },
+        {
+          "P": 3,
+          "rt": 3,
+          "count": 614
+        },
+        {
+          "P": 4,
+          "rt": 3,
+          "count": 19
+        },
+        {
+          "P": 4,
+          "rt": 4,
+          "count": 624
+        },
+        {
+          "P": 5,
+          "rt": 3,
+          "count": 1
+        },
+        {
+          "P": 5,
+          "rt": 4,
+          "count": 38
+        },
+        {
+          "P": 5,
+          "rt": 5,
+          "count": 585
+        },
+        {
+          "P": 6,
+          "rt": 4,
+          "count": 18
+        },
+        {
+          "P": 6,
+          "rt": 5,
+          "count": 55
+        },
+        {
+          "P": 6,
+          "rt": 6,
+          "count": 349
+        },
+        {
+          "P": 7,
+          "rt": 4,
+          "count": 2
+        },
+        {
+          "P": 7,
+          "rt": 5,
+          "count": 12
+        },
+        {
+          "P": 7,
+          "rt": 6,
+          "count": 52
+        },
+        {
+          "P": 7,
+          "rt": 7,
+          "count": 191
+        },
+        {
+          "P": 8,
+          "rt": 6,
+          "count": 16
+        },
+        {
+          "P": 8,
+          "rt": 7,
+          "count": 24
+        },
+        {
+          "P": 8,
+          "rt": 8,
+          "count": 98
+        },
+        {
+          "P": 9,
+          "rt": 7,
+          "count": 1
+        },
+        {
+          "P": 9,
+          "rt": 8,
+          "count": 9
+        },
+        {
+          "P": 9,
+          "rt": 9,
+          "count": 74
+        },
+        {
+          "P": 10,
+          "rt": 8,
+          "count": 2
+        },
+        {
+          "P": 10,
+          "rt": 9,
+          "count": 3
+        },
+        {
+          "P": 10,
+          "rt": 10,
+          "count": 43
+        },
+        {
+          "P": 11,
+          "rt": 9,
+          "count": 1
+        },
+        {
+          "P": 11,
+          "rt": 10,
+          "count": 1
+        },
+        {
+          "P": 11,
+          "rt": 11,
+          "count": 29
+        },
+        {
+          "P": 12,
+          "rt": 11,
+          "count": 2
+        },
+        {
+          "P": 12,
+          "rt": 12,
+          "count": 16
+        },
+        {
+          "P": 13,
+          "rt": 12,
+          "count": 1
+        },
+        {
+          "P": 13,
+          "rt": 13,
+          "count": 13
+        },
+        {
+          "P": 14,
+          "rt": 14,
+          "count": 5
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "label": "n5_extremal_009",
+      "rows": [
+        [
+          0,
+          2,
+          3,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          4,
+          2,
+          3
+        ]
+      ],
+      "source": "direct_attack\\data\\n5_extremal\\summary.json",
+      "source_sha256": "604067b34305fd72e612c6988fb5e406e5dbd020665a55241535fbf8ab26bafa",
+      "base_policy": 14,
+      "base_rt": 14,
+      "tested": 3125,
+      "increased": 0,
+      "peak_policy": 14,
+      "peak_extra": [
+        0,
+        1,
+        2,
+        3,
+        3
+      ],
+      "policy_square_failures": [],
+      "short_reset_budget_cases": 869,
+      "histogram": [
+        {
+          "P": 1,
+          "rt": 1,
+          "count": 5
+        },
+        {
+          "P": 2,
+          "rt": 2,
+          "count": 222
+        },
+        {
+          "P": 3,
+          "rt": 3,
+          "count": 634
+        },
+        {
+          "P": 4,
+          "rt": 3,
+          "count": 7
+        },
+        {
+          "P": 4,
+          "rt": 4,
+          "count": 696
+        },
+        {
+          "P": 5,
+          "rt": 3,
+          "count": 1
+        },
+        {
+          "P": 5,
+          "rt": 4,
+          "count": 17
+        },
+        {
+          "P": 5,
+          "rt": 5,
+          "count": 592
+        },
+        {
+          "P": 6,
+          "rt": 4,
+          "count": 6
+        },
+        {
+          "P": 6,
+          "rt": 5,
+          "count": 50
+        },
+        {
+          "P": 6,
+          "rt": 6,
+          "count": 326
+        },
+        {
+          "P": 7,
+          "rt": 4,
+          "count": 2
+        },
+        {
+          "P": 7,
+          "rt": 5,
+          "count": 9
+        },
+        {
+          "P": 7,
+          "rt": 6,
+          "count": 26
+        },
+        {
+          "P": 7,
+          "rt": 7,
+          "count": 204
+        },
+        {
+          "P": 8,
+          "rt": 6,
+          "count": 10
+        },
+        {
+          "P": 8,
+          "rt": 7,
+          "count": 13
+        },
+        {
+          "P": 8,
+          "rt": 8,
+          "count": 102
+        },
+        {
+          "P": 9,
+          "rt": 7,
+          "count": 7
+        },
+        {
+          "P": 9,
+          "rt": 8,
+          "count": 5
+        },
+        {
+          "P": 9,
+          "rt": 9,
+          "count": 67
+        },
+        {
+          "P": 10,
+          "rt": 8,
+          "count": 3
+        },
+        {
+          "P": 10,
+          "rt": 9,
+          "count": 9
+        },
+        {
+          "P": 10,
+          "rt": 10,
+          "count": 42
+        },
+        {
+          "P": 11,
+          "rt": 9,
+          "count": 3
+        },
+        {
+          "P": 11,
+          "rt": 10,
+          "count": 2
+        },
+        {
+          "P": 11,
+          "rt": 11,
+          "count": 29
+        },
+        {
+          "P": 12,
+          "rt": 10,
+          "count": 1
+        },
+        {
+          "P": 12,
+          "rt": 11,
+          "count": 1
+        },
+        {
+          "P": 12,
+          "rt": 12,
+          "count": 21
+        },
+        {
+          "P": 13,
+          "rt": 12,
+          "count": 2
+        },
+        {
+          "P": 13,
+          "rt": 13,
+          "count": 5
+        },
+        {
+          "P": 14,
+          "rt": 13,
+          "count": 1
+        },
+        {
+          "P": 14,
+          "rt": 14,
+          "count": 5
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "label": "n5_extremal_010",
+      "rows": [
+        [
+          0,
+          2,
+          3,
+          1,
+          1
+        ],
+        [
+          1,
+          4,
+          0,
+          2,
+          0
+        ]
+      ],
+      "source": "direct_attack\\data\\n5_extremal\\summary.json",
+      "source_sha256": "604067b34305fd72e612c6988fb5e406e5dbd020665a55241535fbf8ab26bafa",
+      "base_policy": 14,
+      "base_rt": 14,
+      "tested": 3125,
+      "increased": 0,
+      "peak_policy": 14,
+      "peak_extra": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "policy_square_failures": [],
+      "short_reset_budget_cases": 1039,
+      "histogram": [
+        {
+          "P": 1,
+          "rt": 1,
+          "count": 5
+        },
+        {
+          "P": 2,
+          "rt": 2,
+          "count": 242
+        },
+        {
+          "P": 3,
+          "rt": 3,
+          "count": 789
+        },
+        {
+          "P": 4,
+          "rt": 3,
+          "count": 2
+        },
+        {
+          "P": 4,
+          "rt": 4,
+          "count": 903
+        },
+        {
+          "P": 5,
+          "rt": 3,
+          "count": 1
+        },
+        {
+          "P": 5,
+          "rt": 4,
+          "count": 15
+        },
+        {
+          "P": 5,
+          "rt": 5,
+          "count": 542
+        },
+        {
+          "P": 6,
+          "rt": 4,
+          "count": 3
+        },
+        {
+          "P": 6,
+          "rt": 5,
+          "count": 23
+        },
+        {
+          "P": 6,
+          "rt": 6,
+          "count": 285
+        },
+        {
+          "P": 7,
+          "rt": 5,
+          "count": 3
+        },
+        {
+          "P": 7,
+          "rt": 6,
+          "count": 20
+        },
+        {
+          "P": 7,
+          "rt": 7,
+          "count": 128
+        },
+        {
+          "P": 8,
+          "rt": 6,
+          "count": 1
+        },
+        {
+          "P": 8,
+          "rt": 7,
+          "count": 11
+        },
+        {
+          "P": 8,
+          "rt": 8,
+          "count": 53
+        },
+        {
+          "P": 9,
+          "rt": 7,
+          "count": 4
+        },
+        {
+          "P": 9,
+          "rt": 8,
+          "count": 3
+        },
+        {
+          "P": 9,
+          "rt": 9,
+          "count": 31
+        },
+        {
+          "P": 10,
+          "rt": 8,
+          "count": 2
+        },
+        {
+          "P": 10,
+          "rt": 9,
+          "count": 1
+        },
+        {
+          "P": 10,
+          "rt": 10,
+          "count": 30
+        },
+        {
+          "P": 11,
+          "rt": 10,
+          "count": 3
+        },
+        {
+          "P": 11,
+          "rt": 11,
+          "count": 14
+        },
+        {
+          "P": 12,
+          "rt": 11,
+          "count": 1
+        },
+        {
+          "P": 12,
+          "rt": 12,
+          "count": 7
+        },
+        {
+          "P": 14,
+          "rt": 14,
+          "count": 3
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "label": "n5_extremal_011",
+      "rows": [
+        [
+          0,
+          2,
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          4,
+          0,
+          3
+        ]
+      ],
+      "source": "direct_attack\\data\\n5_extremal\\summary.json",
+      "source_sha256": "604067b34305fd72e612c6988fb5e406e5dbd020665a55241535fbf8ab26bafa",
+      "base_policy": 14,
+      "base_rt": 14,
+      "tested": 3125,
+      "increased": 0,
+      "peak_policy": 14,
+      "peak_extra": [
+        0,
+        1,
+        2,
+        3,
+        3
+      ],
+      "policy_square_failures": [],
+      "short_reset_budget_cases": 871,
+      "histogram": [
+        {
+          "P": 1,
+          "rt": 1,
+          "count": 5
+        },
+        {
+          "P": 2,
+          "rt": 2,
+          "count": 222
+        },
+        {
+          "P": 3,
+          "rt": 3,
+          "count": 613
+        },
+        {
+          "P": 4,
+          "rt": 3,
+          "count": 29
+        },
+        {
+          "P": 4,
+          "rt": 4,
+          "count": 642
+        },
+        {
+          "P": 5,
+          "rt": 3,
+          "count": 2
+        },
+        {
+          "P": 5,
+          "rt": 4,
+          "count": 63
+        },
+        {
+          "P": 5,
+          "rt": 5,
+          "count": 557
+        },
+        {
+          "P": 6,
+          "rt": 4,
+          "count": 12
+        },
+        {
+          "P": 6,
+          "rt": 5,
+          "count": 59
+        },
+        {
+          "P": 6,
+          "rt": 6,
+          "count": 336
+        },
+        {
+          "P": 7,
+          "rt": 4,
+          "count": 1
+        },
+        {
+          "P": 7,
+          "rt": 5,
+          "count": 12
+        },
+        {
+          "P": 7,
+          "rt": 6,
+          "count": 63
+        },
+        {
+          "P": 7,
+          "rt": 7,
+          "count": 172
+        },
+        {
+          "P": 8,
+          "rt": 5,
+          "count": 2
+        },
+        {
+          "P": 8,
+          "rt": 6,
+          "count": 11
+        },
+        {
+          "P": 8,
+          "rt": 7,
+          "count": 41
+        },
+        {
+          "P": 8,
+          "rt": 8,
+          "count": 85
+        },
+        {
+          "P": 9,
+          "rt": 7,
+          "count": 5
+        },
+        {
+          "P": 9,
+          "rt": 8,
+          "count": 7
+        },
+        {
+          "P": 9,
+          "rt": 9,
+          "count": 66
+        },
+        {
+          "P": 10,
+          "rt": 7,
+          "count": 1
+        },
+        {
+          "P": 10,
+          "rt": 8,
+          "count": 2
+        },
+        {
+          "P": 10,
+          "rt": 9,
+          "count": 10
+        },
+        {
+          "P": 10,
+          "rt": 10,
+          "count": 40
+        },
+        {
+          "P": 11,
+          "rt": 9,
+          "count": 2
+        },
+        {
+          "P": 11,
+          "rt": 10,
+          "count": 1
+        },
+        {
+          "P": 11,
+          "rt": 11,
+          "count": 29
+        },
+        {
+          "P": 12,
+          "rt": 10,
+          "count": 1
+        },
+        {
+          "P": 12,
+          "rt": 11,
+          "count": 3
+        },
+        {
+          "P": 12,
+          "rt": 12,
+          "count": 16
+        },
+        {
+          "P": 13,
+          "rt": 12,
+          "count": 1
+        },
+        {
+          "P": 13,
+          "rt": 13,
+          "count": 6
+        },
+        {
+          "P": 14,
+          "rt": 13,
+          "count": 5
+        },
+        {
+          "P": 14,
+          "rt": 14,
+          "count": 3
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "label": "n5_extremal_012",
+      "rows": [
+        [
+          0,
+          2,
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          2,
+          1,
+          4,
+          0
+        ]
+      ],
+      "source": "direct_attack\\data\\n5_extremal\\summary.json",
+      "source_sha256": "604067b34305fd72e612c6988fb5e406e5dbd020665a55241535fbf8ab26bafa",
+      "base_policy": 14,
+      "base_rt": 14,
+      "tested": 3125,
+      "increased": 0,
+      "peak_policy": 14,
+      "peak_extra": [
+        0,
+        1,
+        2,
+        3,
+        3
+      ],
+      "policy_square_failures": [],
+      "short_reset_budget_cases": 873,
+      "histogram": [
+        {
+          "P": 1,
+          "rt": 1,
+          "count": 5
+        },
+        {
+          "P": 2,
+          "rt": 2,
+          "count": 222
+        },
+        {
+          "P": 3,
+          "rt": 3,
+          "count": 629
+        },
+        {
+          "P": 4,
+          "rt": 3,
+          "count": 16
+        },
+        {
+          "P": 4,
+          "rt": 4,
+          "count": 694
+        },
+        {
+          "P": 5,
+          "rt": 3,
+          "count": 1
+        },
+        {
+          "P": 5,
+          "rt": 4,
+          "count": 29
+        },
+        {
+          "P": 5,
+          "rt": 5,
+          "count": 577
+        },
+        {
+          "P": 6,
+          "rt": 4,
+          "count": 6
+        },
+        {
+          "P": 6,
+          "rt": 5,
+          "count": 51
+        },
+        {
+          "P": 6,
+          "rt": 6,
+          "count": 367
+        },
+        {
+          "P": 7,
+          "rt": 6,
+          "count": 38
+        },
+        {
+          "P": 7,
+          "rt": 7,
+          "count": 169
+        },
+        {
+          "P": 8,
+          "rt": 6,
+          "count": 7
+        },
+        {
+          "P": 8,
+          "rt": 7,
+          "count": 9
+        },
+        {
+          "P": 8,
+          "rt": 8,
+          "count": 106
+        },
+        {
+          "P": 9,
+          "rt": 7,
+          "count": 1
+        },
+        {
+          "P": 9,
+          "rt": 8,
+          "count": 10
+        },
+        {
+          "P": 9,
+          "rt": 9,
+          "count": 68
+        },
+        {
+          "P": 10,
+          "rt": 9,
+          "count": 13
+        },
+        {
+          "P": 10,
+          "rt": 10,
+          "count": 46
+        },
+        {
+          "P": 11,
+          "rt": 10,
+          "count": 2
+        },
+        {
+          "P": 11,
+          "rt": 11,
+          "count": 20
+        },
+        {
+          "P": 12,
+          "rt": 11,
+          "count": 6
+        },
+        {
+          "P": 12,
+          "rt": 12,
+          "count": 16
+        },
+        {
+          "P": 13,
+          "rt": 10,
+          "count": 1
+        },
+        {
+          "P": 13,
+          "rt": 11,
+          "count": 1
+        },
+        {
+          "P": 13,
+          "rt": 13,
+          "count": 6
+        },
+        {
+          "P": 14,
+          "rt": 13,
+          "count": 1
+        },
+        {
+          "P": 14,
+          "rt": 14,
+          "count": 8
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "label": "n5_extremal_013",
+      "rows": [
+        [
+          0,
+          2,
+          3,
+          1,
+          1
+        ],
+        [
+          4,
+          2,
+          1,
+          0,
+          3
+        ]
+      ],
+      "source": "direct_attack\\data\\n5_extremal\\summary.json",
+      "source_sha256": "604067b34305fd72e612c6988fb5e406e5dbd020665a55241535fbf8ab26bafa",
+      "base_policy": 14,
+      "base_rt": 14,
+      "tested": 3125,
+      "increased": 0,
+      "peak_policy": 14,
+      "peak_extra": [
+        0,
+        1,
+        2,
+        3,
+        3
+      ],
+      "policy_square_failures": [],
+      "short_reset_budget_cases": 863,
+      "histogram": [
+        {
+          "P": 1,
+          "rt": 1,
+          "count": 5
+        },
+        {
+          "P": 2,
+          "rt": 2,
+          "count": 222
+        },
+        {
+          "P": 3,
+          "rt": 3,
+          "count": 624
+        },
+        {
+          "P": 4,
+          "rt": 3,
+          "count": 11
+        },
+        {
+          "P": 4,
+          "rt": 4,
+          "count": 687
+        },
+        {
+          "P": 5,
+          "rt": 3,
+          "count": 1
+        },
+        {
+          "P": 5,
+          "rt": 4,
+          "count": 28
+        },
+        {
+          "P": 5,
+          "rt": 5,
+          "count": 578
+        },
+        {
+          "P": 6,
+          "rt": 4,
+          "count": 10
+        },
+        {
+          "P": 6,
+          "rt": 5,
+          "count": 54
+        },
+        {
+          "P": 6,
+          "rt": 6,
+          "count": 359
+        },
+        {
+          "P": 7,
+          "rt": 4,
+          "count": 1
+        },
+        {
+          "P": 7,
+          "rt": 5,
+          "count": 8
+        },
+        {
+          "P": 7,
+          "rt": 6,
+          "count": 44
+        },
+        {
+          "P": 7,
+          "rt": 7,
+          "count": 174
+        },
+        {
+          "P": 8,
+          "rt": 6,
+          "count": 5
+        },
+        {
+          "P": 8,
+          "rt": 7,
+          "count": 18
+        },
+        {
+          "P": 8,
+          "rt": 8,
+          "count": 93
+        },
+        {
+          "P": 9,
+          "rt": 7,
+          "count": 4
+        },
+        {
+          "P": 9,
+          "rt": 8,
+          "count": 2
+        },
+        {
+          "P": 9,
+          "rt": 9,
+          "count": 70
+        },
+        {
+          "P": 10,
+          "rt": 9,
+          "count": 5
+        },
+        {
+          "P": 10,
+          "rt": 10,
+          "count": 44
+        },
+        {
+          "P": 11,
+          "rt": 10,
+          "count": 3
+        },
+        {
+          "P": 11,
+          "rt": 11,
+          "count": 27
+        },
+        {
+          "P": 12,
+          "rt": 12,
+          "count": 20
+        },
+        {
+          "P": 13,
+          "rt": 12,
+          "count": 5
+        },
+        {
+          "P": 13,
+          "rt": 13,
+          "count": 8
+        },
+        {
+          "P": 14,
+          "rt": 13,
+          "count": 1
+        },
+        {
+          "P": 14,
+          "rt": 14,
+          "count": 14
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "label": "n5_extremal_014",
+      "rows": [
+        [
+          1,
+          0,
+          3,
+          4,
+          2
+        ],
+        [
+          1,
+          2,
+          4,
+          0,
+          0
+        ]
+      ],
+      "source": "direct_attack\\data\\n5_extremal\\summary.json",
+      "source_sha256": "604067b34305fd72e612c6988fb5e406e5dbd020665a55241535fbf8ab26bafa",
+      "base_policy": 14,
+      "base_rt": 14,
+      "tested": 3125,
+      "increased": 0,
+      "peak_policy": 14,
+      "peak_extra": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "policy_square_failures": [],
+      "short_reset_budget_cases": 869,
+      "histogram": [
+        {
+          "P": 1,
+          "rt": 1,
+          "count": 5
+        },
+        {
+          "P": 2,
+          "rt": 2,
+          "count": 222
+        },
+        {
+          "P": 3,
+          "rt": 3,
+          "count": 634
+        },
+        {
+          "P": 4,
+          "rt": 3,
+          "count": 7
+        },
+        {
+          "P": 4,
+          "rt": 4,
+          "count": 648
+        },
+        {
+          "P": 5,
+          "rt": 3,
+          "count": 1
+        },
+        {
+          "P": 5,
+          "rt": 4,
+          "count": 18
+        },
+        {
+          "P": 5,
+          "rt": 5,
+          "count": 582
+        },
+        {
+          "P": 6,
+          "rt": 4,
+          "count": 6
+        },
+        {
+          "P": 6,
+          "rt": 5,
+          "count": 44
+        },
+        {
+          "P": 6,
+          "rt": 6,
+          "count": 366
+        },
+        {
+          "P": 7,
+          "rt": 5,
+          "count": 5
+        },
+        {
+          "P": 7,
+          "rt": 6,
+          "count": 54
+        },
+        {
+          "P": 7,
+          "rt": 7,
+          "count": 213
+        },
+        {
+          "P": 8,
+          "rt": 6,
+          "count": 6
+        },
+        {
+          "P": 8,
+          "rt": 7,
+          "count": 14
+        },
+        {
+          "P": 8,
+          "rt": 8,
+          "count": 109
+        },
+        {
+          "P": 9,
+          "rt": 7,
+          "count": 2
+        },
+        {
+          "P": 9,
+          "rt": 8,
+          "count": 8
+        },
+        {
+          "P": 9,
+          "rt": 9,
+          "count": 70
+        },
+        {
+          "P": 10,
+          "rt": 8,
+          "count": 1
+        },
+        {
+          "P": 10,
+          "rt": 9,
+          "count": 2
+        },
+        {
+          "P": 10,
+          "rt": 10,
+          "count": 43
+        },
+        {
+          "P": 11,
+          "rt": 9,
+          "count": 1
+        },
+        {
+          "P": 11,
+          "rt": 11,
+          "count": 25
+        },
+        {
+          "P": 12,
+          "rt": 11,
+          "count": 2
+        },
+        {
+          "P": 12,
+          "rt": 12,
+          "count": 20
+        },
+        {
+          "P": 13,
+          "rt": 13,
+          "count": 11
+        },
+        {
+          "P": 14,
+          "rt": 13,
+          "count": 1
+        },
+        {
+          "P": 14,
+          "rt": 14,
+          "count": 5
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "label": "n5_extremal_015",
+      "rows": [
+        [
+          1,
+          2,
+          3,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          4,
+          0,
+          3
+        ]
+      ],
+      "source": "direct_attack\\data\\n5_extremal\\summary.json",
+      "source_sha256": "604067b34305fd72e612c6988fb5e406e5dbd020665a55241535fbf8ab26bafa",
+      "base_policy": 14,
+      "base_rt": 14,
+      "tested": 3125,
+      "increased": 0,
+      "peak_policy": 14,
+      "peak_extra": [
+        0,
+        1,
+        2,
+        3,
+        3
+      ],
+      "policy_square_failures": [],
+      "short_reset_budget_cases": 863,
+      "histogram": [
+        {
+          "P": 1,
+          "rt": 1,
+          "count": 5
+        },
+        {
+          "P": 2,
+          "rt": 2,
+          "count": 222
+        },
+        {
+          "P": 3,
+          "rt": 3,
+          "count": 624
+        },
+        {
+          "P": 4,
+          "rt": 3,
+          "count": 11
+        },
+        {
+          "P": 4,
+          "rt": 4,
+          "count": 640
+        },
+        {
+          "P": 5,
+          "rt": 3,
+          "count": 1
+        },
+        {
+          "P": 5,
+          "rt": 4,
+          "count": 32
+        },
+        {
+          "P": 5,
+          "rt": 5,
+          "count": 588
+        },
+        {
+          "P": 6,
+          "rt": 4,
+          "count": 8
+        },
+        {
+          "P": 6,
+          "rt": 5,
+          "count": 30
+        },
+        {
+          "P": 6,
+          "rt": 6,
+          "count": 417
+        },
+        {
+          "P": 7,
+          "rt": 5,
+          "count": 8
+        },
+        {
+          "P": 7,
+          "rt": 6,
+          "count": 44
+        },
+        {
+          "P": 7,
+          "rt": 7,
+          "count": 208
+        },
+        {
+          "P": 8,
+          "rt": 5,
+          "count": 4
+        },
+        {
+          "P": 8,
+          "rt": 6,
+          "count": 5
+        },
+        {
+          "P": 8,
+          "rt": 7,
+          "count": 15
+        },
+        {
+          "P": 8,
+          "rt": 8,
+          "count": 95
+        },
+        {
+          "P": 9,
+          "rt": 6,
+          "count": 2
+        },
+        {
+          "P": 9,
+          "rt": 7,
+          "count": 1
+        },
+        {
+          "P": 9,
+          "rt": 8,
+          "count": 6
+        },
+        {
+          "P": 9,
+          "rt": 9,
+          "count": 56
+        },
+        {
+          "P": 10,
+          "rt": 9,
+          "count": 4
+        },
+        {
+          "P": 10,
+          "rt": 10,
+          "count": 41
+        },
+        {
+          "P": 11,
+          "rt": 10,
+          "count": 1
+        },
+        {
+          "P": 11,
+          "rt": 11,
+          "count": 18
+        },
+        {
+          "P": 12,
+          "rt": 11,
+          "count": 3
+        },
+        {
+          "P": 12,
+          "rt": 12,
+          "count": 19
+        },
+        {
+          "P": 13,
+          "rt": 13,
+          "count": 9
+        },
+        {
+          "P": 14,
+          "rt": 12,
+          "count": 2
+        },
+        {
+          "P": 14,
+          "rt": 13,
+          "count": 1
+        },
+        {
+          "P": 14,
+          "rt": 14,
+          "count": 5
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "label": "n6_extremal_000",
+      "rows": [
+        [
+          0,
+          0,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          2,
+          0,
+          3,
+          4,
+          5,
+          1
+        ]
+      ],
+      "source": "direct_attack\\data\\n6_extremal\\summary.json",
+      "source_sha256": "797810ae107ab809f19604ce9c01e8ae30fac60d2e2b73b4e1ee6ed6e07e79d9",
+      "base_policy": 25,
+      "base_rt": 25,
+      "tested": 46656,
+      "increased": 0,
+      "peak_policy": 25,
+      "peak_extra": [
+        0,
+        0,
+        2,
+        3,
+        4,
+        5
+      ],
+      "policy_square_failures": [],
+      "short_reset_budget_cases": 6178,
+      "histogram": [
+        {
+          "P": 1,
+          "rt": 1,
+          "count": 6
+        },
+        {
+          "P": 2,
+          "rt": 2,
+          "count": 1210
+        },
+        {
+          "P": 3,
+          "rt": 3,
+          "count": 4779
+        },
+        {
+          "P": 4,
+          "rt": 3,
+          "count": 176
+        },
+        {
+          "P": 4,
+          "rt": 4,
+          "count": 6796
+        },
+        {
+          "P": 5,
+          "rt": 3,
+          "count": 7
+        },
+        {
+          "P": 5,
+          "rt": 4,
+          "count": 760
+        },
+        {
+          "P": 5,
+          "rt": 5,
+          "count": 7369
+        },
+        {
+          "P": 6,
+          "rt": 4,
+          "count": 110
+        },
+        {
+          "P": 6,
+          "rt": 5,
+          "count": 1206
+        },
+        {
+          "P": 6,
+          "rt": 6,
+          "count": 6015
+        },
+        {
+          "P": 7,
+          "rt": 4,
+          "count": 13
+        },
+        {
+          "P": 7,
+          "rt": 5,
+          "count": 266
+        },
+        {
+          "P": 7,
+          "rt": 6,
+          "count": 1203
+        },
+        {
+          "P": 7,
+          "rt": 7,
+          "count": 4905
+        },
+        {
+          "P": 8,
+          "rt": 5,
+          "count": 65
+        },
+        {
+          "P": 8,
+          "rt": 6,
+          "count": 359
+        },
+        {
+          "P": 8,
+          "rt": 7,
+          "count": 1106
+        },
+        {
+          "P": 8,
+          "rt": 8,
+          "count": 3274
+        },
+        {
+          "P": 9,
+          "rt": 5,
+          "count": 6
+        },
+        {
+          "P": 9,
+          "rt": 6,
+          "count": 80
+        },
+        {
+          "P": 9,
+          "rt": 7,
+          "count": 315
+        },
+        {
+          "P": 9,
+          "rt": 8,
+          "count": 779
+        },
+        {
+          "P": 9,
+          "rt": 9,
+          "count": 1891
+        },
+        {
+          "P": 10,
+          "rt": 6,
+          "count": 16
+        },
+        {
+          "P": 10,
+          "rt": 7,
+          "count": 84
+        },
+        {
+          "P": 10,
+          "rt": 8,
+          "count": 236
+        },
+        {
+          "P": 10,
+          "rt": 9,
+          "count": 504
+        },
+        {
+          "P": 10,
+          "rt": 10,
+          "count": 843
+        },
+        {
+          "P": 11,
+          "rt": 7,
+          "count": 7
+        },
+        {
+          "P": 11,
+          "rt": 8,
+          "count": 63
+        },
+        {
+          "P": 11,
+          "rt": 9,
+          "count": 133
+        },
+        {
+          "P": 11,
+          "rt": 10,
+          "count": 244
+        },
+        {
+          "P": 11,
+          "rt": 11,
+          "count": 444
+        },
+        {
+          "P": 12,
+          "rt": 7,
+          "count": 3
+        },
+        {
+          "P": 12,
+          "rt": 8,
+          "count": 11
+        },
+        {
+          "P": 12,
+          "rt": 9,
+          "count": 30
+        },
+        {
+          "P": 12,
+          "rt": 10,
+          "count": 84
+        },
+        {
+          "P": 12,
+          "rt": 11,
+          "count": 111
+        },
+        {
+          "P": 12,
+          "rt": 12,
+          "count": 350
+        },
+        {
+          "P": 13,
+          "rt": 7,
+          "count": 1
+        },
+        {
+          "P": 13,
+          "rt": 8,
+          "count": 1
+        },
+        {
+          "P": 13,
+          "rt": 9,
+          "count": 7
+        },
+        {
+          "P": 13,
+          "rt": 10,
+          "count": 18
+        },
+        {
+          "P": 13,
+          "rt": 11,
+          "count": 32
+        },
+        {
+          "P": 13,
+          "rt": 12,
+          "count": 74
+        },
+        {
+          "P": 13,
+          "rt": 13,
+          "count": 265
+        },
+        {
+          "P": 14,
+          "rt": 8,
+          "count": 1
+        },
+        {
+          "P": 14,
+          "rt": 10,
+          "count": 4
+        },
+        {
+          "P": 14,
+          "rt": 11,
+          "count": 7
+        },
+        {
+          "P": 14,
+          "rt": 12,
+          "count": 16
+        },
+        {
+          "P": 14,
+          "rt": 13,
+          "count": 26
+        },
+        {
+          "P": 14,
+          "rt": 14,
+          "count": 125
+        },
+        {
+          "P": 15,
+          "rt": 9,
+          "count": 1
+        },
+        {
+          "P": 15,
+          "rt": 10,
+          "count": 2
+        },
+        {
+          "P": 15,
+          "rt": 12,
+          "count": 2
+        },
+        {
+          "P": 15,
+          "rt": 13,
+          "count": 3
+        },
+        {
+          "P": 15,
+          "rt": 14,
+          "count": 7
+        },
+        {
+          "P": 15,
+          "rt": 15,
+          "count": 86
+        },
+        {
+          "P": 16,
+          "rt": 15,
+          "count": 7
+        },
+        {
+          "P": 16,
+          "rt": 16,
+          "count": 60
+        },
+        {
+          "P": 17,
+          "rt": 15,
+          "count": 3
+        },
+        {
+          "P": 17,
+          "rt": 16,
+          "count": 6
+        },
+        {
+          "P": 17,
+          "rt": 17,
+          "count": 24
+        },
+        {
+          "P": 18,
+          "rt": 15,
+          "count": 1
+        },
+        {
+          "P": 18,
+          "rt": 16,
+          "count": 1
+        },
+        {
+          "P": 18,
+          "rt": 17,
+          "count": 2
+        },
+        {
+          "P": 18,
+          "rt": 18,
+          "count": 4
+        },
+        {
+          "P": 19,
+          "rt": 18,
+          "count": 1
+        },
+        {
+          "P": 19,
+          "rt": 19,
+          "count": 2
+        },
+        {
+          "P": 20,
+          "rt": 17,
+          "count": 1
+        },
+        {
+          "P": 20,
+          "rt": 19,
+          "count": 1
+        },
+        {
+          "P": 21,
+          "rt": 21,
+          "count": 2
+        },
+        {
+          "P": 22,
+          "rt": 22,
+          "count": 1
+        },
+        {
+          "P": 25,
+          "rt": 25,
+          "count": 3
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "label": "n6_extremal_001",
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          3,
+          3
+        ],
+        [
+          1,
+          3,
+          5,
+          0,
+          2,
+          4
+        ]
+      ],
+      "source": "direct_attack\\data\\n6_extremal\\summary.json",
+      "source_sha256": "797810ae107ab809f19604ce9c01e8ae30fac60d2e2b73b4e1ee6ed6e07e79d9",
+      "base_policy": 25,
+      "base_rt": 25,
+      "tested": 46656,
+      "increased": 0,
+      "peak_policy": 25,
+      "peak_extra": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "policy_square_failures": [],
+      "short_reset_budget_cases": 6570,
+      "histogram": [
+        {
+          "P": 1,
+          "rt": 1,
+          "count": 6
+        },
+        {
+          "P": 2,
+          "rt": 2,
+          "count": 1210
+        },
+        {
+          "P": 3,
+          "rt": 3,
+          "count": 5246
+        },
+        {
+          "P": 4,
+          "rt": 3,
+          "count": 106
+        },
+        {
+          "P": 4,
+          "rt": 4,
+          "count": 7839
+        },
+        {
+          "P": 5,
+          "rt": 3,
+          "count": 2
+        },
+        {
+          "P": 5,
+          "rt": 4,
+          "count": 674
+        },
+        {
+          "P": 5,
+          "rt": 5,
+          "count": 8445
+        },
+        {
+          "P": 6,
+          "rt": 4,
+          "count": 89
+        },
+        {
+          "P": 6,
+          "rt": 5,
+          "count": 1026
+        },
+        {
+          "P": 6,
+          "rt": 6,
+          "count": 6106
+        },
+        {
+          "P": 7,
+          "rt": 4,
+          "count": 1
+        },
+        {
+          "P": 7,
+          "rt": 5,
+          "count": 271
+        },
+        {
+          "P": 7,
+          "rt": 6,
+          "count": 1068
+        },
+        {
+          "P": 7,
+          "rt": 7,
+          "count": 4558
+        },
+        {
+          "P": 8,
+          "rt": 5,
+          "count": 41
+        },
+        {
+          "P": 8,
+          "rt": 6,
+          "count": 321
+        },
+        {
+          "P": 8,
+          "rt": 7,
+          "count": 953
+        },
+        {
+          "P": 8,
+          "rt": 8,
+          "count": 2817
+        },
+        {
+          "P": 9,
+          "rt": 5,
+          "count": 10
+        },
+        {
+          "P": 9,
+          "rt": 6,
+          "count": 46
+        },
+        {
+          "P": 9,
+          "rt": 7,
+          "count": 278
+        },
+        {
+          "P": 9,
+          "rt": 8,
+          "count": 587
+        },
+        {
+          "P": 9,
+          "rt": 9,
+          "count": 1357
+        },
+        {
+          "P": 10,
+          "rt": 6,
+          "count": 10
+        },
+        {
+          "P": 10,
+          "rt": 7,
+          "count": 52
+        },
+        {
+          "P": 10,
+          "rt": 8,
+          "count": 185
+        },
+        {
+          "P": 10,
+          "rt": 9,
+          "count": 316
+        },
+        {
+          "P": 10,
+          "rt": 10,
+          "count": 680
+        },
+        {
+          "P": 11,
+          "rt": 6,
+          "count": 1
+        },
+        {
+          "P": 11,
+          "rt": 7,
+          "count": 20
+        },
+        {
+          "P": 11,
+          "rt": 8,
+          "count": 33
+        },
+        {
+          "P": 11,
+          "rt": 9,
+          "count": 110
+        },
+        {
+          "P": 11,
+          "rt": 10,
+          "count": 183
+        },
+        {
+          "P": 11,
+          "rt": 11,
+          "count": 437
+        },
+        {
+          "P": 12,
+          "rt": 6,
+          "count": 1
+        },
+        {
+          "P": 12,
+          "rt": 7,
+          "count": 1
+        },
+        {
+          "P": 12,
+          "rt": 8,
+          "count": 7
+        },
+        {
+          "P": 12,
+          "rt": 9,
+          "count": 21
+        },
+        {
+          "P": 12,
+          "rt": 10,
+          "count": 91
+        },
+        {
+          "P": 12,
+          "rt": 11,
+          "count": 72
+        },
+        {
+          "P": 12,
+          "rt": 12,
+          "count": 378
+        },
+        {
+          "P": 13,
+          "rt": 8,
+          "count": 2
+        },
+        {
+          "P": 13,
+          "rt": 9,
+          "count": 7
+        },
+        {
+          "P": 13,
+          "rt": 10,
+          "count": 26
+        },
+        {
+          "P": 13,
+          "rt": 11,
+          "count": 41
+        },
+        {
+          "P": 13,
+          "rt": 12,
+          "count": 74
+        },
+        {
+          "P": 13,
+          "rt": 13,
+          "count": 210
+        },
+        {
+          "P": 14,
+          "rt": 10,
+          "count": 2
+        },
+        {
+          "P": 14,
+          "rt": 11,
+          "count": 12
+        },
+        {
+          "P": 14,
+          "rt": 12,
+          "count": 21
+        },
+        {
+          "P": 14,
+          "rt": 13,
+          "count": 40
+        },
+        {
+          "P": 14,
+          "rt": 14,
+          "count": 162
+        },
+        {
+          "P": 15,
+          "rt": 11,
+          "count": 4
+        },
+        {
+          "P": 15,
+          "rt": 12,
+          "count": 8
+        },
+        {
+          "P": 15,
+          "rt": 13,
+          "count": 13
+        },
+        {
+          "P": 15,
+          "rt": 14,
+          "count": 36
+        },
+        {
+          "P": 15,
+          "rt": 15,
+          "count": 100
+        },
+        {
+          "P": 16,
+          "rt": 14,
+          "count": 8
+        },
+        {
+          "P": 16,
+          "rt": 15,
+          "count": 13
+        },
+        {
+          "P": 16,
+          "rt": 16,
+          "count": 67
+        },
+        {
+          "P": 17,
+          "rt": 14,
+          "count": 3
+        },
+        {
+          "P": 17,
+          "rt": 15,
+          "count": 7
+        },
+        {
+          "P": 17,
+          "rt": 16,
+          "count": 15
+        },
+        {
+          "P": 17,
+          "rt": 17,
+          "count": 40
+        },
+        {
+          "P": 18,
+          "rt": 15,
+          "count": 2
+        },
+        {
+          "P": 18,
+          "rt": 16,
+          "count": 3
+        },
+        {
+          "P": 18,
+          "rt": 17,
+          "count": 9
+        },
+        {
+          "P": 18,
+          "rt": 18,
+          "count": 12
+        },
+        {
+          "P": 19,
+          "rt": 17,
+          "count": 2
+        },
+        {
+          "P": 19,
+          "rt": 18,
+          "count": 6
+        },
+        {
+          "P": 19,
+          "rt": 19,
+          "count": 17
+        },
+        {
+          "P": 20,
+          "rt": 20,
+          "count": 18
+        },
+        {
+          "P": 21,
+          "rt": 20,
+          "count": 4
+        },
+        {
+          "P": 21,
+          "rt": 21,
+          "count": 6
+        },
+        {
+          "P": 22,
+          "rt": 21,
+          "count": 3
+        },
+        {
+          "P": 22,
+          "rt": 22,
+          "count": 3
+        },
+        {
+          "P": 23,
+          "rt": 23,
+          "count": 2
+        },
+        {
+          "P": 25,
+          "rt": 25,
+          "count": 3
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "label": "n6_extremal_002",
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          3,
+          3
+        ],
+        [
+          1,
+          3,
+          4,
+          0,
+          5,
+          2
+        ]
+      ],
+      "source": "direct_attack\\data\\n6_extremal\\summary.json",
+      "source_sha256": "797810ae107ab809f19604ce9c01e8ae30fac60d2e2b73b4e1ee6ed6e07e79d9",
+      "base_policy": 23,
+      "base_rt": 23,
+      "tested": 46656,
+      "increased": 0,
+      "peak_policy": 23,
+      "peak_extra": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "policy_square_failures": [],
+      "short_reset_budget_cases": 6578,
+      "histogram": [
+        {
+          "P": 1,
+          "rt": 1,
+          "count": 6
+        },
+        {
+          "P": 2,
+          "rt": 2,
+          "count": 1210
+        },
+        {
+          "P": 3,
+          "rt": 3,
+          "count": 5244
+        },
+        {
+          "P": 4,
+          "rt": 3,
+          "count": 116
+        },
+        {
+          "P": 4,
+          "rt": 4,
+          "count": 7848
+        },
+        {
+          "P": 5,
+          "rt": 3,
+          "count": 2
+        },
+        {
+          "P": 5,
+          "rt": 4,
+          "count": 711
+        },
+        {
+          "P": 5,
+          "rt": 5,
+          "count": 8473
+        },
+        {
+          "P": 6,
+          "rt": 4,
+          "count": 77
+        },
+        {
+          "P": 6,
+          "rt": 5,
+          "count": 1162
+        },
+        {
+          "P": 6,
+          "rt": 6,
+          "count": 6454
+        },
+        {
+          "P": 7,
+          "rt": 5,
+          "count": 265
+        },
+        {
+          "P": 7,
+          "rt": 6,
+          "count": 1082
+        },
+        {
+          "P": 7,
+          "rt": 7,
+          "count": 4602
+        },
+        {
+          "P": 8,
+          "rt": 5,
+          "count": 37
+        },
+        {
+          "P": 8,
+          "rt": 6,
+          "count": 293
+        },
+        {
+          "P": 8,
+          "rt": 7,
+          "count": 773
+        },
+        {
+          "P": 8,
+          "rt": 8,
+          "count": 2909
+        },
+        {
+          "P": 9,
+          "rt": 5,
+          "count": 3
+        },
+        {
+          "P": 9,
+          "rt": 6,
+          "count": 34
+        },
+        {
+          "P": 9,
+          "rt": 7,
+          "count": 218
+        },
+        {
+          "P": 9,
+          "rt": 8,
+          "count": 511
+        },
+        {
+          "P": 9,
+          "rt": 9,
+          "count": 1351
+        },
+        {
+          "P": 10,
+          "rt": 5,
+          "count": 1
+        },
+        {
+          "P": 10,
+          "rt": 6,
+          "count": 7
+        },
+        {
+          "P": 10,
+          "rt": 7,
+          "count": 38
+        },
+        {
+          "P": 10,
+          "rt": 8,
+          "count": 122
+        },
+        {
+          "P": 10,
+          "rt": 9,
+          "count": 273
+        },
+        {
+          "P": 10,
+          "rt": 10,
+          "count": 764
+        },
+        {
+          "P": 11,
+          "rt": 7,
+          "count": 8
+        },
+        {
+          "P": 11,
+          "rt": 8,
+          "count": 30
+        },
+        {
+          "P": 11,
+          "rt": 9,
+          "count": 64
+        },
+        {
+          "P": 11,
+          "rt": 10,
+          "count": 146
+        },
+        {
+          "P": 11,
+          "rt": 11,
+          "count": 456
+        },
+        {
+          "P": 12,
+          "rt": 6,
+          "count": 2
+        },
+        {
+          "P": 12,
+          "rt": 7,
+          "count": 1
+        },
+        {
+          "P": 12,
+          "rt": 8,
+          "count": 3
+        },
+        {
+          "P": 12,
+          "rt": 9,
+          "count": 18
+        },
+        {
+          "P": 12,
+          "rt": 10,
+          "count": 42
+        },
+        {
+          "P": 12,
+          "rt": 11,
+          "count": 98
+        },
+        {
+          "P": 12,
+          "rt": 12,
+          "count": 339
+        },
+        {
+          "P": 13,
+          "rt": 8,
+          "count": 4
+        },
+        {
+          "P": 13,
+          "rt": 9,
+          "count": 5
+        },
+        {
+          "P": 13,
+          "rt": 10,
+          "count": 17
+        },
+        {
+          "P": 13,
+          "rt": 11,
+          "count": 23
+        },
+        {
+          "P": 13,
+          "rt": 12,
+          "count": 72
+        },
+        {
+          "P": 13,
+          "rt": 13,
+          "count": 203
+        },
+        {
+          "P": 14,
+          "rt": 9,
+          "count": 1
+        },
+        {
+          "P": 14,
+          "rt": 10,
+          "count": 3
+        },
+        {
+          "P": 14,
+          "rt": 11,
+          "count": 7
+        },
+        {
+          "P": 14,
+          "rt": 12,
+          "count": 22
+        },
+        {
+          "P": 14,
+          "rt": 13,
+          "count": 68
+        },
+        {
+          "P": 14,
+          "rt": 14,
+          "count": 129
+        },
+        {
+          "P": 15,
+          "rt": 10,
+          "count": 1
+        },
+        {
+          "P": 15,
+          "rt": 12,
+          "count": 3
+        },
+        {
+          "P": 15,
+          "rt": 13,
+          "count": 20
+        },
+        {
+          "P": 15,
+          "rt": 14,
+          "count": 31
+        },
+        {
+          "P": 15,
+          "rt": 15,
+          "count": 62
+        },
+        {
+          "P": 16,
+          "rt": 12,
+          "count": 1
+        },
+        {
+          "P": 16,
+          "rt": 13,
+          "count": 7
+        },
+        {
+          "P": 16,
+          "rt": 14,
+          "count": 15
+        },
+        {
+          "P": 16,
+          "rt": 15,
+          "count": 21
+        },
+        {
+          "P": 16,
+          "rt": 16,
+          "count": 24
+        },
+        {
+          "P": 17,
+          "rt": 14,
+          "count": 4
+        },
+        {
+          "P": 17,
+          "rt": 15,
+          "count": 3
+        },
+        {
+          "P": 17,
+          "rt": 16,
+          "count": 8
+        },
+        {
+          "P": 17,
+          "rt": 17,
+          "count": 28
+        },
+        {
+          "P": 18,
+          "rt": 14,
+          "count": 5
+        },
+        {
+          "P": 18,
+          "rt": 15,
+          "count": 4
+        },
+        {
+          "P": 18,
+          "rt": 16,
+          "count": 1
+        },
+        {
+          "P": 18,
+          "rt": 17,
+          "count": 1
+        },
+        {
+          "P": 18,
+          "rt": 18,
+          "count": 29
+        },
+        {
+          "P": 19,
+          "rt": 15,
+          "count": 2
+        },
+        {
+          "P": 19,
+          "rt": 16,
+          "count": 2
+        },
+        {
+          "P": 19,
+          "rt": 17,
+          "count": 1
+        },
+        {
+          "P": 19,
+          "rt": 19,
+          "count": 16
+        },
+        {
+          "P": 20,
+          "rt": 19,
+          "count": 4
+        },
+        {
+          "P": 20,
+          "rt": 20,
+          "count": 7
+        },
+        {
+          "P": 21,
+          "rt": 20,
+          "count": 3
+        },
+        {
+          "P": 21,
+          "rt": 21,
+          "count": 2
+        },
+        {
+          "P": 22,
+          "rt": 22,
+          "count": 1
+        },
+        {
+          "P": 23,
+          "rt": 23,
+          "count": 3
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "label": "n6_extremal_003",
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          2,
+          5,
+          0,
+          3,
+          1,
+          4
+        ]
+      ],
+      "source": "direct_attack\\data\\n6_extremal\\summary.json",
+      "source_sha256": "797810ae107ab809f19604ce9c01e8ae30fac60d2e2b73b4e1ee6ed6e07e79d9",
+      "base_policy": 23,
+      "base_rt": 23,
+      "tested": 46656,
+      "increased": 0,
+      "peak_policy": 23,
+      "peak_extra": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "policy_square_failures": [],
+      "short_reset_budget_cases": 6700,
+      "histogram": [
+        {
+          "P": 1,
+          "rt": 1,
+          "count": 6
+        },
+        {
+          "P": 2,
+          "rt": 2,
+          "count": 1210
+        },
+        {
+          "P": 3,
+          "rt": 3,
+          "count": 5339
+        },
+        {
+          "P": 4,
+          "rt": 3,
+          "count": 143
+        },
+        {
+          "P": 4,
+          "rt": 4,
+          "count": 7952
+        },
+        {
+          "P": 5,
+          "rt": 3,
+          "count": 2
+        },
+        {
+          "P": 5,
+          "rt": 4,
+          "count": 788
+        },
+        {
+          "P": 5,
+          "rt": 5,
+          "count": 8501
+        },
+        {
+          "P": 6,
+          "rt": 4,
+          "count": 88
+        },
+        {
+          "P": 6,
+          "rt": 5,
+          "count": 1172
+        },
+        {
+          "P": 6,
+          "rt": 6,
+          "count": 5991
+        },
+        {
+          "P": 7,
+          "rt": 4,
+          "count": 10
+        },
+        {
+          "P": 7,
+          "rt": 5,
+          "count": 263
+        },
+        {
+          "P": 7,
+          "rt": 6,
+          "count": 1327
+        },
+        {
+          "P": 7,
+          "rt": 7,
+          "count": 4268
+        },
+        {
+          "P": 8,
+          "rt": 4,
+          "count": 1
+        },
+        {
+          "P": 8,
+          "rt": 5,
+          "count": 52
+        },
+        {
+          "P": 8,
+          "rt": 6,
+          "count": 342
+        },
+        {
+          "P": 8,
+          "rt": 7,
+          "count": 1001
+        },
+        {
+          "P": 8,
+          "rt": 8,
+          "count": 2419
+        },
+        {
+          "P": 9,
+          "rt": 5,
+          "count": 8
+        },
+        {
+          "P": 9,
+          "rt": 6,
+          "count": 85
+        },
+        {
+          "P": 9,
+          "rt": 7,
+          "count": 282
+        },
+        {
+          "P": 9,
+          "rt": 8,
+          "count": 645
+        },
+        {
+          "P": 9,
+          "rt": 9,
+          "count": 1257
+        },
+        {
+          "P": 10,
+          "rt": 5,
+          "count": 1
+        },
+        {
+          "P": 10,
+          "rt": 6,
+          "count": 12
+        },
+        {
+          "P": 10,
+          "rt": 7,
+          "count": 58
+        },
+        {
+          "P": 10,
+          "rt": 8,
+          "count": 172
+        },
+        {
+          "P": 10,
+          "rt": 9,
+          "count": 340
+        },
+        {
+          "P": 10,
+          "rt": 10,
+          "count": 629
+        },
+        {
+          "P": 11,
+          "rt": 6,
+          "count": 2
+        },
+        {
+          "P": 11,
+          "rt": 7,
+          "count": 11
+        },
+        {
+          "P": 11,
+          "rt": 8,
+          "count": 50
+        },
+        {
+          "P": 11,
+          "rt": 9,
+          "count": 131
+        },
+        {
+          "P": 11,
+          "rt": 10,
+          "count": 189
+        },
+        {
+          "P": 11,
+          "rt": 11,
+          "count": 438
+        },
+        {
+          "P": 12,
+          "rt": 6,
+          "count": 1
+        },
+        {
+          "P": 12,
+          "rt": 7,
+          "count": 2
+        },
+        {
+          "P": 12,
+          "rt": 8,
+          "count": 6
+        },
+        {
+          "P": 12,
+          "rt": 9,
+          "count": 26
+        },
+        {
+          "P": 12,
+          "rt": 10,
+          "count": 62
+        },
+        {
+          "P": 12,
+          "rt": 11,
+          "count": 120
+        },
+        {
+          "P": 12,
+          "rt": 12,
+          "count": 319
+        },
+        {
+          "P": 13,
+          "rt": 8,
+          "count": 5
+        },
+        {
+          "P": 13,
+          "rt": 9,
+          "count": 1
+        },
+        {
+          "P": 13,
+          "rt": 10,
+          "count": 26
+        },
+        {
+          "P": 13,
+          "rt": 11,
+          "count": 47
+        },
+        {
+          "P": 13,
+          "rt": 12,
+          "count": 52
+        },
+        {
+          "P": 13,
+          "rt": 13,
+          "count": 256
+        },
+        {
+          "P": 14,
+          "rt": 8,
+          "count": 1
+        },
+        {
+          "P": 14,
+          "rt": 9,
+          "count": 1
+        },
+        {
+          "P": 14,
+          "rt": 10,
+          "count": 1
+        },
+        {
+          "P": 14,
+          "rt": 11,
+          "count": 2
+        },
+        {
+          "P": 14,
+          "rt": 12,
+          "count": 11
+        },
+        {
+          "P": 14,
+          "rt": 13,
+          "count": 32
+        },
+        {
+          "P": 14,
+          "rt": 14,
+          "count": 115
+        },
+        {
+          "P": 15,
+          "rt": 11,
+          "count": 1
+        },
+        {
+          "P": 15,
+          "rt": 12,
+          "count": 3
+        },
+        {
+          "P": 15,
+          "rt": 13,
+          "count": 6
+        },
+        {
+          "P": 15,
+          "rt": 14,
+          "count": 22
+        },
+        {
+          "P": 15,
+          "rt": 15,
+          "count": 101
+        },
+        {
+          "P": 16,
+          "rt": 13,
+          "count": 1
+        },
+        {
+          "P": 16,
+          "rt": 14,
+          "count": 11
+        },
+        {
+          "P": 16,
+          "rt": 15,
+          "count": 16
+        },
+        {
+          "P": 16,
+          "rt": 16,
+          "count": 70
+        },
+        {
+          "P": 17,
+          "rt": 14,
+          "count": 1
+        },
+        {
+          "P": 17,
+          "rt": 15,
+          "count": 3
+        },
+        {
+          "P": 17,
+          "rt": 16,
+          "count": 11
+        },
+        {
+          "P": 17,
+          "rt": 17,
+          "count": 48
+        },
+        {
+          "P": 18,
+          "rt": 16,
+          "count": 3
+        },
+        {
+          "P": 18,
+          "rt": 17,
+          "count": 2
+        },
+        {
+          "P": 18,
+          "rt": 18,
+          "count": 16
+        },
+        {
+          "P": 19,
+          "rt": 16,
+          "count": 1
+        },
+        {
+          "P": 19,
+          "rt": 17,
+          "count": 3
+        },
+        {
+          "P": 19,
+          "rt": 18,
+          "count": 4
+        },
+        {
+          "P": 19,
+          "rt": 19,
+          "count": 23
+        },
+        {
+          "P": 20,
+          "rt": 18,
+          "count": 2
+        },
+        {
+          "P": 20,
+          "rt": 19,
+          "count": 1
+        },
+        {
+          "P": 20,
+          "rt": 20,
+          "count": 20
+        },
+        {
+          "P": 21,
+          "rt": 21,
+          "count": 10
+        },
+        {
+          "P": 22,
+          "rt": 22,
+          "count": 3
+        },
+        {
+          "P": 23,
+          "rt": 23,
+          "count": 3
+        }
+      ]
+    }
+  ],
+  "tested": 236624,
+  "increased": 0,
+  "square_failures": 0,
+  "seconds": 6.109000000000378,
+  "scope": "Every single n^n transformation added to each of 20 retained binary n5/6 near-extremal bases, including duplicate/identity/constant maps. Arbitrary multiple additions or arbitrary ternary inputs are not covered."
+}

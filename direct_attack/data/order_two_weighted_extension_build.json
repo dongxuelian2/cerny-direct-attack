@@ -1,0 +1,22 @@
+{
+  "source_sha256": "5330d4e54f6d4131f1f10acc1c340358df0d0384d7f3654cfc2e0abd1070e713",
+  "binary_sha256": "3af7401e01b08f37dc1c1fa5fa863d72fa59abba2d559afe8228112fd68d567d",
+  "build": {
+    "argv": [
+      "<CXX_BIN>/g++.exe",
+      "-O3",
+      "-std=c++11",
+      "-static-libgcc",
+      "-static-libstdc++",
+      "<CHECKOUT>\\direct_attack\\order_two_weighted_extension.cpp",
+      "-o",
+      "<CHECKOUT>\\direct_attack\\native_build\\order_two_weighted_extension.exe"
+    ],
+    "cwd": "<CHECKOUT>",
+    "start_utc": "2026-10-03T03:41:45.334510+00:00",
+    "seconds": 2.436999999999898,
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+}

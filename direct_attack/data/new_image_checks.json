@@ -1,0 +1,358 @@
+{
+  "families": [
+    {
+      "file": "direct_attack\\data\\local_rank_family\\n10.json",
+      "reachable": 1022,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\local_rank_family\\n11.json",
+      "reachable": 2046,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\local_rank_family\\n12.json",
+      "reachable": 4094,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\local_rank_family\\n5.json",
+      "reachable": 30,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\local_rank_family\\n6.json",
+      "reachable": 62,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\local_rank_family\\n7.json",
+      "reachable": 126,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\local_rank_family\\n8.json",
+      "reachable": 254,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\local_rank_family\\n9.json",
+      "reachable": 510,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\fixed_arm_family\\n10.json",
+      "reachable": 960,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\fixed_arm_family\\n11.json",
+      "reachable": 1920,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\fixed_arm_family\\n12.json",
+      "reachable": 3840,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\fixed_arm_family\\n5.json",
+      "reachable": 30,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\fixed_arm_family\\n6.json",
+      "reachable": 60,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\fixed_arm_family\\n7.json",
+      "reachable": 120,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\fixed_arm_family\\n8.json",
+      "reachable": 240,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\fixed_arm_family\\n9.json",
+      "reachable": 480,
+      "verified": true
+    }
+  ],
+  "critical": [
+    {
+      "n": 5,
+      "rows": [
+        [
+          0,
+          2,
+          3,
+          4,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          4,
+          3
+        ]
+      ],
+      "start": 28,
+      "reach_word": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "extension": 8,
+      "policy": 11,
+      "bound": 10,
+      "avoiding": 11,
+      "word_into_start": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "phases": [
+        {
+          "start": 28,
+          "larger": 15,
+          "word": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "cost": 8,
+          "tail": 3
+        },
+        {
+          "start": 15,
+          "larger": 31,
+          "word": [
+            1,
+            0,
+            0
+          ],
+          "cost": 3,
+          "tail": 0
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "rows": [
+        [
+          0,
+          2,
+          3,
+          4,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          4,
+          3
+        ]
+      ],
+      "start": 28,
+      "reach_word": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "extension": 8,
+      "policy": 11,
+      "bound": 10,
+      "avoiding": 11,
+      "word_into_start": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "phases": [
+        {
+          "start": 28,
+          "larger": 15,
+          "word": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "cost": 8,
+          "tail": 3
+        },
+        {
+          "start": 15,
+          "larger": 31,
+          "word": [
+            1,
+            0,
+            0
+          ],
+          "cost": 3,
+          "tail": 0
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          5,
+          2
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          5,
+          4
+        ]
+      ],
+      "start": 56,
+      "reach_word": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "extension": 9,
+      "policy": 19,
+      "bound": 18,
+      "avoiding": 16,
+      "word_into_start": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "phases": [
+        {
+          "start": 56,
+          "larger": 45,
+          "word": [
+            1,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "cost": 9,
+          "tail": 10
+        },
+        {
+          "start": 45,
+          "larger": 31,
+          "word": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0
+          ],
+          "cost": 7,
+          "tail": 3
+        },
+        {
+          "start": 31,
+          "larger": 63,
+          "word": [
+            1,
+            0,
+            0
+          ],
+          "cost": 3,
+          "tail": 0
+        }
+      ]
+    }
+  ],
+  "union": {
+    "n": 3,
+    "verified": true
+  }
+}

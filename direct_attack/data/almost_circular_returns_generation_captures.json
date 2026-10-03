@@ -1,0 +1,36 @@
+{
+  "verified": true,
+  "runs": [
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.almost_circular_returns"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T06:16:35.240443+00:00",
+      "seconds": 0.3899999999994179,
+      "returncode": 0,
+      "stdout": "{\"cases\": 872, \"sync\": 685, \"cf_only_square_failures\": 100, \"counter_costs\": [25, 25, 24], \"boundary\": \"All872 finite normal-form permutations n3..7 and one retained paid n6 obstruction. Paper all-n c/f synchronization equivalence PROVED separately; c/f-only entered cost26 exceeds square25, adding A enters at25. No general paid square theorem or formal proof; Cerny OPEN.\"}\n",
+      "stderr": "",
+      "output_sha256": "4f680bab2397c5291689f874bc7bbc437cdefc2a9ee28f2cd9f26977aa3804cf"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.almost_circular_returns"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T06:17:23.331045+00:00",
+      "seconds": 0.3899999999994179,
+      "returncode": 0,
+      "stdout": "{\"cases\": 872, \"sync\": 685, \"cf_only_square_failures\": 100, \"counter_costs\": [25, 25, 24], \"boundary\": \"All872 finite normal-form permutations n3..7 and one retained paid n6 obstruction. Paper all-n c/f synchronization equivalence PROVED separately; c/f-only entered cost26 exceeds square25, adding A enters at25. No general paid square theorem or formal proof; Cerny OPEN.\"}\n",
+      "stderr": "",
+      "output_sha256": "4f680bab2397c5291689f874bc7bbc437cdefc2a9ee28f2cd9f26977aa3804cf"
+    }
+  ],
+  "bytes_equal": true,
+  "normalization": "none",
+  "generator_sha256": "afbb1f04a9bdbdcebae1086f095db7c15d9b8aaa694bf8acb11a683e5d5c8c7d"
+}

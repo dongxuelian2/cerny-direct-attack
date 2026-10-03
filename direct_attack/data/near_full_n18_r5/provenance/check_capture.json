@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "<PYTHON_RUNTIME>\\python.exe",
+    "-m",
+    "direct_attack.check_near_full"
+  ],
+  "cwd": "<CHECKOUT>",
+  "start_unix": 1790695815.5931296,
+  "seconds": 0.4280259609222412,
+  "returncode": 0,
+  "stdout": "{\"checked\": 67, \"verified\": true}\n",
+  "stderr": ""
+}

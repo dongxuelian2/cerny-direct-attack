@@ -1,0 +1,21 @@
+{
+  "source_sha256": "5330d4e54f6d4131f1f10acc1c340358df0d0384d7f3654cfc2e0abd1070e713",
+  "binary_sha256": "3af7401e01b08f37dc1c1fa5fa863d72fa59abba2d559afe8228112fd68d567d",
+  "witness_sha256": "e347f611126de62e068090b48131b8e0c5284398eb2c68d0e1bd128bd1dc36cc",
+  "counter_sha256": "abdfbffecbe18ed94df9829819e596ee285b52a94aa108514452a9121721c789",
+  "run": {
+    "argv": [
+      "<CHECKOUT>\\direct_attack\\native_build\\order_two_weighted_extension.exe",
+      "16",
+      "<CHECKOUT>\\direct_attack\\data\\order_two_weighted_M16_sample2000.tsv",
+      "<CHECKOUT>\\direct_attack\\data\\order_two_weighted_M16_sample2000.counter.json",
+      "2000"
+    ],
+    "cwd": "<CHECKOUT>",
+    "start_utc": "2026-10-03T03:45:29.856427+00:00",
+    "seconds": 31.40599999999904,
+    "returncode": 0,
+    "stdout": "{\"counterexample\":false,\"full_scope\":false,\"inputs\":2000,\"synchronizing\":2000,\"weighted_whole_controls\":1020000,\"maximum_minimum\":10}\n",
+    "stderr": ""
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "argv": [
+    "<PYTHON_RUNTIME>\\python.exe",
+    "-m",
+    "direct_attack.seed_inclusion_attack"
+  ],
+  "cwd": "<CHECKOUT>",
+  "start_utc": "2026-09-29T10:16:07.236977+00:00",
+  "seconds": 13.21900000000096,
+  "returncode": 0
+}

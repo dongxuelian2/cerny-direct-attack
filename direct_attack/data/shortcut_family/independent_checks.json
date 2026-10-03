@@ -1,0 +1,955 @@
+{
+  "records": [
+    {
+      "n": 4,
+      "rank_drop_vertices": [
+        3,
+        3
+      ],
+      "reset_upper": 4,
+      "old_forward_kernel_agrees": true,
+      "sparse_cache": 8,
+      "sparse_inverse_vertices": 52,
+      "independent_exact_singletons": true
+    },
+    {
+      "n": 5,
+      "rank_drop_vertices": [
+        4,
+        4
+      ],
+      "reset_upper": 5,
+      "old_forward_kernel_agrees": true,
+      "sparse_cache": 11,
+      "sparse_inverse_vertices": 72,
+      "independent_exact_singletons": true
+    },
+    {
+      "n": 6,
+      "rank_drop_vertices": [
+        5,
+        5
+      ],
+      "reset_upper": 6,
+      "target": [
+        0,
+        2,
+        5
+      ],
+      "neutral_guard_vertices": [
+        {
+          "set": [
+            0,
+            2,
+            5
+          ],
+          "used": 0
+        },
+        {
+          "set": [
+            0,
+            3,
+            5
+          ],
+          "used": 1
+        },
+        {
+          "set": [
+            1,
+            2,
+            3
+          ],
+          "used": 1
+        },
+        {
+          "set": [
+            1,
+            4,
+            5
+          ],
+          "used": 1
+        },
+        {
+          "set": [
+            0,
+            2,
+            4,
+            5
+          ],
+          "used": 1
+        }
+      ],
+      "transport_lower": 5,
+      "global_policy_lower": 7,
+      "old_forward_kernel_agrees": true,
+      "sparse_cache": 14,
+      "sparse_inverse_vertices": 162,
+      "independent_exact_singletons": true
+    },
+    {
+      "n": 7,
+      "rank_drop_vertices": [
+        6,
+        6
+      ],
+      "reset_upper": 7,
+      "target": [
+        0,
+        3,
+        6
+      ],
+      "neutral_guard_vertices": [
+        {
+          "set": [
+            0,
+            3,
+            6
+          ],
+          "used": 0
+        },
+        {
+          "set": [
+            1,
+            2,
+            4
+          ],
+          "used": 1
+        },
+        {
+          "set": [
+            2,
+            5,
+            6
+          ],
+          "used": 1
+        },
+        {
+          "set": [
+            0,
+            1,
+            3,
+            6
+          ],
+          "used": 1
+        }
+      ],
+      "transport_lower": 6,
+      "global_policy_lower": 8,
+      "old_forward_kernel_agrees": true,
+      "sparse_cache": 17,
+      "sparse_inverse_vertices": 165,
+      "independent_exact_singletons": true
+    },
+    {
+      "n": 8,
+      "rank_drop_vertices": [
+        7,
+        7
+      ],
+      "reset_upper": 8,
+      "target": [
+        0,
+        4,
+        7
+      ],
+      "neutral_guard_vertices": [
+        {
+          "set": [
+            0,
+            4,
+            7
+          ],
+          "used": 0
+        },
+        {
+          "set": [
+            1,
+            2,
+            5
+          ],
+          "used": 1
+        },
+        {
+          "set": [
+            3,
+            6,
+            7
+          ],
+          "used": 1
+        },
+        {
+          "set": [
+            0,
+            2,
+            4,
+            7
+          ],
+          "used": 1
+        }
+      ],
+      "transport_lower": 7,
+      "global_policy_lower": 9,
+      "old_forward_kernel_agrees": true,
+      "sparse_cache": 20,
+      "sparse_inverse_vertices": 254,
+      "independent_exact_singletons": true
+    },
+    {
+      "n": 9,
+      "rank_drop_vertices": [
+        8,
+        8
+      ],
+      "reset_upper": 9,
+      "target": [
+        0,
+        5,
+        8
+      ],
+      "neutral_guard_vertices": [
+        {
+          "set": [
+            0,
+            5,
+            8
+          ],
+          "used": 0
+        },
+        {
+          "set": [
+            1,
+            2,
+            6
+          ],
+          "used": 1
+        },
+        {
+          "set": [
+            4,
+            7,
+            8
+          ],
+          "used": 1
+        },
+        {
+          "set": [
+            0,
+            3,
+            5,
+            8
+          ],
+          "used": 1
+        }
+      ],
+      "transport_lower": 8,
+      "global_policy_lower": 10,
+      "old_forward_kernel_agrees": true,
+      "sparse_cache": 26,
+      "sparse_inverse_vertices": 338,
+      "independent_exact_singletons": true
+    },
+    {
+      "n": 10,
+      "rank_drop_vertices": [
+        9,
+        9
+      ],
+      "reset_upper": 10,
+      "target": [
+        0,
+        6,
+        9
+      ],
+      "neutral_guard_vertices": [
+        {
+          "set": [
+            0,
+            6,
+            9
+          ],
+          "used": 0
+        },
+        {
+          "set": [
+            1,
+            2,
+            7
+          ],
+          "used": 1
+        },
+        {
+          "set": [
+            5,
+            8,
+            9
+          ],
+          "used": 1
+        },
+        {
+          "set": [
+            0,
+            4,
+            6,
+            9
+          ],
+          "used": 1
+        }
+      ],
+      "transport_lower": 9,
+      "global_policy_lower": 11,
+      "old_forward_kernel_agrees": true,
+      "sparse_cache": 31,
+      "sparse_inverse_vertices": 487,
+      "independent_exact_singletons": true
+    },
+    {
+      "n": 11,
+      "rank_drop_vertices": [
+        10,
+        10
+      ],
+      "reset_upper": 11,
+      "target": [
+        0,
+        7,
+        10
+      ],
+      "neutral_guard_vertices": [
+        {
+          "set": [
+            0,
+            7,
+            10
+          ],
+          "used": 0
+        },
+        {
+          "set": [
+            1,
+            2,
+            8
+          ],
+          "used": 1
+        },
+        {
+          "set": [
+            6,
+            9,
+            10
+          ],
+          "used": 1
+        },
+        {
+          "set": [
+            0,
+            5,
+            7,
+            10
+          ],
+          "used": 1
+        }
+      ],
+      "transport_lower": 10,
+      "global_policy_lower": 12,
+      "old_forward_kernel_agrees": true,
+      "sparse_cache": 39,
+      "sparse_inverse_vertices": 622,
+      "independent_exact_singletons": true
+    },
+    {
+      "n": 12,
+      "rank_drop_vertices": [
+        11,
+        11
+      ],
+      "reset_upper": 12,
+      "target": [
+        0,
+        8,
+        11
+      ],
+      "neutral_guard_vertices": [
+        {
+          "set": [
+            0,
+            8,
+            11
+          ],
+          "used": 0
+        },
+        {
+          "set": [
+            1,
+            2,
+            9
+          ],
+          "used": 1
+        },
+        {
+          "set": [
+            7,
+            10,
+            11
+          ],
+          "used": 1
+        },
+        {
+          "set": [
+            0,
+            6,
+            8,
+            11
+          ],
+          "used": 1
+        }
+      ],
+      "transport_lower": 11,
+      "global_policy_lower": 13,
+      "old_forward_kernel_agrees": true,
+      "sparse_cache": 50,
+      "sparse_inverse_vertices": 933,
+      "independent_exact_singletons": true
+    },
+    {
+      "n": 13,
+      "rank_drop_vertices": [
+        12,
+        12
+      ],
+      "reset_upper": 13,
+      "target": [
+        0,
+        9,
+        12
+      ],
+      "neutral_guard_vertices": [
+        {
+          "set": [
+            0,
+            9,
+            12
+          ],
+          "used": 0
+        },
+        {
+          "set": [
+            1,
+            2,
+            10
+          ],
+          "used": 1
+        },
+        {
+          "set": [
+            8,
+            11,
+            12
+          ],
+          "used": 1
+        },
+        {
+          "set": [
+            0,
+            7,
+            9,
+            12
+          ],
+          "used": 1
+        }
+      ],
+      "transport_lower": 12,
+      "global_policy_lower": 14,
+      "sparse_cache": 57,
+      "sparse_inverse_vertices": 1120,
+      "independent_exact_singletons": true
+    },
+    {
+      "n": 14,
+      "rank_drop_vertices": [
+        13,
+        13
+      ],
+      "reset_upper": 14,
+      "target": [
+        0,
+        10,
+        13
+      ],
+      "neutral_guard_vertices": [
+        {
+          "set": [
+            0,
+            10,
+            13
+          ],
+          "used": 0
+        },
+        {
+          "set": [
+            1,
+            2,
+            11
+          ],
+          "used": 1
+        },
+        {
+          "set": [
+            9,
+            12,
+            13
+          ],
+          "used": 1
+        },
+        {
+          "set": [
+            0,
+            8,
+            10,
+            13
+          ],
+          "used": 1
+        }
+      ],
+      "transport_lower": 13,
+      "global_policy_lower": 15,
+      "sparse_cache": 77,
+      "sparse_inverse_vertices": 1669,
+      "independent_exact_singletons": true
+    },
+    {
+      "n": 15,
+      "rank_drop_vertices": [
+        14,
+        14
+      ],
+      "reset_upper": 15,
+      "target": [
+        0,
+        11,
+        14
+      ],
+      "neutral_guard_vertices": [
+        {
+          "set": [
+            0,
+            11,
+            14
+          ],
+          "used": 0
+        },
+        {
+          "set": [
+            1,
+            2,
+            12
+          ],
+          "used": 1
+        },
+        {
+          "set": [
+            10,
+            13,
+            14
+          ],
+          "used": 1
+        },
+        {
+          "set": [
+            0,
+            9,
+            11,
+            14
+          ],
+          "used": 1
+        }
+      ],
+      "transport_lower": 14,
+      "global_policy_lower": 16,
+      "sparse_cache": 84,
+      "sparse_inverse_vertices": 1877,
+      "independent_exact_singletons": true
+    },
+    {
+      "n": 16,
+      "rank_drop_vertices": [
+        15,
+        15
+      ],
+      "reset_upper": 16,
+      "target": [
+        0,
+        12,
+        15
+      ],
+      "neutral_guard_vertices": [
+        {
+          "set": [
+            0,
+            12,
+            15
+          ],
+          "used": 0
+        },
+        {
+          "set": [
+            1,
+            2,
+            13
+          ],
+          "used": 1
+        },
+        {
+          "set": [
+            11,
+            14,
+            15
+          ],
+          "used": 1
+        },
+        {
+          "set": [
+            0,
+            10,
+            12,
+            15
+          ],
+          "used": 1
+        }
+      ],
+      "transport_lower": 15,
+      "global_policy_lower": 17,
+      "sparse_cache": 117,
+      "sparse_inverse_vertices": 2822,
+      "independent_exact_singletons": true
+    },
+    {
+      "n": 17,
+      "rank_drop_vertices": [
+        16,
+        16
+      ],
+      "reset_upper": 17,
+      "target": [
+        0,
+        13,
+        16
+      ],
+      "neutral_guard_vertices": [
+        {
+          "set": [
+            0,
+            13,
+            16
+          ],
+          "used": 0
+        },
+        {
+          "set": [
+            1,
+            2,
+            14
+          ],
+          "used": 1
+        },
+        {
+          "set": [
+            12,
+            15,
+            16
+          ],
+          "used": 1
+        },
+        {
+          "set": [
+            0,
+            11,
+            13,
+            16
+          ],
+          "used": 1
+        }
+      ],
+      "transport_lower": 16,
+      "global_policy_lower": 18,
+      "sparse_cache": 123,
+      "sparse_inverse_vertices": 3070,
+      "independent_exact_singletons": true
+    },
+    {
+      "n": 18,
+      "rank_drop_vertices": [
+        17,
+        17
+      ],
+      "reset_upper": 18,
+      "target": [
+        0,
+        14,
+        17
+      ],
+      "neutral_guard_vertices": [
+        {
+          "set": [
+            0,
+            14,
+            17
+          ],
+          "used": 0
+        },
+        {
+          "set": [
+            1,
+            2,
+            15
+          ],
+          "used": 1
+        },
+        {
+          "set": [
+            13,
+            16,
+            17
+          ],
+          "used": 1
+        },
+        {
+          "set": [
+            0,
+            12,
+            14,
+            17
+          ],
+          "used": 1
+        }
+      ],
+      "transport_lower": 17,
+      "global_policy_lower": 19,
+      "sparse_cache": 172,
+      "sparse_inverse_vertices": 4482,
+      "independent_exact_singletons": true
+    },
+    {
+      "n": 19,
+      "rank_drop_vertices": [
+        18,
+        18
+      ],
+      "reset_upper": 19,
+      "target": [
+        0,
+        15,
+        18
+      ],
+      "neutral_guard_vertices": [
+        {
+          "set": [
+            0,
+            15,
+            18
+          ],
+          "used": 0
+        },
+        {
+          "set": [
+            1,
+            2,
+            16
+          ],
+          "used": 1
+        },
+        {
+          "set": [
+            14,
+            17,
+            18
+          ],
+          "used": 1
+        },
+        {
+          "set": [
+            0,
+            13,
+            15,
+            18
+          ],
+          "used": 1
+        }
+      ],
+      "transport_lower": 18,
+      "global_policy_lower": 20,
+      "sparse_cache": 179,
+      "sparse_inverse_vertices": 4850,
+      "independent_exact_singletons": true
+    },
+    {
+      "n": 20,
+      "rank_drop_vertices": [
+        19,
+        19
+      ],
+      "reset_upper": 20,
+      "target": [
+        0,
+        16,
+        19
+      ],
+      "neutral_guard_vertices": [
+        {
+          "set": [
+            0,
+            16,
+            19
+          ],
+          "used": 0
+        },
+        {
+          "set": [
+            1,
+            2,
+            17
+          ],
+          "used": 1
+        },
+        {
+          "set": [
+            15,
+            18,
+            19
+          ],
+          "used": 1
+        },
+        {
+          "set": [
+            0,
+            14,
+            16,
+            19
+          ],
+          "used": 1
+        }
+      ],
+      "transport_lower": 19,
+      "global_policy_lower": 21,
+      "sparse_cache": 262,
+      "sparse_inverse_vertices": 7367,
+      "independent_exact_singletons": true
+    },
+    {
+      "n": 21,
+      "rank_drop_vertices": [
+        20,
+        20
+      ],
+      "reset_upper": 21,
+      "target": [
+        0,
+        17,
+        20
+      ],
+      "neutral_guard_vertices": [
+        {
+          "set": [
+            0,
+            17,
+            20
+          ],
+          "used": 0
+        },
+        {
+          "set": [
+            1,
+            2,
+            18
+          ],
+          "used": 1
+        },
+        {
+          "set": [
+            16,
+            19,
+            20
+          ],
+          "used": 1
+        },
+        {
+          "set": [
+            0,
+            15,
+            17,
+            20
+          ],
+          "used": 1
+        }
+      ],
+      "transport_lower": 20,
+      "global_policy_lower": 22,
+      "sparse_cache": 273,
+      "sparse_inverse_vertices": 7940,
+      "independent_exact_singletons": true
+    },
+    {
+      "n": 22,
+      "rank_drop_vertices": [
+        21,
+        21
+      ],
+      "reset_upper": 22,
+      "target": [
+        0,
+        18,
+        21
+      ],
+      "neutral_guard_vertices": [
+        {
+          "set": [
+            0,
+            18,
+            21
+          ],
+          "used": 0
+        },
+        {
+          "set": [
+            1,
+            2,
+            19
+          ],
+          "used": 1
+        },
+        {
+          "set": [
+            17,
+            20,
+            21
+          ],
+          "used": 1
+        },
+        {
+          "set": [
+            0,
+            16,
+            18,
+            21
+          ],
+          "used": 1
+        }
+      ],
+      "transport_lower": 21,
+      "global_policy_lower": 23,
+      "sparse_cache": 404,
+      "sparse_inverse_vertices": 11878,
+      "independent_exact_singletons": true
+    }
+  ],
+  "controls": [
+    {
+      "n": 5,
+      "guard_reaches_Q": true,
+      "policy": 5,
+      "scope": "Necessary excluded boundary for the infinite >n theorem."
+    }
+  ],
+  "seconds": 1.25,
+  "verified": true,
+  "boundary": "All saved cases have independent reset/lower guard certificates and exact ordinary-set sparse inverse singleton policies. Forward full-transport kernel additionally agrees through n12."
+}

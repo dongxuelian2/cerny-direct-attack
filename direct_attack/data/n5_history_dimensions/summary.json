@@ -1,0 +1,19 @@
+{
+  "arguments": {
+    "n": 4,
+    "source": "direct_attack/data/n5_extremal",
+    "out": "direct_attack/data/n5_history_dimensions"
+  },
+  "counts": {
+    "sync_classes": 16,
+    "complete_history_audits": 16,
+    "histories": 21,
+    "backward_greedy_square": 7,
+    "backward_greedy_optimal": 7,
+    "dependent_shortest_history": 5
+  },
+  "maxima": {
+    "backward_greedy_best": 19,
+    "backward_greedy_worst": 20
+  }
+}

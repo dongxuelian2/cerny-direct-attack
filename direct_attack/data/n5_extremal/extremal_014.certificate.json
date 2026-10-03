@@ -1,0 +1,80 @@
+{
+  "schema": "orion.sync-certificate.v1",
+  "kind": "exact",
+  "automaton": {
+    "n": 5,
+    "letters": [
+      "a",
+      "b"
+    ],
+    "transitions": [
+      [
+        1,
+        0,
+        3,
+        4,
+        2
+      ],
+      [
+        1,
+        2,
+        4,
+        0,
+        0
+      ]
+    ]
+  },
+  "potential": [
+    0,
+    0,
+    0,
+    5,
+    0,
+    7,
+    4,
+    10,
+    0,
+    6,
+    6,
+    11,
+    2,
+    9,
+    7,
+    12,
+    0,
+    5,
+    8,
+    11,
+    3,
+    8,
+    9,
+    13,
+    1,
+    6,
+    8,
+    11,
+    6,
+    10,
+    9,
+    14
+  ],
+  "word": [
+    1,
+    0,
+    0,
+    1,
+    1,
+    1,
+    0,
+    0,
+    1,
+    1,
+    1,
+    0,
+    0,
+    1
+  ],
+  "lower_bound": 14,
+  "upper_bound": 14,
+  "method": "direct_attack_reverse_bfs"
+}

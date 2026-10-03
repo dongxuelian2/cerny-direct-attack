@@ -1,0 +1,206 @@
+{
+  "arguments": {
+    "n": 7,
+    "out": "direct_attack/data/image_extension_policy_rank_cover_n7"
+  },
+  "argv": [
+    "<CHECKOUT>\\direct_attack\\native_build\\image_policy_49fd4b40e5177a85.exe",
+    "--rank-cover",
+    "7"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "records": [
+    {
+      "event": "class",
+      "parts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "tested": 15120,
+      "synchronizing_sc": 0,
+      "max_policy": 0
+    },
+    {
+      "event": "class",
+      "parts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "tested": 45360,
+      "synchronizing_sc": 1440,
+      "max_policy": 27
+    },
+    {
+      "event": "class",
+      "parts": [
+        1,
+        1,
+        1,
+        1,
+        3
+      ],
+      "tested": 75600,
+      "synchronizing_sc": 5760,
+      "max_policy": 32
+    },
+    {
+      "event": "class",
+      "parts": [
+        1,
+        1,
+        1,
+        2,
+        2
+      ],
+      "tested": 105840,
+      "synchronizing_sc": 9456,
+      "max_policy": 32
+    },
+    {
+      "event": "class",
+      "parts": [
+        1,
+        1,
+        1,
+        4
+      ],
+      "tested": 136080,
+      "synchronizing_sc": 16752,
+      "max_policy": 32
+    },
+    {
+      "event": "class",
+      "parts": [
+        1,
+        1,
+        2,
+        3
+      ],
+      "tested": 181440,
+      "synchronizing_sc": 30612,
+      "max_policy": 32
+    },
+    {
+      "event": "class",
+      "parts": [
+        1,
+        1,
+        5
+      ],
+      "tested": 211680,
+      "synchronizing_sc": 40692,
+      "max_policy": 33
+    },
+    {
+      "event": "class",
+      "parts": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "tested": 241920,
+      "synchronizing_sc": 47124,
+      "max_policy": 33
+    },
+    {
+      "event": "class",
+      "parts": [
+        1,
+        2,
+        4
+      ],
+      "tested": 287280,
+      "synchronizing_sc": 66452,
+      "max_policy": 33
+    },
+    {
+      "event": "class",
+      "parts": [
+        1,
+        3,
+        3
+      ],
+      "tested": 317520,
+      "synchronizing_sc": 77018,
+      "max_policy": 34
+    },
+    {
+      "event": "class",
+      "parts": [
+        1,
+        6
+      ],
+      "tested": 347760,
+      "synchronizing_sc": 89594,
+      "max_policy": 34
+    },
+    {
+      "event": "class",
+      "parts": [
+        2,
+        2,
+        3
+      ],
+      "tested": 378000,
+      "synchronizing_sc": 110366,
+      "max_policy": 34
+    },
+    {
+      "event": "class",
+      "parts": [
+        2,
+        5
+      ],
+      "tested": 408240,
+      "synchronizing_sc": 135086,
+      "max_policy": 34
+    },
+    {
+      "event": "class",
+      "parts": [
+        3,
+        4
+      ],
+      "tested": 438480,
+      "synchronizing_sc": 162278,
+      "max_policy": 34
+    },
+    {
+      "event": "class",
+      "parts": [
+        7
+      ],
+      "tested": 453600,
+      "synchronizing_sc": 177398,
+      "max_policy": 36
+    },
+    {
+      "event": "completed",
+      "n": 7,
+      "tested": 453600,
+      "synchronizing_sc": 177398,
+      "max_policy": 36
+    }
+  ],
+  "result": {
+    "event": "completed",
+    "n": 7,
+    "tested": 453600,
+    "synchronizing_sc": 177398,
+    "max_policy": 36
+  },
+  "seconds": 16.28099999999995,
+  "scope": "Complete binary permutation + rank-(n-1) covering; counts overlap, not isomorphism classes.",
+  "reduction": "For each permutation cycle type, one missing-image representative per distinct cycle length suffices by its centralizer action."
+}

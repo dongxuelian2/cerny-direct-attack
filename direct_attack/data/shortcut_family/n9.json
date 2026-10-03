@@ -1,0 +1,170 @@
+{
+  "n": 9,
+  "base": {
+    "n": 9,
+    "rows": [
+      [
+        1,
+        0,
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        0
+      ]
+    ],
+    "best_policy": 9,
+    "worst_policy": 23,
+    "rt": 9,
+    "reachable": 511,
+    "local_excess": -4,
+    "local_start": 495,
+    "unit_defect": true,
+    "singleton_extension": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "singleton_best": [
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "singleton_worst": [
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ]
+  },
+  "augmented": {
+    "n": 9,
+    "rows": [
+      [
+        1,
+        0,
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        0
+      ],
+      [
+        2,
+        4,
+        5,
+        6,
+        7,
+        1,
+        0,
+        3,
+        2
+      ]
+    ],
+    "best_policy": 13,
+    "worst_policy": 21,
+    "rt": 9,
+    "reachable": 511,
+    "local_excess": -5,
+    "local_start": 479,
+    "unit_defect": true,
+    "singleton_extension": [
+      1,
+      2,
+      1,
+      2,
+      3,
+      2,
+      3,
+      4,
+      5
+    ],
+    "singleton_best": [
+      13,
+      14,
+      14,
+      15,
+      15,
+      15,
+      16,
+      16,
+      17
+    ],
+    "singleton_worst": [
+      16,
+      17,
+      17,
+      18,
+      19,
+      18,
+      19,
+      20,
+      21
+    ]
+  },
+  "extra_word": [
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    0
+  ],
+  "reset_word": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+  ],
+  "seconds": 0.0,
+  "scope": "Exact full-cube native result; arbitrary-parameter exact P formula remains conjectured."
+}

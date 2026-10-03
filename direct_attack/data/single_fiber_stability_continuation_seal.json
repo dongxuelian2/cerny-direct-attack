@@ -1,0 +1,59 @@
+{
+  "verified": true,
+  "checks": 119,
+  "regeneration_commands": 202,
+  "archived": [
+    {
+      "path": "direct_attack/data/single_fiber_stability_continuation_provenance/audit_run.json",
+      "sha256": "8b45e5befc6de0b718c658d55a0d467e0bc1125c088a0b78c8fc0f2bc2032b70"
+    },
+    {
+      "path": "direct_attack/data/single_fiber_stability_continuation_provenance/reproduction_commands.json",
+      "sha256": "72e469b7faff2d903928078517ae328b8950278930189691c586ffabffe51777"
+    },
+    {
+      "path": "direct_attack/data/single_fiber_stability_continuation_provenance/sha256_manifest.json",
+      "sha256": "870b48a517e4ac361292800c87cb1aeb16d8df9bad81505265819a519941b0f3"
+    }
+  ],
+  "native_builds": [
+    {
+      "metadata": "direct_attack/data/alternating_frame_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/alternating_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/class_reset_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/complete_policy_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/sparse_policy_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/weighted_class_reset_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    }
+  ],
+  "generation_and_replay": "direct_attack/data/single_fiber_stability_generation_captures.json",
+  "audit_boundary": "previous118-check record preserved verbatim; new general minimum-rank-kernel intersection controls on745 arbitrary binary inputs, full monoids on15934 SC single-fiber inputs and four family scopes,68 parameters throughn2049, separate10097 merge/stability original pair orbits, charged root and instability words,10 corruptions; deterministic generation and replay; not a full119 rerun",
+  "mathematical_status": "PROVED paper ANY-DFA minimum-rank-kernel intersection identity; REFUTED whole unique collision-fiber stability, EVERY odd n>=5 binary SC corank2/corank1, ANY-alphabet state-minimal n5. Family minimum rank2, exact minimum-rank-word cost n-3, universal group quotient but nonsynchronizing. General Cerny and priority OPEN; no new formal proof. Previous general corank-one theorem, mu0=4p and shorter reset upper3p^2+4p-1 preserved."
+}

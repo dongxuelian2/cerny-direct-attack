@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "<PYTHON_RUNTIME>\\python.exe",
+    "-m",
+    "direct_attack.check_first_drop"
+  ],
+  "cwd": "<CHECKOUT>",
+  "start_utc": "2026-09-29T13:29:33.858829+00:00",
+  "seconds": 9.60899999999674,
+  "returncode": 0,
+  "stdout": "{\"first_map_orbits\": 3, \"covering_pairs\": 12}\n{\"first_map_orbits\": 7, \"covering_pairs\": 189}\n{\"first_map_orbits\": 19, \"covering_pairs\": 4864}\n{\"verified\": true, \"counts\": {\"tested\": 8378, \"accepted\": 3723, \"rejected\": 4655, \"proper_images\": 49924, \"winning_sources\": 77617, \"shortest_first_letters\": 82076, \"budget_seed_targets\": 5826, \"short_reset_budget_cases\": 2286, \"rank_profile_square_cases\": 2719, \"rank_profile_extra_square_cases\": 433, \"rank_profile_improved_bounds\": 1062, \"rank_profile_new_vs_rank_budget\": 335}, \"seconds\": 9.531999999999243, \"protocol_limit_recovery\": true, \"boundary\": \"Each accepted case independently recomputes every e/G/W entry, exact rt and every winning source with ordinary ALL-SOURCE distances; first-letter condition, complete boundary-parent equality, singleton formulas, reset-length-dependent and reset-rank-profile-dependent all-seed budgets checked. Each rank budget uses an explicitly reconstructed shortest reset word. Computational scope is finite; universal results are paper proofs.\"}\n",
+  "stderr": ""
+}

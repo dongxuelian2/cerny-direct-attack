@@ -1,0 +1,36 @@
+{
+  "verified": true,
+  "runs": [
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.moving_root_paid_compensation"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T10:40:34.475354+00:00",
+      "seconds": 4.171999999998661,
+      "returncode": 0,
+      "stdout": "{\"inputs\": 213, \"coprime\": 146, \"SYNC\": 203, \"boundary\": \"PROVED paper ALL M>=3/1<=d<M: sync iff M/gcd(M,d)>=3; on sync inputs exact avoid-r and positive-original-a stationary max support cost n+2, exact balancing suffix cap n+1. Coprime parameters have ONE paid compatible square, original a-squared cost2. No novelty/formal/general Cerny claim; noncoprime family square OPEN here. Finite parameter scopes explicit.\"}\n",
+      "stderr": "",
+      "output_sha256": "e4e3050151f6abd5183a7c522128eb6df7bca89f5b8d06093355db48569edf20"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.moving_root_paid_compensation"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T10:44:36.134331+00:00",
+      "seconds": 4.062999999994645,
+      "returncode": 0,
+      "stdout": "{\"inputs\": 213, \"coprime\": 146, \"SYNC\": 203, \"boundary\": \"PROVED paper ALL M>=3/1<=d<M: sync iff M/gcd(M,d)>=3; on sync inputs exact avoid-r and positive-original-a stationary max support cost n+2, exact balancing suffix cap n+1. Coprime parameters have ONE paid compatible square, original a-squared cost2. No novelty/formal/general Cerny claim; noncoprime family square OPEN here. Finite parameter scopes explicit.\"}\n",
+      "stderr": "",
+      "output_sha256": "e4e3050151f6abd5183a7c522128eb6df7bca89f5b8d06093355db48569edf20"
+    }
+  ],
+  "bytes_equal": true,
+  "normalization": "none",
+  "generator_sha256": "fdf02f8da6fbf662aa3a281efd3951b6d780f2a4645c247b77d1dc85e11e472b"
+}

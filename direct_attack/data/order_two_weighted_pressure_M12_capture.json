@@ -1,0 +1,19 @@
+{
+  "run": {
+    "argv": [
+      "<CHECKOUT>\\direct_attack\\native_build\\order_two_weighted_pressure.exe",
+      "12",
+      "50000",
+      "<CHECKOUT>\\direct_attack\\data\\order_two_weighted_pressure_M12.json"
+    ],
+    "cwd": "<CHECKOUT>",
+    "start_utc": "2026-10-03T03:55:05.742961+00:00",
+    "seconds": 20.514999999999418,
+    "returncode": 0,
+    "stdout": "{\"M\":12,\"evaluated\":42656,\"maximum_retained_minimum\":11,\"counterexample\":false,\"coverage\":\"EXPLORATORY structured/hill\"}\n",
+    "stderr": "best weighted minimum 9 at trial 0\nbest weighted minimum 10 at trial 2\nbest weighted minimum 11 at trial 862\n"
+  },
+  "source_sha256": "c537287195e8ee5da0ebea4d56b0da7dc3273295457056d9f59e7f650f0abb03",
+  "binary_sha256": "d13644ac2ebcc4cc5819b4c294c1802c087292abb4eb7a80021b210acb86e62d",
+  "output_sha256": "936fe307730ad08ef3deefaedc49193a0b048b39882c6566adf938b911fdb1b6"
+}

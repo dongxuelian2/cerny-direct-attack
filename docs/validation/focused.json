@@ -1,0 +1,121 @@
+{
+  "suite": "focused",
+  "date_utc": "2026-10-03T08:22:15.706799+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "status": "PASS",
+  "runs": [
+    {
+      "argv": [
+        "<PYTHON>",
+        "-m",
+        "direct_attack.check_transposition_fold_obstruction"
+      ],
+      "cwd": "<CHECKOUT>\\.reproduction\\audit-jb2ft1nz",
+      "seconds": 5.172,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"family_controls\": 69, \"maximum_n\": 2048, \"exact_scopes\": 9, \"forward_vertices\": 207860, \"reverse_vertices\": 221364, \"corruptions_rejected\": 6, \"routing\": {\"connected_graphs\": 771, \"routing_cases\": 443332, \"exact_routing_vertices\": 443332, \"labeled_defect_one_automata\": 5546, \"containing_pair_cases\": 191837, \"labeled_general_singular_automata\": 8902, \"by_n\": [{\"n\": 2, \"connected_graphs\": 1, \"routing_cases\": 4, \"labeled_defect_one_automata\": 2, \"containing_pair_cases\": 1, \"labeled_general_singular_automata\": 2}, {\"n\": 3, \"connected_graphs\": 4, \"routing_cases\": 144, \"labeled_defect_one_automata\": 72, \"containing_pair_cases\": 48, \"labeled_general_singular_automata\": 84}, {\"n\": 4, \"connected_graphs\": 38, \"routing_cases\": 6384, \"labeled_defect_one_automata\": 5472, \"containing_pair_cases\": 2508, \"labeled_general_singular_automata\": 8816}, {\"n\": 5, \"connected_graphs\": 728, \"routing_cases\": 436800, \"labeled_defect_one_automata\": 0, \"containing_pair_cases\": 189280, \"labeled_general_singular_automata\": 0}]}}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON>",
+        "-m",
+        "direct_attack.check_direct_binary_image_obstruction"
+      ],
+      "cwd": "<CHECKOUT>\\.reproduction\\audit-jb2ft1nz",
+      "seconds": 0.656,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"controls\": 69, \"literal_controls\": 23, \"forward_vertices\": 276717, \"inverse_vertices\": 16978, \"extra_n13_inverse_vertices\": 263, \"corruptions_rejected\": [\"projection row\", \"first stall count\", \"entering exponent\", \"extension cost\", \"reset lower bound\", \"reset upper bound\", \"extra finite target\"], \"boundary\": \"all-parameter proof is paper PROVED; finite original-row and ordinary-set BFS audits COMPUTATIONALLY VERIFIED; no formal proof; Cerny and compatible policy square OPEN\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON>",
+        "-m",
+        "direct_attack.check_avoid_compress_sharp_faces"
+      ],
+      "cwd": "<CHECKOUT>\\.reproduction\\audit-jb2ft1nz",
+      "seconds": 2.656,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"parameters\": 381, \"maximum_n\": 1025, \"safe_bfs_vertices\": 26992, \"safe_bfs_edges\": 53222, \"macro_state_letter_controls\": 17305572, \"literal_reset_letters\": 109418, \"full_reset_scopes\": 73, \"full_reset_vertices\": 9926, \"corruptions_rejected\": 9, \"boundary\": \"all-n proof is paper; exact ac and original-word certificates checked only listed parameters; finite rt only n<=10; no formal kernel; Cerny OPEN\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON>",
+        "-m",
+        "direct_attack.check_avoid_compress_all_gaps"
+      ],
+      "cwd": "<CHECKOUT>\\.reproduction\\audit-jb2ft1nz",
+      "seconds": 2.782,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"parameters\": 48, \"maximum_n\": 1025, \"maximum_g\": 11, \"safe_vertices\": 542068, \"safe_edges\": 732192, \"cell_identity_controls\": 12234, \"original_macro_state_letter_controls\": 26538765, \"rooted_states\": 5694, \"literal_reset_letters\": 20894, \"full_reset_scopes\": 5, \"full_reset_vertices\": 10719, \"corruptions_rejected\": 9, \"boundary\": \"PROVED paper r>=1 g>=2 k>=2; only listed g>=3 finite scopes newly checked; fixed-cardinality infinite progressions sharp, remaining n and general Cerny OPEN; no formal kernel\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON>",
+        "-m",
+        "direct_attack.check_rank_two_permutation_alphabet",
+        "--out",
+        "direct_attack/data/public_check_rank_two_permutation_alphabet.json"
+      ],
+      "cwd": "<CHECKOUT>\\.reproduction\\audit-jb2ft1nz",
+      "seconds": 0.093,
+      "returncode": 0,
+      "stdout": "{\"checked\": 8, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON>",
+        "-m",
+        "direct_attack.check_rank_two_only_nonperm",
+        "--out",
+        "direct_attack/data/public_check_rank_two_only_nonperm.json"
+      ],
+      "cwd": "<CHECKOUT>\\.reproduction\\audit-jb2ft1nz",
+      "seconds": 0.313,
+      "returncode": 0,
+      "stdout": "{\"checked\": 8, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON>",
+        "-m",
+        "direct_attack.check_class_compression_pressure"
+      ],
+      "cwd": "<CHECKOUT>\\.reproduction\\audit-jb2ft1nz",
+      "seconds": 0.422,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"independent\": \"ordinary reverse-subset distances and separate forward quotient BFS\", \"certificates\": 53, \"subset_vertices\": 30727, \"sharp_controls\": 35, \"corruptions_rejected\": 4, \"arithmetic\": {\"repaired_old_h6_gaps\": [{\"sizes\": [6, 14], \"bound\": 337, \"square\": 361}, {\"sizes\": [6, 15], \"bound\": 388, \"square\": 400}], \"h6_integer_cases\": 9900, \"all_minimum7_profiles_below22\": [{\"sizes\": [7, 7], \"bound\": 115, \"square\": 169}, {\"sizes\": [7, 8], \"bound\": 141, \"square\": 196}, {\"sizes\": [7, 9], \"bound\": 171, \"square\": 225}, {\"sizes\": [8, 8], \"bound\": 171, \"square\": 225}, {\"sizes\": [7, 10], \"bound\": 206, \"square\": 256}, {\"sizes\": [8, 9], \"bound\": 205, \"square\": 256}, {\"sizes\": [7, 11], \"bound\": 246, \"square\": 289}, {\"sizes\": [8, 10], \"bound\": 244, \"square\": 289}, {\"sizes\": [9, 9], \"bound\": 243, \"square\": 289}, {\"sizes\": [7, 12], \"bound\": 291, \"square\": 324}, {\"sizes\": [8, 11], \"bound\": 289, \"square\": 324}, {\"sizes\": [9, 10], \"bound\": 286, \"square\": 324}, {\"sizes\": [7, 13], \"bound\": 341, \"square\": 361}, {\"sizes\": [8, 12], \"bound\": 340, \"square\": 361}, {\"sizes\": [9, 11], \"bound\": 335, \"square\": 361}, {\"sizes\": [10, 10], \"bound\": 333, \"square\": 361}, {\"sizes\": [7, 14], \"bound\": 396, \"square\": 400}, {\"sizes\": [8, 13], \"bound\": 397, \"square\": 400}, {\"sizes\": [9, 12], \"bound\": 391, \"square\": 400}, {\"sizes\": [10, 11], \"bound\": 386, \"square\": 400}, {\"sizes\": [7, 7, 7], \"bound\": 176, \"square\": 400}], \"maximum_bounds_by_n\": [{\"n\": 14, \"max_bound\": 115, \"square\": 169}, {\"n\": 15, \"max_bound\": 141, \"square\": 196}, {\"n\": 16, \"max_bound\": 171, \"square\": 225}, {\"n\": 17, \"max_bound\": 206, \"square\": 256}, {\"n\": 18, \"max_bound\": 246, \"square\": 289}, {\"n\": 19, \"max_bound\": 291, \"square\": 324}, {\"n\": 20, \"max_bound\": 341, \"square\": 361}, {\"n\": 21, \"max_bound\": 397, \"square\": 400}], \"remaining_n22_bound_gaps\": [{\"sizes\": [7, 15], \"bound\": 455, \"square\": 441}, {\"sizes\": [8, 14], \"bound\": 460, \"square\": 441}, {\"sizes\": [9, 13], \"bound\": 454, \"square\": 441}, {\"sizes\": [10, 12], \"bound\": 446, \"square\": 441}, {\"sizes\": [11, 11], \"bound\": 443, \"square\": 441}], \"boundary\": \"Integer bounds, not automata counterexamples; all-n h6 exclusion uses the paper argument.\"}, \"scope\": \"retained exact instances only; paper dimension argument supplies all-n theorem\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON>",
+        "-m",
+        "direct_attack.check_order_two_three_a_barrier"
+      ],
+      "cwd": "<CHECKOUT>\\.reproduction\\audit-jb2ft1nz",
+      "seconds": 4.765,
+      "returncode": 0,
+      "stdout": "{\"canonical_exhaustions\": 19, \"canonical_three_a_words\": 157680, \"corruptions_rejected\": [0, 1, 2, 3, 4, 5, 6, 7], \"forward_particles\": 919885, \"literal_resets\": 16, \"maximum_n\": 769, \"ordinary_base_minimum\": 10, \"records\": 22, \"restricted_base_minimum\": 26, \"single_letter_particle_checks\": 21050878, \"sparse_cut_edges\": 604, \"sparse_cut_vertices\": 566, \"status\": \"Infinite family is a paper proof: minimum root-positive extension with <=3 original a is n+1. General <=3-a n-witness pool REFUTED. Base ordinary minimum 10 and finite controls COMPUTATIONALLY VERIFIED. RP, SEED and general Cerny remain OPEN; no formal claim here.\", \"table_memberships\": 6372, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON>",
+        "-m",
+        "direct_attack.check_opposite_kernel_primitive_square"
+      ],
+      "cwd": "<CHECKOUT>\\.reproduction\\audit-jb2ft1nz",
+      "seconds": 1.36,
+      "returncode": 0,
+      "stdout": "{\"chains\": 977, \"complete_NEW\": 944, \"complete_both_root_flag_whole_targets\": 100, \"corruptions_rejected\": [0, 1, 2, 3, 4, 5, 6], \"maximum_n\": 257, \"reset_forward_particles\": 4471854, \"root_retaining_unit_stages\": 10154, \"saved_even_stages\": 4100, \"status\": \"Finite NEW arbitrary-tail primitive controls COMPUTATIONALLY VERIFIED; ALL-n d1 and ALL prime half-core L synchronizing opposite-kernel binary inputs PROVED paper. Not formal; general Cerny OPEN.\", \"verified\": true, \"whole_word_particles\": 5194}\n",
+      "stderr": ""
+    }
+  ],
+  "focused_checks": 9
+}

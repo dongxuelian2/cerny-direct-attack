@@ -1,0 +1,58 @@
+[
+  {
+    "n": 12,
+    "exact_compression": 9,
+    "reset_length": 86,
+    "reach_length": 10,
+    "harmonic_coefficient_lower": 1.5
+  },
+  {
+    "n": 16,
+    "exact_compression": 9,
+    "reset_length": 6570,
+    "reach_length": 154,
+    "harmonic_coefficient_lower": 1.6875
+  },
+  {
+    "n": 18,
+    "exact_compression": 9,
+    "reset_length": 17780,
+    "reach_length": 298,
+    "harmonic_coefficient_lower": 1.75
+  },
+  {
+    "n": 22,
+    "exact_compression": 9,
+    "reset_length": 68376,
+    "reach_length": 730,
+    "harmonic_coefficient_lower": 1.8409090909090908
+  },
+  {
+    "n": 28,
+    "exact_compression": 9,
+    "reset_length": 74562,
+    "reach_length": 514,
+    "harmonic_coefficient_lower": 1.9285714285714286
+  },
+  {
+    "n": 34,
+    "exact_compression": 9,
+    "reset_length": 298080,
+    "reach_length": 1522,
+    "harmonic_coefficient_lower": 1.9852941176470589
+  },
+  {
+    "n": 46,
+    "exact_compression": 9,
+    "reset_length": 689640,
+    "reach_length": 2314,
+    "harmonic_coefficient_lower": 2.0543478260869565
+  },
+  {
+    "n": 58,
+    "exact_compression": 9,
+    "reset_length": 1243056,
+    "reach_length": 3106,
+    "harmonic_coefficient_lower": 2.0948275862068964
+  }
+]

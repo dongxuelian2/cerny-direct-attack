@@ -1,0 +1,439 @@
+{
+  "verified": true,
+  "all_graph_instances_n2_through5": 4306,
+  "literal_multipartite_constructions_n2_through7": 2984,
+  "sampled_congruence_dfas": 1050,
+  "compressible_class_subsets": 24147,
+  "multi_b_terminal_inequalities": 144882,
+  "b_values": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "profiles": {
+    "minimum7_profiles_through22": [
+      {
+        "sizes": [
+          7,
+          7
+        ],
+        "bound": 113,
+        "square": 169
+      },
+      {
+        "sizes": [
+          7,
+          8
+        ],
+        "bound": 141,
+        "square": 196
+      },
+      {
+        "sizes": [
+          7,
+          9
+        ],
+        "bound": 167,
+        "square": 225
+      },
+      {
+        "sizes": [
+          8,
+          8
+        ],
+        "bound": 169,
+        "square": 225
+      },
+      {
+        "sizes": [
+          7,
+          10
+        ],
+        "bound": 198,
+        "square": 256
+      },
+      {
+        "sizes": [
+          8,
+          9
+        ],
+        "bound": 205,
+        "square": 256
+      },
+      {
+        "sizes": [
+          7,
+          11
+        ],
+        "bound": 234,
+        "square": 289
+      },
+      {
+        "sizes": [
+          8,
+          10
+        ],
+        "bound": 239,
+        "square": 289
+      },
+      {
+        "sizes": [
+          9,
+          9
+        ],
+        "bound": 241,
+        "square": 289
+      },
+      {
+        "sizes": [
+          7,
+          12
+        ],
+        "bound": 275,
+        "square": 324
+      },
+      {
+        "sizes": [
+          8,
+          11
+        ],
+        "bound": 279,
+        "square": 324
+      },
+      {
+        "sizes": [
+          9,
+          10
+        ],
+        "bound": 286,
+        "square": 324
+      },
+      {
+        "sizes": [
+          7,
+          13
+        ],
+        "bound": 321,
+        "square": 361
+      },
+      {
+        "sizes": [
+          8,
+          12
+        ],
+        "bound": 325,
+        "square": 361
+      },
+      {
+        "sizes": [
+          9,
+          11
+        ],
+        "bound": 329,
+        "square": 361
+      },
+      {
+        "sizes": [
+          10,
+          10
+        ],
+        "bound": 331,
+        "square": 361
+      },
+      {
+        "sizes": [
+          7,
+          7,
+          7
+        ],
+        "bound": 172,
+        "square": 400
+      },
+      {
+        "sizes": [
+          7,
+          14
+        ],
+        "bound": 372,
+        "square": 400
+      },
+      {
+        "sizes": [
+          8,
+          13
+        ],
+        "bound": 377,
+        "square": 400
+      },
+      {
+        "sizes": [
+          9,
+          12
+        ],
+        "bound": 379,
+        "square": 400
+      },
+      {
+        "sizes": [
+          10,
+          11
+        ],
+        "bound": 386,
+        "square": 400
+      },
+      {
+        "sizes": [
+          7,
+          7,
+          8
+        ],
+        "bound": 202,
+        "square": 441
+      },
+      {
+        "sizes": [
+          7,
+          15
+        ],
+        "bound": 423,
+        "square": 441
+      },
+      {
+        "sizes": [
+          8,
+          14
+        ],
+        "bound": 435,
+        "square": 441
+      },
+      {
+        "sizes": [
+          9,
+          13
+        ],
+        "bound": 436,
+        "square": 441
+      },
+      {
+        "sizes": [
+          10,
+          12
+        ],
+        "bound": 439,
+        "square": 441
+      },
+      {
+        "sizes": [
+          11,
+          11
+        ],
+        "bound": 441,
+        "square": 441
+      }
+    ],
+    "inherited_h6_finite_boundary": [
+      {
+        "sizes": [
+          6,
+          6
+        ],
+        "bound": 72,
+        "square": 121
+      },
+      {
+        "sizes": [
+          6,
+          7
+        ],
+        "bound": 92,
+        "square": 144
+      },
+      {
+        "sizes": [
+          6,
+          8
+        ],
+        "bound": 115,
+        "square": 169
+      },
+      {
+        "sizes": [
+          6,
+          9
+        ],
+        "bound": 142,
+        "square": 196
+      },
+      {
+        "sizes": [
+          6,
+          10
+        ],
+        "bound": 173,
+        "square": 225
+      },
+      {
+        "sizes": [
+          6,
+          11
+        ],
+        "bound": 208,
+        "square": 256
+      },
+      {
+        "sizes": [
+          6,
+          12
+        ],
+        "bound": 247,
+        "square": 289
+      },
+      {
+        "sizes": [
+          6,
+          13
+        ],
+        "bound": 290,
+        "square": 324
+      },
+      {
+        "sizes": [
+          6,
+          14
+        ],
+        "bound": 337,
+        "square": 361
+      },
+      {
+        "sizes": [
+          6,
+          15
+        ],
+        "bound": 388,
+        "square": 400
+      },
+      {
+        "sizes": [
+          6,
+          6,
+          6
+        ],
+        "bound": 111,
+        "square": 289
+      },
+      {
+        "sizes": [
+          6,
+          6,
+          7
+        ],
+        "bound": 131,
+        "square": 324
+      },
+      {
+        "sizes": [
+          6,
+          6,
+          8
+        ],
+        "bound": 155,
+        "square": 361
+      },
+      {
+        "sizes": [
+          6,
+          6,
+          9
+        ],
+        "bound": 182,
+        "square": 400
+      }
+    ],
+    "uniform_cases": 30096,
+    "uniform_equalities": [
+      [
+        2,
+        11
+      ]
+    ]
+  },
+  "cerny_barrier": {
+    "pair_distance_states_n2_through50": 20825,
+    "actual_images_n2_through10": 2035,
+    "spaced_set_bounds_n2_through14": 91,
+    "all_subsets_n2_through14": 32647,
+    "exact_rank_maxima_n2_through14": 91,
+    "rank_sum_records": [
+      {
+        "n": 2,
+        "sum_rank_maxima": 1,
+        "square": 1
+      },
+      {
+        "n": 3,
+        "sum_rank_maxima": 4,
+        "square": 4
+      },
+      {
+        "n": 4,
+        "sum_rank_maxima": 10,
+        "square": 9
+      },
+      {
+        "n": 5,
+        "sum_rank_maxima": 19,
+        "square": 16
+      },
+      {
+        "n": 6,
+        "sum_rank_maxima": 32,
+        "square": 25
+      },
+      {
+        "n": 7,
+        "sum_rank_maxima": 49,
+        "square": 36
+      },
+      {
+        "n": 8,
+        "sum_rank_maxima": 70,
+        "square": 49
+      },
+      {
+        "n": 9,
+        "sum_rank_maxima": 96,
+        "square": 64
+      },
+      {
+        "n": 10,
+        "sum_rank_maxima": 127,
+        "square": 81
+      },
+      {
+        "n": 11,
+        "sum_rank_maxima": 162,
+        "square": 100
+      },
+      {
+        "n": 12,
+        "sum_rank_maxima": 203,
+        "square": 121
+      },
+      {
+        "n": 13,
+        "sum_rank_maxima": 250,
+        "square": 144
+      },
+      {
+        "n": 14,
+        "sum_rank_maxima": 301,
+        "square": 169
+      }
+    ],
+    "scope": "Finite BFS checks of the all-n paper barrier, not a generic DFA bound."
+  },
+  "scope": "Finite independent tests only; paper arguments establish the general quantifiers."
+}

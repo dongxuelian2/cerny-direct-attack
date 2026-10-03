@@ -1,0 +1,73 @@
+{
+  "status": "EXPLORATORY",
+  "runs": [
+    {
+      "argv": [
+        "<CHECKOUT>\\direct_attack\\native_build\\order_two_root_keep.exe",
+        "4",
+        "2"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T13:55:15.452732+00:00",
+      "seconds": 0.10899999999674037,
+      "returncode": 0,
+      "stdout": "COMPLETE M=4 d=2 inputs=0 controls=0 pool_hits=0 bfs_cases=0 bfs_vertices=0 seconds=1e-007 no_root_keep_n_extension_counter=true scope=EXPLORATORY_without_independent_coverage_audit\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<CHECKOUT>\\direct_attack\\native_build\\order_two_root_keep.exe",
+        "6",
+        "3"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T13:55:15.559640+00:00",
+      "seconds": 0.0,
+      "returncode": 0,
+      "stdout": "COMPLETE M=6 d=3 inputs=16 controls=112 pool_hits=112 bfs_cases=0 bfs_vertices=0 seconds=7.6e-006 no_root_keep_n_extension_counter=true scope=EXPLORATORY_without_independent_coverage_audit\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<CHECKOUT>\\direct_attack\\native_build\\order_two_root_keep.exe",
+        "8",
+        "4"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T13:55:15.569800+00:00",
+      "seconds": 0.01600000000325963,
+      "returncode": 0,
+      "stdout": "COMPLETE M=8 d=4 inputs=672 controls=10080 pool_hits=10080 bfs_cases=0 bfs_vertices=0 seconds=0.0004736 no_root_keep_n_extension_counter=true scope=EXPLORATORY_without_independent_coverage_audit\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<CHECKOUT>\\direct_attack\\native_build\\order_two_root_keep.exe",
+        "10",
+        "5"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T13:55:15.581073+00:00",
+      "seconds": 0.07800000000133878,
+      "returncode": 0,
+      "stdout": "COMPLETE M=10 d=5 inputs=39936 controls=1238016 pool_hits=1238016 bfs_cases=0 bfs_vertices=0 seconds=0.0616097 no_root_keep_n_extension_counter=true scope=EXPLORATORY_without_independent_coverage_audit\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<CHECKOUT>\\direct_attack\\native_build\\order_two_root_keep.exe",
+        "12",
+        "6"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T14:02:47.861881+00:00",
+      "seconds": 11.23399999999674,
+      "returncode": 0,
+      "stdout": "PROGRESS inputs=100000 controls=6300000 pool_hits=6300000 bfs_cases=0 bfs_vertices=0 seconds=0.322675\nPROGRESS inputs=200000 controls=12600000 pool_hits=12600000 bfs_cases=0 bfs_vertices=0 seconds=0.626157\nPROGRESS inputs=300000 controls=18900000 pool_hits=18900000 bfs_cases=0 bfs_vertices=0 seconds=0.939711\nPROGRESS inputs=400000 controls=25200000 pool_hits=25200000 bfs_cases=0 bfs_vertices=0 seconds=1.26658\nPROGRESS inputs=500000 controls=31500000 pool_hits=31500000 bfs_cases=0 bfs_vertices=0 seconds=1.56684\nPROGRESS inputs=600000 controls=37800000 pool_hits=37800000 bfs_cases=0 bfs_vertices=0 seconds=1.86867\nPROGRESS inputs=700000 controls=44100000 pool_hits=44100000 bfs_cases=0 bfs_vertices=0 seconds=2.16115\nPROGRESS inputs=800000 controls=50400000 pool_hits=50400000 bfs_cases=0 bfs_vertices=0 seconds=2.45376\nPROGRESS inputs=900000 controls=56700000 pool_hits=56700000 bfs_cases=0 bfs_vertices=0 seconds=2.73875\nPROGRESS inputs=1000000 controls=63000000 pool_hits=63000000 bfs_cases=0 bfs_vertices=0 seconds=3.03327\nPROGRESS inputs=1100000 controls=69300000 pool_hits=69300000 bfs_cases=0 bfs_vertices=0 seconds=3.33441\nPROGRESS inputs=1200000 controls=75600000 pool_hits=75600000 bfs_cases=0 bfs_vertices=0 seconds=3.63242\nPROGRESS inputs=1300000 controls=81900000 pool_hits=81900000 bfs_cases=0 bfs_vertices=0 seconds=3.92529\nPROGRESS inputs=1400000 controls=88200000 pool_hits=88200000 bfs_cases=0 bfs_vertices=0 seconds=4.23487\nPROGRESS inputs=1500000 controls=94500000 pool_hits=94500000 bfs_cases=0 bfs_vertices=0 seconds=4.5314\nPROGRESS inputs=1600000 controls=100800000 pool_hits=100800000 bfs_cases=0 bfs_vertices=0 seconds=4.83005\nPROGRESS inputs=1700000 controls=107100000 pool_hits=107100000 bfs_cases=0 bfs_vertices=0 seconds=5.12898\nPROGRESS inputs=1800000 controls=113400000 pool_hits=113400000 bfs_cases=0 bfs_vertices=0 seconds=5.43491\nPROGRESS inputs=1900000 controls=119700000 pool_hits=119700000 bfs_cases=0 bfs_vertices=0 seconds=5.74342\nPROGRESS inputs=2000000 controls=126000000 pool_hits=126000000 bfs_cases=0 bfs_vertices=0 seconds=6.04692\nPROGRESS inputs=2100000 controls=132300000 pool_hits=132300000 bfs_cases=0 bfs_vertices=0 seconds=6.36873\nPROGRESS inputs=2200000 controls=138600000 pool_hits=138600000 bfs_cases=0 bfs_vertices=0 seconds=6.68765\nPROGRESS inputs=2300000 controls=144900000 pool_hits=144900000 bfs_cases=0 bfs_vertices=0 seconds=6.99505\nPROGRESS inputs=2400000 controls=151200000 pool_hits=151200000 bfs_cases=0 bfs_vertices=0 seconds=7.29314\nPROGRESS inputs=2500000 controls=157500000 pool_hits=157500000 bfs_cases=0 bfs_vertices=0 seconds=7.59619\nPROGRESS inputs=2600000 controls=163800000 pool_hits=163800000 bfs_cases=0 bfs_vertices=0 seconds=7.89878\nPROGRESS inputs=2700000 controls=170100000 pool_hits=170100000 bfs_cases=0 bfs_vertices=0 seconds=8.20285\nPROGRESS inputs=2800000 controls=176400000 pool_hits=176400000 bfs_cases=0 bfs_vertices=0 seconds=8.50509\nPROGRESS inputs=2900000 controls=182700000 pool_hits=182700000 bfs_cases=0 bfs_vertices=0 seconds=8.80726\nPROGRESS inputs=3000000 controls=189000000 pool_hits=189000000 bfs_cases=0 bfs_vertices=0 seconds=9.11018\nPROGRESS inputs=3100000 controls=195300000 pool_hits=195300000 bfs_cases=0 bfs_vertices=0 seconds=9.41397\nPROGRESS inputs=3200000 controls=201600000 pool_hits=201600000 bfs_cases=0 bfs_vertices=0 seconds=9.71832\nPROGRESS inputs=3300000 controls=207900000 pool_hits=207900000 bfs_cases=0 bfs_vertices=0 seconds=10.073\nPROGRESS inputs=3400000 controls=214200000 pool_hits=214200000 bfs_cases=0 bfs_vertices=0 seconds=10.425\nPROGRESS inputs=3500000 controls=220500000 pool_hits=220500000 bfs_cases=0 bfs_vertices=0 seconds=10.774\nPROGRESS inputs=3600000 controls=226800000 pool_hits=226800000 bfs_cases=0 bfs_vertices=0 seconds=11.1258\nCOMPLETE M=12 d=6 inputs=3624960 controls=228372480 pool_hits=228372480 bfs_cases=0 bfs_vertices=0 seconds=11.2145 no_root_keep_n_extension_counter=true scope=EXPLORATORY_without_independent_coverage_audit\n",
+      "stderr": ""
+    }
+  ],
+  "source_sha256": "17447f557083b26dbb7e84b62f66366729ae64c795a382b3cf0f6d25754f7439",
+  "binary_sha256": "a79c4a172d270247d287ae41e880c9996294c49288537ceeda1a331ce2205899",
+  "independent_coverage_audit": false
+}

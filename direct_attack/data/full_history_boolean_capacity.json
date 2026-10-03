@@ -1,0 +1,2288 @@
+{
+  "faces": {
+    "grid": [
+      [
+        -4,
+        1
+      ],
+      [
+        -3,
+        1
+      ],
+      [
+        -2,
+        1
+      ],
+      [
+        -3,
+        2
+      ],
+      [
+        -4,
+        3
+      ],
+      [
+        -1,
+        1
+      ],
+      [
+        -3,
+        4
+      ],
+      [
+        -2,
+        3
+      ],
+      [
+        -1,
+        2
+      ],
+      [
+        -1,
+        3
+      ],
+      [
+        -1,
+        4
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        4,
+        1
+      ]
+    ],
+    "nonzero_coefficients": 22,
+    "faces": 11132,
+    "valid_count_histogram": {
+      "0": 8428,
+      "1": 2414,
+      "2": 282,
+      "3": 8
+    },
+    "maximum_valid": 3,
+    "semantic_sha256": "d06b30d37be927a14251de58439b56029e3468804c4016a4bf3a0b27dc4bb886"
+  },
+  "partition": [
+    {
+      "n": 2,
+      "d": 2,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "c": 2,
+      "cube_vertices": 4,
+      "vertices_sha256": "f2f991d74dfbb2edf7f4475dcb7d82989de00a71e44bb11d4a6fbb49442577b6",
+      "admissible_full_history_bound": 1
+    },
+    {
+      "n": 3,
+      "d": 2,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "c": 1,
+      "cube_vertices": 4,
+      "vertices_sha256": "a30248e93a3f1bf61aed05d2bc21872d9dc4f1d12354217fa2691978072ba2b3",
+      "admissible_full_history_bound": 2
+    },
+    {
+      "n": 3,
+      "d": 3,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ]
+      ],
+      "c": 3,
+      "cube_vertices": 8,
+      "vertices_sha256": "29101ebf1ead685029508789eee51c4d4fff65524064d8e32a48efded7036982",
+      "admissible_full_history_bound": 4
+    },
+    {
+      "n": 4,
+      "d": 2,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3
+        ]
+      ],
+      "c": 1,
+      "cube_vertices": 4,
+      "vertices_sha256": "14f154b514f1ab9fa59e82e84f3f386b4b335a81393b2b777bd96a7b8b139f37",
+      "admissible_full_history_bound": 2
+    },
+    {
+      "n": 4,
+      "d": 3,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "c": 2,
+      "cube_vertices": 8,
+      "vertices_sha256": "e6cace8424654287557e4db3534d970f02b1e95091cb62a1e0104a916a7da900",
+      "admissible_full_history_bound": 5
+    },
+    {
+      "n": 4,
+      "d": 4,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "c": 4,
+      "cube_vertices": 16,
+      "vertices_sha256": "4939a292c2f5164ddcf27a07ddc7ef96928baa3e8967453a7294a9ecebf0a5c3",
+      "admissible_full_history_bound": 11
+    },
+    {
+      "n": 5,
+      "d": 2,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ]
+      ],
+      "c": 1,
+      "cube_vertices": 4,
+      "vertices_sha256": "5cff89b9cb949ed0445ad5500e2f5108bf2601518c6693aae5ec766cdaf038a8",
+      "admissible_full_history_bound": 2
+    },
+    {
+      "n": 5,
+      "d": 3,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "c": 1,
+      "cube_vertices": 8,
+      "vertices_sha256": "84c79539090933958ab6a830f2de9bbe4f2c76a0fe5cb915745774a0b65b927c",
+      "admissible_full_history_bound": 6
+    },
+    {
+      "n": 5,
+      "d": 4,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ]
+      ],
+      "c": 3,
+      "cube_vertices": 16,
+      "vertices_sha256": "039f1bf24d096d86aa9ac583d0be149c7235f049b702287f65e91e4253636fa7",
+      "admissible_full_history_bound": 12
+    },
+    {
+      "n": 5,
+      "d": 5,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ]
+      ],
+      "c": 5,
+      "cube_vertices": 32,
+      "vertices_sha256": "23b22df6bf551a4e788327db3b3d3d96e1eca49078d2c6bd0049da2d390eca8b",
+      "admissible_full_history_bound": 26
+    },
+    {
+      "n": 6,
+      "d": 2,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "c": 1,
+      "cube_vertices": 4,
+      "vertices_sha256": "dcef5db02f032290da2489fd9bb16c3c260da9208e7681c550245789a2e1708f",
+      "admissible_full_history_bound": 2
+    },
+    {
+      "n": 6,
+      "d": 3,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "c": 1,
+      "cube_vertices": 8,
+      "vertices_sha256": "6037ce0a5f886c55146511b4c9f07f036d1168e0a201208ff558dd1cd7129296",
+      "admissible_full_history_bound": 6
+    },
+    {
+      "n": 6,
+      "d": 4,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5
+        ]
+      ],
+      "c": 2,
+      "cube_vertices": 16,
+      "vertices_sha256": "22d1ae0fcce67296e2cd17f3632ad3c5930e34599c63e14c3496a36728a41ffb",
+      "admissible_full_history_bound": 13
+    },
+    {
+      "n": 6,
+      "d": 5,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ]
+      ],
+      "c": 4,
+      "cube_vertices": 32,
+      "vertices_sha256": "56511b60ee7ca9ef2be3af32864e7b08cbe6ba0de237b85c702e94813a4c812e",
+      "admissible_full_history_bound": 27
+    },
+    {
+      "n": 6,
+      "d": 6,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ]
+      ],
+      "c": 6,
+      "cube_vertices": 64,
+      "vertices_sha256": "a49d88051b2d2e5d1255d4f806a7569cda9b33a650a908566197031349ad8db4",
+      "admissible_full_history_bound": 57
+    },
+    {
+      "n": 7,
+      "d": 2,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      ],
+      "c": 1,
+      "cube_vertices": 4,
+      "vertices_sha256": "96a555e1456d18df03443d01271c26a6ada9ebd8eca0a7f8693783d8cea5cc9e",
+      "admissible_full_history_bound": 2
+    },
+    {
+      "n": 7,
+      "d": 3,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          5,
+          6
+        ]
+      ],
+      "c": 1,
+      "cube_vertices": 8,
+      "vertices_sha256": "9489df00db4604688efe85b0636ef76a7d6968bbb061506919f30980a247a9a2",
+      "admissible_full_history_bound": 6
+    },
+    {
+      "n": 7,
+      "d": 4,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ]
+      ],
+      "c": 1,
+      "cube_vertices": 16,
+      "vertices_sha256": "e86bff8a8a681e418c0d2d9b8678afd2db9de34fd760a1e3ef40f154c701d6d0",
+      "admissible_full_history_bound": 14
+    },
+    {
+      "n": 7,
+      "d": 5,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ]
+      ],
+      "c": 3,
+      "cube_vertices": 32,
+      "vertices_sha256": "b8098dc6f77022cb0e61f124bcfcb8c49e296c98f80b9db45b4b012a5d7af65c",
+      "admissible_full_history_bound": 28
+    },
+    {
+      "n": 7,
+      "d": 6,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ]
+      ],
+      "c": 5,
+      "cube_vertices": 64,
+      "vertices_sha256": "b43df9c42090e564518e49db729d98f5b8c80c3392b26981dc29b662a08f6c31",
+      "admissible_full_history_bound": 58
+    },
+    {
+      "n": 7,
+      "d": 7,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ]
+      ],
+      "c": 7,
+      "cube_vertices": 128,
+      "vertices_sha256": "4497d32c822ad4ae57132a3462f6a0630d5d4a7863915c4ee08634841c4fee9f",
+      "admissible_full_history_bound": 120
+    },
+    {
+      "n": 8,
+      "d": 2,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      ],
+      "c": 1,
+      "cube_vertices": 4,
+      "vertices_sha256": "8f1ed8a346725490cb4a1ffcfd96b3462ef9477b97780e03934f810834552dbd",
+      "admissible_full_history_bound": 2
+    },
+    {
+      "n": 8,
+      "d": 3,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      ],
+      "c": 1,
+      "cube_vertices": 8,
+      "vertices_sha256": "2fd864513475986872ce3b5383bf067aa9592655dc117e97360398267cb493b5",
+      "admissible_full_history_bound": 6
+    },
+    {
+      "n": 8,
+      "d": 4,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          6,
+          7
+        ]
+      ],
+      "c": 1,
+      "cube_vertices": 16,
+      "vertices_sha256": "cb6b646fcf3836a25304ac36fc862f45beeeeee1671cf9055126ec0d0187e8a5",
+      "admissible_full_history_bound": 14
+    },
+    {
+      "n": 8,
+      "d": 5,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7
+        ]
+      ],
+      "c": 2,
+      "cube_vertices": 32,
+      "vertices_sha256": "6d38f6c5882122c363d05bca362ea6317f08059ec2be429c2923cb2c54f591d6",
+      "admissible_full_history_bound": 29
+    },
+    {
+      "n": 8,
+      "d": 6,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ]
+      ],
+      "c": 4,
+      "cube_vertices": 64,
+      "vertices_sha256": "9307b3ddde46fdd81cc16004d2682a01f665c44aeee27167e06147935738b535",
+      "admissible_full_history_bound": 59
+    },
+    {
+      "n": 8,
+      "d": 7,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ]
+      ],
+      "c": 6,
+      "cube_vertices": 128,
+      "vertices_sha256": "d9df44b0d70244107495b39a3cfc647bc9f83b97e70832e12bd5d98405c806af",
+      "admissible_full_history_bound": 121
+    },
+    {
+      "n": 8,
+      "d": 8,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ]
+      ],
+      "c": 8,
+      "cube_vertices": 256,
+      "vertices_sha256": "be66c2867e103fa00c88539675e5cd95f52ec5e38d9038e6d3710539f6c0aec1",
+      "admissible_full_history_bound": 247
+    },
+    {
+      "n": 9,
+      "d": 2,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      ],
+      "c": 1,
+      "cube_vertices": 4,
+      "vertices_sha256": "d08b7adf639af5e24c5413b67d415efd00779b67700b2050bef74448825f3905",
+      "admissible_full_history_bound": 2
+    },
+    {
+      "n": 9,
+      "d": 3,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      ],
+      "c": 1,
+      "cube_vertices": 8,
+      "vertices_sha256": "d385c6ba80d0f70034228b642963f33b8fd133b479268d9bdf557456e7588d32",
+      "admissible_full_history_bound": 6
+    },
+    {
+      "n": 9,
+      "d": 4,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          6,
+          7,
+          8
+        ]
+      ],
+      "c": 1,
+      "cube_vertices": 16,
+      "vertices_sha256": "71195c0befdf01f531f05a484dccf2df1d3309ab419b721655d22d67a8805cf7",
+      "admissible_full_history_bound": 14
+    },
+    {
+      "n": 9,
+      "d": 5,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8
+        ]
+      ],
+      "c": 1,
+      "cube_vertices": 32,
+      "vertices_sha256": "ca8df3ced3aadcd9742f905eaa43103da617f40d35d2f374f0db9d884e181426",
+      "admissible_full_history_bound": 30
+    },
+    {
+      "n": 9,
+      "d": 6,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ]
+      ],
+      "c": 3,
+      "cube_vertices": 64,
+      "vertices_sha256": "ed3e3ff7119ebc8aee65760e558e2f78a3a1929ef6a1e3dffc07cdcc17990fe9",
+      "admissible_full_history_bound": 60
+    },
+    {
+      "n": 9,
+      "d": 7,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ]
+      ],
+      "c": 5,
+      "cube_vertices": 128,
+      "vertices_sha256": "3960d6817bc52cd69ed67290c10c600ca6917911db17ef22d9552bd8681bfb69",
+      "admissible_full_history_bound": 122
+    },
+    {
+      "n": 9,
+      "d": 8,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ]
+      ],
+      "c": 7,
+      "cube_vertices": 256,
+      "vertices_sha256": "7fc85039d24313d6f894bfacceaf2647fb6034f82e959bf55b476c1e53cd7732",
+      "admissible_full_history_bound": 248
+    },
+    {
+      "n": 9,
+      "d": 9,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ]
+      ],
+      "c": 9,
+      "cube_vertices": 512,
+      "vertices_sha256": "61f3f6fd3aa109e05aa31cc4d74f333d17c8f73ced22284db2209e96a39884af",
+      "admissible_full_history_bound": 502
+    },
+    {
+      "n": 10,
+      "d": 2,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      ],
+      "c": 1,
+      "cube_vertices": 4,
+      "vertices_sha256": "4e7b0e2ff81ec0ea9f8c9e014ca728fb0f900a340c42dea92939acadc0d45527",
+      "admissible_full_history_bound": 2
+    },
+    {
+      "n": 10,
+      "d": 3,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      ],
+      "c": 1,
+      "cube_vertices": 8,
+      "vertices_sha256": "34a9c18ea4c1be8cb0dfbd822526754c7e83912c0f2b596a4956ebeaddfe906c",
+      "admissible_full_history_bound": 6
+    },
+    {
+      "n": 10,
+      "d": 4,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      ],
+      "c": 1,
+      "cube_vertices": 16,
+      "vertices_sha256": "e5c8c1950e9f3c05f18b7f10b134f0348d879f3459f78e47ed892990ef88c570",
+      "admissible_full_history_bound": 14
+    },
+    {
+      "n": 10,
+      "d": 5,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9
+        ]
+      ],
+      "c": 1,
+      "cube_vertices": 32,
+      "vertices_sha256": "57036ac131393c1b4c196581cb6a3ea16dd384828f726cdf1076bc9562d1dfeb",
+      "admissible_full_history_bound": 30
+    },
+    {
+      "n": 10,
+      "d": 6,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          9
+        ]
+      ],
+      "c": 2,
+      "cube_vertices": 64,
+      "vertices_sha256": "c9f73f318b8b70d301ccbf37d3b53705c86e607a6aa66a141e09002bc31f8b13",
+      "admissible_full_history_bound": 61
+    },
+    {
+      "n": 10,
+      "d": 7,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ],
+        [
+          9
+        ]
+      ],
+      "c": 4,
+      "cube_vertices": 128,
+      "vertices_sha256": "e7ce8b7fb4dd437cd3d392968746ba16c484fe86959d83a325aedd63c476ca7a",
+      "admissible_full_history_bound": 123
+    },
+    {
+      "n": 10,
+      "d": 8,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ],
+        [
+          9
+        ]
+      ],
+      "c": 6,
+      "cube_vertices": 256,
+      "vertices_sha256": "094c0e2fec5d5ecd813ba7532337af96566dbd8956f37820a5a152001c0ccdd4",
+      "admissible_full_history_bound": 249
+    },
+    {
+      "n": 10,
+      "d": 9,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ],
+        [
+          9
+        ]
+      ],
+      "c": 8,
+      "cube_vertices": 512,
+      "vertices_sha256": "7830ca454a250cff432d32e00ca2690df2ad531e828cda2497c6ff06b2fed5cd",
+      "admissible_full_history_bound": 503
+    },
+    {
+      "n": 10,
+      "d": 10,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ],
+        [
+          9
+        ]
+      ],
+      "c": 10,
+      "cube_vertices": 1024,
+      "vertices_sha256": "fc62683cb885804aa761521dac50ca182266277dfd9a25d937c70969d3e37362",
+      "admissible_full_history_bound": 1013
+    },
+    {
+      "n": 11,
+      "d": 2,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      ],
+      "c": 1,
+      "cube_vertices": 4,
+      "vertices_sha256": "15e0cde36e3a1ce27014d0c092bf9b3091430c530f6aef10ac9d0cfc12c8063b",
+      "admissible_full_history_bound": 2
+    },
+    {
+      "n": 11,
+      "d": 3,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      ],
+      "c": 1,
+      "cube_vertices": 8,
+      "vertices_sha256": "4a0abecb33163b5cc782f6846a1b119148f393f93ba7c7a5ffdb5682c047e9d5",
+      "admissible_full_history_bound": 6
+    },
+    {
+      "n": 11,
+      "d": 4,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      ],
+      "c": 1,
+      "cube_vertices": 16,
+      "vertices_sha256": "5b2211bb861b37c564fc1496b9e85e4077c21b3a3dcd7997367ad9c4e33c0dd1",
+      "admissible_full_history_bound": 14
+    },
+    {
+      "n": 11,
+      "d": 5,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9,
+          10
+        ]
+      ],
+      "c": 1,
+      "cube_vertices": 32,
+      "vertices_sha256": "a38f2bc7a73251beaa9ad502a4d01759c48b9f3d3461e829ffa3ac44a9c331ec",
+      "admissible_full_history_bound": 30
+    },
+    {
+      "n": 11,
+      "d": 6,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "c": 1,
+      "cube_vertices": 64,
+      "vertices_sha256": "0fdbbf4da50f10d025d86e528b06a37987d5cadd60788f5482576447439609f1",
+      "admissible_full_history_bound": 62
+    },
+    {
+      "n": 11,
+      "d": 7,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          9
+        ],
+        [
+          10
+        ]
+      ],
+      "c": 3,
+      "cube_vertices": 128,
+      "vertices_sha256": "38fe65884c52aebdd9d2fdd3e987b1429976e681fe503c5881c11015c4de6fd3",
+      "admissible_full_history_bound": 124
+    },
+    {
+      "n": 11,
+      "d": 8,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ],
+        [
+          9
+        ],
+        [
+          10
+        ]
+      ],
+      "c": 5,
+      "cube_vertices": 256,
+      "vertices_sha256": "522165df082cd84f1be991b869258a55a6da98062cfd78dbad25825adb487238",
+      "admissible_full_history_bound": 250
+    },
+    {
+      "n": 11,
+      "d": 9,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ],
+        [
+          9
+        ],
+        [
+          10
+        ]
+      ],
+      "c": 7,
+      "cube_vertices": 512,
+      "vertices_sha256": "1260a7a51b66a7ea5c22c46f68e3c90a8e7640ac0eadfc0a4659ad76f7e1eba1",
+      "admissible_full_history_bound": 504
+    },
+    {
+      "n": 11,
+      "d": 10,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ],
+        [
+          9
+        ],
+        [
+          10
+        ]
+      ],
+      "c": 9,
+      "cube_vertices": 1024,
+      "vertices_sha256": "f8268ace8f200ba67fbd3d35f066f0e8292aa9348a530001e48fea87397e50fe",
+      "admissible_full_history_bound": 1014
+    },
+    {
+      "n": 11,
+      "d": 11,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ],
+        [
+          9
+        ],
+        [
+          10
+        ]
+      ],
+      "c": 11,
+      "cube_vertices": 2048,
+      "vertices_sha256": "543693fdb4160b22116ba25f324b87fa3cd302a11fecbb160d3a6b54ab1fcdd7",
+      "admissible_full_history_bound": 2036
+    },
+    {
+      "n": 12,
+      "d": 2,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      ],
+      "c": 1,
+      "cube_vertices": 4,
+      "vertices_sha256": "3323a2967489fa164e2ce79eb9bda0d279fd69f4f26485ad04a4e69119c6f5c7",
+      "admissible_full_history_bound": 2
+    },
+    {
+      "n": 12,
+      "d": 3,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      ],
+      "c": 1,
+      "cube_vertices": 8,
+      "vertices_sha256": "5c7646401ad1fa3bbe87ebc2322222f67ab447c482a7a39e54669f7a0ed5fb98",
+      "admissible_full_history_bound": 6
+    },
+    {
+      "n": 12,
+      "d": 4,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      ],
+      "c": 1,
+      "cube_vertices": 16,
+      "vertices_sha256": "93b701516c73aee47ac9063f8cab2f6a069b1608902fc3abcc0b2908c465ee83",
+      "admissible_full_history_bound": 14
+    },
+    {
+      "n": 12,
+      "d": 5,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      ],
+      "c": 1,
+      "cube_vertices": 32,
+      "vertices_sha256": "24f0a71cf67d79fc22303cee18d0f7095bba3cd5d6e7031cc6493e43e752fcb5",
+      "admissible_full_history_bound": 30
+    },
+    {
+      "n": 12,
+      "d": 6,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          9,
+          10,
+          11
+        ]
+      ],
+      "c": 1,
+      "cube_vertices": 64,
+      "vertices_sha256": "05211f96fff431f6f751685f5845c107fb5fecaba89ff8778c109061c45eb9b4",
+      "admissible_full_history_bound": 62
+    },
+    {
+      "n": 12,
+      "d": 7,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          11
+        ]
+      ],
+      "c": 2,
+      "cube_vertices": 128,
+      "vertices_sha256": "ce1b19c9b2ba7ee42238159f68ae4f3d57392d76ada18f5b14d6eacf208892c1",
+      "admissible_full_history_bound": 125
+    },
+    {
+      "n": 12,
+      "d": 8,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          9
+        ],
+        [
+          10
+        ],
+        [
+          11
+        ]
+      ],
+      "c": 4,
+      "cube_vertices": 256,
+      "vertices_sha256": "6ed34db51f572db10e5ca6a9cc45a74d1aa00f7799fe6f6ec3dace921c7d35ad",
+      "admissible_full_history_bound": 251
+    },
+    {
+      "n": 12,
+      "d": 9,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ],
+        [
+          9
+        ],
+        [
+          10
+        ],
+        [
+          11
+        ]
+      ],
+      "c": 6,
+      "cube_vertices": 512,
+      "vertices_sha256": "c595a65b3b1ba4c658f174a53efa932ef093e1af044afebfc88b5b641baa8cf8",
+      "admissible_full_history_bound": 505
+    },
+    {
+      "n": 12,
+      "d": 10,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ],
+        [
+          9
+        ],
+        [
+          10
+        ],
+        [
+          11
+        ]
+      ],
+      "c": 8,
+      "cube_vertices": 1024,
+      "vertices_sha256": "5ddddec769f9b4fdd1479372b8e53f45440965f1e66c5d54e1fd92dbc2b0db23",
+      "admissible_full_history_bound": 1015
+    },
+    {
+      "n": 12,
+      "d": 11,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ],
+        [
+          9
+        ],
+        [
+          10
+        ],
+        [
+          11
+        ]
+      ],
+      "c": 10,
+      "cube_vertices": 2048,
+      "vertices_sha256": "d22f9e4b60ed3385d828b4e558adea6097758d282044b58e6fdbe9e7d5f9666c",
+      "admissible_full_history_bound": 2037
+    },
+    {
+      "n": 12,
+      "d": 12,
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ],
+        [
+          9
+        ],
+        [
+          10
+        ],
+        [
+          11
+        ]
+      ],
+      "c": 12,
+      "cube_vertices": 4096,
+      "vertices_sha256": "cb2249fa75b0f55c6f8922ce37038f8596d44b3ecf325f1ddc6d9d8a301d7e66",
+      "admissible_full_history_bound": 4083
+    }
+  ],
+  "nonpartition": [
+    {
+      "n": 5,
+      "d": 4,
+      "equation_coefficients": [
+        1,
+        1,
+        -1,
+        -1,
+        0
+      ],
+      "c": 1,
+      "cube_vertices": 12,
+      "vertices_sha256": "63fa8a190fbd28154216f8da2966dfee98cd4c4e4b01e2019743727576174f65",
+      "admissible_full_history_bound": 10
+    },
+    {
+      "n": 6,
+      "d": 5,
+      "equation_coefficients": [
+        1,
+        1,
+        -1,
+        -1,
+        0,
+        0
+      ],
+      "c": 2,
+      "cube_vertices": 24,
+      "vertices_sha256": "e7ed195cbdcc80c4eb043c05b222d9df26f8fa28327ea97f853d531b958cadb1",
+      "admissible_full_history_bound": 21
+    },
+    {
+      "n": 7,
+      "d": 6,
+      "equation_coefficients": [
+        1,
+        1,
+        -1,
+        -1,
+        0,
+        0,
+        0
+      ],
+      "c": 3,
+      "cube_vertices": 48,
+      "vertices_sha256": "f8da00a5b0446aada3c8787e36eb14734f2a762b18b43fd281cf515dca00a1a1",
+      "admissible_full_history_bound": 44
+    },
+    {
+      "n": 8,
+      "d": 7,
+      "equation_coefficients": [
+        1,
+        1,
+        -1,
+        -1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "c": 4,
+      "cube_vertices": 96,
+      "vertices_sha256": "a9977c52a4e5df182f67a665eaca7cc4164c31f1efc041a8b2c3320cefd40dd4",
+      "admissible_full_history_bound": 91
+    },
+    {
+      "n": 9,
+      "d": 8,
+      "equation_coefficients": [
+        1,
+        1,
+        -1,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "c": 5,
+      "cube_vertices": 192,
+      "vertices_sha256": "9af2a13a176b6fbc26f54aba62c2c4ff33ced1b1f449564c7b114c0875cb65f7",
+      "admissible_full_history_bound": 186
+    },
+    {
+      "n": 10,
+      "d": 9,
+      "equation_coefficients": [
+        1,
+        1,
+        -1,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "c": 6,
+      "cube_vertices": 384,
+      "vertices_sha256": "c14f2da00f8eb18a1913c913e04186d10ed411c099a7baed77e20d5a0d60b23a",
+      "admissible_full_history_bound": 377
+    },
+    {
+      "n": 11,
+      "d": 10,
+      "equation_coefficients": [
+        1,
+        1,
+        -1,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "c": 7,
+      "cube_vertices": 768,
+      "vertices_sha256": "71fa67246ac72d5349fbd9d30d067a375a6d72a996bc8e7b972a47eb94f04698",
+      "admissible_full_history_bound": 760
+    },
+    {
+      "n": 12,
+      "d": 11,
+      "equation_coefficients": [
+        1,
+        1,
+        -1,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "c": 8,
+      "cube_vertices": 1536,
+      "vertices_sha256": "081368df3fdafaa0cabf7f85ef37a4573fc682db7bd1ede89ce0eed31fe3e006",
+      "admissible_full_history_bound": 1527
+    },
+    {
+      "n": 13,
+      "d": 12,
+      "equation_coefficients": [
+        1,
+        1,
+        -1,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "c": 9,
+      "cube_vertices": 3072,
+      "vertices_sha256": "14daceb8f5116fb229b5a3504c288f44edf39d531bd7215c9957de902cc4701e",
+      "admissible_full_history_bound": 3062
+    },
+    {
+      "n": 14,
+      "d": 13,
+      "equation_coefficients": [
+        1,
+        1,
+        -1,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "c": 10,
+      "cube_vertices": 6144,
+      "vertices_sha256": "621757c45be39bfd7ebb291425a5e35e8273f852a0a695f92784c079e0680f34",
+      "admissible_full_history_bound": 6133
+    },
+    {
+      "n": 15,
+      "d": 14,
+      "equation_coefficients": [
+        1,
+        1,
+        -1,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "c": 11,
+      "cube_vertices": 12288,
+      "vertices_sha256": "dd36a54e320732c3305a6cec36555d1e07b60b13ebca170e954db955c5bcc1b4",
+      "admissible_full_history_bound": 12276
+    }
+  ],
+  "arithmetic": {
+    "maximum_n": 4096,
+    "controls": 12281,
+    "semantic_sha256": "d547ccd7ae4501365f1c2099f98f7b166ef8df6d23761db8d3b9ada47c45631e",
+    "regimes": [
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        5
+      ]
+    ]
+  },
+  "boundary": "PROVED paper ANY globally shortest full inverse history: length <= cube-vertex count minus all available singleton directions minus1; partition/nonpartition capacity gap; cost/rank inequality for d<=3 all n and d4 n>=5. Real-space sharpness examples are NOT DFA-history realizations. General Cerny and unrestricted ALL/SOME cost/rank hypotheses OPEN; no formal claim."
+}

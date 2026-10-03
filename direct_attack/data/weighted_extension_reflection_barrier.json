@@ -1,0 +1,1 @@
+{"rows":[[5,5,4,3,2,0],[1,2,3,4,0,5]],"M":5,"L":1,"subset":31,"root_subset":32,"minimum":6,"word":[0,1,0,1,1,0],"root_target":16,"cut":[[3,1],[6,5],[12,4],[17,2],[19,4],[24,3],[25,5],[32,0],[33,5],[34,4],[36,3]],"reset_word":[0,1,0,0,1,0,0,1,0,1,1,0,1,0],"scope":"generic weighted M-extension false at gcd1; order-two target not refuted"}

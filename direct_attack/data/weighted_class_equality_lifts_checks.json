@@ -1,0 +1,59 @@
+{
+  "verified": true,
+  "designated_inputs": 34560,
+  "designated_ordinary_vertices": 4033582,
+  "retained_records": 70,
+  "retained_ordinary_vertices": 33928,
+  "family_controls": 63,
+  "corruptions_rejected": [
+    "class_rt",
+    "rt",
+    "weighted_vertices"
+  ],
+  "cover_details": [
+    {
+      "t": 10,
+      "distinct_inputs": 1080,
+      "synchronizing": 1080,
+      "ordinary_vertices": 59852,
+      "exact_maximum": 15
+    },
+    {
+      "t": 13,
+      "distinct_inputs": 29160,
+      "synchronizing": 29160,
+      "ordinary_vertices": 2039802,
+      "exact_maximum": 21
+    },
+    {
+      "t": 25,
+      "distinct_inputs": 1080,
+      "synchronizing": 1080,
+      "ordinary_vertices": 138302,
+      "exact_maximum": 16
+    },
+    {
+      "t": 49,
+      "distinct_inputs": 1080,
+      "synchronizing": 1080,
+      "ordinary_vertices": 263822,
+      "exact_maximum": 16
+    },
+    {
+      "t": 97,
+      "distinct_inputs": 1080,
+      "synchronizing": 1080,
+      "ordinary_vertices": 514862,
+      "exact_maximum": 16
+    },
+    {
+      "t": 193,
+      "distinct_inputs": 1080,
+      "synchronizing": 1080,
+      "ordinary_vertices": 1016942,
+      "exact_maximum": 16
+    }
+  ],
+  "source_sha256": "c9b31ef6c40da18034b540797688e732f1f0342d064aae21ceebbd160a2f9dcb",
+  "scope": "exact complete designated insertion covers and saved family controls only; no all-n equality absence claim"
+}

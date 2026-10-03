@@ -1,0 +1,30 @@
+{
+  "runs": [
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.moving_root_core_permutations"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T11:00:45.572446+00:00",
+      "seconds": 0.4210000000020955,
+      "returncode": 0,
+      "stdout": "{\"inputs\": 996, \"complete\": 798, \"boundary\": \"PROVED paper ALL n>=4: arbitrary permutation on remaining core states, original a exchanges r/0 and sends L to r, b fixes r/cycles core, gcd(d,M)=1. Variable paid avoidance is compensated by forced cheaper first a^2 b^L growth; ONE original square reset. a^2 is NOT assumed a unit map. No exact broader avoiding/support cost, novelty, formal or general Cerny claim; noncoprime arbitrary permutation OPEN here.\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_moving_root_core_permutations"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T11:00:46.009041+00:00",
+      "seconds": 2.4539999999979045,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"inputs\": 996, \"complete_core_permutation_inputs\": 798, \"sampled_core_inputs\": 184, \"large_inputs\": 14, \"nonunit_squared_returns\": 795, \"longer_than_n_plus_two_preparations\": 398, \"proper_core_extensions\": 107156, \"literal_particle_controls\": 3964415, \"boundary\": \"Independent exact factorial ALL remaining-core permutations/coprime d M3..7, four distinct deterministic samples each M8..14, selected large controls. Literal a^2 is permitted to permute remaining points; variable preparation, forced first growth saving, compatible square and all particles checked. No generator/solver imports. PROVED paper arbitrary-n class, finite COMPUTATIONALLY VERIFIED only, not formal/novel/general Cerny; broader noncoprime case OPEN here.\", \"corruptions_rejected\": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}\n",
+      "stderr": ""
+    }
+  ]
+}

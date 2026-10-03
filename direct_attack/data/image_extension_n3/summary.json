@@ -1,0 +1,26 @@
+{
+  "arguments": {
+    "source": null,
+    "n": 3,
+    "count": 1000,
+    "seed": 20260929,
+    "mode": "exhaustive",
+    "out": "direct_attack/data/image_extension_n3"
+  },
+  "counts": {
+    "tested": 351,
+    "strongly_connected": 147,
+    "synchronizing": 120,
+    "over_n": 0,
+    "over_ceil_3n_over_2": 0,
+    "over_2n": 0
+  },
+  "maxima": {
+    "3": 3
+  },
+  "records": [
+    "n3_cost3.json"
+  ],
+  "seconds": 0.0,
+  "scope": "Complete binary inputs only for exhaustive/first-map-orbits; source retention and random sampling are not exhaustive."
+}

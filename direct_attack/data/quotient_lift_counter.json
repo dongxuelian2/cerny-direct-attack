@@ -1,0 +1,13 @@
+{
+  "n": 4,
+  "rows": [[2, 3, 0, 1], [1, 0, 0, 0]],
+  "classes": [[0, 1], [2, 3]],
+  "quotient_rows": [[1, 0], [0, 0]],
+  "quotient_rt": 1,
+  "max_class_size": 2,
+  "actual_rt": 3,
+  "reset_word": [1, 0, 1],
+  "post_quotient_image": [0, 1],
+  "post_quotient_shortest_tail": 2,
+  "claim_refuted": "rt(A) <= rt(A/theta) + (max_class_size-1)^2"
+}

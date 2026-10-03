@@ -1,0 +1,8 @@
+{
+  "final_commit": "ac948e7001bff5428c22d236f96974856452d34d",
+  "mathematical_input_revision": "f30afd64643d785dff7ec5d44c730cb36a80dce6",
+  "validated_submission_revision": "b8d7362e3466d17b1dc611a7ef1bead90c878074",
+  "original_zip_sha256": "1a09dadd3de876028430fa4dc7aa8353f600075d8daff9c5eae79e0a8ed7c050",
+  "original_zip_public": false,
+  "reason": "Immutable original includes machine-private paths; exact ZIP and full Git bundle preserved in original local research checkout. Public release payload redacts paths and has its own checksum; it is not the original submission ZIP."
+}

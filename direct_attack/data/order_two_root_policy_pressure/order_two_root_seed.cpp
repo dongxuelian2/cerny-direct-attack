@@ -1,0 +1,37 @@
+#include <algorithm>
+#include <chrono>
+#include <fstream>
+#include <iostream>
+#include <numeric>
+#include <vector>
+using namespace std;
+int gcd_local(int a,int b){while(b){int z=a%b;a=b;b=z;}return a;}
+int main(int argc,char**argv){
+ int M=argc>1?stoi(argv[1]):12,d=argc>2?stoi(argv[2]):4,g=gcd_local(M,d),L=M-d;
+ if(M>20||g<2||M/g!=2)return 2;
+ int N=1<<(M+1),full=(1<<M)-1;vector<int>rest,a(M+1),incoming(M+1),pb(N),seen(N),dist(N),parent(N),pl(N),queue(N),patterns;
+ for(int q=0;q<M;++q)if(q!=0&&q!=L)rest.push_back(q);vector<int>A=rest;a[M]=0;a[0]=a[L]=M;
+ for(int U=0;U<N;++U)pb[U]=(U&(1<<M))|((U&full)>>1)|((U&1)<<(M-1));
+ for(int p=0;p<(1<<g)-1;++p){int U=0;for(int q=0;q<M;++q)if(p>>(q%g)&1)U|=1<<q;patterns.push_back(U|(1<<M));}
+ auto pre=[&](int U){int V=0;while(U){int q=__builtin_ctz((unsigned)U);V|=incoming[q];U&=U-1;}return V;};
+ long long inputs=0,controls=0,poolhits=0,bfscases=0,bfsvertices=0;int stamp=0;
+ int max3=0,max4=0;bool saved3=false;auto start=chrono::steady_clock::now();
+ do{
+  for(size_t i=0;i<rest.size();++i)a[rest[i]]=A[i]; bool sync=false;for(int j=1;j<L;++j)if(a[j]%L!=a[j+L]%L)sync=true; if(!sync)continue; fill(incoming.begin(),incoming.end(),0);
+  for(int q=0;q<=M;++q)incoming[a[q]]|=1<<q;++inputs;
+  int U=1<<M;++controls;++stamp;int head=0,tail=1;queue[0]=U;seen[U]=stamp;dist[U]=0;parent[U]=-1;
+  int goal3=-1,goal4=-1;
+  while(head<tail){int V=queue[head++],cost=dist[V],K=__builtin_popcount((unsigned)V);
+   if((V>>M&1)&&K>=3&&goal3<0)goal3=V;
+   if((V>>M&1)&&K>=4){goal4=V;break;}
+   for(int letter=0;letter<2;++letter){int W=letter?pb[V]:pre(V);if(seen[W]!=stamp){seen[W]=stamp;dist[W]=cost+1;parent[W]=V;pl[W]=letter;queue[tail++]=W;}}
+  }
+  bfsvertices+=tail;
+  if(goal3<0||goal4<0)return 3;
+  max3=max(max3,dist[goal3]);max4=max(max4,dist[goal4]);
+  if(dist[goal3]>M+4&&!saved3){saved3=true;ofstream out("direct_attack/native_build/order_two_root_seed3_counter.json");out<<"{\"M\":"<<M<<",\"d\":"<<d<<",\"U\":"<<U<<",\"minimum_seed3\":"<<dist[goal3]<<",\"a\":[";for(int q=0;q<=M;++q){if(q)out<<",";out<<a[q];}out<<"]}\n";}
+  if(dist[goal4]>2*(M+1)+1){ofstream out("direct_attack/native_build/order_two_root_seed4_counter.json");out<<"{\"M\":"<<M<<",\"d\":"<<d<<",\"U\":"<<U<<",\"minimum_seed3\":"<<dist[goal3]<<",\"minimum_seed4\":"<<dist[goal4]<<",\"a\":[";for(int q=0;q<=M;++q){if(q)out<<",";out<<a[q];}out<<"]}\n";cout<<"COUNTER seed4 inputs="<<inputs<<" minimum="<<dist[goal4]<<" budget="<<2*(M+1)+1<<"\n"<<flush;return 1;}
+  if(inputs%100000==0)cout<<"PROGRESS inputs="<<inputs<<" controls="<<controls<<" pool_hits="<<poolhits<<" bfs_cases="<<bfscases<<" bfs_vertices="<<bfsvertices<<" seconds="<<chrono::duration<double>(chrono::steady_clock::now()-start).count()<<"\n"<<flush;
+ }while(next_permutation(A.begin(),A.end()));
+ cout<<"COMPLETE M="<<M<<" d="<<d<<" inputs="<<inputs<<" controls="<<controls<<" pool_hits="<<poolhits<<" bfs_cases="<<bfscases<<" bfs_vertices="<<bfsvertices<<" seconds="<<chrono::duration<double>(chrono::steady_clock::now()-start).count()<<" max_min_seed3="<<max3<<" max_min_seed4="<<max4<<" seed3_n_plus3_refuted="<<saved3<<" no_root_seed4_budget_counter=true scope=EXPLORATORY_without_independent_coverage_audit\n"<<flush;
+}

@@ -1,0 +1,1094 @@
+{
+  "verified": true,
+  "all_literal_words": 131053,
+  "all_suffix_pair_paths": 65519,
+  "strictly_separated_singular_words": 130918,
+  "attainment": [
+    {
+      "n": 2,
+      "paid_support_state_letters": 6,
+      "paid_reset_state_letters": 2,
+      "matrix_entries": 4,
+      "singleton_orbit": 2,
+      "expected_cost_controls": [
+        [
+          3,
+          4
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          14
+        ],
+        [
+          3,
+          62
+        ],
+        [
+          3,
+          2048
+        ]
+      ]
+    },
+    {
+      "n": 3,
+      "paid_support_state_letters": 18,
+      "paid_reset_state_letters": 12,
+      "matrix_entries": 9,
+      "singleton_orbit": 3,
+      "expected_cost_controls": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          2,
+          31
+        ],
+        [
+          1,
+          512
+        ]
+      ]
+    },
+    {
+      "n": 4,
+      "paid_support_state_letters": 40,
+      "paid_reset_state_letters": 36,
+      "matrix_entries": 16,
+      "singleton_orbit": 4,
+      "expected_cost_controls": [
+        [
+          5,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          14
+        ],
+        [
+          5,
+          62
+        ],
+        [
+          5,
+          2048
+        ]
+      ]
+    },
+    {
+      "n": 5,
+      "paid_support_state_letters": 75,
+      "paid_reset_state_letters": 80,
+      "matrix_entries": 25,
+      "singleton_orbit": 5,
+      "expected_cost_controls": [
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          3,
+          31
+        ],
+        [
+          3,
+          1024
+        ]
+      ]
+    },
+    {
+      "n": 6,
+      "paid_support_state_letters": 126,
+      "paid_reset_state_letters": 150,
+      "matrix_entries": 36,
+      "singleton_orbit": 6,
+      "expected_cost_controls": [
+        [
+          7,
+          4
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          7,
+          62
+        ],
+        [
+          7,
+          2048
+        ]
+      ]
+    },
+    {
+      "n": 7,
+      "paid_support_state_letters": 196,
+      "paid_reset_state_letters": 252,
+      "matrix_entries": 49,
+      "singleton_orbit": 7,
+      "expected_cost_controls": [
+        [
+          2,
+          1
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          4,
+          31
+        ],
+        [
+          1,
+          256
+        ]
+      ]
+    },
+    {
+      "n": 8,
+      "paid_support_state_letters": 288,
+      "paid_reset_state_letters": 392,
+      "matrix_entries": 64,
+      "singleton_orbit": 8,
+      "expected_cost_controls": [
+        [
+          9,
+          4
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          9,
+          14
+        ],
+        [
+          9,
+          62
+        ],
+        [
+          9,
+          2048
+        ]
+      ]
+    },
+    {
+      "n": 9,
+      "paid_support_state_letters": 405,
+      "paid_reset_state_letters": 576,
+      "matrix_entries": 81,
+      "singleton_orbit": 9,
+      "expected_cost_controls": [
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          5,
+          31
+        ],
+        [
+          5,
+          1024
+        ]
+      ]
+    },
+    {
+      "n": 10,
+      "paid_support_state_letters": 550,
+      "paid_reset_state_letters": 810,
+      "matrix_entries": 100,
+      "singleton_orbit": 10,
+      "expected_cost_controls": [
+        [
+          11,
+          4
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          11,
+          62
+        ],
+        [
+          11,
+          2048
+        ]
+      ]
+    },
+    {
+      "n": 11,
+      "paid_support_state_letters": 726,
+      "paid_reset_state_letters": 1100,
+      "matrix_entries": 121,
+      "singleton_orbit": 11,
+      "expected_cost_controls": [
+        [
+          3,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          31
+        ],
+        [
+          3,
+          512
+        ]
+      ]
+    },
+    {
+      "n": 12,
+      "paid_support_state_letters": 936,
+      "paid_reset_state_letters": 1452,
+      "matrix_entries": 144,
+      "singleton_orbit": 12,
+      "expected_cost_controls": [
+        [
+          13,
+          4
+        ],
+        [
+          13,
+          6
+        ],
+        [
+          13,
+          14
+        ],
+        [
+          13,
+          62
+        ],
+        [
+          13,
+          2048
+        ]
+      ]
+    },
+    {
+      "n": 13,
+      "paid_support_state_letters": 1183,
+      "paid_reset_state_letters": 1872,
+      "matrix_entries": 169,
+      "singleton_orbit": 13,
+      "expected_cost_controls": [
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          3
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          7,
+          31
+        ],
+        [
+          7,
+          1024
+        ]
+      ]
+    },
+    {
+      "n": 14,
+      "paid_support_state_letters": 1470,
+      "paid_reset_state_letters": 2366,
+      "matrix_entries": 196,
+      "singleton_orbit": 14,
+      "expected_cost_controls": [
+        [
+          15,
+          4
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          15,
+          14
+        ],
+        [
+          15,
+          62
+        ],
+        [
+          15,
+          2048
+        ]
+      ]
+    },
+    {
+      "n": 15,
+      "paid_support_state_letters": 1800,
+      "paid_reset_state_letters": 2940,
+      "matrix_entries": 225,
+      "singleton_orbit": 15,
+      "expected_cost_controls": [
+        [
+          4,
+          1
+        ],
+        [
+          8,
+          3
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          8,
+          31
+        ],
+        [
+          1,
+          128
+        ]
+      ]
+    },
+    {
+      "n": 16,
+      "paid_support_state_letters": 2176,
+      "paid_reset_state_letters": 3600,
+      "matrix_entries": 256,
+      "singleton_orbit": 16,
+      "expected_cost_controls": [
+        [
+          17,
+          4
+        ],
+        [
+          17,
+          6
+        ],
+        [
+          17,
+          14
+        ],
+        [
+          17,
+          62
+        ],
+        [
+          17,
+          2048
+        ]
+      ]
+    },
+    {
+      "n": 17,
+      "paid_support_state_letters": 2601,
+      "paid_reset_state_letters": 4352,
+      "matrix_entries": 289,
+      "singleton_orbit": 17,
+      "expected_cost_controls": [
+        [
+          9,
+          2
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          9,
+          7
+        ],
+        [
+          9,
+          31
+        ],
+        [
+          9,
+          1024
+        ]
+      ]
+    },
+    {
+      "n": 18,
+      "paid_support_state_letters": 3078,
+      "paid_reset_state_letters": 5202,
+      "matrix_entries": 324,
+      "singleton_orbit": 18,
+      "expected_cost_controls": [
+        [
+          19,
+          4
+        ],
+        [
+          19,
+          6
+        ],
+        [
+          19,
+          14
+        ],
+        [
+          19,
+          62
+        ],
+        [
+          19,
+          2048
+        ]
+      ]
+    },
+    {
+      "n": 19,
+      "paid_support_state_letters": 3610,
+      "paid_reset_state_letters": 6156,
+      "matrix_entries": 361,
+      "singleton_orbit": 19,
+      "expected_cost_controls": [
+        [
+          5,
+          1
+        ],
+        [
+          10,
+          3
+        ],
+        [
+          10,
+          7
+        ],
+        [
+          10,
+          31
+        ],
+        [
+          5,
+          512
+        ]
+      ]
+    },
+    {
+      "n": 20,
+      "paid_support_state_letters": 4200,
+      "paid_reset_state_letters": 7220,
+      "matrix_entries": 400,
+      "singleton_orbit": 20,
+      "expected_cost_controls": [
+        [
+          21,
+          4
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          21,
+          62
+        ],
+        [
+          21,
+          2048
+        ]
+      ]
+    },
+    {
+      "n": 21,
+      "paid_support_state_letters": 4851,
+      "paid_reset_state_letters": 8400,
+      "matrix_entries": 441,
+      "singleton_orbit": 21,
+      "expected_cost_controls": [
+        [
+          11,
+          2
+        ],
+        [
+          11,
+          3
+        ],
+        [
+          11,
+          7
+        ],
+        [
+          11,
+          31
+        ],
+        [
+          11,
+          1024
+        ]
+      ]
+    },
+    {
+      "n": 22,
+      "paid_support_state_letters": 5566,
+      "paid_reset_state_letters": 9702,
+      "matrix_entries": 484,
+      "singleton_orbit": 22,
+      "expected_cost_controls": [
+        [
+          23,
+          4
+        ],
+        [
+          23,
+          6
+        ],
+        [
+          23,
+          14
+        ],
+        [
+          23,
+          62
+        ],
+        [
+          23,
+          2048
+        ]
+      ]
+    },
+    {
+      "n": 23,
+      "paid_support_state_letters": 6348,
+      "paid_reset_state_letters": 11132,
+      "matrix_entries": 529,
+      "singleton_orbit": 23,
+      "expected_cost_controls": [
+        [
+          6,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          12,
+          7
+        ],
+        [
+          12,
+          31
+        ],
+        [
+          3,
+          256
+        ]
+      ]
+    },
+    {
+      "n": 24,
+      "paid_support_state_letters": 7200,
+      "paid_reset_state_letters": 12696,
+      "matrix_entries": 576,
+      "singleton_orbit": 24,
+      "expected_cost_controls": [
+        [
+          25,
+          4
+        ],
+        [
+          25,
+          6
+        ],
+        [
+          25,
+          14
+        ],
+        [
+          25,
+          62
+        ],
+        [
+          25,
+          2048
+        ]
+      ]
+    },
+    {
+      "n": 25,
+      "paid_support_state_letters": 8125,
+      "paid_reset_state_letters": 14400,
+      "matrix_entries": 625,
+      "singleton_orbit": 25,
+      "expected_cost_controls": [
+        [
+          13,
+          2
+        ],
+        [
+          13,
+          3
+        ],
+        [
+          13,
+          7
+        ],
+        [
+          13,
+          31
+        ],
+        [
+          13,
+          1024
+        ]
+      ]
+    },
+    {
+      "n": 26,
+      "paid_support_state_letters": 9126,
+      "paid_reset_state_letters": 16250,
+      "matrix_entries": 676,
+      "singleton_orbit": 26,
+      "expected_cost_controls": [
+        [
+          27,
+          4
+        ],
+        [
+          9,
+          2
+        ],
+        [
+          27,
+          14
+        ],
+        [
+          27,
+          62
+        ],
+        [
+          27,
+          2048
+        ]
+      ]
+    },
+    {
+      "n": 27,
+      "paid_support_state_letters": 10206,
+      "paid_reset_state_letters": 18252,
+      "matrix_entries": 729,
+      "singleton_orbit": 27,
+      "expected_cost_controls": [
+        [
+          7,
+          1
+        ],
+        [
+          14,
+          3
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          14,
+          31
+        ],
+        [
+          7,
+          512
+        ]
+      ]
+    },
+    {
+      "n": 28,
+      "paid_support_state_letters": 11368,
+      "paid_reset_state_letters": 20412,
+      "matrix_entries": 784,
+      "singleton_orbit": 28,
+      "expected_cost_controls": [
+        [
+          29,
+          4
+        ],
+        [
+          29,
+          6
+        ],
+        [
+          29,
+          14
+        ],
+        [
+          29,
+          62
+        ],
+        [
+          29,
+          2048
+        ]
+      ]
+    },
+    {
+      "n": 29,
+      "paid_support_state_letters": 12615,
+      "paid_reset_state_letters": 22736,
+      "matrix_entries": 841,
+      "singleton_orbit": 29,
+      "expected_cost_controls": [
+        [
+          15,
+          2
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          15,
+          7
+        ],
+        [
+          15,
+          31
+        ],
+        [
+          15,
+          1024
+        ]
+      ]
+    },
+    {
+      "n": 30,
+      "paid_support_state_letters": 13950,
+      "paid_reset_state_letters": 25230,
+      "matrix_entries": 900,
+      "singleton_orbit": 30,
+      "expected_cost_controls": [
+        [
+          31,
+          4
+        ],
+        [
+          31,
+          6
+        ],
+        [
+          31,
+          14
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          31,
+          2048
+        ]
+      ]
+    },
+    {
+      "n": 31,
+      "paid_support_state_letters": 15376,
+      "paid_reset_state_letters": 27900,
+      "matrix_entries": 961,
+      "singleton_orbit": 31,
+      "expected_cost_controls": [
+        [
+          8,
+          1
+        ],
+        [
+          16,
+          3
+        ],
+        [
+          16,
+          7
+        ],
+        [
+          16,
+          31
+        ],
+        [
+          1,
+          64
+        ]
+      ]
+    },
+    {
+      "n": 32,
+      "paid_support_state_letters": 16896,
+      "paid_reset_state_letters": 30752,
+      "matrix_entries": 1024,
+      "singleton_orbit": 32,
+      "expected_cost_controls": [
+        [
+          33,
+          4
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          33,
+          14
+        ],
+        [
+          33,
+          62
+        ],
+        [
+          33,
+          2048
+        ]
+      ]
+    },
+    {
+      "n": 64,
+      "paid_support_state_letters": 133120,
+      "paid_reset_state_letters": 254016,
+      "matrix_entries": 4096,
+      "singleton_orbit": 64,
+      "expected_cost_controls": [
+        [
+          65,
+          4
+        ],
+        [
+          65,
+          6
+        ],
+        [
+          65,
+          14
+        ],
+        [
+          65,
+          62
+        ],
+        [
+          65,
+          2048
+        ]
+      ]
+    },
+    {
+      "n": 127,
+      "paid_support_state_letters": 1032256,
+      "paid_reset_state_letters": 2016252,
+      "matrix_entries": 16129,
+      "singleton_orbit": 127,
+      "expected_cost_controls": [
+        [
+          32,
+          1
+        ],
+        [
+          64,
+          3
+        ],
+        [
+          64,
+          7
+        ],
+        [
+          64,
+          31
+        ],
+        [
+          1,
+          16
+        ]
+      ]
+    },
+    {
+      "n": 257,
+      "paid_support_state_letters": 8520321,
+      "paid_reset_state_letters": 16842752,
+      "matrix_entries": 66049,
+      "singleton_orbit": 257,
+      "expected_cost_controls": [
+        [
+          129,
+          2
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          129,
+          7
+        ],
+        [
+          129,
+          31
+        ],
+        [
+          129,
+          1024
+        ]
+      ]
+    }
+  ],
+  "paid_support_state_letters": 9830808,
+  "paid_reset_state_letters": 19369452,
+  "matrix_entries": 97713,
+  "projected_stationary_example": {
+    "verified": true,
+    "dimension": 4,
+    "boolean_vertices": 12,
+    "stationarity_controls": 12,
+    "proper_nonempty_extension_witnesses": [
+      {
+        "S": 5,
+        "word": [
+          0
+        ],
+        "T": 26
+      },
+      {
+        "S": 6,
+        "word": [
+          1
+        ],
+        "T": 15
+      },
+      {
+        "S": 9,
+        "word": [
+          0
+        ],
+        "T": 26
+      },
+      {
+        "S": 10,
+        "word": [
+          2
+        ],
+        "T": 15
+      },
+      {
+        "S": 15,
+        "word": [
+          2
+        ],
+        "T": 31
+      },
+      {
+        "S": 16,
+        "word": [
+          0
+        ],
+        "T": 5
+      },
+      {
+        "S": 21,
+        "word": [
+          0
+        ],
+        "T": 31
+      },
+      {
+        "S": 22,
+        "word": [
+          1
+        ],
+        "T": 31
+      },
+      {
+        "S": 25,
+        "word": [
+          0
+        ],
+        "T": 31
+      },
+      {
+        "S": 26,
+        "word": [
+          2
+        ],
+        "T": 15
+      }
+    ],
+    "maximum_extension_cost": 1,
+    "all_shorter_reset_words_checked": 13,
+    "reset_threshold": 3,
+    "full_original_stationarity_impossible": true
+  },
+  "corruptions_rejected": [
+    "words",
+    "potential",
+    "maximum_word_length",
+    "functional_histogram",
+    "semantic_sha256",
+    "maximum_support_length",
+    "matrix_numerator_sha256",
+    "reset_length",
+    "reset_rank_history",
+    "support_words",
+    "projected normal",
+    "projected reset_word"
+  ],
+  "boundary": "Independent exact finite original-word weak-stationarity separation, ALL word controls n2..16, support/reset/singleton-orbit certificates through n257. All-n maximum support optimum n is paper PROVED, not formal. No general reset theorem, no expected-cost lower bound or universality of this construction; general Cerny OPEN."
+}

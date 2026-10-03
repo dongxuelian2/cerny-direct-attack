@@ -1,0 +1,30 @@
+{
+  "runs": [
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.moving_root_amortized_return"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T10:51:03.731578+00:00",
+      "seconds": 4.905999999995402,
+      "returncode": 0,
+      "stdout": "{\"inputs\": 279, \"two_point_chain_factors\": 984, \"boundary\": \"PROVED paper EVERY sync parameter M/gcd(d,M)>=3: actual two-point return costs<=2(M+1) on whole-coset core sets; unit growth cost<=M+1 elsewhere. ONE compatible truncated chain plus paid avoidance/alignment/final original a costs<=(n-1)^2. Noncoprime restriction removed for this explicit binary moving-root family. Finite scopes explicit; no novelty, formal or general Cerny proof.\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_moving_root_amortized_return"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T10:51:08.649616+00:00",
+      "seconds": 8.546999999998661,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"inputs\": 279, \"core_extension_controls\": 30180, \"two_point_controls\": 1281, \"one_point_chain_factors\": 6240, \"two_point_chain_factors\": 984, \"literal_particle_controls\": 58407500, \"boundary\": \"Independent ALL noncoprime SYNC parameter pairs M3..40 plus seven large controls; literal core/full row defects, original-r endpoint, two proportional-budget branches, exact compatible growth sum/word/rotation/reset. No generator/solver/preceding checker imports. PROVED paper all-sync-family square, finite controls COMPUTATIONALLY VERIFIED; not formal, novel or a general Cerny proof.\", \"corruptions_rejected\": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}\n",
+      "stderr": ""
+    }
+  ]
+}

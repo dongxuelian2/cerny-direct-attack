@@ -1,0 +1,79 @@
+{
+  "lean_toolchain": "leanprover/lean4:v4.19.0",
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "accepted": [
+    {
+      "source": "lean/CertificateCore.lean",
+      "stage": "OpenMath frozen core",
+      "historical_source_sha256": "f9cbcd5ab271759ee309919195fb8c84c1f612a3afb20e924ff6a9ba355dd445",
+      "source_sha256": "f9cbcd5ab271759ee309919195fb8c84c1f612a3afb20e924ff6a9ba355dd445"
+    },
+    {
+      "source": "post_baseline/lean_sprint/ResearchCore.lean",
+      "stage": "OpenMath frozen core",
+      "historical_source_sha256": "2f5c58ffce695fe35d8efe4db84acbb4f6d0e1e0974e931b3abed0ca65cff884",
+      "source_sha256": "2f5c58ffce695fe35d8efe4db84acbb4f6d0e1e0974e931b3abed0ca65cff884"
+    },
+    {
+      "source": "post_baseline/lean_sprint/AnchorPotentials.lean",
+      "stage": "OpenMath frozen core",
+      "historical_source_sha256": "b4cee113a3998656d31d545ffcefe3d4b597aeed86e35b3b33053f61dfd8dee1",
+      "source_sha256": "b4cee113a3998656d31d545ffcefe3d4b597aeed86e35b3b33053f61dfd8dee1"
+    },
+    {
+      "source": "post_baseline/lean_sprint/ThreeAnchorGraph.lean",
+      "stage": "OpenMath frozen core",
+      "historical_source_sha256": "96d9461d44ca3d16442e0bcecf51726af7c19518bfb8620b77bc47bf4b1c4a34",
+      "source_sha256": "96d9461d44ca3d16442e0bcecf51726af7c19518bfb8620b77bc47bf4b1c4a34"
+    },
+    {
+      "source": "post_baseline/lean_sprint/Cerny3Checked.lean",
+      "stage": "OpenMath frozen core",
+      "historical_source_sha256": "59b4820de7231c0afe4921e3bb425f8793a249939f352e32cb45ec8b4c14e18d",
+      "source_sha256": "59b4820de7231c0afe4921e3bb425f8793a249939f352e32cb45ec8b4c14e18d"
+    },
+    {
+      "source": "post_baseline/lean_sprint/Cerny4Checked.lean",
+      "stage": "OpenMath frozen core",
+      "historical_source_sha256": "5abcbabfd2549273b8e0b58bd40407c19f415d9212bab6db229203caaf075e8c",
+      "source_sha256": "5abcbabfd2549273b8e0b58bd40407c19f415d9212bab6db229203caaf075e8c"
+    },
+    {
+      "source": "direct_attack/LayeredPairBarrier.lean",
+      "stage": "OpenMath frozen core",
+      "historical_source_sha256": "2c3fa3ced68e0c5e8b230d9977f3bec2ad0492a30b8974a2f817971a6e692a34",
+      "source_sha256": "2c3fa3ced68e0c5e8b230d9977f3bec2ad0492a30b8974a2f817971a6e692a34"
+    },
+    {
+      "source": "direct_attack/KariInverseShrink.lean",
+      "stage": "OpenMath frozen core",
+      "historical_source_sha256": "6d82c55ffbb1ba7daf153d24f26f8cb3c1d3ae81e79877025173c3d5eea4b602",
+      "source_sha256": "6d82c55ffbb1ba7daf153d24f26f8cb3c1d3ae81e79877025173c3d5eea4b602"
+    },
+    {
+      "source": "direct_attack/KariShrinkProducts.lean",
+      "stage": "OpenMath frozen core",
+      "historical_source_sha256": "3ce2361202c7ba27745f9da05492d2251a6d80cc0a58ffa3034a27e5f2fb7e3f",
+      "source_sha256": "f19261f84335f9cf07cd930b0346b4483ed2e7a10cb489cd2d28bf466c814f37"
+    },
+    {
+      "source": "direct_attack/ReflectionCoreCut.lean",
+      "stage": "OpenMath frozen core",
+      "historical_source_sha256": "5a2df90e8b17785c21270b98a2c7949e4670923b1c774cb4572ead90b4c8727d",
+      "source_sha256": "e1afd1052276f406f4713da52a6242088cdf1afaf75380f7cf094056c54ffe4c"
+    },
+    {
+      "source": "direct_attack/post_release/OrderTwoThreeABarrier.lean",
+      "stage": "post-release research",
+      "source_sha256": "5cdb5d7c0707715b8a26183c91936e5f6b95f8aaf14df66b7bb94c2335bfd6cb"
+    }
+  ],
+  "excluded": [
+    "lean/Cerny3.lean",
+    "lean/Cerny4.lean"
+  ]
+}

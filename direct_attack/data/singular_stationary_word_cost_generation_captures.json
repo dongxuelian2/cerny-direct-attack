@@ -1,0 +1,38 @@
+{
+  "verified": true,
+  "runs": [
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.singular_stationary_word_cost"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T04:18:23.858037+00:00",
+      "seconds": 1.375,
+      "returncode": 0,
+      "stdout": "{\"short_word_scopes\": 15, \"all_literal_words\": 131053, \"attainment_scopes\": 34, \"maximum_attainment_n\": 257, \"boundary\": \"PROVED paper ALL n>=2: at costs<=n-1, full-Q stationary nonnegative average cannot positively use ANY singular word in Cerny automata; sharp maximum support cost n with synchronizing support. Weak full-row condition, not required J/n. Expected cost can approach0. No general Cerny proof, no novelty claim, no formal verification.\"}\n",
+      "stderr": "",
+      "output_sha256": "d120e32d1463aefaee9cd85d9f7e1b8f87757433a754afc29cb3c2973e9ef996"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.singular_stationary_word_cost",
+        "--out",
+        "<CHECKOUT>\\direct_attack\\native_build\\singular_stationary_word_cost_replay.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T04:27:33.410694+00:00",
+      "seconds": 1.3430000000007567,
+      "returncode": 0,
+      "stdout": "{\"short_word_scopes\": 15, \"all_literal_words\": 131053, \"attainment_scopes\": 34, \"maximum_attainment_n\": 257, \"boundary\": \"PROVED paper ALL n>=2: at costs<=n-1, full-Q stationary nonnegative average cannot positively use ANY singular word in Cerny automata; sharp maximum support cost n with synchronizing support. Weak full-row condition, not required J/n. Expected cost can approach0. No general Cerny proof, no novelty claim, no formal verification.\"}\n",
+      "stderr": "",
+      "output_sha256": "d120e32d1463aefaee9cd85d9f7e1b8f87757433a754afc29cb3c2973e9ef996"
+    }
+  ],
+  "parsed_records_equal": true,
+  "normalization": "none",
+  "generator_sha256": "f8372642dd31fdd5ef99e7f8ad05ac00f6b0cab43a73cc226b1e0edb7be4f17f"
+}

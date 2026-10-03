@@ -1,0 +1,31 @@
+{
+  "verified": true,
+  "checks": 138,
+  "regeneration_commands": 219,
+  "archived": [
+    {
+      "path": "direct_attack/data/moving_root_paid_compensation_continuation_provenance/audit_run.json",
+      "sha256": "99d4f15f85f2ca753f93a0f2f71e3d7170f2d5f3ae201808a418d8184d994b36"
+    },
+    {
+      "path": "direct_attack/data/moving_root_paid_compensation_continuation_provenance/reproduction_commands.json",
+      "sha256": "91f1062c1001ae49114d38689b37a1b704251b28c3db18356ec158ab97434fda"
+    },
+    {
+      "path": "direct_attack/data/moving_root_paid_compensation_continuation_provenance/sha256_manifest.json",
+      "sha256": "3489e6b08fe4ffed9e985edc3f797a957301531f7bcff8aabd83d2d1fff182eb"
+    }
+  ],
+  "native_builds": [
+    "direct_attack/data/alternating_frame_build.json",
+    "direct_attack/data/alternating_native_build.json",
+    "direct_attack/data/binary_n6_history_cover_native_build.json",
+    "direct_attack/data/class_reset_native_build.json",
+    "direct_attack/data/complete_policy_build.json",
+    "direct_attack/data/native_build.json",
+    "direct_attack/data/sparse_policy_build.json",
+    "direct_attack/data/weighted_class_reset_native_build.json"
+  ],
+  "mathematical_status": "PROVED paper all-parameter synchronization and exact avoidance/positive-original support; coprime ONE compatible square. Finite controls COMPUTATIONALLY VERIFIED, previous Kari FORMALLY VERIFIED unchanged. General Cerny OPEN; noncoprime square not established here; no novelty.",
+  "audit_boundary": "checkpoint137 preserved verbatim; ONE new independent213 moving-root parameter checker: ALL d at M3..20 plus selected31/63/127/256,203SYNC/10 order-two permutation quotients/146 compatible coprime square words,16628 proper-core extensions,1132632 pair/14336 avoidance Bellman edges,84795818 literal controls and12 rejected corruptions. ALL-parameter exact avoidance/positive-original-a stationary support cost n+2 and coprime paid square PROVED paper, not formal or novel. Correcting suffix cap n+1, weaker fixing-r stationarity is distinct and nonsynchronizing. Noncoprime square not proved here; general Cerny OPEN. No full138 rerun; prior literal Kari formal/compiler guards unchanged."
+}

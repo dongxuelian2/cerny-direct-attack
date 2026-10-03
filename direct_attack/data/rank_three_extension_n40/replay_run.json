@@ -1,0 +1,24 @@
+{
+  "argv": [
+    "<PYTHON_RUNTIME>\\python.exe",
+    "-m",
+    "direct_attack.rank_three_extension_search",
+    "--n",
+    "40",
+    "--count",
+    "100000",
+    "--seed",
+    "20261013",
+    "--restart",
+    "500",
+    "--out",
+    "<CHECKOUT>\\direct_attack\\native_build\\rank3_replay_n20ms57d"
+  ],
+  "cwd": "<CHECKOUT>",
+  "returncode": 0,
+  "seconds": 19.686999999999898,
+  "verified": true,
+  "records": 10,
+  "input_sha256": "643d06f43e59246e2717d630c400501d4b407f2f8e876f88dd878ec6dfbdaa72",
+  "boundary": "Literal replay outputs retained; initial generation stdout was not saved for rank3 n12/20/30/40. Rank3 n63 and rank4/5 also retain initial generation output."
+}

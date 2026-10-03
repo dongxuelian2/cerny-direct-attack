@@ -1,0 +1,433 @@
+{
+  "verified": true,
+  "records": [
+    {
+      "n": 4,
+      "images": 14,
+      "max_extension": 6,
+      "rt": 6,
+      "all_entries_checked": true
+    },
+    {
+      "n": 5,
+      "images": 14,
+      "max_extension": 6,
+      "rt": 7,
+      "all_entries_checked": true
+    },
+    {
+      "n": 6,
+      "images": 22,
+      "max_extension": 10,
+      "rt": 8,
+      "all_entries_checked": true
+    },
+    {
+      "n": 7,
+      "images": 26,
+      "max_extension": 12,
+      "rt": 9,
+      "all_entries_checked": true
+    },
+    {
+      "n": 8,
+      "images": 30,
+      "max_extension": 14,
+      "rt": 10,
+      "all_entries_checked": true
+    },
+    {
+      "n": 9,
+      "images": 34,
+      "max_extension": 16,
+      "rt": 11,
+      "all_entries_checked": true
+    },
+    {
+      "n": 10,
+      "images": 38,
+      "max_extension": 18,
+      "rt": 12,
+      "all_entries_checked": true
+    },
+    {
+      "n": 11,
+      "images": 42,
+      "max_extension": 20,
+      "rt": 13,
+      "all_entries_checked": true
+    },
+    {
+      "n": 12,
+      "images": 46,
+      "max_extension": 22,
+      "rt": 14,
+      "all_entries_checked": true
+    },
+    {
+      "n": 13,
+      "images": 50,
+      "max_extension": 24,
+      "rt": 15,
+      "all_entries_checked": true
+    },
+    {
+      "n": 14,
+      "images": 54,
+      "max_extension": 26,
+      "rt": 16,
+      "all_entries_checked": true
+    },
+    {
+      "n": 15,
+      "images": 58,
+      "max_extension": 28,
+      "rt": 17,
+      "all_entries_checked": true
+    },
+    {
+      "n": 16,
+      "images": 62,
+      "max_extension": 30,
+      "rt": 18,
+      "all_entries_checked": true
+    },
+    {
+      "n": 17,
+      "images": 66,
+      "max_extension": 32,
+      "rt": 19,
+      "all_entries_checked": true
+    },
+    {
+      "n": 18,
+      "images": 70,
+      "max_extension": 34,
+      "rt": 20,
+      "all_entries_checked": true
+    },
+    {
+      "n": 19,
+      "images": 74,
+      "max_extension": 36,
+      "rt": 21,
+      "all_entries_checked": true
+    },
+    {
+      "n": 20,
+      "images": 78,
+      "max_extension": 38,
+      "rt": 22,
+      "all_entries_checked": true
+    },
+    {
+      "n": 21,
+      "images": 82,
+      "max_extension": 40,
+      "rt": 23,
+      "all_entries_checked": true
+    },
+    {
+      "n": 22,
+      "images": 86,
+      "max_extension": 42,
+      "rt": 24,
+      "all_entries_checked": true
+    },
+    {
+      "n": 23,
+      "images": 90,
+      "max_extension": 44,
+      "rt": 25,
+      "all_entries_checked": true
+    },
+    {
+      "n": 24,
+      "images": 94,
+      "max_extension": 46,
+      "rt": 26,
+      "all_entries_checked": true
+    },
+    {
+      "n": 25,
+      "images": 98,
+      "max_extension": 48,
+      "rt": 27,
+      "all_entries_checked": true
+    },
+    {
+      "n": 26,
+      "images": 102,
+      "max_extension": 50,
+      "rt": 28,
+      "all_entries_checked": true
+    },
+    {
+      "n": 27,
+      "images": 106,
+      "max_extension": 52,
+      "rt": 29,
+      "all_entries_checked": true
+    },
+    {
+      "n": 28,
+      "images": 110,
+      "max_extension": 54,
+      "rt": 30,
+      "all_entries_checked": true
+    },
+    {
+      "n": 29,
+      "images": 114,
+      "max_extension": 56,
+      "rt": 31,
+      "all_entries_checked": true
+    },
+    {
+      "n": 30,
+      "images": 118,
+      "max_extension": 58,
+      "rt": 32,
+      "all_entries_checked": true
+    },
+    {
+      "n": 31,
+      "images": 122,
+      "max_extension": 60,
+      "rt": 33,
+      "all_entries_checked": true
+    },
+    {
+      "n": 32,
+      "images": 126,
+      "max_extension": 62,
+      "rt": 34,
+      "all_entries_checked": true
+    },
+    {
+      "n": 33,
+      "images": 130,
+      "max_extension": 64,
+      "rt": 35,
+      "all_entries_checked": true
+    },
+    {
+      "n": 34,
+      "images": 134,
+      "max_extension": 66,
+      "rt": 36,
+      "all_entries_checked": true
+    },
+    {
+      "n": 35,
+      "images": 138,
+      "max_extension": 68,
+      "rt": 37,
+      "all_entries_checked": true
+    },
+    {
+      "n": 36,
+      "images": 142,
+      "max_extension": 70,
+      "rt": 38,
+      "all_entries_checked": true
+    },
+    {
+      "n": 37,
+      "images": 146,
+      "max_extension": 72,
+      "rt": 39,
+      "all_entries_checked": true
+    },
+    {
+      "n": 38,
+      "images": 150,
+      "max_extension": 74,
+      "rt": 40,
+      "all_entries_checked": true
+    },
+    {
+      "n": 39,
+      "images": 154,
+      "max_extension": 76,
+      "rt": 41,
+      "all_entries_checked": true
+    },
+    {
+      "n": 40,
+      "images": 158,
+      "max_extension": 78,
+      "rt": 42,
+      "all_entries_checked": true
+    },
+    {
+      "n": 41,
+      "images": 162,
+      "max_extension": 80,
+      "rt": 43,
+      "all_entries_checked": true
+    },
+    {
+      "n": 42,
+      "images": 166,
+      "max_extension": 82,
+      "rt": 44,
+      "all_entries_checked": true
+    },
+    {
+      "n": 43,
+      "images": 170,
+      "max_extension": 84,
+      "rt": 45,
+      "all_entries_checked": true
+    },
+    {
+      "n": 44,
+      "images": 174,
+      "max_extension": 86,
+      "rt": 46,
+      "all_entries_checked": true
+    },
+    {
+      "n": 45,
+      "images": 178,
+      "max_extension": 88,
+      "rt": 47,
+      "all_entries_checked": true
+    },
+    {
+      "n": 46,
+      "images": 182,
+      "max_extension": 90,
+      "rt": 48,
+      "all_entries_checked": true
+    },
+    {
+      "n": 47,
+      "images": 186,
+      "max_extension": 92,
+      "rt": 49,
+      "all_entries_checked": true
+    },
+    {
+      "n": 48,
+      "images": 190,
+      "max_extension": 94,
+      "rt": 50,
+      "all_entries_checked": true
+    },
+    {
+      "n": 49,
+      "images": 194,
+      "max_extension": 96,
+      "rt": 51,
+      "all_entries_checked": true
+    },
+    {
+      "n": 50,
+      "images": 198,
+      "max_extension": 98,
+      "rt": 52,
+      "all_entries_checked": true
+    },
+    {
+      "n": 51,
+      "images": 202,
+      "max_extension": 100,
+      "rt": 53,
+      "all_entries_checked": true
+    },
+    {
+      "n": 52,
+      "images": 206,
+      "max_extension": 102,
+      "rt": 54,
+      "all_entries_checked": true
+    },
+    {
+      "n": 53,
+      "images": 210,
+      "max_extension": 104,
+      "rt": 55,
+      "all_entries_checked": true
+    },
+    {
+      "n": 54,
+      "images": 214,
+      "max_extension": 106,
+      "rt": 56,
+      "all_entries_checked": true
+    },
+    {
+      "n": 55,
+      "images": 218,
+      "max_extension": 108,
+      "rt": 57,
+      "all_entries_checked": true
+    },
+    {
+      "n": 56,
+      "images": 222,
+      "max_extension": 110,
+      "rt": 58,
+      "all_entries_checked": true
+    },
+    {
+      "n": 57,
+      "images": 226,
+      "max_extension": 112,
+      "rt": 59,
+      "all_entries_checked": true
+    },
+    {
+      "n": 58,
+      "images": 230,
+      "max_extension": 114,
+      "rt": 60,
+      "all_entries_checked": true
+    },
+    {
+      "n": 59,
+      "images": 234,
+      "max_extension": 116,
+      "rt": 61,
+      "all_entries_checked": true
+    },
+    {
+      "n": 60,
+      "images": 238,
+      "max_extension": 118,
+      "rt": 62,
+      "all_entries_checked": true
+    },
+    {
+      "n": 61,
+      "images": 242,
+      "max_extension": 120,
+      "rt": 63,
+      "all_entries_checked": true
+    },
+    {
+      "n": 62,
+      "images": 246,
+      "max_extension": 122,
+      "rt": 64,
+      "all_entries_checked": true
+    },
+    {
+      "n": 63,
+      "images": 250,
+      "max_extension": 124,
+      "rt": 65,
+      "all_entries_checked": true
+    }
+  ],
+  "scan_parameters_checked": 147,
+  "corruptions_rejected": [
+    "extension_word",
+    "rt",
+    "target"
+  ],
+  "seconds": 2.0,
+  "boundary": "Every saved family entry and every scan summary independently checked. Arbitrary-n theorem is the paper proof; n5 is excluded."
+}

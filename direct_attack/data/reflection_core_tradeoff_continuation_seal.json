@@ -1,0 +1,31 @@
+{
+  "verified": true,
+  "checks": 144,
+  "regeneration_commands": 225,
+  "archived": [
+    {
+      "path": "direct_attack/data/reflection_core_tradeoff_continuation_provenance/audit_run.json",
+      "sha256": "e850814b033325952b2bab359a1f562ca42492ed7967fcfe282bbb9193989516"
+    },
+    {
+      "path": "direct_attack/data/reflection_core_tradeoff_continuation_provenance/reproduction_commands.json",
+      "sha256": "398c552de863cb9b1dfc2f8d34622a97d4a81dba4110e980c7d41fcb6546be63"
+    },
+    {
+      "path": "direct_attack/data/reflection_core_tradeoff_continuation_provenance/sha256_manifest.json",
+      "sha256": "1d572cf2798e324cd795dbbf7f9af562225e397db8215c372cf3f461645f765e"
+    }
+  ],
+  "native_builds": [
+    "direct_attack/data/alternating_frame_build.json",
+    "direct_attack/data/alternating_native_build.json",
+    "direct_attack/data/binary_n6_history_cover_native_build.json",
+    "direct_attack/data/class_reset_native_build.json",
+    "direct_attack/data/complete_policy_build.json",
+    "direct_attack/data/native_build.json",
+    "direct_attack/data/sparse_policy_build.json",
+    "direct_attack/data/weighted_class_reset_native_build.json"
+  ],
+  "mathematical_status": "PROVED paper explicit reflection all-n avoidance/support tradeoff and linear reset, independent literal/flow controls COMPUTATIONALLY VERIFIED, abstract integer cut/induction FORMALLY VERIFIED. Full all-n parameter transfer and general Cerny NOT formal. General mixed-core square/Cerny OPEN, prior Kari FORMALLY VERIFIED unchanged.",
+  "audit_boundary": "checkpoint143 preserved verbatim; ONE new independent83-input reflection-core audit M3..80 plus127,256,512,1024,2048,40476313 literal particle controls,14565 actual word/flow controls,188 integer cut edges,6132 ALL words<=8 at M5..16,8 corruption rejections. All-n ordinary avoid9 versus exact three-a avoid/count-optimal positive-a stationary cost2M, cheaper unrestricted explicit support<=max(9,n), and original linear reset5M-6 PROVED paper. ReflectionCoreCut Lean4.19/Std/kernel decide formally verifies ONLY abstract depth8 closure/all-word induction and ninth-letter witness; modular parameter transfer/metrics/reset not formal. Axioms propext/Quot.sound only; general Cerny/mixed-core square OPEN. No priority/full144 rerun; earlier native/Kari guards preserved."
+}

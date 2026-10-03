@@ -1,0 +1,59 @@
+{
+  "verified": true,
+  "checks": 120,
+  "regeneration_commands": 203,
+  "archived": [
+    {
+      "path": "direct_attack/data/full_history_boolean_continuation_provenance/audit_run.json",
+      "sha256": "43d35fbd2ca97f5b5c87ee5347f804aef9e2b673b047e314c454fb7b4559f582"
+    },
+    {
+      "path": "direct_attack/data/full_history_boolean_continuation_provenance/reproduction_commands.json",
+      "sha256": "ee1a42be2a2366f1aeec5343180e1a57ad2d35dee1461cd4090fa7e134014d09"
+    },
+    {
+      "path": "direct_attack/data/full_history_boolean_continuation_provenance/sha256_manifest.json",
+      "sha256": "cb62aa21bbbf8b33caa2924c14edbfdb798e12048d2cd6ad37cb661d3d0acf07"
+    }
+  ],
+  "native_builds": [
+    {
+      "metadata": "direct_attack/data/alternating_frame_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/alternating_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/class_reset_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/complete_policy_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/sparse_policy_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/weighted_class_reset_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    }
+  ],
+  "generation_and_replay": "direct_attack/data/full_history_boolean_generation_captures.json",
+  "audit_boundary": "previous119-check record preserved verbatim; new exact rational11132 four-point faces,66 partition/11 nonpartition spaces and40896 Boolean vertices,12281 arithmetic controls,16 Boolean-minor inequalities/999 prime divisors,10 corruptions; deterministic generation and replay; separate98648-input focused pressure archive explicitly exploratory and outside checker; not a full120 rerun",
+  "mathematical_status": "PROVED paper ANY globally shortest full inverse history capacity bounds and cost/rank inequality for d<=3 ALL n, d4/n>=5. Real-space sharpness examples are not DFA-history realizations; full-rank and universal cost/rank claims OPEN. Focused negative pressure EXPLORATORY only. General Cerny and priority OPEN, no new formal proof; earlier proofs and status boundaries preserved."
+}

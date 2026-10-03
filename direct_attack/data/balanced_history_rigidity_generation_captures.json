@@ -1,0 +1,38 @@
+{
+  "verified": true,
+  "runs": [
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.balanced_history_rigidity"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T03:06:36.451217+00:00",
+      "seconds": 1.2960000000002765,
+      "returncode": 0,
+      "stdout": "{\"scopes\": 4, \"ordered_pairs\": 176088, \"boolean_vertex_product_controls\": 15756432, \"covering_pairs\": 32}\n",
+      "stderr": "",
+      "output_sha256": "fe01b6bb9c5422446bf61b5789ae8848bb99372dff8dd6938db95793a8fa35ba"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.balanced_history_rigidity",
+        "--out",
+        "<CHECKOUT>\\direct_attack\\native_build\\balanced_history_rigidity_replay.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T03:06:37.745962+00:00",
+      "seconds": 1.2969999999995707,
+      "returncode": 0,
+      "stdout": "{\"scopes\": 4, \"ordered_pairs\": 176088, \"boolean_vertex_product_controls\": 15756432, \"covering_pairs\": 32}\n",
+      "stderr": "",
+      "output_sha256": "fe01b6bb9c5422446bf61b5789ae8848bb99372dff8dd6938db95793a8fa35ba"
+    }
+  ],
+  "parsed_records_equal": true,
+  "normalization": "none",
+  "generator_sha256": "735b20d757746923e40595d09f8e46c2448dd0b86ad0cd45dcdac9b61db488bc"
+}

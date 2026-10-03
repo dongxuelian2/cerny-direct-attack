@@ -1,0 +1,30 @@
+{
+  "runs": [
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.kari_inverse_shrink"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T08:21:00.670885+00:00",
+      "seconds": 0.046999999998661224,
+      "returncode": 0,
+      "stdout": "{\"cut\": [1, 2, 3, 4, 5, 7, 8, 10, 11, 12, 14, 15, 16, 20, 21, 24, 28, 32, 33, 34, 35, 37, 39, 42, 43, 47, 48, 49, 50, 51, 53, 55, 56, 58, 59], \"reachable\": 35, \"max_monotone_size\": 5, \"singleton_lex\": [[1, 28], [1, 26], [1, 26], [1, 27], [1, 25], [1, 27]], \"target\": 4, \"word\": [0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0], \"inverse_processing\": [0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0], \"boundary\": \"Retained literal Kari n6. Every original reset needs an inverse cardinality decrease at some intermediate letter; no monotone inverse reset exists at ANY length. Minimum shrink count1 is attained by an optimal original cost25 reset. Exact finite graph certificates and a separate Lean all-word cut proof; no general Cerny proof or novelty claim.\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_kari_inverse_shrink"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T08:21:00.719861+00:00",
+      "seconds": 1.6880000000019209,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"closed_cut_states\": 35, \"cut_edges\": 70, \"nondecreasing_cut_edges\": 58, \"max_monotone_inverse_size\": 5, \"lex_bellman_edges\": 126, \"original_bellman_edges\": 114, \"literal_particle_letter_controls\": 1902, \"singleton_lex\": [[1, 28], [1, 26], [1, 26], [1, 27], [1, 25], [1, 27]], \"optimal_cost\": 25, \"minimum_shrink_count\": 1, \"inverse_cardinalities\": [1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 5, 5, 4, 4, 5, 5, 5, 6], \"boundary\": \"Independent exact finite original Kari rows: closed all-singleton cut forbids monotone inverse resets at ANY length; reach witnesses certify exact35 reachable masks. ALL64 lexicographic shrink/length and original-cost Bellman controls, one-shrink optimal cost25 reset. Separate Lean all-word cut plus literal witness are formally verified; ordinary threshold lower bound remains computational, not formal. General Cerny OPEN.\", \"corruptions_rejected\": [0, 1, 2, 3, 4, 5, 6, 7], \"formal_source_sha256\": \"6d82c55ffbb1ba7daf153d24f26f8cb3c1d3ae81e79877025173c3d5eea4b602\"}\n{\"verified\": true, \"status\": \"FORMALLY VERIFIED\", \"source\": \"direct_attack/KariInverseShrink.lean\", \"printed_axioms\": {\"KariInverseShrink.no_monotone_inverse_reset\": [\"propext\", \"Quot.sound\"], \"KariInverseShrink.literal_preimage_correct\": [], \"KariInverseShrink.reset_needs_shrink\": [\"propext\", \"Quot.sound\"], \"KariInverseShrink.witness_resets\": [\"propext\"], \"KariInverseShrink.witness_one_shrink\": [\"propext\"], \"KariInverseShrink.witness_cost\": [\"propext\"]}, \"boundary\": \"Lean4.19 kernel, Std only, decide (not native_decide), no sorry/admit or custom axioms. Verifies the literal n6 preimage-mask cut for ALL word lengths and cost25/one-shrink witness. It does not formally verify the optimal-cost lower bound, any arbitrary-n class proof or general Cerny.\"}\n",
+      "stderr": ""
+    }
+  ]
+}

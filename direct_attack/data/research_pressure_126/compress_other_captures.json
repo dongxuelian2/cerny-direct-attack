@@ -1,0 +1,67 @@
+[
+  {
+    "argv": [
+      "<CHECKOUT>\\direct_attack\\native_build\\compress_other_full_binary.exe",
+      "2",
+      "direct_attack/native_build/compress_other_n2.json"
+    ],
+    "cwd": "<CHECKOUT>",
+    "start_utc": "2026-10-02T03:40:14.918810+00:00",
+    "seconds": 0.07799999999951979,
+    "returncode": 0,
+    "stdout": "n=2 orbits=3 tested=9 sync=7 maxSC=1 maxNonSC=1 seconds=5.5e-006\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "<CHECKOUT>\\direct_attack\\native_build\\compress_other_full_binary.exe",
+      "3",
+      "direct_attack/native_build/compress_other_n3.json"
+    ],
+    "cwd": "<CHECKOUT>",
+    "start_utc": "2026-10-02T03:40:15.009911+00:00",
+    "seconds": 0.0,
+    "returncode": 0,
+    "stdout": "n=3 orbits=7 tested=182 sync=131 maxSC=2 maxNonSC=2 seconds=2.27e-005\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "<CHECKOUT>\\direct_attack\\native_build\\compress_other_full_binary.exe",
+      "4",
+      "direct_attack/native_build/compress_other_n4.json"
+    ],
+    "cwd": "<CHECKOUT>",
+    "start_utc": "2026-10-02T03:40:15.019585+00:00",
+    "seconds": 0.01599999999962165,
+    "returncode": 0,
+    "stdout": "n=4 orbits=19 tested=4845 sync=3535 maxSC=4 maxNonSC=3 seconds=0.0001099\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "<CHECKOUT>\\direct_attack\\native_build\\compress_other_full_binary.exe",
+      "5",
+      "direct_attack/native_build/compress_other_n5.json"
+    ],
+    "cwd": "<CHECKOUT>",
+    "start_utc": "2026-10-02T03:40:15.028613+00:00",
+    "seconds": 0.0,
+    "returncode": 0,
+    "stdout": "n=5 orbits=47 tested=146828 sync=114971 maxSC=5 maxNonSC=4 seconds=0.0035511\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "<CHECKOUT>\\direct_attack\\native_build\\compress_other_full_binary.exe",
+      "6",
+      "direct_attack/native_build/compress_other_n6.json"
+    ],
+    "cwd": "<CHECKOUT>",
+    "start_utc": "2026-10-02T03:40:15.030385+00:00",
+    "seconds": 0.18699999999989814,
+    "returncode": 0,
+    "stdout": "n=6 orbits=130 tested=6065150 sync=4972699 maxSC=7 maxNonSC=5 seconds=0.165651\n",
+    "stderr": ""
+  }
+]

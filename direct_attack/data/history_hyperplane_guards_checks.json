@@ -1,0 +1,23 @@
+{
+  "verified": true,
+  "integer_normal_models": 142,
+  "boolean_spanning_normal_models": 74,
+  "normal_boolean_vertices": 6004,
+  "balanced_models": 11,
+  "balanced_boolean_vertices": 24564,
+  "nonempty_guard_graphs": 33861,
+  "admissible_singleton_profiles": 2096696,
+  "middle_layer_density_controls": 1830,
+  "length_comparisons": 61,
+  "corruptions_rejected": [
+    "normal_models_vertices",
+    "normal_models_boolean_span_rank",
+    "normal_models_singletons",
+    "balanced_models_normal",
+    "balanced_models_history_count_bound",
+    "guard_graphs_bipartite_graphs",
+    "guard_graphs_admissible_singleton_profiles",
+    "guard_graphs_semantic_sha256"
+  ],
+  "boundary": "independent exact finite real-space and graph controls only; not all real normals, all automata, or formal verification. General Cerny and unrestricted ALL/SOME full-history cost/rank remain OPEN. Separate near-critical prefilter/search is outside this checker and remains EXPLORATORY."
+}

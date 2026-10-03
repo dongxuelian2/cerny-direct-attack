@@ -1,0 +1,83 @@
+[
+  {
+    "n": 3,
+    "pair_matrices": 4,
+    "sync_classes": 21,
+    "max_reset_difference": 1,
+    "pair_distance_upper_triangle": [
+      1,
+      2,
+      3
+    ],
+    "low_rt": 3,
+    "high_rt": 4,
+    "low_rows": [
+      [
+        0,
+        0,
+        2
+      ],
+      [
+        1,
+        2,
+        0
+      ]
+    ],
+    "high_rows": [
+      [
+        1,
+        1,
+        2
+      ],
+      [
+        1,
+        2,
+        0
+      ]
+    ]
+  },
+  {
+    "n": 4,
+    "pair_matrices": 73,
+    "sync_classes": 395,
+    "max_reset_difference": 2,
+    "pair_distance_upper_triangle": [
+      1,
+      1,
+      3,
+      2,
+      3,
+      4
+    ],
+    "low_rt": 4,
+    "high_rt": 6,
+    "low_rows": [
+      [
+        0,
+        1,
+        0,
+        3
+      ],
+      [
+        2,
+        2,
+        3,
+        1
+      ]
+    ],
+    "high_rows": [
+      [
+        2,
+        0,
+        2,
+        3
+      ],
+      [
+        2,
+        2,
+        3,
+        1
+      ]
+    ]
+  }
+]

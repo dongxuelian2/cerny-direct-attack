@@ -1,0 +1,84 @@
+{
+  "n": 4,
+  "rows": [
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      2,
+      3,
+      0
+    ]
+  ],
+  "best_policy": 1,
+  "worst_policy": 4,
+  "rt": 1,
+  "reachable": 5,
+  "max_extension": 4,
+  "extension_start": 8,
+  "max_proper_rank": 1,
+  "truncated": false,
+  "extension": {
+    "1": 1,
+    "2": 2,
+    "4": 3,
+    "8": 4
+  },
+  "best": {
+    "15": 0,
+    "1": 1,
+    "2": 2,
+    "4": 3,
+    "8": 4
+  },
+  "worst": {
+    "15": 0,
+    "1": 1,
+    "2": 2,
+    "4": 3,
+    "8": 4
+  },
+  "forward": {
+    "15": 0,
+    "1": 1,
+    "2": 2,
+    "4": 3,
+    "8": 4
+  },
+  "source": "input:107",
+  "seed_budget": {
+    "n": 4,
+    "rows": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        2,
+        3,
+        0
+      ]
+    ],
+    "best_policy": 1,
+    "worst_policy": 4,
+    "rt": 1,
+    "reachable": 5,
+    "max_extension": 4,
+    "extension_start": 8,
+    "max_proper_rank": 1,
+    "truncated": false,
+    "kappa": 4,
+    "seed_best": 1,
+    "anchor_best": 1,
+    "anchor_worst": 1,
+    "seed_image": 15,
+    "anchor_image": 15
+  }
+}

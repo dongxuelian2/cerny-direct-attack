@@ -1,0 +1,70 @@
+{
+  "no_counter_found": true,
+  "tested": 1200,
+  "controls": 5988,
+  "peaks": [
+    {
+      "M": 6,
+      "d": 4,
+      "a": [
+        6,
+        3,
+        6,
+        4,
+        5,
+        1,
+        0
+      ],
+      "worst_ratio": 5.0
+    },
+    {
+      "M": 6,
+      "d": 4,
+      "a": [
+        6,
+        1,
+        6,
+        3,
+        4,
+        5,
+        0
+      ],
+      "worst_ratio": 7.0
+    },
+    {
+      "M": 8,
+      "d": 6,
+      "a": [
+        8,
+        5,
+        8,
+        3,
+        6,
+        1,
+        4,
+        7,
+        0
+      ],
+      "worst_ratio": 8.0
+    },
+    {
+      "M": 9,
+      "d": 3,
+      "a": [
+        9,
+        1,
+        8,
+        3,
+        7,
+        2,
+        9,
+        4,
+        5,
+        0
+      ],
+      "worst_ratio": 9.0
+    }
+  ],
+  "seconds": 0.9060000000026776,
+  "boundary": "EXPLORATORY deterministic sampled negative pressure ONLY. No independent completeness audit, all-n theorem, formal claim or general Cerny proof. Proportional core extension for arbitrary noncoprime core permutations remains CONJECTURED/OPEN."
+}

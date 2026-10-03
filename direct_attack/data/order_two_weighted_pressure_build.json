@@ -1,0 +1,22 @@
+{
+  "source_sha256": "c537287195e8ee5da0ebea4d56b0da7dc3273295457056d9f59e7f650f0abb03",
+  "binary_sha256": "d13644ac2ebcc4cc5819b4c294c1802c087292abb4eb7a80021b210acb86e62d",
+  "build": {
+    "argv": [
+      "<CXX_BIN>/g++.exe",
+      "-O3",
+      "-std=c++11",
+      "-static-libgcc",
+      "-static-libstdc++",
+      "<CHECKOUT>\\direct_attack\\order_two_weighted_pressure.cpp",
+      "-o",
+      "<CHECKOUT>\\direct_attack\\native_build\\order_two_weighted_pressure.exe"
+    ],
+    "cwd": "<CHECKOUT>",
+    "start_utc": "2026-10-03T03:55:04.699616+00:00",
+    "seconds": 0.9840000000003783,
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+}

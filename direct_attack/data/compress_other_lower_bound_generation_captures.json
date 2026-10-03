@@ -1,0 +1,38 @@
+{
+  "verified": true,
+  "runs": [
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.compress_other_lower_bound"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T14:10:40.892230+00:00",
+      "seconds": 12.843000000000757,
+      "returncode": 0,
+      "stdout": "{\"parameters\": 67, \"maximum_n\": 3072, \"pair_edge_controls\": 11928406}\n",
+      "stderr": "",
+      "output_sha256": "8730b57773fff68a106b3e2c7b39ad3fd54c751d888fddc36f5786938758d100"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.compress_other_lower_bound",
+        "--out",
+        "<CHECKOUT>\\direct_attack\\native_build\\compress_other_lower_bound_replay.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T14:10:53.736262+00:00",
+      "seconds": 13.156999999999243,
+      "returncode": 0,
+      "stdout": "{\"parameters\": 67, \"maximum_n\": 3072, \"pair_edge_controls\": 11928406}\n",
+      "stderr": "",
+      "output_sha256": "8730b57773fff68a106b3e2c7b39ad3fd54c751d888fddc36f5786938758d100"
+    }
+  ],
+  "parsed_records_equal": true,
+  "normalization": "none",
+  "generator_sha256": "6e2241d717f5e79c1b10d7d6d60cc683ee97d7aac5da00f6cbae98a39beb75f3"
+}

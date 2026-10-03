@@ -1,0 +1,8830 @@
+{
+  "designated_retained": 234,
+  "distinct_retained_labeled_alphabets": 232,
+  "duplicate_labeled_alphabets": 2,
+  "all_shortest_searches": 232,
+  "capacity_exclusions": 0,
+  "dfs_nodes": 1742,
+  "records": [
+    {
+      "base": 0,
+      "rows": [
+        [
+          0,
+          0,
+          1,
+          4,
+          5,
+          3
+        ],
+        [
+          3,
+          1,
+          3,
+          2,
+          4,
+          5
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 0,
+      "rows": [
+        [
+          0,
+          0,
+          1,
+          4,
+          5,
+          3
+        ],
+        [
+          3,
+          1,
+          3,
+          2,
+          4,
+          5
+        ],
+        [
+          0,
+          2,
+          1,
+          4,
+          5,
+          3
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 2,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 1,
+      "rows": [
+        [
+          0,
+          0,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          2,
+          0,
+          3,
+          4,
+          5,
+          1
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 25,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 1,
+      "rows": [
+        [
+          0,
+          0,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          2,
+          0,
+          3,
+          4,
+          5,
+          1
+        ],
+        [
+          2,
+          0,
+          3,
+          4,
+          5,
+          0
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 7,
+        "cuts": 2,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 1,
+      "rows": [
+        [
+          0,
+          0,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          2,
+          0,
+          3,
+          4,
+          5,
+          1
+        ],
+        [
+          2,
+          2,
+          3,
+          4,
+          5,
+          0
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 22,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 12,
+        "cuts": 4,
+        "memo_states": 8
+      }
+    },
+    {
+      "base": 1,
+      "rows": [
+        [
+          0,
+          0,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          2,
+          0,
+          3,
+          4,
+          5,
+          1
+        ],
+        [
+          2,
+          2,
+          3,
+          4,
+          5,
+          1
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 14,
+        "cuts": 4,
+        "memo_states": 8
+      }
+    },
+    {
+      "base": 2,
+      "rows": [
+        [
+          0,
+          0,
+          3,
+          2,
+          5,
+          4
+        ],
+        [
+          2,
+          4,
+          3,
+          5,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 2,
+      "rows": [
+        [
+          0,
+          0,
+          3,
+          2,
+          5,
+          4
+        ],
+        [
+          2,
+          4,
+          3,
+          5,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 22,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 3,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          3,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          0,
+          5,
+          1
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 3,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          3,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          0,
+          5,
+          1
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 4,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          3,
+          3
+        ],
+        [
+          1,
+          2,
+          5,
+          3,
+          0,
+          4
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 10,
+        "cuts": 2,
+        "memo_states": 8
+      }
+    },
+    {
+      "base": 4,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          3,
+          3
+        ],
+        [
+          1,
+          2,
+          5,
+          3,
+          0,
+          4
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 5,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          3,
+          3
+        ],
+        [
+          1,
+          3,
+          4,
+          0,
+          5,
+          2
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 22,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 9,
+        "cuts": 1,
+        "memo_states": 7
+      }
+    },
+    {
+      "base": 5,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          3,
+          3
+        ],
+        [
+          1,
+          3,
+          4,
+          0,
+          5,
+          2
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 23,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 5,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          3,
+          3
+        ],
+        [
+          1,
+          3,
+          4,
+          0,
+          5,
+          2
+        ],
+        [
+          1,
+          0,
+          2,
+          3,
+          5,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 5,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          3,
+          3
+        ],
+        [
+          1,
+          3,
+          4,
+          0,
+          5,
+          2
+        ],
+        [
+          3,
+          0,
+          2,
+          1,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 2,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 6,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          3,
+          3
+        ],
+        [
+          1,
+          3,
+          5,
+          0,
+          2,
+          4
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 23,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 11,
+        "cuts": 1,
+        "memo_states": 9
+      }
+    },
+    {
+      "base": 6,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          3,
+          3
+        ],
+        [
+          1,
+          3,
+          5,
+          0,
+          2,
+          4
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 25,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 6,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          3,
+          3
+        ],
+        [
+          1,
+          3,
+          5,
+          0,
+          2,
+          4
+        ],
+        [
+          0,
+          3,
+          2,
+          1,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 6,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          3,
+          3
+        ],
+        [
+          1,
+          3,
+          5,
+          0,
+          2,
+          4
+        ],
+        [
+          0,
+          3,
+          2,
+          1,
+          5,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 7,
+        "cuts": 1,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 6,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          3,
+          3
+        ],
+        [
+          1,
+          3,
+          5,
+          0,
+          2,
+          4
+        ],
+        [
+          1,
+          0,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 22,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 6,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          3,
+          3
+        ],
+        [
+          1,
+          3,
+          5,
+          0,
+          2,
+          4
+        ],
+        [
+          1,
+          0,
+          2,
+          3,
+          5,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 7,
+        "cuts": 1,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 6,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          3,
+          3
+        ],
+        [
+          1,
+          3,
+          5,
+          0,
+          2,
+          4
+        ],
+        [
+          1,
+          3,
+          2,
+          0,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 22,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 7,
+        "cuts": 2,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 6,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          3,
+          3
+        ],
+        [
+          1,
+          3,
+          5,
+          0,
+          2,
+          4
+        ],
+        [
+          1,
+          3,
+          2,
+          0,
+          5,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 22,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 8,
+        "cuts": 2,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 6,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          3,
+          3
+        ],
+        [
+          1,
+          3,
+          5,
+          0,
+          2,
+          4
+        ],
+        [
+          1,
+          3,
+          4,
+          0,
+          2,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 23,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 8,
+        "cuts": 2,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 6,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          3,
+          3
+        ],
+        [
+          1,
+          3,
+          5,
+          0,
+          2,
+          4
+        ],
+        [
+          3,
+          0,
+          2,
+          1,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 7,
+        "cuts": 2,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 6,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          3,
+          3
+        ],
+        [
+          1,
+          3,
+          5,
+          0,
+          2,
+          4
+        ],
+        [
+          3,
+          0,
+          2,
+          1,
+          5,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 8,
+        "cuts": 2,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 6,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          3,
+          3
+        ],
+        [
+          1,
+          3,
+          5,
+          0,
+          2,
+          4
+        ],
+        [
+          3,
+          1,
+          2,
+          0,
+          4,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 12,
+        "cuts": 2,
+        "memo_states": 9
+      }
+    },
+    {
+      "base": 6,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          3,
+          3
+        ],
+        [
+          1,
+          3,
+          5,
+          0,
+          2,
+          4
+        ],
+        [
+          3,
+          1,
+          2,
+          0,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 6,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          3,
+          3
+        ],
+        [
+          1,
+          3,
+          5,
+          0,
+          2,
+          4
+        ],
+        [
+          3,
+          1,
+          2,
+          0,
+          5,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 7,
+        "cuts": 1,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 6,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          3,
+          3
+        ],
+        [
+          1,
+          3,
+          5,
+          0,
+          2,
+          4
+        ],
+        [
+          3,
+          1,
+          2,
+          4,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 14,
+        "cuts": 4,
+        "memo_states": 9
+      }
+    },
+    {
+      "base": 7,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          3,
+          3
+        ],
+        [
+          1,
+          5,
+          3,
+          2,
+          0,
+          4
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 18,
+        "cuts": 4,
+        "memo_states": 14
+      }
+    },
+    {
+      "base": 7,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          3,
+          3
+        ],
+        [
+          1,
+          5,
+          3,
+          2,
+          0,
+          4
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 22,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 7,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          3,
+          3
+        ],
+        [
+          1,
+          5,
+          3,
+          2,
+          0,
+          4
+        ],
+        [
+          0,
+          1,
+          3,
+          2,
+          4,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 18,
+        "cuts": 4,
+        "memo_states": 14
+      }
+    },
+    {
+      "base": 7,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          3,
+          3
+        ],
+        [
+          1,
+          5,
+          3,
+          2,
+          0,
+          4
+        ],
+        [
+          0,
+          1,
+          3,
+          2,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 22,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 7,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          3,
+          3
+        ],
+        [
+          1,
+          5,
+          3,
+          2,
+          0,
+          4
+        ],
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 11,
+        "cuts": 2,
+        "memo_states": 8
+      }
+    },
+    {
+      "base": 7,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          3,
+          3
+        ],
+        [
+          1,
+          5,
+          3,
+          2,
+          0,
+          4
+        ],
+        [
+          0,
+          1,
+          4,
+          2,
+          3,
+          3
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 7,
+        "cuts": 1,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 7,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          3,
+          3
+        ],
+        [
+          1,
+          5,
+          3,
+          2,
+          0,
+          4
+        ],
+        [
+          0,
+          1,
+          4,
+          3,
+          2,
+          2
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 11,
+        "cuts": 2,
+        "memo_states": 8
+      }
+    },
+    {
+      "base": 7,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          3,
+          3
+        ],
+        [
+          1,
+          5,
+          3,
+          2,
+          0,
+          4
+        ],
+        [
+          1,
+          5,
+          2,
+          3,
+          0,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 9,
+        "cuts": 1,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 8,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          5,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          0,
+          4,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 8,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          5,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          0,
+          4,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          4,
+          3,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 8,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          5,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          0,
+          4,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          5,
+          4,
+          3
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 8,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          5,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          0,
+          4,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 8,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          5,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          0,
+          4,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          5,
+          4,
+          3
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 8,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          5,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          0,
+          4,
+          0
+        ],
+        [
+          1,
+          0,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 8,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          5,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          0,
+          4,
+          0
+        ],
+        [
+          1,
+          0,
+          2,
+          5,
+          4,
+          3
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 8,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          5,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          0,
+          4,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 8,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          5,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          0,
+          4,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          5,
+          4,
+          3
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 8,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          5,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          0,
+          4,
+          0
+        ],
+        [
+          2,
+          0,
+          1,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 8,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          5,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          0,
+          4,
+          0
+        ],
+        [
+          2,
+          0,
+          1,
+          5,
+          4,
+          3
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 8,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          5,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          0,
+          4,
+          0
+        ],
+        [
+          2,
+          1,
+          0,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 8,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          5,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          0,
+          4,
+          0
+        ],
+        [
+          2,
+          1,
+          0,
+          5,
+          4,
+          3
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 9,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          2,
+          2,
+          4
+        ],
+        [
+          1,
+          4,
+          0,
+          2,
+          5,
+          2
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 8,
+        "cuts": 2,
+        "memo_states": 6
+      }
+    },
+    {
+      "base": 10,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          1,
+          5,
+          2,
+          3,
+          0,
+          4
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 18,
+        "cuts": 4,
+        "memo_states": 14
+      }
+    },
+    {
+      "base": 10,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          1,
+          5,
+          2,
+          3,
+          0,
+          4
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 22,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 10,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          1,
+          5,
+          2,
+          3,
+          0,
+          4
+        ],
+        [
+          0,
+          1,
+          2,
+          4,
+          3,
+          3
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 11,
+        "cuts": 2,
+        "memo_states": 8
+      }
+    },
+    {
+      "base": 10,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          1,
+          5,
+          2,
+          3,
+          0,
+          4
+        ],
+        [
+          0,
+          1,
+          3,
+          2,
+          4,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 18,
+        "cuts": 4,
+        "memo_states": 14
+      }
+    },
+    {
+      "base": 10,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          1,
+          5,
+          2,
+          3,
+          0,
+          4
+        ],
+        [
+          0,
+          1,
+          3,
+          2,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 22,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 10,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          1,
+          5,
+          2,
+          3,
+          0,
+          4
+        ],
+        [
+          0,
+          1,
+          4,
+          2,
+          3,
+          3
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 11,
+        "cuts": 2,
+        "memo_states": 8
+      }
+    },
+    {
+      "base": 10,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          1,
+          5,
+          2,
+          3,
+          0,
+          4
+        ],
+        [
+          0,
+          1,
+          4,
+          3,
+          2,
+          2
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 7,
+        "cuts": 1,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 10,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          1,
+          5,
+          2,
+          3,
+          0,
+          4
+        ],
+        [
+          0,
+          4,
+          3,
+          2,
+          1,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 8,
+        "cuts": 1,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 10,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          1,
+          5,
+          2,
+          3,
+          0,
+          4
+        ],
+        [
+          1,
+          0,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 8,
+        "cuts": 2,
+        "memo_states": 6
+      }
+    },
+    {
+      "base": 10,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          1,
+          5,
+          2,
+          3,
+          0,
+          4
+        ],
+        [
+          1,
+          0,
+          3,
+          2,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 8,
+        "cuts": 2,
+        "memo_states": 6
+      }
+    },
+    {
+      "base": 10,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          1,
+          5,
+          2,
+          3,
+          0,
+          4
+        ],
+        [
+          1,
+          4,
+          2,
+          3,
+          0,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 10,
+        "cuts": 2,
+        "memo_states": 6
+      }
+    },
+    {
+      "base": 10,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          1,
+          5,
+          2,
+          3,
+          0,
+          4
+        ],
+        [
+          1,
+          5,
+          3,
+          2,
+          0,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 9,
+        "cuts": 1,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 11,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          1,
+          5,
+          3,
+          2,
+          0,
+          4
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 18,
+        "cuts": 4,
+        "memo_states": 14
+      }
+    },
+    {
+      "base": 11,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          1,
+          5,
+          3,
+          2,
+          0,
+          4
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 22,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 11,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          1,
+          5,
+          3,
+          2,
+          0,
+          4
+        ],
+        [
+          0,
+          1,
+          3,
+          2,
+          4,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 22,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 18,
+        "cuts": 4,
+        "memo_states": 14
+      }
+    },
+    {
+      "base": 11,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          1,
+          5,
+          3,
+          2,
+          0,
+          4
+        ],
+        [
+          0,
+          1,
+          3,
+          2,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 22,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 11,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          1,
+          5,
+          3,
+          2,
+          0,
+          4
+        ],
+        [
+          0,
+          1,
+          4,
+          2,
+          3,
+          3
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 11,
+        "cuts": 2,
+        "memo_states": 8
+      }
+    },
+    {
+      "base": 11,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          1,
+          5,
+          3,
+          2,
+          0,
+          4
+        ],
+        [
+          0,
+          1,
+          4,
+          3,
+          2,
+          2
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 7,
+        "cuts": 1,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 11,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          1,
+          5,
+          3,
+          2,
+          0,
+          4
+        ],
+        [
+          1,
+          0,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 12,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          2,
+          4,
+          3,
+          0,
+          5,
+          1
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 12,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          2,
+          4,
+          3,
+          0,
+          5,
+          1
+        ],
+        [
+          0,
+          1,
+          3,
+          2,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 7,
+        "cuts": 3,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 12,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          2,
+          4,
+          3,
+          0,
+          5,
+          1
+        ],
+        [
+          0,
+          5,
+          3,
+          2,
+          4,
+          1
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 8,
+        "cuts": 3,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 12,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          2,
+          4,
+          3,
+          0,
+          5,
+          1
+        ],
+        [
+          2,
+          1,
+          0,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 2,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 12,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          2,
+          4,
+          3,
+          0,
+          5,
+          1
+        ],
+        [
+          2,
+          1,
+          0,
+          3,
+          5,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 2,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 12,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          2,
+          4,
+          3,
+          0,
+          5,
+          1
+        ],
+        [
+          2,
+          1,
+          3,
+          0,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 12,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          2,
+          4,
+          3,
+          0,
+          5,
+          1
+        ],
+        [
+          2,
+          1,
+          3,
+          0,
+          5,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 12,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          2,
+          4,
+          3,
+          0,
+          5,
+          1
+        ],
+        [
+          2,
+          5,
+          3,
+          0,
+          4,
+          1
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 7,
+        "cuts": 2,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 12,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          2,
+          4,
+          3,
+          0,
+          5,
+          1
+        ],
+        [
+          3,
+          1,
+          0,
+          2,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 7,
+        "cuts": 3,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 12,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          2,
+          4,
+          3,
+          0,
+          5,
+          1
+        ],
+        [
+          3,
+          1,
+          2,
+          0,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 2,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 13,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          2,
+          5,
+          0,
+          3,
+          1,
+          4
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 23,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 13,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          2,
+          5,
+          0,
+          3,
+          1,
+          4
+        ],
+        [
+          0,
+          1,
+          3,
+          2,
+          4,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 14,
+        "cuts": 4,
+        "memo_states": 10
+      }
+    },
+    {
+      "base": 13,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          2,
+          5,
+          0,
+          3,
+          1,
+          4
+        ],
+        [
+          0,
+          1,
+          3,
+          2,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 13,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          2,
+          5,
+          0,
+          3,
+          1,
+          4
+        ],
+        [
+          0,
+          1,
+          3,
+          2,
+          5,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 13,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          2,
+          5,
+          0,
+          3,
+          1,
+          4
+        ],
+        [
+          2,
+          1,
+          0,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 22,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 13,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          2,
+          5,
+          0,
+          3,
+          1,
+          4
+        ],
+        [
+          2,
+          1,
+          0,
+          3,
+          5,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 22,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 13,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          2,
+          5,
+          0,
+          3,
+          1,
+          4
+        ],
+        [
+          2,
+          1,
+          3,
+          0,
+          4,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 14,
+        "cuts": 4,
+        "memo_states": 10
+      }
+    },
+    {
+      "base": 13,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          2,
+          5,
+          0,
+          3,
+          1,
+          4
+        ],
+        [
+          2,
+          1,
+          3,
+          0,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 13,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          2,
+          5,
+          0,
+          3,
+          1,
+          4
+        ],
+        [
+          2,
+          1,
+          3,
+          0,
+          5,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 13,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          2,
+          5,
+          0,
+          3,
+          1,
+          4
+        ],
+        [
+          2,
+          4,
+          0,
+          3,
+          1,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 22,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 13,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          2,
+          5,
+          0,
+          3,
+          1,
+          4
+        ],
+        [
+          3,
+          1,
+          0,
+          2,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 13,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          2,
+          5,
+          0,
+          3,
+          1,
+          4
+        ],
+        [
+          3,
+          1,
+          0,
+          2,
+          5,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 13,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          2,
+          5,
+          0,
+          3,
+          1,
+          4
+        ],
+        [
+          3,
+          1,
+          2,
+          0,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 13,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          2,
+          5,
+          0,
+          3,
+          1,
+          4
+        ],
+        [
+          3,
+          4,
+          0,
+          2,
+          1,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 14,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          3,
+          5,
+          0,
+          2,
+          1,
+          4
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 22,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 14,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          3,
+          5,
+          0,
+          2,
+          1,
+          4
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          5,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 22,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 14,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          3,
+          5,
+          0,
+          2,
+          1,
+          4
+        ],
+        [
+          0,
+          1,
+          2,
+          4,
+          3,
+          3
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 14,
+        "cuts": 4,
+        "memo_states": 9
+      }
+    },
+    {
+      "base": 14,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          3,
+          5,
+          0,
+          2,
+          1,
+          4
+        ],
+        [
+          0,
+          1,
+          3,
+          2,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 22,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 14,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          3,
+          5,
+          0,
+          2,
+          1,
+          4
+        ],
+        [
+          0,
+          1,
+          3,
+          2,
+          5,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 14,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          3,
+          5,
+          0,
+          2,
+          1,
+          4
+        ],
+        [
+          2,
+          1,
+          0,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 22,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 14,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          3,
+          5,
+          0,
+          2,
+          1,
+          4
+        ],
+        [
+          2,
+          1,
+          0,
+          3,
+          5,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 22,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 14,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          3,
+          5,
+          0,
+          2,
+          1,
+          4
+        ],
+        [
+          2,
+          1,
+          3,
+          0,
+          4,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 13,
+        "cuts": 4,
+        "memo_states": 9
+      }
+    },
+    {
+      "base": 14,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          3,
+          5,
+          0,
+          2,
+          1,
+          4
+        ],
+        [
+          2,
+          1,
+          3,
+          0,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 22,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 14,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          3,
+          5,
+          0,
+          2,
+          1,
+          4
+        ],
+        [
+          2,
+          1,
+          3,
+          0,
+          5,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 14,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          3,
+          5,
+          0,
+          2,
+          1,
+          4
+        ],
+        [
+          3,
+          1,
+          0,
+          2,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 22,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 14,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          3,
+          5,
+          0,
+          2,
+          1,
+          4
+        ],
+        [
+          3,
+          1,
+          0,
+          2,
+          5,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 22,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 14,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          3,
+          5,
+          0,
+          2,
+          1,
+          4
+        ],
+        [
+          3,
+          1,
+          0,
+          2,
+          5,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 17,
+        "cuts": 5,
+        "memo_states": 11
+      }
+    },
+    {
+      "base": 14,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          3,
+          5,
+          0,
+          2,
+          1,
+          4
+        ],
+        [
+          3,
+          1,
+          0,
+          4,
+          2,
+          2
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 7,
+        "cuts": 2,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 14,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          3,
+          5,
+          0,
+          2,
+          1,
+          4
+        ],
+        [
+          3,
+          1,
+          2,
+          0,
+          4,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 13,
+        "cuts": 4,
+        "memo_states": 9
+      }
+    },
+    {
+      "base": 14,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          3,
+          5,
+          0,
+          2,
+          1,
+          4
+        ],
+        [
+          3,
+          1,
+          2,
+          0,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 22,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 14,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          3,
+          5,
+          0,
+          2,
+          1,
+          4
+        ],
+        [
+          3,
+          1,
+          2,
+          0,
+          5,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 14,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          3,
+          5,
+          0,
+          2,
+          1,
+          4
+        ],
+        [
+          3,
+          4,
+          0,
+          2,
+          1,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 22,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 14,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          3,
+          5,
+          0,
+          2,
+          1,
+          4
+        ],
+        [
+          3,
+          4,
+          2,
+          0,
+          1,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 22,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 15,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          5,
+          2
+        ],
+        [
+          1,
+          2,
+          0,
+          4,
+          3,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 15,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          5,
+          2
+        ],
+        [
+          1,
+          2,
+          0,
+          4,
+          3,
+          0
+        ],
+        [
+          1,
+          0,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 16,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          5,
+          2
+        ],
+        [
+          1,
+          2,
+          4,
+          0,
+          0,
+          5
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 17,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          5,
+          2
+        ],
+        [
+          2,
+          3,
+          0,
+          1,
+          0,
+          5
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          2,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 22,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 10,
+        "cuts": 2,
+        "memo_states": 8
+      }
+    },
+    {
+      "base": 17,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          5,
+          2
+        ],
+        [
+          2,
+          3,
+          0,
+          1,
+          0,
+          5
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 22,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 17,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          5,
+          2
+        ],
+        [
+          2,
+          3,
+          0,
+          1,
+          0,
+          5
+        ],
+        [
+          0,
+          1,
+          3,
+          2,
+          5,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 22,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 7,
+        "cuts": 2,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 18,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          1,
+          0,
+          4,
+          2,
+          3,
+          2
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 19,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          1,
+          0,
+          4,
+          2,
+          3,
+          5
+        ],
+        [
+          0,
+          1,
+          2,
+          2,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 11,
+        "cuts": 2,
+        "memo_states": 9
+      }
+    },
+    {
+      "base": 19,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          1,
+          0,
+          4,
+          2,
+          3,
+          5
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 22,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 19,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          1,
+          0,
+          4,
+          2,
+          3,
+          5
+        ],
+        [
+          1,
+          0,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 19,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          1,
+          0,
+          4,
+          2,
+          3,
+          5
+        ],
+        [
+          1,
+          0,
+          3,
+          2,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 19,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          1,
+          0,
+          4,
+          2,
+          3,
+          5
+        ],
+        [
+          1,
+          0,
+          4,
+          3,
+          2,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 20,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          1,
+          0,
+          4,
+          2,
+          5,
+          3
+        ],
+        [
+          0,
+          1,
+          2,
+          2,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 16,
+        "cuts": 2,
+        "memo_states": 14
+      }
+    },
+    {
+      "base": 20,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          1,
+          0,
+          4,
+          2,
+          5,
+          3
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 22,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 20,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          1,
+          0,
+          4,
+          2,
+          5,
+          3
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          5,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 8,
+        "cuts": 2,
+        "memo_states": 6
+      }
+    },
+    {
+      "base": 20,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          1,
+          0,
+          4,
+          2,
+          5,
+          3
+        ],
+        [
+          1,
+          0,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 22,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 20,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          1,
+          0,
+          4,
+          2,
+          5,
+          3
+        ],
+        [
+          1,
+          0,
+          2,
+          3,
+          5,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 8,
+        "cuts": 2,
+        "memo_states": 6
+      }
+    },
+    {
+      "base": 20,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          1,
+          0,
+          4,
+          2,
+          5,
+          3
+        ],
+        [
+          1,
+          0,
+          4,
+          3,
+          5,
+          2
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 10,
+        "cuts": 2,
+        "memo_states": 6
+      }
+    },
+    {
+      "base": 21,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          2,
+          4,
+          3,
+          0,
+          5,
+          1
+        ],
+        [
+          0,
+          1,
+          2,
+          2,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 9,
+        "cuts": 1,
+        "memo_states": 7
+      }
+    },
+    {
+      "base": 21,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          2,
+          4,
+          3,
+          0,
+          5,
+          1
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 22,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          3,
+          4,
+          0,
+          2,
+          1,
+          5
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 22,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          3,
+          4,
+          0,
+          2,
+          1,
+          5
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          5,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 22,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          3,
+          4,
+          0,
+          2,
+          1,
+          5
+        ],
+        [
+          0,
+          1,
+          3,
+          2,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 7,
+        "cuts": 1,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 22,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          3,
+          4,
+          0,
+          2,
+          1,
+          5
+        ],
+        [
+          0,
+          1,
+          3,
+          2,
+          5,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 7,
+        "cuts": 1,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 22,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          3,
+          4,
+          0,
+          2,
+          1,
+          5
+        ],
+        [
+          0,
+          2,
+          1,
+          1,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 8,
+        "cuts": 1,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 22,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          3,
+          4,
+          0,
+          2,
+          1,
+          5
+        ],
+        [
+          0,
+          2,
+          5,
+          5,
+          1,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 14,
+        "cuts": 4,
+        "memo_states": 9
+      }
+    },
+    {
+      "base": 22,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          3,
+          4,
+          0,
+          2,
+          1,
+          5
+        ],
+        [
+          0,
+          4,
+          2,
+          2,
+          1,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 12,
+        "cuts": 2,
+        "memo_states": 9
+      }
+    },
+    {
+      "base": 22,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          3,
+          4,
+          0,
+          2,
+          1,
+          5
+        ],
+        [
+          0,
+          4,
+          2,
+          2,
+          5,
+          1
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 12,
+        "cuts": 2,
+        "memo_states": 9
+      }
+    },
+    {
+      "base": 22,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          3,
+          4,
+          0,
+          2,
+          1,
+          5
+        ],
+        [
+          0,
+          4,
+          2,
+          3,
+          1,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 22,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          3,
+          4,
+          0,
+          2,
+          1,
+          5
+        ],
+        [
+          0,
+          4,
+          2,
+          3,
+          5,
+          1
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 22,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          3,
+          4,
+          0,
+          2,
+          1,
+          5
+        ],
+        [
+          0,
+          4,
+          3,
+          2,
+          1,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 7,
+        "cuts": 1,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 22,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          3,
+          4,
+          0,
+          2,
+          1,
+          5
+        ],
+        [
+          0,
+          4,
+          3,
+          2,
+          5,
+          1
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 7,
+        "cuts": 1,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 22,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          3,
+          4,
+          0,
+          2,
+          1,
+          5
+        ],
+        [
+          0,
+          5,
+          2,
+          3,
+          1,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 22,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          3,
+          4,
+          0,
+          2,
+          1,
+          5
+        ],
+        [
+          0,
+          5,
+          2,
+          3,
+          4,
+          1
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 22,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          3,
+          4,
+          0,
+          2,
+          1,
+          5
+        ],
+        [
+          0,
+          5,
+          3,
+          2,
+          1,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 8,
+        "cuts": 2,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 22,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          3,
+          4,
+          0,
+          2,
+          1,
+          5
+        ],
+        [
+          0,
+          5,
+          3,
+          2,
+          4,
+          1
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 7,
+        "cuts": 1,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 22,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          3,
+          4,
+          0,
+          2,
+          1,
+          5
+        ],
+        [
+          2,
+          4,
+          0,
+          3,
+          1,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 8,
+        "cuts": 2,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 22,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          3,
+          4,
+          0,
+          2,
+          1,
+          5
+        ],
+        [
+          2,
+          5,
+          0,
+          3,
+          1,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 8,
+        "cuts": 2,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 23,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          3,
+          4,
+          0,
+          2,
+          5,
+          1
+        ],
+        [
+          0,
+          1,
+          2,
+          2,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 11,
+        "cuts": 1,
+        "memo_states": 9
+      }
+    },
+    {
+      "base": 23,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          3,
+          4,
+          0,
+          2,
+          5,
+          1
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 23,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          3,
+          4,
+          0,
+          2,
+          5,
+          1
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          5,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 23,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          3,
+          4,
+          0,
+          2,
+          5,
+          1
+        ],
+        [
+          0,
+          1,
+          3,
+          2,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 7,
+        "cuts": 1,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 23,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          3,
+          4,
+          0,
+          2,
+          5,
+          1
+        ],
+        [
+          0,
+          4,
+          2,
+          3,
+          1,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 7,
+        "cuts": 2,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 23,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          3,
+          4,
+          0,
+          2,
+          5,
+          1
+        ],
+        [
+          0,
+          4,
+          2,
+          3,
+          5,
+          1
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 7,
+        "cuts": 2,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 23,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          3,
+          4,
+          0,
+          2,
+          5,
+          1
+        ],
+        [
+          0,
+          4,
+          3,
+          2,
+          5,
+          1
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 8,
+        "cuts": 2,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 23,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          3,
+          4,
+          0,
+          2,
+          5,
+          1
+        ],
+        [
+          0,
+          5,
+          2,
+          3,
+          1,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 7,
+        "cuts": 2,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 23,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          3,
+          4,
+          0,
+          2,
+          5,
+          1
+        ],
+        [
+          0,
+          5,
+          2,
+          3,
+          4,
+          1
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 7,
+        "cuts": 2,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 23,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          3,
+          4,
+          0,
+          2,
+          5,
+          1
+        ],
+        [
+          0,
+          5,
+          3,
+          2,
+          4,
+          1
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 8,
+        "cuts": 2,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 23,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          3,
+          4,
+          0,
+          2,
+          5,
+          1
+        ],
+        [
+          2,
+          4,
+          0,
+          3,
+          5,
+          1
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 8,
+        "cuts": 2,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 24,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          4,
+          5,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          0,
+          4,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 24,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          4,
+          5,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          0,
+          4,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          5,
+          4,
+          3
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 24,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          4,
+          5,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          0,
+          4,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 24,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          4,
+          5,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          0,
+          4,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          4,
+          3,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 24,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          4,
+          5,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          0,
+          4,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          5,
+          4,
+          3
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 24,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          4,
+          5,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          0,
+          4,
+          0
+        ],
+        [
+          1,
+          0,
+          2,
+          3,
+          4,
+          3
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 12,
+        "cuts": 3,
+        "memo_states": 9
+      }
+    },
+    {
+      "base": 24,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          4,
+          5,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          0,
+          4,
+          0
+        ],
+        [
+          1,
+          0,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 24,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          4,
+          5,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          0,
+          4,
+          0
+        ],
+        [
+          1,
+          0,
+          2,
+          5,
+          4,
+          3
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 24,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          4,
+          5,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          0,
+          4,
+          0
+        ],
+        [
+          1,
+          0,
+          3,
+          2,
+          4,
+          2
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 14,
+        "cuts": 4,
+        "memo_states": 9
+      }
+    },
+    {
+      "base": 24,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          4,
+          5,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          0,
+          4,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          3,
+          4,
+          3
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 13,
+        "cuts": 4,
+        "memo_states": 9
+      }
+    },
+    {
+      "base": 24,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          4,
+          5,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          0,
+          4,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 24,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          4,
+          5,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          0,
+          4,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          5,
+          4,
+          3
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 24,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          4,
+          5,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          0,
+          4,
+          0
+        ],
+        [
+          2,
+          0,
+          1,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 24,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          4,
+          5,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          0,
+          4,
+          0
+        ],
+        [
+          2,
+          1,
+          0,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 25,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          4,
+          5,
+          3
+        ],
+        [
+          1,
+          3,
+          0,
+          2,
+          2,
+          5
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 25,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          4,
+          5,
+          3
+        ],
+        [
+          1,
+          3,
+          0,
+          2,
+          2,
+          5
+        ],
+        [
+          0,
+          2,
+          1,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 7,
+        "cuts": 3,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 25,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          4,
+          5,
+          3
+        ],
+        [
+          1,
+          3,
+          0,
+          2,
+          2,
+          5
+        ],
+        [
+          0,
+          2,
+          1,
+          3,
+          5,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 7,
+        "cuts": 2,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 25,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          4,
+          5,
+          3
+        ],
+        [
+          1,
+          3,
+          0,
+          2,
+          2,
+          5
+        ],
+        [
+          0,
+          2,
+          1,
+          4,
+          3,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 7,
+        "cuts": 3,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 25,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          4,
+          5,
+          3
+        ],
+        [
+          1,
+          3,
+          0,
+          2,
+          2,
+          5
+        ],
+        [
+          1,
+          0,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 25,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          4,
+          5,
+          3
+        ],
+        [
+          1,
+          3,
+          0,
+          2,
+          2,
+          5
+        ],
+        [
+          1,
+          2,
+          0,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 7,
+        "cuts": 3,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 25,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          4,
+          5,
+          3
+        ],
+        [
+          1,
+          3,
+          0,
+          2,
+          2,
+          5
+        ],
+        [
+          1,
+          2,
+          0,
+          4,
+          3,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 7,
+        "cuts": 3,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 25,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          4,
+          5,
+          3
+        ],
+        [
+          1,
+          3,
+          0,
+          2,
+          2,
+          5
+        ],
+        [
+          2,
+          0,
+          1,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 7,
+        "cuts": 3,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 25,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          4,
+          5,
+          3
+        ],
+        [
+          1,
+          3,
+          0,
+          2,
+          2,
+          5
+        ],
+        [
+          2,
+          0,
+          1,
+          3,
+          5,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 8,
+        "cuts": 3,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 25,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          4,
+          5,
+          3
+        ],
+        [
+          1,
+          3,
+          0,
+          2,
+          2,
+          5
+        ],
+        [
+          2,
+          1,
+          0,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 26,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          4,
+          5,
+          3
+        ],
+        [
+          1,
+          3,
+          0,
+          5,
+          2,
+          2
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 22,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 26,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          4,
+          5,
+          3
+        ],
+        [
+          1,
+          3,
+          0,
+          5,
+          2,
+          2
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          5,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 11,
+        "cuts": 2,
+        "memo_states": 9
+      }
+    },
+    {
+      "base": 26,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          4,
+          5,
+          3
+        ],
+        [
+          1,
+          3,
+          0,
+          5,
+          2,
+          2
+        ],
+        [
+          0,
+          2,
+          1,
+          5,
+          4,
+          3
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 27,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          4,
+          5,
+          3
+        ],
+        [
+          3,
+          0,
+          1,
+          2,
+          2,
+          5
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 7,
+        "cuts": 2,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 27,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          4,
+          5,
+          3
+        ],
+        [
+          3,
+          0,
+          1,
+          2,
+          2,
+          5
+        ],
+        [
+          0,
+          2,
+          1,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 7,
+        "cuts": 2,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 27,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          4,
+          5,
+          3
+        ],
+        [
+          3,
+          0,
+          1,
+          2,
+          2,
+          5
+        ],
+        [
+          0,
+          2,
+          1,
+          3,
+          5,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 9,
+        "cuts": 2,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 27,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          4,
+          5,
+          3
+        ],
+        [
+          3,
+          0,
+          1,
+          2,
+          2,
+          5
+        ],
+        [
+          0,
+          2,
+          1,
+          4,
+          3,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 8,
+        "cuts": 3,
+        "memo_states": 5
+      }
+    },
+    {
+      "base": 28,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          4,
+          5,
+          3
+        ],
+        [
+          3,
+          1,
+          4,
+          2,
+          0,
+          2
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 28,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          4,
+          5,
+          3
+        ],
+        [
+          3,
+          1,
+          4,
+          2,
+          0,
+          2
+        ],
+        [
+          0,
+          1,
+          2,
+          4,
+          3,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 11,
+        "cuts": 2,
+        "memo_states": 9
+      }
+    },
+    {
+      "base": 28,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          4,
+          5,
+          3
+        ],
+        [
+          3,
+          1,
+          4,
+          2,
+          0,
+          2
+        ],
+        [
+          0,
+          2,
+          1,
+          4,
+          3,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 29,
+      "rows": [
+        [
+          0,
+          2,
+          3,
+          1,
+          1,
+          4
+        ],
+        [
+          1,
+          0,
+          4,
+          2,
+          5,
+          2
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 29,
+      "rows": [
+        [
+          0,
+          2,
+          3,
+          1,
+          1,
+          4
+        ],
+        [
+          1,
+          0,
+          4,
+          2,
+          5,
+          2
+        ],
+        [
+          0,
+          1,
+          4,
+          2,
+          5,
+          2
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 7,
+        "cuts": 2,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 30,
+      "rows": [
+        [
+          0,
+          2,
+          3,
+          1,
+          1,
+          4
+        ],
+        [
+          4,
+          1,
+          0,
+          2,
+          5,
+          2
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 31,
+      "rows": [
+        [
+          0,
+          2,
+          3,
+          4,
+          1,
+          1
+        ],
+        [
+          4,
+          3,
+          1,
+          2,
+          5,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 31,
+      "rows": [
+        [
+          0,
+          2,
+          3,
+          4,
+          1,
+          1
+        ],
+        [
+          4,
+          3,
+          1,
+          2,
+          5,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 2,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 31,
+      "rows": [
+        [
+          0,
+          2,
+          3,
+          4,
+          1,
+          1
+        ],
+        [
+          4,
+          3,
+          1,
+          2,
+          5,
+          0
+        ],
+        [
+          0,
+          2,
+          3,
+          1,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 31,
+      "rows": [
+        [
+          0,
+          2,
+          3,
+          4,
+          1,
+          1
+        ],
+        [
+          4,
+          3,
+          1,
+          2,
+          5,
+          0
+        ],
+        [
+          5,
+          3,
+          1,
+          2,
+          4,
+          0
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 7,
+        "cuts": 2,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 32,
+      "rows": [
+        [
+          0,
+          2,
+          3,
+          4,
+          1,
+          1
+        ],
+        [
+          5,
+          2,
+          3,
+          1,
+          0,
+          4
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 22,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 32,
+      "rows": [
+        [
+          0,
+          2,
+          3,
+          4,
+          1,
+          1
+        ],
+        [
+          5,
+          2,
+          3,
+          1,
+          0,
+          4
+        ],
+        [
+          0,
+          1,
+          3,
+          2,
+          4,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 13,
+        "cuts": 4,
+        "memo_states": 9
+      }
+    },
+    {
+      "base": 32,
+      "rows": [
+        [
+          0,
+          2,
+          3,
+          4,
+          1,
+          1
+        ],
+        [
+          5,
+          2,
+          3,
+          1,
+          0,
+          4
+        ],
+        [
+          0,
+          1,
+          3,
+          2,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 32,
+      "rows": [
+        [
+          0,
+          2,
+          3,
+          4,
+          1,
+          1
+        ],
+        [
+          5,
+          2,
+          3,
+          1,
+          0,
+          4
+        ],
+        [
+          0,
+          2,
+          1,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 32,
+      "rows": [
+        [
+          0,
+          2,
+          3,
+          4,
+          1,
+          1
+        ],
+        [
+          5,
+          2,
+          3,
+          1,
+          0,
+          4
+        ],
+        [
+          0,
+          2,
+          1,
+          3,
+          5,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 32,
+      "rows": [
+        [
+          0,
+          2,
+          3,
+          4,
+          1,
+          1
+        ],
+        [
+          5,
+          2,
+          3,
+          1,
+          0,
+          4
+        ],
+        [
+          0,
+          2,
+          3,
+          1,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 22,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 32,
+      "rows": [
+        [
+          0,
+          2,
+          3,
+          4,
+          1,
+          1
+        ],
+        [
+          5,
+          2,
+          3,
+          1,
+          0,
+          4
+        ],
+        [
+          0,
+          2,
+          3,
+          1,
+          5,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 22,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 32,
+      "rows": [
+        [
+          0,
+          2,
+          3,
+          4,
+          1,
+          1
+        ],
+        [
+          5,
+          2,
+          3,
+          1,
+          0,
+          4
+        ],
+        [
+          0,
+          2,
+          3,
+          1,
+          5,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 15,
+        "cuts": 3,
+        "memo_states": 11
+      }
+    },
+    {
+      "base": 32,
+      "rows": [
+        [
+          0,
+          2,
+          3,
+          4,
+          1,
+          1
+        ],
+        [
+          5,
+          2,
+          3,
+          1,
+          0,
+          4
+        ],
+        [
+          0,
+          3,
+          1,
+          2,
+          4,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 13,
+        "cuts": 4,
+        "memo_states": 9
+      }
+    },
+    {
+      "base": 32,
+      "rows": [
+        [
+          0,
+          2,
+          3,
+          4,
+          1,
+          1
+        ],
+        [
+          5,
+          2,
+          3,
+          1,
+          0,
+          4
+        ],
+        [
+          0,
+          3,
+          1,
+          2,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 32,
+      "rows": [
+        [
+          0,
+          2,
+          3,
+          4,
+          1,
+          1
+        ],
+        [
+          5,
+          2,
+          3,
+          1,
+          0,
+          4
+        ],
+        [
+          0,
+          3,
+          1,
+          2,
+          5,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 32,
+      "rows": [
+        [
+          0,
+          2,
+          3,
+          4,
+          1,
+          1
+        ],
+        [
+          5,
+          2,
+          3,
+          1,
+          0,
+          4
+        ],
+        [
+          0,
+          3,
+          2,
+          1,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 32,
+      "rows": [
+        [
+          0,
+          2,
+          3,
+          4,
+          1,
+          1
+        ],
+        [
+          5,
+          2,
+          3,
+          1,
+          0,
+          4
+        ],
+        [
+          0,
+          3,
+          2,
+          1,
+          5,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 32,
+      "rows": [
+        [
+          0,
+          2,
+          3,
+          4,
+          1,
+          1
+        ],
+        [
+          5,
+          2,
+          3,
+          1,
+          0,
+          4
+        ],
+        [
+          0,
+          3,
+          2,
+          4,
+          1,
+          1
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 7,
+        "cuts": 2,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 32,
+      "rows": [
+        [
+          0,
+          2,
+          3,
+          4,
+          1,
+          1
+        ],
+        [
+          5,
+          2,
+          3,
+          1,
+          0,
+          4
+        ],
+        [
+          4,
+          1,
+          3,
+          2,
+          0,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 32,
+      "rows": [
+        [
+          0,
+          2,
+          3,
+          4,
+          1,
+          1
+        ],
+        [
+          5,
+          2,
+          3,
+          1,
+          0,
+          4
+        ],
+        [
+          4,
+          2,
+          3,
+          1,
+          0,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 22,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 33,
+      "rows": [
+        [
+          1,
+          0,
+          0,
+          2,
+          5,
+          4
+        ],
+        [
+          4,
+          0,
+          3,
+          0,
+          5,
+          2
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 7,
+        "cuts": 1,
+        "memo_states": 6
+      }
+    },
+    {
+      "base": 34,
+      "rows": [
+        [
+          1,
+          0,
+          0,
+          4,
+          5,
+          3
+        ],
+        [
+          3,
+          2,
+          5,
+          5,
+          0,
+          4
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 5,
+        "cuts": 1,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 35,
+      "rows": [
+        [
+          1,
+          2,
+          3,
+          4,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          0
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 7,
+        "cuts": 2,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 35,
+      "rows": [
+        [
+          1,
+          2,
+          3,
+          4,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 7,
+        "cuts": 2,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 35,
+      "rows": [
+        [
+          1,
+          2,
+          3,
+          4,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          5,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 14,
+        "cuts": 4,
+        "memo_states": 8
+      }
+    },
+    {
+      "base": 35,
+      "rows": [
+        [
+          1,
+          2,
+          3,
+          4,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          0,
+          1
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 9,
+        "cuts": 3,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 35,
+      "rows": [
+        [
+          1,
+          2,
+          3,
+          4,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          5,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 9,
+        "cuts": 3,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 36,
+      "rows": [
+        [
+          1,
+          2,
+          3,
+          4,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          5,
+          0,
+          4
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 22,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 12,
+        "cuts": 4,
+        "memo_states": 8
+      }
+    },
+    {
+      "base": 36,
+      "rows": [
+        [
+          1,
+          2,
+          3,
+          4,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          5,
+          0,
+          4
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 22,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 6,
+        "cuts": 2,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 36,
+      "rows": [
+        [
+          1,
+          2,
+          3,
+          4,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          5,
+          0,
+          4
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          0,
+          4
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 9,
+        "cuts": 3,
+        "memo_states": 4
+      }
+    },
+    {
+      "base": 36,
+      "rows": [
+        [
+          1,
+          2,
+          3,
+          4,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          5,
+          0,
+          4
+        ],
+        [
+          1,
+          2,
+          3,
+          5,
+          0,
+          0
+        ]
+      ],
+      "analysis": {
+        "sync": true,
+        "rt": 21,
+        "all_optimal_paths_excluded": true,
+        "threshold": 5,
+        "nodes": 9,
+        "cuts": 3,
+        "memo_states": 4
+      }
+    }
+  ],
+  "counter": null,
+  "semantic_sha256": "95e09c4fb1211c20298443b908955f5ff1e468af212f9bab14fd0774c59d62aa",
+  "seconds": 0.01599999999962165,
+  "boundary": "EXPLORATORY only; ALL third-letter additions to fixed37 bases, not all ternary or arbitrary alphabets, not independently audited. Exact field rank applies at n6; general Cerny and ALL/SOME history cost/rank OPEN."
+}

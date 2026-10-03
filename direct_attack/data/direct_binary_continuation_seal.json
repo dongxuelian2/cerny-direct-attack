@@ -1,0 +1,59 @@
+{
+  "verified": true,
+  "checks": 99,
+  "regeneration_commands": 184,
+  "archived": [
+    {
+      "path": "direct_attack/data/direct_binary_continuation_provenance/audit_run.json",
+      "sha256": "34210f1731d0f88688449f9b5a395e5cbf6a6a32fce2c72e94c705d198687705"
+    },
+    {
+      "path": "direct_attack/data/direct_binary_continuation_provenance/reproduction_commands.json",
+      "sha256": "c8449af631d685fd29b3d78e33065ef2ae878f7d8932031bc7fb76e5702e0910"
+    },
+    {
+      "path": "direct_attack/data/direct_binary_continuation_provenance/sha256_manifest.json",
+      "sha256": "48dd27f13621cb6b26cf2097d059cc2487c343572f8e0c4fa4e0151b61ca164b"
+    }
+  ],
+  "native_builds": [
+    {
+      "metadata": "direct_attack/data/alternating_frame_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/alternating_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/class_reset_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/complete_policy_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/sparse_policy_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/weighted_class_reset_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    }
+  ],
+  "generation_and_replay": "direct_attack/data/direct_binary_generation_captures.json",
+  "audit_boundary": "previous 98-check record preserved verbatim; one new independent original-row/set check and deterministic generator/replay; not a full 99-check rerun",
+  "mathematical_status": "paper exact direct binary quadratic actual-image extension with n^2/8 leading cost, quadratic reset interval with n^2/4 leading cost and explicit square reset; finite n13 e28 target separately checked; general Cerny and global policy square OPEN; no formal verification"
+}

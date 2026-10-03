@@ -1,0 +1,38 @@
+{
+  "verified": true,
+  "runs": [
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.corank_one_stability_quotient"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T14:56:12.634311+00:00",
+      "seconds": 1.3119999999980791,
+      "returncode": 0,
+      "stdout": "{\"scopes\": [{\"n\": 2, \"all_labeled_binary_inputs\": 16, \"strongly_connected\": 9, \"synchronizing\": 6, \"minimum_rank_histogram\": {\"1\": 6, \"2\": 3}, \"maximum_class_size_range\": 0, \"semantic_sha256\": \"e7ed7ab17ffc2de1eb652615d44abfe343040d803e5e96cd423b1a3791aa741d\"}, {\"n\": 3, \"all_labeled_binary_inputs\": 576, \"strongly_connected\": 260, \"synchronizing\": 204, \"minimum_rank_histogram\": {\"1\": 204, \"2\": 30, \"3\": 26}, \"maximum_class_size_range\": 1, \"semantic_sha256\": \"95ae0428499eb22ca3e85fb33964a158601e6c4054c7da7d9e5260605544690e\"}, {\"n\": 4, \"all_labeled_binary_inputs\": 28224, \"strongly_connected\": 12282, \"synchronizing\": 10704, \"minimum_rank_histogram\": {\"1\": 10704, \"3\": 456, \"2\": 696, \"4\": 426}, \"maximum_class_size_range\": 1, \"semantic_sha256\": \"320ff865f00bdb8eea85fc23eda7053e6f59f7a4b474b76229022b65881373e8\"}], \"sharp_parameters\": 21, \"maximum_n\": 8385}\n",
+      "stderr": "",
+      "output_sha256": "9c3dcebc210c86570a3be68e8ac8925df69a4949a3c70e9bdc56ec35bf43c7e8"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.corank_one_stability_quotient",
+        "--out",
+        "<CHECKOUT>\\direct_attack\\native_build\\corank_one_stability_quotient_replay.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T14:56:13.958841+00:00",
+      "seconds": 1.3130000000019209,
+      "returncode": 0,
+      "stdout": "{\"scopes\": [{\"n\": 2, \"all_labeled_binary_inputs\": 16, \"strongly_connected\": 9, \"synchronizing\": 6, \"minimum_rank_histogram\": {\"1\": 6, \"2\": 3}, \"maximum_class_size_range\": 0, \"semantic_sha256\": \"e7ed7ab17ffc2de1eb652615d44abfe343040d803e5e96cd423b1a3791aa741d\"}, {\"n\": 3, \"all_labeled_binary_inputs\": 576, \"strongly_connected\": 260, \"synchronizing\": 204, \"minimum_rank_histogram\": {\"1\": 204, \"2\": 30, \"3\": 26}, \"maximum_class_size_range\": 1, \"semantic_sha256\": \"95ae0428499eb22ca3e85fb33964a158601e6c4054c7da7d9e5260605544690e\"}, {\"n\": 4, \"all_labeled_binary_inputs\": 28224, \"strongly_connected\": 12282, \"synchronizing\": 10704, \"minimum_rank_histogram\": {\"1\": 10704, \"3\": 456, \"2\": 696, \"4\": 426}, \"maximum_class_size_range\": 1, \"semantic_sha256\": \"320ff865f00bdb8eea85fc23eda7053e6f59f7a4b474b76229022b65881373e8\"}], \"sharp_parameters\": 21, \"maximum_n\": 8385}\n",
+      "stderr": "",
+      "output_sha256": "9c3dcebc210c86570a3be68e8ac8925df69a4949a3c70e9bdc56ec35bf43c7e8"
+    }
+  ],
+  "parsed_records_equal": true,
+  "normalization": "none",
+  "generator_sha256": "8423d26a8585f1874818619da36960927a91586b37f81aef106dc81d9fad9086"
+}

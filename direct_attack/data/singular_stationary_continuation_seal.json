@@ -1,0 +1,31 @@
+{
+  "verified": true,
+  "checks": 126,
+  "regeneration_commands": 207,
+  "archived": [
+    {
+      "path": "direct_attack/data/singular_stationary_continuation_provenance/audit_run.json",
+      "sha256": "96f6e26145802cd99d2eadda7439edeec3dddcfe2890f5d1a5b428d28b8fc4d0"
+    },
+    {
+      "path": "direct_attack/data/singular_stationary_continuation_provenance/reproduction_commands.json",
+      "sha256": "221a8e7c49cd43296c54c55a5ccab1718425421eb98e5d850f401320778d7cd9"
+    },
+    {
+      "path": "direct_attack/data/singular_stationary_continuation_provenance/sha256_manifest.json",
+      "sha256": "f805dc2499500ca0ddec80e4a8ecf02b7d5b0a86e6580821acff2a09146aa2ae"
+    }
+  ],
+  "native_builds": [
+    "direct_attack/data/alternating_frame_build.json",
+    "direct_attack/data/alternating_native_build.json",
+    "direct_attack/data/binary_n6_history_cover_native_build.json",
+    "direct_attack/data/class_reset_native_build.json",
+    "direct_attack/data/complete_policy_build.json",
+    "direct_attack/data/native_build.json",
+    "direct_attack/data/sparse_policy_build.json",
+    "direct_attack/data/weighted_class_reset_native_build.json"
+  ],
+  "mathematical_status": "PROVED paper ALL n>=2 weak-Q-stationary singular-support minimum maximum cost n in Cerny family; conditional invariant-space dimension reset bound by known averaging. Independent finite controls computationally verified. General Cerny OPEN; no new formal or novelty claim.",
+  "audit_boundary": "checkpoint125 preserved verbatim; ONE new exact independent weak-stationarity all-word separation checker,34 stationary singular support/reset certificates, invariant projected-space example with ALL Boolean vertices and no full original-letter stationarity. Not a full126 rerun or an all-n Cerny proof; all-n theorems paper PROVED, no new formal result."
+}

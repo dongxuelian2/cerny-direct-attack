@@ -1,0 +1,1 @@
+先读取 lean-toolchain 和 lean/CertificateCore.lean。本轮任务仅为在实际 Lean 编译器中使 CertificateCore.lean、Cerny3.lean、Cerny4.lean 通过。先执行 lean --version；再执行 lean lean/CertificateCore.lean。不得把没有运行的命令说成成功，不得添加 sorry、admit、新公理、unsafe 证明捷径或以 native_decide 替代原来的检查方式。每次只修复第一个报错，保留定理陈述不变。全部通过后保存编译日志与 #print axioms 输出，说明目前形式化的对象是具体幂集转移系统。后续独立任务为证明任意词下的集合语义对应并连接到一般 DFA 同步定义；这一部分没有完成前不得省略状态说明。

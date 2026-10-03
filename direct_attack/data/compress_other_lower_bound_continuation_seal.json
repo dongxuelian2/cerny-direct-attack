@@ -1,0 +1,59 @@
+{
+  "verified": true,
+  "checks": 114,
+  "regeneration_commands": 198,
+  "archived": [
+    {
+      "path": "direct_attack/data/compress_other_lower_bound_continuation_provenance/audit_run.json",
+      "sha256": "74c4a6e0c8e39db19d6f86f77a19be9760b5b24b2495458b4a9238dd8a525bf8"
+    },
+    {
+      "path": "direct_attack/data/compress_other_lower_bound_continuation_provenance/reproduction_commands.json",
+      "sha256": "0c1c89b3e2dab992ac6cb2f66720280bf502d693cfeb13c05071fcd891545457"
+    },
+    {
+      "path": "direct_attack/data/compress_other_lower_bound_continuation_provenance/sha256_manifest.json",
+      "sha256": "b8fb19305df178e2e0274cd19e5b3f55238a4ba551e0334d9c363884eeeefb76"
+    }
+  ],
+  "native_builds": [
+    {
+      "metadata": "direct_attack/data/alternating_frame_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/alternating_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/class_reset_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/complete_policy_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/sparse_policy_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/weighted_class_reset_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    }
+  ],
+  "generation_and_replay": "direct_attack/data/compress_other_lower_bound_generation_captures.json",
+  "audit_boundary": "previous113-check record preserved verbatim; new all-p exact specified-state4p lower proof with complete layer entrance lists including p3 fixed-bottom exception; independent original pair-edge controls throughn3072, small forward-star and reverse BFS, n9 all words below12 and ten corruptions; deterministic generation and replay; not a full114 rerun",
+  "mathematical_status": "PROVED paper exact mu(0)=4p for EVERY p>=3, n3p, in complete original Figure3 rows; general layered directed-pair certificate lemma paper. Finite67 parameters throughn3072,11928406 noncollapsing pair controls,32776 upper-word particle-letter controls,10 forward and reverse BFS scopes,4094 n9 words below12 and10 corruptions. Priority and Cerny OPEN; no formal kernel or unrestricted reset bound"
+}

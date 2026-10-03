@@ -1,0 +1,31 @@
+{
+  "verified": true,
+  "checks": 127,
+  "regeneration_commands": 208,
+  "archived": [
+    {
+      "path": "direct_attack/data/one_cluster_upper_continuation_provenance/audit_run.json",
+      "sha256": "c3346d7135de38eec5d42fca34432504ea06f94bc16df26c124c4c364f783bd0"
+    },
+    {
+      "path": "direct_attack/data/one_cluster_upper_continuation_provenance/reproduction_commands.json",
+      "sha256": "eb116f40558a700b5c09a254f86a5438cbfbc9087873d93ddd61c5dcd25024d4"
+    },
+    {
+      "path": "direct_attack/data/one_cluster_upper_continuation_provenance/sha256_manifest.json",
+      "sha256": "2548f209dd518757495dc5373c51e6017a6b30c268d00abb3e285f750b3f193f"
+    }
+  ],
+  "native_builds": [
+    "direct_attack/data/alternating_frame_build.json",
+    "direct_attack/data/alternating_native_build.json",
+    "direct_attack/data/binary_n6_history_cover_native_build.json",
+    "direct_attack/data/class_reset_native_build.json",
+    "direct_attack/data/complete_policy_build.json",
+    "direct_attack/data/native_build.json",
+    "direct_attack/data/sparse_policy_build.json",
+    "direct_attack/data/weighted_class_reset_native_build.json"
+  ],
+  "mathematical_status": "PROVED paper reconstruction of EXISTING one-cluster MAIN UPPER theorem with attribution, no SC assumption and all word costs paid. Independent finite controls COMPUTATIONALLY VERIFIED on16 retained inputs only. No formal verification, external reviewer or source Section10 lower/sharpness audit. General Cerny OPEN; no novelty claim.",
+  "audit_boundary": "checkpoint126 preserved verbatim; ONE new exact independent fixed-seed one-cluster annular checker on16 retained inputs, actual generation controls,232 cycle-subset extensions and16 paid common resets. Not a full127 rerun or an all-parameter computational or formal proof. Source main upper theorem reconstructed PROVED paper with attribution; source lower Section10 unaudited; general Cerny OPEN."
+}

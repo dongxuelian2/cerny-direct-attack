@@ -1,0 +1,10 @@
+case,n,lower_bound,upper_bound,verified,seconds
+C2,2,1,1,True,8.1e-05
+C3,3,4,4,True,8.5e-05
+C4,4,9,9,True,0.000126
+C5,5,16,16,True,0.000226
+C6,6,25,25,True,0.000444
+C7,7,36,36,True,0.00088
+C8,8,49,49,True,0.001853
+C9,9,64,64,True,0.003713
+C10,10,81,81,True,0.008377

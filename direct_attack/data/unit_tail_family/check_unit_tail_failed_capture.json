@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "<PYTHON_RUNTIME>\\python.exe",
+    "-m",
+    "direct_attack.check_unit_tail"
+  ],
+  "cwd": "<CHECKOUT>",
+  "start_utc": "2026-09-29T13:25:16.256533+00:00",
+  "seconds": 0.2969999999986612,
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"<LOCAL_PATH>\", line 78, in <module>\n    if __name__=='__main__':main()\n                            ^^^^^^\n  File \"<LOCAL_PATH>\", line 43, in main\n    records.append(verify(json.loads((root/r['file']).read_text())))\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<LOCAL_PATH>\", line 36, in verify\n    assert len(T)>1 and len(bad)==4<c['rt']==5 # final a cannot be trimmed after a tail\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+}

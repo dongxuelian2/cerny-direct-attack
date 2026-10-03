@@ -1,0 +1,103 @@
+{
+  "scope": "deterministic random labeled rows, not exhaustive",
+  "n": 10,
+  "trials": 100000,
+  "seed": 20261001,
+  "counts": {
+    "tested": 100000,
+    "strongly_connected": 35324,
+    "synchronizing": 35323,
+    "rt_over_n_plus_1": 0,
+    "e_over_2n": 0
+  },
+  "best_rt": {
+    "max_e": 9,
+    "target": 320,
+    "rt": 6,
+    "images": 31,
+    "rows": [
+      [
+        3,
+        0,
+        4,
+        2,
+        7,
+        6,
+        8,
+        9,
+        1,
+        5
+      ],
+      [
+        2,
+        1,
+        2,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1
+      ],
+      [
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0
+      ]
+    ],
+    "trial": 76008
+  },
+  "best_e": {
+    "max_e": 10,
+    "target": 64,
+    "rt": 2,
+    "images": 21,
+    "rows": [
+      [
+        1,
+        8,
+        9,
+        6,
+        0,
+        3,
+        2,
+        4,
+        7,
+        5
+      ],
+      [
+        8,
+        4,
+        4,
+        4,
+        8,
+        4,
+        8,
+        8,
+        8,
+        4
+      ],
+      [
+        8,
+        2,
+        8,
+        8,
+        8,
+        2,
+        8,
+        8,
+        8,
+        2
+      ]
+    ],
+    "trial": 5429
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "runs": [
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.kari_shrink_products"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T08:58:54.742088+00:00",
+      "seconds": 0.13999999999941792,
+      "returncode": 0,
+      "stdout": "{\"parameters\": 20, \"literal_parameters\": 4, \"last_negative_bridges\": [{\"S\": 45, \"T\": 44, \"letter\": 0}, {\"S\": 47, \"T\": 60, \"letter\": 0}], \"base_costs\": {\"one_pre\": 20, \"one_post\": 5, \"two_pre\": 17, \"two_post\": 10}, \"boundary\": \"PROVED paper ALL d>=1, independent-coordinate product n=6^d/alphabet2d: exact minimum inverse-shrink count d, ordinary rt25d, minimum maximum absolute inverse loss3^(d-1), optimum length among that loss policy27d-2 and minimum shrink count2d-1, optimum maximum loss among ordinary-shortest resets4^(d-1). Literal base all-word facts/bounds are Lean verified separately; arbitrary-d product lifting is paper, not formal. No novelty, fixed alphabet, corank-one or general Cerny proof claim.\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_kari_shrink_products"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T08:58:54.873329+00:00",
+      "seconds": 4.5,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"parameters\": 20, \"literal_all_state_parameters\": [1, 2, 3, 4], \"base_cut_edges\": 128, \"base_bellman_edges\": 362, \"base_particle_letters\": 744, \"symbolic_particle_letters\": 191640, \"literal_product_particle_letters\": 608424, \"last_negative_bridges\": [{\"S\": 45, \"T\": 44, \"letter\": 0}, {\"S\": 47, \"T\": 60, \"letter\": 0}], \"rectangle_d2_states\": 4096, \"rectangle_d2_bellman_edges\": 81900, \"boundary\": \"Independent all64 base positive-cost Bellman/cut/phase controls and20 parameter schedules; ALL Cartesian states d1..4 literally reset in both directions, larger d only exact rectangle arithmetic. ALL-d minimum-shrink/cost/max-loss tradeoff is PROVED paper from coordinate projections and formally verified literal base facts, not a formal product theorem or computational all-n cover. General Cerny OPEN.\", \"corruptions_rejected\": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], \"formal_source_sha256\": \"3ce2361202c7ba27745f9da05492d2251a6d80cc0a58ffa3034a27e5f2fb7e3f\"}\n{\"verified\": true, \"status\": \"FORMALLY VERIFIED\", \"source\": \"direct_attack/KariShrinkProducts.lean\", \"printed_axioms\": {\"KariInverseShrink.literal_preimage_correct\": [], \"KariInverseShrink.reset_needs_shrink\": [\"propext\", \"Quot.sound\"], \"KariProductBase.reset_length_lower\": [\"propext\", \"Quot.sound\"], \"KariProductBase.to45_length_lower\": [\"propext\", \"Quot.sound\"], \"KariProductBase.mono44_length_lower\": [\"propext\", \"Quot.sound\"], \"KariProductBase.last44_length_lower\": [\"propext\", \"Quot.sound\"], \"KariProductBase.last_negative_word\": [\"propext\", \"Quot.sound\"], \"KariProductBase.single_negative_word\": [\"propext\", \"Quot.sound\"], \"KariProductBase.one_phase_witness\": [\"propext\"], \"KariProductBase.two_phase_witness\": [\"propext\"]}, \"boundary\": \"Lean4.19/Std/decide kernel: literal n6 ALL-word reset length>=25, any last inverse decrease is45->44 or47->60, a sole decrease is47->60, any reset last45->44 has length>=27 via16+1+10, phase witnesses25/27. Arbitrary-d Cartesian lifting is PAPER, not formal. No sorry/admit/native_decide/custom axioms.\"}\n",
+      "stderr": ""
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "n": 3,
+  "rows": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      2,
+      0
+    ]
+  ],
+  "extension": {
+    "1": 1,
+    "2": 2,
+    "4": 3
+  },
+  "best": {
+    "7": 0,
+    "1": 1,
+    "2": 2,
+    "4": 3
+  },
+  "worst": {
+    "7": 0,
+    "1": 1,
+    "2": 2,
+    "4": 3
+  },
+  "best_policy": 1,
+  "worst_policy": 3,
+  "rt": 1,
+  "reset_word": [
+    0
+  ],
+  "phases": [
+    {
+      "start": 1,
+      "larger": 7,
+      "word": [
+        0
+      ]
+    }
+  ],
+  "local_bound_witness": {
+    "start": 4,
+    "cost": 3,
+    "bound": 6,
+    "excess": -3
+  }
+}

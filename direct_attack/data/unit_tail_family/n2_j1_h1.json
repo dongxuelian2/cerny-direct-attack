@@ -1,0 +1,46 @@
+{
+  "n": 2,
+  "rows": [
+    [
+      1,
+      1
+    ],
+    [
+      0,
+      0
+    ]
+  ],
+  "best_policy": 1,
+  "worst_policy": 1,
+  "rt": 1,
+  "reachable": 3,
+  "max_extension": 1,
+  "extension_start": 2,
+  "max_proper_rank": 1,
+  "truncated": false,
+  "extension": {
+    "2": 1,
+    "1": 1
+  },
+  "best": {
+    "3": 0,
+    "2": 1,
+    "1": 1
+  },
+  "worst": {
+    "3": 0,
+    "2": 1,
+    "1": 1
+  },
+  "forward": {
+    "3": 0,
+    "2": 1,
+    "1": 1
+  },
+  "j": 1,
+  "h": 1,
+  "synchronizing": true,
+  "reset_word": [
+    0
+  ]
+}

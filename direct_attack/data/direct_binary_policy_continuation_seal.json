@@ -1,0 +1,58 @@
+{
+  "verified": true,
+  "checks": 100,
+  "regeneration_commands": 184,
+  "archived": [
+    {
+      "path": "direct_attack/data/direct_binary_policy_continuation_provenance/audit_run.json",
+      "sha256": "deed6e85a675677f4e0afb531ce9560f96b7349f576075d7ed68911a5735f8e8"
+    },
+    {
+      "path": "direct_attack/data/direct_binary_policy_continuation_provenance/reproduction_commands.json",
+      "sha256": "a7ec2368562fc8feb7d7411a735d88ee0480d1f6b377984d00c6edd667d6e720"
+    },
+    {
+      "path": "direct_attack/data/direct_binary_policy_continuation_provenance/sha256_manifest.json",
+      "sha256": "4a2aeef9d0b9d59731de6f35fa3bafcb9aee8466c659eee3c2e990169ee94c84"
+    }
+  ],
+  "native_builds": [
+    {
+      "metadata": "direct_attack/data/alternating_frame_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/alternating_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/class_reset_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/complete_policy_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/sparse_policy_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/weighted_class_reset_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    }
+  ],
+  "audit_boundary": "previous 99-check record preserved verbatim; one new independent original-row and inverse policy check; 184 regeneration commands unchanged; not a full 100-check rerun",
+  "mathematical_status": "paper all-p compatible genuinely shortest actual-image chain cost at most p^2+p-ceil(p/2)-1; independent small equality only, general equality CONJECTURED; quadratic binary local obstruction unchanged; general Cerny and global policy square OPEN; no formal verification"
+}

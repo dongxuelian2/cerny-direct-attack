@@ -1,0 +1,34 @@
+{
+  "source_sha256": "e8ae312745f4c173b7ca51849c33571a907af3dd12535390d0a5fffff344442b",
+  "binary_sha256": "7f15f0570f3c0e64974e12e5a0e496d271ebc43d2666b6caae4dd8f46f983cc3",
+  "compile": {
+    "argv": [
+      "<CXX_BIN>\\g++.exe",
+      "-O3",
+      "-std=c++11",
+      "-static-libgcc",
+      "-static-libstdc++",
+      "<CHECKOUT>\\direct_attack\\weighted_class_reset_pressure.cpp",
+      "-o",
+      "<CHECKOUT>\\direct_attack\\native_build\\weighted_class_reset_pressure.exe"
+    ],
+    "cwd": "<CHECKOUT>",
+    "start_utc": "2026-10-01T00:02:11.920425+00:00",
+    "seconds": 1.344000000000051,
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "compiler_version": {
+    "argv": [
+      "<CXX_BIN>\\g++.exe",
+      "--version"
+    ],
+    "cwd": "<CHECKOUT>",
+    "start_utc": "2026-10-01T00:02:11.908059+00:00",
+    "seconds": 0.014999999999986358,
+    "returncode": 0,
+    "stdout": "g++.exe (tdm64-1) 4.9.2\nCopyright (C) 2014 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+    "stderr": ""
+  }
+}

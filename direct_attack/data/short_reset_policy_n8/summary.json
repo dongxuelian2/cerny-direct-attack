@@ -1,0 +1,36 @@
+{
+  "arguments": {
+    "n": 8,
+    "rank": 4,
+    "alphabet": 3,
+    "count": 100000,
+    "seed": 20261026,
+    "restart": 500,
+    "out": "direct_attack\\data\\short_reset_policy_n8"
+  },
+  "counts": {
+    "tested": 100128,
+    "exact": 100128,
+    "twice_rt_refutations": 47032
+  },
+  "max_policy": 10,
+  "records": [
+    "witness_000.json",
+    "witness_001.json",
+    "witness_002.json",
+    "witness_003.json",
+    "witness_004.json"
+  ],
+  "histogram": {
+    "3": 26016,
+    "4": 16529,
+    "5": 10551,
+    "6": 20627,
+    "7": 18582,
+    "8": 7504,
+    "9": 254,
+    "10": 65
+  },
+  "seconds": 2.5309999999990396,
+  "scope": "Sampled restricted automata only. b is a full cycle; a fixes 0,1 and sends 2 to 1; other letters fix 0,1. Every word of length <=2 preserves at least two states, while aba resets. Thus rt=3 on every sampled input by paper proof."
+}

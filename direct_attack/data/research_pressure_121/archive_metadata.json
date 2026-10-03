@@ -1,0 +1,24 @@
+{
+  "byte_identical": true,
+  "files": [
+    {
+      "path": "direct_attack/data/research_pressure_121/nearcritical_n6_history.cpp",
+      "sha256": "862b45fccee602c66c07365c4cae086ac05b66b72f51b7b74d526b100c8b1f1b"
+    },
+    {
+      "path": "direct_attack/data/research_pressure_121/nearcritical_n6_history.py",
+      "sha256": "840f6f575c76ad4601c39702e1f4cf0f3bddcd403ad1ec285a53056c65342eba"
+    },
+    {
+      "path": "direct_attack/data/research_pressure_121/nearcritical_n6_history.json",
+      "sha256": "58b8f57042eb2b0652daac1c2f287393d91af88f84cead933fa6be512437bb9e"
+    },
+    {
+      "path": "direct_attack/data/research_pressure_121/nearcritical_n6_history.analysis.json",
+      "sha256": "2f253d5eb177fac8483e826bcca9a9132256cbf9964b862d4ab6e6ca058b19f3"
+    }
+  ],
+  "scope": "NEW proper-history query on the earlier n6 SC binary covering universe; historical reset totals are not recounted as new results",
+  "native_binary_sha256": "38554a5fae2e09c85befc64d9641209eed1247ebe610c9711cc0d2f696d8401f",
+  "boundary": "complete prefilter and class completeness EXPLORATORY, not independently verified; separate37 retained-case ALL-history checker verifies exactly those inputs, not covering completeness; general Cerny OPEN"
+}

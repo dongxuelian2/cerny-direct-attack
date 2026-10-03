@@ -1,0 +1,27 @@
+{
+  "original_source_sha256": "c537287195e8ee5da0ebea4d56b0da7dc3273295457056d9f59e7f650f0abb03",
+  "generated_source_sha256": "c505cf649f88bbbd5cc67ce69c7f87236e56675af20d4e55306c4a3878fc45d0",
+  "transformation": {
+    "old": "if(M<6 || M>16 || M%2)",
+    "new": "if(M<6 || M>20 || M%2)"
+  },
+  "binary_sha256": "b7be9811ff90614774fcc3594c8e991c1a2f719d6703ecd48ce6165a51858075",
+  "build": {
+    "argv": [
+      "<CXX_BIN>/g++.exe",
+      "-O3",
+      "-std=c++11",
+      "-static-libgcc",
+      "-static-libstdc++",
+      "<CHECKOUT>\\direct_attack\\native_build\\order_two_weighted_large_pressure.cpp",
+      "-o",
+      "<CHECKOUT>\\direct_attack\\native_build\\order_two_weighted_large_pressure.exe"
+    ],
+    "cwd": "<CHECKOUT>",
+    "start_utc": "2026-10-03T04:30:37.527064+00:00",
+    "seconds": 0.875,
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+}

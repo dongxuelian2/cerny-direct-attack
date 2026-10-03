@@ -1,0 +1,30 @@
+{
+  "runs": [
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.bounded_cerny_returns"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T06:34:50.383624+00:00",
+      "seconds": 0.8440000000009604,
+      "returncode": 0,
+      "stdout": "{\"parameters\": 11, \"caps\": 88, \"n4_entered_all_three\": 11, \"cap2_entered_costs\": [11, 20, 33, 48, 67, 88, 113, 140, 171, 204, 241], \"boundary\": \"Finite ALL subset costs for Cerny n4..14 and ALL return caps1..n-1. Paper every-n b-count lower bound and bounded-return obstruction are separately PROVED, with explicit known-proof attribution and no novelty or formal claim. The general Cerny conjecture remains OPEN.\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_bounded_cerny_returns"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T06:34:51.222370+00:00",
+      "seconds": 1.8130000000019209,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"parameters\": 11, \"caps\": 88, \"finite_entered_square_failures\": 66, \"positive_cost_bellman_edges\": 1550308, \"zero_cost_lower_potential_edges\": 65504, \"literal_particle_letter_controls\": 127934, \"n4_entered_all_three\": 11, \"boundary\": \"ALL finite subset Bellman costs n4..14/caps1..n-1, independent original-word expansion, and zero-cost telescoping b-count lower potentials. The all-n obstruction is PROVED paper separately, without novelty or formal claim. General Cerny OPEN.\", \"corruptions_rejected\": [0, 1, 2, 3, 4, 5, 6, 7]}\n",
+      "stderr": ""
+    }
+  ]
+}

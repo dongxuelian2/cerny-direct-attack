@@ -1,0 +1,46 @@
+{
+  "scope": "fixed one-fixed rank-three base; every unordered pair of distinct transpositions, exact full image graph",
+  "n": 8,
+  "base_a": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    0,
+    7
+  ],
+  "base_b": [
+    7,
+    7,
+    7,
+    7,
+    7,
+    7,
+    5,
+    0
+  ],
+  "counts": {
+    "tested": 378,
+    "over_2n": 0,
+    "equal_2n": 0
+  },
+  "best": {
+    "swaps": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "rt": 10,
+    "max_e": 15,
+    "target": 96,
+    "target_rank": 2,
+    "images": 58
+  }
+}

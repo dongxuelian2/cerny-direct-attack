@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "<CHECKOUT>\\direct_attack\\native_build\\nonterminal_mu_pressure.exe",
+    "1000000",
+    "direct_attack/native_build/nonterminal_mu_pressure_corrected.json"
+  ],
+  "cwd": "<CHECKOUT>",
+  "start_utc": "2026-10-02T03:45:09.421664+00:00",
+  "seconds": 10.234999999998763,
+  "returncode": 0,
+  "stdout": "n=8 core=4 mode=0 max=7 bound=7\nn=9 core=4 mode=0 max=8 bound=8\nn=10 core=5 mode=0 max=9 bound=9\nn=10 core=9 mode=1 max=3 bound=9\nn=12 core=6 mode=0 max=11 bound=11\nn=12 core=9 mode=1 max=5 bound=11\nn=16 core=8 mode=0 max=15 bound=15\nn=16 core=9 mode=1 max=10 bound=15\nn=24 core=12 mode=0 max=20 bound=23\nn=24 core=12 mode=1 max=15 bound=23\nn=32 core=16 mode=0 max=26 bound=31\nn=32 core=15 mode=1 max=20 bound=31\n",
+  "stderr": ""
+}

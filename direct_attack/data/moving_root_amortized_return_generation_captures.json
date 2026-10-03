@@ -1,0 +1,36 @@
+{
+  "verified": true,
+  "runs": [
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.moving_root_amortized_return"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T10:51:03.731578+00:00",
+      "seconds": 4.905999999995402,
+      "returncode": 0,
+      "stdout": "{\"inputs\": 279, \"two_point_chain_factors\": 984, \"boundary\": \"PROVED paper EVERY sync parameter M/gcd(d,M)>=3: actual two-point return costs<=2(M+1) on whole-coset core sets; unit growth cost<=M+1 elsewhere. ONE compatible truncated chain plus paid avoidance/alignment/final original a costs<=(n-1)^2. Noncoprime restriction removed for this explicit binary moving-root family. Finite scopes explicit; no novelty, formal or general Cerny proof.\"}\n",
+      "stderr": "",
+      "output_sha256": "834931c1b15e474b045375cfb40d6afb46bcac64df00c8c6161e3bb5376ddfb1"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.moving_root_amortized_return"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T10:54:32.184030+00:00",
+      "seconds": 5.1560000000026776,
+      "returncode": 0,
+      "stdout": "{\"inputs\": 279, \"two_point_chain_factors\": 984, \"boundary\": \"PROVED paper EVERY sync parameter M/gcd(d,M)>=3: actual two-point return costs<=2(M+1) on whole-coset core sets; unit growth cost<=M+1 elsewhere. ONE compatible truncated chain plus paid avoidance/alignment/final original a costs<=(n-1)^2. Noncoprime restriction removed for this explicit binary moving-root family. Finite scopes explicit; no novelty, formal or general Cerny proof.\"}\n",
+      "stderr": "",
+      "output_sha256": "834931c1b15e474b045375cfb40d6afb46bcac64df00c8c6161e3bb5376ddfb1"
+    }
+  ],
+  "bytes_equal": true,
+  "normalization": "none",
+  "generator_sha256": "1838a4210d5f512c648df7e33b4796ada1bc0798bd75460516e1d2331ac67e36"
+}

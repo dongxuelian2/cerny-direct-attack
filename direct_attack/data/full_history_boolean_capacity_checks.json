@@ -1,0 +1,24 @@
+{
+  "verified": true,
+  "rational_four_point_faces": 11132,
+  "partition_scopes": 66,
+  "partition_vertices": 16332,
+  "nonpartition_scopes": 11,
+  "nonpartition_vertices": 24564,
+  "arithmetic_controls": 12281,
+  "corruptions_rejected": [
+    "partition_dimension",
+    "partition_singletons",
+    "partition_vertices",
+    "partition_bound",
+    "nonpartition_dimension",
+    "nonpartition_singletons",
+    "nonpartition_vertices",
+    "nonpartition_bound",
+    "faces_maximum_valid",
+    "arithmetic_controls"
+  ],
+  "boolean_minor_dimensions_certified": 16,
+  "modulus_prime_trial_divisors": 999,
+  "boundary": "finite exact real-space and arithmetic controls, not a universal DFA enumeration or formal proof. Infinite shortest-history capacity and low-dimension cost statements are paper proofs; general Cerny OPEN. Negative focused pressure records remain exploratory and are outside this checker."
+}

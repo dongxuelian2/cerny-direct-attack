@@ -1,0 +1,30 @@
+{
+  "runs": [
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.original_defect_reversal"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T09:46:47.119629+00:00",
+      "seconds": 0.4540000000015425,
+      "returncode": 0,
+      "stdout": "{\"inputs\": 430, \"complete_binary\": 388, \"SYNC\": 309, \"subset_witnesses\": 18780, \"boundary\": \"PROVED paper arbitrary-n/alphabet: for EACH original singular f, positive integer alpha and nonnegative beta_g balance alpha D(f)+sum_g beta_g D(fg)=0, with ORIGINAL g. This yields n-extension and ONE compatible square, without fixed-root/rank/SC assumptions. Exact one-letter reversal is a corollary; convex balancing also covers indegree>2. Existing cost2-corrector boundary and ALL-n Cerny reversal suffix2n-3 remain paid. No novelty/formal/general Cerny proof; Cerny OPEN.\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_original_defect_reversal"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T09:46:47.573212+00:00",
+      "seconds": 4.7959999999984575,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"inputs\": 430, \"complete_binary\": 388, \"SYNC\": 309, \"multidefect_SYNC\": 37, \"all_original_multicluster_SYNC\": 133, \"nonpermutation_correctors\": 4, \"subset_witnesses\": 18780, \"negative_changes_flipped\": 9403, \"monotone_literal_witnesses\": 18780, \"high_indegree_balanced_SYNC\": 5, \"max_short_change\": 4, \"max_extension\": 5, \"pair_bellman_edges\": 319898, \"literal_particle_letters\": 481632, \"counter_bellman_edges\": 32, \"paid_counter_extension\": 6, \"cerny_reversal_parameters\": 19, \"cerny_reversal_bellman_edges\": 89140, \"cerny_reversal_literal_weighted_controls\": 38639553, \"boundary\": \"Independent positive integer defect balance, complete388 binary n2..5,35 multi-defect samples plus2 explicit controls and5 high-indegree balanced translation controls; proper-subset witnesses and ONE paid max-indegree-seeded square checked. Existing n5 cost2 corrector stage6 reused;19 complete retained Cerny row graphs certify suffix2n-3 through n257. Arbitrary-n positive class/reversal-cost results PROVED paper, no novelty/formal/general Cerny proof.\", \"corruptions_rejected\": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}\n",
+      "stderr": ""
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "<PYTHON_RUNTIME>\\python.exe",
+    "-m",
+    "direct_attack.check_pu_prefix"
+  ],
+  "cwd": "<CHECKOUT>",
+  "start_unix": 1790694749.110555,
+  "seconds": 4.076996803283691,
+  "returncode": 0,
+  "stdout": "{\"verified\": true, \"pair_records\": 18214, \"certificates\": 198, \"ordinary_full_arrays\": 168, \"covers\": [{\"n\": 2, \"bases\": 1, \"cuts\": 1, \"quadruples\": 0}, {\"n\": 3, \"bases\": 14, \"cuts\": 28, \"quadruples\": 0}, {\"n\": 4, \"bases\": 411, \"cuts\": 1233, \"quadruples\": 8855}], \"corruptions_rejected\": [0, 1, 2, 3, 4, 5], \"minimum_scope\": \"Every PU alphabet, n<=4; n5 violates e<=n; no minimum for unrestricted DFA.\"}\n",
+  "stderr": ""
+}

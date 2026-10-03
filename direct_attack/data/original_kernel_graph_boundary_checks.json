@@ -1,0 +1,263 @@
+{
+  "verified": true,
+  "labeled_binary_inputs": 66281,
+  "chain_parameters": 45,
+  "maximum_n": 4096,
+  "literal_reset_letters": 1558,
+  "chain_words_enumerated": 252,
+  "terminal_report": {
+    "rt": 19,
+    "subset_vertices": 56,
+    "enumerated_words": 2046,
+    "pair_vertices": 15
+  },
+  "corruptions_rejected": 12,
+  "binary_reports": [
+    {
+      "n": 2,
+      "inputs": 16,
+      "maximum_depth": 0,
+      "maximum_forest_cost": 0
+    },
+    {
+      "n": 3,
+      "inputs": 729,
+      "maximum_depth": 1,
+      "maximum_forest_cost": 1
+    },
+    {
+      "n": 4,
+      "inputs": 65536,
+      "maximum_depth": 2,
+      "maximum_forest_cost": 3
+    }
+  ],
+  "chain_reports": [
+    {
+      "n": 3,
+      "literal_reset_letters": 4,
+      "enumerated_words": 4
+    },
+    {
+      "n": 4,
+      "literal_reset_letters": 6,
+      "enumerated_words": 8
+    },
+    {
+      "n": 5,
+      "literal_reset_letters": 8,
+      "enumerated_words": 16
+    },
+    {
+      "n": 6,
+      "literal_reset_letters": 10,
+      "enumerated_words": 32
+    },
+    {
+      "n": 7,
+      "literal_reset_letters": 12,
+      "enumerated_words": 64
+    },
+    {
+      "n": 8,
+      "literal_reset_letters": 14,
+      "enumerated_words": 128
+    },
+    {
+      "n": 9,
+      "literal_reset_letters": 16,
+      "enumerated_words": 0
+    },
+    {
+      "n": 10,
+      "literal_reset_letters": 18,
+      "enumerated_words": 0
+    },
+    {
+      "n": 11,
+      "literal_reset_letters": 20,
+      "enumerated_words": 0
+    },
+    {
+      "n": 12,
+      "literal_reset_letters": 22,
+      "enumerated_words": 0
+    },
+    {
+      "n": 13,
+      "literal_reset_letters": 24,
+      "enumerated_words": 0
+    },
+    {
+      "n": 14,
+      "literal_reset_letters": 26,
+      "enumerated_words": 0
+    },
+    {
+      "n": 15,
+      "literal_reset_letters": 28,
+      "enumerated_words": 0
+    },
+    {
+      "n": 16,
+      "literal_reset_letters": 30,
+      "enumerated_words": 0
+    },
+    {
+      "n": 17,
+      "literal_reset_letters": 32,
+      "enumerated_words": 0
+    },
+    {
+      "n": 18,
+      "literal_reset_letters": 34,
+      "enumerated_words": 0
+    },
+    {
+      "n": 19,
+      "literal_reset_letters": 36,
+      "enumerated_words": 0
+    },
+    {
+      "n": 20,
+      "literal_reset_letters": 38,
+      "enumerated_words": 0
+    },
+    {
+      "n": 21,
+      "literal_reset_letters": 40,
+      "enumerated_words": 0
+    },
+    {
+      "n": 22,
+      "literal_reset_letters": 42,
+      "enumerated_words": 0
+    },
+    {
+      "n": 23,
+      "literal_reset_letters": 44,
+      "enumerated_words": 0
+    },
+    {
+      "n": 24,
+      "literal_reset_letters": 46,
+      "enumerated_words": 0
+    },
+    {
+      "n": 25,
+      "literal_reset_letters": 48,
+      "enumerated_words": 0
+    },
+    {
+      "n": 26,
+      "literal_reset_letters": 50,
+      "enumerated_words": 0
+    },
+    {
+      "n": 27,
+      "literal_reset_letters": 52,
+      "enumerated_words": 0
+    },
+    {
+      "n": 28,
+      "literal_reset_letters": 54,
+      "enumerated_words": 0
+    },
+    {
+      "n": 29,
+      "literal_reset_letters": 56,
+      "enumerated_words": 0
+    },
+    {
+      "n": 30,
+      "literal_reset_letters": 58,
+      "enumerated_words": 0
+    },
+    {
+      "n": 31,
+      "literal_reset_letters": 60,
+      "enumerated_words": 0
+    },
+    {
+      "n": 32,
+      "literal_reset_letters": 62,
+      "enumerated_words": 0
+    },
+    {
+      "n": 33,
+      "literal_reset_letters": 64,
+      "enumerated_words": 0
+    },
+    {
+      "n": 34,
+      "literal_reset_letters": 66,
+      "enumerated_words": 0
+    },
+    {
+      "n": 35,
+      "literal_reset_letters": 68,
+      "enumerated_words": 0
+    },
+    {
+      "n": 36,
+      "literal_reset_letters": 70,
+      "enumerated_words": 0
+    },
+    {
+      "n": 37,
+      "literal_reset_letters": 72,
+      "enumerated_words": 0
+    },
+    {
+      "n": 38,
+      "literal_reset_letters": 74,
+      "enumerated_words": 0
+    },
+    {
+      "n": 39,
+      "literal_reset_letters": 76,
+      "enumerated_words": 0
+    },
+    {
+      "n": 40,
+      "literal_reset_letters": 78,
+      "enumerated_words": 0
+    },
+    {
+      "n": 65,
+      "literal_reset_letters": 0,
+      "enumerated_words": 0
+    },
+    {
+      "n": 129,
+      "literal_reset_letters": 0,
+      "enumerated_words": 0
+    },
+    {
+      "n": 257,
+      "literal_reset_letters": 0,
+      "enumerated_words": 0
+    },
+    {
+      "n": 513,
+      "literal_reset_letters": 0,
+      "enumerated_words": 0
+    },
+    {
+      "n": 1025,
+      "literal_reset_letters": 0,
+      "enumerated_words": 0
+    },
+    {
+      "n": 2051,
+      "literal_reset_letters": 0,
+      "enumerated_words": 0
+    },
+    {
+      "n": 4096,
+      "literal_reset_letters": 0,
+      "enumerated_words": 0
+    }
+  ],
+  "boundary": "General forward-congruence depth/forest lemma and all-n failure PROVED paper; finite n6 original terminal connectivity7, rt below square; only listed finite scopes COMPUTATIONALLY VERIFIED, priority and Cerny OPEN, no formal kernel"
+}

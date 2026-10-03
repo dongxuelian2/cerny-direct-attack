@@ -1,0 +1,38 @@
+{
+  "verified": true,
+  "runs": [
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.permutation_completion_boundary"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T12:44:45.343620+00:00",
+      "seconds": 0.625,
+      "returncode": 0,
+      "stdout": "{\"all_maps\": 3412, \"binary_inputs\": 28816, \"family_parameters\": 45, \"maximum_n\": 4096, \"binary_scopes\": [{\"n\": 2, \"maps\": 4, \"labeled_inputs\": 16, \"inputs_with_singular\": 12, \"sync_inputs\": 12, \"nonsync_full_completion\": 0, \"SC_nonsync_full_completion\": 0, \"component_histogram\": {\"1\": 12}, \"first_SC_nonsync_full\": null, \"scope\": \"complete labeled binary alphabets with every letter rank n or n-1; full-G count restricted to inputs with a singular letter\"}, {\"n\": 3, \"maps\": 24, \"labeled_inputs\": 576, \"inputs_with_singular\": 540, \"sync_inputs\": 396, \"nonsync_full_completion\": 108, \"SC_nonsync_full_completion\": 30, \"component_histogram\": {\"1\": 504, \"2\": 36}, \"first_SC_nonsync_full\": {\"rows\": [[0, 0, 2], [2, 2, 1]], \"images\": [5, 6, 7], \"normal_edges\": 3}, \"scope\": \"complete labeled binary alphabets with every letter rank n or n-1; full-G count restricted to inputs with a singular letter\"}, {\"n\": 4, \"maps\": 168, \"labeled_inputs\": 28224, \"inputs_with_singular\": 27648, \"sync_inputs\": 19776, \"nonsync_full_completion\": 4320, \"SC_nonsync_full_completion\": 456, \"component_histogram\": {\"1\": 24096, \"2\": 3264, \"3\": 288}, \"first_SC_nonsync_full\": {\"rows\": [[0, 0, 2, 3], [2, 2, 3, 1]], \"images\": [13, 14, 15], \"normal_edges\": 6}, \"scope\": \"complete labeled binary alphabets with every letter rank n or n-1; full-G count restricted to inputs with a singular letter\"}]}\n",
+      "stderr": "",
+      "output_sha256": "e71f5f84bffb4ab69ba3b03eb1531059de2e9b99b7b14fb23c419efee3978cc6"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.permutation_completion_boundary",
+        "--out",
+        "<CHECKOUT>\\direct_attack\\native_build\\permutation_completion_boundary_replay.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T12:44:45.980784+00:00",
+      "seconds": 0.6409999999959837,
+      "returncode": 0,
+      "stdout": "{\"all_maps\": 3412, \"binary_inputs\": 28816, \"family_parameters\": 45, \"maximum_n\": 4096, \"binary_scopes\": [{\"n\": 2, \"maps\": 4, \"labeled_inputs\": 16, \"inputs_with_singular\": 12, \"sync_inputs\": 12, \"nonsync_full_completion\": 0, \"SC_nonsync_full_completion\": 0, \"component_histogram\": {\"1\": 12}, \"first_SC_nonsync_full\": null, \"scope\": \"complete labeled binary alphabets with every letter rank n or n-1; full-G count restricted to inputs with a singular letter\"}, {\"n\": 3, \"maps\": 24, \"labeled_inputs\": 576, \"inputs_with_singular\": 540, \"sync_inputs\": 396, \"nonsync_full_completion\": 108, \"SC_nonsync_full_completion\": 30, \"component_histogram\": {\"1\": 504, \"2\": 36}, \"first_SC_nonsync_full\": {\"rows\": [[0, 0, 2], [2, 2, 1]], \"images\": [5, 6, 7], \"normal_edges\": 3}, \"scope\": \"complete labeled binary alphabets with every letter rank n or n-1; full-G count restricted to inputs with a singular letter\"}, {\"n\": 4, \"maps\": 168, \"labeled_inputs\": 28224, \"inputs_with_singular\": 27648, \"sync_inputs\": 19776, \"nonsync_full_completion\": 4320, \"SC_nonsync_full_completion\": 456, \"component_histogram\": {\"1\": 24096, \"2\": 3264, \"3\": 288}, \"first_SC_nonsync_full\": {\"rows\": [[0, 0, 2, 3], [2, 2, 3, 1]], \"images\": [13, 14, 15], \"normal_edges\": 6}, \"scope\": \"complete labeled binary alphabets with every letter rank n or n-1; full-G count restricted to inputs with a singular letter\"}]}\n",
+      "stderr": "",
+      "output_sha256": "e71f5f84bffb4ab69ba3b03eb1531059de2e9b99b7b14fb23c419efee3978cc6"
+    }
+  ],
+  "parsed_records_equal": true,
+  "normalization": "none",
+  "generator_sha256": "8559fda400ea685ce052f86b8cb80bb3bff13b32a8e161423dfd6c560bdaf56c"
+}

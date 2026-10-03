@@ -1,0 +1,68 @@
+{
+  "n": 2,
+  "rows": [
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      0
+    ]
+  ],
+  "best_policy": 1,
+  "worst_policy": 2,
+  "rt": 1,
+  "reachable": 3,
+  "max_extension": 2,
+  "extension_start": 2,
+  "max_proper_rank": 1,
+  "truncated": false,
+  "extension": {
+    "1": 1,
+    "2": 2
+  },
+  "best": {
+    "3": 0,
+    "1": 1,
+    "2": 2
+  },
+  "worst": {
+    "3": 0,
+    "1": 1,
+    "2": 2
+  },
+  "forward": {
+    "3": 0,
+    "1": 1,
+    "2": 2
+  },
+  "source": "input:1",
+  "seed_budget": {
+    "n": 2,
+    "rows": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "best_policy": 1,
+    "worst_policy": 2,
+    "rt": 1,
+    "reachable": 3,
+    "max_extension": 2,
+    "extension_start": 2,
+    "max_proper_rank": 1,
+    "truncated": false,
+    "kappa": 2,
+    "seed_best": 1,
+    "anchor_best": 1,
+    "anchor_worst": 1,
+    "seed_image": 3,
+    "anchor_image": 3
+  }
+}

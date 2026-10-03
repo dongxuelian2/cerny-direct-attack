@@ -1,0 +1,1 @@
+{"n":2,"map_count":4,"first_map_orbits":3,"tested":9,"synchronizing":7,"max_SC":1,"max_nonSC":1,"SC_rows":[[0,0],[1,0]],"nonSC_rows":[[0,0],[0,1]],"histogram":{"1":7},"seconds":5.5e-006,"completed_planned_cover":true,"boundary":"EXPLORATORY new mu metric, all binary first-map representatives and distinct second rows; overlapping cover, implementation not independently certified"}

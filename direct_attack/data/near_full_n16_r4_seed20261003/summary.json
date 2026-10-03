@@ -1,0 +1,19 @@
+{
+  "arguments": {
+    "n": 16,
+    "corank": 4,
+    "iterations": 30000,
+    "minimum_protected": 12,
+    "seed": 20261003,
+    "out": "direct_attack/data/near_full_n16_r4"
+  },
+  "counts": {
+    "proposals": 30000,
+    "sync_sc": 25690
+  },
+  "best": [
+    11,
+    11
+  ],
+  "seconds": 41.65847635269165
+}

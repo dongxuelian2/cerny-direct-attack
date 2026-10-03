@@ -1,0 +1,10 @@
+{
+  "method": "ordinary all-source forward transport and policy recurrence",
+  "source": "direct_attack\\data\\one_fixed_all_permutations_n8.json",
+  "n": 8,
+  "peak_e": 15,
+  "peak_target": 96,
+  "rt": 10,
+  "best_policy": 10,
+  "verified": true
+}

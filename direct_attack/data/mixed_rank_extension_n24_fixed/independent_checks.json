@@ -1,0 +1,87 @@
+{
+  "verified": true,
+  "records": [
+    {
+      "file": "witness_000.json",
+      "n": 24,
+      "e": 22,
+      "P": 9,
+      "rt": 9,
+      "images": 163,
+      "all_arrays": true
+    },
+    {
+      "file": "witness_001.json",
+      "n": 24,
+      "e": 23,
+      "P": 22,
+      "rt": 22,
+      "images": 163,
+      "all_arrays": true
+    },
+    {
+      "file": "witness_002.json",
+      "n": 24,
+      "e": 36,
+      "P": 20,
+      "rt": 20,
+      "images": 232,
+      "all_arrays": true
+    },
+    {
+      "file": "witness_003.json",
+      "n": 24,
+      "e": 42,
+      "P": 22,
+      "rt": 22,
+      "images": 163,
+      "all_arrays": true
+    },
+    {
+      "file": "witness_004.json",
+      "n": 24,
+      "e": 43,
+      "P": 24,
+      "rt": 24,
+      "images": 209,
+      "all_arrays": true
+    },
+    {
+      "file": "witness_005.json",
+      "n": 24,
+      "e": 44,
+      "P": 25,
+      "rt": 25,
+      "images": 209,
+      "all_arrays": true
+    },
+    {
+      "file": "witness_006.json",
+      "n": 24,
+      "e": 44,
+      "P": 26,
+      "rt": 25,
+      "images": 278,
+      "all_arrays": true
+    },
+    {
+      "file": "witness_007.json",
+      "n": 24,
+      "e": 45,
+      "P": 27,
+      "rt": 26,
+      "images": 278,
+      "all_arrays": true
+    },
+    {
+      "file": "witness_008.json",
+      "n": 24,
+      "e": 45,
+      "P": 28,
+      "rt": 26,
+      "images": 232,
+      "all_arrays": true
+    }
+  ],
+  "scope": "Every retained array independently recomputed including all strict-subset arrivals and shortest-parent ties; full adaptive stream is not replayed by this checker."
+}

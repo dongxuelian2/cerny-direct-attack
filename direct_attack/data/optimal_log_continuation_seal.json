@@ -1,0 +1,59 @@
+{
+  "verified": true,
+  "checks": 103,
+  "regeneration_commands": 187,
+  "archived": [
+    {
+      "path": "direct_attack/data/optimal_log_continuation_provenance/audit_run.json",
+      "sha256": "b91a21a90ffda548d42229fee226a7871e820c4c5b35e5b0523168bf4ac85252"
+    },
+    {
+      "path": "direct_attack/data/optimal_log_continuation_provenance/reproduction_commands.json",
+      "sha256": "d4ff6e3141adbf678ca7c80e5af9c7750e3226923bfff28afb18c4a95f5316c7"
+    },
+    {
+      "path": "direct_attack/data/optimal_log_continuation_provenance/sha256_manifest.json",
+      "sha256": "84b49165a58a18db973a691fa2921fd304bfa18458d8bdab8eb3c694dd582f2b"
+    }
+  ],
+  "native_builds": [
+    {
+      "metadata": "direct_attack/data/alternating_frame_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/alternating_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/class_reset_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/complete_policy_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/sparse_policy_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/weighted_class_reset_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    }
+  ],
+  "generation_and_replay": "direct_attack/data/optimal_log_generation_captures.json",
+  "audit_boundary": "previous 102-check record preserved verbatim; one new independent finite all-source transport, determinant-minor and optimal-endpoint-chain check with deterministic generator/replay; not a full 103-check rerun",
+  "mathematical_status": "COMPUTATIONALLY VERIFIED n7 only: all 68 optimal endpoint chains, normalized dimension 3..5, rt=P9; 68 literal original reset words; all-choices low-dimension theorem does not exclude optimized geometry; general Cerny, global policy square and cost-dimension tradeoff OPEN; no formal verification"
+}

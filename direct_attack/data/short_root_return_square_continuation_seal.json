@@ -1,0 +1,36 @@
+{
+  "verified": true,
+  "checks": 146,
+  "regeneration_commands": 227,
+  "archived": [
+    {
+      "path": "direct_attack/data/short_root_return_square_continuation_provenance/audit_run.json",
+      "sha256": "56f3446140a919bcc31c7bc4a00be1fabc8c477e24d830eacc28cf7859eaf3b3"
+    },
+    {
+      "path": "direct_attack/data/short_root_return_square_continuation_provenance/reproduction_commands.json",
+      "sha256": "6fb7abe65b4cc95f024472b116238c6b9d523d3d519f908e42fa81108ca76746"
+    },
+    {
+      "path": "direct_attack/data/short_root_return_square_continuation_provenance/sha256_manifest.json",
+      "sha256": "a77f23adf88107fb550e0003b7414f6fefa8f1265893022bbbe542ae374855fc"
+    }
+  ],
+  "native_builds": [
+    "direct_attack/data/alternating_frame_build.json",
+    "direct_attack/data/alternating_native_build.json",
+    "direct_attack/data/binary_n6_history_cover_native_build.json",
+    "direct_attack/data/class_reset_native_build.json",
+    "direct_attack/data/complete_policy_build.json",
+    "direct_attack/data/native_build.json",
+    "direct_attack/data/sparse_policy_build.json",
+    "direct_attack/data/weighted_class_reset_native_build.json"
+  ],
+  "formal_guards": [
+    "kari_inverse_shrink_lean_checks.json",
+    "kari_shrink_products_lean_checks.json",
+    "reflection_core_tradeoff_lean_checks.json"
+  ],
+  "mathematical_status": "PROVED paper short-root-return strict quadratic criterion with arbitrary root a-cycle; finite independent controls COMPUTATIONALLY VERIFIED; general Cerny/c0 order-two mixed square OPEN; no all-n FORMALLY VERIFIED claim.",
+  "audit_boundary": "checkpoint145 preserved verbatim; ONE new independent4542-input short-root-return square audit, ALL3006 eligible c-positive normal forms M5..7,15997240 particles,48838 root-preserving stages,3840 complete Bellman edges and10 corruptions. Arbitrary root-cycle length, actual two-a return cost paid, all-n strict bound M^2-M+4(even)/M^2-M+5(odd) PROVED paper. Root seed3 n+1 REFUTED n7/n9. General Cerny and c0 order-two all-n square OPEN; native order-two pressure EXPLORATORY; no full146 rerun, prior8 registered builds/Lean unchanged."
+}

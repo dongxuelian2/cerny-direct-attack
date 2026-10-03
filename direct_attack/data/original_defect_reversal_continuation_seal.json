@@ -1,0 +1,31 @@
+{
+  "verified": true,
+  "checks": 136,
+  "regeneration_commands": 217,
+  "archived": [
+    {
+      "path": "direct_attack/data/original_defect_reversal_continuation_provenance/audit_run.json",
+      "sha256": "d5b6bf9d71d124181a726fc213c1ebf2bcf1091dd026c1a298646ea0aaa280e7"
+    },
+    {
+      "path": "direct_attack/data/original_defect_reversal_continuation_provenance/reproduction_commands.json",
+      "sha256": "b9d809c76e47614101bf3a83b5b83427890ad08eb8fa5a16cbaa14a20c94939c"
+    },
+    {
+      "path": "direct_attack/data/original_defect_reversal_continuation_provenance/sha256_manifest.json",
+      "sha256": "096dd97d458623822af4edb04763e88cffe7676a29fbcef7e9763511a1e5ed91"
+    }
+  ],
+  "native_builds": [
+    "direct_attack/data/alternating_frame_build.json",
+    "direct_attack/data/alternating_native_build.json",
+    "direct_attack/data/binary_n6_history_cover_native_build.json",
+    "direct_attack/data/class_reset_native_build.json",
+    "direct_attack/data/complete_policy_build.json",
+    "direct_attack/data/native_build.json",
+    "direct_attack/data/sparse_policy_build.json",
+    "direct_attack/data/weighted_class_reset_native_build.json"
+  ],
+  "mathematical_status": "PROVED paper arbitrary-n/alphabet positive original one-step defect balance gives n-extension and compatible max-indegree-seeded square; Cerny exact row-reversing suffix2n-3 ALLn. Retained finite controls COMPUTATIONALLY VERIFIED; previous literal Kari base FORMALLY VERIFIED unchanged. General Cerny OPEN; no novelty claim.",
+  "audit_boundary": "checkpoint135 preserved verbatim; ONE new independent original weighted-defect balance checker430 inputs/388 complete binary,309SYNC37multidefect133all-original-multicluster5high-indegree,18780 subset words9403 negative repairs,319898 pair edges481632 particle controls,32 reused n5 boundary edges,19 complete Cerny reversal row graphs89140 edges38639553 weighted controls and ten rejected corruptions. Arbitrary-n positive original one-step balancing yields n-extension and ONE max-indegree-seeded reset1+n(n-M)<=square; exact reversal is a corollary. All-n Cerny reversing suffix cost2n-3, no new ordinary threshold. PROVED paper; no new formal, full136 rerun, novelty or general proof. Cerny OPEN."
+}

@@ -1,0 +1,675 @@
+{
+  "records": [
+    {
+      "file": "direct_attack\\data\\near_full_n12_r3\\best_001.json",
+      "n": 12,
+      "corank": 3,
+      "exact_compression": 6,
+      "protection": 4,
+      "protected": false,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n12_r3\\best_002.json",
+      "n": 12,
+      "corank": 3,
+      "exact_compression": 6,
+      "protection": 5,
+      "protected": false,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n12_r3\\best_003.json",
+      "n": 12,
+      "corank": 3,
+      "exact_compression": 7,
+      "protection": 5,
+      "protected": false,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n12_r3\\best_004.json",
+      "n": 12,
+      "corank": 3,
+      "exact_compression": 7,
+      "protection": 6,
+      "protected": false,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n12_r3\\best_005.json",
+      "n": 12,
+      "corank": 3,
+      "exact_compression": 7,
+      "protection": 7,
+      "protected": true,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n12_r3\\best_006.json",
+      "n": 12,
+      "corank": 3,
+      "exact_compression": 8,
+      "protection": 7,
+      "protected": false,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n12_r3\\best_007.json",
+      "n": 12,
+      "corank": 3,
+      "exact_compression": 8,
+      "protection": 8,
+      "protected": true,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n12_r3\\best_008.json",
+      "n": 12,
+      "corank": 3,
+      "exact_compression": 9,
+      "protection": 8,
+      "protected": false,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n12_r3\\best_009.json",
+      "n": 12,
+      "corank": 3,
+      "exact_compression": 9,
+      "protection": 9,
+      "protected": true,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n12_r3\\protected_witness.json",
+      "n": 12,
+      "corank": 3,
+      "exact_compression": 9,
+      "protection": 9,
+      "protected": true,
+      "reachable_certified": true,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n12_r3_target10\\best_001.json",
+      "n": 12,
+      "corank": 3,
+      "exact_compression": 6,
+      "protection": 4,
+      "protected": false,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n12_r3_target10\\best_002.json",
+      "n": 12,
+      "corank": 3,
+      "exact_compression": 6,
+      "protection": 5,
+      "protected": false,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n12_r3_target10\\best_003.json",
+      "n": 12,
+      "corank": 3,
+      "exact_compression": 7,
+      "protection": 5,
+      "protected": false,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n12_r3_target10\\best_004.json",
+      "n": 12,
+      "corank": 3,
+      "exact_compression": 7,
+      "protection": 6,
+      "protected": false,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n12_r3_target10\\best_005.json",
+      "n": 12,
+      "corank": 3,
+      "exact_compression": 7,
+      "protection": 7,
+      "protected": true,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n12_r3_target10\\best_006.json",
+      "n": 12,
+      "corank": 3,
+      "exact_compression": 8,
+      "protection": 7,
+      "protected": false,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n12_r3_target10\\best_007.json",
+      "n": 12,
+      "corank": 3,
+      "exact_compression": 8,
+      "protection": 8,
+      "protected": true,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n12_r3_target10\\best_008.json",
+      "n": 12,
+      "corank": 3,
+      "exact_compression": 9,
+      "protection": 8,
+      "protected": false,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n12_r3_target10\\best_009.json",
+      "n": 12,
+      "corank": 3,
+      "exact_compression": 9,
+      "protection": 9,
+      "protected": true,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n16_r3\\best_001.json",
+      "n": 16,
+      "corank": 3,
+      "exact_compression": 6,
+      "protection": 4,
+      "protected": false,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n16_r3\\best_002.json",
+      "n": 16,
+      "corank": 3,
+      "exact_compression": 6,
+      "protection": 5,
+      "protected": false,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n16_r3\\best_003.json",
+      "n": 16,
+      "corank": 3,
+      "exact_compression": 7,
+      "protection": 5,
+      "protected": false,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n16_r3\\best_004.json",
+      "n": 16,
+      "corank": 3,
+      "exact_compression": 7,
+      "protection": 7,
+      "protected": true,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n16_r3\\best_005.json",
+      "n": 16,
+      "corank": 3,
+      "exact_compression": 8,
+      "protection": 8,
+      "protected": true,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n16_r4\\best_001.json",
+      "n": 16,
+      "corank": 4,
+      "exact_compression": 6,
+      "protection": 4,
+      "protected": false,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n16_r4\\best_002.json",
+      "n": 16,
+      "corank": 4,
+      "exact_compression": 7,
+      "protection": 4,
+      "protected": false,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n16_r4\\best_003.json",
+      "n": 16,
+      "corank": 4,
+      "exact_compression": 9,
+      "protection": 5,
+      "protected": false,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n16_r4\\best_004.json",
+      "n": 16,
+      "corank": 4,
+      "exact_compression": 9,
+      "protection": 6,
+      "protected": false,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n16_r4\\best_005.json",
+      "n": 16,
+      "corank": 4,
+      "exact_compression": 9,
+      "protection": 7,
+      "protected": false,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n16_r4\\best_006.json",
+      "n": 16,
+      "corank": 4,
+      "exact_compression": 9,
+      "protection": 8,
+      "protected": false,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n16_r4\\best_007.json",
+      "n": 16,
+      "corank": 4,
+      "exact_compression": 9,
+      "protection": 9,
+      "protected": true,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n16_r4\\best_008.json",
+      "n": 16,
+      "corank": 4,
+      "exact_compression": 10,
+      "protection": 10,
+      "protected": true,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n16_r4_seed20261003\\best_001.json",
+      "n": 16,
+      "corank": 4,
+      "exact_compression": 6,
+      "protection": 4,
+      "protected": false,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n16_r4_seed20261003\\best_002.json",
+      "n": 16,
+      "corank": 4,
+      "exact_compression": 7,
+      "protection": 6,
+      "protected": false,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n16_r4_seed20261003\\best_003.json",
+      "n": 16,
+      "corank": 4,
+      "exact_compression": 7,
+      "protection": 7,
+      "protected": true,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n16_r4_seed20261003\\best_004.json",
+      "n": 16,
+      "corank": 4,
+      "exact_compression": 8,
+      "protection": 8,
+      "protected": true,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n16_r4_seed20261003\\best_005.json",
+      "n": 16,
+      "corank": 4,
+      "exact_compression": 9,
+      "protection": 8,
+      "protected": false,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n16_r4_seed20261003\\best_006.json",
+      "n": 16,
+      "corank": 4,
+      "exact_compression": 10,
+      "protection": 8,
+      "protected": false,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n16_r4_seed20261003\\best_007.json",
+      "n": 16,
+      "corank": 4,
+      "exact_compression": 10,
+      "protection": 9,
+      "protected": false,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n16_r4_seed20261003\\best_008.json",
+      "n": 16,
+      "corank": 4,
+      "exact_compression": 10,
+      "protection": 10,
+      "protected": true,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n16_r4_seed20261003\\best_009.json",
+      "n": 16,
+      "corank": 4,
+      "exact_compression": 11,
+      "protection": 11,
+      "protected": true,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n16_r4_seeded\\best_001.json",
+      "n": 16,
+      "corank": 4,
+      "exact_compression": 5,
+      "protection": 5,
+      "protected": true,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n16_r4_seeded\\best_002.json",
+      "n": 16,
+      "corank": 4,
+      "exact_compression": 11,
+      "protection": 11,
+      "protected": true,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n18_r5\\best_001.json",
+      "n": 18,
+      "corank": 5,
+      "exact_compression": 8,
+      "protection": 6,
+      "protected": false,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n18_r5\\best_002.json",
+      "n": 18,
+      "corank": 5,
+      "exact_compression": 8,
+      "protection": 7,
+      "protected": false,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n18_r5\\best_003.json",
+      "n": 18,
+      "corank": 5,
+      "exact_compression": 9,
+      "protection": 7,
+      "protected": false,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n18_r5\\best_004.json",
+      "n": 18,
+      "corank": 5,
+      "exact_compression": 10,
+      "protection": 7,
+      "protected": false,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n18_r5\\best_005.json",
+      "n": 18,
+      "corank": 5,
+      "exact_compression": 10,
+      "protection": 8,
+      "protected": false,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n18_r5\\best_006.json",
+      "n": 18,
+      "corank": 5,
+      "exact_compression": 10,
+      "protection": 10,
+      "protected": true,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n18_r5\\best_007.json",
+      "n": 18,
+      "corank": 5,
+      "exact_compression": 11,
+      "protection": 10,
+      "protected": false,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n18_r5\\best_008.json",
+      "n": 18,
+      "corank": 5,
+      "exact_compression": 11,
+      "protection": 11,
+      "protected": true,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n18_r5\\best_009.json",
+      "n": 18,
+      "corank": 5,
+      "exact_compression": 12,
+      "protection": 11,
+      "protected": false,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n18_r5\\best_010.json",
+      "n": 18,
+      "corank": 5,
+      "exact_compression": 12,
+      "protection": 12,
+      "protected": true,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n18_r5\\protected_peak.json",
+      "n": 18,
+      "corank": 5,
+      "exact_compression": 12,
+      "protection": 12,
+      "protected": true,
+      "reachable_certified": true,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n20_r4\\best_001.json",
+      "n": 20,
+      "corank": 4,
+      "exact_compression": 7,
+      "protection": 4,
+      "protected": false,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n20_r4\\best_002.json",
+      "n": 20,
+      "corank": 4,
+      "exact_compression": 9,
+      "protection": 8,
+      "protected": false,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n20_r4\\best_003.json",
+      "n": 20,
+      "corank": 4,
+      "exact_compression": 9,
+      "protection": 9,
+      "protected": true,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n20_r4\\best_004.json",
+      "n": 20,
+      "corank": 4,
+      "exact_compression": 10,
+      "protection": 10,
+      "protected": true,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n20_r5\\best_001.json",
+      "n": 20,
+      "corank": 5,
+      "exact_compression": 6,
+      "protection": 4,
+      "protected": false,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n20_r5\\best_002.json",
+      "n": 20,
+      "corank": 5,
+      "exact_compression": 7,
+      "protection": 5,
+      "protected": false,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n20_r5\\best_003.json",
+      "n": 20,
+      "corank": 5,
+      "exact_compression": 8,
+      "protection": 7,
+      "protected": false,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n20_r5\\best_004.json",
+      "n": 20,
+      "corank": 5,
+      "exact_compression": 9,
+      "protection": 7,
+      "protected": false,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n20_r5\\best_005.json",
+      "n": 20,
+      "corank": 5,
+      "exact_compression": 9,
+      "protection": 9,
+      "protected": true,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n20_r5\\best_006.json",
+      "n": 20,
+      "corank": 5,
+      "exact_compression": 10,
+      "protection": 9,
+      "protected": false,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n20_r5\\best_007.json",
+      "n": 20,
+      "corank": 5,
+      "exact_compression": 10,
+      "protection": 10,
+      "protected": true,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n20_r5\\best_008.json",
+      "n": 20,
+      "corank": 5,
+      "exact_compression": 11,
+      "protection": 11,
+      "protected": true,
+      "reachable_certified": false,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\near_full_n20_r5\\best_009.json",
+      "n": 20,
+      "corank": 5,
+      "exact_compression": 12,
+      "protection": 12,
+      "protected": true,
+      "reachable_certified": false,
+      "verified": true
+    }
+  ],
+  "checked": 67
+}

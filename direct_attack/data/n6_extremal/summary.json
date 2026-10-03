@@ -1,0 +1,320 @@
+{
+  "n": 6,
+  "minimum": 23,
+  "counters": {
+    "tested": 6065150,
+    "sc": 1165941
+  },
+  "classes": 4,
+  "records": [
+    {
+      "label": "extremal_000",
+      "rows": [
+        [
+          0,
+          0,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          2,
+          0,
+          3,
+          4,
+          5,
+          1
+        ]
+      ],
+      "rt": 25,
+      "gaps": [
+        1,
+        3,
+        3,
+        5,
+        13
+      ],
+      "letter_ranks": [
+        5,
+        6
+      ],
+      "letter_cycle_signatures": [
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          6
+        ]
+      ],
+      "pair_distance_spectrum": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "state_alphabet_automorphisms": 1,
+      "reachable_by_rank": [
+        0,
+        6,
+        15,
+        20,
+        15,
+        6,
+        1
+      ],
+      "greedy_best": 27,
+      "bottleneck": 6,
+      "optimal_bottleneck": 6,
+      "semigroup_size": 2742,
+      "semigroup_complete": true
+    },
+    {
+      "label": "extremal_001",
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          3,
+          3
+        ],
+        [
+          1,
+          3,
+          5,
+          0,
+          2,
+          4
+        ]
+      ],
+      "rt": 25,
+      "gaps": [
+        1,
+        3,
+        5,
+        8,
+        8
+      ],
+      "letter_ranks": [
+        5,
+        6
+      ],
+      "letter_cycle_signatures": [
+        [
+          1,
+          1,
+          1,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "pair_distance_spectrum": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        6,
+        7,
+        7,
+        8,
+        8,
+        9,
+        9,
+        10,
+        11
+      ],
+      "state_alphabet_automorphisms": 1,
+      "reachable_by_rank": [
+        0,
+        6,
+        15,
+        19,
+        12,
+        3,
+        1
+      ],
+      "greedy_best": 26,
+      "bottleneck": 8,
+      "optimal_bottleneck": 8,
+      "semigroup_size": 17265,
+      "semigroup_complete": true
+    },
+    {
+      "label": "extremal_002",
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          3,
+          3
+        ],
+        [
+          1,
+          3,
+          4,
+          0,
+          5,
+          2
+        ]
+      ],
+      "rt": 23,
+      "gaps": [
+        1,
+        2,
+        5,
+        7,
+        8
+      ],
+      "letter_ranks": [
+        5,
+        6
+      ],
+      "letter_cycle_signatures": [
+        [
+          1,
+          1,
+          1,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "pair_distance_spectrum": [
+        1,
+        2,
+        3,
+        3,
+        4,
+        5,
+        6,
+        7,
+        7,
+        8,
+        8,
+        8,
+        9,
+        9,
+        9
+      ],
+      "state_alphabet_automorphisms": 1,
+      "reachable_by_rank": [
+        0,
+        6,
+        15,
+        19,
+        12,
+        3,
+        1
+      ],
+      "greedy_best": 23,
+      "bottleneck": 8,
+      "optimal_bottleneck": 8,
+      "semigroup_size": 17265,
+      "semigroup_complete": true
+    },
+    {
+      "label": "extremal_003",
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          2,
+          5,
+          0,
+          3,
+          1,
+          4
+        ]
+      ],
+      "rt": 23,
+      "gaps": [
+        1,
+        3,
+        5,
+        6,
+        8
+      ],
+      "letter_ranks": [
+        5,
+        6
+      ],
+      "letter_cycle_signatures": [
+        [
+          1,
+          1,
+          3
+        ],
+        [
+          1,
+          2,
+          3
+        ]
+      ],
+      "pair_distance_spectrum": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        5,
+        6,
+        6,
+        6,
+        7,
+        7,
+        7,
+        8,
+        8,
+        8
+      ],
+      "state_alphabet_automorphisms": 1,
+      "reachable_by_rank": [
+        0,
+        6,
+        15,
+        19,
+        12,
+        3,
+        1
+      ],
+      "greedy_best": 23,
+      "bottleneck": 7,
+      "optimal_bottleneck": 7,
+      "semigroup_size": 17268,
+      "semigroup_complete": true
+    }
+  ],
+  "seconds": 138.21876120567322
+}

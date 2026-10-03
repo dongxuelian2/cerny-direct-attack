@@ -1,0 +1,82 @@
+{
+  "verified": true,
+  "cases": [
+    {
+      "file": "antitone_minimum_n4.json",
+      "n": 4,
+      "P": 5,
+      "Fmax": 5,
+      "images": 15,
+      "words": true
+    },
+    {
+      "file": "inclusion_minimum_n5.json",
+      "n": 5,
+      "P": 3,
+      "Fmax": 4,
+      "images": 26,
+      "words": true
+    },
+    {
+      "file": "inclusion_gap_two_n5.json",
+      "n": 5,
+      "P": 5,
+      "Fmax": 7,
+      "images": 30,
+      "words": true
+    },
+    {
+      "file": "search_peak_000.json",
+      "n": 5,
+      "P": 3,
+      "Fmax": 4,
+      "images": 26,
+      "words": false
+    },
+    {
+      "file": "search_peak_001.json",
+      "n": 5,
+      "P": 5,
+      "Fmax": 7,
+      "images": 30,
+      "words": false
+    }
+  ],
+  "binary_covers": [
+    {
+      "n": 2,
+      "counts": {
+        "tested": 9,
+        "sc_synchronizing": 4
+      }
+    },
+    {
+      "n": 3,
+      "counts": {
+        "tested": 182,
+        "sc_synchronizing": 59
+      }
+    },
+    {
+      "n": 4,
+      "counts": {
+        "tested": 4845,
+        "sc_synchronizing": 1240
+      }
+    },
+    {
+      "n": 5,
+      "counts": {
+        "tested": 146828,
+        "sc_synchronizing": 32588
+      }
+    }
+  ],
+  "corruptions_rejected": [
+    "inclusion_maximal_images",
+    "inclusion_budget",
+    "inclusion_best_chain"
+  ],
+  "seconds": 8.34400000000096,
+  "scope": "Every saved array and all inclusion-maximal seed memberships independently checked. Explicit chains also use independent inverse-set checker. Binary n2..5 covers have no inclusion failure; arbitrary-alphabet state minimum n5 follows from paper exclusion at n<=4."
+}

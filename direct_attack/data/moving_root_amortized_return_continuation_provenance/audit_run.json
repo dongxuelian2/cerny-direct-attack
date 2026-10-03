@@ -1,0 +1,2057 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "executable": "<PYTHON_RUNTIME>\\python.exe",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "full_regeneration": false,
+  "runs": [
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_profiles"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:24:46.752338+00:00",
+      "seconds": 24.531999999999243,
+      "returncode": 0,
+      "stdout": "{\"profiles\": 88, \"checked_subsets\": 10968}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_bridges"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:25:11.274692+00:00",
+      "seconds": 0.75,
+      "returncode": 0,
+      "stdout": "{\"certificates\": 11, \"vertices\": 109238, \"mutation_rejections\": 4}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_histories"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:25:12.031628+00:00",
+      "seconds": 0.10900000000037835,
+      "returncode": 0,
+      "stdout": "{\"witnesses\": 14, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_bidirectional"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:25:12.139152+00:00",
+      "seconds": 0.07799999999951979,
+      "returncode": 0,
+      "stdout": "{\"witnesses\": 4, \"reports\": [{\"file\": \"direct_attack\\\\data\\\\bidirectional\\\\witness_000.policy.json\", \"n\": 6, \"rt\": 25, \"minimum_policy_cost\": 26, \"policy_nodes\": 40, \"square_failure\": true, \"verified\": true}, {\"file\": \"direct_attack\\\\data\\\\bidirectional\\\\witness_001.policy.json\", \"n\": 7, \"rt\": 12, \"minimum_policy_cost\": 14, \"policy_nodes\": 25, \"square_failure\": false, \"verified\": true}, {\"file\": \"direct_attack\\\\data\\\\bidirectional\\\\witness_002.policy.json\", \"n\": 7, \"rt\": 17, \"minimum_policy_cost\": 20, \"policy_nodes\": 39, \"square_failure\": false, \"verified\": true}, {\"file\": \"direct_attack\\\\data\\\\bidirectional\\\\witness_003.policy.json\", \"n\": 7, \"rt\": 16, \"minimum_policy_cost\": 20, \"policy_nodes\": 27, \"square_failure\": false, \"verified\": true}]}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_padding"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:25:12.222905+00:00",
+      "seconds": 0.2970000000004802,
+      "returncode": 0,
+      "stdout": "{\"certificates\": 11, \"records\": [{\"n\": 11, \"exact_compression\": 6, \"verified\": true}, {\"n\": 12, \"exact_compression\": 6, \"verified\": true}, {\"n\": 14, \"exact_compression\": 6, \"verified\": true}, {\"n\": 15, \"exact_compression\": 6, \"verified\": true}, {\"n\": 17, \"exact_compression\": 6, \"verified\": true}, {\"n\": 18, \"exact_compression\": 6, \"verified\": true}, {\"n\": 20, \"exact_compression\": 6, \"verified\": true}, {\"n\": 30, \"exact_compression\": 6, \"verified\": true}, {\"n\": 60, \"exact_compression\": 6, \"verified\": true}, {\"n\": 8, \"exact_compression\": 6, \"verified\": true}, {\"n\": 9, \"exact_compression\": 6, \"verified\": true}], \"minimal_harmonic_refutation_n\": 8}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.audit_unary"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:25:12.522103+00:00",
+      "seconds": 0.6560000000008586,
+      "returncode": 0,
+      "stdout": "[{\"n\": 2, \"counters\": {\"maps\": 4, \"synchronizing_maps\": 2, \"partition_subset_tests\": 2}, \"rank_excess_violations\": 0, \"complete\": true}, {\"n\": 3, \"counters\": {\"maps\": 27, \"synchronizing_maps\": 9, \"partition_subset_tests\": 117}, \"rank_excess_violations\": 0, \"complete\": true}, {\"n\": 4, \"counters\": {\"maps\": 256, \"synchronizing_maps\": 64, \"partition_subset_tests\": 6912}, \"rank_excess_violations\": 0, \"complete\": true}, {\"n\": 5, \"counters\": {\"maps\": 3125, \"synchronizing_maps\": 625, \"partition_subset_tests\": 531875}, \"rank_excess_violations\": 0, \"complete\": true}]\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_near_full"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:25:13.177566+00:00",
+      "seconds": 0.3599999999987631,
+      "returncode": 0,
+      "stdout": "{\"checked\": 67, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_cycle_insertion"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:25:13.536344+00:00",
+      "seconds": 3.1090000000003783,
+      "returncode": 0,
+      "stdout": "{\"checked\": 8, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_vertex_covers"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:25:16.640152+00:00",
+      "seconds": 0.6720000000004802,
+      "returncode": 0,
+      "stdout": "{\"n_max\": 5, \"graph_budget_forbidden_cases\": 38610, \"verified\": true, \"scope\": \"Complete cover existence decision; protected-subset mining uses heuristic filler states.\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.audit_cycle_mutations"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:25:17.304995+00:00",
+      "seconds": 0.04700000000048021,
+      "returncode": 0,
+      "stdout": "{\"mutations\": 8, \"all_rejected\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_image_extension"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:25:17.364214+00:00",
+      "seconds": 27.936999999999898,
+      "returncode": 0,
+      "stdout": "{\"checked\": 93, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_image_policy"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:25:45.301357+00:00",
+      "seconds": 7.593999999999141,
+      "returncode": 0,
+      "stdout": "{\"checked\": 91, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.audit_image_mutations"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:25:52.895450+00:00",
+      "seconds": 0.07799999999951979,
+      "returncode": 0,
+      "stdout": "{\"mutations\": 5, \"all_rejected\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.top_rank_boundary"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:25:52.959779+00:00",
+      "seconds": 0.04700000000048021,
+      "returncode": 0,
+      "stdout": "{\"instances\": 11, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.replay_image_search"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:25:53.021447+00:00",
+      "seconds": 16.10900000000038,
+      "returncode": 0,
+      "stdout": "{\"certificates_matched\": 6, \"counts_matched\": true, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_native_policy"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:26:09.128430+00:00",
+      "seconds": 0.375,
+      "returncode": 0,
+      "stdout": "{\"checked\": 91, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.audit_native_small"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:26:09.499078+00:00",
+      "seconds": 0.3289999999997235,
+      "returncode": 0,
+      "stdout": "{\"first_map_orbits\": 3, \"covering_pairs\": 12}\n{\"first_map_orbits\": 7, \"covering_pairs\": 189}\n{\"first_map_orbits\": 19, \"covering_pairs\": 4864}\n[{\"n\": 2, \"tested\": 9, \"sc\": 6, \"synchronizing_sc\": 4, \"verified\": true}, {\"n\": 3, \"tested\": 182, \"sc\": 76, \"synchronizing_sc\": 59, \"verified\": true}, {\"n\": 4, \"tested\": 4845, \"sc\": 1503, \"synchronizing_sc\": 1240, \"verified\": true}]\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_new_image_results"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:26:09.828699+00:00",
+      "seconds": 5.406000000000859,
+      "returncode": 0,
+      "stdout": "{\"file\": \"direct_attack\\\\data\\\\local_rank_family\\\\n10.json\", \"reachable\": 1022, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\local_rank_family\\\\n11.json\", \"reachable\": 2046, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\local_rank_family\\\\n12.json\", \"reachable\": 4094, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\local_rank_family\\\\n5.json\", \"reachable\": 30, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\local_rank_family\\\\n6.json\", \"reachable\": 62, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\local_rank_family\\\\n7.json\", \"reachable\": 126, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\local_rank_family\\\\n8.json\", \"reachable\": 254, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\local_rank_family\\\\n9.json\", \"reachable\": 510, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\fixed_arm_family\\\\n10.json\", \"reachable\": 960, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\fixed_arm_family\\\\n11.json\", \"reachable\": 1920, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\fixed_arm_family\\\\n12.json\", \"reachable\": 3840, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\fixed_arm_family\\\\n5.json\", \"reachable\": 30, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\fixed_arm_family\\\\n6.json\", \"reachable\": 60, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\fixed_arm_family\\\\n7.json\", \"reachable\": 120, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\fixed_arm_family\\\\n8.json\", \"reachable\": 240, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\fixed_arm_family\\\\n9.json\", \"reachable\": 480, \"verified\": true}\n{\"family_instances\": 16, \"critical\": 3, \"union_verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.audit_rank_cover"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:26:15.238530+00:00",
+      "seconds": 0.48399999999855936,
+      "returncode": 0,
+      "stdout": "{\"conjugation\": [{\"n\": 2, \"labeled_pairs\": 4, \"canonical_cycle_types\": 2, \"verified\": true}, {\"n\": 3, \"labeled_pairs\": 108, \"canonical_cycle_types\": 3, \"verified\": true}, {\"n\": 4, \"labeled_pairs\": 3456, \"canonical_cycle_types\": 5, \"verified\": true}, {\"n\": 5, \"labeled_pairs\": 144000, \"canonical_cycle_types\": 7, \"verified\": true}], \"covers\": [{\"file\": \"direct_attack\\\\data\\\\image_extension_policy_rank_cover_n7\\\\summary.json\", \"tested\": 453600, \"verified\": true}, {\"file\": \"direct_attack\\\\data\\\\image_extension_policy_rank_cover_n8\\\\summary.json\", \"tested\": 6350400, \"verified\": true}]}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.replay_policy_broad"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:26:15.711277+00:00",
+      "seconds": 9.0,
+      "returncode": 0,
+      "stdout": "{\"certificates_matched\": 1, \"counts_matched\": true, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.circular_image_policy"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:26:24.714401+00:00",
+      "seconds": 1.8130000000001019,
+      "returncode": 0,
+      "stdout": "{\"n\": 2, \"reachable\": 3, \"best_policy\": 1, \"worst_policy\": 2, \"verified\": true}\n{\"n\": 3, \"reachable\": 7, \"best_policy\": 4, \"worst_policy\": 6, \"verified\": true}\n{\"n\": 4, \"reachable\": 15, \"best_policy\": 9, \"worst_policy\": 12, \"verified\": true}\n{\"n\": 5, \"reachable\": 31, \"best_policy\": 16, \"worst_policy\": 20, \"verified\": true}\n{\"n\": 6, \"reachable\": 63, \"best_policy\": 25, \"worst_policy\": 30, \"verified\": true}\n{\"n\": 7, \"reachable\": 127, \"best_policy\": 36, \"worst_policy\": 42, \"verified\": true}\n{\"n\": 8, \"reachable\": 255, \"best_policy\": 49, \"worst_policy\": 56, \"verified\": true}\n{\"n\": 9, \"reachable\": 511, \"best_policy\": 64, \"worst_policy\": 72, \"verified\": true}\n{\"n\": 10, \"reachable\": 1023, \"best_policy\": 81, \"worst_policy\": 90, \"verified\": true}\n{\"n\": 11, \"reachable\": 2047, \"best_policy\": 100, \"worst_policy\": 110, \"verified\": true}\n{\"n\": 12, \"reachable\": 4095, \"best_policy\": 121, \"worst_policy\": 132, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.policy_potentials"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:26:26.527445+00:00",
+      "seconds": 0.07800000000133878,
+      "returncode": 0,
+      "stdout": "{\"checked\": 90, \"failures\": 2, \"worst\": 1}\n{\"file\": \"direct_attack\\\\data\\\\image_extension_policy_local_n5\\\\witness_005.json\", \"n\": 5, \"start\": 28, \"size\": 3, \"cost\": 11, \"proposed_bound\": 10, \"excess\": 1}\n{\"file\": \"direct_attack\\\\data\\\\image_extension_policy_local_n6\\\\witness_005.json\", \"n\": 6, \"start\": 56, \"size\": 3, \"cost\": 19, \"proposed_bound\": 18, \"excess\": 1}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_singleton_transport"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:26:26.602548+00:00",
+      "seconds": 0.046999999998661224,
+      "returncode": 0,
+      "stdout": "{\"n\": 4, \"source\": 0, \"target\": 1, \"source_policy\": 2, \"target_policy\": 4, \"target_reset_distance\": 3, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_alternating"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:26:26.651920+00:00",
+      "seconds": 0.5619999999998981,
+      "returncode": 0,
+      "stdout": "{\"file\": \"direct_attack\\\\data\\\\alternating_frame_layer\\\\n11.json\", \"n\": 11, \"cost\": 18, \"vertices\": 237, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\alternating_frame_layer\\\\n13.json\", \"n\": 13, \"cost\": 22, \"vertices\": 473, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\alternating_frame_layer\\\\n15.json\", \"n\": 15, \"cost\": 26, \"vertices\": 725, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\alternating_frame_layer\\\\n17.json\", \"n\": 17, \"cost\": 30, \"vertices\": 1021, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\alternating_frame_layer\\\\n19.json\", \"n\": 19, \"cost\": 34, \"vertices\": 1365, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\alternating_frame_layer\\\\n21.json\", \"n\": 21, \"cost\": 38, \"vertices\": 1757, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\alternating_frame_layer\\\\n23.json\", \"n\": 23, \"cost\": 42, \"vertices\": 2197, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\alternating_frame_layer\\\\n25.json\", \"n\": 25, \"cost\": 46, \"vertices\": 2685, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\alternating_frame_layer\\\\n27.json\", \"n\": 27, \"cost\": 50, \"vertices\": 3221, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\alternating_frame_layer\\\\n29.json\", \"n\": 29, \"cost\": 54, \"vertices\": 3805, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\alternating_frame_layer\\\\n31.json\", \"n\": 31, \"cost\": 58, \"vertices\": 4437, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\alternating_frame_layer\\\\n33.json\", \"n\": 33, \"cost\": 62, \"vertices\": 5117, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\alternating_frame_layer\\\\n35.json\", \"n\": 35, \"cost\": 66, \"vertices\": 5845, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\alternating_frame_layer\\\\n37.json\", \"n\": 37, \"cost\": 70, \"vertices\": 6621, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\alternating_frame_layer\\\\n5.json\", \"n\": 5, \"cost\": 10, \"vertices\": 17, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\alternating_frame_layer\\\\n7.json\", \"n\": 7, \"cost\": 12, \"vertices\": 57, \"verified\": true}\n{\"file\": \"direct_attack\\\\data\\\\alternating_frame_layer\\\\n9.json\", \"n\": 9, \"cost\": 16, \"vertices\": 140, \"verified\": true}\n{\"peaks\": 17, \"complete_layer_cross_checks\": 11, \"structure_cases\": 6, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_heredity"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:26:27.222655+00:00",
+      "seconds": 0.21900000000096043,
+      "returncode": 0,
+      "stdout": "{\"checked\": 22, \"corruptions_rejected\": 4, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_alphabet_monotonicity"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:26:27.442995+00:00",
+      "seconds": 0.09399999999914144,
+      "returncode": 0,
+      "stdout": "{\"records\": [{\"directory\": \"direct_attack\\\\data\\\\alphabet_monotonicity\\\\arbitrary_n4\", \"n\": 4, \"kind\": \"arbitrary\", \"base_policy\": 3, \"augmented_policy\": 4, \"base_rt\": 3, \"augmented_rt\": 3, \"same_images\": false, \"monoid_size\": null, \"shortest_shortcut_length\": null, \"exact_distance_improvements\": 5, \"increased_policy_images\": [1, 2, 3, 4, 8, 10, 12], \"verified\": true}, {\"directory\": \"direct_attack\\\\data\\\\alphabet_monotonicity\\\\semigroup_n4\", \"n\": 4, \"kind\": \"semigroup\", \"base_policy\": 4, \"augmented_policy\": 5, \"base_rt\": 4, \"augmented_rt\": 4, \"same_images\": true, \"monoid_size\": 176, \"shortest_shortcut_length\": 7, \"exact_distance_improvements\": 64, \"increased_policy_images\": [1, 2, 6, 9, 12], \"verified\": true}], \"complete_binary_runs\": [{\"file\": \"direct_attack\\\\data\\\\alphabet_monotonicity\\\\arbitrary_n2\\\\summary.json\", \"counts\": {\"binary_inputs\": 9, \"synchronizing_sc_bases\": 4, \"augmentation_tests\": 16}}, {\"file\": \"direct_attack\\\\data\\\\alphabet_monotonicity\\\\arbitrary_n3\\\\summary.json\", \"counts\": {\"binary_inputs\": 182, \"synchronizing_sc_bases\": 59, \"augmentation_tests\": 1593}}, {\"file\": \"direct_attack\\\\data\\\\alphabet_monotonicity\\\\semigroup_n2\\\\summary.json\", \"counts\": {\"binary_inputs\": 9, \"synchronizing_sc_bases\": 4, \"augmentation_tests\": 15}}, {\"file\": \"direct_attack\\\\data\\\\alphabet_monotonicity\\\\semigroup_n3\\\\summary.json\", \"counts\": {\"binary_inputs\": 182, \"synchronizing_sc_bases\": 59, \"augmentation_tests\": 899}}], \"corruptions_rejected\": [\"shortcut_word\", \"extra_transformation\", \"global_policy\"], \"negative_count_boundary\": \"Counts copied from generator; independent policy proof and n<=3 paper optimality establish minimality.\", \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_anchored_bound"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:26:27.525402+00:00",
+      "seconds": 0.1400000000012369,
+      "returncode": 0,
+      "stdout": "{\"cases\": 94, \"rank_sum_refutation\": {\"n\": 4, \"kappa\": 2, \"old_bound\": 13, \"new_bound\": 10, \"policy\": 8, \"verified\": true}, \"corruptions_rejected\": 3, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.audit_complete_policy"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:26:27.666614+00:00",
+      "seconds": 1.5159999999996217,
+      "returncode": 0,
+      "stdout": "{\"first_map_orbits\": 3, \"covering_pairs\": 12}\n{\"first_map_orbits\": 7, \"covering_pairs\": 189}\n{\"first_map_orbits\": 19, \"covering_pairs\": 4864}\n{\"counts\": {\"tested\": 8023, \"complete\": 1262, \"incomplete_rejected\": 6761, \"ordinary_set_policy_checks\": 1200}, \"records\": [{\"scope\": \"binary first-map n2\", \"counts\": {\"tested\": 9, \"complete\": 4, \"incomplete_rejected\": 5, \"ordinary_set_policy_checks\": 4}}, {\"scope\": \"binary first-map n3\", \"counts\": {\"tested\": 182, \"complete\": 24, \"incomplete_rejected\": 158, \"ordinary_set_policy_checks\": 24}}, {\"scope\": \"binary first-map n4\", \"counts\": {\"tested\": 4845, \"complete\": 164, \"incomplete_rejected\": 4681, \"ordinary_set_policy_checks\": 164}}, {\"scope\": \"all distinct-letter ternary n3\", \"counts\": {\"tested\": 2925, \"complete\": 1008, \"incomplete_rejected\": 1917, \"ordinary_set_policy_checks\": 1008}}, {\"scope\": \"Cerny with general added map n6\", \"counts\": {\"tested\": 20, \"complete\": 20, \"incomplete_rejected\": 0, \"ordinary_set_policy_checks\": 0}}, {\"scope\": \"Cerny with general added map n8\", \"counts\": {\"tested\": 20, \"complete\": 20, \"incomplete_rejected\": 0, \"ordinary_set_policy_checks\": 0}}, {\"scope\": \"Cerny with general added map n10\", \"counts\": {\"tested\": 20, \"complete\": 20, \"incomplete_rejected\": 0, \"ordinary_set_policy_checks\": 0}}], \"seconds\": 1.4369999999998981, \"all_agreed\": true, \"boundary\": \"All binary covers through n4 and ternary n3 have independent ordinary-set checks. Larger cases compare two native algorithms; this is not a larger complete automaton enumeration.\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_shortcut_family"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:26:29.184988+00:00",
+      "seconds": 1.3119999999998981,
+      "returncode": 0,
+      "stdout": "{\"n\": 4, \"rank_drop_vertices\": [3, 3], \"reset_upper\": 4, \"old_forward_kernel_agrees\": true, \"sparse_cache\": 8, \"sparse_inverse_vertices\": 52, \"independent_exact_singletons\": true}\n{\"n\": 5, \"rank_drop_vertices\": [4, 4], \"reset_upper\": 5, \"old_forward_kernel_agrees\": true, \"sparse_cache\": 11, \"sparse_inverse_vertices\": 72, \"independent_exact_singletons\": true}\n{\"n\": 6, \"rank_drop_vertices\": [5, 5], \"reset_upper\": 6, \"target\": [0, 2, 5], \"transport_lower\": 5, \"global_policy_lower\": 7, \"old_forward_kernel_agrees\": true, \"sparse_cache\": 14, \"sparse_inverse_vertices\": 162, \"independent_exact_singletons\": true}\n{\"n\": 7, \"rank_drop_vertices\": [6, 6], \"reset_upper\": 7, \"target\": [0, 3, 6], \"transport_lower\": 6, \"global_policy_lower\": 8, \"old_forward_kernel_agrees\": true, \"sparse_cache\": 17, \"sparse_inverse_vertices\": 165, \"independent_exact_singletons\": true}\n{\"n\": 8, \"rank_drop_vertices\": [7, 7], \"reset_upper\": 8, \"target\": [0, 4, 7], \"transport_lower\": 7, \"global_policy_lower\": 9, \"old_forward_kernel_agrees\": true, \"sparse_cache\": 20, \"sparse_inverse_vertices\": 254, \"independent_exact_singletons\": true}\n{\"n\": 9, \"rank_drop_vertices\": [8, 8], \"reset_upper\": 9, \"target\": [0, 5, 8], \"transport_lower\": 8, \"global_policy_lower\": 10, \"old_forward_kernel_agrees\": true, \"sparse_cache\": 26, \"sparse_inverse_vertices\": 338, \"independent_exact_singletons\": true}\n{\"n\": 10, \"rank_drop_vertices\": [9, 9], \"reset_upper\": 10, \"target\": [0, 6, 9], \"transport_lower\": 9, \"global_policy_lower\": 11, \"old_forward_kernel_agrees\": true, \"sparse_cache\": 31, \"sparse_inverse_vertices\": 487, \"independent_exact_singletons\": true}\n{\"n\": 11, \"rank_drop_vertices\": [10, 10], \"reset_upper\": 11, \"target\": [0, 7, 10], \"transport_lower\": 10, \"global_policy_lower\": 12, \"old_forward_kernel_agrees\": true, \"sparse_cache\": 39, \"sparse_inverse_vertices\": 622, \"independent_exact_singletons\": true}\n{\"n\": 12, \"rank_drop_vertices\": [11, 11], \"reset_upper\": 12, \"target\": [0, 8, 11], \"transport_lower\": 11, \"global_policy_lower\": 13, \"old_forward_kernel_agrees\": true, \"sparse_cache\": 50, \"sparse_inverse_vertices\": 933, \"independent_exact_singletons\": true}\n{\"n\": 13, \"rank_drop_vertices\": [12, 12], \"reset_upper\": 13, \"target\": [0, 9, 12], \"transport_lower\": 12, \"global_policy_lower\": 14, \"sparse_cache\": 57, \"sparse_inverse_vertices\": 1120, \"independent_exact_singletons\": true}\n{\"n\": 14, \"rank_drop_vertices\": [13, 13], \"reset_upper\": 14, \"target\": [0, 10, 13], \"transport_lower\": 13, \"global_policy_lower\": 15, \"sparse_cache\": 77, \"sparse_inverse_vertices\": 1669, \"independent_exact_singletons\": true}\n{\"n\": 15, \"rank_drop_vertices\": [14, 14], \"reset_upper\": 15, \"target\": [0, 11, 14], \"transport_lower\": 14, \"global_policy_lower\": 16, \"sparse_cache\": 84, \"sparse_inverse_vertices\": 1877, \"independent_exact_singletons\": true}\n{\"n\": 16, \"rank_drop_vertices\": [15, 15], \"reset_upper\": 16, \"target\": [0, 12, 15], \"transport_lower\": 15, \"global_policy_lower\": 17, \"sparse_cache\": 117, \"sparse_inverse_vertices\": 2822, \"independent_exact_singletons\": true}\n{\"n\": 17, \"rank_drop_vertices\": [16, 16], \"reset_upper\": 17, \"target\": [0, 13, 16], \"transport_lower\": 16, \"global_policy_lower\": 18, \"sparse_cache\": 123, \"sparse_inverse_vertices\": 3070, \"independent_exact_singletons\": true}\n{\"n\": 18, \"rank_drop_vertices\": [17, 17], \"reset_upper\": 18, \"target\": [0, 14, 17], \"transport_lower\": 17, \"global_policy_lower\": 19, \"sparse_cache\": 172, \"sparse_inverse_vertices\": 4482, \"independent_exact_singletons\": true}\n{\"n\": 19, \"rank_drop_vertices\": [18, 18], \"reset_upper\": 19, \"target\": [0, 15, 18], \"transport_lower\": 18, \"global_policy_lower\": 20, \"sparse_cache\": 179, \"sparse_inverse_vertices\": 4850, \"independent_exact_singletons\": true}\n{\"n\": 20, \"rank_drop_vertices\": [19, 19], \"reset_upper\": 20, \"target\": [0, 16, 19], \"transport_lower\": 19, \"global_policy_lower\": 21, \"sparse_cache\": 262, \"sparse_inverse_vertices\": 7367, \"independent_exact_singletons\": true}\n{\"n\": 21, \"rank_drop_vertices\": [20, 20], \"reset_upper\": 21, \"target\": [0, 17, 20], \"transport_lower\": 20, \"global_policy_lower\": 22, \"sparse_cache\": 273, \"sparse_inverse_vertices\": 7940, \"independent_exact_singletons\": true}\n{\"n\": 22, \"rank_drop_vertices\": [21, 21], \"reset_upper\": 22, \"target\": [0, 18, 21], \"transport_lower\": 21, \"global_policy_lower\": 23, \"sparse_cache\": 404, \"sparse_inverse_vertices\": 11878, \"independent_exact_singletons\": true}\n{\"cases\": 19, \"independent_exact_through\": 22, \"scaled_controls\": 9, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_complete_union"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:26:30.502634+00:00",
+      "seconds": 0.06300000000010186,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"records\": {\"S\": {\"set\": [0, 3], \"cost\": 3, \"examined_vertices\": 7}, \"T\": {\"set\": [2, 3], \"cost\": 3, \"examined_vertices\": 10}, \"U\": {\"set\": [0, 2, 3], \"cost\": 2, \"examined_vertices\": 6}}, \"word\": [0, 0], \"word_image\": [0, 2], \"modular_capacity\": true, \"boundary\": \"Complete reachability implies rho(X)=|X|. State minimum n4 is proved on paper over arbitrary alphabets; this scan is only a fixed-cycle binary search.\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_extremal_shortcuts"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:26:30.563791+00:00",
+      "seconds": 4.109000000000378,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"bases\": 20, \"tested\": 76676, \"increased\": 0, \"ordinary_set_certificates\": 40, \"boundary\": \"All transformation closures independently enumerated; every score histogram replayed by the previously audited unrestricted native kernel. Ordinary-set policy BFS checks 40 base/peak certificates, not every scored addition.\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_extremal_shortcuts",
+        "--pairs"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:26:34.670582+00:00",
+      "seconds": 134.14099999999962,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"bases\": 20, \"tested\": 2444342, \"increased\": 0, \"ordinary_set_certificates\": 40, \"boundary\": \"All transformation closures independently enumerated; every score histogram replayed by the previously audited unrestricted native kernel. Ordinary-set policy BFS checks 40 base/peak certificates, not every scored addition.\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_union_defects"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:28:48.809968+00:00",
+      "seconds": 0.10900000000037835,
+      "returncode": 0,
+      "stdout": "{\"first_map_orbits\": 3, \"covering_pairs\": 12}\n{\"first_map_orbits\": 7, \"covering_pairs\": 189}\n{\"verified\": true, \"counts\": {\"automata\": 67, \"transformations\": 1387, \"proper_union_instances\": 39309, \"sufficient_transfers\": 11125, \"failed_transfers\": 392, \"equality_failures\": 368}, \"equality_examples\": [{\"rows\": [[2, 0, 0, 1], [1, 2, 3, 0]], \"S\": [0, 3], \"T\": [2, 3], \"word\": [0, 0], \"gain\": 1, \"missing_overlap\": 1, \"defects\": [0, 0, 0], \"penalty\": 1}, {\"rows\": [[0, 0, 0], [1, 2, 1]], \"S\": [1], \"T\": [2], \"word\": [1], \"gain\": 1, \"missing_overlap\": 0, \"defects\": [1, 0, 0], \"penalty\": 1}], \"boundary\": \"Complete binary first-map covering inputs n2/3 that synchronize every state to every singleton, plus four fixed n4 inputs; all generated transformations and proper unions checked. The universal result is proved on paper.\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.audit_sparse_policy"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:28:48.928051+00:00",
+      "seconds": 23.688000000000102,
+      "returncode": 0,
+      "stdout": "{\"first_map_orbits\": 3, \"covering_pairs\": 12}\n{\"first_map_orbits\": 7, \"covering_pairs\": 189}\n{\"first_map_orbits\": 19, \"covering_pairs\": 4864}\n{\"verified\": true, \"counts\": {\"tested\": 8808, \"accepted\": 4041, \"rejected\": 4767, \"ordinary_inverse_checks\": 1303, \"stored_input_cases\": 757, \"large_ordinary_forward_checks\": 4}, \"limit_rejection_checked\": true, \"boundary\": \"All small accepted binary inputs through n4 have ordinary inverse-set certificates; ternary n3 and retained/random cases compare native kernels. Four n>12 rank-three cases have independent ordinary all-source forward distances, including 63-bit masks.\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_three_image_family"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:29:12.604774+00:00",
+      "seconds": 0.5939999999991414,
+      "returncode": 0,
+      "stdout": "{\"cases\": 60, \"max_n\": 63, \"all_entries_checked\": true, \"corruptions_rejected\": [\"extension_word\", \"max_extension\", \"rows\"], \"seconds\": 0.5}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_one_fixed_family"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:29:13.195464+00:00",
+      "seconds": 2.07799999999952,
+      "returncode": 0,
+      "stdout": "{\"cases\": 60, \"scan_parameters\": 147, \"corruptions_rejected\": [\"extension_word\", \"rt\", \"target\"], \"seconds\": 2.0}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_rank_three_search"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:29:15.286505+00:00",
+      "seconds": 6.343000000000757,
+      "returncode": 0,
+      "stdout": "{\"file\": \"direct_attack/data/rank_three_extension_n12/witness_000.json\", \"verified\": true, \"images\": 44}\n{\"file\": \"direct_attack/data/rank_three_extension_n12/witness_001.json\", \"verified\": true, \"images\": 84}\n{\"file\": \"direct_attack/data/rank_three_extension_n12/witness_002.json\", \"verified\": true, \"images\": 48}\n{\"file\": \"direct_attack/data/rank_three_extension_n12/witness_003.json\", \"verified\": true, \"images\": 120}\n{\"file\": \"direct_attack/data/rank_three_extension_n12/witness_004.json\", \"verified\": true, \"images\": 44}\n{\"file\": \"direct_attack/data/rank_three_extension_n20/witness_000.json\", \"verified\": true, \"images\": 76}\n{\"file\": \"direct_attack/data/rank_three_extension_n20/witness_001.json\", \"verified\": true, \"images\": 136}\n{\"file\": \"direct_attack/data/rank_three_extension_n20/witness_002.json\", \"verified\": true, \"images\": 252}\n{\"file\": \"direct_attack/data/rank_three_extension_n20/witness_003.json\", \"verified\": true, \"images\": 154}\n{\"file\": \"direct_attack/data/rank_three_extension_n20/witness_004.json\", \"verified\": true, \"images\": 204}\n{\"file\": \"direct_attack/data/rank_three_extension_n20/witness_005.json\", \"verified\": true, \"images\": 204}\n{\"file\": \"direct_attack/data/rank_three_extension_n20/witness_006.json\", \"verified\": true, \"images\": 204}\n{\"file\": \"direct_attack/data/rank_three_extension_n20/witness_007.json\", \"verified\": true, \"images\": 204}\n{\"file\": \"direct_attack/data/rank_three_extension_n20/witness_008.json\", \"verified\": true, \"images\": 150}\n{\"file\": \"direct_attack/data/rank_three_extension_n20/witness_009.json\", \"verified\": true, \"images\": 150}\n{\"file\": \"direct_attack/data/rank_three_extension_n20/witness_010.json\", \"verified\": true, \"images\": 204}\n{\"file\": \"direct_attack/data/rank_three_extension_n20/witness_011.json\", \"verified\": true, \"images\": 102}\n{\"file\": \"direct_attack/data/rank_three_extension_n20/witness_012.json\", \"verified\": true, \"images\": 352}\n{\"file\": \"direct_attack/data/rank_three_extension_n30/witness_000.json\", \"verified\": true, \"images\": 116}\n{\"file\": \"direct_attack/data/rank_three_extension_n30/witness_001.json\", \"verified\": true, \"images\": 116}\n{\"file\": \"direct_attack/data/rank_three_extension_n30/witness_002.json\", \"verified\": true, \"images\": 168}\n{\"file\": \"direct_attack/data/rank_three_extension_n30/witness_003.json\", \"verified\": true, \"images\": 480}\n{\"file\": \"direct_attack/data/rank_three_extension_n30/witness_004.json\", \"verified\": true, \"images\": 111}\n{\"file\": \"direct_attack/data/rank_three_extension_n30/witness_005.json\", \"verified\": true, \"images\": 672}\n{\"file\": \"direct_attack/data/rank_three_extension_n30/witness_006.json\", \"verified\": true, \"images\": 96}\n{\"file\": \"direct_attack/data/rank_three_extension_n40/witness_000.json\", \"verified\": true, \"images\": 156}\n{\"file\": \"direct_attack/data/rank_three_extension_n40/witness_001.json\", \"verified\": true, \"images\": 420}\n{\"file\": \"direct_attack/data/rank_three_extension_n40/witness_002.json\", \"verified\": true, \"images\": 320}\n{\"file\": \"direct_attack/data/rank_three_extension_n40/witness_003.json\", \"verified\": true, \"images\": 141}\n{\"file\": \"direct_attack/data/rank_three_extension_n40/witness_004.json\", \"verified\": true, \"images\": 141}\n{\"file\": \"direct_attack/data/rank_three_extension_n40/witness_005.json\", \"verified\": true, \"images\": 407}\n{\"file\": \"direct_attack/data/rank_three_extension_n40/witness_006.json\", \"verified\": true, \"images\": 1190}\n{\"file\": \"direct_attack/data/rank_three_extension_n40/witness_007.json\", \"verified\": true, \"images\": 1190}\n{\"file\": \"direct_attack/data/rank_three_extension_n40/witness_008.json\", \"verified\": true, \"images\": 1190}\n{\"file\": \"direct_attack/data/rank_three_extension_n40/witness_009.json\", \"verified\": true, \"images\": 1190}\n{\"file\": \"direct_attack/data/rank_three_extension_n63/witness_000.json\", \"verified\": true, \"images\": 248}\n{\"file\": \"direct_attack/data/rank_three_extension_n63/witness_001.json\", \"verified\": true, \"images\": 966}\n{\"file\": \"direct_attack/data/rank_three_extension_n63/witness_002.json\", \"verified\": true, \"images\": 2784}\n{\"file\": \"direct_attack/data/rank_three_extension_n63/witness_003.json\", \"verified\": true, \"images\": 248}\n{\"file\": \"direct_attack/data/rank_three_extension_n63/witness_004.json\", \"verified\": true, \"images\": 250}\n{\"file\": \"direct_attack/data/rank_bounded_extension_n24_r4/witness_000.json\", \"verified\": true, \"images\": 176}\n{\"file\": \"direct_attack/data/rank_bounded_extension_n24_r4/witness_001.json\", \"verified\": true, \"images\": 180}\n{\"file\": \"direct_attack/data/rank_bounded_extension_n24_r4/witness_002.json\", \"verified\": true, \"images\": 180}\n{\"file\": \"direct_attack/data/rank_bounded_extension_n24_r4/witness_003.json\", \"verified\": true, \"images\": 180}\n{\"file\": \"direct_attack/data/rank_bounded_extension_n40_r5/witness_000.json\", \"verified\": true, \"images\": 592}\n{\"file\": \"direct_attack/data/rank_bounded_extension_n40_r5/witness_001.json\", \"verified\": true, \"images\": 600}\n{\"file\": \"direct_attack/data/rank_bounded_extension_n40_r5/witness_002.json\", \"verified\": true, \"images\": 864}\n{\"file\": \"direct_attack/data/rank_bounded_extension_n40_r5/witness_003.json\", \"verified\": true, \"images\": 864}\n{\"cases\": 48, \"all_entries_checked\": true, \"corruptions_rejected\": [\"extension_start\", \"best_policy\", \"forward\"], \"seconds\": 6.264999999999418}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.replay_rank_three_search"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:29:21.629996+00:00",
+      "seconds": 96.92200000000048,
+      "returncode": 0,
+      "stdout": "{\"root\": \"direct_attack\\\\data\\\\rank_three_extension_n12\", \"verified\": true, \"seconds\": 1.264999999999418}\n{\"root\": \"direct_attack\\\\data\\\\rank_three_extension_n20\", \"verified\": true, \"seconds\": 6.264999999999418}\n{\"root\": \"direct_attack\\\\data\\\\rank_three_extension_n30\", \"verified\": true, \"seconds\": 11.79700000000048}\n{\"root\": \"direct_attack\\\\data\\\\rank_three_extension_n40\", \"verified\": true, \"seconds\": 19.686999999999898}\n{\"root\": \"direct_attack\\\\data\\\\rank_three_extension_n63\", \"verified\": true, \"seconds\": 15.188000000000102}\n{\"root\": \"direct_attack\\\\data\\\\rank_bounded_extension_n24_r4\", \"verified\": true, \"seconds\": 8.0}\n{\"root\": \"direct_attack\\\\data\\\\rank_bounded_extension_n40_r5\", \"verified\": true, \"seconds\": 34.60900000000038}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_adjacent_swap_family"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:30:58.551072+00:00",
+      "seconds": 0.8599999999987631,
+      "returncode": 0,
+      "stdout": "{\"cases\": 60, \"full_array_cases\": 17, \"seconds\": 0.7659999999996217, \"corruptions_rejected\": [\"extension_word\", \"max_extension\", \"forward\"]}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_transposition_extension_scan"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:30:59.404692+00:00",
+      "seconds": 12.281000000000859,
+      "returncode": 0,
+      "stdout": "{\"tested\": 2676, \"independent_peak_arrays\": 21, \"seconds\": 12.186999999999898}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_first_drop"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:31:11.680962+00:00",
+      "seconds": 10.859000000000378,
+      "returncode": 0,
+      "stdout": "{\"first_map_orbits\": 3, \"covering_pairs\": 12}\n{\"first_map_orbits\": 7, \"covering_pairs\": 189}\n{\"first_map_orbits\": 19, \"covering_pairs\": 4864}\n{\"verified\": true, \"counts\": {\"tested\": 8382, \"accepted\": 3727, \"rejected\": 4655, \"proper_images\": 50017, \"winning_sources\": 77718, \"shortest_first_letters\": 82177, \"budget_seed_targets\": 5832, \"short_reset_budget_cases\": 2286, \"rank_profile_square_cases\": 2721, \"rank_profile_extra_square_cases\": 435, \"rank_profile_improved_bounds\": 1064, \"rank_profile_new_vs_rank_budget\": 335}, \"seconds\": 10.765999999999622, \"protocol_limit_recovery\": true, \"boundary\": \"Each accepted case independently recomputes every e/G/W entry, exact rt and every winning source with ordinary ALL-SOURCE distances; first-letter condition, complete boundary-parent equality, singleton formulas, reset-length-dependent and reset-rank-profile-dependent all-seed budgets checked. Each rank budget uses an explicitly reconstructed shortest reset word. Computational scope is finite; universal results are paper proofs.\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_seed_budget",
+        "--out",
+        "reverse_independent_checks.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:31:22.548044+00:00",
+      "seconds": 36.09399999999914,
+      "returncode": 0,
+      "stdout": "{\"cases\": 45, \"corruptions_rejected\": [\"seed_budget\", \"one_letter_images\", \"anchor_worst_chain\"], \"seconds\": 36.0, \"methods\": {\"ordinary_all_source_forward\": 18, \"ordinary_per_target_reverse\": 27}}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.audit_seed_binary_cover"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:31:58.643592+00:00",
+      "seconds": 7.96900000000096,
+      "returncode": 0,
+      "stdout": "{\"first_map_orbits\": 3, \"covering_pairs\": 12}\n{\"n\": 2, \"counts\": {\"tested\": 9, \"sc_synchronizing\": 4}, \"verified\": true, \"seconds\": 0.0}\n{\"first_map_orbits\": 7, \"covering_pairs\": 189}\n{\"n\": 3, \"counts\": {\"tested\": 182, \"sc_synchronizing\": 59}, \"verified\": true, \"seconds\": 0.0}\n{\"first_map_orbits\": 19, \"covering_pairs\": 4864}\n{\"n\": 4, \"counts\": {\"tested\": 4845, \"sc_synchronizing\": 1240}, \"verified\": true, \"seconds\": 0.125}\n{\"first_map_orbits\": 47, \"covering_pairs\": 146875}\n{\"n\": 5, \"counts\": {\"tested\": 146828, \"sc_synchronizing\": 32588}, \"verified\": true, \"seconds\": 7.906000000000859}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.replay_seed_budget_attack"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:32:06.607640+00:00",
+      "seconds": 151.76499999999942,
+      "returncode": 0,
+      "stdout": "{\"root\": \"direct_attack\\\\data\\\\seed_budget_adversarial_n8\", \"verified\": true, \"seconds\": 5.311999999999898}\n{\"root\": \"direct_attack\\\\data\\\\seed_budget_anchor_adversarial_n10\", \"verified\": true, \"seconds\": 13.609000000000378}\n{\"root\": \"direct_attack\\\\data\\\\seed_budget_anchor_k3_n10\", \"verified\": true, \"seconds\": 29.96899999999914}\n{\"root\": \"direct_attack\\\\data\\\\seed_budget_anchor_k3_n12\", \"verified\": true, \"seconds\": 29.04700000000048}\n{\"root\": \"direct_attack\\\\data\\\\seed_budget_binary_n2\", \"verified\": true, \"seconds\": 0.10900000000037835}\n{\"root\": \"direct_attack\\\\data\\\\seed_budget_binary_n3\", \"verified\": true, \"seconds\": 0.10900000000037835}\n{\"root\": \"direct_attack\\\\data\\\\seed_budget_binary_n4\", \"verified\": true, \"seconds\": 0.2039999999997235}\n{\"root\": \"direct_attack\\\\data\\\\seed_budget_binary_n5\", \"verified\": true, \"seconds\": 3.311999999999898}\n{\"root\": \"direct_attack\\\\data\\\\seed_budget_ternary_n4\", \"verified\": true, \"seconds\": 69.96800000000076}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_maximum_seed_family"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:34:38.378482+00:00",
+      "seconds": 0.2039999999997235,
+      "returncode": 0,
+      "stdout": "{\"cases\": 13, \"corruptions_rejected\": [\"valid_parameter\", \"seed_reach_word\", \"seed_budget\"], \"seconds\": 0.09400000000096043}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_seed_inclusion"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:34:38.569205+00:00",
+      "seconds": 8.421000000000276,
+      "returncode": 0,
+      "stdout": "{\"first_map_orbits\": 3, \"covering_pairs\": 12}\n{\"first_map_orbits\": 7, \"covering_pairs\": 189}\n{\"first_map_orbits\": 19, \"covering_pairs\": 4864}\n{\"first_map_orbits\": 47, \"covering_pairs\": 146875}\n{\"cases\": [{\"file\": \"antitone_minimum_n4.json\", \"n\": 4, \"P\": 5, \"Fmax\": 5, \"images\": 15, \"words\": true}, {\"file\": \"inclusion_minimum_n5.json\", \"n\": 5, \"P\": 3, \"Fmax\": 4, \"images\": 26, \"words\": true}, {\"file\": \"inclusion_gap_two_n5.json\", \"n\": 5, \"P\": 5, \"Fmax\": 7, \"images\": 30, \"words\": true}, {\"file\": \"search_peak_000.json\", \"n\": 5, \"P\": 3, \"Fmax\": 4, \"images\": 26, \"words\": false}, {\"file\": \"search_peak_001.json\", \"n\": 5, \"P\": 5, \"Fmax\": 7, \"images\": 30, \"words\": false}], \"binary_covers\": [{\"n\": 2, \"counts\": {\"tested\": 9, \"sc_synchronizing\": 4}}, {\"n\": 3, \"counts\": {\"tested\": 182, \"sc_synchronizing\": 59}}, {\"n\": 4, \"counts\": {\"tested\": 4845, \"sc_synchronizing\": 1240}}, {\"n\": 5, \"counts\": {\"tested\": 146828, \"sc_synchronizing\": 32588}}], \"corruptions_rejected\": [\"inclusion_maximal_images\", \"inclusion_budget\", \"inclusion_best_chain\"], \"seconds\": 8.34400000000096}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.replay_seed_inclusion"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:34:46.996859+00:00",
+      "seconds": 15.578999999999724,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"argv\": [\"<PYTHON_RUNTIME>\\\\python.exe\", \"-m\", \"direct_attack.seed_inclusion_attack\", \"--count\", \"200000\", \"--seed\", \"20261024\", \"--out\", \"<LOCAL_PATH>\"], \"cwd\": \"<LOCAL_PATH>\", \"returncode\": 0, \"seconds\": 15.5, \"frozen_seed_sha256\": \"588ec0b5fc71c3ff041cbc4d3e9b774746b4a70aaaad880ede45a1b5fd8d06a5\", \"records\": 2, \"certificates\": 3}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_short_reset"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:35:02.577044+00:00",
+      "seconds": 1.2180000000007567,
+      "returncode": 0,
+      "stdout": "{\"cases\": 90, \"corruptions_rejected\": [\"best\", \"critical_reach_word\", \"policy_word\"], \"seconds\": 1.140000000001237}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.replay_short_reset"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:35:03.801678+00:00",
+      "seconds": 24.14099999999962,
+      "returncode": 0,
+      "stdout": "{\"root\": \"direct_attack\\\\data\\\\short_reset_policy_n10\", \"argv\": [\"<PYTHON_RUNTIME>\\\\python.exe\", \"-m\", \"direct_attack.short_reset_policy_attack\", \"--n\", \"10\", \"--rank\", \"6\", \"--alphabet\", \"3\", \"--count\", \"100000\", \"--seed\", \"20261027\", \"--restart\", \"500\", \"--out\", \"<LOCAL_PATH>\"], \"cwd\": \"<LOCAL_PATH>\", \"verified\": true, \"returncode\": 0, \"seconds\": 6.46900000000096, \"witnesses\": 9, \"seed_sha256\": \"f08a0671cab3667656e25119c26a0852519a54dc6061cdf7973d888c60836b20\"}\n{\"root\": \"direct_attack\\\\data\\\\short_reset_policy_n12\", \"argv\": [\"<PYTHON_RUNTIME>\\\\python.exe\", \"-m\", \"direct_attack.short_reset_policy_attack\", \"--n\", \"12\", \"--rank\", \"6\", \"--alphabet\", \"4\", \"--count\", \"100000\", \"--seed\", \"20261028\", \"--restart\", \"500\", \"--out\", \"<LOCAL_PATH>\"], \"cwd\": \"<LOCAL_PATH>\", \"verified\": true, \"returncode\": 0, \"seconds\": 11.281999999999243, \"witnesses\": 9, \"seed_sha256\": \"d92c43be4d73bcb1d24c096c168a3382abd6a57ddef6ba2103f9353d2ca0faed\"}\n{\"root\": \"direct_attack\\\\data\\\\short_reset_policy_n6\", \"argv\": [\"<PYTHON_RUNTIME>\\\\python.exe\", \"-m\", \"direct_attack.short_reset_policy_attack\", \"--n\", \"6\", \"--rank\", \"4\", \"--alphabet\", \"3\", \"--count\", \"100000\", \"--seed\", \"20261025\", \"--restart\", \"500\", \"--out\", \"<LOCAL_PATH>\"], \"cwd\": \"<LOCAL_PATH>\", \"verified\": true, \"returncode\": 0, \"seconds\": 3.0469999999986612, \"witnesses\": 4, \"seed_sha256\": \"13349b830d198673dbf9be44c364dc0f64900a50a80a7554de3487de6c621f4e\"}\n{\"root\": \"direct_attack\\\\data\\\\short_reset_policy_n8\", \"argv\": [\"<PYTHON_RUNTIME>\\\\python.exe\", \"-m\", \"direct_attack.short_reset_policy_attack\", \"--n\", \"8\", \"--rank\", \"4\", \"--alphabet\", \"3\", \"--count\", \"100000\", \"--seed\", \"20261026\", \"--restart\", \"500\", \"--out\", \"<LOCAL_PATH>\"], \"cwd\": \"<LOCAL_PATH>\", \"verified\": true, \"returncode\": 0, \"seconds\": 3.2030000000013388, \"witnesses\": 5, \"seed_sha256\": \"769cebac59471ce1aee0b1b2cf85f0cc4d72b7f68f801115feb261259f974c5c\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_extremal_arbitrary"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:35:27.934311+00:00",
+      "seconds": 23.78099999999904,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"bases\": 20, \"tested\": 236624, \"increased\": 0, \"square_failures\": 0, \"short_reset_budget_cases\": 39878, \"ordinary_all_source_certificates\": 40, \"per_input_kernel_agreement\": true, \"seconds\": 23.688000000000102, \"scope\": \"Every arbitrary single-addition score/histogram independently replayed with the previously audited FULL-CUBE transport kernel (generator uses sparse full-image graph). Forty base/peak arrays separately use ordinary ALL-SOURCE BFS. No all-input ordinary BFS claim; multiple arbitrary additions not covered.\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_irreducible_short_reset"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:35:51.721296+00:00",
+      "seconds": 1.5,
+      "returncode": 0,
+      "stdout": "{\"cases\": 167, \"all_source_cross_checks\": 14, \"corruptions_rejected\": [\"j\", \"policy_word\", \"best\"], \"seconds\": 1.4219999999986612}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_rank_area"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:35:53.221662+00:00",
+      "seconds": 0.4220000000004802,
+      "returncode": 0,
+      "stdout": "{\"vertices\": 32751, \"edges\": 65502, \"cases\": 13, \"corruptions_rejected\": [\"potential\", \"parent\", \"word\", \"parent_high_bit\", \"negative_word_token\"], \"seconds\": 0.35900000000037835}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_unit_tail"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:35:53.645249+00:00",
+      "seconds": 154.46900000000096,
+      "returncode": 0,
+      "stdout": "{\"cases\": 352, \"sync\": 222, \"full_map_cover\": [{\"n\": 2, \"tested\": 4, \"sc\": 2, \"sync\": 2}, {\"n\": 3, \"tested\": 27, \"sc\": 5, \"sync\": 4}, {\"n\": 4, \"tested\": 256, \"sc\": 18, \"sync\": 12}, {\"n\": 5, \"tested\": 3125, \"sc\": 84, \"sync\": 60}, {\"n\": 6, \"tested\": 46656, \"sc\": 480, \"sync\": 288}], \"corruptions_rejected\": [\"j\", \"reset_word\", \"best\"], \"seconds\": 154.36000000000058}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_permutation_units"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:38:28.113124+00:00",
+      "seconds": 8.546999999998661,
+      "returncode": 0,
+      "stdout": "{\"kind\": \"single\", \"n\": 2, \"tested\": 6, \"accepted\": 4}\n{\"kind\": \"single\", \"n\": 3, \"tested\": 189, \"accepted\": 117}\n{\"kind\": \"single\", \"n\": 4, \"tested\": 20475, \"accepted\": 14780}\n{\"kind\": \"single\", \"n\": 5, \"tested\": 9450, \"accepted\": 2160}\n{\"kind\": \"single\", \"n\": 6, \"tested\": 49775, \"accepted\": 7751}\n{\"kind\": \"arbitrary\", \"n\": 2, \"tested\": 9, \"accepted\": 7}\n{\"kind\": \"arbitrary\", \"n\": 3, \"tested\": 3969, \"accepted\": 3762}\n{\"verified\": true, \"replays\": [{\"kind\": \"single\", \"n\": 2, \"tested\": 6, \"accepted\": 4}, {\"kind\": \"single\", \"n\": 3, \"tested\": 189, \"accepted\": 117}, {\"kind\": \"single\", \"n\": 4, \"tested\": 20475, \"accepted\": 14780}, {\"kind\": \"single\", \"n\": 5, \"tested\": 9450, \"accepted\": 2160}, {\"kind\": \"single\", \"n\": 6, \"tested\": 49775, \"accepted\": 7751}, {\"kind\": \"arbitrary\", \"n\": 2, \"tested\": 9, \"accepted\": 7}, {\"kind\": \"arbitrary\", \"n\": 3, \"tested\": 3969, \"accepted\": 3762}], \"ordinary_small_full_arrays\": 18670, \"ordinary_samples\": 251, \"all_source_samples\": 9, \"all_source_counterexample\": true, \"corruptions_rejected\": [\"rows\", \"extension\", \"best\", \"worst\", \"forward\", \"rt\", \"best_policy\"], \"seconds\": 8.45299999999952, \"single_cycle_sensitive_bound_checked\": true, \"scope\": \"All small designated inputs independently enumerated and ordinary-set reverse checked; all larger inputs hash replayed with native scorer; retained larger samples ordinary reverse checked. EVERY accepted single-permutation input checks e<=n-c+1 and rt<=1+(n-2)(n-c+1); all-n claims have a separate paper proof.\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_unit_averaging"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:38:36.649516+00:00",
+      "seconds": 0.8430000000007567,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"polynomials\": 1603, \"models\": 514, \"sync\": 468, \"ordinary_all_arrays\": 57, \"previous_single_alphabet_samples\": 214, \"corruptions_rejected\": [\"bound\", \"max_extension\", \"reset_word\", \"phases_inverse_order\", \"coefficients\"], \"seconds\": 0.7810000000008586, \"scope\": \"Every operator entry by independent basis counting; every model prefix graph by ALL-SOURCE closure with a preceding non-growth witness, every explicit inverse phase and reset word; ordinary full arrays n<=8. All-n statements follow the paper proof, not finite extrapolation.\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_idempotent_boundary"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:38:37.496306+00:00",
+      "seconds": 0.14099999999962165,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"cover\": [{\"n\": 2, \"tested\": 6, \"accepted\": 2, \"rejected\": 4, \"violations\": 0}, {\"n\": 3, \"tested\": 30, \"accepted\": 9, \"rejected\": 21, \"violations\": 0}, {\"n\": 4, \"tested\": 205, \"accepted\": 28, \"rejected\": 177, \"violations\": 0}, {\"n\": 5, \"tested\": 1372, \"accepted\": 225, \"rejected\": 1147, \"violations\": 44}], \"all_source_witnesses\": 2, \"certificate\": {\"target\": 24, \"unrestricted_preimage_cost\": 5, \"actual_image_cost\": 10, \"unreachable_preimages\": [{\"mask\": 19, \"forward_word\": [0, 1, 1, 1, 1]}]}, \"boundary\": \"State minimum n5 in the binary permutation/idempotent class. All actual-capacity arrays checked. Full preimages at the earlier cost are explicitly unreachable; no unrestricted square refutation.\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_commuting_unit_boundary"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:38:37.633475+00:00",
+      "seconds": 30.34400000000096,
+      "returncode": 0,
+      "stdout": "{\"n\": 2, \"tested\": 3, \"accepted\": 3, \"rejected\": 0, \"sha256\": \"fab85032c57e74963c7758fbd3b1de2c04096c279a51e9028d054674f827ca96\"}\n{\"n\": 3, \"tested\": 246, \"accepted\": 171, \"rejected\": 75, \"sha256\": \"a9fe63954bdbeb552db90af82d9d4b4847508b6724d650015e7a070d2a6d779b\"}\n{\"n\": 4, \"tested\": 14304, \"accepted\": 7536, \"rejected\": 6768, \"sha256\": \"86004a9d13aa55ce4ac98af8b4b17e985b12237f1640f8e8f745d1fd0788460a\"}\n{\"n\": 5, \"tested\": 486000, \"accepted\": 161940, \"rejected\": 324060, \"sha256\": \"b7ec9d73cca9874c3c4e8ac2f217c6760c83f7cf0676b2c2aff75be550090b1c\"}\n{\"verified\": true, \"replays\": [{\"n\": 2, \"tested\": 3, \"accepted\": 3, \"rejected\": 0, \"sha256\": \"fab85032c57e74963c7758fbd3b1de2c04096c279a51e9028d054674f827ca96\"}, {\"n\": 3, \"tested\": 246, \"accepted\": 171, \"rejected\": 75, \"sha256\": \"a9fe63954bdbeb552db90af82d9d4b4847508b6724d650015e7a070d2a6d779b\"}, {\"n\": 4, \"tested\": 14304, \"accepted\": 7536, \"rejected\": 6768, \"sha256\": \"86004a9d13aa55ce4ac98af8b4b17e985b12237f1640f8e8f745d1fd0788460a\"}, {\"n\": 5, \"tested\": 486000, \"accepted\": 161940, \"rejected\": 324060, \"sha256\": \"b7ec9d73cca9874c3c4e8ac2f217c6760c83f7cf0676b2c2aff75be550090b1c\"}], \"ordinary_small\": 7710, \"two_kernel_n5_inputs\": 486000, \"all_source_counterexample\": true, \"reset_word\": [2, 3, 1, 2, 1, 1, 2, 3], \"rt\": 8, \"P\": 9, \"scope\": \"Complete designated covers: TWO distinct commuting permutation letters and one to three distinct unitary letters at n2..5. State minimum6 ONLY in this restricted class. The n6 search was adaptive first-refutation exploration, not a complete cover; its old terminal stdout was not persisted and its trial count is not used as a durable result.\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_pu_prefix"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:39:07.979823+00:00",
+      "seconds": 4.093999999999141,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"pair_records\": 18214, \"certificates\": 198, \"ordinary_full_arrays\": 168, \"covers\": [{\"n\": 2, \"bases\": 1, \"cuts\": 1, \"quadruples\": 0}, {\"n\": 3, \"bases\": 14, \"cuts\": 28, \"quadruples\": 0}, {\"n\": 4, \"bases\": 411, \"cuts\": 1233, \"quadruples\": 8855}], \"corruptions_rejected\": [0, 1, 2, 3, 4, 5], \"minimum_scope\": \"Every PU alphabet, n<=4; n5 violates e<=n; no minimum for unrestricted DFA.\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_gonze_bypass"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:39:12.074542+00:00",
+      "seconds": 0.125,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"records\": [{\"n\": 7, \"exact_reaching\": 15, \"into_upper\": 6, \"bypass_rank\": 3, \"reset_length\": 19}, {\"n\": 11, \"exact_reaching\": 38, \"into_upper\": 9, \"bypass_rank\": 7, \"reset_length\": 30}, {\"n\": 15, \"exact_reaching\": 69, \"into_upper\": 12, \"bypass_rank\": 11, \"reset_length\": 41}, {\"n\": 19, \"exact_reaching\": 108, \"into_upper\": 15, \"bypass_rank\": 15, \"reset_length\": 52}, {\"n\": 23, \"exact_reaching\": 155, \"into_upper\": 18, \"bypass_rank\": 19, \"reset_length\": 63}, {\"n\": 27, \"exact_reaching\": 210, \"into_upper\": 21, \"bypass_rank\": 23, \"reset_length\": 74}, {\"n\": 31, \"exact_reaching\": 273, \"into_upper\": 24, \"bypass_rank\": 27, \"reset_length\": 85}, {\"n\": 35, \"exact_reaching\": 344, \"into_upper\": 27, \"bypass_rank\": 31, \"reset_length\": 96}, {\"n\": 39, \"exact_reaching\": 423, \"into_upper\": 30, \"bypass_rank\": 35, \"reset_length\": 107}, {\"n\": 63, \"exact_reaching\": 1065, \"into_upper\": 48, \"bypass_rank\": 59, \"reset_length\": 173}, {\"n\": 103, \"exact_reaching\": 2775, \"into_upper\": 78, \"bypass_rank\": 99, \"reset_length\": 283}], \"ordinary_all_source_arrays\": 1, \"general_linear_extension_refutation\": false, \"shortest_into_formula_all_n\": false}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_quotient_fiber"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:39:12.195973+00:00",
+      "seconds": 0.4680000000007567,
+      "returncode": 0,
+      "stdout": "{\"checked\": 230, \"profiles\": 10, \"higher_profiles\": 5440, \"seven_profiles\": 105, \"small_class_profiles\": 28112, \"three_class_profiles\": 5911, \"max_tail\": 8}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_congruence_extremal"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:39:12.665908+00:00",
+      "seconds": 0.06300000000010186,
+      "returncode": 0,
+      "stdout": "{\"checked\": 22, \"simple\": 22, \"square_extremal\": 5}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_quotient_lift_counter"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:39:12.731984+00:00",
+      "seconds": 0.18699999999989814,
+      "returncode": 0,
+      "stdout": "{\"counter_n\": 4, \"counter_rt\": 3, \"quotient_rt\": 1, \"n3_alphabets_up_to3_qualifying\": 3714, \"n3_violations\": 0}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_rank_two_period",
+        "--out",
+        "direct_attack/data/rank_two_period_independent_checks.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:39:12.916453+00:00",
+      "seconds": 0.07799999999951979,
+      "returncode": 0,
+      "stdout": "{\"method\": \"full-powerset inverse capacity with literal word evaluation\", \"inverse_capacity_peak_checks\": 18, \"max_n\": 8, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_rank_two_multi_perm",
+        "--out",
+        "direct_attack/data/rank_two_multi_perm_independent_checks.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:39:12.993541+00:00",
+      "seconds": 0.125,
+      "returncode": 0,
+      "stdout": "{\"checked\": 7, \"max_e\": 18}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_one_fixed_all_permutations",
+        "--out",
+        "direct_attack/data/one_fixed_all_permutations_n8_independent_checks.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:39:13.120977+00:00",
+      "seconds": 0.07899999999972351,
+      "returncode": 0,
+      "stdout": "{\"method\": \"ordinary all-source forward transport and policy recurrence\", \"source\": \"direct_attack\\\\data\\\\one_fixed_all_permutations_n8.json\", \"n\": 8, \"peak_e\": 15, \"peak_target\": 96, \"rt\": 10, \"best_policy\": 10, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_rank_two_permutation_alphabet",
+        "--out",
+        "direct_attack/data/rank_two_permutation_alphabet_checks.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:39:13.207655+00:00",
+      "seconds": 0.10900000000037835,
+      "returncode": 0,
+      "stdout": "{\"checked\": 8, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_rank_two_only_nonperm",
+        "--out",
+        "direct_attack/data/rank_two_only_nonperm_checks.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:39:13.308204+00:00",
+      "seconds": 0.34399999999914144,
+      "returncode": 0,
+      "stdout": "{\"checked\": 8, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_permutation_rainbow_first_drop",
+        "--out",
+        "direct_attack/data/permutation_rainbow_first_drop_checks.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:39:13.655237+00:00",
+      "seconds": 0.07800000000133878,
+      "returncode": 0,
+      "stdout": "{\"family_cases\": 100, \"spans\": [{\"n\": 6, \"span_ranks\": [1, 3, 4], \"component_counts\": [4, 1, 1]}, {\"n\": 7, \"span_ranks\": [1, 3, 5], \"component_counts\": [5, 1, 1]}], \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_rank_three_color_boundary",
+        "--out",
+        "direct_attack/data/rank_three_color_boundary_n6_independent_checks.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:39:13.740582+00:00",
+      "seconds": 0.09399999999914144,
+      "returncode": 0,
+      "stdout": "{\"first_collision\": 3, \"component_counts\": [4, 1, 1, 1], \"reset_length\": 9, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_rank_three_color_boundary",
+        "--source",
+        "direct_attack/data/rank_three_color_stall_sc_n7.json",
+        "--out",
+        "direct_attack/data/rank_three_color_boundary_n7_independent_checks.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:39:13.819636+00:00",
+      "seconds": 0.06199999999989814,
+      "returncode": 0,
+      "stdout": "{\"first_collision\": 3, \"component_counts\": [5, 1, 1, 1], \"reset_length\": 7, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_rank_three_two_perm_search",
+        "--out",
+        "direct_attack/data/rank_three_two_perm_independent_checks.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:39:13.891352+00:00",
+      "seconds": 0.25,
+      "returncode": 0,
+      "stdout": "{\"checked\": 3, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_rank_three_two_transposition_scan",
+        "--out",
+        "direct_attack/data/rank_three_two_transposition_independent_checks.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:39:14.146173+00:00",
+      "seconds": 0.6560000000008586,
+      "returncode": 0,
+      "stdout": "{\"checked\": 3, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_return_word_lift"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T12:23:20.855685+00:00",
+      "seconds": 0.4059999999990396,
+      "returncode": 0,
+      "stdout": "{\"certificates\": 53, \"vertices\": 8832, \"max_reduced_rt\": 25, \"arithmetic\": {\"minimum_n_cases\": 3999, \"exceptional\": [[5, 5, 42], [5, 6, 56], [5, 7, 74], [5, 8, 96]], \"h6_inconclusive_profiles\": [[2, 20, 14], [2, 21, 15]], \"growing_class_bound_exact_cases\": 2500, \"excluded_n_under20_profiles\": [[6, 6], [6, 7], [6, 8], [7, 7], [6, 9], [7, 8], [6, 10], [7, 9], [8, 8], [6, 11], [7, 10], [8, 9], [6, 12], [7, 11], [8, 10], [9, 9], [6, 13], [7, 12], [8, 11], [9, 10], [6, 6, 6], [6, 6, 7]]}, \"corruptions_rejected\": 3, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-c",
+        "import json; from pathlib import Path; from direct_attack.check_bridges import verify; ps=sorted(Path(\"direct_attack/data/generalized_bridge\").glob(\"C*.json\")); rs=[verify(json.loads(p.read_text())) for p in ps]; print(json.dumps(dict(certificates=len(rs),vertices=sum(r[\"vertices\"] for r in rs),verified=True)))"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:39:15.262010+00:00",
+      "seconds": 1.0779999999995198,
+      "returncode": 0,
+      "stdout": "{\"certificates\": 11, \"vertices\": 173196, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-c",
+        "from direct_attack.abstract_profile import profile,audit; rs=[audit(n,profile(n)) for n in [10,20,50,100,200,500,1000,2000]]; print({\"abstract_inequality_instances\":len(rs),\"verified\":True})"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T11:39:16.334911+00:00",
+      "seconds": 0.11000000000058208,
+      "returncode": 0,
+      "stdout": "{'abstract_inequality_instances': 8, 'verified': True}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_class_compression_pressure"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T12:23:21.271711+00:00",
+      "seconds": 0.4220000000004802,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"independent\": \"ordinary reverse-subset distances and separate forward quotient BFS\", \"certificates\": 53, \"subset_vertices\": 30727, \"sharp_controls\": 35, \"corruptions_rejected\": 4, \"arithmetic\": {\"repaired_old_h6_gaps\": [{\"sizes\": [6, 14], \"bound\": 337, \"square\": 361}, {\"sizes\": [6, 15], \"bound\": 388, \"square\": 400}], \"h6_integer_cases\": 9900, \"all_minimum7_profiles_below22\": [{\"sizes\": [7, 7], \"bound\": 115, \"square\": 169}, {\"sizes\": [7, 8], \"bound\": 141, \"square\": 196}, {\"sizes\": [7, 9], \"bound\": 171, \"square\": 225}, {\"sizes\": [8, 8], \"bound\": 171, \"square\": 225}, {\"sizes\": [7, 10], \"bound\": 206, \"square\": 256}, {\"sizes\": [8, 9], \"bound\": 205, \"square\": 256}, {\"sizes\": [7, 11], \"bound\": 246, \"square\": 289}, {\"sizes\": [8, 10], \"bound\": 244, \"square\": 289}, {\"sizes\": [9, 9], \"bound\": 243, \"square\": 289}, {\"sizes\": [7, 12], \"bound\": 291, \"square\": 324}, {\"sizes\": [8, 11], \"bound\": 289, \"square\": 324}, {\"sizes\": [9, 10], \"bound\": 286, \"square\": 324}, {\"sizes\": [7, 13], \"bound\": 341, \"square\": 361}, {\"sizes\": [8, 12], \"bound\": 340, \"square\": 361}, {\"sizes\": [9, 11], \"bound\": 335, \"square\": 361}, {\"sizes\": [10, 10], \"bound\": 333, \"square\": 361}, {\"sizes\": [7, 14], \"bound\": 396, \"square\": 400}, {\"sizes\": [8, 13], \"bound\": 397, \"square\": 400}, {\"sizes\": [9, 12], \"bound\": 391, \"square\": 400}, {\"sizes\": [10, 11], \"bound\": 386, \"square\": 400}, {\"sizes\": [7, 7, 7], \"bound\": 176, \"square\": 400}], \"maximum_bounds_by_n\": [{\"n\": 14, \"max_bound\": 115, \"square\": 169}, {\"n\": 15, \"max_bound\": 141, \"square\": 196}, {\"n\": 16, \"max_bound\": 171, \"square\": 225}, {\"n\": 17, \"max_bound\": 206, \"square\": 256}, {\"n\": 18, \"max_bound\": 246, \"square\": 289}, {\"n\": 19, \"max_bound\": 291, \"square\": 324}, {\"n\": 20, \"max_bound\": 341, \"square\": 361}, {\"n\": 21, \"max_bound\": 397, \"square\": 400}], \"remaining_n22_bound_gaps\": [{\"sizes\": [7, 15], \"bound\": 455, \"square\": 441}, {\"sizes\": [8, 14], \"bound\": 460, \"square\": 441}, {\"sizes\": [9, 13], \"bound\": 454, \"square\": 441}, {\"sizes\": [10, 12], \"bound\": 446, \"square\": 441}, {\"sizes\": [11, 11], \"bound\": 443, \"square\": 441}], \"boundary\": \"Integer bounds, not automata counterexamples; all-n h6 exclusion uses the paper argument.\"}, \"scope\": \"retained exact instances only; paper dimension argument supplies all-n theorem\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_mixed_rank_extension",
+        "--root",
+        "direct_attack/data/mixed_rank_extension_n16"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T12:23:21.689332+00:00",
+      "seconds": 0.09399999999914144,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"certificates\": 13, \"images\": 1001}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_mixed_rank_extension",
+        "--root",
+        "direct_attack/data/mixed_rank_extension_n24_fixed"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T12:23:21.781103+00:00",
+      "seconds": 0.20300000000133878,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"certificates\": 9, \"images\": 1927}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.replay_return_and_mixed"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T12:23:21.983106+00:00",
+      "seconds": 28.40599999999904,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"streams\": 4, \"retained\": 128}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_bijective_fiber_returns"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T14:36:02.167865+00:00",
+      "seconds": 0.3600000000005821,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"certificates\": 88, \"return_vertices\": 17915, \"reverse_subset_vertices\": 1120, \"corruptions_rejected\": 4, \"independent\": \"packed deterministic-matrix closures; ordinary reverse-subset distances; literal original-letter words\", \"scope\": \"retained finite certificates only; general return-monoid theorem is a separate paper proof\"}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_terminal_kernel_frankl"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T14:36:02.530067+00:00",
+      "seconds": 0.4679999999971187,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"sequence\": {\"kernel_partitions\": 277, \"exact_sequence_instances\": 870, \"coverage_dp_vertices\": 87448, \"strict_below_wedge_bound\": 173}, \"DFA_inputs\": 64, \"reachable_non_singleton_images\": 54655, \"images_with_stronger_static_bound\": 53189, \"arithmetic\": {\"nonuniform_n22\": [{\"sizes\": [7, 15], \"K\": 9, \"bound\": 423, \"square\": 441}, {\"sizes\": [8, 14], \"K\": 6, \"bound\": 435, \"square\": 441}, {\"sizes\": [9, 13], \"K\": 4, \"bound\": 436, \"square\": 441}, {\"sizes\": [10, 12], \"K\": 2, \"bound\": 439, \"square\": 441}], \"triple_7_7_8\": 202, \"uniform_two_terminal_pairs\": 432, \"uniform_n22_bound\": 441, \"uniform_profile_cases\": 30096, \"uniform_equalities\": [[2, 11]]}, \"independent\": \"kernel clique coverage DP, exact modular wedge basis, ordinary pair-graph BFS and ordinary reachable sets\", \"scope\": \"finite sequence partitions and saved DFA images only; paper exterior proof supplies general quantifiers\"}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_class_reset_pressure"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T14:36:02.994491+00:00",
+      "seconds": 0.11000000000058208,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"certificates\": 23, \"vertices\": 36253, \"corruptions_rejected\": 3, \"independent\": \"ordinary-set forward BFS and separate state strong-connectivity checks\", \"scope\": \"retained complete certificates only; no all-n class-reset conclusion\"}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_class_reset_pressure",
+        "--source",
+        "direct_attack/data/class_reset_pressure.json",
+        "--out",
+        "direct_attack/data/class_reset_pressure_small_checks.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-09-30T14:36:03.112459+00:00",
+      "seconds": 0.062000000001717126,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"certificates\": 13, \"vertices\": 1731, \"corruptions_rejected\": 3, \"independent\": \"ordinary-set forward BFS and separate state strong-connectivity checks\", \"scope\": \"retained complete certificates only; no all-n class-reset conclusion\"}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.replay_fiber_continuation"
+      ],
+      "cwd": "<CHECKOUT>",
+      "returncode": 0,
+      "capture_kind": "aggregate reconstructed from literal child captures and observed outer tool completion",
+      "argv_note": "registered module argv; not a saved literal outer invocation",
+      "start_utc": "2026-09-30T14:15:59.720821+00:00",
+      "start_note": "first literal child start, not the uncaptured outer start",
+      "seconds": 483.7810000000027,
+      "seconds_note": "sum of literal child runtimes, not outer wall time",
+      "stdout": "{\"verified\": true, \"streams\": 3, \"native_proposals\": 1120000, \"bijective_alphabets\": 3000}\n",
+      "stderr": null,
+      "stderr_note": "outer stderr was not separately captured; all literal child stderr is retained",
+      "observed_outer_tool": {
+        "session_id": 3349,
+        "exit_code": 0
+      },
+      "literal_children_source": "direct_attack/data/fiber_continuation_replays.json"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.audit_terminal_kernel_independent"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T00:29:09.686080+00:00",
+      "seconds": 1.3279999999999745,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"all_graph_instances_n2_through5\": 4306, \"literal_multipartite_constructions_n2_through7\": 2984, \"sampled_congruence_dfas\": 1050, \"compressible_class_subsets\": 24147, \"multi_b_terminal_inequalities\": 144882, \"b_values\": [1, 2, 3, 4, 5, 6], \"cerny_barrier\": {\"pair_distance_states_n2_through50\": 20825, \"actual_images_n2_through10\": 2035, \"spaced_set_bounds_n2_through14\": 91, \"all_subsets_n2_through14\": 32647, \"exact_rank_maxima_n2_through14\": 91, \"rank_sum_records\": [{\"n\": 2, \"sum_rank_maxima\": 1, \"square\": 1}, {\"n\": 3, \"sum_rank_maxima\": 4, \"square\": 4}, {\"n\": 4, \"sum_rank_maxima\": 10, \"square\": 9}, {\"n\": 5, \"sum_rank_maxima\": 19, \"square\": 16}, {\"n\": 6, \"sum_rank_maxima\": 32, \"square\": 25}, {\"n\": 7, \"sum_rank_maxima\": 49, \"square\": 36}, {\"n\": 8, \"sum_rank_maxima\": 70, \"square\": 49}, {\"n\": 9, \"sum_rank_maxima\": 96, \"square\": 64}, {\"n\": 10, \"sum_rank_maxima\": 127, \"square\": 81}, {\"n\": 11, \"sum_rank_maxima\": 162, \"square\": 100}, {\"n\": 12, \"sum_rank_maxima\": 203, \"square\": 121}, {\"n\": 13, \"sum_rank_maxima\": 250, \"square\": 144}, {\"n\": 14, \"sum_rank_maxima\": 301, \"square\": 169}], \"scope\": \"Finite BFS checks of the all-n paper barrier, not a generic DFA bound.\"}, \"scope\": \"Finite independent tests only; paper arguments establish the general quantifiers.\"}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_return_monoid_independent_audit"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T00:29:11.014126+00:00",
+      "seconds": 1.780999999999949,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"label\": \"COMPUTATIONALLY VERIFIED in the scopes below\", \"n4_cover\": {\"ordered_binary_inputs\": 4096, \"SCC_confined_monoids_checked\": 8192, \"SCC_confined_monoid_elements\": 17116, \"synchronizing_inputs\": 2592, \"synchronizing_SC_quotient_inputs\": 1440, \"actual_word_lifts_checked\": 86400, \"bijective_connected_inputs\": 784, \"gauge_monoids_checked\": 1568, \"gauge_monoid_elements\": 4892, \"SC_synchronizing_inputs\": 568, \"general_short_return_sync_checks\": 1136}, \"nonuniform_covers\": {\"profile_scopes\": [[2, 1], [3, 1]], \"word_lengths\": [1, 2], \"ordered_binary_inputs\": 12769, \"synchronizing_SC_quotient_inputs\": 706, \"actual_word_lifts_checked\": 8472}, \"rank3_profile_arithmetic\": {\"m_range\": [2, 6], \"class_size_range\": [1, 12], \"nondecreasing_profiles\": true, \"nontrivial_profiles_checked\": 18546, \"no_singleton_profiles_checked\": 12364, \"equality_profiles\": [[1, 2]], \"selected_controls\": [{\"sizes\": [1, 2], \"m\": 2, \"n\": 3, \"phi3\": 1, \"kernel_gap\": 0, \"letter_bound\": 4, \"square\": 4, \"low_rank_word_length_must_exceed\": 1}, {\"sizes\": [2, 2], \"m\": 2, \"n\": 4, \"phi3\": 2, \"kernel_gap\": 4, \"letter_bound\": 5, \"square\": 9, \"low_rank_word_length_must_exceed\": 5}, {\"sizes\": [7, 15], \"m\": 2, \"n\": 22, \"phi3\": 232, \"kernel_gap\": 206, \"letter_bound\": 235, \"square\": 441, \"low_rank_word_length_must_exceed\": 207}, {\"sizes\": [1, 1000], \"m\": 2, \"n\": 1001, \"phi3\": 998001, \"kernel_gap\": 1996, \"letter_bound\": 998004, \"square\": 1000000, \"low_rank_word_length_must_exceed\": 1997}, {\"sizes\": [2, 3, 7, 21], \"m\": 4, \"n\": 33, \"phi3\": 441, \"kernel_gap\": 570, \"letter_bound\": 454, \"square\": 1024, \"low_rank_word_length_must_exceed\": 571}, {\"sizes\": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2], \"m\": 12, \"n\": 24, \"phi3\": 12, \"kernel_gap\": 384, \"letter_bound\": 145, \"square\": 529, \"low_rank_word_length_must_exceed\": 385}], \"corruptions_rejected\": [\"phi3\", \"kernel_gap\", \"low_rank_word_length_must_exceed\", \"sizes\"]}, \"family_control_count\": 33, \"corruptions_rejected\": [\"cap\", \"macro_rt\", \"full_reset\", \"rows\"], \"independent\": \"ordinary state tuples and subset BFS; no existing solver imports\", \"general_claims\": \"PROVED on paper separately; priority OPEN; not FORMALLY VERIFIED\"}\n{\"checked_triples\": 171071, \"m_range\": [2, 30], \"h_range\": [2, 200], \"r_condition\": \"1 <= r <= min(h-1,2m+1)\", \"minimum_gap\": 6, \"minimum_at\": [2, 2, 1], \"polynomial_identities\": 396, \"method_boundary_controls\": [{\"m\": 2, \"h\": 2000, \"r\": 6, \"bound\": 19950043, \"square\": 15992001}, {\"m\": 3, \"h\": 3000, \"r\": 8, \"bound\": 94279675, \"square\": 80982001}, {\"m\": 4, \"h\": 4000, \"r\": 10, \"bound\": 287352493, \"square\": 255968001}, {\"m\": 5, \"h\": 5000, \"r\": 12, \"bound\": 685988621, \"square\": 624950001}, {\"m\": 6, \"h\": 6000, \"r\": 14, \"bound\": 1400960215, \"square\": 1295928001}, {\"m\": 7, \"h\": 7000, \"r\": 16, \"bound\": 2566991463, \"square\": 2400902001}, {\"m\": 8, \"h\": 8000, \"r\": 18, \"bound\": 4342758585, \"square\": 4095872001}, {\"m\": 9, \"h\": 9000, \"r\": 20, \"bound\": 6910889833, \"square\": 6560838001}, {\"m\": 10, \"h\": 10000, \"r\": 22, \"bound\": 10477965491, \"square\": 9999800001}, {\"m\": 11, \"h\": 11000, \"r\": 24, \"bound\": 15274517875, \"square\": 14640758001}, {\"m\": 12, \"h\": 12000, \"r\": 26, \"bound\": 21555031333, \"square\": 20735712001}, {\"m\": 13, \"h\": 13000, \"r\": 28, \"bound\": 29597942245, \"square\": 28560662001}, {\"m\": 14, \"h\": 14000, \"r\": 30, \"bound\": 39705639023, \"square\": 38415608001}, {\"m\": 15, \"h\": 15000, \"r\": 32, \"bound\": 52204462111, \"square\": 50624550001}, {\"m\": 16, \"h\": 16000, \"r\": 34, \"bound\": 67444703985, \"square\": 65535488001}, {\"m\": 17, \"h\": 17000, \"r\": 36, \"bound\": 85800609153, \"square\": 83520422001}, {\"m\": 18, \"h\": 18000, \"r\": 38, \"bound\": 107670374155, \"square\": 104975352001}, {\"m\": 19, \"h\": 19000, \"r\": 40, \"bound\": 133476147563, \"square\": 130320278001}, {\"m\": 20, \"h\": 20000, \"r\": 42, \"bound\": 163664029981, \"square\": 159999200001}]}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_terminal_window_barrier"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T00:29:12.798408+00:00",
+      "seconds": 9.405999999999949,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"state_sizes\": [2, 250], \"pair_vertices\": 2604125, \"independently_simulated_word_letters\": 2562664, \"total_reachable_images\": 131053, \"corruptions_rejected\": 3, \"independent\": \"ordinary original-pair reverse BFS, literal word action and complete ordinary reachable-image BFS\", \"scope\": \"finite audits only; all-n exact window and worst-rank barriers have separate paper proofs\"}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.capture_weighted_class_reset_checks"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T00:29:22.205975+00:00",
+      "seconds": 0.9850000000001273,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"retained_records\": 42, \"unique_tiny_inputs\": 5816, \"captured_checks\": 2}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_weighted_class_equality_lifts"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T00:29:23.194047+00:00",
+      "seconds": 3.625,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"designated_inputs\": 34560, \"designated_ordinary_vertices\": 4033582, \"retained_records\": 70, \"retained_ordinary_vertices\": 33928, \"family_controls\": 63, \"corruptions_rejected\": [\"class_rt\", \"rt\", \"weighted_vertices\"], \"cover_details\": [{\"t\": 10, \"distinct_inputs\": 1080, \"synchronizing\": 1080, \"ordinary_vertices\": 59852, \"exact_maximum\": 15}, {\"t\": 13, \"distinct_inputs\": 29160, \"synchronizing\": 29160, \"ordinary_vertices\": 2039802, \"exact_maximum\": 21}, {\"t\": 25, \"distinct_inputs\": 1080, \"synchronizing\": 1080, \"ordinary_vertices\": 138302, \"exact_maximum\": 16}, {\"t\": 49, \"distinct_inputs\": 1080, \"synchronizing\": 1080, \"ordinary_vertices\": 263822, \"exact_maximum\": 16}, {\"t\": 97, \"distinct_inputs\": 1080, \"synchronizing\": 1080, \"ordinary_vertices\": 514862, \"exact_maximum\": 16}, {\"t\": 193, \"distinct_inputs\": 1080, \"synchronizing\": 1080, \"ordinary_vertices\": 1016942, \"exact_maximum\": 16}], \"source_sha256\": \"c9b31ef6c40da18034b540797688e732f1f0342d064aae21ceebbd160a2f9dcb\", \"scope\": \"exact complete designated insertion covers and saved family controls only; no all-n equality absence claim\"}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.replay_weighted_class_reset"
+      ],
+      "cwd": "<CHECKOUT>",
+      "returncode": 0,
+      "capture_kind": "aggregate from retained literal successful children plus new parsed-file comparison",
+      "argv_note": "registered module identifier; no literal outer capture claimed",
+      "start_utc": "2026-10-01T00:09:24.995791+00:00",
+      "start_note": "first child start",
+      "seconds": 18.750999999999863,
+      "seconds_note": "sum of child runtimes",
+      "stdout": null,
+      "stderr": null,
+      "output_note": "literal stdout and stderr retained in children source; outer output not fabricated",
+      "literal_children_source": "direct_attack/data/weighted_class_reset_replays.json",
+      "comparisons": [
+        {
+          "saved": "direct_attack/data/weighted_class_reset_pressure.json",
+          "saved_sha256": "9fad997bb1fba8b85cac5a00d1e9c6b40047638807fe8d7497b4ac1ea8bc3555",
+          "replay_sha256": "9fad997bb1fba8b85cac5a00d1e9c6b40047638807fe8d7497b4ac1ea8bc3555",
+          "parsed_equal": true
+        },
+        {
+          "saved": "direct_attack/data/weighted_class_reset_tiny.json",
+          "saved_sha256": "90ae1377a5a6e1c17a21304c94d61580abb7cdfbfa9ce425d81305b2d110a030",
+          "replay_sha256": "90ae1377a5a6e1c17a21304c94d61580abb7cdfbfa9ce425d81305b2d110a030",
+          "parsed_equal": true
+        }
+      ]
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.replay_weighted_class_equality_lifts"
+      ],
+      "cwd": "<CHECKOUT>",
+      "returncode": 0,
+      "capture_kind": "aggregate from retained literal successful children plus new parsed-file comparison",
+      "argv_note": "registered module identifier; no literal outer capture claimed",
+      "start_utc": "2026-10-01T00:18:34.525696+00:00",
+      "start_note": "first child start",
+      "seconds": 4.625,
+      "seconds_note": "sum of child runtimes",
+      "stdout": null,
+      "stderr": null,
+      "output_note": "literal stdout and stderr retained in children source; outer output not fabricated",
+      "literal_children_source": "direct_attack/data/weighted_class_equality_lifts_replays.json",
+      "comparisons": [
+        {
+          "saved": "direct_attack/data/weighted_class_equality_lifts.json",
+          "saved_sha256": "c9b31ef6c40da18034b540797688e732f1f0342d064aae21ceebbd160a2f9dcb",
+          "replay_sha256": "c9b31ef6c40da18034b540797688e732f1f0342d064aae21ceebbd160a2f9dcb",
+          "parsed_equal": true
+        },
+        {
+          "saved": "direct_attack/data/weighted_class_equality_lifts_checks.json",
+          "saved_sha256": "c80efd12bba7a4694185ea123bcc6019bfc6e2302cd626aa5037623752fc30e3",
+          "replay_sha256": "c80efd12bba7a4694185ea123bcc6019bfc6e2302cd626aa5037623752fc30e3",
+          "parsed_equal": true
+        }
+      ]
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_permutation_averaging_word_cost_audit"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T00:56:25.303113+00:00",
+      "seconds": 0.8910000000000764,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"status\": \"COMPUTATIONALLY VERIFIED in the stated bounded scopes\", \"arguments\": {\"max_n\": 64, \"group_max_n\": 8, \"out\": \"direct_attack\\\\data\\\\permutation_averaging_word_cost_audit.json\"}, \"independent\": \"ordinary permutation BFS; adjacent-value sorting; two literal right-action evaluators; rational matrix sums\", \"full_group_metric_elements\": 46232, \"literal_group_metric_letters\": 623482, \"group_metric_scopes\": [{\"n\": 2, \"full_group_elements\": 2, \"cap\": 1, \"elements_through_cap\": 2, \"maximum_footrule_through_cap\": 2, \"uniform_target_footrule\": {\"numerator\": 1, \"denominator\": 1}, \"strict_separation\": false}, {\"n\": 3, \"full_group_elements\": 6, \"cap\": 2, \"elements_through_cap\": 5, \"maximum_footrule_through_cap\": 4, \"uniform_target_footrule\": {\"numerator\": 8, \"denominator\": 3}, \"strict_separation\": false}, {\"n\": 4, \"full_group_elements\": 24, \"cap\": 3, \"elements_through_cap\": 15, \"maximum_footrule_through_cap\": 6, \"uniform_target_footrule\": {\"numerator\": 5, \"denominator\": 1}, \"strict_separation\": false}, {\"n\": 5, \"full_group_elements\": 120, \"cap\": 4, \"elements_through_cap\": 49, \"maximum_footrule_through_cap\": 8, \"uniform_target_footrule\": {\"numerator\": 8, \"denominator\": 1}, \"strict_separation\": false}, {\"n\": 6, \"full_group_elements\": 720, \"cap\": 5, \"elements_through_cap\": 169, \"maximum_footrule_through_cap\": 10, \"uniform_target_footrule\": {\"numerator\": 35, \"denominator\": 3}, \"strict_separation\": true}, {\"n\": 7, \"full_group_elements\": 5040, \"cap\": 6, \"elements_through_cap\": 602, \"maximum_footrule_through_cap\": 12, \"uniform_target_footrule\": {\"numerator\": 16, \"denominator\": 1}, \"strict_separation\": true}, {\"n\": 8, \"full_group_elements\": 40320, \"cap\": 7, \"elements_through_cap\": 2191, \"maximum_footrule_through_cap\": 14, \"uniform_target_footrule\": {\"numerator\": 21, \"denominator\": 1}, \"strict_separation\": true}], \"cyclic_average_sizes_checked\": 63, \"literal_cyclic_average_letters\": 720720, \"corruptions_rejected\": [\"words\", \"matrix_sum\", \"expected_cost\", \"maximum_support_lower_bound\"], \"limits\": \"paper proof gives all-n theorem; no novelty, formal verification, exact maximum-support optimum, or minimum-refutation-state claim\"}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "complete_saved_record_recomputed_equal": true,
+      "output_path": "direct_attack/data/permutation_averaging_word_cost_audit.json",
+      "output_sha256": "6c417e84b52ba62ecfae0c8e7f8b57ec4e9d214b83f18294e3b24cbdaf1f9487"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_compress_other_family"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T01:40:14.280424+00:00",
+      "seconds": 3.844000000000051,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"records\": 69, \"pair_vertices\": 859431, \"literal_full_Q_reset_words\": 12, \"literal_full_Q_reset_letters\": 4652, \"reflected_phase_controls\": 20094, \"reflected_phase_vertices\": 2686686, \"corruptions_rejected\": [\"rows\", \"rooted_word\", \"reflection_core_row\", \"reset_length\", \"q0_minimum\", \"root_state\"], \"implementation\": \"independent case rows, original word action, triangular pair array BFS and every Bellman edge\", \"status\": \"COMPUTATIONALLY VERIFIED in recorded finite scopes; all-n q0 lower bound OPEN; no formal verification or exact full reset threshold\"}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_terminal_kernel_stagnation"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T01:40:18.127102+00:00",
+      "seconds": 0.06300000000010186,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"actual_image_vertices\": 14, \"all_binary_words_through_length\": 5, \"corruptions_rejected\": [\"pair_distances\", \"layers\", \"rt\", \"reset_word\"], \"state_minimum\": \"four, established on paper for arbitrary synchronizing alphabets\", \"scope\": \"exact four-state witness; independent literal-word enumeration and subset closure; no general Cerny counterexample\"}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_short_rooted_word"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T01:57:35.735537+00:00",
+      "seconds": 0.04699999999957072,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"actual_image_vertices\": 12, \"corruptions_rejected\": [\"minimum_rooted_length\", \"rooted_row\", \"short_actions\", \"root_height\", \"one_letter_power_template_refuted\"], \"scope\": \"complete original words through four for one SC binary synchronizing DFA; no minimum-state claim\", \"status\": \"short-rooted-word length<=n and one-letter short-power square template REFUTED; bounded claims COMPUTATIONALLY VERIFIED; no Cerny counterexample or formal verification\"}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/short_rooted_word_checks.json",
+      "output_sha256": "04c0bd403b2dd6bd4e6c0aba4b6247874f67b3bbdb6c797681ac3b2fb5ffe07b"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_transposition_fold_obstruction"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T02:41:05.619374+00:00",
+      "seconds": 4.45299999999952,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"family_controls\": 69, \"maximum_n\": 2048, \"exact_scopes\": 9, \"forward_vertices\": 207860, \"reverse_vertices\": 221364, \"corruptions_rejected\": 6, \"routing\": {\"connected_graphs\": 771, \"routing_cases\": 443332, \"exact_routing_vertices\": 443332, \"labeled_defect_one_automata\": 5546, \"containing_pair_cases\": 191837, \"labeled_general_singular_automata\": 8902, \"by_n\": [{\"n\": 2, \"connected_graphs\": 1, \"routing_cases\": 4, \"labeled_defect_one_automata\": 2, \"containing_pair_cases\": 1, \"labeled_general_singular_automata\": 2}, {\"n\": 3, \"connected_graphs\": 4, \"routing_cases\": 144, \"labeled_defect_one_automata\": 72, \"containing_pair_cases\": 48, \"labeled_general_singular_automata\": 84}, {\"n\": 4, \"connected_graphs\": 38, \"routing_cases\": 6384, \"labeled_defect_one_automata\": 5472, \"containing_pair_cases\": 2508, \"labeled_general_singular_automata\": 8816}, {\"n\": 5, \"connected_graphs\": 728, \"routing_cases\": 436800, \"labeled_defect_one_automata\": 0, \"containing_pair_cases\": 189280, \"labeled_general_singular_automata\": 0}]}}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/transposition_fold_obstruction_checks.json",
+      "output_sha256": "99411c798f55f82f50a8aa5ece02cbd621e7349f75b3fef60f2af6b24db00fc3"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_fold_policy_chains"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T05:07:54.290679+00:00",
+      "seconds": 2.2340000000003783,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"controls\": 69, \"exact_phase_scopes\": 15, \"exact_vertices\": 15187, \"corruptions_rejected\": 4}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/fold_policy_chains_checks.json",
+      "output_sha256": "dd50687d41f36d3896d72c80ae0356eb626f84f586e919acfee72daa1def9f2e"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_two_cycle_image_obstruction"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T05:44:52.035070+00:00",
+      "seconds": 2.812999999998283,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"controls\": 69, \"literal_controls\": 15, \"ternary_irreducible_controls\": 69, \"binary_irreducible_controls\": 69, \"ternary_forward_vertices\": 349520, \"ternary_inverse_vertices\": 89655, \"binary_forward_vertices\": 262135, \"binary_extension_forward_vertices\": 262135, \"binary_inverse_vertices\": 4896, \"corruptions_rejected\": [\"fold transition\", \"entering exponent\", \"ternary extension length\", \"binary extension length\", \"binary selector row\", \"target cardinality\", \"reset length\"], \"boundary\": \"bounded independent original-row and ordinary-set audits; all-parameter proofs remain paper PROVED; no formal kernel; general Cerny and global policy square OPEN\"}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/two_cycle_image_obstruction_checks.json",
+      "output_sha256": "c895bd5d78ccb790a3c367b4bbef80f90ff9d00d331cdafc4d5992dbc74c7537"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_direct_binary_image_obstruction"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T06:08:05.081695+00:00",
+      "seconds": 0.75,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"controls\": 69, \"literal_controls\": 23, \"forward_vertices\": 276717, \"inverse_vertices\": 16978, \"extra_n13_inverse_vertices\": 263, \"corruptions_rejected\": [\"projection row\", \"first stall count\", \"entering exponent\", \"extension cost\", \"reset lower bound\", \"reset upper bound\", \"extra finite target\"], \"boundary\": \"all-parameter proof is paper PROVED; finite original-row and ordinary-set BFS audits COMPUTATIONALLY VERIFIED; no formal proof; Cerny and compatible policy square OPEN\"}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/direct_binary_image_obstruction_checks.json",
+      "output_sha256": "4e84d73527fbc8a135cb8d9f131b486fd545f2195b0c933edf85f2fbb1dae338"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_direct_binary_policy_chain"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T06:30:05.811930+00:00",
+      "seconds": 5.65599999999904,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"controls\": 69, \"literal_whole_chain_controls\": 23, \"membership_controls\": 4027, \"dominance_controls\": 743444, \"small_policy_scopes\": [{\"p\": 2, \"n\": 5, \"images\": 12, \"inverse_vertices\": 79, \"P\": 5, \"rt\": 5}, {\"p\": 3, \"n\": 7, \"images\": 36, \"inverse_vertices\": 409, \"P\": 9, \"rt\": 9}, {\"p\": 4, \"n\": 9, \"images\": 99, \"inverse_vertices\": 1516, \"P\": 17, \"rt\": 17}, {\"p\": 5, \"n\": 11, \"images\": 275, \"inverse_vertices\": 5292, \"P\": 26, \"rt\": 25}, {\"p\": 6, \"n\": 13, \"images\": 725, \"inverse_vertices\": 15450, \"P\": 38, \"rt\": 36}], \"corruptions_rejected\": [\"phase parent\", \"phase length\", \"terminal length\", \"total length\"]}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/direct_binary_policy_chain_checks.json",
+      "output_sha256": "01fee35d356fa8cbfe44cbc12ca9a37f426b1b317c58a14940d1b7cf8d05f21b"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_log_dimension_history"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T07:02:47.482149+00:00",
+      "seconds": 27.204000000001543,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"parameters\": 10, \"max_n\": 4095, \"totals\": {\"preimage_state_controls\": 22345068, \"selected_phases\": 8164, \"literal_original_rows\": 10180, \"full_vector_rank_checks\": 8, \"literal_long_word_letters\": 8164, \"literal_short_word_letters\": 20, \"actual_membership_state_controls\": 22336894, \"literal_membership_unit_letters\": 2432, \"complete_policy_images\": 127}, \"rejected_corruptions\": [\"parent\", \"phase_cost\", \"normalized_dimension\", \"alphabet_degree\", \"short_reset\", \"membership_cost\"]}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/log_dimension_history_checks.json",
+      "output_sha256": "2cff0892a6d2e8ba10be0b4759082d4bacf3bf001c8978f17f7494a7fe007855"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_maximal_jump_log_history"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T07:30:17.880980+00:00",
+      "seconds": 15.98399999999674,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"parameters\": 9, \"max_n\": 2047, \"totals\": {\"phase_state_controls\": 5576059, \"actual_membership_pairs\": 2785999, \"literal_membership_original_letters\": 334200, \"original_rows\": 248, \"literal_two_letter_words\": 145463, \"complete_policy_images\": 127, \"common_reset_letters\": 8131}, \"rejected_corruptions\": [\"parent\", \"permutation\", \"phase_cost\", \"normalized_rank\", \"membership_length\", \"all_tie_jump\", \"unit_block\", \"full_history_rank\"]}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/maximal_jump_log_history_checks.json",
+      "output_sha256": "92b48a3c5fbe772650dc10a36b25467b7405f13ab79c65c2cd47cfe417cc785f"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_optimal_log_history"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T07:46:36.134185+00:00",
+      "seconds": 0.625,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"n\": 7, \"original_labeled_rows\": 15, \"unique_induced_rows\": 13, \"actual_images\": 127, \"all_source_forward_vertices\": 9780, \"transport_entries\": 16129, \"optimal_endpoint_histories\": 68, \"normalized_histogram\": {\"4\": 34, \"5\": 20, \"3\": 14}, \"exact_minor_rank_checks\": 136, \"rt\": 9, \"P\": 9, \"minimum_normalized_dimension\": 3, \"maximum_normalized_dimension\": 5, \"literal_optimal_reset_words\": 68, \"literal_original_letters\": 612, \"word_index_boundary\": \"indices into generator certificate original_labeled_rows\", \"interpretation\": \"finite all optimal endpoint chains; high-dimension optimal choices DO exist; no all-n guarantee\", \"status\": \"COMPUTATIONALLY VERIFIED finite only; no formal proof kernel\", \"rejected_corruptions\": [\"minimum_dimension\", \"history_count\", \"histogram\", \"parent\", \"chain_cost\", \"original_row\"]}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/optimal_log_history_n7_checks.json",
+      "output_sha256": "658ec0fd9a4cc9fbc9cabf079822700f7b8101f20c0440115e5678e2762e290f"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_optimal_phase_independence"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T08:11:32.051764+00:00",
+      "seconds": 0.10900000000037835,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"all_source_vertices\": 1177, \"transport_entries\": 1861, \"exact_minor_rank_checks\": 19, \"literal_shortest_reset_words\": 5, \"literal_original_letters\": 73, \"interpretation\": \"existence of independent optimal locally shortest policy stages REFUTED at n5; nongreedy shortest-word independence survives these examples\", \"status\": \"COMPUTATIONALLY VERIFIED finite; paper state-minimality lemma separate; no formal proof kernel\", \"rejected_corruptions\": [\"independent_optimum\", \"chain_count\", \"omitted_shortest_word\", \"nongreedy_phase_cost\", \"normalized_rank\", \"parent\", \"reset_threshold\"]}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/optimal_phase_independence_checks.json",
+      "output_sha256": "d082ec08a9cab6c414a787fe81d83a6b9a02971ec1bb85f820b60223f76e1ced"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_shortest_binary_independence"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T08:32:16.873949+00:00",
+      "seconds": 0.06299999999828287,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"records\": [{\"n\": 5, \"rt\": 4, \"unique_shortest_original_word\": \"abaa\", \"strongly_connected\": true, \"simple\": true, \"inverse_growth_tree_vertices\": 11, \"actual_images\": 19, \"inverse_sets\": [2, 6, 7, 30, 31], \"proper_normalized_rank\": 2, \"full_raw_rank\": 4}, {\"n\": 3, \"rt\": 2, \"unique_shortest_original_word\": \"ba\", \"strongly_connected\": true, \"simple\": null, \"inverse_growth_tree_vertices\": 6, \"actual_images\": 6, \"inverse_sets\": [1, 6, 7], \"proper_normalized_rank\": 1, \"full_raw_rank\": 2}], \"all_subset_rank_defect_controls\": 76, \"determinant_rank_checks\": 6, \"all_shortest_length_words_literally_tested\": 20, \"boundary\": \"n5 proper-stage independence REFUTED on a unique globally shortest word; n3 full-history including seed is a different convention; no long-phase bound or Cerny proof\", \"status\": \"COMPUTATIONALLY VERIFIED finite; paper proofs separate; no formal kernel\", \"rejected_corruptions\": [\"shortest_word\", \"rank\", \"independent_exists\", \"threshold\", \"omitted_test_word\", \"n3_convention\", \"simplicity_pair_word\"]}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/shortest_binary_independence_checks.json",
+      "output_sha256": "c46457006ad66b53adb456a036fc956ddf7a7c78bc982b3d7ad5cbfda312449e"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_optimal_saturation_history"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T09:05:20.218750+00:00",
+      "seconds": 1.3439999999973224,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"records\": [{\"n\": 7, \"d\": 3, \"rt\": 6, \"P\": 6, \"proper_stages\": 5, \"normalized_rank\": 2, \"all_shortest_words\": 3, \"optimal_endpoint_chains\": 3, \"full_inverse_ranks\": [3, 4, 4], \"augmented_actual_images\": 127, \"all_minimum_forward_vertices\": 9, \"centered_block_minor\": 7}, {\"n\": 15, \"d\": 4, \"rt\": 14, \"P\": 14, \"proper_stages\": 13, \"normalized_rank\": 3, \"all_shortest_words\": 8, \"optimal_endpoint_chains\": 1, \"full_inverse_ranks\": [4, 4, 4, 4, 4, 4, 4, 4], \"augmented_actual_images\": 32767, \"all_minimum_forward_vertices\": 15, \"centered_block_minor\": 225}], \"all_original_label_subset_rank_controls\": 919000, \"augmented_full_forward_vertices\": 32894, \"literal_shortest_original_letters\": 130, \"boundary\": \"finite n7/15 low-dimensional ALL optimal histories; general permutation-saturation and complete-reachability transfer proved separately; no arbitrary-d family or formal kernel\", \"status\": \"COMPUTATIONALLY VERIFIED finite d3/d4; general paper theorem separate; no formal verification\", \"rejected_corruptions\": [\"rank\", \"optimal_mask\", \"word_omission\", \"permutation_row\", \"complete_reachability\", \"scope\"]}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/optimal_saturation_history_checks.json",
+      "output_sha256": "999028b21a3bb7ee90654ecf1e6a7c8fc367f852288814d51775d8573fceb42c"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_optimal_counter_history"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T09:30:57.618853+00:00",
+      "seconds": 1.8590000000040163,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"parameters\": 11, \"maximum_n\": 4095, \"original_row_state_controls\": 163716, \"all_counter_phase_label_controls\": 163584, \"all_subset_bad_invariant_edges\": 31448, \"literal_whole_reset_letters\": 494, \"finite_all_subset_scopes\": [{\"d\": 2, \"n\": 3, \"all_subset_vertices\": 7, \"optimal_vertices\": 3, \"all_shortest_labeled_words\": 1, \"augmented_actual_images\": 7}, {\"d\": 3, \"n\": 7, \"all_subset_vertices\": 127, \"optimal_vertices\": 7, \"all_shortest_labeled_words\": 2, \"augmented_actual_images\": 127}, {\"d\": 4, \"n\": 15, \"all_subset_vertices\": 32767, \"optimal_vertices\": 15, \"all_shortest_labeled_words\": 24, \"augmented_actual_images\": 32767}], \"boundary\": \"all-d theorem is PAPER; parameter controls through n4095 and exhaustive all-subset scopes n3/7/15 are computational, not a formal kernel\", \"status\": \"COMPUTATIONALLY VERIFIED independent bounded controls; all-d proof paper, not formal\", \"rejected_corruptions\": [\"dimension\", \"word_count\", \"wrong_carry\", \"reset_letter\", \"row_hash\", \"actual_count\"]}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/optimal_counter_history_checks.json",
+      "output_sha256": "fc9c67a716e94fa9e5c50e952a0bc6862b6f5eaccb29c320973a04f78eaadbd7"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_antipodal_corank_slack"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T10:33:43.304587+00:00",
+      "seconds": 3.3589999999967404,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"parameters\": 36, \"maximum_n\": 2050, \"macro_state_letter_controls\": 2881864, \"finite_reverse_vertices\": 277186, \"finite_weighted_reverse_vertices\": 278690, \"bounded_slack_vertices\": 394, \"corruptions_rejected\": 7, \"boundary\": \"paper ALL odd m>=3; finite exact rt/minimum-f m3/5/7/9 only; no formal kernel\"}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/antipodal_corank_slack_checks.json",
+      "output_sha256": "9b4a398c5893f6454ecf820aa19705592450ed9e2f5c071325db2e38fa1adb20"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_avoid_compress_sharp_faces"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T11:18:45.277579+00:00",
+      "seconds": 2.563000000001921,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"parameters\": 381, \"maximum_n\": 1025, \"safe_bfs_vertices\": 26992, \"safe_bfs_edges\": 53222, \"macro_state_letter_controls\": 17305572, \"literal_reset_letters\": 109418, \"full_reset_scopes\": 73, \"full_reset_vertices\": 9926, \"corruptions_rejected\": 9, \"boundary\": \"all-n proof is paper; exact ac and original-word certificates checked only listed parameters; finite rt only n<=10; no formal kernel; Cerny OPEN\"}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/avoid_compress_sharp_faces_checks.json",
+      "output_sha256": "a777b8e5ae6f5a3795e7b983599dc9ac551fe2d8ba88aad9eb98b012de5cf2c5"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_avoid_compress_third_face"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T11:40:30.805854+00:00",
+      "seconds": 1.4210000000020955,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"parameters\": 270, \"maximum_n\": 1025, \"finite_counterexample\": {\"verified\": true, \"ac\": 5, \"rt\": 18, \"safe_vertices\": 7, \"safe_edges\": 10, \"full_vertices\": 43, \"full_edges\": 84}, \"safe_bfs_vertices\": 105037, \"safe_bfs_edges\": 192914, \"original_macro_state_letter_controls\": 18484601, \"rooted_states\": 10721, \"literal_reset_letters\": 208132, \"full_reset_scopes\": 12, \"full_reset_vertices\": 16274, \"corruptions_rejected\": 9, \"boundary\": \"PROVED paper r>=1 odd M>=5; listed exact ac and charged original-word reset certificates COMPUTATIONALLY VERIFIED; missing parity OPEN; no formal kernel; Cerny OPEN\"}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/avoid_compress_third_face_checks.json",
+      "output_sha256": "732552f4fd8d3c7f606fb1bd776acd550bbab1dd2add5293cc7c3335b0d63108"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_avoid_compress_all_gaps"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T12:02:47.018399+00:00",
+      "seconds": 3.0930000000007567,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"parameters\": 48, \"maximum_n\": 1025, \"maximum_g\": 11, \"safe_vertices\": 542068, \"safe_edges\": 732192, \"cell_identity_controls\": 12234, \"original_macro_state_letter_controls\": 26538765, \"rooted_states\": 5694, \"literal_reset_letters\": 20894, \"full_reset_scopes\": 5, \"full_reset_vertices\": 10719, \"corruptions_rejected\": 9, \"boundary\": \"PROVED paper r>=1 g>=2 k>=2; only listed g>=3 finite scopes newly checked; fixed-cardinality infinite progressions sharp, remaining n and general Cerny OPEN; no formal kernel\"}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/avoid_compress_all_gaps_checks.json",
+      "output_sha256": "f3a67b079353e37a908187728860662ea9a6c12edbfea4157e71387641c1883f"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_permutation_completion_boundary"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T12:44:46.631402+00:00",
+      "seconds": 1.5630000000019209,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"all_maps\": 3412, \"closest_permutations\": 24570, \"subset_compatibility_controls\": 104328, \"kernel_swap_controls\": 79198, \"coordinate_error_controls\": 604308, \"binary_inputs\": 28816, \"independent_group_elements\": 604128, \"independent_image_vertices\": 231504, \"family_parameters\": 45, \"maximum_n\": 4096, \"actual_monoid_scopes\": 8, \"actual_monoid_elements\": 104, \"corruptions_rejected\": 11, \"boundary\": \"All-n arbitrary-rank necessary theorem and exact neutral compatibility PROVED paper; binary SC inverse counterfamily every n>=3 PROVED paper; only listed finite scopes COMPUTATIONALLY VERIFIED, no formal kernel, priority and Cerny OPEN\"}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/permutation_completion_boundary_checks.json",
+      "output_sha256": "9cce38fd49a0ef7140b566795d040f4470414cd0e512bc02e61a4385c8e6d297"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_original_kernel_graph_boundary"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T13:24:49.395999+00:00",
+      "seconds": 1.9839999999967404,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"labeled_binary_inputs\": 66281, \"chain_parameters\": 45, \"maximum_n\": 4096, \"literal_reset_letters\": 1558, \"chain_words_enumerated\": 252, \"terminal_report\": {\"rt\": 19, \"subset_vertices\": 56, \"enumerated_words\": 2046, \"pair_vertices\": 15}, \"corruptions_rejected\": 12, \"boundary\": \"General forward-congruence depth/forest lemma and all-n failure PROVED paper; finite n6 original terminal connectivity7, rt below square; only listed finite scopes COMPUTATIONALLY VERIFIED, priority and Cerny OPEN, no formal kernel\"}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/original_kernel_graph_boundary_checks.json",
+      "output_sha256": "0566c0dbe4bbcbef809703eefe1f91eff736cc1c73221e02a968341864609eb3"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_compress_other_lower_bound"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T14:11:06.897850+00:00",
+      "seconds": 9.093999999997322,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"parameters\": 67, \"maximum_n\": 3072, \"pair_edge_controls\": 11928406, \"literal_upper_state_letter_controls\": 32776, \"small_forward_and_reverse_scopes\": 10, \"literal_n9_words_below_lower_bound\": 4094, \"corruptions_rejected\": 10, \"boundary\": \"PROVED paper EVERY p>=3, n3p: exact specified-state mu0=4p, general layered directed-pair lower certificate. Only recorded finite scopes COMPUTATIONALLY VERIFIED; prior actual square reset unchanged, ordinary all-n rt and general Cerny OPEN, priority OPEN, no formal kernel\"}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/compress_other_lower_bound_checks.json",
+      "output_sha256": "492b17bc7cd413f71fa87906af39c6d1a1fd4c2fed4a1b31202c377e5928dd6d"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_layered_pair_barrier_lean"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T14:18:23.102730+00:00",
+      "seconds": 0.875,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"status\": \"FORMALLY VERIFIED\", \"compiler_version\": \"Lean (version 4.19.0, x86_64-w64-windows-gnu, commit 6caaee842e94, Release)\", \"source\": \"direct_attack/LayeredPairBarrier.lean\", \"source_sha256\": \"2c3fa3ced68e0c5e8b230d9977f3bec2ad0492a30b8974a2f817971a6e692a34\", \"printed_axioms\": {\"Orion.DirectAttack.layered_invariants\": [\"propext\", \"Classical.choice\", \"Quot.sound\"], \"Orion.DirectAttack.first_collapse_cost\": [\"propext\", \"Classical.choice\", \"Quot.sound\"]}, \"boundary\": \"Lean kernel verifies only abstract layered graph-certificate soundness from explicit local entrance hypotheses. The concrete all-p family conditions remain PROVED paper plus finite computational controls; not a formal automaton instantiation, no unrestricted reset bound, priority and general Cerny OPEN.\"}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/layered_pair_barrier_lean_checks.json",
+      "output_sha256": "b985e98f092c09e1922cdcfb46a96108df2917a689735d31ca4f6cfb5b77ea20"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_corank_one_stability_quotient"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T14:56:15.280517+00:00",
+      "seconds": 3.1719999999986612,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"non_sc_original_monoid_transformations\": 3, \"corruptions_rejected\": 8, \"all_binary_inputs\": 28816, \"sc_inputs\": 12551, \"full_original_monoid_transformations\": 804310, \"all_minimum_rank_transformations_checked\": 60426, \"maximum_n\": 8385, \"unit_original_state_letter_controls\": 2505120, \"root_original_state_letter_controls\": 860228, \"literal_whole_rank_word_state_letter_controls\": 1556448, \"mixed_all_binary_inputs\": 37358, \"mixed_sc_inputs\": 13348, \"mixed_full_original_monoid_transformations\": 661550, \"uniform_minimum_word_kernel_orbit_controls\": 432756, \"boundary\": \"PROVED paper SC defect-one kernel stability, SC all-corank<=1 canonical group quotient and unique minimum-rank kernel; class-size range<=singular-letter count, sharp EVERY s>=1. Independent complete monoids and finite family controls are COMPUTATIONALLY VERIFIED only in recorded scopes. No formal theorem, publication priority or unrestricted reset bound; general Cerny OPEN.\"}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/corank_one_stability_quotient_checks.json",
+      "output_sha256": "19172a3192f1d689138bcb24ab4c143e2350b9e6a32a4d77782ae151a4654061"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_compress_other_short_reset"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T15:19:24.656636+00:00",
+      "seconds": 1.6569999999992433,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"parameters\": 67, \"maximum_n\": 3072, \"original_macro_state_letter_controls\": 35850770, \"literal_reset_state_letter_controls\": 867768, \"small_forward_reverse_subset_scopes\": 5, \"small_complete_subset_vertices\": 16011, \"small_complete_subset_edges\": 32022, \"corruptions_rejected\": 10, \"boundary\": \"PROVED paper EVERY p>=3 actual reflection return and reset upper3p^2+4p-1. Finite small ordinary equality only COMPUTATIONALLY VERIFIED; all-p exact rt remains CONJECTURED, priority and general Cerny OPEN, no formal family proof.\"}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/compress_other_short_reset_checks.json",
+      "output_sha256": "9ace4a25eaeaeb9fbebbffbd66faff0e3cac0618ae171562052e4f60751e1b76"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_annular_multicluster_boundary"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T15:50:12.483584+00:00",
+      "seconds": 1.485000000000582,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"parameters\": 68, \"maximum_n\": 257, \"annular_particle_letter_controls\": 111480, \"total_annular_summands\": 111722, \"root_original_state_letter_controls\": 118151, \"literal_reset_state_letter_controls\": 80498, \"connected_original_kernel_image_edges\": 1072, \"small_ternary_subset_scopes\": 5, \"small_ternary_subset_vertices\": 9864, \"corruptions_rejected\": 8, \"boundary\": \"REFUTED paper unmodified all-cyclic-states annular extension, EVERY n>=3 binary and EVERY m>=2 equal-two-cycle ternary SC sync corank<=1. Finite scope only COMPUTATIONALLY VERIFIED. Original one-cluster lemma not refuted or independently proof-audited here; priority and general Cerny OPEN; no formal claim.\"}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/annular_multicluster_boundary_checks.json",
+      "output_sha256": "fc67209e832c15f4c33cb1c306e20395846429c2cfb9468fe25e5a1a2d3c4227"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_single_fiber_stability_boundary"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T01:40:09.926548+00:00",
+      "seconds": 3.594000000000051,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"arbitrary_inputs\": 745, \"arbitrary_full_original_transformations\": 5616, \"arbitrary_all_original_prefix_pair_controls\": 16766, \"small_inputs\": 50751, \"small_sc\": 15934, \"small_full_original_transformations\": 712892, \"small_all_minimum_rank_kernel_controls\": 67958, \"family_parameters\": 68, \"maximum_n\": 2049, \"original_macro_controls\": 16532, \"instability_particle_controls\": 16660, \"literal_minimum_word_controls\": 38525, \"local_quotient_distance_controls\": 8196, \"all_forward_original_pair_orbits\": 10097, \"all_forward_original_stability_orbits\": 10097, \"family_full_original_transformations\": 24704, \"family_all_minimum_rank_transformations\": 316, \"complete_forward_subset_vertices\": 90, \"corruptions_rejected\": 10, \"boundary\": \"finite independent controls only; all-m family and ANY-alphabet n5 minimality paper proofs, not formalized; nonsynchronizing inputs are not Cerny counterexamples; priority and general Cerny OPEN\"}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/single_fiber_stability_boundary_checks.json",
+      "output_sha256": "ef52dd543ad225ba8c88eeeb587f6fa8e07ead5451f67dadba70bbee3e5598f1"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_full_history_boolean_capacity"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T02:07:11.469196+00:00",
+      "seconds": 0.20299999999997453,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"rational_four_point_faces\": 11132, \"partition_scopes\": 66, \"partition_vertices\": 16332, \"nonpartition_scopes\": 11, \"nonpartition_vertices\": 24564, \"arithmetic_controls\": 12281, \"corruptions_rejected\": [\"partition_dimension\", \"partition_singletons\", \"partition_vertices\", \"partition_bound\", \"nonpartition_dimension\", \"nonpartition_singletons\", \"nonpartition_vertices\", \"nonpartition_bound\", \"faces_maximum_valid\", \"arithmetic_controls\"], \"boolean_minor_dimensions_certified\": 16, \"modulus_prime_trial_divisors\": 999, \"boundary\": \"finite exact real-space and arithmetic controls, not a universal DFA enumeration or formal proof. Infinite shortest-history capacity and low-dimension cost statements are paper proofs; general Cerny OPEN. Negative focused pressure records remain exploratory and are outside this checker.\"}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/full_history_boolean_capacity_checks.json",
+      "output_sha256": "5939fbf3d71736458d0f5d5ef9400c4e1a4366efde022c6a8e1d209a0fd5f9f3"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_history_hyperplane_guards"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T02:38:07.677913+00:00",
+      "seconds": 1.1880000000001019,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"integer_normal_models\": 142, \"boolean_spanning_normal_models\": 74, \"normal_boolean_vertices\": 6004, \"balanced_models\": 11, \"balanced_boolean_vertices\": 24564, \"nonempty_guard_graphs\": 33861, \"admissible_singleton_profiles\": 2096696, \"middle_layer_density_controls\": 1830, \"length_comparisons\": 61, \"corruptions_rejected\": [\"normal_models_vertices\", \"normal_models_boolean_span_rank\", \"normal_models_singletons\", \"balanced_models_normal\", \"balanced_models_history_count_bound\", \"guard_graphs_bipartite_graphs\", \"guard_graphs_admissible_singleton_profiles\", \"guard_graphs_semantic_sha256\"], \"boundary\": \"independent exact finite real-space and graph controls only; not all real normals, all automata, or formal verification. General Cerny and unrestricted ALL/SOME full-history cost/rank remain OPEN. Separate near-critical prefilter/search is outside this checker and remains EXPLORATORY.\"}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/history_hyperplane_guards_checks.json",
+      "output_sha256": "72e51828b4a4a513d9f8f986177c4b86f66bc7a47ee186acd7e427659c821b86"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_nearcritical_n6_history"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T02:38:08.857235+00:00",
+      "seconds": 0.125,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"retained_isomorphism_classes\": 37, \"all_subset_letter_controls\": 4736, \"retained_forward_subset_vertices\": 2037, \"prefix_nodes\": 205, \"prefix_edges\": 168, \"nonzero_integer_minor_certificates\": 43, \"maximum_cut_depth\": 6, \"corruptions_rejected\": [\"wrong_rt\", \"constant_letter\", \"out_of_range\"], \"boundary\": \"COMPUTATIONALLY VERIFIED: ANY globally shortest full inverse history in EACH of these37 retained binary SC cases has real rank6, by complete forward image distances and ALL optimal prefix branches terminated at a nonzero integer6-minor. The native complete covering prefilter and its class completeness are NOT audited here; their negative coverage remains EXPLORATORY. No arbitrary-alphabet, all-n, formal, or general Cerny proof.\"}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/nearcritical_n6_history_checks.json",
+      "output_sha256": "5152a99a51933101bcf8e39346c386e833de3ffe8ffdd93838a0cb9ac2aa5835"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_balanced_history_rigidity"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T03:06:39.048278+00:00",
+      "seconds": 0.6880000000001019,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"scopes\": 4, \"ordered_form_pairs\": 176088, \"boolean_vertex_product_controls\": 15756432, \"free_restriction_pair_controls\": 176088, \"covering_pairs\": 32, \"corruptions_rejected\": [\"zero_sum_nonzero_forms\", \"covering_pairs\", \"vertices_sha256\", \"semantic_sha256\", \"ordered_form_pairs\", \"boolean_vertices\"], \"boundary\": \"independent exact finite integer-form Boolean covering controls only; the arbitrary-real classification and saturated-history implication are paper proofs, not formal or all-DFA verification. General Cerny and unrestricted cost/rank OPEN; separate negative pressure not part of this checker.\"}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/balanced_history_rigidity_checks.json",
+      "output_sha256": "62f7732adc8ebe9d95ec0fc051c339e743d2dbf065a8cfed97181ce13d69f6de"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_binary_n6_history_cover"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T03:06:39.742870+00:00",
+      "seconds": 2.686999999999898,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"first_map_orbits\": 130, \"all_labeled_first_maps_covered\": 46656, \"literal_conjugation_controls\": 93600, \"retained_isomorphism_classes\": 37, \"retained_conjugacy_controls\": 423, \"complete_inverse_replay\": {\"verified_complete_inverse_replay\": true, \"covering_pairs\": 6065150, \"synchronizing_pairs_including_non_sc\": 4972699, \"high_length_records\": 423, \"maximum_rt\": 25}, \"checker_sha256\": \"f8a10811db09233b9e9bd76d98f2bb721ebc6e16da347ae00d4249a316b525eb\", \"native_source_sha256\": \"a3d6467a806df1427de3df10290040330191b8adeaa4f6faa2791fce5de1e806\", \"native_binary_sha256\": \"b8b52c54c7d6ea4e97ec9e02af6d12d336e3d3db6c5349983ed10f903b397ce2\", \"input_sha256\": \"910d7e78e29a406645a028d8fc3a5cc59f32c3229f6440b6ba7c4da605064dbc\", \"exact_minor_certificates\": 43, \"corruptions_rejected\": [{\"name\": \"wrong_retained_length\", \"argv\": [\"<LOCAL_PATH>\", \"<LOCAL_PATH>\"], \"cwd\": \"<LOCAL_PATH>\", \"start_utc\": \"2026-10-02T03:06:41.404789+00:00\", \"seconds\": 0.48399999999946886, \"returncode\": 6, \"stdout\": \"{\\\"unexpected_key\\\":18361181,\\\"rt\\\":21}\\n\", \"stderr\": \"\", \"input_sha256\": \"adcb8af6c1c48077cf6ff81195354708e20280b558bf0319b439d4e6fb64014c\", \"expected_rejection\": true}, {\"name\": \"replaced_high_input\", \"argv\": [\"<LOCAL_PATH>\", \"<LOCAL_PATH>\"], \"cwd\": \"<LOCAL_PATH>\", \"start_utc\": \"2026-10-02T03:06:41.900066+00:00\", \"seconds\": 0.48399999999946886, \"returncode\": 7, \"stdout\": \"{\\\"wrong_retained_key\\\":18335808,\\\"rt\\\":1}\\n\", \"stderr\": \"\", \"input_sha256\": \"a917cb1f0e34aeaf48b942827458d33e89e6ed07f83e83464feeaa13b014989d\", \"expected_rejection\": true}, {\"name\": \"duplicate_high_input\", \"argv\": [\"<LOCAL_PATH>\", \"<LOCAL_PATH>\"], \"cwd\": \"<LOCAL_PATH>\", \"start_utc\": \"2026-10-02T03:06:42.385414+00:00\", \"seconds\": 0.0, \"returncode\": 5, \"stdout\": \"\", \"stderr\": \"\", \"input_sha256\": \"b335c59f1b69c62d04189b00535aa0dff409cd88e15240ff29211178c2303def\", \"expected_rejection\": true}, {\"name\": \"wrong_orbit_count\", \"argv\": [\"<LOCAL_PATH>\", \"<LOCAL_PATH>\"], \"cwd\": \"<LOCAL_PATH>\", \"start_utc\": \"2026-10-02T03:06:42.401140+00:00\", \"seconds\": 0.0, \"returncode\": 3, \"stdout\": \"\", \"stderr\": \"\", \"input_sha256\": \"c9c1306fd9191f603ffd2b050171a7b66b837627d6a099fd5f181795a2c5b2f5\", \"expected_rejection\": true}], \"boundary\": \"COMPUTATIONALLY VERIFIED: ALL synchronizing6-state DFAs with at most2 letters satisfy L<=(n-1)(d-1) for ANY globally shortest FULL inverse history. Distinct rows: complete first-map conjugation cover and independent inverse replay, plus exact ALL-prefix integer-minor audits of ALL37 high-length classes. Duplicate rows are one-letter DFAs with L<=5; prior paper d<=4 bound and the trivial d>=5 target cover them. For all L<=20, prior paper d<=4 bound plus d>=5 target applies. All423 L>20 records have d6 and L<=25. Covering counts overlap. This is finite/computational, not an arbitrary-alphabet, all-n, or formal proof; general Cerny and universal ALL/SOME cost/rank OPEN.\"}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/binary_n6_history_cover_checks.json",
+      "output_sha256": "57cb4a360259af0583b2b18f102c02793175e169cb7ab2f42f06a8d3172d6a39"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_compress_other_non_sc_boundary"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T03:53:48.090109+00:00",
+      "seconds": 0.4530000000013388,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"family_parameters\": 66, \"unary_maps\": 3412, \"noncyclic_height_controls\": 8268, \"small_alphabets\": {\"n\": 3, \"alphabet_sizes\": [0, 1, 2, 3], \"ordered_alphabets\": 20440, \"star_controls\": 61320, \"compressible_marked_states\": 59811, \"synchronizing_alphabets\": 18933, \"mu_histogram\": {\"1\": 55665, \"2\": 4146}, \"semantic_sha256\": \"7bb507671b7e3566662637117afaad0bb43a76dd14e0d7e516c6ba84b81daaa7\"}, \"retained_certificates\": 24, \"corruptions\": 8}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/compress_other_non_sc_boundary_checks.json",
+      "output_sha256": "7649f63a8e296430eac8047c7b851762a8951ae2c1e31af64aeb5bbf31411c7f"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_singular_stationary_word_cost"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T04:18:25.229667+00:00",
+      "seconds": 1.4839999999985594,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"all_literal_words\": 131053, \"all_suffix_pair_paths\": 65519, \"strictly_separated_singular_words\": 130918, \"attainment_scopes\": 34, \"paid_support_state_letters\": 9830808, \"paid_reset_state_letters\": 19369452, \"corruptions\": 12}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/singular_stationary_word_cost_checks.json",
+      "output_sha256": "d98ad197fd5118a2c3260100a9fe7eacb12fc6fa45b3581c286abe689f3173ec"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_one_cluster_annular_controls"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T04:47:17.126442+00:00",
+      "seconds": 0.8130000000001019,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"annular_controls\": 3720, \"annular_summands\": 37889, \"actual_word_controls\": 107040, \"nontrivial_memberships\": 60, \"synchronizing_cases\": 16, \"relative_extension_certificates\": 232, \"corruptions_rejected\": [0, 1, 2], \"nonzero_annular_sums\": 2271, \"proper_nonzero_memberships\": 2, \"boundary\": \"Independent exact finite fixed-seed mixed-control annular membership, actual-word generation bounds, complete cycle-subset extension and charged common reset certificates in16 retained inputs only. General one-cluster upper proof is separately reconstructed on paper, not formally verified or all-parameter computationally checked; source lower-bound section not audited; general Cerny OPEN.\"}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/one_cluster_annular_controls_checks.json",
+      "output_sha256": "c43ca47e54ac82ccf6566ec730a3502c3ae2409cde7b16dd77126dd77069bbff"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_paid_one_cluster_word"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T05:22:31.760550+00:00",
+      "seconds": 0.3440000000009604,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"cases\": 293, \"cycle_extensions\": 5758, \"macro_state_letter_controls\": 5713, \"literal_state_letter_controls\": 283495, \"obstruction_words\": 542, \"qualifying_formula_cases\": 166, \"cases_with_every_original_letter_multicycle\": 15, \"boundary\": \"Independent finite original-word macro, ALL cycle-subset paid extensions, literal common reset controls and ALL short-word bridge obstructions at n4/n5. Paper all-parameter conditional refinement not formal. This refutes the worst-case NONCONSTANT FORMULA bridge only, not all one-cluster-word strategies. General Cerny OPEN.\", \"corruptions_rejected\": [0, 1, 2, 3, 4, 5, 6, 7]}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/paid_one_cluster_word_checks.json",
+      "output_sha256": "690cb7248189ac9d0d7f613d0096cfd5ff1eaee1ac45fe47ef88869a44f6e0d9"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_weak_stationary_linear_cost"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T05:52:27.432629+00:00",
+      "seconds": 2.1090000000003783,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"parameters\": 63, \"maximum_n\": 257, \"closed_row_vertices\": 7308, \"closure_edges\": 14616, \"all_short_singular_row_classes\": 6031, \"permutation_row_classes\": 63, \"supported_words\": 2427, \"literal_particle_letter_controls\": 23497012, \"boundary\": \"Independent exact complete full-Q ROW orbit closure and Bellman shortest costs in63 retained parameters, covering ALL words in each fixed family input. Exact separator and rational stationary mixture, literal reset and support SC/sync. All-n theorem separately PROVED paper, not formal or all-parameter computational proof. General Cerny OPEN; only universal maximum support n bridge refuted.\", \"corruptions_rejected\": [0, 1, 2, 3, 4, 5, 6, 7]}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/weak_stationary_linear_cost_checks.json",
+      "output_sha256": "9a93c4470f546f00add992b4d7821048835b0e6fe3c43e02c8ebbbc6a3974a2d"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_almost_circular_returns"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T06:16:35.623452+00:00",
+      "seconds": 1.0,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"cases\": 872, \"sync\": 685, \"cf_only_square_failures\": 100, \"bellman_edges\": 277020, \"literal_particle_letter_controls\": 173987, \"counter_costs\": {\"original\": 25, \"cf_only\": 25, \"all_three\": 24, \"entered_cf\": 26, \"entered_all_three\": 25}, \"boundary\": \"Independent complete normal-form permutation coverage n3..7; ALL subset positive-cost Bellman certificates and literal paid returns. All-n qualitative equivalence separately PROVED paper; c/f-only square shortcut REFUTED at n6. No general paid square or formal proof; Cerny OPEN.\", \"corruptions_rejected\": [0, 1, 2, 3, 4, 5, 6, 7]}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/almost_circular_returns_checks.json",
+      "output_sha256": "79cadeca8e2ac5eecd0e062813bf2a1c496284f0d23a8c6faf42fd83a6174471"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_bounded_cerny_returns"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T06:34:51.222370+00:00",
+      "seconds": 1.8130000000019209,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"parameters\": 11, \"caps\": 88, \"finite_entered_square_failures\": 66, \"positive_cost_bellman_edges\": 1550308, \"zero_cost_lower_potential_edges\": 65504, \"literal_particle_letter_controls\": 127934, \"n4_entered_all_three\": 11, \"boundary\": \"ALL finite subset Bellman costs n4..14/caps1..n-1, independent original-word expansion, and zero-cost telescoping b-count lower potentials. The all-n obstruction is PROVED paper separately, without novelty or formal claim. General Cerny OPEN.\", \"corruptions_rejected\": [0, 1, 2, 3, 4, 5, 6, 7]}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/bounded_cerny_returns_checks.json",
+      "output_sha256": "edc5b626a44abd6c4e8e5dc77c81f05331e64c56de74e7230c6e630400106bca"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_fixed_root_cycle_extension"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T07:23:26.055674+00:00",
+      "seconds": 1.2190000000009604,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"inputs\": 219, \"complete_binary_inputs\": 159, \"SC_inputs\": 146, \"multicycle_permutation_inputs\": 94, \"multiple_letter_inputs\": 21, \"subset_controls\": 16411, \"root_empty_controls\": 645, \"root_full_controls\": 679, \"root_mixed_controls\": 15087, \"max_paid_preparation_depth\": 127, \"literal_particle_letter_controls\": 2247092, \"counter_bellman_edges\": 30, \"counter_min_extension\": 6, \"boundary\": \"Independent complete binary n2..5 coverage, original-label witnesses for ALL proper subsets of retained n<=10 inputs, sampled larger/multiple-letter controls, strict cycle-distance descent and distinct-cycle cost budget, compatible full reset expansions. Paper arbitrary-n theorem separately PROVED, not FORMALLY VERIFIED or a novelty claim. Dropping fixed-root n-extensibility REFUTED at n4. General Cerny OPEN.\", \"corruptions_rejected\": [0, 1, 2, 3, 4, 5, 6, 7]}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/fixed_root_cycle_extension_checks.json",
+      "output_sha256": "79b86731578862fa4bfd4ba49d0510083dc899e3537d1ce61352d39a2a9b8171"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_coprime_root_cycle_extension"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T07:50:19.032095+00:00",
+      "seconds": 1.8279999999977008,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"inputs\": 398, \"complete_binary_inputs\": 348, \"SC_inputs\": 293, \"nonadjacent_coprime_SC_inputs\": 207, \"multicycle_b_SC_inputs\": 127, \"subset_controls\": 26762, \"max_preparation_depth\": 2, \"literal_particle_letter_controls\": 1316620, \"counter_extension_edges\": 32, \"counter_original_edges\": 52, \"counter_min_seed_extension\": 6, \"counter_rt\": 13, \"counter_reset_word\": [0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0], \"counter_growth_costs\": [1, 6, 2, 4], \"boundary\": \"Independent complete coprime binary n2..5 cover and original literal ALL-subset witnesses on retained inputs through n10, reusing only previously independent checker primitives. Finite exact n5 noncoprime seed extension6>5 and ordinary rt13<16. All-n coprime subclass theorem PROVED paper, not formal or novelty. General Cerny OPEN.\", \"corruptions_rejected\": [0, 1, 2, 3, 4, 5, 6, 7]}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/coprime_root_cycle_extension_checks.json",
+      "output_sha256": "d41d7a08b88db5a5a8a71e08b6f00af7039896a4945697783e8ff2b90d359afe"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_kari_inverse_shrink"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T08:21:00.719861+00:00",
+      "seconds": 1.6880000000019209,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"closed_cut_states\": 35, \"cut_edges\": 70, \"nondecreasing_cut_edges\": 58, \"max_monotone_inverse_size\": 5, \"lex_bellman_edges\": 126, \"original_bellman_edges\": 114, \"literal_particle_letter_controls\": 1902, \"singleton_lex\": [[1, 28], [1, 26], [1, 26], [1, 27], [1, 25], [1, 27]], \"optimal_cost\": 25, \"minimum_shrink_count\": 1, \"inverse_cardinalities\": [1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 5, 5, 4, 4, 5, 5, 5, 6], \"boundary\": \"Independent exact finite original Kari rows: closed all-singleton cut forbids monotone inverse resets at ANY length; reach witnesses certify exact35 reachable masks. ALL64 lexicographic shrink/length and original-cost Bellman controls, one-shrink optimal cost25 reset. Separate Lean all-word cut plus literal witness are formally verified; ordinary threshold lower bound remains computational, not formal. General Cerny OPEN.\", \"corruptions_rejected\": [0, 1, 2, 3, 4, 5, 6, 7], \"formal_source_sha256\": \"6d82c55ffbb1ba7daf153d24f26f8cb3c1d3ae81e79877025173c3d5eea4b602\"}\n{\"verified\": true, \"status\": \"FORMALLY VERIFIED\", \"source\": \"direct_attack/KariInverseShrink.lean\", \"printed_axioms\": {\"KariInverseShrink.no_monotone_inverse_reset\": [\"propext\", \"Quot.sound\"], \"KariInverseShrink.literal_preimage_correct\": [], \"KariInverseShrink.reset_needs_shrink\": [\"propext\", \"Quot.sound\"], \"KariInverseShrink.witness_resets\": [\"propext\"], \"KariInverseShrink.witness_one_shrink\": [\"propext\"], \"KariInverseShrink.witness_cost\": [\"propext\"]}, \"boundary\": \"Lean4.19 kernel, Std only, decide (not native_decide), no sorry/admit or custom axioms. Verifies the literal n6 preimage-mask cut for ALL word lengths and cost25/one-shrink witness. It does not formally verify the optimal-cost lower bound, any arbitrary-n class proof or general Cerny.\"}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/kari_inverse_shrink_checks.json",
+      "output_sha256": "f6b65e447418e1449d36500cac5c93202cb691fb9a632a25962ae24539f6a57e"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_kari_shrink_products"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T08:58:54.873329+00:00",
+      "seconds": 4.5,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"parameters\": 20, \"literal_all_state_parameters\": [1, 2, 3, 4], \"base_cut_edges\": 128, \"base_bellman_edges\": 362, \"base_particle_letters\": 744, \"symbolic_particle_letters\": 191640, \"literal_product_particle_letters\": 608424, \"last_negative_bridges\": [{\"S\": 45, \"T\": 44, \"letter\": 0}, {\"S\": 47, \"T\": 60, \"letter\": 0}], \"rectangle_d2_states\": 4096, \"rectangle_d2_bellman_edges\": 81900, \"boundary\": \"Independent all64 base positive-cost Bellman/cut/phase controls and20 parameter schedules; ALL Cartesian states d1..4 literally reset in both directions, larger d only exact rectangle arithmetic. ALL-d minimum-shrink/cost/max-loss tradeoff is PROVED paper from coordinate projections and formally verified literal base facts, not a formal product theorem or computational all-n cover. General Cerny OPEN.\", \"corruptions_rejected\": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], \"formal_source_sha256\": \"3ce2361202c7ba27745f9da05492d2251a6d80cc0a58ffa3034a27e5f2fb7e3f\"}\n{\"verified\": true, \"status\": \"FORMALLY VERIFIED\", \"source\": \"direct_attack/KariShrinkProducts.lean\", \"printed_axioms\": {\"KariInverseShrink.literal_preimage_correct\": [], \"KariInverseShrink.reset_needs_shrink\": [\"propext\", \"Quot.sound\"], \"KariProductBase.reset_length_lower\": [\"propext\", \"Quot.sound\"], \"KariProductBase.to45_length_lower\": [\"propext\", \"Quot.sound\"], \"KariProductBase.mono44_length_lower\": [\"propext\", \"Quot.sound\"], \"KariProductBase.last44_length_lower\": [\"propext\", \"Quot.sound\"], \"KariProductBase.last_negative_word\": [\"propext\", \"Quot.sound\"], \"KariProductBase.single_negative_word\": [\"propext\", \"Quot.sound\"], \"KariProductBase.one_phase_witness\": [\"propext\"], \"KariProductBase.two_phase_witness\": [\"propext\"]}, \"boundary\": \"Lean4.19/Std/decide kernel: literal n6 ALL-word reset length>=25, any last inverse decrease is45->44 or47->60, a sole decrease is47->60, any reset last45->44 has length>=27 via16+1+10, phase witnesses25/27. Arbitrary-d Cartesian lifting is PAPER, not formal. No sorry/admit/native_decide/custom axioms.\"}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/kari_shrink_products_checks.json",
+      "output_sha256": "3120843a8adb2cb1425a2457c9f8249022cdbcef77310415df871574f6250720"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_original_defect_reversal"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T09:46:47.573212+00:00",
+      "seconds": 4.7959999999984575,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"inputs\": 430, \"complete_binary\": 388, \"SYNC\": 309, \"multidefect_SYNC\": 37, \"all_original_multicluster_SYNC\": 133, \"nonpermutation_correctors\": 4, \"subset_witnesses\": 18780, \"negative_changes_flipped\": 9403, \"monotone_literal_witnesses\": 18780, \"high_indegree_balanced_SYNC\": 5, \"max_short_change\": 4, \"max_extension\": 5, \"pair_bellman_edges\": 319898, \"literal_particle_letters\": 481632, \"counter_bellman_edges\": 32, \"paid_counter_extension\": 6, \"cerny_reversal_parameters\": 19, \"cerny_reversal_bellman_edges\": 89140, \"cerny_reversal_literal_weighted_controls\": 38639553, \"boundary\": \"Independent positive integer defect balance, complete388 binary n2..5,35 multi-defect samples plus2 explicit controls and5 high-indegree balanced translation controls; proper-subset witnesses and ONE paid max-indegree-seeded square checked. Existing n5 cost2 corrector stage6 reused;19 complete retained Cerny row graphs certify suffix2n-3 through n257. Arbitrary-n positive class/reversal-cost results PROVED paper, no novelty/formal/general Cerny proof.\", \"corruptions_rejected\": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/original_defect_reversal_checks.json",
+      "output_sha256": "dd02e7bdcb2539fb4fa57ccef5cd2b7b109aba7c77f3131b3d2eb0d5514936ec"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_binary_balancing_boundary"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T10:03:40.307625+00:00",
+      "seconds": 0.07800000000133878,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"inputs\": 7508, \"eligible\": 388, \"dual_infeasible\": 7120, \"negative_state_duals\": 5989, \"positive_state_duals\": 1131, \"literal_composition_controls\": 74420, \"complete_scopes\": [{\"n\": 2, \"inputs\": 2, \"eligible\": 1, \"negative_duals\": 1, \"positive_duals\": 0}, {\"n\": 3, \"inputs\": 18, \"eligible\": 3, \"negative_duals\": 12, \"positive_duals\": 3}, {\"n\": 4, \"inputs\": 288, \"eligible\": 24, \"negative_duals\": 216, \"positive_duals\": 48}, {\"n\": 5, \"inputs\": 7200, \"eligible\": 360, \"negative_duals\": 5760, \"positive_duals\": 1080}], \"boundary\": \"Independent exact7508 canonical binary matrix cover n2..5, complete row/permutation counts and single-coordinate Farkas duals for7120 infeasible inputs,388 positive alpha=beta_b=1 witnesses. No LP/gen/solver import, no ordinary threshold rerun, no ALLn computational/formal claim. ALLn equivalence is PROVED paper; general Cerny OPEN.\", \"corruptions_rejected\": [0, 1, 2, 3, 4, 5, 6, 7]}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/binary_balancing_boundary_checks.json",
+      "output_sha256": "ccd9aa3dd4f301ad2cd59e2a3bc48c38e9dbf65179194c566d67f10df2ac4d06"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.check_moving_root_paid_compensation"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T10:40:38.643850+00:00",
+      "seconds": 9.578000000001339,
+      "returncode": 0,
+      "stdout": "{\"verified\": true, \"inputs\": 213, \"SYNC\": 203, \"permutation_quotients\": 10, \"coprime_square_inputs\": 146, \"proper_core_extensions\": 16628, \"pair_bellman_edges\": 1132632, \"avoidance_bellman_edges\": 14336, \"literal_particle_controls\": 84795818, \"boundary\": \"Independent213 parameter inputs: ALL d at M3..20 plus selected31/63/127/256; positive-original-a exact integer balance, literal avoid word, complete pair and small avoidance Bellman, order-two permutation quotient, complete small/64 large proper-core extensions and ONE paid compatible square on coprime inputs. Generator/solver not imported. ALLn math is PROVED paper, not formal; noncoprime family square/general Cerny OPEN here. No weaker-stationarity/cost conflation or novelty claim.\", \"corruptions_rejected\": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]}\n",
+      "stderr": "",
+      "capture_kind": "literal subprocess capture",
+      "output_path": "direct_attack/data/moving_root_paid_compensation_checks.json",
+      "output_sha256": "3d9188eff7499a8d6c33fddb4f87356d14762bad5e95bd3e926ec5e55b4faabb"
+    }
+  ],
+  "all_passed": true,
+  "continuation": {
+    "provenance": "direct_attack/data/return_lift_provenance/audit_continuation.json",
+    "boundary": "Completed 75-check default run, one extended return-checker refresh, and four new checks appended. This is not a second full 79-check run.",
+    "original_checks": 75,
+    "appended_checks": 4,
+    "refreshed_checks": 1
+  },
+  "registered_checks": 138,
+  "continuation_boundary": "checkpoint137 preserved verbatim; ONE new independent213 moving-root parameter checker: ALL d at M3..20 plus selected31/63/127/256,203SYNC/10 order-two permutation quotients/146 compatible coprime square words,16628 proper-core extensions,1132632 pair/14336 avoidance Bellman edges,84795818 literal controls and12 rejected corruptions. ALL-parameter exact avoidance/positive-original-a stationary support cost n+2 and coprime paid square PROVED paper, not formal or novel. Correcting suffix cap n+1, weaker fixing-r stationarity is distinct and nonsynchronizing. Noncoprime square not proved here; general Cerny OPEN. No full138 rerun; prior literal Kari formal/compiler guards unchanged.",
+  "preserved_previous": [
+    {
+      "path": "direct_attack/data/moving_root_paid_compensation_continuation_provenance/audit_run.json",
+      "sha256": "99d4f15f85f2ca753f93a0f2f71e3d7170f2d5f3ae201808a418d8184d994b36"
+    },
+    {
+      "path": "direct_attack/data/moving_root_paid_compensation_continuation_provenance/reproduction_commands.json",
+      "sha256": "91f1062c1001ae49114d38689b37a1b704251b28c3db18356ec158ab97434fda"
+    },
+    {
+      "path": "direct_attack/data/moving_root_paid_compensation_continuation_provenance/sha256_manifest.json",
+      "sha256": "3489e6b08fe4ffed9e985edc3f797a957301531f7bcff8aabd83d2d1fff182eb"
+    }
+  ],
+  "continued_at_utc": "2026-10-02T10:44:40.223484+00:00"
+}

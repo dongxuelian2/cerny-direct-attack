@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "<PYTHON_RUNTIME>\\python.exe",
+    "-c",
+    "import json; from pathlib import Path; from direct_attack.near_full_search import score; r=Path(\"direct_attack/data/near_full_n18_r5\"); z=json.loads((r/\"best_010.json\").read_text()); v,c=score(z[\"rows\"],5,True); assert v==(12,12) and \"reach_word\" in c; (r/\"protected_peak.json\").write_text(json.dumps(c,indent=2)+chr(10),encoding=\"utf-8\"); print(json.dumps(dict(value=v,reachable=True,compression_word=c[\"compression_word\"],reach_word=c[\"reach_word\"])))"
+  ],
+  "cwd": "<CHECKOUT>",
+  "start_unix": 1790695980.0320106,
+  "seconds": 5.707499265670776,
+  "returncode": 0,
+  "stdout": "{\"value\": [12, 12], \"reachable\": true, \"compression_word\": [1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1], \"reach_word\": [1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0]}\n",
+  "stderr": ""
+}

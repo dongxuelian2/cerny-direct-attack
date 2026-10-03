@@ -1,0 +1,58 @@
+{
+  "verified": true,
+  "checks": 95,
+  "regeneration_commands": 181,
+  "archived": [
+    {
+      "path": "direct_attack/data/short_rooted_continuation_provenance/audit_run.json",
+      "sha256": "c46a5b510d2e4e5ddbfb112ca9bbe01eb51642f07b053965b690f60c5acf02a1"
+    },
+    {
+      "path": "direct_attack/data/short_rooted_continuation_provenance/reproduction_commands.json",
+      "sha256": "85a750cf499cd202367639b9fbec730c7d1f69ba5df5c1110f03b8c57207546a"
+    },
+    {
+      "path": "direct_attack/data/short_rooted_continuation_provenance/sha256_manifest.json",
+      "sha256": "3cb7e421bdc659f97c952dac7e511314b06b8254f65a285403f0b6251a8c4d55"
+    }
+  ],
+  "native_builds": [
+    {
+      "metadata": "direct_attack/data/alternating_frame_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/alternating_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/class_reset_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/complete_policy_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/sparse_policy_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/weighted_class_reset_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    }
+  ],
+  "audit_boundary": "previous 94-check record preserved verbatim; one new literal independent check; 181 regeneration commands unchanged; not a full 95-check rerun",
+  "mathematical_status": "two precise rooted/power proposals REFUTED; bounded exact finite audit; general Cerny OPEN; no new formal verification"
+}

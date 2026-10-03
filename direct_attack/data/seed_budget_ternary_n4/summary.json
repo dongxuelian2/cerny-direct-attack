@@ -1,0 +1,44 @@
+{
+  "arguments": {
+    "n": 4,
+    "alphabet": 3,
+    "count": 100000,
+    "seed": 20261018,
+    "restart": 500,
+    "mode": "exhaustive",
+    "objective": "normal",
+    "out": "direct_attack/data/seed_budget_ternary_n4"
+  },
+  "counts": {
+    "tested": 2763520,
+    "sc_synchronizing": 1825392
+  },
+  "best": [
+    0,
+    2
+  ],
+  "records": [
+    "witness_000.json",
+    "witness_001.json",
+    "witness_002.json"
+  ],
+  "seconds": 60.43799999999828,
+  "histogram": [
+    {
+      "normal_gap": 0,
+      "anchor_gap": 0,
+      "count": 1820568
+    },
+    {
+      "normal_gap": 0,
+      "anchor_gap": 1,
+      "count": 4584
+    },
+    {
+      "normal_gap": 0,
+      "anchor_gap": 2,
+      "count": 240
+    }
+  ],
+  "scope": "Distinct-letter binary cover with overlap or exhaustive designated alphabets; random/adversarial modes are sampled, not nonexistence proofs."
+}

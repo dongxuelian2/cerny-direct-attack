@@ -1,0 +1,62 @@
+{
+  "scope": "all rank-two b rows for this designated a,c pair; not all permutation pairs",
+  "arguments": {
+    "p": 5,
+    "q": 7,
+    "swap_i": 0,
+    "swap_j": 5,
+    "out": "direct_attack\\data\\rank_two_multi_perm_p5_q7.json"
+  },
+  "counts": {
+    "tested": 270204,
+    "synchronizing": 270204
+  },
+  "best": {
+    "max_e": 18,
+    "target": 192,
+    "rt": 12,
+    "images": 79,
+    "a": [
+      1,
+      2,
+      3,
+      4,
+      0,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      5
+    ],
+    "c": [
+      5,
+      1,
+      2,
+      3,
+      4,
+      0,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "b": [
+      8,
+      8,
+      8,
+      8,
+      8,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  }
+}

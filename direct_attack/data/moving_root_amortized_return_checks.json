@@ -1,0 +1,22 @@
+{
+  "verified": true,
+  "inputs": 279,
+  "core_extension_controls": 30180,
+  "two_point_controls": 1281,
+  "one_point_chain_factors": 6240,
+  "two_point_chain_factors": 984,
+  "literal_particle_controls": 58407500,
+  "boundary": "Independent ALL noncoprime SYNC parameter pairs M3..40 plus seven large controls; literal core/full row defects, original-r endpoint, two proportional-budget branches, exact compatible growth sum/word/rotation/reset. No generator/solver/preceding checker imports. PROVED paper all-sync-family square, finite controls COMPUTATIONALLY VERIFIED; not formal, novel or a general Cerny proof.",
+  "corruptions_rejected": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ]
+}

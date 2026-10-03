@@ -1,0 +1,76 @@
+{
+  "counts": {
+    "tested": 8023,
+    "complete": 1262,
+    "incomplete_rejected": 6761,
+    "ordinary_set_policy_checks": 1200
+  },
+  "records": [
+    {
+      "scope": "binary first-map n2",
+      "counts": {
+        "tested": 9,
+        "complete": 4,
+        "incomplete_rejected": 5,
+        "ordinary_set_policy_checks": 4
+      }
+    },
+    {
+      "scope": "binary first-map n3",
+      "counts": {
+        "tested": 182,
+        "complete": 24,
+        "incomplete_rejected": 158,
+        "ordinary_set_policy_checks": 24
+      }
+    },
+    {
+      "scope": "binary first-map n4",
+      "counts": {
+        "tested": 4845,
+        "complete": 164,
+        "incomplete_rejected": 4681,
+        "ordinary_set_policy_checks": 164
+      }
+    },
+    {
+      "scope": "all distinct-letter ternary n3",
+      "counts": {
+        "tested": 2925,
+        "complete": 1008,
+        "incomplete_rejected": 1917,
+        "ordinary_set_policy_checks": 1008
+      }
+    },
+    {
+      "scope": "Cerny with general added map n6",
+      "counts": {
+        "tested": 20,
+        "complete": 20,
+        "incomplete_rejected": 0,
+        "ordinary_set_policy_checks": 0
+      }
+    },
+    {
+      "scope": "Cerny with general added map n8",
+      "counts": {
+        "tested": 20,
+        "complete": 20,
+        "incomplete_rejected": 0,
+        "ordinary_set_policy_checks": 0
+      }
+    },
+    {
+      "scope": "Cerny with general added map n10",
+      "counts": {
+        "tested": 20,
+        "complete": 20,
+        "incomplete_rejected": 0,
+        "ordinary_set_policy_checks": 0
+      }
+    }
+  ],
+  "seconds": 1.4369999999998981,
+  "all_agreed": true,
+  "boundary": "All binary covers through n4 and ternary n3 have independent ordinary-set checks. Larger cases compare two native algorithms; this is not a larger complete automaton enumeration."
+}

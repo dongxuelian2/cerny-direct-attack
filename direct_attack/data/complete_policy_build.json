@@ -1,0 +1,19 @@
+{
+  "argv": [
+    "<CXX_BIN>\\g++.EXE",
+    "-O3",
+    "-std=c++11",
+    "-static-libgcc",
+    "-static-libstdc++",
+    "<CHECKOUT>\\direct_attack\\native_complete_policy.cpp",
+    "-o",
+    "<CHECKOUT>\\direct_attack\\native_build\\complete_policy_425d733022e8eb66.exe"
+  ],
+  "cwd": "<CHECKOUT>",
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "compiler_version": "g++.EXE (tdm64-1) 4.9.2\nCopyright (C) 2014 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+  "source_sha256": "425d733022e8eb66fb438c545ec710d666c1d9411c0558ee7bed2fb8222fb22d",
+  "binary_sha256": "529e8dac94c531095ef4dd1552cbf4d85b7f212998c4222caf40d2e1f05b0f98"
+}

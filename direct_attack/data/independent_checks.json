@@ -1,0 +1,622 @@
+{
+  "profiles": 88,
+  "checked_subsets": 10968,
+  "reports": [
+    {
+      "file": "direct_attack\\data\\bidirectional\\witness_000.profile.json",
+      "n": 6,
+      "rt": 25,
+      "subsets": 63,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\bidirectional\\witness_001.profile.json",
+      "n": 7,
+      "rt": 12,
+      "subsets": 127,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\bidirectional\\witness_002.profile.json",
+      "n": 7,
+      "rt": 17,
+      "subsets": 127,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\bidirectional\\witness_003.profile.json",
+      "n": 7,
+      "rt": 16,
+      "subsets": 127,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n10_ternary_random\\greedy_optimal.profile.json",
+      "n": 10,
+      "rt": 15,
+      "subsets": 1023,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n10_ternary_random\\max_avoiding.profile.json",
+      "n": 10,
+      "rt": 22,
+      "subsets": 1023,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n10_ternary_random\\max_gap.profile.json",
+      "n": 10,
+      "rt": 27,
+      "subsets": 1023,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n10_ternary_random\\max_greedy_max.profile.json",
+      "n": 10,
+      "rt": 22,
+      "subsets": 1023,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n10_ternary_random\\max_greedy_min.profile.json",
+      "n": 10,
+      "rt": 27,
+      "subsets": 1023,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n10_ternary_random\\max_rt.profile.json",
+      "n": 10,
+      "rt": 27,
+      "subsets": 1023,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n3_binary\\max_avoiding.profile.json",
+      "n": 3,
+      "rt": 2,
+      "subsets": 7,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n3_binary\\max_gap.profile.json",
+      "n": 3,
+      "rt": 4,
+      "subsets": 7,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n3_binary\\max_greedy_max.profile.json",
+      "n": 3,
+      "rt": 4,
+      "subsets": 7,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n3_binary\\max_greedy_min.profile.json",
+      "n": 3,
+      "rt": 4,
+      "subsets": 7,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n3_binary\\max_rt.profile.json",
+      "n": 3,
+      "rt": 4,
+      "subsets": 7,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n3_ternary\\max_avoiding.profile.json",
+      "n": 3,
+      "rt": 3,
+      "subsets": 7,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n3_ternary\\max_gap.profile.json",
+      "n": 3,
+      "rt": 4,
+      "subsets": 7,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n3_ternary\\max_greedy_max.profile.json",
+      "n": 3,
+      "rt": 4,
+      "subsets": 7,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n3_ternary\\max_greedy_min.profile.json",
+      "n": 3,
+      "rt": 4,
+      "subsets": 7,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n3_ternary\\max_rt.profile.json",
+      "n": 3,
+      "rt": 4,
+      "subsets": 7,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n4_binary\\best_greedy_square.profile.json",
+      "n": 4,
+      "rt": 9,
+      "subsets": 15,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n4_binary\\global_rank_gap_n.profile.json",
+      "n": 4,
+      "rt": 7,
+      "subsets": 15,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n4_binary\\greedy_optimal.profile.json",
+      "n": 4,
+      "rt": 4,
+      "subsets": 15,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n4_binary\\max_avoiding.profile.json",
+      "n": 4,
+      "rt": 8,
+      "subsets": 15,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n4_binary\\max_gap.profile.json",
+      "n": 4,
+      "rt": 7,
+      "subsets": 15,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n4_binary\\max_greedy_max.profile.json",
+      "n": 4,
+      "rt": 9,
+      "subsets": 15,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n4_binary\\max_greedy_min.profile.json",
+      "n": 4,
+      "rt": 9,
+      "subsets": 15,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n4_binary\\max_rt.profile.json",
+      "n": 4,
+      "rt": 9,
+      "subsets": 15,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n4_binary\\rank_telescoping.profile.json",
+      "n": 4,
+      "rt": 9,
+      "subsets": 15,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n4_binary\\reachable_compression_n.profile.json",
+      "n": 4,
+      "rt": 7,
+      "subsets": 15,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n4_binary\\worst_greedy_square.profile.json",
+      "n": 4,
+      "rt": 9,
+      "subsets": 15,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n4_extremal\\extremal_000.profile.json",
+      "n": 4,
+      "rt": 9,
+      "subsets": 15,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n4_extremal\\extremal_001.profile.json",
+      "n": 4,
+      "rt": 9,
+      "subsets": 15,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n5_binary_cover\\best_greedy_square.profile.json",
+      "n": 5,
+      "rt": 16,
+      "subsets": 31,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n5_binary_cover\\global_rank_gap_n.profile.json",
+      "n": 5,
+      "rt": 9,
+      "subsets": 31,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n5_binary_cover\\greedy_optimal.profile.json",
+      "n": 5,
+      "rt": 3,
+      "subsets": 31,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n5_binary_cover\\max_avoiding.profile.json",
+      "n": 5,
+      "rt": 12,
+      "subsets": 31,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n5_binary_cover\\max_gap.profile.json",
+      "n": 5,
+      "rt": 16,
+      "subsets": 31,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n5_binary_cover\\max_greedy_max.profile.json",
+      "n": 5,
+      "rt": 16,
+      "subsets": 31,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n5_binary_cover\\max_greedy_min.profile.json",
+      "n": 5,
+      "rt": 16,
+      "subsets": 31,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n5_binary_cover\\max_rt.profile.json",
+      "n": 5,
+      "rt": 16,
+      "subsets": 31,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n5_binary_cover\\rank_telescoping.profile.json",
+      "n": 5,
+      "rt": 12,
+      "subsets": 31,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n5_binary_cover\\reachable_compression_n.profile.json",
+      "n": 5,
+      "rt": 9,
+      "subsets": 31,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n5_binary_cover\\worst_greedy_square.profile.json",
+      "n": 5,
+      "rt": 16,
+      "subsets": 31,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n5_extremal\\extremal_000.profile.json",
+      "n": 5,
+      "rt": 16,
+      "subsets": 31,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n5_extremal\\extremal_001.profile.json",
+      "n": 5,
+      "rt": 15,
+      "subsets": 31,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n5_extremal\\extremal_002.profile.json",
+      "n": 5,
+      "rt": 15,
+      "subsets": 31,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n5_extremal\\extremal_003.profile.json",
+      "n": 5,
+      "rt": 15,
+      "subsets": 31,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n5_extremal\\extremal_004.profile.json",
+      "n": 5,
+      "rt": 15,
+      "subsets": 31,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n5_extremal\\extremal_005.profile.json",
+      "n": 5,
+      "rt": 14,
+      "subsets": 31,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n5_extremal\\extremal_006.profile.json",
+      "n": 5,
+      "rt": 14,
+      "subsets": 31,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n5_extremal\\extremal_007.profile.json",
+      "n": 5,
+      "rt": 14,
+      "subsets": 31,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n5_extremal\\extremal_008.profile.json",
+      "n": 5,
+      "rt": 14,
+      "subsets": 31,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n5_extremal\\extremal_009.profile.json",
+      "n": 5,
+      "rt": 14,
+      "subsets": 31,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n5_extremal\\extremal_010.profile.json",
+      "n": 5,
+      "rt": 14,
+      "subsets": 31,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n5_extremal\\extremal_011.profile.json",
+      "n": 5,
+      "rt": 14,
+      "subsets": 31,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n5_extremal\\extremal_012.profile.json",
+      "n": 5,
+      "rt": 14,
+      "subsets": 31,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n5_extremal\\extremal_013.profile.json",
+      "n": 5,
+      "rt": 14,
+      "subsets": 31,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n5_extremal\\extremal_014.profile.json",
+      "n": 5,
+      "rt": 14,
+      "subsets": 31,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n5_extremal\\extremal_015.profile.json",
+      "n": 5,
+      "rt": 14,
+      "subsets": 31,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n6_binary_cover\\best_greedy_square.profile.json",
+      "n": 6,
+      "rt": 25,
+      "subsets": 63,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n6_binary_cover\\global_rank_gap_n.profile.json",
+      "n": 6,
+      "rt": 9,
+      "subsets": 63,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n6_binary_cover\\greedy_optimal.profile.json",
+      "n": 6,
+      "rt": 3,
+      "subsets": 63,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n6_binary_cover\\max_avoiding.profile.json",
+      "n": 6,
+      "rt": 14,
+      "subsets": 63,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n6_binary_cover\\max_gap.profile.json",
+      "n": 6,
+      "rt": 25,
+      "subsets": 63,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n6_binary_cover\\max_greedy_max.profile.json",
+      "n": 6,
+      "rt": 25,
+      "subsets": 63,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n6_binary_cover\\max_greedy_min.profile.json",
+      "n": 6,
+      "rt": 25,
+      "subsets": 63,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n6_binary_cover\\max_rt.profile.json",
+      "n": 6,
+      "rt": 25,
+      "subsets": 63,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n6_binary_cover\\rank_telescoping.profile.json",
+      "n": 6,
+      "rt": 16,
+      "subsets": 63,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n6_binary_cover\\reachable_compression_n.profile.json",
+      "n": 6,
+      "rt": 7,
+      "subsets": 63,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n6_binary_cover\\worst_greedy_square.profile.json",
+      "n": 6,
+      "rt": 19,
+      "subsets": 63,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n6_extremal\\extremal_000.profile.json",
+      "n": 6,
+      "rt": 25,
+      "subsets": 63,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n6_extremal\\extremal_001.profile.json",
+      "n": 6,
+      "rt": 25,
+      "subsets": 63,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n6_extremal\\extremal_002.profile.json",
+      "n": 6,
+      "rt": 23,
+      "subsets": 63,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n6_extremal\\extremal_003.profile.json",
+      "n": 6,
+      "rt": 23,
+      "subsets": 63,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n8_random\\global_rank_gap_n.profile.json",
+      "n": 8,
+      "rt": 18,
+      "subsets": 255,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n8_random\\greedy_optimal.profile.json",
+      "n": 8,
+      "rt": 19,
+      "subsets": 255,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n8_random\\max_avoiding.profile.json",
+      "n": 8,
+      "rt": 28,
+      "subsets": 255,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n8_random\\max_gap.profile.json",
+      "n": 8,
+      "rt": 17,
+      "subsets": 255,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n8_random\\max_greedy_max.profile.json",
+      "n": 8,
+      "rt": 34,
+      "subsets": 255,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n8_random\\max_greedy_min.profile.json",
+      "n": 8,
+      "rt": 33,
+      "subsets": 255,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n8_random\\max_rt.profile.json",
+      "n": 8,
+      "rt": 36,
+      "subsets": 255,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n8_random\\rank_telescoping.profile.json",
+      "n": 8,
+      "rt": 34,
+      "subsets": 255,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\n8_random\\reachable_compression_n.profile.json",
+      "n": 8,
+      "rt": 19,
+      "subsets": 255,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\pair_information\\n3_high.profile.json",
+      "n": 3,
+      "rt": 4,
+      "subsets": 7,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\pair_information\\n3_low.profile.json",
+      "n": 3,
+      "rt": 3,
+      "subsets": 7,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\pair_information\\n4_high.profile.json",
+      "n": 4,
+      "rt": 6,
+      "subsets": 15,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\pair_information\\n4_low.profile.json",
+      "n": 4,
+      "rt": 4,
+      "subsets": 15,
+      "verified": true
+    }
+  ]
+}

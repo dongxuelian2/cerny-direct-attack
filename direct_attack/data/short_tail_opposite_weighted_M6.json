@@ -1,0 +1,1 @@
+{"scope":"Exploratory driver counts; only retained literal minimum cut and reset independently certified","M":6,"proposals":48,"eligible":32,"sync":16,"targets":192,"peak":4,"a":[2,6,1,4,6,5,0],"subset":18,"tau":4,"h":2,"word":[0,0,1,0],"reset_word":[0,0,1,1,0,0,0,1,0,0,0,0,1,0,0],"cut":[[1,2],[3,3],[5,3],[6,2],[9,1],[12,1],[18,0],[32,3],[33,3],[36,2],[64,2]]}

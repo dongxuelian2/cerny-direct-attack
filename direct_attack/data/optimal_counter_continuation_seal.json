@@ -1,0 +1,59 @@
+{
+  "verified": true,
+  "checks": 107,
+  "regeneration_commands": 191,
+  "archived": [
+    {
+      "path": "direct_attack/data/optimal_counter_continuation_provenance/audit_run.json",
+      "sha256": "723216cc1e5a7643dbc80343e0cfd6663aac85f05db5979eb6c986a0d8836dd4"
+    },
+    {
+      "path": "direct_attack/data/optimal_counter_continuation_provenance/reproduction_commands.json",
+      "sha256": "1aa02f3d66eccf7d6a82bd706c762c1350c50ca4ab288b22671242a1445e2a20"
+    },
+    {
+      "path": "direct_attack/data/optimal_counter_continuation_provenance/sha256_manifest.json",
+      "sha256": "10fd29a0a67e1c96d43023222f199c03ab2034b6171436e26624ec0a857797d4"
+    }
+  ],
+  "native_builds": [
+    {
+      "metadata": "direct_attack/data/alternating_frame_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/alternating_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/class_reset_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/complete_policy_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/sparse_policy_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/weighted_class_reset_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    }
+  ],
+  "generation_and_replay": "direct_attack/data/optimal_counter_generation_captures.json",
+  "audit_boundary": "previous 106-check record preserved verbatim; one new independent all-parameter unit/carry controls, all-subset bad-block invariant, forward-drop DAG, integer block minors and full augmented reachability check with deterministic generator/replay; not a full 107-check rerun",
+  "mathematical_status": "PROVED paper EVERY d>=2: unit/carry counter n=2^d-1, Eulerian SC, rt=P=n-1; ALL optimal original words and actual-image chains have n-2 proper stages and normalized rankd-1, full raw rankd. A bad-block invariant forces counter decrement. Adjacent swaps preserve ALL optima, Eulerian balance and give simple complete reachability. EVERY optimized-positive-linear dimension guarantee REFUTED; alphabet grows. Independent parameter controls throughn4095 and exhaustive n3/7/15 corroboration; expensive-phase compatibility, Cerny and policy square OPEN; no formal verification"
+}

@@ -1,0 +1,35 @@
+{
+  "arguments": {
+    "n": 16,
+    "count": 50000,
+    "seed": 20261012,
+    "limit": 12000
+  },
+  "scope": "adaptive sampled permutation/rank2..5/rank2..5 inputs; full actual image graph scoring, no covering claim",
+  "counts": {
+    "tested": 50000,
+    "rank_sc": 39714,
+    "exact_sc_synchronizing": 39713,
+    "nonsynchronizing": 1
+  },
+  "best": [
+    30,
+    18
+  ],
+  "records": [
+    "witness_000.json",
+    "witness_001.json",
+    "witness_002.json",
+    "witness_003.json",
+    "witness_004.json",
+    "witness_005.json",
+    "witness_006.json",
+    "witness_007.json",
+    "witness_008.json",
+    "witness_009.json",
+    "witness_010.json",
+    "witness_011.json",
+    "witness_012.json"
+  ],
+  "seconds": 2.4690000000009604
+}

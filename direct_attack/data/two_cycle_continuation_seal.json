@@ -1,0 +1,59 @@
+{
+  "verified": true,
+  "checks": 98,
+  "regeneration_commands": 183,
+  "archived": [
+    {
+      "path": "direct_attack/data/two_cycle_continuation_provenance/audit_run.json",
+      "sha256": "ef7bdddbd32a8619ae270aa4c9ce198a42b1c6d950a1594b38ea6e734ebf9a61"
+    },
+    {
+      "path": "direct_attack/data/two_cycle_continuation_provenance/reproduction_commands.json",
+      "sha256": "368828104b164fb3939878f5c49126f1c646dc577770137d9adf63e89693d20b"
+    },
+    {
+      "path": "direct_attack/data/two_cycle_continuation_provenance/sha256_manifest.json",
+      "sha256": "9b814d851e34f5f3f5f5463acc2a7db8f7035698aedd3fd9d574d621c3de3d27"
+    }
+  ],
+  "native_builds": [
+    {
+      "metadata": "direct_attack/data/alternating_frame_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/alternating_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/class_reset_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/complete_policy_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/sparse_policy_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    },
+    {
+      "metadata": "direct_attack/data/weighted_class_reset_native_build.json",
+      "source_verified": true,
+      "binary_verified": true
+    }
+  ],
+  "generation_and_replay": "direct_attack/data/two_cycle_generation_captures.json",
+  "audit_boundary": "previous 97-check record preserved verbatim; one new independent original-row/set check and deterministic generator/replay; not a full 98-check rerun",
+  "mathematical_status": "paper exact fixed ternary and binary quadratic actual-image extension; universal linear extension REFUTED even on binary SC irreducibly synchronizing inputs; explicit square resets for both families; general Cerny and global policy square OPEN; no formal verification"
+}

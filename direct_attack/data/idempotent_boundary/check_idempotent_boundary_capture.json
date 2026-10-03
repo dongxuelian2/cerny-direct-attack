@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "<PYTHON_RUNTIME>\\python.exe",
+    "-m",
+    "direct_attack.check_idempotent_boundary"
+  ],
+  "cwd": "<CHECKOUT>",
+  "start_utc": "2026-09-29T14:18:50.882043+00:00",
+  "seconds": 0.1569999999992433,
+  "returncode": 0,
+  "stdout": "{\"verified\": true, \"cover\": [{\"n\": 2, \"tested\": 6, \"accepted\": 2, \"rejected\": 4, \"violations\": 0}, {\"n\": 3, \"tested\": 30, \"accepted\": 9, \"rejected\": 21, \"violations\": 0}, {\"n\": 4, \"tested\": 205, \"accepted\": 28, \"rejected\": 177, \"violations\": 0}, {\"n\": 5, \"tested\": 1372, \"accepted\": 225, \"rejected\": 1147, \"violations\": 44}], \"all_source_witnesses\": 2, \"certificate\": {\"target\": 24, \"unrestricted_preimage_cost\": 5, \"actual_image_cost\": 10, \"unreachable_preimages\": [{\"mask\": 19, \"forward_word\": [0, 1, 1, 1, 1]}]}, \"boundary\": \"State minimum n5 in the binary permutation/idempotent class. All actual-capacity arrays checked. Full preimages at the earlier cost are explicitly unreachable; no unrestricted square refutation.\"}\n",
+  "stderr": ""
+}

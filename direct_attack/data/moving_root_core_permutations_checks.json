@@ -1,0 +1,24 @@
+{
+  "verified": true,
+  "inputs": 996,
+  "complete_core_permutation_inputs": 798,
+  "sampled_core_inputs": 184,
+  "large_inputs": 14,
+  "nonunit_squared_returns": 795,
+  "longer_than_n_plus_two_preparations": 398,
+  "proper_core_extensions": 107156,
+  "literal_particle_controls": 3964415,
+  "boundary": "Independent exact factorial ALL remaining-core permutations/coprime d M3..7, four distinct deterministic samples each M8..14, selected large controls. Literal a^2 is permitted to permute remaining points; variable preparation, forced first growth saving, compatible square and all particles checked. No generator/solver imports. PROVED paper arbitrary-n class, finite COMPUTATIONALLY VERIFIED only, not formal/novel/general Cerny; broader noncoprime case OPEN here.",
+  "corruptions_rejected": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ]
+}

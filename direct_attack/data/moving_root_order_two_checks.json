@@ -1,0 +1,33 @@
+{
+  "verified": true,
+  "complete_order_two_inputs": 41067,
+  "synchronizing": 40624,
+  "permutation_quotients": 443,
+  "literal_particle_controls": 22249456,
+  "stationary_rotated_word_controls": 815352,
+  "three_a_controls": 98,
+  "infinite_family_controls": 27,
+  "max_literal_reset": 63,
+  "max_minimum_four_a_cost": {
+    "2": 0,
+    "4": 0,
+    "6": 13,
+    "8": 17,
+    "10": 21
+  },
+  "avoidance_bellman_edges": 32928,
+  "family_base_minimum_avoid": 12,
+  "status": "PROVED paper all-n model synchronization classification and min avoiding/support singular count3/4, explicit paid bounds, infinite minimum FOUR-a avoid cost2n; not general minimum original cost. Complete finite permutation scope COMPUTATIONALLY VERIFIED. Exact n5 avoid/positive-original stationary cost8 refutes broader n+2 metric; coprime support cost<=max(avoid_cost,n) PROVED paper. General mixed-core square/Cerny OPEN, no formal/priority claim.",
+  "corruptions_rejected": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ]
+}

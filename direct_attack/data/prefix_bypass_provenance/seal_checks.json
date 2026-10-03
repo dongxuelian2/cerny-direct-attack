@@ -1,0 +1,17 @@
+{
+  "verified": true,
+  "utc": "2026-09-29T15:39:08.174754+00:00",
+  "check_records": 61,
+  "regeneration_commands": 132,
+  "manifest_files": 2238,
+  "native_build_hashes_verified": [
+    "alternating_frame_build.json",
+    "alternating_native_build.json",
+    "complete_policy_build.json",
+    "native_build.json",
+    "sparse_policy_build.json"
+  ],
+  "baseline": "168ffff",
+  "all_changes_under_direct_attack": true,
+  "note": "All added or expanded checks captured independently; historical unchanged expensive outputs preserved. Hash manifest is regenerated and verified after this record is written."
+}

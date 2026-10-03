@@ -1,0 +1,23 @@
+{
+  "arguments": {
+    "n": 4,
+    "mode": "exhaustive",
+    "count": 3000,
+    "out": "direct_attack/data/n4_partition",
+    "stop_on_refutation": false
+  },
+  "counters": {
+    "automata": 32640,
+    "sync_automata": 25728,
+    "partition_subset_tests": 2778624
+  },
+  "maxima": {
+    "2,2": 3,
+    "3,2": 6,
+    "4,2": 6,
+    "3,3": 2,
+    "4,3": 3,
+    "4,4": 1
+  },
+  "complete": true
+}

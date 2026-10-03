@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "<PYTHON_RUNTIME>\\python.exe",
+    "-m",
+    "direct_attack.check_unit_tail"
+  ],
+  "cwd": "<CHECKOUT>",
+  "start_utc": "2026-09-29T13:26:51.245977+00:00",
+  "seconds": 147.43799999999464,
+  "returncode": 0,
+  "stdout": "{\"cases\": 352, \"sync\": 222, \"full_map_cover\": [{\"n\": 2, \"tested\": 4, \"sc\": 2, \"sync\": 2}, {\"n\": 3, \"tested\": 27, \"sc\": 5, \"sync\": 4}, {\"n\": 4, \"tested\": 256, \"sc\": 18, \"sync\": 12}, {\"n\": 5, \"tested\": 3125, \"sc\": 84, \"sync\": 60}, {\"n\": 6, \"tested\": 46656, \"sc\": 480, \"sync\": 288}], \"corruptions_rejected\": [\"j\", \"reset_word\", \"best\"], \"seconds\": 147.31299999999464}\n",
+  "stderr": ""
+}

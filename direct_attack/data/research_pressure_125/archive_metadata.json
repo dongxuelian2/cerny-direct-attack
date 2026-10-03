@@ -1,0 +1,17 @@
+{
+  "byte_identical": true,
+  "files": [
+    {
+      "path": "direct_attack/data/research_pressure_125/binary_n7_full_history.cpp",
+      "sha256": "32a07886d54dbbdef2551840b71e1d69032255a8085fcd51ea3ea828ee32021b"
+    },
+    {
+      "path": "direct_attack/data/research_pressure_125/binary_n7_full_history.json",
+      "sha256": "6e89004debd5b875abd7eb78a56c26f84eb7cf61fde880a10ba5bbd4b27f786f"
+    }
+  ],
+  "native_binary_sha256": "6cdc977b3aacb8b2ef683f0386830814613e2a0e2d2c94ffe43aae613439ca87",
+  "structural_summary_controls": "completed cover flag, tested343*(7^7-1), exact histogram sum, high-input split, DFS counts; these are consistency checks not independent completeness checks",
+  "arithmetic_capture": "direct_attack/data/research_pressure_125/arithmetic_controls_capture.json",
+  "boundary": "fresh complete-designated binary n7 stronger-history negative pressure EXPLORATORY; no independent native scope/search audit, no ALL-binary-n7 verified theorem. Separate complete binary n6 verification remains verified. General Cerny and unrestricted cost/rank OPEN; saturation at n>=8 impossible by known cubic bound and elementary induction, not a novel large-n bound."
+}

@@ -1,0 +1,63 @@
+{
+  "verified": true,
+  "replays": [
+    {
+      "kind": "single",
+      "n": 2,
+      "tested": 6,
+      "accepted": 4
+    },
+    {
+      "kind": "single",
+      "n": 3,
+      "tested": 189,
+      "accepted": 117
+    },
+    {
+      "kind": "single",
+      "n": 4,
+      "tested": 20475,
+      "accepted": 14780
+    },
+    {
+      "kind": "single",
+      "n": 5,
+      "tested": 9450,
+      "accepted": 2160
+    },
+    {
+      "kind": "single",
+      "n": 6,
+      "tested": 49775,
+      "accepted": 7751
+    },
+    {
+      "kind": "arbitrary",
+      "n": 2,
+      "tested": 9,
+      "accepted": 7
+    },
+    {
+      "kind": "arbitrary",
+      "n": 3,
+      "tested": 3969,
+      "accepted": 3762
+    }
+  ],
+  "ordinary_small_full_arrays": 18670,
+  "ordinary_samples": 251,
+  "all_source_samples": 9,
+  "all_source_counterexample": true,
+  "corruptions_rejected": [
+    "rows",
+    "extension",
+    "best",
+    "worst",
+    "forward",
+    "rt",
+    "best_policy"
+  ],
+  "seconds": 8.45299999999952,
+  "single_cycle_sensitive_bound_checked": true,
+  "scope": "All small designated inputs independently enumerated and ordinary-set reverse checked; all larger inputs hash replayed with native scorer; retained larger samples ordinary reverse checked. EVERY accepted single-permutation input checks e<=n-c+1 and rt<=1+(n-2)(n-c+1); all-n claims have a separate paper proof."
+}

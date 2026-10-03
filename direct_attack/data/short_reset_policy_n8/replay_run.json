@@ -1,0 +1,27 @@
+{
+  "argv": [
+    "<PYTHON_RUNTIME>\\python.exe",
+    "-m",
+    "direct_attack.short_reset_policy_attack",
+    "--n",
+    "8",
+    "--rank",
+    "4",
+    "--alphabet",
+    "3",
+    "--count",
+    "100000",
+    "--seed",
+    "20261026",
+    "--restart",
+    "500",
+    "--out",
+    "<CHECKOUT>\\direct_attack\\native_build\\short_reset_replay_es4yj357"
+  ],
+  "cwd": "<CHECKOUT>",
+  "verified": true,
+  "returncode": 0,
+  "seconds": 3.2030000000013388,
+  "witnesses": 5,
+  "seed_sha256": "769cebac59471ce1aee0b1b2cf85f0cc4d72b7f68f801115feb261259f974c5c"
+}

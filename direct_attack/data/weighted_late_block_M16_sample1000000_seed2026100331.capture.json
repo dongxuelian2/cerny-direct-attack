@@ -1,0 +1,23 @@
+{
+  "run": {
+    "argv": [
+      "<CHECKOUT>\\direct_attack\\native_build\\order_two_weighted_late_block_pressure.exe",
+      "16",
+      "1000000",
+      "2026100331",
+      "<CHECKOUT>\\direct_attack\\data\\weighted_late_block_M16_sample1000000_seed2026100331.tsv",
+      "<CHECKOUT>\\direct_attack\\data\\weighted_late_block_M16_sample1000000_seed2026100331.counter.json"
+    ],
+    "cwd": "<CHECKOUT>",
+    "start_utc": "2026-10-03T05:23:45.215383+00:00",
+    "seconds": 0.9530000000013388,
+    "returncode": 0,
+    "stdout": "{\"inputs\":1000000,\"primitive\":968044,\"early_mix_proved\":20667,\"critical_evaluated\":11289,\"retained_peaks\":2,\"criterion_failure\":false,\"proposal_status\":\"EXPLORATORY late-block pressure\"}\n",
+    "stderr": ""
+  },
+  "source_sha256": "260a8ecd4eb41f6bf4e105e9a5efd575b97e0fc950a8643a83a4ba368f4ca0fb",
+  "dependency_sha256": "6b4613d7d066e0e4febc26d29794d0f2d8fc5e2e98b8efa82276edb118552abf",
+  "binary_sha256": "9a5ebbcbef9e49065c3c3fa5294790743a922ea40d58ea4606565610eee8bd02",
+  "data_sha256": "b574dac4f7890f4fe15eb5c42cf7996e4301886dc297af8a5c677533997c6f00",
+  "counter_sha256": "abdfbffecbe18ed94df9829819e596ee285b52a94aa108514452a9121721c789"
+}

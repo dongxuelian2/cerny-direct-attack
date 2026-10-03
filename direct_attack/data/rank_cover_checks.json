@@ -1,0 +1,40 @@
+{
+  "conjugation": [
+    {
+      "n": 2,
+      "labeled_pairs": 4,
+      "canonical_cycle_types": 2,
+      "verified": true
+    },
+    {
+      "n": 3,
+      "labeled_pairs": 108,
+      "canonical_cycle_types": 3,
+      "verified": true
+    },
+    {
+      "n": 4,
+      "labeled_pairs": 3456,
+      "canonical_cycle_types": 5,
+      "verified": true
+    },
+    {
+      "n": 5,
+      "labeled_pairs": 144000,
+      "canonical_cycle_types": 7,
+      "verified": true
+    }
+  ],
+  "covers": [
+    {
+      "file": "direct_attack\\data\\image_extension_policy_rank_cover_n7\\summary.json",
+      "tested": 453600,
+      "verified": true
+    },
+    {
+      "file": "direct_attack\\data\\image_extension_policy_rank_cover_n8\\summary.json",
+      "tested": 6350400,
+      "verified": true
+    }
+  ]
+}

@@ -1,0 +1,245 @@
+{
+  "suite": "native",
+  "date_utc": "2026-10-03T08:28:12.692703+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "status": "PASS",
+  "runs": [
+    {
+      "argv": [
+        "<LOCAL_PATH>",
+        "--version"
+      ],
+      "cwd": "<CHECKOUT>",
+      "seconds": 0.016,
+      "returncode": 0,
+      "stdout": "g++.exe (tdm64-1) 4.9.2\nCopyright (C) 2014 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<LOCAL_PATH>",
+        "-std=c++11",
+        "-O2",
+        "<CHECKOUT>\\direct_attack\\alternating_extension.cpp",
+        "-o",
+        "<CHECKOUT>\\.reproduction\\native\\alternating_extension.exe"
+      ],
+      "cwd": "<CHECKOUT>",
+      "seconds": 0.75,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<LOCAL_PATH>",
+        "-std=c++11",
+        "-O2",
+        "<CHECKOUT>\\direct_attack\\alternating_frame.cpp",
+        "-o",
+        "<CHECKOUT>\\.reproduction\\native\\alternating_frame.exe"
+      ],
+      "cwd": "<CHECKOUT>",
+      "seconds": 0.796,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<LOCAL_PATH>",
+        "-std=c++11",
+        "-O2",
+        "<CHECKOUT>\\direct_attack\\binary_n6_history_cover_verify.cpp",
+        "-o",
+        "<CHECKOUT>\\.reproduction\\native\\binary_n6_history_cover_verify.exe"
+      ],
+      "cwd": "<CHECKOUT>",
+      "seconds": 0.579,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<LOCAL_PATH>",
+        "-std=c++11",
+        "-O2",
+        "<CHECKOUT>\\direct_attack\\check_order_two_weighted_graph_native.cpp",
+        "-o",
+        "<CHECKOUT>\\.reproduction\\native\\check_order_two_weighted_graph_native.exe"
+      ],
+      "cwd": "<CHECKOUT>",
+      "seconds": 1.031,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<LOCAL_PATH>",
+        "-std=c++11",
+        "-O2",
+        "<CHECKOUT>\\direct_attack\\class_reset_pressure.cpp",
+        "-o",
+        "<CHECKOUT>\\.reproduction\\native\\class_reset_pressure.exe"
+      ],
+      "cwd": "<CHECKOUT>",
+      "seconds": 1.219,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<LOCAL_PATH>",
+        "-std=c++11",
+        "-O2",
+        "<CHECKOUT>\\direct_attack\\native_complete_policy.cpp",
+        "-o",
+        "<CHECKOUT>\\.reproduction\\native\\native_complete_policy.exe"
+      ],
+      "cwd": "<CHECKOUT>",
+      "seconds": 0.796,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<LOCAL_PATH>",
+        "-std=c++11",
+        "-O2",
+        "<CHECKOUT>\\direct_attack\\native_policy.cpp",
+        "-o",
+        "<CHECKOUT>\\.reproduction\\native\\native_policy.exe"
+      ],
+      "cwd": "<CHECKOUT>",
+      "seconds": 0.86,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<LOCAL_PATH>",
+        "-std=c++11",
+        "-O2",
+        "<CHECKOUT>\\direct_attack\\native_sparse_policy.cpp",
+        "-o",
+        "<CHECKOUT>\\.reproduction\\native\\native_sparse_policy.exe"
+      ],
+      "cwd": "<CHECKOUT>",
+      "seconds": 0.859,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<LOCAL_PATH>",
+        "-std=c++11",
+        "-O2",
+        "<CHECKOUT>\\direct_attack\\order_two_weighted_extension.cpp",
+        "-o",
+        "<CHECKOUT>\\.reproduction\\native\\order_two_weighted_extension.exe"
+      ],
+      "cwd": "<CHECKOUT>",
+      "seconds": 0.828,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<LOCAL_PATH>",
+        "-std=c++11",
+        "-O2",
+        "<CHECKOUT>\\direct_attack\\order_two_weighted_graph_pressure.cpp",
+        "-o",
+        "<CHECKOUT>\\.reproduction\\native\\order_two_weighted_graph_pressure.exe"
+      ],
+      "cwd": "<CHECKOUT>",
+      "seconds": 0.891,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<LOCAL_PATH>",
+        "-std=c++11",
+        "-O2",
+        "<CHECKOUT>\\direct_attack\\order_two_weighted_late_block_pressure.cpp",
+        "-o",
+        "<CHECKOUT>\\.reproduction\\native\\order_two_weighted_late_block_pressure.exe"
+      ],
+      "cwd": "<CHECKOUT>",
+      "seconds": 1.078,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<LOCAL_PATH>",
+        "-std=c++11",
+        "-O2",
+        "<CHECKOUT>\\direct_attack\\order_two_weighted_pressure.cpp",
+        "-o",
+        "<CHECKOUT>\\.reproduction\\native\\order_two_weighted_pressure.exe"
+      ],
+      "cwd": "<CHECKOUT>",
+      "seconds": 0.906,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<LOCAL_PATH>",
+        "-std=c++11",
+        "-O2",
+        "<CHECKOUT>\\direct_attack\\short_tail_opposite_weighted_pressure.cpp",
+        "-o",
+        "<CHECKOUT>\\.reproduction\\native\\short_tail_opposite_weighted_pressure.exe"
+      ],
+      "cwd": "<CHECKOUT>",
+      "seconds": 0.844,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<LOCAL_PATH>",
+        "-std=c++11",
+        "-O2",
+        "<CHECKOUT>\\direct_attack\\short_tail_unpaired_weighted_pressure.cpp",
+        "-o",
+        "<CHECKOUT>\\.reproduction\\native\\short_tail_unpaired_weighted_pressure.exe"
+      ],
+      "cwd": "<CHECKOUT>",
+      "seconds": 0.844,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<LOCAL_PATH>",
+        "-std=c++11",
+        "-O2",
+        "<CHECKOUT>\\direct_attack\\weighted_class_reset_pressure.cpp",
+        "-o",
+        "<CHECKOUT>\\.reproduction\\native\\weighted_class_reset_pressure.exe"
+      ],
+      "cwd": "<CHECKOUT>",
+      "seconds": 1.265,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "native_sources_built": 15
+}

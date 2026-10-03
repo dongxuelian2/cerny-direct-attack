@@ -1,0 +1,35 @@
+{
+  "verified": true,
+  "runs": [
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.short_root_return_square"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T14:28:50.640944+00:00",
+      "seconds": 0.8910000000032596,
+      "returncode": 0,
+      "stdout": "{\"inputs\": 4542, \"complete\": 3006}\n",
+      "stderr": "",
+      "output_sha256": "4e7586588ac69c17122ec50cf5b4d8dd1e412f5cff7c8d01a8a950c9c3d7d4b0"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.short_root_return_square"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T14:37:41.842923+00:00",
+      "seconds": 0.8600000000005821,
+      "returncode": 0,
+      "stdout": "{\"inputs\": 4542, \"complete\": 3006}\n",
+      "stderr": "",
+      "output_sha256": "4e7586588ac69c17122ec50cf5b4d8dd1e412f5cff7c8d01a8a950c9c3d7d4b0"
+    }
+  ],
+  "bytes_equal": true,
+  "generator_sha256": "6556a2cf6ed3b988cff319a92ee1a2cc9f3a6825f94ed706cadf411d84a22658"
+}

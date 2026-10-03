@@ -1,0 +1,36 @@
+{
+  "verified": true,
+  "runs": [
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.kari_shrink_products"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T08:58:54.742088+00:00",
+      "seconds": 0.13999999999941792,
+      "returncode": 0,
+      "stdout": "{\"parameters\": 20, \"literal_parameters\": 4, \"last_negative_bridges\": [{\"S\": 45, \"T\": 44, \"letter\": 0}, {\"S\": 47, \"T\": 60, \"letter\": 0}], \"base_costs\": {\"one_pre\": 20, \"one_post\": 5, \"two_pre\": 17, \"two_post\": 10}, \"boundary\": \"PROVED paper ALL d>=1, independent-coordinate product n=6^d/alphabet2d: exact minimum inverse-shrink count d, ordinary rt25d, minimum maximum absolute inverse loss3^(d-1), optimum length among that loss policy27d-2 and minimum shrink count2d-1, optimum maximum loss among ordinary-shortest resets4^(d-1). Literal base all-word facts/bounds are Lean verified separately; arbitrary-d product lifting is paper, not formal. No novelty, fixed alphabet, corank-one or general Cerny proof claim.\"}\n",
+      "stderr": "",
+      "output_sha256": "e170f6b1818071f15402770c48186cbfd062a2695a1c78cd54e1c6b881988de5"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.kari_shrink_products"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T08:59:55.846263+00:00",
+      "seconds": 0.14099999999962165,
+      "returncode": 0,
+      "stdout": "{\"parameters\": 20, \"literal_parameters\": 4, \"last_negative_bridges\": [{\"S\": 45, \"T\": 44, \"letter\": 0}, {\"S\": 47, \"T\": 60, \"letter\": 0}], \"base_costs\": {\"one_pre\": 20, \"one_post\": 5, \"two_pre\": 17, \"two_post\": 10}, \"boundary\": \"PROVED paper ALL d>=1, independent-coordinate product n=6^d/alphabet2d: exact minimum inverse-shrink count d, ordinary rt25d, minimum maximum absolute inverse loss3^(d-1), optimum length among that loss policy27d-2 and minimum shrink count2d-1, optimum maximum loss among ordinary-shortest resets4^(d-1). Literal base all-word facts/bounds are Lean verified separately; arbitrary-d product lifting is paper, not formal. No novelty, fixed alphabet, corank-one or general Cerny proof claim.\"}\n",
+      "stderr": "",
+      "output_sha256": "e170f6b1818071f15402770c48186cbfd062a2695a1c78cd54e1c6b881988de5"
+    }
+  ],
+  "bytes_equal": true,
+  "normalization": "none",
+  "generator_sha256": "3b6e6939a7c37fb444a3b24e7bcf6b113fbfa124229fe7a1b3fd6d1e12488fff"
+}

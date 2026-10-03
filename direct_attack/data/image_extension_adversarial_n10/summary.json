@@ -1,0 +1,27 @@
+{
+  "arguments": {
+    "n": 10,
+    "count": 15000,
+    "seed": 20260930,
+    "out": "direct_attack/data/image_extension_adversarial_n10"
+  },
+  "counts": {
+    "tested": 15000,
+    "synchronizing_sc": 12083
+  },
+  "best": 16,
+  "records": [
+    "n10_cost6.json",
+    "n10_cost8.json",
+    "n10_cost9.json",
+    "n10_cost10.json",
+    "n10_cost11.json",
+    "n10_cost12.json",
+    "n10_cost13.json",
+    "n10_cost14.json",
+    "n10_cost15.json",
+    "n10_cost16.json"
+  ],
+  "seconds": 52.75,
+  "scope": "Seeded adversarial sampling, not exhaustive."
+}

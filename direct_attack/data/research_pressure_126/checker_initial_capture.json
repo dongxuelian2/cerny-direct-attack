@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "<PYTHON_RUNTIME>\\python.exe",
+    "-m",
+    "direct_attack.check_compress_other_non_sc_boundary"
+  ],
+  "cwd": "<CHECKOUT>",
+  "start_utc": "2026-10-02T03:53:48.090109+00:00",
+  "seconds": 0.4530000000013388,
+  "returncode": 0,
+  "stdout": "{\"verified\": true, \"family_parameters\": 66, \"unary_maps\": 3412, \"noncyclic_height_controls\": 8268, \"small_alphabets\": {\"n\": 3, \"alphabet_sizes\": [0, 1, 2, 3], \"ordered_alphabets\": 20440, \"star_controls\": 61320, \"compressible_marked_states\": 59811, \"synchronizing_alphabets\": 18933, \"mu_histogram\": {\"1\": 55665, \"2\": 4146}, \"semantic_sha256\": \"7bb507671b7e3566662637117afaad0bb43a76dd14e0d7e516c6ba84b81daaa7\"}, \"retained_certificates\": 24, \"corruptions\": 8}\n",
+  "stderr": ""
+}

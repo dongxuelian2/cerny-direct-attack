@@ -1,0 +1,29 @@
+{
+  "argv": [
+    "<PYTHON_RUNTIME>\\python.exe",
+    "-m",
+    "direct_attack.seed_budget_attack",
+    "--n",
+    "8",
+    "--alphabet",
+    "3",
+    "--count",
+    "100000",
+    "--seed",
+    "20261019",
+    "--restart",
+    "500",
+    "--mode",
+    "adversarial",
+    "--objective",
+    "normal",
+    "--out",
+    "<CHECKOUT>\\direct_attack\\native_build\\seed_budget_replay_w3_ysavw"
+  ],
+  "cwd": "<CHECKOUT>",
+  "returncode": 0,
+  "seconds": 5.311999999999898,
+  "verified": true,
+  "witnesses": 8,
+  "frozen_seed_sha256": "dbe08249bee27f30b2f80e018bcfc7cda791d80da14eb2640a140bb9715256f7"
+}

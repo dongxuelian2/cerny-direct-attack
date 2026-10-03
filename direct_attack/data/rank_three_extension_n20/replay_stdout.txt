@@ -1,0 +1,33 @@
+{"source": "seed:0", "max_extension": 18, "P": 3, "rt": 3, "reachable": 76, "seconds": 0.0319999999992433}
+{"source": "seed:9", "max_extension": 19, "P": 4, "rt": 4, "reachable": 136, "seconds": 0.0319999999992433}
+{"source": "seed:75", "max_extension": 19, "P": 8, "rt": 8, "reachable": 252, "seconds": 0.0319999999992433}
+{"mutations": 0, "best": [19, 8], "seconds": 0.046999999998661224}
+{"source": "mutation:663", "max_extension": 20, "P": 20, "rt": 20, "reachable": 154, "seconds": 0.09399999999914144}
+{"source": "mutation:1047", "max_extension": 22, "P": 14, "rt": 14, "reachable": 204, "seconds": 0.10999999999876309}
+{"source": "mutation:1050", "max_extension": 24, "P": 17, "rt": 17, "reachable": 204, "seconds": 0.10999999999876309}
+{"source": "mutation:1130", "max_extension": 24, "P": 19, "rt": 19, "reachable": 204, "seconds": 0.125}
+{"source": "mutation:1240", "max_extension": 25, "P": 21, "rt": 21, "reachable": 204, "seconds": 0.14099999999962165}
+{"source": "mutation:1760", "max_extension": 27, "P": 14, "rt": 14, "reachable": 150, "seconds": 0.17199999999866122}
+{"source": "mutation:1956", "max_extension": 28, "P": 15, "rt": 15, "reachable": 150, "seconds": 0.17199999999866122}
+{"mutations": 5000, "best": [28, 15], "seconds": 0.375}
+{"mutations": 10000, "best": [28, 15], "seconds": 0.6719999999986612}
+{"mutations": 15000, "best": [28, 15], "seconds": 0.9689999999991414}
+{"source": "mutation:16159", "max_extension": 28, "P": 24, "rt": 24, "reachable": 204, "seconds": 1.0469999999986612}
+{"mutations": 20000, "best": [28, 24], "seconds": 1.2969999999986612}
+{"mutations": 25000, "best": [28, 24], "seconds": 1.5469999999986612}
+{"mutations": 30000, "best": [28, 24], "seconds": 1.859999999998763}
+{"mutations": 35000, "best": [28, 24], "seconds": 2.1409999999996217}
+{"mutations": 40000, "best": [28, 24], "seconds": 2.4219999999986612}
+{"mutations": 45000, "best": [28, 24], "seconds": 2.70299999999952}
+{"source": "mutation:51377", "max_extension": 29, "P": 18, "rt": 18, "reachable": 102, "seconds": 3.109999999998763}
+{"source": "mutation:54682", "max_extension": 34, "P": 32, "rt": 32, "reachable": 352, "seconds": 3.3439999999991414}
+{"mutations": 55000, "best": [34, 32], "seconds": 3.375}
+{"mutations": 60000, "best": [34, 32], "seconds": 3.688000000000102}
+{"mutations": 65000, "best": [34, 32], "seconds": 4.031999999999243}
+{"mutations": 70000, "best": [34, 32], "seconds": 4.343999999999141}
+{"mutations": 75000, "best": [34, 32], "seconds": 4.656999999999243}
+{"mutations": 80000, "best": [34, 32], "seconds": 5.015999999999622}
+{"mutations": 85000, "best": [34, 32], "seconds": 5.32799999999952}
+{"mutations": 90000, "best": [34, 32], "seconds": 5.625}
+{"mutations": 95000, "best": [34, 32], "seconds": 5.906999999999243}
+{"arguments": {"n": 20, "count": 100000, "seed": 20261011, "restart": 500, "out": "<LOCAL_PATH>", "family_seed": false, "elite": false, "permutation_mutations": false}, "seeds": 248, "counts": {"tested": 100000, "rank_three_sc": 97364, "synchronizing_sc": 97289}, "best": [34, 32], "records": ["witness_000.json", "witness_001.json", "witness_002.json", "witness_003.json", "witness_004.json", "witness_005.json", "witness_006.json", "witness_007.json", "witness_008.json", "witness_009.json", "witness_010.json", "witness_011.json", "witness_012.json"], "seconds": 6.171999999998661, "scope": "Sampled rank-three colorings and optional permutation swaps/elite restarts; exact scoring, not exhaustive map coverage."}

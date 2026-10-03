@@ -1,0 +1,31 @@
+{
+  "verified": true,
+  "checks": 122,
+  "regeneration_commands": 204,
+  "archived": [
+    {
+      "path": "direct_attack/data/history_hyperplane_continuation_provenance/audit_run.json",
+      "sha256": "a22fc988a8a0b5a96148ff99177ac579ddd7e62e99e5819794db1029c741c2c2"
+    },
+    {
+      "path": "direct_attack/data/history_hyperplane_continuation_provenance/reproduction_commands.json",
+      "sha256": "c51dcaf8434412a96d6d467788d87816d0071391025d16a8f98e86a993380ba3"
+    },
+    {
+      "path": "direct_attack/data/history_hyperplane_continuation_provenance/sha256_manifest.json",
+      "sha256": "17963d501b4e0922f0f635a7d6ab6e6afc4922140d19cb8db9e1565d54d9f192"
+    }
+  ],
+  "native_builds": [
+    "direct_attack/data/alternating_frame_build.json",
+    "direct_attack/data/alternating_native_build.json",
+    "direct_attack/data/class_reset_native_build.json",
+    "direct_attack/data/complete_policy_build.json",
+    "direct_attack/data/native_build.json",
+    "direct_attack/data/sparse_policy_build.json",
+    "direct_attack/data/weighted_class_reset_native_build.json"
+  ],
+  "generation_and_replay": "direct_attack/data/history_hyperplane_generation_captures.json",
+  "audit_boundary": "checkpoint120 preserved verbatim; two new exact independent checks: hyperplane/guard finite controls and ALL-shortest real rank6 in EACH37 retained cases; deterministic space generation/replay. Full native covering prefilter/class completeness remains EXPLORATORY, not a full122 rerun or a new audited all-input Cerny census.",
+  "mathematical_status": "PROVED paper codimension-one support bound and actual-letter guard graph bound; smaller-quotient square consequence conditional. General Cerny and unrestricted ALL/SOME history cost/rank OPEN; no new formal theorem. Separate37-case ALL-history statement computationally verified; complete prefilter exploratory."
+}

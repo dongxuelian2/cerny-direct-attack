@@ -1,0 +1,72 @@
+{
+  "verified": true,
+  "records": [
+    {
+      "n": 2,
+      "counts": {
+        "tested": 9,
+        "sc_synchronizing": 4
+      },
+      "histogram": [
+        {
+          "normal_gap": 0,
+          "anchor_gap": 0,
+          "count": 4
+        }
+      ],
+      "verified": true
+    },
+    {
+      "n": 3,
+      "counts": {
+        "tested": 182,
+        "sc_synchronizing": 59
+      },
+      "histogram": [
+        {
+          "normal_gap": 0,
+          "anchor_gap": 0,
+          "count": 59
+        }
+      ],
+      "verified": true
+    },
+    {
+      "n": 4,
+      "counts": {
+        "tested": 4845,
+        "sc_synchronizing": 1240
+      },
+      "histogram": [
+        {
+          "normal_gap": 0,
+          "anchor_gap": 0,
+          "count": 1240
+        }
+      ],
+      "verified": true
+    },
+    {
+      "n": 5,
+      "counts": {
+        "tested": 146828,
+        "sc_synchronizing": 32588
+      },
+      "histogram": [
+        {
+          "normal_gap": 0,
+          "anchor_gap": 0,
+          "count": 32509
+        },
+        {
+          "normal_gap": 0,
+          "anchor_gap": 1,
+          "count": 79
+        }
+      ],
+      "verified": true
+    }
+  ],
+  "seconds": 7.906000000000859,
+  "boundary": "Every binary covering input n2..5 is independently enumerated and scored using ordinary image closure and per-target reverse graph BFS, without a native scorer. All counters and full gap histograms agree. Covers overlap isomorphism classes; unary/duplicate inputs cannot be SC synchronizing at n>=2."
+}

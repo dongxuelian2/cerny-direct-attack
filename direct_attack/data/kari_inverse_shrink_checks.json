@@ -1,0 +1,78 @@
+{
+  "verified": true,
+  "closed_cut_states": 35,
+  "cut_edges": 70,
+  "nondecreasing_cut_edges": 58,
+  "max_monotone_inverse_size": 5,
+  "lex_bellman_edges": 126,
+  "original_bellman_edges": 114,
+  "literal_particle_letter_controls": 1902,
+  "singleton_lex": [
+    [
+      1,
+      28
+    ],
+    [
+      1,
+      26
+    ],
+    [
+      1,
+      26
+    ],
+    [
+      1,
+      27
+    ],
+    [
+      1,
+      25
+    ],
+    [
+      1,
+      27
+    ]
+  ],
+  "optimal_cost": 25,
+  "minimum_shrink_count": 1,
+  "inverse_cardinalities": [
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    4,
+    4,
+    4,
+    5,
+    5,
+    4,
+    4,
+    5,
+    5,
+    5,
+    6
+  ],
+  "boundary": "Independent exact finite original Kari rows: closed all-singleton cut forbids monotone inverse resets at ANY length; reach witnesses certify exact35 reachable masks. ALL64 lexicographic shrink/length and original-cost Bellman controls, one-shrink optimal cost25 reset. Separate Lean all-word cut plus literal witness are formally verified; ordinary threshold lower bound remains computational, not formal. General Cerny OPEN.",
+  "corruptions_rejected": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "formal_source_sha256": "6d82c55ffbb1ba7daf153d24f26f8cb3c1d3ae81e79877025173c3d5eea4b602"
+}

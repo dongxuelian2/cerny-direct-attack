@@ -1,0 +1,9 @@
+{
+  "seed": 2026100122,
+  "tested": 155767,
+  "controls": 299348,
+  "nontrivial_layers": 57068,
+  "seconds": 90.0,
+  "counter": null,
+  "boundary": "exploratory ternary mixed-control test only, not an independent audit or all-parameter theorem"
+}

@@ -1,0 +1,38 @@
+{
+  "verified": true,
+  "runs": [
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.optimal_log_history_n7"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T07:46:35.967718+00:00",
+      "seconds": 0.07800000000133878,
+      "returncode": 0,
+      "stdout": "{\"n\": 7, \"P\": 9, \"optimal_endpoint_histories\": 68, \"normalized_dimension_histogram\": {\"4\": 34, \"5\": 20, \"3\": 14}, \"minimum_normalized_dimension\": 3, \"maximum_normalized_dimension\": 5}\n",
+      "stderr": "",
+      "output_sha256": "29d335aa4274643decfecea9594a27524b9007bbd8fb11f4b952a201ecbd4b82"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.optimal_log_history_n7",
+        "--out",
+        "<CHECKOUT>\\direct_attack\\native_build\\optimal_log_replay.json"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-01T07:46:36.051898+00:00",
+      "seconds": 0.07800000000133878,
+      "returncode": 0,
+      "stdout": "{\"n\": 7, \"P\": 9, \"optimal_endpoint_histories\": 68, \"normalized_dimension_histogram\": {\"4\": 34, \"5\": 20, \"3\": 14}, \"minimum_normalized_dimension\": 3, \"maximum_normalized_dimension\": 5}\n",
+      "stderr": "",
+      "output_sha256": "29d335aa4274643decfecea9594a27524b9007bbd8fb11f4b952a201ecbd4b82"
+    }
+  ],
+  "parsed_records_equal": true,
+  "normalization": "none",
+  "generator_sha256": "56025966ba2c7dc4de1c9ac87eb76cdafc197901bc29ecabbe2d468f12e0489c"
+}

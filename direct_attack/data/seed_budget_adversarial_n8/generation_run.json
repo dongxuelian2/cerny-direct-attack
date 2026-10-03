@@ -1,0 +1,24 @@
+{
+  "argv": [
+    "<PYTHON_RUNTIME>\\python.exe",
+    "-m",
+    "direct_attack.seed_budget_attack",
+    "--n",
+    "8",
+    "--alphabet",
+    "3",
+    "--mode",
+    "adversarial",
+    "--objective",
+    "normal",
+    "--seed",
+    "20261019",
+    "--count",
+    "100000",
+    "--out",
+    "direct_attack/data/seed_budget_adversarial_n8"
+  ],
+  "cwd": "<CHECKOUT>",
+  "returncode": 0,
+  "seconds": 6.188000000001921
+}

@@ -1,0 +1,41 @@
+{
+  "arguments": {
+    "source": "direct_attack/data/n6_extremal",
+    "n": 7,
+    "random": 2000,
+    "out": "direct_attack/data/bidirectional"
+  },
+  "counts": {
+    "sync_inputs": 753,
+    "square_failures": 1,
+    "suboptimal": 86
+  },
+  "maximum_gap": 4,
+  "records": [
+    {
+      "label": "witness_000",
+      "n": 6,
+      "rt": 25,
+      "cost": 26
+    },
+    {
+      "label": "witness_001",
+      "n": 7,
+      "rt": 12,
+      "cost": 14
+    },
+    {
+      "label": "witness_002",
+      "n": 7,
+      "rt": 17,
+      "cost": 20
+    },
+    {
+      "label": "witness_003",
+      "n": 7,
+      "rt": 16,
+      "cost": 20
+    }
+  ],
+  "status": "REFUTED"
+}

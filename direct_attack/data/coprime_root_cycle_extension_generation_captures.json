@@ -1,0 +1,36 @@
+{
+  "verified": true,
+  "runs": [
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.coprime_root_cycle_extension"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T07:50:18.705674+00:00",
+      "seconds": 0.3280000000013388,
+      "returncode": 0,
+      "stdout": "{\"inputs\": 398, \"complete\": 348, \"SC\": 293, \"controls\": 26762, \"counter_extension\": 6, \"counter_rt\": 13, \"boundary\": \"All-n fixed-root theorem extended from adjacency to coprime displacement inside the original b root cycle. Paper PROVED with no novelty/formal claim. Removing coprimality from n-extension REFUTED at fixed-root SC sync n5, even for the seed pair; general Cerny OPEN.\"}\n",
+      "stderr": "",
+      "output_sha256": "65618a99cea466aa3be03d2cc57f0e68bc5e44f76a8781e50921759d7e4e130c"
+    },
+    {
+      "argv": [
+        "<PYTHON_RUNTIME>\\python.exe",
+        "-m",
+        "direct_attack.coprime_root_cycle_extension"
+      ],
+      "cwd": "<CHECKOUT>",
+      "start_utc": "2026-10-02T07:51:00.481271+00:00",
+      "seconds": 0.3280000000013388,
+      "returncode": 0,
+      "stdout": "{\"inputs\": 398, \"complete\": 348, \"SC\": 293, \"controls\": 26762, \"counter_extension\": 6, \"counter_rt\": 13, \"boundary\": \"All-n fixed-root theorem extended from adjacency to coprime displacement inside the original b root cycle. Paper PROVED with no novelty/formal claim. Removing coprimality from n-extension REFUTED at fixed-root SC sync n5, even for the seed pair; general Cerny OPEN.\"}\n",
+      "stderr": "",
+      "output_sha256": "65618a99cea466aa3be03d2cc57f0e68bc5e44f76a8781e50921759d7e4e130c"
+    }
+  ],
+  "bytes_equal": true,
+  "normalization": "none",
+  "generator_sha256": "9091224efc9179e6df44d04d693e383807a56fa912b1054e4fd518287aa69470"
+}

@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "<CHECKOUT>\\direct_attack\\native_build\\weighted_class_reset_pressure.exe",
+    "--trials",
+    "1000000",
+    "--seed",
+    "20261021",
+    "--mode",
+    "search",
+    "--out",
+    "direct_attack\\data\\weighted_class_reset_pressure.json"
+  ],
+  "cwd": "<CHECKOUT>",
+  "start_utc": "2026-10-01T00:02:34.378063+00:00",
+  "seconds": 18.718999999999937,
+  "returncode": 0,
+  "stdout": "{\"tested\":1000000,\"accepted\":999995,\"violations\":0,\"retained\":21}\n",
+  "stderr": "",
+  "source_sha256": "e8ae312745f4c173b7ca51849c33571a907af3dd12535390d0a5fffff344442b",
+  "binary_sha256": "7f15f0570f3c0e64974e12e5a0e496d271ebc43d2666b6caae4dd8f46f983cc3",
+  "output_sha256": "9fad997bb1fba8b85cac5a00d1e9c6b40047638807fe8d7497b4ac1ea8bc3555"
+}
