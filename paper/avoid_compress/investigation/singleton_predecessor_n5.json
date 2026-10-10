@@ -1,0 +1,1 @@
+{"status":"pass","n":5,"map_count":3125,"first_letter_orbits":47,"tested":146875,"strong_sync":32588,"subset_searches":325880,"singleton_equalities":403,"s_ge_four_equalities":0,"s_three_complement_cases":10,"boundary":{"S_mask":11,"a_state":1,"rows":[[0,2,1,1,3],[1,2,4,0,1]]}}

@@ -1,0 +1,1 @@
+{"n":11,"s":8,"m":3,"target":9,"maps":47531,"compression_candidates":1,"found":true,"rows":[[0,1,2,3,4,7,8,5,6,5,10],[1,2,3,4,5,0,6,8,9,10,7]],"S":[0,1,2,3,4,5,9,10],"protected_state":3,"external_partition":[1,4],"seconds":0.0378401,"scope":"Bounded hook-core permutations and external cycle partitions; not a global upper bound."}

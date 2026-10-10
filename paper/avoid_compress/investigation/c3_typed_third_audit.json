@@ -1,0 +1,431 @@
+{
+  "status": "pass",
+  "typed_third_admission": {
+    "geometric_orbits": 12,
+    "geometric_labelled": 65,
+    "typed_orbits": 4,
+    "typed_labelled": 35,
+    "typed_orbit_counts": {
+      "(0, 1, 6)": 7,
+      "(0, 6)": 14,
+      "(2, 6)": 7,
+      "(6,)": 7
+    },
+    "common_outside_fibers": {
+      "(0, 1, 6)": [
+        [
+          2,
+          5
+        ],
+        [
+          0,
+          1,
+          4
+        ],
+        [
+          0,
+          1,
+          6
+        ]
+      ],
+      "(0, 6)": [
+        [
+          0,
+          6
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          0,
+          1,
+          4
+        ]
+      ],
+      "(2, 6)": [
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          0,
+          1,
+          4
+        ]
+      ],
+      "(6,)": [
+        [
+          6
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          0,
+          1,
+          4
+        ]
+      ]
+    }
+  },
+  "d9_exact_rank_audit": {
+    "binary_suppliers": [
+      [
+        "A",
+        "C",
+        "D"
+      ]
+    ],
+    "moving_profiles": [
+      [
+        "B",
+        "A",
+        "C"
+      ],
+      [
+        "B",
+        "C",
+        "A"
+      ]
+    ],
+    "initial_sets": 16,
+    "rank_profiles_checked": 196,
+    "rank_profiles_admitted": [
+      [
+        6,
+        4,
+        2,
+        2
+      ],
+      [
+        6,
+        4,
+        5,
+        5
+      ],
+      [
+        7,
+        7,
+        2,
+        2
+      ],
+      [
+        7,
+        7,
+        5,
+        5
+      ],
+      [
+        8,
+        8,
+        2,
+        2
+      ],
+      [
+        8,
+        8,
+        5,
+        5
+      ],
+      [
+        9,
+        9,
+        2,
+        2
+      ],
+      [
+        9,
+        9,
+        5,
+        5
+      ],
+      [
+        10,
+        10,
+        2,
+        2
+      ],
+      [
+        10,
+        10,
+        5,
+        5
+      ],
+      [
+        11,
+        11,
+        2,
+        2
+      ],
+      [
+        11,
+        11,
+        5,
+        5
+      ],
+      [
+        12,
+        12,
+        2,
+        2
+      ],
+      [
+        12,
+        12,
+        5,
+        5
+      ]
+    ]
+  },
+  "d9_quotient_audit": {
+    "profile_I_indegree_cases": [
+      {
+        "beta": 0,
+        "F_C": [
+          1,
+          4
+        ],
+        "contradiction": "moving_omits_6"
+      },
+      {
+        "beta": 0,
+        "F_C": [
+          4,
+          1
+        ],
+        "contradiction": "moving_omits_6"
+      },
+      {
+        "beta": 1,
+        "F_C": [
+          0,
+          4
+        ],
+        "contradiction": "moving_omits_6"
+      },
+      {
+        "beta": 1,
+        "F_C": [
+          4,
+          0
+        ],
+        "contradiction": "moving_omits_6"
+      },
+      {
+        "beta": 4,
+        "F_C": [
+          0,
+          1
+        ],
+        "contradiction": "fixed_omits_6"
+      },
+      {
+        "beta": 4,
+        "F_C": [
+          1,
+          0
+        ],
+        "contradiction": "fixed_omits_6"
+      }
+    ],
+    "boundary_class_controls": 32,
+    "ordinary_second_image_trap_controls": 768
+  },
+  "d4_profile_I_rank_audit": {
+    "rank_six_profiles_checked": 3584,
+    "remaining_moving_preimages_B_C": [
+      "C",
+      "A"
+    ],
+    "scope": "All E subsets of R, conservatively broader than actual pair kernels"
+  },
+  "d4_profile_II_audit": {
+    "abstract_R_kernels_checked": 4140,
+    "admitted_pair_kernels": [
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        9
+      ],
+      [
+        1,
+        10
+      ],
+      [
+        1,
+        11
+      ],
+      [
+        1,
+        12
+      ]
+    ],
+    "fixed_full_V_rank_six_profiles": 210,
+    "singleton_coordinate_profiles_checked": 420,
+    "singleton_coordinate_profiles_admitted": [
+      {
+        "r": 6,
+        "E": [
+          1,
+          4
+        ],
+        "c": 2
+      },
+      {
+        "r": 6,
+        "E": [
+          1,
+          4
+        ],
+        "c": 5
+      },
+      {
+        "r": 7,
+        "E": [
+          7
+        ],
+        "c": 2
+      },
+      {
+        "r": 7,
+        "E": [
+          7
+        ],
+        "c": 5
+      },
+      {
+        "r": 8,
+        "E": [
+          8
+        ],
+        "c": 2
+      },
+      {
+        "r": 8,
+        "E": [
+          8
+        ],
+        "c": 5
+      },
+      {
+        "r": 9,
+        "E": [
+          9
+        ],
+        "c": 2
+      },
+      {
+        "r": 9,
+        "E": [
+          9
+        ],
+        "c": 5
+      },
+      {
+        "r": 10,
+        "E": [
+          10
+        ],
+        "c": 2
+      },
+      {
+        "r": 10,
+        "E": [
+          10
+        ],
+        "c": 5
+      },
+      {
+        "r": 11,
+        "E": [
+          11
+        ],
+        "c": 2
+      },
+      {
+        "r": 11,
+        "E": [
+          11
+        ],
+        "c": 5
+      },
+      {
+        "r": 12,
+        "E": [
+          12
+        ],
+        "c": 2
+      },
+      {
+        "r": 12,
+        "E": [
+          12
+        ],
+        "c": 5
+      }
+    ],
+    "initial_nine_sets": 26,
+    "boundary_class_controls": 52,
+    "ordinary_second_image_trap_controls": 624
+  },
+  "binary_c3_third_profiles_remaining": [
+    [
+      6
+    ],
+    [
+      2,
+      6
+    ]
+  ],
+  "unrestricted_c3_third_profiles_remaining": [
+    [
+      6
+    ],
+    [
+      0,
+      6
+    ],
+    [
+      2,
+      6
+    ],
+    [
+      0,
+      1,
+      6
+    ]
+  ],
+  "binary_joint_orbits_remaining": 30,
+  "unrestricted_joint_orbits_remaining": 43,
+  "source_sha256": {
+    "check_c3_typed_third.py": "54e50021253bb3a007f9ac43a117a67c677462d515eef76c533e15570114dbe1",
+    "C3_TYPED_THIRD_ENTRANCES.md": "b34eba8b3579f62afa46fb7ce2e384fcd93f8bf2f94b431ecb18ba4d25d9de3a",
+    "C3_D9_BINARY_EXCLUSION.md": "89234a5aa32131397ecdcf800ee7ed7ef7a25a0dbf17a239a2e5341b589ab5ad",
+    "c3_geometric_third_controls.json": "f6ec5e56af01ebd264ad94d22b95165bd9a686f5d85bd0c2bfabbfd58faa0a64",
+    "THIRD_ENTRANCE_SPACE.md": "01baa935bac82d8a8a878f3ee6fbf3778c167b2eb7fb114d0466c6794ebb5315",
+    "ENTRY_FIBER_FLAG.md": "b27eb51977104cd68aaff2e2f37db10c50bbf4a4dd4320502b15b0f609a01bbf",
+    "SECOND_ENTRANCE_FIBER.md": "664e379a346274ec88c59130741dc43251717eb53a16979198b76e18a165f34b",
+    "LOCAL_EQUALITY_FLAG.md": "f34cf260276c6551266564c1ee2264dc823aeaa4f33b4ae8f8261aedeec596a8",
+    "C3_D4_PROFILE_I_EXCLUSION.md": "d5d3b95438e0ffc194b71d5689eeec1eae7fe8387483fad91f3175e844f783c9",
+    "C3_D4_BINARY_EXCLUSION.md": "8707841e52c323e37df823150860e9931084798b825d415b8c787bfb6e027960",
+    "SINGLETON_THREE_KERNEL_EXCLUSION.md": "b6b5dd19f635826cc435542bdc23894b300d7e628480caafad9d164a139048b9"
+  },
+  "scope": "Typed c3 third-entrance reduction for any finite alphabet; symbolic binary D9 and D4 exclusions. No exclusion of the entire c3 joint orbit, new F value or numerical alphabet separation."
+}

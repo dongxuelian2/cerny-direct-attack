@@ -1,0 +1,1 @@
+{"n":7,"s":4,"target":10,"completed":true,"compression_witness_found":false,"first_classes":38,"visited_classes":38,"assignments":216358,"discarded":86355,"leaves":17168,"candidate_strong_sync":0,"rows":[[],[]],"S":[],"seconds":0.0296631,"implementation":"Bitset pair closure and explicit enumeration of all hole covers."}

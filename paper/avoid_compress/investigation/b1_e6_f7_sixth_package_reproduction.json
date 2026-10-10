@@ -1,0 +1,251 @@
+{
+  "status": "pass",
+  "archive": "certificates/b1_e6_f7_sixth.zip",
+  "sha256": "e9a8952e7e9d831b4d3bae2d8c4e0bc5b766727f74565e377249730c13ad693a",
+  "files": 15,
+  "checksum_entries": 14,
+  "inventories_reproduced_byte_identically": 1,
+  "audits_reproduced_byte_identically": 1,
+  "runs": [
+    {
+      "script": "enumerate_b1_e6_f7_sixth.py",
+      "exit": 0,
+      "outputs": [
+        [
+          {
+            "G": [
+              2
+            ],
+            "field_pairs": 365,
+            "row_patterns": 90,
+            "kernel_pairs": 686,
+            "G2_full_letters": 129600
+          },
+          {
+            "G": [
+              1,
+              2
+            ],
+            "field_pairs": 24,
+            "row_patterns": 242,
+            "kernel_pairs": 144,
+            "G2_full_letters": 0
+          },
+          {
+            "G": [
+              1,
+              8
+            ],
+            "field_pairs": 24,
+            "row_patterns": 252,
+            "kernel_pairs": 864,
+            "G2_full_letters": 0
+          },
+          {
+            "G": [
+              2,
+              4
+            ],
+            "field_pairs": 24,
+            "row_patterns": 252,
+            "kernel_pairs": 864,
+            "G2_full_letters": 0
+          },
+          {
+            "G": [
+              1,
+              2,
+              8
+            ],
+            "field_pairs": 24,
+            "row_patterns": 242,
+            "kernel_pairs": 144,
+            "G2_full_letters": 0
+          }
+        ]
+      ]
+    },
+    {
+      "script": "check_b1_e6_f7_sixth.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "n": 9,
+          "G": [
+            1,
+            2
+          ],
+          "pairs": 1536
+        },
+        {
+          "n": 10,
+          "G": [
+            1,
+            2
+          ],
+          "pairs": 20736
+        },
+        {
+          "n": 11,
+          "G": [
+            1,
+            2
+          ],
+          "pairs": 442368
+        },
+        {
+          "n": 9,
+          "G": [
+            1,
+            8
+          ],
+          "pairs": 3072
+        },
+        {
+          "n": 10,
+          "G": [
+            1,
+            8
+          ],
+          "pairs": 62208
+        },
+        {
+          "n": 11,
+          "G": [
+            1,
+            8
+          ],
+          "pairs": 1769472
+        },
+        {
+          "n": 9,
+          "G": [
+            2,
+            4
+          ],
+          "pairs": 3072
+        },
+        {
+          "n": 10,
+          "G": [
+            2,
+            4
+          ],
+          "pairs": 62208
+        },
+        {
+          "n": 11,
+          "G": [
+            2,
+            4
+          ],
+          "pairs": 1769472
+        },
+        {
+          "n": 9,
+          "G": [
+            1,
+            2,
+            8
+          ],
+          "pairs": 1536
+        },
+        {
+          "n": 10,
+          "G": [
+            1,
+            2,
+            8
+          ],
+          "pairs": 20736
+        },
+        {
+          "n": 11,
+          "G": [
+            1,
+            2,
+            8
+          ],
+          "pairs": 442368
+        },
+        {
+          "status": "pass",
+          "kernels": [
+            {
+              "G": [
+                2
+              ],
+              "original_field_pairs": 365,
+              "row_patterns": 90,
+              "compatible_kernel_pairs": 686
+            },
+            {
+              "G": [
+                1,
+                2
+              ],
+              "original_field_pairs": 24,
+              "row_patterns": 242,
+              "compatible_kernel_pairs": 144
+            },
+            {
+              "G": [
+                1,
+                8
+              ],
+              "original_field_pairs": 24,
+              "row_patterns": 252,
+              "compatible_kernel_pairs": 864
+            },
+            {
+              "G": [
+                2,
+                4
+              ],
+              "original_field_pairs": 24,
+              "row_patterns": 252,
+              "compatible_kernel_pairs": 864
+            },
+            {
+              "G": [
+                1,
+                2,
+                8
+              ],
+              "original_field_pairs": 24,
+              "row_patterns": 242,
+              "compatible_kernel_pairs": 144
+            }
+          ],
+          "G2_letter_controls": {
+            "complete_individual_letters": 129600,
+            "all_known_preimage_rows": 64,
+            "rows_with_actual_letters": 64,
+            "role_and_word_controls": {
+              "protected_two_step_witnesses": 208800,
+              "external_kernel_role": 14400,
+              "C_merger_role": 46080
+            },
+            "correct_singleton2_isolation_depth": 1,
+            "uses_singleton_P2_cover": false,
+            "scope": "Every individual n13 letter, no coupled transition-pair enumeration. Binary role and protected two-step contradiction are symbolic."
+          },
+          "short_ports": {
+            "G12_X_systems": 720,
+            "G128_X_systems": 720,
+            "ordinary_L_systems": 4320,
+            "L_systems_omitting2": 600
+          },
+          "overlap_full_letters": [
+            31200,
+            31200
+          ],
+          "remaining_pairs": 730
+        }
+      ]
+    }
+  ],
+  "source_sha256": {
+    "check_b1_e6_f7_sixth_package.py": "c549ac3257133114821efc94e6131b5411ab7b1cce021adc07b8e0244f50b570"
+  }
+}

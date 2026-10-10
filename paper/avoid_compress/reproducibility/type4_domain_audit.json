@@ -1,0 +1,33 @@
+{
+  "status": "pass",
+  "domain_controls": [
+    {
+      "n": 6,
+      "compatible_letters": 143,
+      "missing1_letters": 12,
+      "case_counts": {
+        "t_bad": 4,
+        "closed": 4,
+        "mixing": 4
+      }
+    },
+    {
+      "n": 7,
+      "compatible_letters": 815,
+      "missing1_letters": 48,
+      "case_counts": {
+        "t_bad": 24,
+        "closed": 8,
+        "mixing": 16
+      }
+    }
+  ],
+  "profile_counts": [
+    33,
+    37
+  ],
+  "distance_vectors_per_domain": 720,
+  "candidates": 0,
+  "all_profiles_flags_and_vectors_match": true,
+  "scope": "Finite controls of a separate uniform type-4 reduction; no new exact maximum."
+}

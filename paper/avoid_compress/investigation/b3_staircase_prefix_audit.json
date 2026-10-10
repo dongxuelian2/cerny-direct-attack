@@ -1,0 +1,48 @@
+{
+  "status": "pass",
+  "parameter": [
+    13,
+    9,
+    1
+  ],
+  "selected_geometries": 2,
+  "global_classes": 8,
+  "ordered_first_pairs": 3920,
+  "retained_first_pairs": 1932,
+  "common_planes_checked": 44136,
+  "retained_planes": 180,
+  "first_reasons": {
+    "no_moving_letter": 0,
+    "missing_supplier": 1274,
+    "maximal_graph_not_SC": 714,
+    "retained": 1932
+  },
+  "second_reasons": {
+    "no_moving_letter": 8736,
+    "no_second_dimension": 6120,
+    "missing_supplier": 16068,
+    "maximal_graph_not_SC": 13032,
+    "retained": 180
+  },
+  "exact_domain_digests_checked": 16,
+  "distinct_quota_queries": 171600,
+  "closed_graphs_checked": 13746,
+  "source_sha256": {
+    "check_b3_staircase_prefix.py": "c907da6d95915c85fa0daaf366821724573b0495d95bd6ff99d2708025c4d46b",
+    "B3_STAIRCASE_FLAG_EXCLUSION.md": "5455291ed385dafa0f302408d0c7db7d6300f8ea1075c8e326daf442bf8b6318",
+    "b3_staircase_scope.json": "571bb30ab52b2702a0e840d655ab25c4e6b7e73d6855599ca1e47578370096c2",
+    "b3_staircase_baseline_state.json": "3999c415b548dbda9b49d50ae0c014cf0b6693c54ecc0381b98b0c9f1f270d1b",
+    "AUXILIARY_AUDIT_20261010_20.json": "58096b557e161873ec19b56d46417330890a31aea063abcd83da732ae9a6d744",
+    "b3_staircase_first_inventory.json": "ef826d2af13d22d0de2f33b62fcf8ffa5a9a1d8f5948391bdfd0eb36573f9bfa",
+    "b3_staircase_plane_inventory.json": "c03e775c9a5685be2a29690b40906133a872c7ed3f8c3b7218b0eb1b35310d94",
+    "b3_inverse_clique_inventory.json": "9ecd3987de54bb51d35afbb1ab266a89e8d4714e53c7d71798104b68abdd470d",
+    "b3_inverse_clique_audit.json": "b463ff7f42120f98c6d4ce65aa368d93c2d7cb37c7040a66de928890cb5e5f91",
+    "b3_third_cover_inventory.json": "72f7c22ce95ca425221d77e463c737697bebb7b4c9991978eccae0bfaf65c4d1",
+    "LOCAL_EQUALITY_FLAG.md": "f34cf260276c6551266564c1ee2264dc823aeaa4f33b4ae8f8261aedeec596a8",
+    "local_equality_flag_audit.json": "b908e60013672ce875cf351a478e95b0faf5fc72f2428f00fcc209be1f9e4d40",
+    "ENTRY_FIBER_FLAG.md": "b27eb51977104cd68aaff2e2f37db10c50bbf4a4dd4320502b15b0f609a01bbf",
+    "SECOND_ENTRANCE_FIBER.md": "664e379a346274ec88c59130741dc43251717eb53a16979198b76e18a165f34b",
+    "THIRD_ENTRANCE_SPACE.md": "01baa935bac82d8a8a878f3ee6fbf3778c167b2eb7fb114d0466c6794ebb5315"
+  },
+  "scope": "Complete first-image and depth-two plane domains for the two selected staircase geometries. Retained domains are necessary overapproximations only."
+}

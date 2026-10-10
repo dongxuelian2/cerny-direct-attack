@@ -1,0 +1,15 @@
+{
+  "verified": true,
+  "cases": 1000,
+  "maximum_pair_bits": 120,
+  "maximum_hole_words": 9,
+  "checked_n": [
+    11,
+    12,
+    13,
+    16
+  ],
+  "address_sanitizer": true,
+  "undefined_behavior_sanitizer": true,
+  "scope": "Finite widths and pair closure versus vector BFS and literal hole enumeration."
+}

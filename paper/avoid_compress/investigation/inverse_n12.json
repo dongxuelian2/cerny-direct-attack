@@ -1,0 +1,1 @@
+{"n":12,"s":9,"target":10,"completed":true,"compression_witness_found":false,"first_classes":303,"visited_classes":303,"assignments":4020074488,"discarded":19995760,"leaves":1374921673,"candidate_strong_sync":0,"rows":[[],[]],"S":[],"seconds":850.162,"implementation":"Inverse successor discovery, adaptive early-pair assignment and explicit hole masks."}

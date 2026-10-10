@@ -1,0 +1,48 @@
+{
+  "status": "pass",
+  "reports": [
+    {
+      "file": "fiber_overlap_n7.json",
+      "n": 7,
+      "assignments": 2304,
+      "actual_subset_tests": 1536,
+      "restricted_target_found": false,
+      "global_negative": false
+    },
+    {
+      "file": "fiber_overlap_n8.json",
+      "n": 8,
+      "assignments": 57600,
+      "actual_subset_tests": 110640,
+      "restricted_target_found": false,
+      "global_negative": false
+    },
+    {
+      "file": "fiber_overlap_n9.json",
+      "n": 9,
+      "assignments": 2073600,
+      "actual_subset_tests": 8040000,
+      "restricted_target_found": false,
+      "global_negative": false
+    }
+  ],
+  "literal_n7": {
+    "assignments": 2304,
+    "strong_maps": 852,
+    "synchronizing_maps": 768,
+    "protected_isolation_pass": 384,
+    "actual_subset_tests": 1536,
+    "witness_found": false
+  },
+  "sanitizer_n7": true,
+  "source_sha256": {
+    "fiber_overlap_n7.json": "30e7be964ad2ce41ad644de374de723e9ffb0ea09f9b57a98624a0c6fadbeedd",
+    "fiber_overlap_n8.json": "088370f9c7ec3fb67f306b091ad3618f2e320a2cf55c6941eee960a06d27a418",
+    "fiber_overlap_n9.json": "e71e462c0599232626665169c1e7766db6aed15080a73dd71351b77ce2841a91",
+    "fiber_overlap_sanitized_n7.json": "a7c357e273a32fd54d4132ca749a3d40381aac19709cfac9a3ab2f9a372abf4b",
+    "check_fiber_overlap_probe.py": "9bf3cdf3af369ecd0a25d9ca971994ec5b9ff4b7e8af18b558427a81b5a143f4",
+    "probe_fiber_overlap.cpp": "2a303aeb1baa497d1851542430575a960e603f7982a954c52e259d25c34678ad",
+    "alphabet_check.py": "5a93272df21227051061770d3edc48fd2aaeabc6062c4a385593689444b538df"
+  },
+  "scope": "Complete enumeration only in rank-one-defect/permutation overlapping B2,C2 family. n7 independently re-enumerated with literal sets; no global exclusion and no new F maximum."
+}

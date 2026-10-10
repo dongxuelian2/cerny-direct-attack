@@ -1,0 +1,22 @@
+{
+  "profile_count": 177,
+  "distance_vectors_checked": 30240,
+  "all_states_exit_with_first_distance_at_least_seven": false,
+  "witness": null,
+  "literal_controls": [
+    {
+      "n": 6,
+      "pool_letters": 111,
+      "profiles": 111,
+      "all_included": true
+    },
+    {
+      "n": 7,
+      "pool_letters": 407,
+      "profiles": 176,
+      "all_included": true
+    }
+  ],
+  "artificial_positive_control": "pass",
+  "scope": "Complete check on the supplied matching-type action profiles; projection proof still requires audit."
+}

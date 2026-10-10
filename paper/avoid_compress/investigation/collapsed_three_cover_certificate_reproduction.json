@@ -1,0 +1,98 @@
+{
+  "status": "pass",
+  "archive": "certificates/collapsed_three_cover.zip",
+  "sha256": "4af35f2e6972e2db7409370f2e185e44989bf165b4cc1375a75bc1c97b3d24ee",
+  "files": 145,
+  "checksum_entries": 144,
+  "audits_reproduced_byte_identically": 2,
+  "runs": [
+    {
+      "script": "check_collapsed_three_cover.py",
+      "exit": 0,
+      "output": {
+        "status": "pass",
+        "ordered_three_pair_sequences_checked": 74046,
+        "collapsed_map_controls": [
+          {
+            "n": 4,
+            "exact_collapsed_cover_maps": 12
+          },
+          {
+            "n": 5,
+            "exact_collapsed_cover_maps": 60
+          },
+          {
+            "n": 6,
+            "exact_collapsed_cover_maps": 360
+          }
+        ],
+        "complete_n4_ordered_binary_alphabets": 65536,
+        "synchronizing_alphabets": 51520,
+        "two_cover_P4_controls": 1872,
+        "immediate_three_pair_refinement_controls": 31696,
+        "collapsed_cover_instances": 4464,
+        "nonisolated_target_boundary": {
+          "letters": [
+            [
+              3,
+              3,
+              3,
+              0
+            ],
+            [
+              1,
+              2,
+              3,
+              0
+            ]
+          ],
+          "collapsed_target": 3,
+          "target_not_isolated_in_P4": true,
+          "pair_distances": [
+            1,
+            1,
+            2,
+            1,
+            2,
+            3
+          ]
+        },
+        "n3_complement_is_singleton_boundary": true,
+        "scope": "Uniform written collapsed-cover proof with literal sequence/map/full-n4 controls. No F value."
+      }
+    },
+    {
+      "script": "check_collapsed_three_cover_application.py",
+      "exit": 0,
+      "output": {
+        "status": "pass",
+        "counts": {
+          "new_binary_types": 2,
+          "new_binary_geometry": 2,
+          "new_binary_pairs": 11,
+          "new_unrestricted_B1_B2": 5,
+          "new_unrestricted_B3": 4,
+          "remaining_binary_types": 105,
+          "remaining_binary_pairs": 448,
+          "remaining_binary_geometry": 120,
+          "remaining_unrestricted_B1_B2": 136,
+          "remaining_unrestricted_B3": 63,
+          "remaining_binary_joints": 18,
+          "remaining_unrestricted_joints": 30,
+          "remaining_unrestricted_first_cases": 5
+        },
+        "all_inventory_excluded_joint_ids": [
+          "b1_out_c6",
+          "b3_in_c1",
+          "b3_in_c2",
+          "b3_in_c3"
+        ],
+        "labelled_D_transports_checked": 231,
+        "full_labelled_joint_choices": 72
+      }
+    }
+  ],
+  "source_sha256": {
+    "package_collapsed_three_cover_certificate.py": "9b06762ffb90c503a1d3c49e133e5432a0e08a57ed91496830ca01983e0a6b08"
+  }
+}

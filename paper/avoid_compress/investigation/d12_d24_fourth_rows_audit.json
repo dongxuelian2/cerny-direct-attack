@@ -1,0 +1,773 @@
+{
+  "status": "pass",
+  "parameter": [
+    13,
+    9,
+    1
+  ],
+  "alphabet": "binary only",
+  "all_D12_D24_binary_fourth_survivors_excluded": true,
+  "build_flags": [
+    "-std=c++17",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-pedantic"
+  ],
+  "bare_algorithm_controls": 3,
+  "independent_symmetry_checks": 30240,
+  "high_initial_masks_checked": 3404160,
+  "all_parent_fourth_pairs": 48,
+  "canonical_raw_rows_sha256": "34b7b712fc893fd32cbb8ae66ab6ccfe123e274dbe8fc5044a309c05394cafdf",
+  "canonical_kept_rows_sha256": "0185d19574de9af67a33e7d182f667e7334b26a38e30f6470f4adb597ebf1f2c",
+  "pointwise_transports_sha256": "308dcb677de4f3babddcd3ed583d8d133f6ea51d354c78d0c13bbe2225b90422",
+  "pointwise_transports_checked": 4122720,
+  "complete_pair_scans": [
+    {
+      "D": [
+        1,
+        2
+      ],
+      "E": [
+        5
+      ],
+      "Boolean_companions": [],
+      "raw_rows": 1370880,
+      "kept_rows": 635040,
+      "raw_literal_pair_product": 73156608000,
+      "kept_literal_pair_product": 20575296000,
+      "representatives_per_field": [
+        0,
+        43,
+        41,
+        136,
+        69,
+        0,
+        43,
+        41,
+        136,
+        69
+      ],
+      "complete_representative_pairs": 27205920,
+      "parent_field_pairs": 9,
+      "individual_fields": [
+        {
+          "field_row": 0,
+          "raw_rows": 0,
+          "kept_rows": 0,
+          "representatives": 0,
+          "counts": {}
+        },
+        {
+          "field_row": 1,
+          "raw_rows": 40320,
+          "kept_rows": 30240,
+          "representatives": 43,
+          "counts": {
+            "kept": 30240,
+            "no_single_letter_initial_image": 10080
+          }
+        },
+        {
+          "field_row": 2,
+          "raw_rows": 40320,
+          "kept_rows": 25200,
+          "representatives": 41,
+          "counts": {
+            "kept": 25200,
+            "no_single_letter_initial_image": 15120
+          }
+        },
+        {
+          "field_row": 3,
+          "raw_rows": 282240,
+          "kept_rows": 211680,
+          "representatives": 136,
+          "counts": {
+            "kept": 211680,
+            "no_single_letter_initial_image": 70560
+          }
+        },
+        {
+          "field_row": 4,
+          "raw_rows": 322560,
+          "kept_rows": 50400,
+          "representatives": 69,
+          "counts": {
+            "kept": 50400,
+            "no_single_letter_initial_image": 25200,
+            "protected_P7_depth2": 246960
+          }
+        },
+        {
+          "field_row": 5,
+          "raw_rows": 0,
+          "kept_rows": 0,
+          "representatives": 0,
+          "counts": {}
+        },
+        {
+          "field_row": 6,
+          "raw_rows": 40320,
+          "kept_rows": 30240,
+          "representatives": 43,
+          "counts": {
+            "kept": 30240,
+            "no_single_letter_initial_image": 10080
+          }
+        },
+        {
+          "field_row": 7,
+          "raw_rows": 40320,
+          "kept_rows": 25200,
+          "representatives": 41,
+          "counts": {
+            "kept": 25200,
+            "no_single_letter_initial_image": 15120
+          }
+        },
+        {
+          "field_row": 8,
+          "raw_rows": 282240,
+          "kept_rows": 211680,
+          "representatives": 136,
+          "counts": {
+            "kept": 211680,
+            "no_single_letter_initial_image": 70560
+          }
+        },
+        {
+          "field_row": 9,
+          "raw_rows": 322560,
+          "kept_rows": 50400,
+          "representatives": 69,
+          "counts": {
+            "kept": 50400,
+            "no_single_letter_initial_image": 25200,
+            "protected_P7_depth2": 246960
+          }
+        }
+      ],
+      "reverse_pair_cases": {
+        "disjoint_initial_mask": 7451136,
+        "not_strongly_connected": 11190024,
+        "protected_P7_depth2": 8564760
+      },
+      "forward_pair_cases": {
+        "not_strongly_connected": 13970496,
+        "protected_P7_depth2": 13235424
+      },
+      "zero_candidates_both_algorithms": true
+    },
+    {
+      "D": [
+        1,
+        2
+      ],
+      "E": [
+        1,
+        5
+      ],
+      "Boolean_companions": [],
+      "raw_rows": 725760,
+      "kept_rows": 211680,
+      "raw_literal_pair_product": 39016857600,
+      "kept_literal_pair_product": 6096384000,
+      "representatives_per_field": [
+        41,
+        86,
+        41,
+        86
+      ],
+      "complete_representative_pairs": 8779680,
+      "parent_field_pairs": 3,
+      "individual_fields": [
+        {
+          "field_row": 0,
+          "raw_rows": 40320,
+          "kept_rows": 25200,
+          "representatives": 41,
+          "counts": {
+            "kept": 25200,
+            "no_single_letter_initial_image": 15120
+          }
+        },
+        {
+          "field_row": 1,
+          "raw_rows": 322560,
+          "kept_rows": 80640,
+          "representatives": 86,
+          "counts": {
+            "kept": 80640,
+            "no_single_letter_initial_image": 241920
+          }
+        },
+        {
+          "field_row": 2,
+          "raw_rows": 40320,
+          "kept_rows": 25200,
+          "representatives": 41,
+          "counts": {
+            "kept": 25200,
+            "no_single_letter_initial_image": 15120
+          }
+        },
+        {
+          "field_row": 3,
+          "raw_rows": 322560,
+          "kept_rows": 80640,
+          "representatives": 86,
+          "counts": {
+            "kept": 80640,
+            "no_single_letter_initial_image": 241920
+          }
+        }
+      ],
+      "reverse_pair_cases": {
+        "disjoint_initial_mask": 4656960,
+        "not_strongly_connected": 4122720
+      },
+      "forward_pair_cases": {
+        "not_strongly_connected": 8779680
+      },
+      "zero_candidates_both_algorithms": true
+    },
+    {
+      "D": [
+        1,
+        2
+      ],
+      "E": [
+        2,
+        5
+      ],
+      "Boolean_companions": [],
+      "raw_rows": 887040,
+      "kept_rows": 584640,
+      "raw_literal_pair_product": 48771072000,
+      "kept_literal_pair_product": 11659334400,
+      "representatives_per_field": [
+        0,
+        43,
+        25,
+        179,
+        15,
+        0,
+        43,
+        25,
+        179,
+        15
+      ],
+      "complete_representative_pairs": 16168320,
+      "parent_field_pairs": 12,
+      "individual_fields": [
+        {
+          "field_row": 0,
+          "raw_rows": 0,
+          "kept_rows": 0,
+          "representatives": 0,
+          "counts": {}
+        },
+        {
+          "field_row": 1,
+          "raw_rows": 40320,
+          "kept_rows": 30240,
+          "representatives": 43,
+          "counts": {
+            "kept": 30240,
+            "no_single_letter_initial_image": 10080
+          }
+        },
+        {
+          "field_row": 2,
+          "raw_rows": 40320,
+          "kept_rows": 15120,
+          "representatives": 25,
+          "counts": {
+            "kept": 15120,
+            "no_single_letter_initial_image": 25200
+          }
+        },
+        {
+          "field_row": 3,
+          "raw_rows": 322560,
+          "kept_rows": 241920,
+          "representatives": 179,
+          "counts": {
+            "kept": 241920,
+            "no_single_letter_initial_image": 80640
+          }
+        },
+        {
+          "field_row": 4,
+          "raw_rows": 40320,
+          "kept_rows": 5040,
+          "representatives": 15,
+          "counts": {
+            "kept": 5040,
+            "uncovered_P5_depth2": 35280
+          }
+        },
+        {
+          "field_row": 5,
+          "raw_rows": 0,
+          "kept_rows": 0,
+          "representatives": 0,
+          "counts": {}
+        },
+        {
+          "field_row": 6,
+          "raw_rows": 40320,
+          "kept_rows": 30240,
+          "representatives": 43,
+          "counts": {
+            "kept": 30240,
+            "no_single_letter_initial_image": 10080
+          }
+        },
+        {
+          "field_row": 7,
+          "raw_rows": 40320,
+          "kept_rows": 15120,
+          "representatives": 25,
+          "counts": {
+            "kept": 15120,
+            "no_single_letter_initial_image": 25200
+          }
+        },
+        {
+          "field_row": 8,
+          "raw_rows": 322560,
+          "kept_rows": 241920,
+          "representatives": 179,
+          "counts": {
+            "kept": 241920,
+            "no_single_letter_initial_image": 80640
+          }
+        },
+        {
+          "field_row": 9,
+          "raw_rows": 40320,
+          "kept_rows": 5040,
+          "representatives": 15,
+          "counts": {
+            "kept": 5040,
+            "uncovered_P5_depth2": 35280
+          }
+        }
+      ],
+      "reverse_pair_cases": {
+        "disjoint_initial_mask": 2496144,
+        "not_strongly_connected": 6277964,
+        "uncovered_P5_depth2": 7394212
+      },
+      "forward_pair_cases": {
+        "not_strongly_connected": 7057368,
+        "uncovered_P5_depth2": 9110952
+      },
+      "zero_candidates_both_algorithms": true
+    },
+    {
+      "D": [
+        2,
+        4
+      ],
+      "E": [
+        5
+      ],
+      "Boolean_companions": [],
+      "raw_rows": 2499840,
+      "kept_rows": 1108800,
+      "raw_literal_pair_product": 585252864000,
+      "kept_literal_pair_product": 68584320000,
+      "representatives_per_field": [
+        43,
+        136,
+        69,
+        136,
+        69,
+        43,
+        136,
+        69,
+        136,
+        69
+      ],
+      "complete_representative_pairs": 70801920,
+      "parent_field_pairs": 9,
+      "individual_fields": [
+        {
+          "field_row": 0,
+          "raw_rows": 40320,
+          "kept_rows": 30240,
+          "representatives": 43,
+          "counts": {
+            "kept": 30240,
+            "no_single_letter_initial_image": 10080
+          }
+        },
+        {
+          "field_row": 1,
+          "raw_rows": 282240,
+          "kept_rows": 211680,
+          "representatives": 136,
+          "counts": {
+            "kept": 211680,
+            "no_single_letter_initial_image": 70560
+          }
+        },
+        {
+          "field_row": 2,
+          "raw_rows": 322560,
+          "kept_rows": 50400,
+          "representatives": 69,
+          "counts": {
+            "kept": 50400,
+            "no_single_letter_initial_image": 25200,
+            "uncovered_P5_depth2": 246960
+          }
+        },
+        {
+          "field_row": 3,
+          "raw_rows": 282240,
+          "kept_rows": 211680,
+          "representatives": 136,
+          "counts": {
+            "kept": 211680,
+            "no_single_letter_initial_image": 70560
+          }
+        },
+        {
+          "field_row": 4,
+          "raw_rows": 322560,
+          "kept_rows": 50400,
+          "representatives": 69,
+          "counts": {
+            "kept": 50400,
+            "no_single_letter_initial_image": 25200,
+            "protected_P7_depth2": 246960
+          }
+        },
+        {
+          "field_row": 5,
+          "raw_rows": 40320,
+          "kept_rows": 30240,
+          "representatives": 43,
+          "counts": {
+            "kept": 30240,
+            "no_single_letter_initial_image": 10080
+          }
+        },
+        {
+          "field_row": 6,
+          "raw_rows": 282240,
+          "kept_rows": 211680,
+          "representatives": 136,
+          "counts": {
+            "kept": 211680,
+            "no_single_letter_initial_image": 70560
+          }
+        },
+        {
+          "field_row": 7,
+          "raw_rows": 322560,
+          "kept_rows": 50400,
+          "representatives": 69,
+          "counts": {
+            "kept": 50400,
+            "no_single_letter_initial_image": 25200,
+            "uncovered_P5_depth2": 246960
+          }
+        },
+        {
+          "field_row": 8,
+          "raw_rows": 282240,
+          "kept_rows": 211680,
+          "representatives": 136,
+          "counts": {
+            "kept": 211680,
+            "no_single_letter_initial_image": 70560
+          }
+        },
+        {
+          "field_row": 9,
+          "raw_rows": 322560,
+          "kept_rows": 50400,
+          "representatives": 69,
+          "counts": {
+            "kept": 50400,
+            "no_single_letter_initial_image": 25200,
+            "protected_P7_depth2": 246960
+          }
+        }
+      ],
+      "reverse_pair_cases": {
+        "disjoint_initial_mask": 16158240,
+        "not_strongly_connected": 25896744,
+        "not_synchronizing": 2252016,
+        "protected_P7_depth2": 26494920
+      },
+      "forward_pair_cases": {
+        "not_strongly_connected": 30970008,
+        "not_synchronizing": 2806344,
+        "protected_P7_depth2": 37025568
+      },
+      "zero_candidates_both_algorithms": true
+    },
+    {
+      "D": [
+        2,
+        4
+      ],
+      "E": [
+        1,
+        5
+      ],
+      "Boolean_companions": [
+        [
+          2,
+          5
+        ]
+      ],
+      "raw_rows": 725760,
+      "kept_rows": 493920,
+      "raw_literal_pair_product": 39016857600,
+      "kept_literal_pair_product": 3657830400,
+      "representatives_per_field": [
+        15,
+        179,
+        15,
+        179
+      ],
+      "complete_representative_pairs": 8159760,
+      "parent_field_pairs": 3,
+      "individual_fields": [
+        {
+          "field_row": 0,
+          "raw_rows": 40320,
+          "kept_rows": 5040,
+          "representatives": 15,
+          "counts": {
+            "kept": 5040,
+            "uncovered_P5_depth2": 35280
+          }
+        },
+        {
+          "field_row": 1,
+          "raw_rows": 322560,
+          "kept_rows": 241920,
+          "representatives": 179,
+          "counts": {
+            "kept": 241920,
+            "no_single_letter_initial_image": 80640
+          }
+        },
+        {
+          "field_row": 2,
+          "raw_rows": 40320,
+          "kept_rows": 5040,
+          "representatives": 15,
+          "counts": {
+            "kept": 5040,
+            "uncovered_P5_depth2": 35280
+          }
+        },
+        {
+          "field_row": 3,
+          "raw_rows": 322560,
+          "kept_rows": 241920,
+          "representatives": 179,
+          "counts": {
+            "kept": 241920,
+            "no_single_letter_initial_image": 80640
+          }
+        }
+      ],
+      "reverse_pair_cases": {
+        "not_strongly_connected": 3979704,
+        "not_synchronizing": 559320,
+        "uncovered_P5_depth2": 3620736
+      },
+      "forward_pair_cases": {
+        "not_strongly_connected": 3979704,
+        "not_synchronizing": 559320,
+        "uncovered_P5_depth2": 3620736
+      },
+      "zero_candidates_both_algorithms": true
+    },
+    {
+      "D": [
+        2,
+        4
+      ],
+      "E": [
+        2,
+        5
+      ],
+      "Boolean_companions": [
+        [
+          1,
+          5
+        ]
+      ],
+      "raw_rows": 2096640,
+      "kept_rows": 1088640,
+      "raw_literal_pair_product": 395045683200,
+      "kept_literal_pair_product": 22785235200,
+      "representatives_per_field": [
+        43,
+        179,
+        41,
+        179,
+        15,
+        43,
+        179,
+        41,
+        179,
+        15
+      ],
+      "complete_representative_pairs": 31459680,
+      "parent_field_pairs": 12,
+      "individual_fields": [
+        {
+          "field_row": 0,
+          "raw_rows": 40320,
+          "kept_rows": 30240,
+          "representatives": 43,
+          "counts": {
+            "kept": 30240,
+            "no_single_letter_initial_image": 10080
+          }
+        },
+        {
+          "field_row": 1,
+          "raw_rows": 322560,
+          "kept_rows": 241920,
+          "representatives": 179,
+          "counts": {
+            "kept": 241920,
+            "no_single_letter_initial_image": 80640
+          }
+        },
+        {
+          "field_row": 2,
+          "raw_rows": 322560,
+          "kept_rows": 25200,
+          "representatives": 41,
+          "counts": {
+            "kept": 25200,
+            "no_single_letter_initial_image": 50400,
+            "uncovered_P5_depth2": 246960
+          }
+        },
+        {
+          "field_row": 3,
+          "raw_rows": 322560,
+          "kept_rows": 241920,
+          "representatives": 179,
+          "counts": {
+            "kept": 241920,
+            "no_single_letter_initial_image": 80640
+          }
+        },
+        {
+          "field_row": 4,
+          "raw_rows": 40320,
+          "kept_rows": 5040,
+          "representatives": 15,
+          "counts": {
+            "kept": 5040,
+            "uncovered_P5_depth2": 35280
+          }
+        },
+        {
+          "field_row": 5,
+          "raw_rows": 40320,
+          "kept_rows": 30240,
+          "representatives": 43,
+          "counts": {
+            "kept": 30240,
+            "no_single_letter_initial_image": 10080
+          }
+        },
+        {
+          "field_row": 6,
+          "raw_rows": 322560,
+          "kept_rows": 241920,
+          "representatives": 179,
+          "counts": {
+            "kept": 241920,
+            "no_single_letter_initial_image": 80640
+          }
+        },
+        {
+          "field_row": 7,
+          "raw_rows": 322560,
+          "kept_rows": 25200,
+          "representatives": 41,
+          "counts": {
+            "kept": 25200,
+            "no_single_letter_initial_image": 50400,
+            "uncovered_P5_depth2": 246960
+          }
+        },
+        {
+          "field_row": 8,
+          "raw_rows": 322560,
+          "kept_rows": 241920,
+          "representatives": 179,
+          "counts": {
+            "kept": 241920,
+            "no_single_letter_initial_image": 80640
+          }
+        },
+        {
+          "field_row": 9,
+          "raw_rows": 40320,
+          "kept_rows": 5040,
+          "representatives": 15,
+          "counts": {
+            "kept": 5040,
+            "uncovered_P5_depth2": 35280
+          }
+        }
+      ],
+      "reverse_pair_cases": {
+        "disjoint_initial_mask": 6319296,
+        "not_strongly_connected": 11828264,
+        "not_synchronizing": 982152,
+        "protected_P7_depth2": 2433528,
+        "uncovered_P5_depth2": 9075596,
+        "uncovered_P5_depth3": 352232,
+        "uncovered_P5_depth4": 468612
+      },
+      "forward_pair_cases": {
+        "not_strongly_connected": 14133732,
+        "not_synchronizing": 982152,
+        "protected_P7_depth2": 2433528,
+        "uncovered_P5_depth2": 12547404,
+        "uncovered_P5_depth3": 573016,
+        "uncovered_P5_depth4": 789848
+      },
+      "zero_candidates_both_algorithms": true
+    }
+  ],
+  "raw_individual_rows": 8305920,
+  "checked_representative_pairs_per_implementation": 162575280,
+  "source_sha256": {
+    "check_d12_d24_fourth_rows.py": "6b6a82ea51fc5dd58374c1ce2ae26e5fd7f951f636ea8b6d235f15ca6ff62864",
+    "enumerate_d12_d24_fourth_rows.py": "0b55ad467f7565725d1d34761cb44919ad2504957bb5728f0dd1a25856b955a4",
+    "d12_d24_fourth_rows_inventory.json": "dd91cd746e8de97a584a1310c7dfb716f072f61414fb47fac538ffdfff86249d",
+    "d12_d24_fourth_rows_fields.txt": "30e4b7a1c82fc01003b76c9692e41b872790183fd2ab26336d03be677444ff0d",
+    "check_d12_d24_fourth_rows.cpp": "80df756b061ffc306b5a84de87aac65d5c786ffeec0d494af4d41df87217350f",
+    "check_d12_d24_fourth_forward.cpp": "e754c2bd73309add84a2d1bcce10b8af2da307e34cf7336f4ffe38b84c047af7",
+    "D12_D24_ROW_COVER.md": "1fee99864f43f456fdd862ad18b5f82f775906ed6fb1717c8dfdc78e961c3d9f",
+    "b1_c14_nonsingleton_fourth_inventory.json": "0092cf5570c14be895d357afbae3a14dff4af0fa239b0c42e1f5e7bd4a5bdcae",
+    "b1_c14_nonsingleton_fourth_audit.json": "c61f8792d1152eea0eb7de557c9ee6129922e400e898bdb88acd1708ec3da7d3",
+    "B1_C14_NONSINGLETON_D_FOURTH.md": "2d0e3e1ff1595b0efd75a7d0c83cd12d92dc967346dd8d5539699d51e733d16a",
+    "MANDATORY_CORE_ISOLATION.md": "72129f1a810b07a8bcd975e5df353cc1dbc43d063e13c8ff887ba4748bb14537",
+    "mandatory_core_isolation_audit.json": "67d7c82cae127c23260a3f7b6affe3052a1afef728cad8f49fd54d27e3fa9f54",
+    "LOCAL_EQUALITY_FLAG.md": "f34cf260276c6551266564c1ee2264dc823aeaa4f33b4ae8f8261aedeec596a8",
+    "ENTRY_FIBER_FLAG.md": "b27eb51977104cd68aaff2e2f37db10c50bbf4a4dd4320502b15b0f609a01bbf"
+  },
+  "scope": "Complete binary D12/D24 E5,E15,E25 actual row negatives with all companions and48 fourth pairs. Unrestricted and other D types remain; no global F value."
+}

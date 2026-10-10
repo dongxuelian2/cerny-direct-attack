@@ -1,0 +1,104 @@
+{
+  "status": "pass",
+  "uniform_state_range": "n>=4",
+  "alphabet": "arbitrary finite",
+  "known_refinement_application": true,
+  "complete_n4_ordered_binary_alphabets": 65536,
+  "alphabets_with_multiple_immediate_pairs": 54592,
+  "compressible_pairs_checked_against_five_bound": 303888,
+  "qualifying_sync_fixed_cover_controls": 24,
+  "literal_two_pair_sequences": 18012,
+  "sequence_stats": [
+    {
+      "n": 4,
+      "ordered_two_pair_sequences": 30
+    },
+    {
+      "n": 5,
+      "ordered_two_pair_sequences": 90
+    },
+    {
+      "n": 6,
+      "ordered_two_pair_sequences": 210
+    },
+    {
+      "n": 7,
+      "ordered_two_pair_sequences": 420
+    },
+    {
+      "n": 8,
+      "ordered_two_pair_sequences": 756
+    },
+    {
+      "n": 9,
+      "ordered_two_pair_sequences": 1260
+    },
+    {
+      "n": 10,
+      "ordered_two_pair_sequences": 1980
+    },
+    {
+      "n": 11,
+      "ordered_two_pair_sequences": 2970
+    },
+    {
+      "n": 12,
+      "ordered_two_pair_sequences": 4290
+    },
+    {
+      "n": 13,
+      "ordered_two_pair_sequences": 6006
+    }
+  ],
+  "structural_boundary": {
+    "rows": [
+      [
+        0,
+        2,
+        1,
+        0
+      ],
+      [
+        2,
+        3,
+        1,
+        0
+      ]
+    ],
+    "P1": [
+      [
+        0,
+        3
+      ]
+    ],
+    "outside_K_pair_distance": 6
+  },
+  "n3_essential_boundary": {
+    "rows": [
+      [
+        1,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "K": [
+      0,
+      1
+    ],
+    "outside_K_size": 1,
+    "immediate_pairs": 3,
+    "synchronizing": true
+  },
+  "source_sha256": {
+    "check_two_cover_unique_immediate_pair.py": "5a0b6c77c42673efcfb4f6ede7ef820c4b16fd5d80375ed23de1e6f0fc2704bc",
+    "TWO_COVER_UNIQUE_IMMEDIATE_PAIR.md": "94830c865d87774a5f15ab64c7da04d4a55d3cc06e632a9c5856fb0efc2e9d0c",
+    "check_finite_independent_image_trap.py": "4fd3286be84287aad1f6b33a792a33d2d674c9d9d8dffe21ea78e9ff4571c6e1",
+    "BINARY_OBSTRUCTION_PROOF.md": "32a9d377f3b7d2ff8aadbba1cd23d18220857331c8f3944442ef15f7a6b8412d"
+  },
+  "scope": "Direct credited compression-refinement consequence, complete n4 controls and literal pair-sequence construction. No new F value or priority claim."
+}

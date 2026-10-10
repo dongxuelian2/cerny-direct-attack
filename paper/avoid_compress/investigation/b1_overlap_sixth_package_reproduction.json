@@ -1,0 +1,265 @@
+{
+  "status": "pass",
+  "archive": "certificates/b1_overlap_sixth.zip",
+  "sha256": "1420db05e9f42a289bf6707b4e4c54cc74a2603c0e70ecde3231b334ea7a78ec",
+  "files": 19,
+  "checksum_entries": 18,
+  "inventories_reproduced_byte_identically": 2,
+  "audits_reproduced_byte_identically": 2,
+  "runs": [
+    {
+      "script": "enumerate_b1_e6_overlap_fifth.py",
+      "exit": 0,
+      "outputs": [
+        [
+          {
+            "F": [
+              1,
+              7
+            ],
+            "field_pairs": 12,
+            "row_patterns": 154,
+            "kernel_pairs": 588
+          },
+          {
+            "F": [
+              2,
+              4
+            ],
+            "field_pairs": 12,
+            "row_patterns": 154,
+            "kernel_pairs": 588
+          }
+        ]
+      ]
+    },
+    {
+      "script": "check_b1_e6_overlap_fifth.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "n": 8,
+          "F": [
+            1,
+            7
+          ],
+          "pairs": 1024
+        },
+        {
+          "n": 9,
+          "F": [
+            1,
+            7
+          ],
+          "pairs": 20736
+        },
+        {
+          "n": 10,
+          "F": [
+            1,
+            7
+          ],
+          "pairs": 589824
+        },
+        {
+          "n": 8,
+          "F": [
+            2,
+            4
+          ],
+          "pairs": 1024
+        },
+        {
+          "n": 9,
+          "F": [
+            2,
+            4
+          ],
+          "pairs": 20736
+        },
+        {
+          "n": 10,
+          "F": [
+            2,
+            4
+          ],
+          "pairs": 589824
+        },
+        {
+          "status": "pass",
+          "kernels": [
+            {
+              "F": [
+                1,
+                7
+              ],
+              "original_field_pairs": 12,
+              "row_patterns": 154,
+              "compatible_kernel_pairs": 588
+            },
+            {
+              "F": [
+                2,
+                4
+              ],
+              "original_field_pairs": 12,
+              "row_patterns": 154,
+              "compatible_kernel_pairs": 588
+            }
+          ],
+          "literal_pairs": [
+            1024,
+            20736,
+            589824,
+            1024,
+            20736,
+            589824
+          ],
+          "n13_full_letter_controls": [
+            86400,
+            86400
+          ],
+          "remaining_E6_pairs": 244
+        }
+      ]
+    },
+    {
+      "script": "enumerate_b1_sixth.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "counts": [
+            {
+              "E": [
+                6
+              ],
+              "F": [
+                7
+              ],
+              "geometric_orbits": 7,
+              "labelled_G": 23,
+              "additional_Boolean_orbits": 0,
+              "binary_typed_orbits": 7,
+              "binary_field_pairs": 1191
+            },
+            {
+              "E": [
+                6
+              ],
+              "F": [
+                2,
+                7
+              ],
+              "geometric_orbits": 7,
+              "labelled_G": 23,
+              "additional_Boolean_orbits": 3,
+              "binary_typed_orbits": 3,
+              "binary_field_pairs": 470
+            },
+            {
+              "E": [
+                2,
+                6
+              ],
+              "F": [
+                7
+              ],
+              "geometric_orbits": 7,
+              "labelled_G": 23,
+              "additional_Boolean_orbits": 3,
+              "binary_typed_orbits": 3,
+              "binary_field_pairs": 443
+            }
+          ],
+          "profiles": 21
+        }
+      ]
+    },
+    {
+      "script": "check_b1_sixth.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "status": "pass",
+          "parameter": [
+            13,
+            9,
+            1
+          ],
+          "selected_branches": [
+            {
+              "E": [
+                6
+              ],
+              "F": [
+                7
+              ]
+            },
+            {
+              "E": [
+                6
+              ],
+              "F": [
+                2,
+                7
+              ]
+            },
+            {
+              "E": [
+                2,
+                6
+              ],
+              "F": [
+                7
+              ]
+            }
+          ],
+          "complete_geometric_orbits": 21,
+          "complete_labelled_G_choices": 69,
+          "all_subset_masks_tested": 282555,
+          "cell_constant_augmented_rank_tests": 17467,
+          "binary_field_admission": [
+            {
+              "E": [
+                6
+              ],
+              "F": [
+                7
+              ],
+              "sixth_field_pairs": 1191,
+              "all_original_fifth_pairs_retained": 122
+            },
+            {
+              "E": [
+                6
+              ],
+              "F": [
+                2,
+                7
+              ],
+              "sixth_field_pairs": 470,
+              "all_original_fifth_pairs_retained": 122
+            },
+            {
+              "E": [
+                2,
+                6
+              ],
+              "F": [
+                7
+              ],
+              "sixth_field_pairs": 443,
+              "all_original_fifth_pairs_retained": 122
+            }
+          ],
+          "singleton2_isolation_depth": 1,
+          "uses_singleton_P2_cover_argument": false,
+          "scope": "Complete selected sixth geometry/Boolean/field admission and eight all-alphabet crossed-fiber cuts. No whole fifth/third/joint exclusion, full transition scan, F value or numerical alphabet separation."
+        }
+      ]
+    }
+  ],
+  "source_sha256": {
+    "check_b1_overlap_sixth_package.py": "80fc0090fbcc9cf873916e4a8348fa566e1e099b4b06540ea170dbf3cc50cac2"
+  }
+}

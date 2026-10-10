@@ -1,0 +1,591 @@
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,needspace}
+\usepackage[margin=20mm]{geometry}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\ac}{\operatorname{ac}}
+\newcommand{\Max}{\mathcal F}
+\newcommand{\one}{\mathbf 1}
+\title{Sharpness of the Avoid-or-Compress Bound for Reachable Images}
+\author{Qichao Wang\\Hebei University of Technology}
+\date{8 October 2026}
+\hypersetup{pdftitle={Sharpness of the Avoid-or-Compress Bound for Reachable Images},pdfauthor={Qichao Wang}}
+\begin{document}
+\maketitle
+\begin{abstract}
+Let $\ac(S,A)$ be the minimum word length omitting a state of $\varnothing\ne A\subsetneq S$ or compressing $S$. We prove sharpness of Szyku\l a's bound $n-|A|$ on the first two cardinality faces (proper $S$ on the second) and at every $n\ge2|S|-|A|-1$ for larger gaps. All witnesses are binary, strongly connected and synchronizing, with $S$ a reachable image. Put $m=n-|S|$ and $q=n-|A|$. Both binary and unrestricted maxima equal one for $m=0$, $\min\{q,3m\}$ for $1\le m\le3$, and $q$ for $m\ge4$, $q\le3m-1$. The codimension-three upper uses a computer-assisted structural proof and refutes $\min\{q,\binom{m+2}{2}\}$ at infinitely many parameters. Independently checked witnesses determine every parameter through $n=12$. The remaining region is unresolved; this is a partial answer to Szyku\l a's 2026 Open Problem~4.
+\end{abstract}
+
+\section{Statement and preliminaries}
+A complete deterministic automaton is a triple $(Q,\Sigma,\delta)$ with finite state set $Q$ and total transition function $\delta:Q\times\Sigma\to Q$. We use right actions: $qw=\delta(q,w)$ and $Sw=\{qw:q\in S\}$. Length counts letters of $\Sigma$. The automaton is strongly connected if every state reaches every other state, and synchronizing if $|Qw|=1$ for some word $w$. A subset $S$ is a reachable image if $S=Qv$ for a word $v$, possibly empty. Put
+\[
+ \ac(S,A)=\min\{|w|: A\nsubseteq Sw\ \text{or}\ |Sw|<|S|\},
+ \qquad \varnothing\ne A\subsetneq S\subseteq Q.
+\]
+Here avoidance means omitting at least one state of $A$, not all of $A$. Call a word safe if $A\subseteq Sw$ and $|Sw|=|S|$.
+
+The upper bound $n-|A|$ is due to Szyku\l a~\cite[Lemma~2]{szykula2018}; it is restated as Lemma~3 in his 2026 survey~\cite{szykula2026}. Open Problem~4 asks for tight bounds depending on both cardinalities. Figure~2 of that survey already gives the case $(|S|,|A|)=(2,1)$. Ferens, Szyku\l a and Vorel~\cite[p.~46:6]{ferens2021} also discuss sharpness for a related fixed-state avoiding-or-compressing alternative. We make no priority claim for these earlier cases. Here we give explicit cardinality-dependent witnesses with all the structural requirements imposed simultaneously.
+
+Let $\Max(n,s,r)$ denote the maximum of $\ac(S,A)$ over strongly connected synchronizing $n$-state automata with reachable image $S$, $|S|=s$ and $|A|=r$.
+Write $\Max_{\rm bin}$ for its restriction to two-letter alphabets. The avoid-or-compress lemma and the Frankl--Pin compression bound~\cite[Theorem~1]{szykula2018} give
+\[
+ \Max_{\rm bin}(n,s,r)\le\Max(n,s,r)\le
+ U(n,s,r):=\min\{n-r,\tbinom{n-s+2}{2}\}.
+\]
+\Needspace{12\baselineskip}
+\begin{theorem}\label{thm:main}
+The following bounds hold, and every lower bound has a binary witness.
+\begin{enumerate}
+\item $\Max(n,r+1,r)=n-r$ for $n\ge2$ and $1\le r\le n-1$.
+\item $\Max(n,r+2,r)=n-r$ for $n\ge4$ and $1\le r\le n-3$.
+\item For $r\ge1$, $s-r\ge3$ and $n\ge2s-r-1$, one has
+\[
+ \Max(n,s,r)=n-r.
+\]
+\end{enumerate}
+For $1\le r<n$, one has $\Max(n,n,r)=1$.
+\end{theorem}
+Thus the first two cardinality faces are determined, including their full-image boundary. For every fixed $(s,r)$ with $s-r\ge3$, the bound is sharp at every $n\ge2s-r-1$, in particular at $n=r+k(s-r-1)+2$ for $k\ge2$.
+
+We recall the upper bound with a proof, to make the argument self-contained. For a word $w$ let $D_w(q,t)=1$ if $qw=t$, and $0$ otherwise. Then $D_{uv}=D_uD_v$. The characteristic vector $\chi_S$ is a row vector; $\chi_SD_w$ counts trajectories from $S$, with multiplicity, and its support is $Sw$.
+\begin{lemma}[Szyku\l a~\cite{szykula2018,szykula2026}]\label{lem:upper}
+If $A\nsubseteq Sz$ for some word $z$, then $\ac(S,A)\le n-|A|$.
+\end{lemma}
+\begin{proof}
+Write $r=|A|$, $s=|S|$, and let $V_i$ be the span over $\mathbb R$ of $\chi_SD_w$ for $|w|\le i$. Suppose all words of length at most $n-r$ are safe. Safety gives $|Sw|=|S|$, so $S\to Sw$ is injective: no trajectories collide, and every image state has multiplicity $1$. Their rows therefore have total $s$ and value $1$ at every coordinate of $A$. Hence $V_{n-r}$ lies in
+\[
+ H=\{x:x_q=s^{-1}\textstyle\sum_{t\in Q}x_t\text{ for every }q\in A\}.
+\]
+The $r$ equations are independent since $r<s$, so $\dim H=n-r$. Now $\dim V_0=1$, and $V_i=V_{i+1}$ implies invariance under every letter and stabilization forever. Therefore some equality must occur before index $n-r$, or $\dim V_{n-r}\ge n-r+1$. Stabilization puts $\chi_SD_z$ in $H$, contradicting its zero coordinate in $A$ and total $s$.
+\end{proof}
+In a strongly connected synchronizing automaton with $n\ge2$, a reset word followed by a path to a state outside $A$ gives the required $z$. This proves every upper bound $n-r$ in Theorem~\ref{thm:main}. If $S=Q$, some letter must be nonpermutational and immediately compresses $Q$, while the empty word is safe. Thus $\ac(Q,A)=1$.
+
+We will also use the following elementary fact. If $t$ cycles $x_0,x_1,\ldots,x_{s-1}$ and $e$ sends $x_0$ to $x_1$ while fixing the other points, then
+\begin{equation}\label{eq:unit}
+ e(t^{s-1}e)^{s-2}
+\end{equation}
+maps this set to $x_1$. Indeed, after $e$ the image is $\{x_1,\ldots,x_{s-1}\}$; each $t^{s-1}e$ deletes the last point of the remaining interval. This also covers $s=2$.
+
+\Needspace{8\baselineskip}
+\section{The first two faces}
+\begin{proposition}\label{prop:one}
+Part~(1) of Theorem~\ref{thm:main} holds.
+\end{proposition}
+\begin{proof}
+Put $L=n-r\ge1$ and $Q=\{0,\ldots,n-1\}$. Define
+\[
+ qa=\begin{cases}q+1&q<L,\\q&q\ge L,\end{cases}
+ \qquad S=\{0,L,L+1,\ldots,n-1\},\qquad A=S\setminus\{0\}.
+\]
+Let $b$ cycle $S$ in the displayed order and send every point outside $S$ to $L$. Then $Qb=S$. The $a$-path from $0$ to $L$ and the $b$-cycle prove strong connectivity.
+
+For $0\le j<L$, set $S_j=A\cup\{j\}$. One has $S_jb=S_0$, and $S_ja=S_{j+1}$ for $j<L-1$; $S_{L-1}a=A$. Induction shows that every word of length less than $L$ has image $S_j$ with $j<L$, so is safe. The word $a^L$ compresses $S$, proving $\ac(S,A)=L$.
+
+On $S$, $c=a^L$ is the unit $0\mapsto L$. Formula~\eqref{eq:unit} with $t=b$ shows that $c(b^rc)^{r-1}$ resets $S$. It resets $Q$ as well, since $Qc=A=Sc$. This proves synchronization, also when $L=1$ or $r=1$.
+\end{proof}
+
+\begin{proposition}\label{prop:two}
+Part~(2) of Theorem~\ref{thm:main} holds.
+\end{proposition}
+\begin{proof}
+Put $M=n-r\ge3$. Take disjoint sets $A=\{p_0,\ldots,p_{r-1}\}$ and $U=\{u_1,\ldots,u_M\}$, and let $S=A\cup\{u_1,u_2\}$. Letter $a$ fixes $A$, while
+\[
+ p_ib=p_{i+1}\quad(0\le i<r-1),\qquad p_{r-1}b=u_1.
+\]
+For odd $M$, let $a$ cycle $u_1,\ldots,u_M$ and set
+\[
+ u_jb=\begin{cases}p_0&j\text{ odd},\\u_2&j\text{ even}.\end{cases}
+\]
+For even $M$ (necessarily $M\ge4$), set
+\[
+ u_1a=u_2,\quad u_ja=u_{j+1}\ (2\le j<M),\quad u_Ma=u_2,
+ \qquad
+ u_jb=\begin{cases}u_2&j=1\text{ or }j\ge3\text{ odd},\\p_0&j\text{ even}.\end{cases}
+\]
+In both cases $Qb=S$. From $p_0$ the $b$-path reaches $u_1$, whose $a$-orbit covers $U$; some state of $U$ returns to $p_0$ under $b$. Every state therefore reaches and is reached from $p_0$.
+
+The two moving points of $Sa^j$ remain distinct for all $j\ge0$. For $0\le j\le M-2$, their $b$-images are $p_0$ and $u_2$, so $Sa^jb=S$. At $j=M-1$, the pair is $\{u_M,u_1\}$ for odd $M$ and $\{u_M,u_2\}$ for even $M$; both points map to $p_0$. Thus $h=a^{M-1}b$ compresses $S$. Every word shorter than $M$ splits into $a$-runs followed by $b$, each run having length at most $M-2$, and a trailing $a$-run. All these transitions are safe. Hence $\ac(S,A)=M$.
+
+Set $s=r+2$, and $t=ab$ for odd $M$, $t=b$ for even $M$. On $S$, $t$ cycles $p_0,\ldots,p_{r-1},u_1,u_2$. If $e$ is the unit $u_1\mapsto u_2$ on $S$, then $h=et$ there. Consequently
+\[
+ h(t^{s-2}h)^{s-2}=e(t^{s-1}e)^{s-2}t
+\]
+on $S$, and this is a reset by~\eqref{eq:unit}. Prepending $b$ gives a reset of $Q$. The unit $e$ is used only to verify the identity; the reset word uses the original letters.
+\end{proof}
+
+\section{Every larger fixed gap}
+\begin{proposition}\label{prop:gaps}
+For $r\ge1$, $g\ge2$ and $M\ge2g$, there is a binary strongly connected synchronizing automaton with
+\[
+ n=r+M+1,\quad |S|=s=r+g+1,\quad |A|=r,
+ \qquad \ac(S,A)=M+1.
+\]
+The subset $S$ is an actual reachable image.
+\end{proposition}
+\begin{proof}
+Take disjoint sets $P=\{p_0,\ldots,p_r\}$ and $U=\{u_1,\ldots,u_M\}$.
+Set $A=P\setminus\{p_r\}$ and $S=P\cup\{u_1,\ldots,u_g\}$.
+First suppose $M\ge2g+1$ and put $h=1+((M-1)\bmod g)$.
+Then $1\le h\le g$ and $M\ge2g+h$.
+Let $a$ fix $P$, send $u_j$ to $u_{j+1}$ for $j<M$, and send $u_M$ to $u_{h+1}$.
+Define $p_0b=u_h$, $p_ib=p_{i-1}$ for $1\le i\le r$, and
+\[
+ u_jb=\begin{cases}
+ p_r&j\equiv h-1\pmod g,\\
+ u_1&j=g,\ h\ge2,\\
+ u_{h+g}&j=M,\\
+ u_{j+1}&\text{otherwise}.
+ \end{cases}
+\]
+The cases are disjoint. On $S$, $b$ cycles
+$p_0,u_h,\ldots,u_g,u_1,\ldots,u_{h-1},p_r,\ldots,p_1$.
+The segment $u_1,\ldots,u_{h-1}$ is empty for $h=1$.
+Ordinary outside states follow increasing indices to the next index
+congruent to $h-1$, then enter $p_r$.
+The exceptional path is $u_M,u_{h+g},\ldots,u_{h+2g-1},p_r$, of length $g+1$.
+Its indices exist because $M\ge2g+h$.
+Thus $Qb^{g+1}=S$. The $a$-path from $u_1$ covers $U$, and the $b$-cycle covers $P$,
+proving strong connectivity.
+
+\emph{Safety.}
+Use singleton $P$-cells and color cells $1,\ldots,g$, assigning
+$u_j$ color $1+((j-h-1)\bmod g)$.
+Let $C$ be the $n\times s$ state-to-cell incidence matrix.
+Let $T_a$ fix $P$ and cycle the colors, and let $T_b$ cycle
+$p_0,g,1,\ldots,g-1,p_r,\ldots,p_1$.
+For a standard state column $f_q$ and cell row $e_c$, one has
+\begin{equation}\label{eq:error}
+ D_aC=CT_a,\qquad D_bC=CT_b+f_{u_M}(e_g-e_1).
+\end{equation}
+The last term is an outer product of an $n\times1$ column and a $1\times s$ row.
+These cells are bookkeeping devices, not a quotient automaton.
+For $w=\ell_1\cdots\ell_t$, iteration gives
+\begin{equation}\label{eq:expand}
+ \chi_SD_wC=\one_s+
+ \sum_{\substack{1\le i\le t\\\ell_i=b}}
+ \mu_i(e_g-e_1)T_{\ell_{i+1}\cdots\ell_t},
+ \qquad \mu_i=(\chi_SD_{\ell_1\cdots\ell_{i-1}})_{u_M}\ge0.
+\end{equation}
+This counts trajectories even after collisions, with products in word order.
+A trajectory from $S$ needs at least $M-g$ letters to reach $u_M$:
+initial indices are at most $g$, every transition within $U$ increases an
+index by at most one, and entrances from $P$ have index $h\le g$.
+Hence a nonzero correction has $i\ge M-g+1$.
+In the cell graph, color $g$ needs at least $g-1$ letters to reach color $g-1$,
+and color $1$ needs at least $g$ letters to reach $A$.
+The latter route traverses $1,\ldots,g-1$ and then takes two letters $b$
+through $p_r$. A detour through $P$ cannot shorten either route.
+
+For $t\le M-1$, correction suffixes have length at most $g-2$,
+so no positive correction reaches color $g-1$, whose trajectory count is at most one.
+Suppose a word of length at most $M$ has a first collision.
+For a colliding $b$, the distinct source states must lie in its only
+non-singleton fiber, all of color $g-1$, contradicting this count bound.
+For a colliding $a$, the sources must be $u_h,u_M$, its only non-singleton fiber.
+They are not both initially present. A preceding $b$ cannot give $u_M$,
+which has no $b$-preimage. A preceding $a$ requires sources
+$u_{h-1},u_{M-1}$ one step earlier, both of color $g-1$, again a contradiction;
+for $h=1$, $u_h$ has no $a$-preimage at all.
+Thus every word of length at most $M$ preserves $s$ states.
+For $t\le M$, every correction suffix has length at most $g-1$,
+so no negative correction reaches $A$. Its singleton cells retain multiplicity
+at least one. Every such word is safe.
+
+The word $a^{M-g}b^{g+1}$ has length $M+1$.
+Exactly its first $b$ has a trajectory at $u_M$, with multiplicity one.
+Its negative correction is $e_1T_b^g=e_{p_{r-1}}$, whereas
+its positive correction is $e_gT_b^g=e_{p_r}$.
+It therefore omits $p_{r-1}$ and attains equality, also when $r=1$.
+
+For synchronization put $c=a^{M-h}b^s$.
+The $a$-run fixes the cyclic tail $u_{h+1},\ldots,u_M$.
+For $j<h$, it sends $u_j$ to $u_{M-h+j}$, which has the same remaining
+$b$-distance $h-j$ to $p_r$ as $u_j$.
+For $j=h$, it sends $u_h$ to $u_M$, which reaches $p_0$ in $g+1+r=s$ letters $b$.
+Consequently $c$ fixes $S\setminus\{u_h\}$ and sends $u_h$ to its $b$-predecessor $p_0$.
+After $c$, each $bc$ extends the missing interval by one point in forward
+$b$-order. Thus $b^{g+1}c(bc)^{s-2}$ resets $Q$.
+
+\emph{The boundary $M=2g$.}
+Let $a$ fix $P$ and cycle $U$.
+Define $p_0b=u_g$, $p_ib=p_{i-1}$ and
+\[
+ u_jb=\begin{cases}
+ p_r&j\equiv g-1\pmod g,\\
+ u_{j+1}&j<M,\ j\not\equiv g-1\pmod g,\\
+ u_M&j=M.
+ \end{cases}
+\]
+Now $b$ cycles $B=P\cup\{u_g,\ldots,u_{2g-1}\}$ and fixes $u_{2g}$;
+$Qb^{g+1}=E=B\cup\{u_{2g}\}$.
+Put $d=a^{g-1}b^s$. It fixes $P$ and on $E$ has actions
+\[
+ u_gd=u_{2g-1},\quad u_{g+1}d=u_{2g},\quad
+ u_{g+j}d=u_{g+j-1}\ (2\le j\le g-1),\quad u_{2g}d=u_{2g-1}.
+\]
+Therefore $Eda^g=S$, proving actual reachability. The two cycles prove strong connectivity.
+Assigning $u_j$ color $1+((j-1)\bmod g)$ gives exactly
+\eqref{eq:error}--\eqref{eq:expand} again.
+The same delay and collision arguments apply, with $a$ now a permutation.
+The word $a^gb^{g+1}$ attains avoidance: only the first negative correction
+has a suffix of $g$ letters $b$ and reaches $p_{r-1}$; no positive correction reaches $A$.
+Finally $e=d^g$ fixes $E\setminus\{u_g\}$ and sends $u_g$ to $u_{2g}$.
+Each $be$ removes one further point of $B$ while retaining $u_{2g}$.
+Hence $b^{g+1}e(be)^{s-1}$ resets $Q$.
+\end{proof}
+Taking $g=s-r-1$ and $M=n-r-1$ proves part~(3) of Theorem~\ref{thm:main}.
+
+\section{The exact codimension-three maximum}
+\begin{theorem}[Computer-assisted upper bound]\label{thm:binary}
+For every $n\ge5$ and $1\le r<n-3$,
+\[
+ \Max_{\rm bin}(n,n-3,r)=\Max(n,n-3,r)=\min\{n-r,9\}.
+\]
+In fact, for $n\ge6$ every $(n-3)$-subset in every strongly connected
+synchronizing automaton admits a compressing word of length at most nine,
+without any alphabet-size or image-reachability assumption.
+Consequently $\Max=\Max_{\rm bin}=9<U=10$ whenever
+$n\ge11$ and $1\le r\le n-10$.
+\end{theorem}
+\begin{proof}
+\emph{An explicit lower bound.}
+First assume $n\ge10$. Put $L=n-5\ge5$ and take $T=\{x_0,\ldots,x_{L-2},z\}$,
+$K=\{v,y,c,t\}$ and a further state $d$.
+Let $b$ cycle $T$ in the displayed order, cycle $v,y,c,t$, and fix $d$.
+Let $a$ interchange $z,y$ and $c,d$, send $t$ to $z$, and fix the other states.
+Put $S=T\cup\{v,t\}$. For $r<L$, take the last $r$ points of
+$x_0,\ldots,x_{L-2}$ as $A$; for $r=L$, take $A=T$.
+The interchanges link the $b$-cycles and $d$, proving strong connectivity.
+Direct application gives $Q(abbbabaabb)=S$.
+
+The following table lists the complements of all images reached within eight letters.
+The level is their minimum distance from $S$; each displayed successor has level at most one larger.
+For levels below eight both successors have $n-3$ states.
+Induction proves that no word of length at most eight compresses $S$.
+\begin{center}\small
+\begin{tabular}{rcrrr@{\qquad}rcrrr}
+row&holes&level&$a$&$b$&row&holes&level&$a$&$b$\\ \hline
+0&$y,c,d$&0&1&1&9&$y,t,c$&6&12&3\\
+1&$t,c,d$&1&1&2&10&$x_0,v,t$&7&10&13\\
+2&$v,t,d$&2&3&4&11&$x_1,y,c$&7&14&15\\
+3&$v,t,c$&3&2&5&12&$z,t,d$&7&9&16\\
+4&$v,y,d$&3&3&0&13&$x_1,v,y$&8&--&--\\
+5&$v,y,t$&4&6&7&14&$x_1,t,d$&8&--&--\\
+6&$z,v,t$&5&5&8&15&$x_2,t,c$&8&--&--\\
+7&$v,y,c$&5&2&9&16&$x_0,v,d$&8&--&--\\
+8&$x_0,v,y$&6&10&11&&&&&
+\end{tabular}
+\end{center}
+The first possible missing $T$-states are $z,x_0,x_1,x_2$ at depths
+$5,6,7,8$, attained respectively by $ababa\,b^j$ for $j=0,1,2,3$.
+Every other $T$-state remains present through depth eight.
+The word $ababbbab$ reaches row $16$, whose image contains $y,t$; the next $a$ merges them.
+Thus the indicated choices give $\ac(S,A)=\min\{n-r,9\}$.
+In particular, at $n=11$ either $A=\{x_3\}$ or $A=\{x_4\}$ gives length nine.
+
+For synchronization, put $N=\operatorname{lcm}(L,4)$.
+Then $e=a^2$ is the unit $t\mapsto y$, and $b^N$ is the identity.
+Conjugates $b^{N-i}eb^i$ merge all opposite pairs in $K$.
+A $d$--$K$ pair can be rotated to $\{d,v\}$ and then mapped by $a$ to the opposite pair $\{c,v\}$.
+The pair $\{c,z\}$ maps by $a$ to $\{d,y\}$.
+The word $b^4ab^{N-4}$ maps $\{d,z\}$ to $\{c,z\}$:
+$zb^4=x_3$ exists since $L\ge5$, and the final power fixes $c$ and returns $x_3$ to $z$.
+Rotating a $T$-point to $z$ therefore merges every $d$--$T$ pair.
+Adjacent pairs in $K$ rotate to $\{c,t\}$ and map by $a$ to $\{d,z\}$.
+For a $T$--$K$ pair, rotate its $K$-point to $c$: either the other point is $z$, or $a$ gives a $d$--$T$ pair.
+A $T$--$T$ pair rotates one point to $z$ and then $a$ gives a $T$--$K$ pair.
+Hence every pair merges. Repeatedly merging two points of the current image synchronizes $Q$.
+
+\emph{Uniform upper bound.}
+The following proof uses complete finite action certificates; the supplement
+contains all symbolic domain reductions and both independent enumerations.
+Put $P_h=\{E:|E|=2,\ |Ew|=1\text{ for some }|w|\le h\}$.
+A Frankl--Pin sequence consists of $s$-sets $S_i$ and pairs
+$E_i\subseteq S_i$ with $E_i\nsubseteq S_j$ for $j<i$.
+The refinement of Kisielewicz, Kowalski and Szyku\l a~\cite[Theorem~1]{kisielewicz2016}
+gives compression length at most $10-p(P_h)+h$ for $s=n-3$.
+Any $q\le4$ distinct pairs admit a sequence of length $q$:
+choose each three-hole set outside its own pair, hitting an endpoint
+of every later pair, and fill the remaining holes.
+Therefore compression length ten forces $|P_h|\le h$ for $h=1,2,3$.
+Pair closure grows strictly until every pair is present in a synchronizing
+automaton; hence $|P_h|=h$ in this range.
+Write $P_h=\{E_1,\ldots,E_h\}$, with $E_1=01$.
+Each letter is a permutation or a rank-$(n-1)$ map with common kernel $01$.
+Its inverse pairs of $E_1$ lie in $P_2$, and those of $E_2$ lie in $P_3$.
+There are precisely the nine ordered types in the table below.
+
+Let $\mathcal H$ be the three-hole covers of $P_3$.
+Every image reached by depth six has holes in $\mathcal H$, or a further
+three letters compress before ten. The families $R_i$ of images reached
+by depth $i$ grow strictly before compression: a plateau would be
+invariant under all letters and could not be reset. Thus $|R_i|\ge i+1$.
+A common $\mathcal H$-preserving domain $D$ for tests of length at most
+$L$ contains $R_{6-L}$, so $|D|\ge7-L$.
+The symbolic classifications in the supplement either contradict this
+count or reduce to a domain with $k=7-L$ images.
+All its images are then reached by depth $6-L$, and every letter maps
+them into $\mathcal H$.
+
+Project letters onto $D$ and EXIT=$\mathcal H\setminus D$.
+Synchronization forces every vertex to exit. An initial exit distance
+$k$ forces the $k$ vertex distances to be a permutation of $1,\ldots,k$.
+For each such vector $d$, include \emph{all} profiles $p$ satisfying
+$d(i)\le1+d(p(i))$, $d(\mathrm{EXIT})=0$, and test whether all vertices can
+exit. This enlarged graph contains every actual alphabet with these
+distances. The complete checks have the following sizes; entries with
+several numbers correspond to separate domains.
+\begin{center}\small
+\begin{tabular}{cccrrr}
+ type&$E_2$&$E_3$&domain sizes&profiles&vectors\\ \hline
+ 0&02&12&4,4,6&11,38,61&24,24,720\\
+ 1&02&03&\multicolumn{3}{c}{no incoming edge to 0 from another state}\\
+ 2&02&13&5&22&120\\
+ 3&02&23&5,4&24,19&120,24\\
+ 4&02&34&6,6&33,37&720,720\\
+ 5&23&02&\multicolumn{3}{c}{incompatible inverse pairs}\\
+ 6&23&04&5&19&120\\
+ 7&23&24&6,6,6;5,5,5,5&21,39,37;27,23,23,33&720 each;120 each\\
+ 8&23&45&8&177&30240
+\end{tabular}
+\end{center}
+All distance vectors fail, except three in type~0, one each in
+types~2,3,6 and two in one type~7 domain.
+For \emph{every underlying row} of every allowed profile in each surviving
+vector, a five-state set is invariant. Strong connectivity excludes
+this for $n\ge6$. Thus first exit has length at most $k-1$, giving
+compression within $(k-1)+L+3=9$.
+One additional type~2 domain has four images and two immediate exits,
+so its exit distance is at most three, again giving $3+3+3=9$.
+Type~8 instead directly checks all $30240$ possible finite distance
+vectors with initial distance at least seven; none survives, giving
+$6+3=9$.
+
+The projections are uniform in $n$: only at most six named inputs
+matter, with the remaining distinct outputs renamed to a bounded supply
+of fresh labels. Every row preserving the required holes is enumerated;
+extra rows not extendible at a small $n$ only enlarge the graphs.
+One implementation uses inverse-pair templates and reverse exit closure;
+the other enumerates literal forward partial rows and searches forward
+for exits. All profiles, row-closure flags and surviving vectors coincide.
+The supplement supplies the full classifications, exact domains,
+fresh-label bounds, source and data for all nine cases.
+This excludes compression ten and proves the uniform upper bound.
+Combining it with Lemma~\ref{lem:upper} and the lower construction gives
+the asserted local maximum for $n\ge10$, using Theorem~\ref{thm:main}
+when $r=n-4$. For $5\le n\le9$, independently checked binary witnesses
+in the supplement attain $U=\min\{n-r,9\}$ for every admissible $r$.
+\end{proof}
+
+\section{A uniform two-block construction}
+\begin{theorem}\label{thm:two-block}
+Put $m=n-s\ge3$ and $q=n-r\ge2m+2$.
+There is a binary strongly connected synchronizing automaton with reachable
+$S$ attaining $\ac(S,A)=\min\{q,3m-1\}$.
+Consequently $\Max_{\rm bin}=\Max=U=q$ whenever $2m+2\le q\le3m-1$.
+For larger $q$ the construction gives only a lower bound.
+\end{theorem}
+\begin{proof}
+Write $t=m-1\ge2$ and $p=n-2t-1\ge r+3$.
+Take $P=\{p_0,\ldots,p_{p-1}\}$, $X=\{x_1,\ldots,x_t\}$,
+$Y=\{y_1,\ldots,y_t\}$ and one further state $z$.
+Letter $a$ interchanges the last two $P$-states, fixes the others, and
+cycles $x_1,\ldots,x_t,y_1,\ldots,y_t,z$.
+Letter $b$ sends $p_0$ to $y_1$, $p_i$ to $p_{i-1}$ for $i\ge1$,
+increments indices in $X,Y$ below $t$, sends both $x_t,y_t$ to $p_{p-1}$,
+and fixes $z$. Put $S=P\cup X$, $A=\{p_0,\ldots,p_{r-1}\}$ and $L=3t+2$.
+
+\emph{No compression before $L$.}
+For $\rho_i=\min\{i,p-2\}$ define a symmetric potential $\Phi$ on unordered
+pairs, zero on singleton pairs, by the following table. Indices in $X,Y$
+run from $1$ to $t$, and indices in $P$ from $0$ to $p-1$.
+\begin{center}\small
+\begin{tabular}{ll}
+pair&potential\\ \hline
+$P$--$P$, $P$--$X$, $X$--$X$ (distinct)&$L$\\
+$\{x_i,y_j\}$, $j=i$&$t-i+1$\\
+$\{x_i,y_j\}$, $j>i$&$2t-i+1$\\
+$\{x_i,y_j\}$, $j<i$&$L-j$\\
+$\{x_i,z\}$&$2t-i+1$\\
+$\{y_i,y_j\}$, $i<j$&$L-j$\\
+$\{y_i,z\}$&$2t+1$\\
+$\{p_i,y_j\}$&$\min\{L,\max\{L-j,2t+3+\rho_i\}\}$\\
+$\{p_i,z\}$&$\min\{L,2t+2+\rho_i\}$
+\end{tabular}
+\end{center}
+Substitution in the two letter actions gives
+\[
+ \Phi(E)\le1+\Phi(Ea),\qquad \Phi(E)\le1+\Phi(Eb).
+\]
+Here are the boundary checks. The last-two-$P$ interchange preserves $\rho$;
+a downward $P$-step decreases it by at most one.
+For $P$--$Y$ pairs the $a$-boundary $y_t\to z$ decreases the second term
+from $2t+3+\rho$ to $2t+2+\rho$.
+The $b$-boundary $p_0\to y_1$ with $j<t$ has source $L-j$
+and target $L-j-1$, since $j\le t-1$; with $j=t$ its target is at least $L-1$.
+For $X$--$Y$, crossing $x_t$ under $a$ gives $Y$--$Y$ with potential $L-j-1$
+when $j<i$; crossing under $b$ gives $P$--$Y$ of at least that potential.
+The kernel pair $\{x_t,y_t\}$ has potential one.
+Crossing $y_t$ in a $Y$--$Y$ pair under $a$ gives $Y$--$z$ of
+potential $2t+1=L-t-1$.
+For $X$--$z$, the $a$-boundary is $\{x_t,z\}\to\{y_1,x_1\}$,
+with values $t+1,t$; for $Y$--$z$, every $a$-image has potential $2t$.
+All remaining cases either retain potential, decrement an index by one,
+or enter a type whose potential is at least the source minus one.
+Clipping at $L$ cannot increase a positive difference.
+Thus the inequalities hold for every index, not just tested sizes.
+Every distinct pair in $S$ has potential $L$.
+Telescoping along a merging word proves its length is at least $L$;
+every compression merges an initial pair, giving the claimed lower bound.
+
+\emph{No avoidance before $q$.}
+Use singleton $P$-cells and $t$ color cells, giving $x_i,y_i$ color $i$
+and $z$ color $1$. Let $T_a$ swap the last two $P$-cells and cycle the colors,
+and let $T_b$ cycle $p_0,1,\ldots,t,p_{p-1},\ldots,p_1$.
+For the incidence matrix $C$ both letters satisfy
+\[
+ D_\ell C=CT_\ell+f_z(e_1-e_2).
+\]
+These are the same row/column conventions and outer product as in~\eqref{eq:error}.
+Since $S$ has one state in every cell, expansion~\eqref{eq:expand} applies,
+with coefficients counting trajectories at $z$.
+A trajectory from $X$ needs at least $t+1$ steps to reach $z$;
+any entrance from $P$ starts at $y_1$ after at least one step and then needs
+at least $t$ more. Thus the first nonzero correction has position at least $t+2$.
+In the prescribed cell graph, color $2$ needs $t-1$ letters to enter $P$
+at $p_{p-1}$ and at least $p-r$ more to reach $A$.
+The only interchange is between adjacent last $P$-points and cannot shorten
+this descending path. A negative correction therefore reaches $A$ only at
+length at least $(t+2)+(t-1+p-r)=p+2t+1-r=q$.
+Before then every protected coordinate has multiplicity at least one.
+
+\emph{Attainment.}
+After $a^{2t}b$, the missing $P$-point is $p_{p-1}$; after a further $a$
+it is $p_{p-2}$. This is the unique $b^{p-r-1}$-preimage of $p_{r-1}$.
+Hence $a^{2t}bab^{p-r-1}$ omits that protected point at length $q$.
+The $X\cup Y\cup\{z\}$ portion after $a^{2t}b$ is
+$\{x_2,\ldots,x_t,y_1,z\}$. After $a^t$ it contains $x_t$ and $y_t$,
+so $a^{2t}ba^tb$ compresses at length $L$.
+The existence of $x_t$ in the preceding set uses $t\ge2$.
+Combining both upper witnesses with the lower bounds gives $\ac(S,A)=\min\{q,L\}$.
+
+\emph{Structural requirements.}
+Put $B=P\cup Y$, $h=p+t$ and $E=B\cup\{z\}$.
+Letter $b$ cycles $B$ in the order $p_0,y_1,\ldots,y_t,p_{p-1},\ldots,p_1$,
+and $Qb^t=E$. The $a$-cycle connects all other states to $B$, proving
+strong connectivity.
+On $E$, $d=a^{2t}b^h$ fixes $P$, cycles $y_1\to y_t\to\cdots\to y_1$,
+and sends $z$ to $y_t$. Thus $e=d^t$ fixes $B$ and sends $z$ to $y_1$.
+Since $Ba^{t+1}=S$, the original-letter word $b^tea^{t+1}$ reaches $S$.
+The word $a^{2t+1}$ fixes $X\cup Y\cup\{z\}$ and transposes the last two
+$P$-points, adjacent on the $b$-cycle. These words generate every permutation
+of $B$, with inverses realized by positive powers.
+Moreover $Ba=(B\setminus\{y_1\})\cup\{z\}$,
+$Bab=(B\setminus\{y_2\})\cup\{z\}$, and $Babe=B\setminus\{y_2\}$.
+Permutations route any pair in a current image into the kernel of $abe$;
+repeated compression synchronizes $B$. Prepending $b^te$ synchronizes $Q$.
+Finally $L=3m-1<\binom{m+2}{2}$ for $m\ge3$, so meeting $q\le L$
+determines both maxima as stated.
+\end{proof}
+
+\section{The determined parameter region}
+\begin{theorem}\label{thm:region}
+Put $m=n-s$ and $q=n-r$. For all $1\le r<s\le n$,
+\[
+ \Max_{\rm bin}(n,s,r)=\Max(n,s,r)=
+ \begin{cases}
+ 1&m=0,\\
+ \min\{q,3m\}&1\le m\le3,\\
+ q&m\ge4,\ q\le3m-1.
+ \end{cases}
+\]
+The region $m\ge4$, $q\ge3m$ is not determined here.
+\end{theorem}
+\begin{proof}
+The case $m=0$ was proved above, and $m=3$ is Theorem~\ref{thm:binary}.
+For $m\ge2$ and $q\le2m+1$, gaps one and two use the first two faces;
+larger gaps satisfy $n\ge2s-r-1$ and use Proposition~\ref{prop:gaps}.
+Together with the two-block band this gives $q$ throughout $m\ge3$, $q\le3m-1$.
+It remains to give the compression-range constructions for $m=1,2$.
+
+For $m=1$, $n\ge4$ and $1\le r\le n-3$, let $b$ cycle
+$u,v,z,x_0,\ldots,x_{n-4}$.
+Let $a$ interchange $z,u$, send $v$ to $z$ and fix the other states.
+Put $S=Q\setminus\{u\}$ and choose $A$ among the $x_i$.
+The possible holes through depth two are $u,v,z$:
+hole $u$ goes to $v$ under either letter, while hole $v$ stays $v$ under $a$
+and goes to $z$ under $b$. Thus all words shorter than three are safe;
+$bba$ compresses. Strong connectivity follows from $b$.
+The unit $e=a^2$ sends $v$ to its $b$-predecessor $u$, so
+$e(be)^{n-2}$ resets $Q$ by the cyclic-interval argument.
+Moreover $Qab^{n-1}=S$. The remaining $r=n-2$ uses the first face.
+
+For $m=2$, $n\ge7$ and $1\le r\le n-6$, put $L=n-3\ge4$.
+Let $b$ cycle $T=\{x_0,\ldots,x_{L-2},z\}$ in that order and cycle $w,v,u$.
+Let $a$ interchange $z,u$, send $v$ to $z$ and fix the other states.
+Put $S=T\cup\{v\}$ and choose $A\subseteq\{x_2,\ldots,x_{L-2}\}$.
+The complete hole sets through depth five are
+\[
+\begin{array}{c|ccccccc}
+\text{row}&0&1&2&3&4&5&6\\\hline
+\text{holes}&wu&wv&uv&zv&x_0u&x_0v&x_1w\\
+\text{level}&0&1&2&3&4&5&5\\
+a&1&1&3&2&5&--&--\\
+b&1&2&0&4&6&--&--
+\end{array}
+\]
+Here $wu$ means $\{w,u\}$, and similarly for the other entries.
+All these sets avoid $A$ and all displayed transitions preserve $n-2$ states.
+The word $ababb$ reaches row 6; the next $a$ merges $u,v$.
+Thus $\ac(S,A)=6$.
+The two $b$-cycles are linked by $a$, proving strong connectivity.
+Put $N=\operatorname{lcm}(L,3)$, $e=a^2$, $f=b^{N-1}eb$ and $k=ef$.
+The units $e:v\mapsto u$ and $f:u\mapsto w$ make $k$ collapse $w,v,u$ to $w$,
+fixing $T$. Hence $Qkb=S$.
+The word $c=kafak$ sends $w,v,u,z$ to $w$ and fixes $T\setminus\{z\}$.
+Each $bc$ removes the predecessor of $z$ in the remaining cyclic interval,
+and $wbc=w$. Therefore $c(bc)^{L-1}$ resets $Q$.
+The cases $q\le5$ were covered above, completing the proof.
+\end{proof}
+
+\paragraph{Reproducibility and scope.}
+The $109$-file supplement supplies the generators, independent lower checks,
+and complete case proofs for the upper bound, with standard-library Python
+and C++17 audits of sixteen domains and the matching cube.
+Finite controls check the symbolic reductions; they are not extrapolated.
+It verifies $290$ binary reachable-image witnesses: all $286$ triples
+with $2\le n\le12$, $(13,8,1)$, and $(13,10,r)$ for $r=1,2,3$.
+The proved upper bounds determine both maxima at all listed parameters.
+The complete finite frontier ends at $n=12$; $(13,9,1)$ remains in $[11,12]$.
+No alphabet separation or complete answer to Open Problem~4 is claimed.
+
+\paragraph{AI assistance.}
+OpenAI tools assisted proof review, computational verification and manuscript editing. The author is responsible for the mathematical statements and their presentation.
+
+% Embedded references allow the standalone editor to compile this file.
+% The same four records are supplied in references.bib.
+\begin{thebibliography}{9}
+\raggedright
+\bibitem{szykula2018} M. Szyku\l a.
+\emph{Improving the Upper Bound on the Length of the Shortest Reset Words}.
+STACS 2018, LIPIcs 96, 56:1--56:13, 2018.
+\href{https://doi.org/10.4230/LIPIcs.STACS.2018.56}{doi:10.4230/LIPIcs.STACS.2018.56}.
+\bibitem{szykula2026} M. Szyku\l a.
+\emph{Synchronizing Automata: Open Problems}.
+EPTCS 451 (AFL 2026), 33--47, 2026.
+\href{https://doi.org/10.4204/EPTCS.451.3}{doi:10.4204/EPTCS.451.3}.
+\href{https://arxiv.org/abs/2608.24245v1}{arXiv:2608.24245v1}.
+\bibitem{ferens2021} R. Ferens, M. Szyku\l a and V. Vorel.
+\emph{Lower Bounds on Avoiding Thresholds}.
+MFCS 2021, LIPIcs 202, 46:1--46:14, 2021.
+\href{https://doi.org/10.4230/LIPIcs.MFCS.2021.46}{doi:10.4230/LIPIcs.MFCS.2021.46}.
+\bibitem{kisielewicz2016} A. Kisielewicz, J. Kowalski and M. Szyku\l a.
+\emph{Experiments with Synchronizing Automata}.
+CIAA 2016, LNCS 9705, 176--188, 2016.
+\href{https://doi.org/10.1007/978-3-319-40946-7_15}{doi:10.1007/978-3-319-40946-7\_15}.
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,83 @@
+{
+  "n": 11,
+  "s": 7,
+  "r": 1,
+  "target": 10,
+  "alphabet_size": 2,
+  "status": "witness_verified",
+  "iterations": 1,
+  "seconds": 0.05793230000563199,
+  "z3_version": "4.16.0",
+  "span_cover_h": 2,
+  "cycle_five": false,
+  "independent_flag": true,
+  "cover_by_images": true,
+  "protected_state": 3,
+  "protected_predecessor_size": 1,
+  "safe_constraints": [],
+  "trap_cuts": [],
+  "blocked_rows": [],
+  "rejected": [],
+  "witness": {
+    "n": 11,
+    "s": 7,
+    "r": 1,
+    "alphabet_size": 2,
+    "rows": [
+      [
+        7,
+        2,
+        6,
+        8,
+        3,
+        4,
+        5,
+        0,
+        9,
+        6,
+        10
+      ],
+      [
+        0,
+        2,
+        7,
+        3,
+        4,
+        5,
+        6,
+        8,
+        9,
+        10,
+        1
+      ]
+    ],
+    "S": [
+      3,
+      4,
+      5,
+      6,
+      8,
+      9,
+      10
+    ],
+    "A": [
+      3
+    ],
+    "value": 10,
+    "compression": 10,
+    "reaching": "aababbaa",
+    "attaining": "bababaaaaa",
+    "reset": "aabbabaaabbabaaabbabaaabbabaaabbabaaababaaababababbabaa",
+    "state_scores": {
+      "3": 10,
+      "4": 9,
+      "5": 8,
+      "6": 7,
+      "8": 1,
+      "9": 2,
+      "10": 3
+    }
+  },
+  "source_sha256": "2539c84abb3cb1d0defbddc0285d03f46e1971d6e5ac48dca87138cdd944fece",
+  "scope": "Full F2 flags with exact one-hot rows, graph connectivity and short-pair closures; synchronization and compression CEGIS. Negative output not a certified upper."
+}

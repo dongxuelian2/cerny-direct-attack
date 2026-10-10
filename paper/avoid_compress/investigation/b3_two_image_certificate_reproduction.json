@@ -1,0 +1,168 @@
+{
+  "status": "pass",
+  "archive": "certificates/b3_two_image.zip",
+  "sha256": "813b34ecf3d96aea188afea7b9e889ba48941c3b5a623d1c867dbf8286e9c8f5",
+  "files": 40,
+  "checksum_entries": 39,
+  "audits_reproduced_byte_identically": 2,
+  "data_files_reproduced_byte_identically": 2,
+  "runs": [
+    {
+      "script": "check_two_image_letter_controls.py",
+      "exit": 0,
+      "output": {
+        "status": "pass",
+        "complete_state_range": [
+          2,
+          3
+        ],
+        "four_state_slice": "All graphs, all labelled maps, all two-atom fields, both guard sizes, J empty/singleton; S={0,1,2},T={1,2,3}, all three-state output U,V.",
+        "field_kernel_two_image_instances": 1865920,
+        "literal_map_instances": 1180224,
+        "positive_domains": 87344,
+        "scope": "Independent exact two-image arrow controls; no numerical F claim."
+      }
+    },
+    {
+      "script": "enumerate_b3_first_image.py",
+      "exit": 0,
+      "output": {
+        "stats": {
+          "patterns": 40043,
+          "quota_tests": 234687,
+          "ST_pairs": 21930,
+          "missing_supplier": 4293,
+          "retained": 8861,
+          "maximal_graph_not_SC": 7979,
+          "no_moving_letter": 797,
+          "global_classes": 67
+        },
+        "excluded": [],
+        "status": "necessary_inventory"
+      }
+    },
+    {
+      "script": "enumerate_b3_two_image.py",
+      "exit": 0,
+      "output": {
+        "stats": {
+          "patterns": 40043,
+          "quota_colours": 51056697,
+          "quota_tests": 5345140,
+          "planes": 238933,
+          "missing_supplier": 92666,
+          "maximal_graph_not_SC": 83800,
+          "no_second_dimension": 40386,
+          "no_moving_letter": 22081,
+          "global_classes": 67
+        },
+        "excluded": [
+          "b3_mixed_c1_third3",
+          "b3_mixed_c1_third4",
+          "b3_mixed_c1_third5",
+          "b3_mixed_c4_third1",
+          "b3_mixed_c4_third3",
+          "b3_mixed_c4_third4",
+          "b3_mixed_c4_third5",
+          "b3_mixed_c4_third6",
+          "b3_mixed_c5_third2",
+          "b3_mixed_c5_third5",
+          "b3_mixed_c5_third7",
+          "b3_mixed_c5_third8",
+          "b3_mixed_c5_third9",
+          "b3_mixed_c5_third15",
+          "b3_mixed_c5_third16",
+          "b3_mixed_c7_third7",
+          "b3_mixed_c8_third2",
+          "b3_mixed_c8_third3",
+          "b3_mixed_c8_third4",
+          "b3_mixed_c8_third6",
+          "b3_mixed_c8_third7",
+          "b3_mixed_c9_third2",
+          "b3_mixed_c9_third3",
+          "b3_mixed_c9_third4",
+          "b3_mixed_c9_third5",
+          "b3_mixed_c9_third6",
+          "b3_mixed_c9_third10",
+          "b3_mixed_c9_third11"
+        ],
+        "status": "necessary_inventory"
+      }
+    },
+    {
+      "script": "check_b3_two_image.py",
+      "exit": 0,
+      "output": {
+        "status": "pass",
+        "parameter": [
+          13,
+          9,
+          1
+        ],
+        "selected_geometries": 28,
+        "global_classes": 67,
+        "ordered_first_pairs": 21930,
+        "retained_first_pairs": 8861,
+        "common_planes_checked": 238933,
+        "first_reasons": {
+          "no_moving_letter": 797,
+          "missing_supplier": 4293,
+          "maximal_graph_not_SC": 7979,
+          "retained": 8861
+        },
+        "second_reasons": {
+          "no_moving_letter": 22081,
+          "no_second_dimension": 40386,
+          "missing_supplier": 92666,
+          "maximal_graph_not_SC": 83800
+        },
+        "exact_domain_digests_checked": 134,
+        "distinct_quota_queries": 555963,
+        "closed_graphs_checked": 91779,
+        "new_excluded_third_ids": [
+          "b3_mixed_c1_third3",
+          "b3_mixed_c1_third4",
+          "b3_mixed_c1_third5",
+          "b3_mixed_c4_third1",
+          "b3_mixed_c4_third3",
+          "b3_mixed_c4_third4",
+          "b3_mixed_c4_third5",
+          "b3_mixed_c4_third6",
+          "b3_mixed_c5_third2",
+          "b3_mixed_c5_third5",
+          "b3_mixed_c5_third7",
+          "b3_mixed_c5_third8",
+          "b3_mixed_c5_third9",
+          "b3_mixed_c5_third15",
+          "b3_mixed_c5_third16",
+          "b3_mixed_c7_third7",
+          "b3_mixed_c8_third2",
+          "b3_mixed_c8_third3",
+          "b3_mixed_c8_third4",
+          "b3_mixed_c8_third6",
+          "b3_mixed_c8_third7",
+          "b3_mixed_c9_third2",
+          "b3_mixed_c9_third3",
+          "b3_mixed_c9_third4",
+          "b3_mixed_c9_third5",
+          "b3_mixed_c9_third6",
+          "b3_mixed_c9_third10",
+          "b3_mixed_c9_third11"
+        ],
+        "new_unrestricted_joint_exclusions": [
+          "b3_mixed_c4",
+          "b3_mixed_c5",
+          "b3_mixed_c7",
+          "b3_mixed_c9"
+        ],
+        "remaining_unrestricted_B3_geometries": 7,
+        "remaining_unrestricted_third_geometries": 143,
+        "remaining_unrestricted_joints": 23,
+        "scope": "Complete two-image affine-plane necessary-domain exclusion of 28 selected B3 geometries. No numerical F value, realizing alphabet or alphabet separation."
+      }
+    }
+  ],
+  "source_sha256": {
+    "package_b3_two_image_certificate.py": "365eda83c0907e6c4bba7230ae08a1cf4a1ae2f6f3f475c731108169809bb2f7"
+  }
+}

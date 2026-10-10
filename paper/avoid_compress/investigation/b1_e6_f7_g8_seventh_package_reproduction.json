@@ -1,0 +1,302 @@
+{
+  "status": "pass",
+  "archive": "certificates/b1_e6_f7_g8_seventh.zip",
+  "sha256": "d9bbf064ae17e53d8a91196ec4d744967ae5de227cdb003e5ab75908f4dfc235",
+  "files": 18,
+  "checksum_entries": 17,
+  "inventories_reproduced_byte_identically": 1,
+  "audits_reproduced_byte_identically": 2,
+  "complete_n13_normalized_row_pairs_reproduced": 663552000,
+  "runs": [
+    {
+      "script": "enumerate_b1_e6_f7_g8_seventh.py",
+      "exit": 0,
+      "outputs": [
+        [
+          {
+            "H": [
+              1,
+              2
+            ],
+            "field_pairs": 48,
+            "row_patterns": 402,
+            "kernel_pairs": 240
+          },
+          {
+            "H": [
+              1,
+              9
+            ],
+            "field_pairs": 48,
+            "row_patterns": 410,
+            "kernel_pairs": 1200
+          },
+          {
+            "H": [
+              2,
+              4
+            ],
+            "field_pairs": 48,
+            "row_patterns": 410,
+            "kernel_pairs": 1200
+          },
+          {
+            "H": [
+              1,
+              2,
+              9
+            ],
+            "field_pairs": 48,
+            "row_patterns": 402,
+            "kernel_pairs": 240
+          }
+        ]
+      ]
+    },
+    {
+      "script": "check_b1_e6_f7_g8_seventh.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "n": 10,
+          "H": [
+            1,
+            2
+          ],
+          "pairs": 6144
+        },
+        {
+          "n": 11,
+          "H": [
+            1,
+            2
+          ],
+          "pairs": 82944
+        },
+        {
+          "n": 10,
+          "H": [
+            1,
+            9
+          ],
+          "pairs": 12288
+        },
+        {
+          "n": 11,
+          "H": [
+            1,
+            9
+          ],
+          "pairs": 248832
+        },
+        {
+          "n": 10,
+          "H": [
+            2,
+            4
+          ],
+          "pairs": 12288
+        },
+        {
+          "n": 11,
+          "H": [
+            2,
+            4
+          ],
+          "pairs": 248832
+        },
+        {
+          "n": 10,
+          "H": [
+            1,
+            2,
+            9
+          ],
+          "pairs": 6144
+        },
+        {
+          "n": 11,
+          "H": [
+            1,
+            2,
+            9
+          ],
+          "pairs": 82944
+        },
+        {
+          "status": "pass",
+          "kernels": [
+            {
+              "H": [
+                1,
+                2
+              ],
+              "original_field_pairs": 48,
+              "row_patterns": 402,
+              "compatible_kernel_pairs": 240
+            },
+            {
+              "H": [
+                1,
+                9
+              ],
+              "original_field_pairs": 48,
+              "row_patterns": 410,
+              "compatible_kernel_pairs": 1200
+            },
+            {
+              "H": [
+                2,
+                4
+              ],
+              "original_field_pairs": 48,
+              "row_patterns": 410,
+              "compatible_kernel_pairs": 1200
+            },
+            {
+              "H": [
+                1,
+                2,
+                9
+              ],
+              "original_field_pairs": 48,
+              "row_patterns": 402,
+              "compatible_kernel_pairs": 240
+            }
+          ],
+          "complete_literal_pairs": 700416,
+          "n13_full_hard_letters": [
+            18816,
+            18816
+          ],
+          "remaining_binary_field_pairs": 2188
+        }
+      ]
+    },
+    {
+      "script": "check_paired_seventh_cpp.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "n": 10,
+          "H": [
+            1,
+            2
+          ],
+          "complete_normalized_row_pairs": 6144,
+          "status": "pass"
+        },
+        {
+          "n": 11,
+          "H": [
+            1,
+            2
+          ],
+          "complete_normalized_row_pairs": 82944,
+          "status": "pass"
+        },
+        {
+          "n": 13,
+          "H": [
+            1,
+            2
+          ],
+          "complete_normalized_row_pairs": 55296000,
+          "status": "pass"
+        },
+        {
+          "n": 10,
+          "H": [
+            1,
+            9
+          ],
+          "complete_normalized_row_pairs": 12288,
+          "status": "pass"
+        },
+        {
+          "n": 11,
+          "H": [
+            1,
+            9
+          ],
+          "complete_normalized_row_pairs": 248832,
+          "status": "pass"
+        },
+        {
+          "n": 13,
+          "H": [
+            1,
+            9
+          ],
+          "complete_normalized_row_pairs": 276480000,
+          "status": "pass"
+        },
+        {
+          "n": 10,
+          "H": [
+            2,
+            4
+          ],
+          "complete_normalized_row_pairs": 12288,
+          "status": "pass"
+        },
+        {
+          "n": 11,
+          "H": [
+            2,
+            4
+          ],
+          "complete_normalized_row_pairs": 248832,
+          "status": "pass"
+        },
+        {
+          "n": 13,
+          "H": [
+            2,
+            4
+          ],
+          "complete_normalized_row_pairs": 276480000,
+          "status": "pass"
+        },
+        {
+          "n": 10,
+          "H": [
+            1,
+            2,
+            9
+          ],
+          "complete_normalized_row_pairs": 6144,
+          "status": "pass"
+        },
+        {
+          "n": 11,
+          "H": [
+            1,
+            2,
+            9
+          ],
+          "complete_normalized_row_pairs": 82944,
+          "status": "pass"
+        },
+        {
+          "n": 13,
+          "H": [
+            1,
+            2,
+            9
+          ],
+          "complete_normalized_row_pairs": 55296000,
+          "status": "pass"
+        },
+        {
+          "status": "pass",
+          "complete_n13_normalized_row_pairs": 663552000,
+          "matched_histograms": 8
+        }
+      ]
+    }
+  ],
+  "source_sha256": {
+    "check_b1_e6_f7_g8_seventh_package.py": "c1211a65db8100a7c1d6e4e0837dc8a1ef82dfecb326d59e92c41aabb38d8b7f"
+  }
+}

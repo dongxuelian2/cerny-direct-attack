@@ -1,0 +1,394 @@
+{
+  "status": "restricted_search_positive_controls_verified",
+  "records": [
+    {
+      "file": "odd_core_sanitized_control_n11.json",
+      "report_sha256": "9c81f79db588a93cb60fef71dcfdda0baf8e629eac2424ac22afcd9daeb8f8bf",
+      "witness": {
+        "n": 11,
+        "s": 8,
+        "r": 1,
+        "alphabet_size": 2,
+        "rows": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            7,
+            8,
+            5,
+            6,
+            5,
+            10
+          ],
+          [
+            1,
+            2,
+            3,
+            4,
+            5,
+            0,
+            6,
+            8,
+            9,
+            10,
+            7
+          ]
+        ],
+        "S": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          9,
+          10
+        ],
+        "A": [
+          3
+        ],
+        "value": 9,
+        "compression": 9,
+        "reaching": "abbbabaabb",
+        "attaining": "abababbbb",
+        "reset": "abbbabababbabababbababababbabababbbabababbbabababbbabaababbbaba",
+        "state_scores": {
+          "0": 6,
+          "1": 7,
+          "2": 8,
+          "3": 9,
+          "4": 9,
+          "5": 5,
+          "9": 1,
+          "10": 2
+        }
+      },
+      "reachable_image": true,
+      "local_value": 9,
+      "ordinary_bfs_verified": true
+    },
+    {
+      "file": "odd_core_proved_pruning_n13.json",
+      "report_sha256": "1910a930f14f585652cfd1d5f41edbb0dc628aaf444345a4258c5b5f974e59e0",
+      "witness": {
+        "n": 13,
+        "s": 9,
+        "r": 1,
+        "alphabet_size": 2,
+        "rows": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            9,
+            5,
+            7,
+            10,
+            6,
+            8,
+            6,
+            12
+          ],
+          [
+            1,
+            2,
+            3,
+            4,
+            5,
+            0,
+            6,
+            8,
+            7,
+            10,
+            11,
+            12,
+            9
+          ]
+        ],
+        "S": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          11,
+          12
+        ],
+        "A": [
+          4
+        ],
+        "value": 11,
+        "compression": 11,
+        "reaching": "abbbabbbabaabb",
+        "attaining": "ababaabbbbb",
+        "reset": "abbbabbbabababbbabbbabababbbabbbabaaababbbabbbababbbaabbbababaabbbaba",
+        "state_scores": {
+          "0": 7,
+          "1": 8,
+          "2": 9,
+          "3": 10,
+          "4": 11,
+          "5": 6,
+          "6": 5,
+          "11": 1,
+          "12": 2
+        }
+      },
+      "reachable_image": true,
+      "local_value": 11,
+      "ordinary_bfs_verified": true
+    },
+    {
+      "file": "odd_core_corank2_n13.json",
+      "report_sha256": "086a37961204171f88ca9e94415b508d49e1ce6c1d84a44e37ec7c7656d61cc0",
+      "witness": {
+        "n": 13,
+        "s": 9,
+        "r": 1,
+        "alphabet_size": 2,
+        "rows": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            6,
+            7,
+            5,
+            12,
+            5,
+            10,
+            10,
+            8
+          ],
+          [
+            1,
+            2,
+            3,
+            4,
+            5,
+            0,
+            6,
+            8,
+            7,
+            10,
+            11,
+            12,
+            9
+          ]
+        ],
+        "S": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "A": [
+          4
+        ],
+        "value": 10,
+        "compression": 10,
+        "reaching": "abaabbbaa",
+        "attaining": "abbbaabbba",
+        "reset": "abaabbbabbbaabbaababbbaabbbabbabaabbbaababbbaabbbabbabaabbbabbabaabbbabbabaabbbaababbbaabbba",
+        "state_scores": {
+          "0": 6,
+          "1": 7,
+          "2": 8,
+          "3": 9,
+          "4": 10,
+          "5": 5,
+          "6": 6,
+          "7": 2,
+          "8": 1
+        }
+      },
+      "reachable_image": true,
+      "local_value": 10,
+      "ordinary_bfs_verified": true
+    },
+    {
+      "file": "odd_core_corank3_n13.json",
+      "report_sha256": "e2fe5a9e94703fea0a74bc68ed68e3492f5346e396155867616fedc68c7e3a3c",
+      "witness": {
+        "n": 13,
+        "s": 9,
+        "r": 1,
+        "alphabet_size": 2,
+        "rows": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            6,
+            7,
+            9,
+            5,
+            5,
+            5,
+            11,
+            11
+          ],
+          [
+            1,
+            2,
+            3,
+            4,
+            5,
+            0,
+            6,
+            7,
+            9,
+            10,
+            11,
+            12,
+            8
+          ]
+        ],
+        "S": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "A": [
+          4
+        ],
+        "value": 9,
+        "compression": 9,
+        "reaching": "abbbbabbbb",
+        "attaining": "abbabbbba",
+        "reset": "abbbbabbabbbbabbabbbbabbaabbbbaababbababbbbabbabbbbaabbbabbbbabbabbbbaaabbabbbba",
+        "state_scores": {
+          "0": 5,
+          "1": 6,
+          "2": 7,
+          "3": 8,
+          "4": 9,
+          "5": 4,
+          "6": 5,
+          "7": 6,
+          "8": 1
+        }
+      },
+      "reachable_image": true,
+      "local_value": 9,
+      "ordinary_bfs_verified": true
+    },
+    {
+      "file": "odd_core_corank2_sanitized_n11.json",
+      "report_sha256": "c8787b236a1c706c1348488bb83b82c3e17da8d25d74a0e3a564e2c5e894959f",
+      "witness": {
+        "n": 11,
+        "s": 8,
+        "r": 1,
+        "alphabet_size": 2,
+        "rows": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            9,
+            8,
+            5,
+            8,
+            5,
+            10
+          ],
+          [
+            1,
+            2,
+            3,
+            4,
+            5,
+            0,
+            7,
+            8,
+            9,
+            10,
+            6
+          ]
+        ],
+        "S": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "A": [
+          3
+        ],
+        "value": 8,
+        "compression": 8,
+        "reaching": "abbbabbb",
+        "attaining": "abbabbba",
+        "reset": "abbbabbaabbbabbaabbbabbaabbbabbabbbabbabbbabbabbbabbabbba",
+        "state_scores": {
+          "0": 5,
+          "1": 6,
+          "2": 7,
+          "3": 8,
+          "4": 8,
+          "5": 4,
+          "6": 1,
+          "7": 1
+        }
+      },
+      "reachable_image": true,
+      "local_value": 8,
+      "ordinary_bfs_verified": true
+    },
+    {
+      "file": "odd_core_corank3_sanitized_n11.json",
+      "report_sha256": "cec2be24e4aeb07750eced92ce5e6b5a5a4d6329428aee260513fbbca8a9dd14",
+      "witness": null,
+      "reachable_image": false,
+      "local_value": 5,
+      "ordinary_bfs_verified": true
+    }
+  ],
+  "source_sha256": {
+    "probe_odd_core.cpp": "220581ab270caa0bf8b219cb9be3adce2581cf591cf8925eff762a2737339ffa",
+    "probe_odd_core_higher.cpp": "d0d3076efba64d5f29f269c3b4a2e8961352f908f7ad38139f217c554b7d2071",
+    "alphabet_check.py": "5a93272df21227051061770d3edc48fd2aaeabc6062c4a385593689444b538df"
+  },
+  "checker_sha256": "85f6d6303365a8db7dfb36533b03884d2fffd5a8956678b2c68fae2474d11ccb",
+  "controls": "n11 ASan/UBSan controls and n13 independently verified best witnesses; higher-corank partition and assignment counts checked independently",
+  "scope": "Identity on long-cycle interior, outputs confined to active core, permutation b, initial S containing the entire long cycle. Coranks one through three at n13. Includes unreachable initial sets. No general negative theorem.",
+  "legacy_counter": "involutions counts base involutions or base permutations according to arbitrary_core_permutations",
+  "corrected_negative_authority": [
+    "odd_core_proved_pruning_n13.json",
+    "odd_core_corank2_n13.json",
+    "odd_core_corank3_n13.json"
+  ],
+  "retracted_negative_records": [
+    "odd_core_permutations_n13.json"
+  ],
+  "admitted_pruning": "P1<=4 and cover(P4)<=3 only, plus proved equality flags in higher-corank n13 runs; no higher-layer edge-count caps"
+}

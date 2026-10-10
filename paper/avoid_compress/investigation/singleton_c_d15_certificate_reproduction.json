@@ -1,0 +1,603 @@
+{
+  "status": "pass",
+  "archive": "certificates/singleton_c_d15_unrestricted_complete.zip",
+  "sha256": "da68dbc9eae2cad27b0ec255e03b11a62be3c1588ba2b66ab2e8eda980e1371c",
+  "files": 49,
+  "checksum_entries": 48,
+  "data_files_reproduced_byte_identically": 5,
+  "audits_reproduced_byte_identically": 7,
+  "complete_individual_rows": 12576,
+  "complete_binary_ordered_controls_through_n8": 655104,
+  "complete_distinct_ternary_supplier_sets_at_n7": 1437376,
+  "seeded_larger_alphabet_controls": 36000,
+  "labelled_extensions_checked": 992,
+  "whole_third_types_excluded": 2,
+  "new_binary_parent_pairs_removed": 28,
+  "runs": [
+    {
+      "script": "enumerate_b1_c4_fourth.py",
+      "exit": 0,
+      "outputs": []
+    },
+    {
+      "script": "check_b1_c4_fourth.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "status": "pass",
+          "geometric_orbits": 20,
+          "labelled_E": 131,
+          "all_subset_masks_tested": 536445,
+          "augmented_rank_tests": 5757,
+          "counts": [
+            {
+              "D": [
+                1
+              ],
+              "geometric_orbits": 3,
+              "labelled_E": 17,
+              "all_alphabet_excluded_E": [
+                [
+                  2
+                ],
+                [
+                  5
+                ],
+                [
+                  2,
+                  5
+                ]
+              ],
+              "remaining_unrestricted_E": [],
+              "remaining_binary_E": [],
+              "remaining_binary_field_pairs": 0,
+              "original_third_pairs": 14,
+              "remaining_original_third_pairs": 0
+            },
+            {
+              "D": [
+                5
+              ],
+              "geometric_orbits": 5,
+              "labelled_E": 31,
+              "all_alphabet_excluded_E": [
+                [
+                  1
+                ]
+              ],
+              "remaining_unrestricted_E": [
+                [
+                  6
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  1,
+                  2,
+                  6
+                ]
+              ],
+              "remaining_binary_E": [
+                [
+                  6
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  1,
+                  2,
+                  6
+                ]
+              ],
+              "remaining_binary_field_pairs": 164,
+              "original_third_pairs": 14,
+              "remaining_original_third_pairs": 14
+            },
+            {
+              "D": [
+                1,
+                2
+              ],
+              "geometric_orbits": 2,
+              "labelled_E": 24,
+              "all_alphabet_excluded_E": [],
+              "remaining_unrestricted_E": [
+                [
+                  5
+                ],
+                [
+                  1,
+                  5
+                ]
+              ],
+              "remaining_binary_E": [
+                [
+                  5
+                ],
+                [
+                  1,
+                  5
+                ]
+              ],
+              "remaining_binary_field_pairs": 50,
+              "original_third_pairs": 14,
+              "remaining_original_third_pairs": 14
+            },
+            {
+              "D": [
+                1,
+                5
+              ],
+              "geometric_orbits": 7,
+              "labelled_E": 31,
+              "all_alphabet_excluded_E": [
+                [
+                  2
+                ]
+              ],
+              "remaining_unrestricted_E": [
+                [
+                  6
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  1,
+                  2,
+                  6
+                ]
+              ],
+              "remaining_binary_E": [
+                [
+                  6
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  1,
+                  2,
+                  6
+                ]
+              ],
+              "remaining_binary_field_pairs": 118,
+              "original_third_pairs": 14,
+              "remaining_original_third_pairs": 14
+            },
+            {
+              "D": [
+                1,
+                2,
+                5
+              ],
+              "geometric_orbits": 3,
+              "labelled_E": 28,
+              "all_alphabet_excluded_E": [],
+              "remaining_unrestricted_E": [
+                [
+                  6
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  1,
+                  2,
+                  6
+                ]
+              ],
+              "remaining_binary_E": [
+                [
+                  6
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  1,
+                  2,
+                  6
+                ]
+              ],
+              "remaining_binary_field_pairs": 27,
+              "original_third_pairs": 14,
+              "remaining_original_third_pairs": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "script": "check_finite_independent_image_trap.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "status": "pass",
+          "complete_n4_ordered_binary_alphabets": 65536,
+          "graphs_per_alphabet": 32,
+          "tested_h": [
+            1,
+            2
+          ],
+          "qualified_alphabet_graph_depth_controls": 76560,
+          "qualified_nonsynchronizing_alphabets": 7184,
+          "qualifying_histogram": {
+            "h1_N6": 7184,
+            "h2_N6": 7184,
+            "h1_N5": 12120,
+            "h2_N5": 15960,
+            "h1_N4": 7376,
+            "h2_N4": 14856,
+            "h1_N3": 2168,
+            "h2_N3": 7256,
+            "h1_N2": 312,
+            "h2_N2": 1944,
+            "h2_N1": 192,
+            "h1_N1": 8
+          },
+          "scope": "Uniform paper proof and complete n4 alphabet/graph controls, with forward pair and full/subset BFS; concrete graph counts checked n7..13. No F value."
+        }
+      ]
+    },
+    {
+      "script": "check_two_cover_p3_classification.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "status": "pass",
+          "uniform_state_range": "n>=4",
+          "alphabet": "arbitrary finite",
+          "complete_fixed_cover_graphs_through_n9": 43680,
+          "complete_n4_ordered_binary_alphabets": 65536,
+          "qualifying_synchronizing_controls": 24,
+          "qualifying_strongly_connected_controls": 24,
+          "semantic_shape_histogram": {
+            "four_vertex_path": 16,
+            "triangle": 8
+          },
+          "scope": "Uniform necessary P3 graph classification under a two-state P5 cover. Full graph/semantic controls support the paper proof. No E6/E26 exclusion, F value or alphabet separation."
+        }
+      ]
+    },
+    {
+      "script": "check_two_cover_unique_immediate_pair.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "status": "pass",
+          "uniform_state_range": "n>=4",
+          "alphabet": "arbitrary finite",
+          "known_refinement_application": true,
+          "complete_n4_ordered_binary_alphabets": 65536,
+          "alphabets_with_multiple_immediate_pairs": 54592,
+          "compressible_pairs_checked_against_five_bound": 303888,
+          "qualifying_sync_fixed_cover_controls": 24,
+          "literal_two_pair_sequences": 18012,
+          "n3_essential_boundary": {
+            "rows": [
+              [
+                1,
+                2,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ]
+            ],
+            "K": [
+              0,
+              1
+            ],
+            "outside_K_size": 1,
+            "immediate_pairs": 3,
+            "synchronizing": true
+          },
+          "scope": "Direct credited compression-refinement consequence, complete n4 controls and literal pair-sequence construction. No new F value or priority claim."
+        }
+      ]
+    },
+    {
+      "script": "enumerate_c4_d15_e26_unrestricted.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "status": "complete_D15_E26_individual_control_domains",
+          "rows": 5232
+        }
+      ]
+    },
+    {
+      "script": "check_c4_d15_e26_unrestricted.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "n": 7,
+          "individual_rows": 192,
+          "dual_supplier_rows": 32,
+          "complete_binary_ordered_alphabets": 15360,
+          "complete_distinct_ternary_supplier_sets": 718688,
+          "seeded_larger_alphabets": 6000,
+          "controls_with_dual_supplier": 507867,
+          "synchronizing_controls": 0,
+          "strongly_connected_controls": 430261,
+          "outside_K_short_words": 0,
+          "nonsynchronizing_cover_certificates": 740048,
+          "control_histogram": {
+            "stabilized_matching_pair_graph": 740048
+          }
+        },
+        {
+          "n": 8,
+          "individual_rows": 816,
+          "dual_supplier_rows": 96,
+          "complete_binary_ordered_alphabets": 230400,
+          "complete_distinct_ternary_supplier_sets": 0,
+          "seeded_larger_alphabets": 6000,
+          "controls_with_dual_supplier": 152295,
+          "synchronizing_controls": 66946,
+          "strongly_connected_controls": 53230,
+          "outside_K_short_words": 182316,
+          "nonsynchronizing_cover_certificates": 54084,
+          "control_histogram": {
+            "outside_K_word_length_2": 133609,
+            "stabilized_matching_pair_graph": 44339,
+            "outside_K_word_length_3": 42331,
+            "outside_K_word_length_4": 5992,
+            "P2_extra_edge_image_trap": 8561,
+            "P3_small_image_trap": 1184,
+            "outside_K_word_length_5": 384
+          }
+        },
+        {
+          "n": 9,
+          "individual_rows": 4224,
+          "dual_supplier_rows": 384,
+          "complete_binary_ordered_alphabets": 0,
+          "complete_distinct_ternary_supplier_sets": 0,
+          "seeded_larger_alphabets": 6000,
+          "controls_with_dual_supplier": 4604,
+          "synchronizing_controls": 4680,
+          "strongly_connected_controls": 4083,
+          "outside_K_short_words": 5917,
+          "nonsynchronizing_cover_certificates": 83,
+          "control_histogram": {
+            "outside_K_word_length_2": 5682,
+            "outside_K_word_length_3": 230,
+            "stabilized_matching_pair_graph": 57,
+            "outside_K_word_length_4": 5,
+            "P2_extra_edge_image_trap": 26
+          }
+        },
+        {
+          "status": "pass",
+          "parameter": [
+            13,
+            9,
+            1
+          ],
+          "B": [
+            0
+          ],
+          "C": [
+            4
+          ],
+          "D": [
+            1,
+            5
+          ],
+          "E": [
+            2,
+            6
+          ],
+          "unrestricted_E26_paper_excluded": true,
+          "needs_strong_connectivity": false,
+          "needs_mandatory_isolation": false,
+          "complete_individual_fields": 16,
+          "complete_individual_rows": 5232,
+          "complete_binary_ordered_alphabets_through_n8": 245760,
+          "complete_distinct_ternary_supplier_sets_at_n7": 718688,
+          "seeded_larger_alphabets": 18000,
+          "seed": 20261010,
+          "constructive_examples": 40,
+          "closed_frame_examples": 10,
+          "boundary_depths": [
+            7,
+            5
+          ],
+          "scope": "Paper proof excludes arbitrary-alphabet conditional D15/E26 fourth geometry. All finite supplier controls retain dual suppliers and check synchronization without an SC filter. E6, whole third/joint and numerical F unresolved."
+        }
+      ]
+    },
+    {
+      "script": "enumerate_c4_d15_e6_unrestricted.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "status": "complete_D15_E6_individual_control_domains",
+          "rows": 7344
+        }
+      ]
+    },
+    {
+      "script": "check_c4_d15_e6_unrestricted.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "n": 7,
+          "individual_rows": 192,
+          "dual_supplier_rows": 32,
+          "complete_binary_ordered_alphabets": 15360,
+          "complete_distinct_ternary_supplier_sets": 718688,
+          "seeded_larger_alphabets": 6000,
+          "controls_with_dual_supplier": 507872,
+          "synchronizing_controls": 472553,
+          "strongly_connected_controls": 342707,
+          "outside_K_short_words": 622686,
+          "nonsynchronizing_cover_certificates": 117362,
+          "control_histogram": {
+            "outside_K_word_length_2": 451854,
+            "outside_K_word_length_3": 157791,
+            "closed_D15_block": 55669,
+            "proper_closed_pair_graph": 61693,
+            "outside_K_word_length_4": 11443,
+            "outside_K_word_length_5": 1598
+          }
+        },
+        {
+          "n": 8,
+          "individual_rows": 1008,
+          "dual_supplier_rows": 144,
+          "complete_binary_ordered_alphabets": 393984,
+          "complete_distinct_ternary_supplier_sets": 0,
+          "seeded_larger_alphabets": 6000,
+          "controls_with_dual_supplier": 274689,
+          "synchronizing_controls": 153935,
+          "strongly_connected_controls": 61323,
+          "outside_K_short_words": 317871,
+          "nonsynchronizing_cover_certificates": 82113,
+          "control_histogram": {
+            "outside_K_word_length_2": 283223,
+            "outside_K_word_length_3": 32466,
+            "proper_closed_pair_graph": 56723,
+            "closed_D15_block": 25390,
+            "outside_K_word_length_4": 1926,
+            "outside_K_word_length_5": 256
+          }
+        },
+        {
+          "n": 9,
+          "individual_rows": 6144,
+          "dual_supplier_rows": 768,
+          "complete_binary_ordered_alphabets": 0,
+          "complete_distinct_ternary_supplier_sets": 0,
+          "seeded_larger_alphabets": 6000,
+          "controls_with_dual_supplier": 4987,
+          "synchronizing_controls": 4824,
+          "strongly_connected_controls": 3637,
+          "outside_K_short_words": 5950,
+          "nonsynchronizing_cover_certificates": 50,
+          "control_histogram": {
+            "outside_K_word_length_2": 5895,
+            "closed_D15_block": 13,
+            "proper_closed_pair_graph": 37,
+            "outside_K_word_length_3": 55
+          }
+        },
+        {
+          "status": "pass",
+          "parameter": [
+            13,
+            9,
+            1
+          ],
+          "B": [
+            0
+          ],
+          "C": [
+            4
+          ],
+          "D": [
+            1,
+            5
+          ],
+          "E": [
+            6
+          ],
+          "unrestricted_E6_paper_excluded": true,
+          "needs_strong_connectivity": false,
+          "needs_mandatory_isolation": false,
+          "complete_individual_fields": 16,
+          "complete_individual_rows": 7344,
+          "complete_binary_ordered_alphabets_through_n8": 409344,
+          "complete_distinct_ternary_supplier_sets_at_n7": 718688,
+          "seeded_larger_alphabets": 18000,
+          "seed": 20261010,
+          "constructive_examples": 40,
+          "closed_frame_examples": 10,
+          "boundary_depths": [
+            5,
+            5
+          ],
+          "scope": "Paper proof excludes arbitrary-alphabet conditional D15/E6 fourth geometry. All finite supplier controls retain dual suppliers and check synchronization without an SC filter. Whole D15 third composition and numerical F require a separate audit."
+        }
+      ]
+    },
+    {
+      "script": "check_singleton_c_d15_unrestricted_composition.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "status": "pass",
+          "parameter": [
+            13,
+            9,
+            1
+          ],
+          "excluded_unrestricted_third_ids": [
+            "b1_in_c1_third4",
+            "b1_out_c2_third4"
+          ],
+          "excluded_binary_third_ids": [
+            "b1_in_c1_third4",
+            "b1_out_c2_third4"
+          ],
+          "newly_excluded_binary_third_types": 2,
+          "newly_removed_previously_remaining_binary_pairs": 28,
+          "whole_unrestricted_third_exclusions": 2,
+          "newly_excluded_D_labels": 32,
+          "complete_E_labels_both_roots": 992,
+          "labelled_field_transports_checked": 992,
+          "Boolean_identities_checked": 3968,
+          "newly_removed_current_binary_fourth_pairs_both_roots": 164,
+          "scope": "Two whole conditional D15 third exclusions for arbitrary alphabets, including28 remaining binary parent pairs. Other third/joint types and numerical F extrema remain unresolved."
+        }
+      ]
+    }
+  ],
+  "source_sha256": {
+    "check_singleton_c_d15_certificate_package.py": "7b18d5aaa28b26cad6b547cd441fd16261f8ad2fe8e8dd74a619afc2c9fee165"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "status": "selected_complete_scope",
+  "parameter": [
+    13,
+    9,
+    1
+  ],
+  "selected_geometries": [
+    "b3_mixed_c1_third6",
+    "b3_mixed_c8_third1"
+  ],
+  "current_B3_geometries": 7,
+  "source_sha256": {
+    "b3_staircase_baseline_state.json": "3999c415b548dbda9b49d50ae0c014cf0b6693c54ecc0381b98b0c9f1f270d1b"
+  }
+}

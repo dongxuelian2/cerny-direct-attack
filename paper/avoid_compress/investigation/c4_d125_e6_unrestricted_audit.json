@@ -1,0 +1,75 @@
+{
+  "status": "pass",
+  "parameter": [
+    13,
+    9,
+    1
+  ],
+  "B": [
+    0
+  ],
+  "C": [
+    4
+  ],
+  "D": [
+    1,
+    2,
+    5
+  ],
+  "E": [
+    6
+  ],
+  "unrestricted_E6_paper_excluded": true,
+  "all_individual_fields": 16,
+  "complete_individual_control_rows": 1944,
+  "finite_row_controls": [
+    {
+      "n": 7,
+      "complete_individual_rows": 144,
+      "seeded_alphabets": 6000,
+      "strongly_connected": 774,
+      "synchronizing": 0,
+      "constructive_short_merge_witnesses": 0,
+      "closed_nonsynchronizing": 774
+    },
+    {
+      "n": 8,
+      "complete_individual_rows": 360,
+      "seeded_alphabets": 6000,
+      "strongly_connected": 619,
+      "synchronizing": 309,
+      "constructive_short_merge_witnesses": 309,
+      "closed_nonsynchronizing": 310
+    },
+    {
+      "n": 9,
+      "complete_individual_rows": 1440,
+      "seeded_alphabets": 6000,
+      "strongly_connected": 481,
+      "synchronizing": 379,
+      "constructive_short_merge_witnesses": 379,
+      "closed_nonsynchronizing": 102
+    }
+  ],
+  "seeded_alphabets": 18000,
+  "seed": 20261010,
+  "constructive_samples": 60,
+  "boundary_J_merge_depth": 4,
+  "source_sha256": {
+    "check_c4_d125_e6_unrestricted.py": "8b430b6e40e73b79fb34a6014c0f6f391a88f9a75530b7da20e83d2e3efaf99d",
+    "enumerate_c4_d125_e6_unrestricted.py": "90e2712351d70bec12f8ec91f181792d764407d2244da5af6a3a93d1f81ca17f",
+    "c4_d125_e6_individual_controls.json": "dac8815a3e76a37e49707209115ce8ed0b4c10941a8aefd8eefbe6daa2b12f81",
+    "c4_d125_e6_unrestricted_samples.json": "680d591162bdde4820b0f19854aff8717f5f45842c62354dace4f951bee5f9b9",
+    "C4_D125_E6_UNRESTRICTED_EXCLUSION.md": "1837915a31e4248bb1c36b6b0214820361c72d3e37a5f3fa68885fe87f19e310",
+    "b1_c4_fourth_inventory.json": "c9a26a19d52b0dbf8806e84fddab5156366aabab591d10e335e29d65c7b25517",
+    "b1_c4_fourth_audit.json": "f2d0ab7b95611e4ebe0e9fd5addcf30708be2f034f146d20a0cdc82e25cde5be",
+    "B1_C4_FOURTH_SPACE.md": "3e6ab0c3a886c489ce7d9217378984af34f234c699833e2c02098669fe798d93",
+    "CLOSED_MERGING_BLOCK.md": "febcb02e7d5a9b5c496384b9fee29f11a5fa108aa9f53724951c366ea516e241",
+    "closed_merging_block_audit.json": "2b6bbad0145af443a816359ef3ab8ca8c7b45d0cb4d8da2b7d011e6a7fc0f29b",
+    "MANDATORY_CORE_ISOLATION.md": "72129f1a810b07a8bcd975e5df353cc1dbc43d063e13c8ff887ba4748bb14537",
+    "mandatory_core_isolation_audit.json": "67d7c82cae127c23260a3f7b6affe3052a1afef728cad8f49fd54d27e3fa9f54",
+    "ENTRY_FIBER_FLAG.md": "b27eb51977104cd68aaff2e2f37db10c50bbf4a4dd4320502b15b0f609a01bbf",
+    "LOCAL_EQUALITY_FLAG.md": "f34cf260276c6551266564c1ee2264dc823aeaa4f33b4ae8f8261aedeec596a8"
+  },
+  "scope": "Uniform paper proof excludes unrestricted B0/C4/D125/E6 at equality12. Finite individual rows and seeded alphabets support the proof; E16/E126, whole D/joint, numerical F and alphabet separation remain unproved."
+}

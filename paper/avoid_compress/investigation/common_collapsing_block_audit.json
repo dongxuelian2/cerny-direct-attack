@@ -1,0 +1,280 @@
+{
+  "status": "pass",
+  "uniform_proof": "COMMON_COLLAPSING_BLOCK_TRAP.md",
+  "complete_finite_ordered_alphabets": 122110,
+  "separately_checked_forward_alphabets": 909,
+  "finite_controls": [
+    {
+      "n": 3,
+      "D_size": 2,
+      "alphabet_size": 2,
+      "complete_raw_individual_rows": 2,
+      "necessary_retained_rows": 2,
+      "complete_ordered_alphabets": 4,
+      "separately_checked_forward_alphabets": 4,
+      "only_D_clique_merges": true
+    },
+    {
+      "n": 3,
+      "D_size": 2,
+      "alphabet_size": 3,
+      "complete_raw_individual_rows": 2,
+      "necessary_retained_rows": 2,
+      "complete_ordered_alphabets": 8,
+      "separately_checked_forward_alphabets": 8,
+      "only_D_clique_merges": true
+    },
+    {
+      "n": 4,
+      "D_size": 2,
+      "alphabet_size": 2,
+      "complete_raw_individual_rows": 6,
+      "necessary_retained_rows": 4,
+      "complete_ordered_alphabets": 16,
+      "separately_checked_forward_alphabets": 16,
+      "only_D_clique_merges": true
+    },
+    {
+      "n": 4,
+      "D_size": 2,
+      "alphabet_size": 3,
+      "complete_raw_individual_rows": 6,
+      "necessary_retained_rows": 4,
+      "complete_ordered_alphabets": 64,
+      "separately_checked_forward_alphabets": 64,
+      "only_D_clique_merges": true
+    },
+    {
+      "n": 4,
+      "D_size": 3,
+      "alphabet_size": 2,
+      "complete_raw_individual_rows": 3,
+      "necessary_retained_rows": 3,
+      "complete_ordered_alphabets": 9,
+      "separately_checked_forward_alphabets": 9,
+      "only_D_clique_merges": true
+    },
+    {
+      "n": 4,
+      "D_size": 3,
+      "alphabet_size": 3,
+      "complete_raw_individual_rows": 3,
+      "necessary_retained_rows": 3,
+      "complete_ordered_alphabets": 27,
+      "separately_checked_forward_alphabets": 27,
+      "only_D_clique_merges": true
+    },
+    {
+      "n": 5,
+      "D_size": 2,
+      "alphabet_size": 2,
+      "complete_raw_individual_rows": 24,
+      "necessary_retained_rows": 12,
+      "complete_ordered_alphabets": 144,
+      "separately_checked_forward_alphabets": 64,
+      "only_D_clique_merges": true
+    },
+    {
+      "n": 5,
+      "D_size": 2,
+      "alphabet_size": 3,
+      "complete_raw_individual_rows": 24,
+      "necessary_retained_rows": 12,
+      "complete_ordered_alphabets": 1728,
+      "separately_checked_forward_alphabets": 64,
+      "only_D_clique_merges": true
+    },
+    {
+      "n": 5,
+      "D_size": 3,
+      "alphabet_size": 2,
+      "complete_raw_individual_rows": 12,
+      "necessary_retained_rows": 6,
+      "complete_ordered_alphabets": 36,
+      "separately_checked_forward_alphabets": 36,
+      "only_D_clique_merges": true
+    },
+    {
+      "n": 5,
+      "D_size": 3,
+      "alphabet_size": 3,
+      "complete_raw_individual_rows": 12,
+      "necessary_retained_rows": 6,
+      "complete_ordered_alphabets": 216,
+      "separately_checked_forward_alphabets": 64,
+      "only_D_clique_merges": true
+    },
+    {
+      "n": 5,
+      "D_size": 4,
+      "alphabet_size": 2,
+      "complete_raw_individual_rows": 4,
+      "necessary_retained_rows": 4,
+      "complete_ordered_alphabets": 16,
+      "separately_checked_forward_alphabets": 16,
+      "only_D_clique_merges": true
+    },
+    {
+      "n": 5,
+      "D_size": 4,
+      "alphabet_size": 3,
+      "complete_raw_individual_rows": 4,
+      "necessary_retained_rows": 4,
+      "complete_ordered_alphabets": 64,
+      "separately_checked_forward_alphabets": 64,
+      "only_D_clique_merges": true
+    },
+    {
+      "n": 6,
+      "D_size": 2,
+      "alphabet_size": 2,
+      "complete_raw_individual_rows": 120,
+      "necessary_retained_rows": 48,
+      "complete_ordered_alphabets": 2304,
+      "separately_checked_forward_alphabets": 64,
+      "only_D_clique_merges": true
+    },
+    {
+      "n": 6,
+      "D_size": 2,
+      "alphabet_size": 3,
+      "complete_raw_individual_rows": 120,
+      "necessary_retained_rows": 48,
+      "complete_ordered_alphabets": 110592,
+      "separately_checked_forward_alphabets": 64,
+      "only_D_clique_merges": true
+    },
+    {
+      "n": 6,
+      "D_size": 3,
+      "alphabet_size": 2,
+      "complete_raw_individual_rows": 60,
+      "necessary_retained_rows": 18,
+      "complete_ordered_alphabets": 324,
+      "separately_checked_forward_alphabets": 64,
+      "only_D_clique_merges": true
+    },
+    {
+      "n": 6,
+      "D_size": 3,
+      "alphabet_size": 3,
+      "complete_raw_individual_rows": 60,
+      "necessary_retained_rows": 18,
+      "complete_ordered_alphabets": 5832,
+      "separately_checked_forward_alphabets": 64,
+      "only_D_clique_merges": true
+    },
+    {
+      "n": 6,
+      "D_size": 4,
+      "alphabet_size": 2,
+      "complete_raw_individual_rows": 20,
+      "necessary_retained_rows": 8,
+      "complete_ordered_alphabets": 64,
+      "separately_checked_forward_alphabets": 64,
+      "only_D_clique_merges": true
+    },
+    {
+      "n": 6,
+      "D_size": 4,
+      "alphabet_size": 3,
+      "complete_raw_individual_rows": 20,
+      "necessary_retained_rows": 8,
+      "complete_ordered_alphabets": 512,
+      "separately_checked_forward_alphabets": 64,
+      "only_D_clique_merges": true
+    },
+    {
+      "n": 6,
+      "D_size": 5,
+      "alphabet_size": 2,
+      "complete_raw_individual_rows": 5,
+      "necessary_retained_rows": 5,
+      "complete_ordered_alphabets": 25,
+      "separately_checked_forward_alphabets": 25,
+      "only_D_clique_merges": true
+    },
+    {
+      "n": 6,
+      "D_size": 5,
+      "alphabet_size": 3,
+      "complete_raw_individual_rows": 5,
+      "necessary_retained_rows": 5,
+      "complete_ordered_alphabets": 125,
+      "separately_checked_forward_alphabets": 64,
+      "only_D_clique_merges": true
+    }
+  ],
+  "essential_hypothesis_boundary_controls": [
+    {
+      "rows": [
+        [
+          2,
+          2,
+          3,
+          3
+        ]
+      ],
+      "D": [
+        0,
+        1
+      ],
+      "c": 2,
+      "K": [
+        0
+      ],
+      "omitted": "P2 cover",
+      "reset": "aa"
+    },
+    {
+      "rows": [
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "D": [
+        0,
+        1
+      ],
+      "c": 0,
+      "K": [
+        0,
+        1
+      ],
+      "omitted": "c outside D",
+      "reset": "aa"
+    },
+    {
+      "rows": [
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          1,
+          2,
+          0
+        ]
+      ],
+      "D": [
+        0,
+        1
+      ],
+      "c": 2,
+      "K": [
+        0,
+        1
+      ],
+      "omitted": "all letters have same preimage",
+      "reset": "aba"
+    }
+  ],
+  "source_sha256": {
+    "check_common_collapsing_block.py": "4107057dd3f0956424e76831fa8e19a28748955c2aeb5846049d532f2fc6fb34",
+    "COMMON_COLLAPSING_BLOCK_TRAP.md": "99fd89dc0987a4e1dca74e8551588fb124e1466ab44fce38495f1db8045cd4f0"
+  },
+  "scope": "Uniform conditional non-synchronization lemma for arbitrary alphabets; complete finite controls supplement the proof. No global F value or numerical alphabet separation."
+}

@@ -1,0 +1,219 @@
+{
+  "status": "pass",
+  "parameter": [
+    13,
+    9,
+    1
+  ],
+  "B": [
+    0
+  ],
+  "C": [
+    4
+  ],
+  "D": [
+    1,
+    2
+  ],
+  "unrestricted_excluded_E": [
+    [
+      5
+    ],
+    [
+      1,
+      5
+    ]
+  ],
+  "complete_individual_rows": 7328,
+  "complete_binary_ordered_alphabets_through_n8": 135616,
+  "seeded_larger_alphabets": 48000,
+  "finite_control_stats": [
+    {
+      "n": 6,
+      "E": [
+        5
+      ],
+      "individual_rows": 40,
+      "complete_binary_ordered_alphabets": 704,
+      "binary_strongly_connected": 198,
+      "seeded_larger_alphabets": 6000,
+      "seeded_strongly_connected": 4188,
+      "synchronizing_controls": 0,
+      "closed_nonsynchronizing_controls": 4386,
+      "contradiction_word_cases": {},
+      "supplier_overlap_rows": 8
+    },
+    {
+      "n": 7,
+      "E": [
+        5
+      ],
+      "individual_rows": 128,
+      "complete_binary_ordered_alphabets": 5888,
+      "binary_strongly_connected": 1170,
+      "seeded_larger_alphabets": 6000,
+      "seeded_strongly_connected": 3642,
+      "synchronizing_controls": 3523,
+      "closed_nonsynchronizing_controls": 1289,
+      "contradiction_word_cases": {
+        "entering_guard_misses_hole": 2611,
+        "last_entrance_to_mixed_kernel": 912
+      },
+      "supplier_overlap_rows": 16
+    },
+    {
+      "n": 8,
+      "E": [
+        5
+      ],
+      "individual_rows": 624,
+      "complete_binary_ordered_alphabets": 99072,
+      "binary_strongly_connected": 18108,
+      "seeded_larger_alphabets": 6000,
+      "seeded_strongly_connected": 3719,
+      "synchronizing_controls": 16496,
+      "closed_nonsynchronizing_controls": 5331,
+      "contradiction_word_cases": {
+        "entering_guard_misses_hole": 12313,
+        "last_entrance_to_mixed_kernel": 4183
+      },
+      "supplier_overlap_rows": 48
+    },
+    {
+      "n": 9,
+      "E": [
+        5
+      ],
+      "individual_rows": 3840,
+      "complete_binary_ordered_alphabets": 0,
+      "binary_strongly_connected": 0,
+      "seeded_larger_alphabets": 6000,
+      "seeded_strongly_connected": 3784,
+      "synchronizing_controls": 3718,
+      "closed_nonsynchronizing_controls": 66,
+      "contradiction_word_cases": {
+        "entering_guard_misses_hole": 3482,
+        "last_entrance_to_mixed_kernel": 236
+      },
+      "supplier_overlap_rows": 192
+    },
+    {
+      "n": 6,
+      "E": [
+        1,
+        5
+      ],
+      "individual_rows": 40,
+      "complete_binary_ordered_alphabets": 256,
+      "binary_strongly_connected": 72,
+      "seeded_larger_alphabets": 6000,
+      "seeded_strongly_connected": 4115,
+      "synchronizing_controls": 4187,
+      "closed_nonsynchronizing_controls": 0,
+      "contradiction_word_cases": {
+        "ordinary_enters_guard1_through_hole": 1038,
+        "supplier_enters_guard1": 2455,
+        "preserver_sends_2_to_1": 694
+      },
+      "supplier_overlap_rows": 0
+    },
+    {
+      "n": 7,
+      "E": [
+        1,
+        5
+      ],
+      "individual_rows": 112,
+      "complete_binary_ordered_alphabets": 2048,
+      "binary_strongly_connected": 360,
+      "seeded_larger_alphabets": 6000,
+      "seeded_strongly_connected": 3504,
+      "synchronizing_controls": 3844,
+      "closed_nonsynchronizing_controls": 0,
+      "contradiction_word_cases": {
+        "guard2_misses_hole": 695,
+        "ordinary_enters_guard1_through_hole": 213,
+        "ordinary_enters_guard1_with_e_in_image": 326,
+        "supplier_enters_guard1": 2210,
+        "preserver_sends_2_to_1": 420
+      },
+      "supplier_overlap_rows": 0
+    },
+    {
+      "n": 8,
+      "E": [
+        1,
+        5
+      ],
+      "individual_rows": 432,
+      "complete_binary_ordered_alphabets": 27648,
+      "binary_strongly_connected": 4464,
+      "seeded_larger_alphabets": 6000,
+      "seeded_strongly_connected": 3536,
+      "synchronizing_controls": 8000,
+      "closed_nonsynchronizing_controls": 0,
+      "contradiction_word_cases": {
+        "guard2_misses_hole": 2155,
+        "ordinary_enters_guard1_through_hole": 314,
+        "ordinary_enters_guard1_with_e_in_image": 974,
+        "supplier_enters_guard1": 4179,
+        "preserver_sends_2_to_1": 378
+      },
+      "supplier_overlap_rows": 0
+    },
+    {
+      "n": 9,
+      "E": [
+        1,
+        5
+      ],
+      "individual_rows": 2112,
+      "complete_binary_ordered_alphabets": 0,
+      "binary_strongly_connected": 0,
+      "seeded_larger_alphabets": 6000,
+      "seeded_strongly_connected": 3647,
+      "synchronizing_controls": 3647,
+      "closed_nonsynchronizing_controls": 0,
+      "contradiction_word_cases": {
+        "guard2_misses_hole": 1117,
+        "ordinary_enters_guard1_with_e_in_image": 182,
+        "supplier_enters_guard1": 1992,
+        "preserver_sends_2_to_1": 306,
+        "ordinary_enters_guard1_through_hole": 50
+      },
+      "supplier_overlap_rows": 0
+    }
+  ],
+  "seed": 20261010,
+  "constructive_examples": 80,
+  "wide_initial_family_size": 70,
+  "wide_family_control_bit": 69,
+  "boundary_depths": {
+    "E5": [
+      3,
+      3
+    ],
+    "E15": [
+      7,
+      3
+    ]
+  },
+  "source_sha256": {
+    "check_c4_d12_unrestricted.py": "d2ed201704fcd9c0b6df7b56882a70da1bdaf90031b7e2f1941e2ceecfdb19b6",
+    "enumerate_c4_d12_unrestricted.py": "783e39c7485ea4a9686fba989ffd90a04cb6e7b3f4bb5b9ee607a2309bc1516a",
+    "c4_d12_individual_controls.json": "3e223cee6b297ae82a808478b0e79a83552a725a1f7c29684aae2e5a3f7f9967",
+    "c4_d12_unrestricted_samples.json": "30aa3b9fbc3d345fb4b52337544b4fd8ab15d6ce0decdb72f5e33b8be381caab",
+    "C4_D12_UNRESTRICTED_EXCLUSION.md": "861f487ca9893e55aadb5b73d35751af5d1fd48e0576592ace55ddd04b203353",
+    "check_c4_d125_guarded_unrestricted.py": "17d6ceb3b079f725e0945db112a6bb63551e61532639b6ea3e53eea5581c1848",
+    "b1_c4_fourth_inventory.json": "c9a26a19d52b0dbf8806e84fddab5156366aabab591d10e335e29d65c7b25517",
+    "b1_c4_fourth_audit.json": "f2d0ab7b95611e4ebe0e9fd5addcf30708be2f034f146d20a0cdc82e25cde5be",
+    "B1_C4_FOURTH_SPACE.md": "3e6ab0c3a886c489ce7d9217378984af34f234c699833e2c02098669fe798d93",
+    "CLOSED_MERGING_BLOCK.md": "febcb02e7d5a9b5c496384b9fee29f11a5fa108aa9f53724951c366ea516e241",
+    "closed_merging_block_audit.json": "2b6bbad0145af443a816359ef3ab8ca8c7b45d0cb4d8da2b7d011e6a7fc0f29b",
+    "MANDATORY_CORE_ISOLATION.md": "72129f1a810b07a8bcd975e5df353cc1dbc43d063e13c8ff887ba4748bb14537",
+    "mandatory_core_isolation_audit.json": "67d7c82cae127c23260a3f7b6affe3052a1afef728cad8f49fd54d27e3fa9f54",
+    "ENTRY_FIBER_FLAG.md": "b27eb51977104cd68aaff2e2f37db10c50bbf4a4dd4320502b15b0f609a01bbf",
+    "LOCAL_EQUALITY_FLAG.md": "f34cf260276c6551266564c1ee2264dc823aeaa4f33b4ae8f8261aedeec596a8"
+  },
+  "scope": "Paper proofs exclude both unrestricted conditional D12 fourth geometries. Finite complete rows/binary controls and seeded larger alphabets support the proofs; whole third transport/composition and numerical F remain unproved here."
+}

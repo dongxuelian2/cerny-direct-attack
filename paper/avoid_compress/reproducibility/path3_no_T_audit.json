@@ -1,0 +1,35 @@
+{
+  "status": "pass",
+  "reports": [
+    {
+      "n": 6,
+      "B": 6,
+      "D2": 6,
+      "missing0": 120,
+      "triples": 4320,
+      "case_counts": {
+        "t_bad": 2592,
+        "t2": 864,
+        "t3": 864
+      },
+      "maximum_two_step_domain": 4,
+      "mixing_D0_checks": 24
+    },
+    {
+      "n": 7,
+      "B": 24,
+      "D2": 24,
+      "missing0": 720,
+      "triples": 414720,
+      "case_counts": {
+        "t_bad": 276480,
+        "t2": 69120,
+        "t3": 69120
+      },
+      "maximum_two_step_domain": 4,
+      "mixing_D0_checks": 432
+    }
+  ],
+  "independent_native_counts_match": true,
+  "scope": "Finite controls of the symbolic no-T counting proof; no new exact maximum."
+}

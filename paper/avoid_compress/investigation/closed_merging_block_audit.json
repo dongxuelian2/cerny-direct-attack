@@ -1,0 +1,292 @@
+{
+  "status": "pass",
+  "uniform_proof": "CLOSED_MERGING_BLOCK.md",
+  "complete_M_F_pairs": 12798,
+  "direct_forward_controls": 192,
+  "strongly_connected_nonsync_controls": 2304,
+  "finite_controls": [
+    {
+      "n": 5,
+      "complete_M": 3,
+      "complete_F": 54,
+      "complete_pairs": 162,
+      "direct_forward_controls": 64,
+      "strongly_connected_nonsynchronizing": 36
+    },
+    {
+      "n": 6,
+      "complete_M": 6,
+      "complete_F": 162,
+      "complete_pairs": 972,
+      "direct_forward_controls": 64,
+      "strongly_connected_nonsynchronizing": 180
+    },
+    {
+      "n": 7,
+      "complete_M": 18,
+      "complete_F": 648,
+      "complete_pairs": 11664,
+      "direct_forward_controls": 64,
+      "strongly_connected_nonsynchronizing": 2088
+    }
+  ],
+  "omitted_hypothesis_controls": [
+    {
+      "rows": [
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          1,
+          2,
+          0
+        ]
+      ],
+      "D": [
+        0,
+        1
+      ],
+      "expected": [
+        true,
+        false,
+        true
+      ],
+      "reset": "aba"
+    },
+    {
+      "rows": [
+        [
+          3,
+          3,
+          3,
+          4,
+          0
+        ],
+        [
+          3,
+          3,
+          3,
+          3,
+          3
+        ]
+      ],
+      "D": [
+        0,
+        1,
+        2
+      ],
+      "expected": [
+        false,
+        true,
+        true
+      ],
+      "reset": "b"
+    },
+    {
+      "rows": [
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "D": [
+        0,
+        1,
+        2
+      ],
+      "expected": [
+        true,
+        true,
+        false
+      ],
+      "reset": "a"
+    }
+  ],
+  "exact_E6_field_pairs": [
+    {
+      "fields": [
+        0,
+        15
+      ],
+      "moving_preC": [
+        1,
+        2,
+        5
+      ],
+      "moving_preD": [
+        6
+      ],
+      "fixed_preD": [
+        1,
+        2,
+        5
+      ]
+    },
+    {
+      "fields": [
+        3,
+        12
+      ],
+      "moving_preC": [
+        1,
+        2,
+        5
+      ],
+      "moving_preD": [
+        6
+      ],
+      "fixed_preD": [
+        1,
+        2,
+        5
+      ]
+    },
+    {
+      "fields": [
+        4,
+        11
+      ],
+      "moving_preC": [
+        1,
+        2,
+        5
+      ],
+      "moving_preD": [
+        6
+      ],
+      "fixed_preD": [
+        1,
+        2,
+        5
+      ]
+    },
+    {
+      "fields": [
+        4,
+        15
+      ],
+      "moving_preC": [
+        1,
+        2,
+        5
+      ],
+      "moving_preD": [
+        6
+      ],
+      "fixed_preD": [
+        1,
+        2,
+        5
+      ]
+    },
+    {
+      "fields": [
+        7,
+        8
+      ],
+      "moving_preC": [
+        1,
+        2,
+        5
+      ],
+      "moving_preD": [
+        6
+      ],
+      "fixed_preD": [
+        1,
+        2,
+        5
+      ]
+    },
+    {
+      "fields": [
+        7,
+        12
+      ],
+      "moving_preC": [
+        1,
+        2,
+        5
+      ],
+      "moving_preD": [
+        6
+      ],
+      "fixed_preD": [
+        1,
+        2,
+        5
+      ]
+    },
+    {
+      "fields": [
+        8,
+        15
+      ],
+      "moving_preC": [
+        1,
+        2,
+        5
+      ],
+      "moving_preD": [
+        6
+      ],
+      "fixed_preD": [
+        1,
+        2,
+        5
+      ]
+    },
+    {
+      "fields": [
+        11,
+        12
+      ],
+      "moving_preC": [
+        1,
+        2,
+        5
+      ],
+      "moving_preD": [
+        6
+      ],
+      "fixed_preD": [
+        1,
+        2,
+        5
+      ]
+    },
+    {
+      "fields": [
+        12,
+        15
+      ],
+      "moving_preC": [
+        1,
+        2,
+        5
+      ],
+      "moving_preD": [
+        6
+      ],
+      "fixed_preD": [
+        1,
+        2,
+        5
+      ]
+    }
+  ],
+  "binary_C4_D125_E6_paper_excluded": true,
+  "source_sha256": {
+    "check_closed_merging_block.py": "6b4cf0b1398850bc2dd965c8d903dbed6d63ac2e3a7715daaccb812e1e192039",
+    "CLOSED_MERGING_BLOCK.md": "febcb02e7d5a9b5c496384b9fee29f11a5fa108aa9f53724951c366ea516e241",
+    "b1_c4_fourth_inventory.json": "c9a26a19d52b0dbf8806e84fddab5156366aabab591d10e335e29d65c7b25517",
+    "b1_c4_fourth_audit.json": "f2d0ab7b95611e4ebe0e9fd5addcf30708be2f034f146d20a0cdc82e25cde5be",
+    "B1_C4_FOURTH_SPACE.md": "3e6ab0c3a886c489ce7d9217378984af34f234c699833e2c02098669fe798d93",
+    "COMMON_COLLAPSING_BLOCK_TRAP.md": "99fd89dc0987a4e1dca74e8551588fb124e1466ab44fce38495f1db8045cd4f0",
+    "common_collapsing_block_audit.json": "8f5f27e4a1d46b2f989b077b3198171e4fd76bc54bdaad1299b1b3b120ec717e"
+  },
+  "scope": "Uniform conditional closed-merging-block criterion and independent binary C4/D125/E6 paper exclusion; no unrestricted E6 or global F value."
+}

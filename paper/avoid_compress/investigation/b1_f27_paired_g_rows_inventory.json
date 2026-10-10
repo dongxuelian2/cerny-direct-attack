@@ -1,0 +1,5695 @@
+{
+  "status": "complete_F27_paired_G_individual_necessary_row_domain",
+  "parameter": [
+    13,
+    9,
+    1
+  ],
+  "E": [
+    6
+  ],
+  "F": [
+    2,
+    7
+  ],
+  "alphabet": "binary",
+  "records": [
+    {
+      "G": [
+        1,
+        8
+      ],
+      "H": [
+        9
+      ],
+      "protected": [
+        0,
+        3,
+        5,
+        6,
+        9
+      ],
+      "target_atoms": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          8
+        ],
+        [
+          9,
+          10,
+          11,
+          12
+        ]
+      ],
+      "initial_forms": [
+        1917,
+        2041,
+        2941,
+        3065,
+        3695,
+        3819,
+        4989,
+        5113,
+        5743,
+        5867,
+        6767,
+        6891
+      ],
+      "field_rows": [
+        {
+          "field_row": 0,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 1,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 36,
+            "no_single_letter_initial_image": 12
+          },
+          "kept_rows": 36
+        },
+        {
+          "field_row": 2,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 3,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 4,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 72,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 72
+        },
+        {
+          "field_row": 5,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 6,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 7,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 36,
+            "no_single_letter_initial_image": 12
+          },
+          "kept_rows": 36
+        },
+        {
+          "field_row": 8,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 9,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 10,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 72,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 72
+        },
+        {
+          "field_row": 11,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 12,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 13,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 14,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 15,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 16,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 17,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 18,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 19,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 20,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 21,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 22,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 23,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 24,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 25,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 26,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 27,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 28,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 29,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 30,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 31,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 32,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 33,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 34,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 35,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 36,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 37,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 38,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 39,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 36,
+            "no_single_letter_initial_image": 12
+          },
+          "kept_rows": 36
+        },
+        {
+          "field_row": 40,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 41,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 42,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 72,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 72
+        },
+        {
+          "field_row": 43,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 44,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 45,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 36,
+            "no_single_letter_initial_image": 12
+          },
+          "kept_rows": 36
+        },
+        {
+          "field_row": 46,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 47,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 48,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 72,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 72
+        },
+        {
+          "field_row": 49,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 50,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 51,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 52,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 53,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 54,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 55,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 56,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 57,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 58,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 59,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 60,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 61,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 62,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 63,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 64,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 65,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 66,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 67,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 68,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 69,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 70,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 71,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 72,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 73,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 74,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 75,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        }
+      ],
+      "raw_individual_rows": 3168,
+      "kept_individual_rows": 1728,
+      "counts": {
+        "kept": 1728,
+        "no_single_letter_initial_image": 1440
+      },
+      "original_field_pairs": [
+        [
+          20,
+          61
+        ],
+        [
+          21,
+          60
+        ],
+        [
+          20,
+          63
+        ],
+        [
+          21,
+          62
+        ],
+        [
+          20,
+          65
+        ],
+        [
+          21,
+          64
+        ],
+        [
+          20,
+          67
+        ],
+        [
+          21,
+          66
+        ],
+        [
+          20,
+          69
+        ],
+        [
+          21,
+          68
+        ],
+        [
+          20,
+          71
+        ],
+        [
+          21,
+          70
+        ],
+        [
+          20,
+          73
+        ],
+        [
+          21,
+          72
+        ],
+        [
+          20,
+          75
+        ],
+        [
+          21,
+          74
+        ],
+        [
+          22,
+          59
+        ],
+        [
+          23,
+          58
+        ],
+        [
+          24,
+          59
+        ],
+        [
+          25,
+          58
+        ],
+        [
+          26,
+          59
+        ],
+        [
+          27,
+          58
+        ],
+        [
+          28,
+          59
+        ],
+        [
+          29,
+          58
+        ],
+        [
+          30,
+          59
+        ],
+        [
+          31,
+          58
+        ],
+        [
+          32,
+          59
+        ],
+        [
+          33,
+          58
+        ],
+        [
+          34,
+          59
+        ],
+        [
+          35,
+          58
+        ],
+        [
+          36,
+          59
+        ],
+        [
+          37,
+          58
+        ],
+        [
+          58,
+          61
+        ],
+        [
+          59,
+          60
+        ],
+        [
+          58,
+          63
+        ],
+        [
+          59,
+          62
+        ],
+        [
+          58,
+          65
+        ],
+        [
+          59,
+          64
+        ],
+        [
+          58,
+          67
+        ],
+        [
+          59,
+          66
+        ],
+        [
+          58,
+          69
+        ],
+        [
+          59,
+          68
+        ],
+        [
+          58,
+          71
+        ],
+        [
+          59,
+          70
+        ],
+        [
+          58,
+          73
+        ],
+        [
+          59,
+          72
+        ],
+        [
+          58,
+          75
+        ],
+        [
+          59,
+          74
+        ]
+      ],
+      "raw_normalized_row_pairs": 0,
+      "kept_normalized_row_pairs": 0
+    },
+    {
+      "G": [
+        2,
+        8
+      ],
+      "H": [
+        9
+      ],
+      "protected": [
+        0,
+        3,
+        5,
+        6,
+        9
+      ],
+      "target_atoms": [
+        [
+          0
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ],
+        [
+          9,
+          10,
+          11,
+          12
+        ]
+      ],
+      "initial_forms": [
+        2027,
+        2041,
+        3051,
+        3065,
+        3695,
+        3709,
+        5099,
+        5113,
+        5743,
+        5757,
+        6767,
+        6781
+      ],
+      "field_rows": [
+        {
+          "field_row": 0,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 1,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 2,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 3,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 72,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 72
+        },
+        {
+          "field_row": 4,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 5,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 72,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 72
+        },
+        {
+          "field_row": 6,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 7,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 8,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 9,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 10,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 11,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 72,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 72
+        },
+        {
+          "field_row": 12,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 13,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 72,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 72
+        },
+        {
+          "field_row": 14,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 15,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 16,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 17,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 18,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 19,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 36,
+            "no_single_letter_initial_image": 12
+          },
+          "kept_rows": 36
+        },
+        {
+          "field_row": 20,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 21,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 36,
+            "no_single_letter_initial_image": 12
+          },
+          "kept_rows": 36
+        },
+        {
+          "field_row": 22,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 23,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 24,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 25,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 36,
+            "no_single_letter_initial_image": 12
+          },
+          "kept_rows": 36
+        },
+        {
+          "field_row": 26,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 27,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 36,
+            "no_single_letter_initial_image": 12
+          },
+          "kept_rows": 36
+        },
+        {
+          "field_row": 28,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 29,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 30,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 31,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 32,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 33,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 34,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 35,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 36,
+            "no_single_letter_initial_image": 12
+          },
+          "kept_rows": 36
+        },
+        {
+          "field_row": 36,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 37,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 36,
+            "no_single_letter_initial_image": 12
+          },
+          "kept_rows": 36
+        },
+        {
+          "field_row": 38,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 39,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 40,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 41,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 42,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 43,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 36,
+            "no_single_letter_initial_image": 12
+          },
+          "kept_rows": 36
+        },
+        {
+          "field_row": 44,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 45,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 36,
+            "no_single_letter_initial_image": 12
+          },
+          "kept_rows": 36
+        },
+        {
+          "field_row": 46,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 47,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 48,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 49,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 50,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 51,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 36,
+            "no_single_letter_initial_image": 12
+          },
+          "kept_rows": 36
+        },
+        {
+          "field_row": 52,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 53,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 36,
+            "no_single_letter_initial_image": 12
+          },
+          "kept_rows": 36
+        },
+        {
+          "field_row": 54,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 55,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 56,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 57,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 36,
+            "no_single_letter_initial_image": 12
+          },
+          "kept_rows": 36
+        },
+        {
+          "field_row": 58,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 59,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 36,
+            "no_single_letter_initial_image": 12
+          },
+          "kept_rows": 36
+        },
+        {
+          "field_row": 60,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 61,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 62,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 63,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 64,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 65,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 66,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 67,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 72,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 72
+        },
+        {
+          "field_row": 68,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 69,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 72,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 72
+        },
+        {
+          "field_row": 70,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 71,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 72,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 73,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 74,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 75,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 72,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 72
+        },
+        {
+          "field_row": 76,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 77,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 72,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 72
+        },
+        {
+          "field_row": 78,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 79,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 80,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 81,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 82,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 83,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 36,
+            "no_single_letter_initial_image": 12
+          },
+          "kept_rows": 36
+        },
+        {
+          "field_row": 84,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 85,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 36,
+            "no_single_letter_initial_image": 12
+          },
+          "kept_rows": 36
+        },
+        {
+          "field_row": 86,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 87,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 88,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 89,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 36,
+            "no_single_letter_initial_image": 12
+          },
+          "kept_rows": 36
+        },
+        {
+          "field_row": 90,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 91,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 36,
+            "no_single_letter_initial_image": 12
+          },
+          "kept_rows": 36
+        },
+        {
+          "field_row": 92,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 93,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 94,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 95,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 96,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 97,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 98,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 99,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 36,
+            "no_single_letter_initial_image": 12
+          },
+          "kept_rows": 36
+        },
+        {
+          "field_row": 100,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 101,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 36,
+            "no_single_letter_initial_image": 12
+          },
+          "kept_rows": 36
+        },
+        {
+          "field_row": 102,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 103,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 104,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 105,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 106,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 107,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 36,
+            "no_single_letter_initial_image": 12
+          },
+          "kept_rows": 36
+        },
+        {
+          "field_row": 108,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 109,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 36,
+            "no_single_letter_initial_image": 12
+          },
+          "kept_rows": 36
+        },
+        {
+          "field_row": 110,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 111,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 112,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 113,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 114,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 115,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 36,
+            "no_single_letter_initial_image": 12
+          },
+          "kept_rows": 36
+        },
+        {
+          "field_row": 116,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 117,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 36,
+            "no_single_letter_initial_image": 12
+          },
+          "kept_rows": 36
+        },
+        {
+          "field_row": 118,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 119,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 120,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 121,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 36,
+            "no_single_letter_initial_image": 12
+          },
+          "kept_rows": 36
+        },
+        {
+          "field_row": 122,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 123,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 36,
+            "no_single_letter_initial_image": 12
+          },
+          "kept_rows": 36
+        },
+        {
+          "field_row": 124,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 125,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 126,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 127,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        }
+      ],
+      "raw_individual_rows": 4800,
+      "kept_individual_rows": 2880,
+      "counts": {
+        "kept": 2880,
+        "no_single_letter_initial_image": 1920
+      },
+      "original_field_pairs": [
+        [
+          0,
+          125
+        ],
+        [
+          1,
+          123
+        ],
+        [
+          1,
+          124
+        ],
+        [
+          5,
+          127
+        ],
+        [
+          6,
+          127
+        ],
+        [
+          7,
+          126
+        ],
+        [
+          8,
+          119
+        ],
+        [
+          9,
+          117
+        ],
+        [
+          9,
+          118
+        ],
+        [
+          13,
+          113
+        ],
+        [
+          14,
+          113
+        ],
+        [
+          15,
+          112
+        ],
+        [
+          8,
+          125
+        ],
+        [
+          9,
+          123
+        ],
+        [
+          9,
+          124
+        ],
+        [
+          13,
+          127
+        ],
+        [
+          14,
+          127
+        ],
+        [
+          15,
+          126
+        ],
+        [
+          16,
+          111
+        ],
+        [
+          17,
+          109
+        ],
+        [
+          17,
+          110
+        ],
+        [
+          21,
+          105
+        ],
+        [
+          22,
+          105
+        ],
+        [
+          23,
+          104
+        ],
+        [
+          27,
+          97
+        ],
+        [
+          28,
+          97
+        ],
+        [
+          29,
+          96
+        ],
+        [
+          30,
+          103
+        ],
+        [
+          31,
+          101
+        ],
+        [
+          31,
+          102
+        ],
+        [
+          27,
+          105
+        ],
+        [
+          28,
+          105
+        ],
+        [
+          29,
+          104
+        ],
+        [
+          30,
+          111
+        ],
+        [
+          31,
+          109
+        ],
+        [
+          31,
+          110
+        ],
+        [
+          16,
+          125
+        ],
+        [
+          17,
+          123
+        ],
+        [
+          17,
+          124
+        ],
+        [
+          21,
+          127
+        ],
+        [
+          22,
+          127
+        ],
+        [
+          23,
+          126
+        ],
+        [
+          27,
+          113
+        ],
+        [
+          28,
+          113
+        ],
+        [
+          29,
+          112
+        ],
+        [
+          30,
+          119
+        ],
+        [
+          31,
+          117
+        ],
+        [
+          31,
+          118
+        ],
+        [
+          27,
+          127
+        ],
+        [
+          28,
+          127
+        ],
+        [
+          29,
+          126
+        ],
+        [
+          30,
+          125
+        ],
+        [
+          31,
+          123
+        ],
+        [
+          31,
+          124
+        ],
+        [
+          32,
+          93
+        ],
+        [
+          33,
+          91
+        ],
+        [
+          33,
+          92
+        ],
+        [
+          37,
+          95
+        ],
+        [
+          38,
+          95
+        ],
+        [
+          39,
+          94
+        ],
+        [
+          40,
+          87
+        ],
+        [
+          41,
+          85
+        ],
+        [
+          41,
+          86
+        ],
+        [
+          45,
+          81
+        ],
+        [
+          46,
+          81
+        ],
+        [
+          47,
+          80
+        ],
+        [
+          40,
+          93
+        ],
+        [
+          41,
+          91
+        ],
+        [
+          41,
+          92
+        ],
+        [
+          45,
+          95
+        ],
+        [
+          46,
+          95
+        ],
+        [
+          47,
+          94
+        ],
+        [
+          32,
+          125
+        ],
+        [
+          33,
+          123
+        ],
+        [
+          33,
+          124
+        ],
+        [
+          37,
+          127
+        ],
+        [
+          38,
+          127
+        ],
+        [
+          39,
+          126
+        ],
+        [
+          40,
+          119
+        ],
+        [
+          41,
+          117
+        ],
+        [
+          41,
+          118
+        ],
+        [
+          45,
+          113
+        ],
+        [
+          46,
+          113
+        ],
+        [
+          47,
+          112
+        ],
+        [
+          40,
+          125
+        ],
+        [
+          41,
+          123
+        ],
+        [
+          41,
+          124
+        ],
+        [
+          45,
+          127
+        ],
+        [
+          46,
+          127
+        ],
+        [
+          47,
+          126
+        ],
+        [
+          48,
+          79
+        ],
+        [
+          49,
+          77
+        ],
+        [
+          49,
+          78
+        ],
+        [
+          53,
+          73
+        ],
+        [
+          54,
+          73
+        ],
+        [
+          55,
+          72
+        ],
+        [
+          59,
+          65
+        ],
+        [
+          60,
+          65
+        ],
+        [
+          61,
+          64
+        ],
+        [
+          62,
+          71
+        ],
+        [
+          63,
+          69
+        ],
+        [
+          63,
+          70
+        ],
+        [
+          59,
+          73
+        ],
+        [
+          60,
+          73
+        ],
+        [
+          61,
+          72
+        ],
+        [
+          62,
+          79
+        ],
+        [
+          63,
+          77
+        ],
+        [
+          63,
+          78
+        ],
+        [
+          48,
+          93
+        ],
+        [
+          49,
+          91
+        ],
+        [
+          49,
+          92
+        ],
+        [
+          53,
+          95
+        ],
+        [
+          54,
+          95
+        ],
+        [
+          55,
+          94
+        ],
+        [
+          59,
+          81
+        ],
+        [
+          60,
+          81
+        ],
+        [
+          61,
+          80
+        ],
+        [
+          62,
+          87
+        ],
+        [
+          63,
+          85
+        ],
+        [
+          63,
+          86
+        ],
+        [
+          59,
+          95
+        ],
+        [
+          60,
+          95
+        ],
+        [
+          61,
+          94
+        ],
+        [
+          62,
+          93
+        ],
+        [
+          63,
+          91
+        ],
+        [
+          63,
+          92
+        ],
+        [
+          48,
+          111
+        ],
+        [
+          49,
+          109
+        ],
+        [
+          49,
+          110
+        ],
+        [
+          53,
+          105
+        ],
+        [
+          54,
+          105
+        ],
+        [
+          55,
+          104
+        ],
+        [
+          59,
+          97
+        ],
+        [
+          60,
+          97
+        ],
+        [
+          61,
+          96
+        ],
+        [
+          62,
+          103
+        ],
+        [
+          63,
+          101
+        ],
+        [
+          63,
+          102
+        ],
+        [
+          59,
+          105
+        ],
+        [
+          60,
+          105
+        ],
+        [
+          61,
+          104
+        ],
+        [
+          62,
+          111
+        ],
+        [
+          63,
+          109
+        ],
+        [
+          63,
+          110
+        ],
+        [
+          48,
+          125
+        ],
+        [
+          49,
+          123
+        ],
+        [
+          49,
+          124
+        ],
+        [
+          53,
+          127
+        ],
+        [
+          54,
+          127
+        ],
+        [
+          55,
+          126
+        ],
+        [
+          59,
+          113
+        ],
+        [
+          60,
+          113
+        ],
+        [
+          61,
+          112
+        ],
+        [
+          62,
+          119
+        ],
+        [
+          63,
+          117
+        ],
+        [
+          63,
+          118
+        ],
+        [
+          59,
+          127
+        ],
+        [
+          60,
+          127
+        ],
+        [
+          61,
+          126
+        ],
+        [
+          62,
+          125
+        ],
+        [
+          63,
+          123
+        ],
+        [
+          63,
+          124
+        ],
+        [
+          64,
+          125
+        ],
+        [
+          65,
+          123
+        ],
+        [
+          65,
+          124
+        ],
+        [
+          69,
+          127
+        ],
+        [
+          70,
+          127
+        ],
+        [
+          71,
+          126
+        ],
+        [
+          72,
+          119
+        ],
+        [
+          73,
+          117
+        ],
+        [
+          73,
+          118
+        ],
+        [
+          77,
+          113
+        ],
+        [
+          78,
+          113
+        ],
+        [
+          79,
+          112
+        ],
+        [
+          72,
+          125
+        ],
+        [
+          73,
+          123
+        ],
+        [
+          73,
+          124
+        ],
+        [
+          77,
+          127
+        ],
+        [
+          78,
+          127
+        ],
+        [
+          79,
+          126
+        ],
+        [
+          80,
+          111
+        ],
+        [
+          81,
+          109
+        ],
+        [
+          81,
+          110
+        ],
+        [
+          85,
+          105
+        ],
+        [
+          86,
+          105
+        ],
+        [
+          87,
+          104
+        ],
+        [
+          91,
+          97
+        ],
+        [
+          92,
+          97
+        ],
+        [
+          93,
+          96
+        ],
+        [
+          94,
+          103
+        ],
+        [
+          95,
+          101
+        ],
+        [
+          95,
+          102
+        ],
+        [
+          91,
+          105
+        ],
+        [
+          92,
+          105
+        ],
+        [
+          93,
+          104
+        ],
+        [
+          94,
+          111
+        ],
+        [
+          95,
+          109
+        ],
+        [
+          95,
+          110
+        ],
+        [
+          80,
+          125
+        ],
+        [
+          81,
+          123
+        ],
+        [
+          81,
+          124
+        ],
+        [
+          85,
+          127
+        ],
+        [
+          86,
+          127
+        ],
+        [
+          87,
+          126
+        ],
+        [
+          91,
+          113
+        ],
+        [
+          92,
+          113
+        ],
+        [
+          93,
+          112
+        ],
+        [
+          94,
+          119
+        ],
+        [
+          95,
+          117
+        ],
+        [
+          95,
+          118
+        ],
+        [
+          91,
+          127
+        ],
+        [
+          92,
+          127
+        ],
+        [
+          93,
+          126
+        ],
+        [
+          94,
+          125
+        ],
+        [
+          95,
+          123
+        ],
+        [
+          95,
+          124
+        ],
+        [
+          96,
+          125
+        ],
+        [
+          97,
+          123
+        ],
+        [
+          97,
+          124
+        ],
+        [
+          101,
+          127
+        ],
+        [
+          102,
+          127
+        ],
+        [
+          103,
+          126
+        ],
+        [
+          104,
+          119
+        ],
+        [
+          105,
+          117
+        ],
+        [
+          105,
+          118
+        ],
+        [
+          109,
+          113
+        ],
+        [
+          110,
+          113
+        ],
+        [
+          111,
+          112
+        ],
+        [
+          104,
+          125
+        ],
+        [
+          105,
+          123
+        ],
+        [
+          105,
+          124
+        ],
+        [
+          109,
+          127
+        ],
+        [
+          110,
+          127
+        ],
+        [
+          111,
+          126
+        ],
+        [
+          112,
+          125
+        ],
+        [
+          113,
+          123
+        ],
+        [
+          113,
+          124
+        ],
+        [
+          117,
+          127
+        ],
+        [
+          118,
+          127
+        ],
+        [
+          119,
+          126
+        ],
+        [
+          123,
+          127
+        ],
+        [
+          124,
+          127
+        ],
+        [
+          125,
+          126
+        ]
+      ],
+      "raw_normalized_row_pairs": 228096,
+      "kept_normalized_row_pairs": 85536
+    },
+    {
+      "G": [
+        2,
+        8
+      ],
+      "H": [
+        1,
+        8
+      ],
+      "protected": [
+        0,
+        3,
+        5,
+        6
+      ],
+      "target_atoms": [
+        [
+          0
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ],
+        [
+          9,
+          10,
+          11,
+          12
+        ]
+      ],
+      "initial_forms": [
+        2041,
+        3065,
+        3577,
+        3695,
+        5113,
+        5625,
+        5743,
+        6649,
+        6767,
+        7279
+      ],
+      "field_rows": [
+        {
+          "field_row": 0,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 1,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 2,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 72,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 72
+        },
+        {
+          "field_row": 3,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 72,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 72
+        },
+        {
+          "field_row": 4,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 5,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 6,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 7,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 72,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 72
+        },
+        {
+          "field_row": 8,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 72,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 72
+        },
+        {
+          "field_row": 9,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 10,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 11,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 12,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 13,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 14,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 15,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 16,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 17,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 18,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 19,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 20,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 21,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 22,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 23,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 24,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 25,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 26,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 27,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 28,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 29,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 30,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 31,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 32,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 33,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 34,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 35,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 36,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 37,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 38,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 39,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 40,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 41,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 42,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 43,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 72,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 72
+        },
+        {
+          "field_row": 44,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 72,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 72
+        },
+        {
+          "field_row": 45,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 46,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 47,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 48,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 72,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 72
+        },
+        {
+          "field_row": 49,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 72,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 72
+        },
+        {
+          "field_row": 50,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 51,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 52,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 53,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 54,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 55,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 56,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 57,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 58,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 59,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 60,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 61,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 62,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 63,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 64,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 65,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 66,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 67,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 68,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 69,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 70,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 71,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 72,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 73,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 74,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 75,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 76,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 77,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 78,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 79,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 80,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 81,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        }
+      ],
+      "raw_individual_rows": 2016,
+      "kept_individual_rows": 1824,
+      "counts": {
+        "kept": 1824,
+        "no_single_letter_initial_image": 192
+      },
+      "original_field_pairs": [
+        [
+          20,
+          65
+        ],
+        [
+          20,
+          66
+        ],
+        [
+          20,
+          70
+        ],
+        [
+          20,
+          71
+        ],
+        [
+          20,
+          75
+        ],
+        [
+          20,
+          76
+        ],
+        [
+          20,
+          79
+        ],
+        [
+          20,
+          80
+        ],
+        [
+          24,
+          61
+        ],
+        [
+          25,
+          61
+        ],
+        [
+          29,
+          61
+        ],
+        [
+          30,
+          61
+        ],
+        [
+          34,
+          61
+        ],
+        [
+          35,
+          61
+        ],
+        [
+          38,
+          61
+        ],
+        [
+          39,
+          61
+        ],
+        [
+          61,
+          65
+        ],
+        [
+          61,
+          66
+        ],
+        [
+          61,
+          70
+        ],
+        [
+          61,
+          71
+        ],
+        [
+          61,
+          75
+        ],
+        [
+          61,
+          76
+        ],
+        [
+          61,
+          79
+        ],
+        [
+          61,
+          80
+        ]
+      ],
+      "raw_normalized_row_pairs": 27648,
+      "kept_normalized_row_pairs": 27648
+    },
+    {
+      "G": [
+        2,
+        8
+      ],
+      "H": [
+        1,
+        9
+      ],
+      "protected": [
+        0,
+        3,
+        5,
+        6
+      ],
+      "target_atoms": [
+        [
+          0
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ],
+        [
+          9,
+          10,
+          11,
+          12
+        ]
+      ],
+      "initial_forms": [
+        2041,
+        3065,
+        3563,
+        3709,
+        5113,
+        5611,
+        5757,
+        6635,
+        6781,
+        7279
+      ],
+      "field_rows": [
+        {
+          "field_row": 0,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 1,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 2,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 60,
+            "no_single_letter_initial_image": 36
+          },
+          "kept_rows": 60
+        },
+        {
+          "field_row": 3,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 60,
+            "no_single_letter_initial_image": 36
+          },
+          "kept_rows": 60
+        },
+        {
+          "field_row": 4,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 5,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 6,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 7,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 60,
+            "no_single_letter_initial_image": 36
+          },
+          "kept_rows": 60
+        },
+        {
+          "field_row": 8,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 60,
+            "no_single_letter_initial_image": 36
+          },
+          "kept_rows": 60
+        },
+        {
+          "field_row": 9,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 10,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 11,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 12,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 30,
+            "no_single_letter_initial_image": 18
+          },
+          "kept_rows": 30
+        },
+        {
+          "field_row": 13,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 30,
+            "no_single_letter_initial_image": 18
+          },
+          "kept_rows": 30
+        },
+        {
+          "field_row": 14,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 15,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 16,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 30,
+            "no_single_letter_initial_image": 18
+          },
+          "kept_rows": 30
+        },
+        {
+          "field_row": 17,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 30,
+            "no_single_letter_initial_image": 18
+          },
+          "kept_rows": 30
+        },
+        {
+          "field_row": 18,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 19,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 20,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 18,
+            "no_single_letter_initial_image": 30
+          },
+          "kept_rows": 18
+        },
+        {
+          "field_row": 21,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 22,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 23,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 30,
+            "no_single_letter_initial_image": 18
+          },
+          "kept_rows": 30
+        },
+        {
+          "field_row": 24,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 30,
+            "no_single_letter_initial_image": 18
+          },
+          "kept_rows": 30
+        },
+        {
+          "field_row": 25,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 26,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 27,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 28,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 30,
+            "no_single_letter_initial_image": 18
+          },
+          "kept_rows": 30
+        },
+        {
+          "field_row": 29,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 30,
+            "no_single_letter_initial_image": 18
+          },
+          "kept_rows": 30
+        },
+        {
+          "field_row": 30,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 31,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 32,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 33,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 30,
+            "no_single_letter_initial_image": 18
+          },
+          "kept_rows": 30
+        },
+        {
+          "field_row": 34,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 30,
+            "no_single_letter_initial_image": 18
+          },
+          "kept_rows": 30
+        },
+        {
+          "field_row": 35,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 36,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 37,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 30,
+            "no_single_letter_initial_image": 18
+          },
+          "kept_rows": 30
+        },
+        {
+          "field_row": 38,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 30,
+            "no_single_letter_initial_image": 18
+          },
+          "kept_rows": 30
+        },
+        {
+          "field_row": 39,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 40,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 41,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 42,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 43,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 60,
+            "no_single_letter_initial_image": 36
+          },
+          "kept_rows": 60
+        },
+        {
+          "field_row": 44,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 60,
+            "no_single_letter_initial_image": 36
+          },
+          "kept_rows": 60
+        },
+        {
+          "field_row": 45,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 46,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 47,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 48,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 60,
+            "no_single_letter_initial_image": 36
+          },
+          "kept_rows": 60
+        },
+        {
+          "field_row": 49,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 60,
+            "no_single_letter_initial_image": 36
+          },
+          "kept_rows": 60
+        },
+        {
+          "field_row": 50,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 51,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 52,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 53,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 30,
+            "no_single_letter_initial_image": 18
+          },
+          "kept_rows": 30
+        },
+        {
+          "field_row": 54,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 30,
+            "no_single_letter_initial_image": 18
+          },
+          "kept_rows": 30
+        },
+        {
+          "field_row": 55,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 56,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 57,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 30,
+            "no_single_letter_initial_image": 18
+          },
+          "kept_rows": 30
+        },
+        {
+          "field_row": 58,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 30,
+            "no_single_letter_initial_image": 18
+          },
+          "kept_rows": 30
+        },
+        {
+          "field_row": 59,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 60,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 61,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 18,
+            "no_single_letter_initial_image": 30
+          },
+          "kept_rows": 18
+        },
+        {
+          "field_row": 62,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 63,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 64,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 30,
+            "no_single_letter_initial_image": 18
+          },
+          "kept_rows": 30
+        },
+        {
+          "field_row": 65,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 30,
+            "no_single_letter_initial_image": 18
+          },
+          "kept_rows": 30
+        },
+        {
+          "field_row": 66,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 67,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 68,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 69,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 30,
+            "no_single_letter_initial_image": 18
+          },
+          "kept_rows": 30
+        },
+        {
+          "field_row": 70,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 30,
+            "no_single_letter_initial_image": 18
+          },
+          "kept_rows": 30
+        },
+        {
+          "field_row": 71,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 72,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 73,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 74,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 30,
+            "no_single_letter_initial_image": 18
+          },
+          "kept_rows": 30
+        },
+        {
+          "field_row": 75,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 30,
+            "no_single_letter_initial_image": 18
+          },
+          "kept_rows": 30
+        },
+        {
+          "field_row": 76,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 77,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 78,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 30,
+            "no_single_letter_initial_image": 18
+          },
+          "kept_rows": 30
+        },
+        {
+          "field_row": 79,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 30,
+            "no_single_letter_initial_image": 18
+          },
+          "kept_rows": 30
+        },
+        {
+          "field_row": 80,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 81,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        }
+      ],
+      "raw_individual_rows": 2016,
+      "kept_individual_rows": 1236,
+      "counts": {
+        "kept": 1236,
+        "no_single_letter_initial_image": 780
+      },
+      "original_field_pairs": [
+        [
+          20,
+          65
+        ],
+        [
+          20,
+          66
+        ],
+        [
+          20,
+          70
+        ],
+        [
+          20,
+          71
+        ],
+        [
+          20,
+          75
+        ],
+        [
+          20,
+          76
+        ],
+        [
+          20,
+          79
+        ],
+        [
+          20,
+          80
+        ],
+        [
+          24,
+          61
+        ],
+        [
+          25,
+          61
+        ],
+        [
+          29,
+          61
+        ],
+        [
+          30,
+          61
+        ],
+        [
+          34,
+          61
+        ],
+        [
+          35,
+          61
+        ],
+        [
+          38,
+          61
+        ],
+        [
+          39,
+          61
+        ],
+        [
+          61,
+          65
+        ],
+        [
+          61,
+          66
+        ],
+        [
+          61,
+          70
+        ],
+        [
+          61,
+          71
+        ],
+        [
+          61,
+          75
+        ],
+        [
+          61,
+          76
+        ],
+        [
+          61,
+          79
+        ],
+        [
+          61,
+          80
+        ]
+      ],
+      "raw_normalized_row_pairs": 27648,
+      "kept_normalized_row_pairs": 6480
+    },
+    {
+      "G": [
+        2,
+        8
+      ],
+      "H": [
+        2,
+        9
+      ],
+      "protected": [
+        0,
+        3,
+        5,
+        6
+      ],
+      "target_atoms": [
+        [
+          0
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ],
+        [
+          9,
+          10,
+          11,
+          12
+        ]
+      ],
+      "initial_forms": [
+        2027,
+        2041,
+        3051,
+        3065,
+        5099,
+        5113,
+        7279,
+        7293
+      ],
+      "field_rows": [
+        {
+          "field_row": 0,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 1,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 2,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 3,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 4,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 5,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 6,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 7,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 8,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 9,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 10,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 11,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 12,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 13,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 14,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 15,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 16,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 17,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 18,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 19,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 20,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 21,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 22,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 23,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 24,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 25,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 26,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 27,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 28,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 29,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 30,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 31,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 32,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 33,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 34,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 35,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 36,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 37,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 38,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 39,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 40,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 41,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 42,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 43,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 44,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 45,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 46,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 47,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 48,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 49,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 50,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 51,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 52,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 53,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 54,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 55,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 56,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 57,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 58,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 59,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 60,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 61,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 62,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 63,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 64,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 65,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 66,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 67,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 68,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 69,
+          "raw_rows": 96,
+          "counts": {
+            "kept": 48,
+            "no_single_letter_initial_image": 48
+          },
+          "kept_rows": 48
+        },
+        {
+          "field_row": 70,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 71,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 72,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 73,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 74,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 75,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 76,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 77,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 78,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 79,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 80,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 81,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 82,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 83,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 84,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 85,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 86,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 87,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 88,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 89,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 90,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 91,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 92,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 93,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 94,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 95,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 96,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 97,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 98,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 99,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 100,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 101,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 102,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 103,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 104,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 105,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 106,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 107,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 108,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 109,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        },
+        {
+          "field_row": 110,
+          "raw_rows": 48,
+          "counts": {
+            "kept": 24,
+            "no_single_letter_initial_image": 24
+          },
+          "kept_rows": 24
+        },
+        {
+          "field_row": 111,
+          "raw_rows": 0,
+          "counts": {},
+          "kept_rows": 0
+        }
+      ],
+      "raw_individual_rows": 3840,
+      "kept_individual_rows": 1920,
+      "counts": {
+        "kept": 1920,
+        "no_single_letter_initial_image": 1920
+      },
+      "original_field_pairs": [
+        [
+          0,
+          110
+        ],
+        [
+          6,
+          111
+        ],
+        [
+          7,
+          104
+        ],
+        [
+          13,
+          98
+        ],
+        [
+          7,
+          110
+        ],
+        [
+          13,
+          111
+        ],
+        [
+          14,
+          97
+        ],
+        [
+          20,
+          91
+        ],
+        [
+          26,
+          84
+        ],
+        [
+          27,
+          90
+        ],
+        [
+          26,
+          91
+        ],
+        [
+          27,
+          97
+        ],
+        [
+          14,
+          110
+        ],
+        [
+          20,
+          111
+        ],
+        [
+          26,
+          98
+        ],
+        [
+          27,
+          104
+        ],
+        [
+          26,
+          111
+        ],
+        [
+          27,
+          110
+        ],
+        [
+          28,
+          82
+        ],
+        [
+          34,
+          83
+        ],
+        [
+          35,
+          76
+        ],
+        [
+          41,
+          70
+        ],
+        [
+          35,
+          82
+        ],
+        [
+          41,
+          83
+        ],
+        [
+          28,
+          110
+        ],
+        [
+          34,
+          111
+        ],
+        [
+          35,
+          104
+        ],
+        [
+          41,
+          98
+        ],
+        [
+          35,
+          110
+        ],
+        [
+          41,
+          111
+        ],
+        [
+          42,
+          69
+        ],
+        [
+          48,
+          63
+        ],
+        [
+          54,
+          56
+        ],
+        [
+          55,
+          62
+        ],
+        [
+          54,
+          63
+        ],
+        [
+          55,
+          69
+        ],
+        [
+          42,
+          82
+        ],
+        [
+          48,
+          83
+        ],
+        [
+          54,
+          70
+        ],
+        [
+          55,
+          76
+        ],
+        [
+          54,
+          83
+        ],
+        [
+          55,
+          82
+        ],
+        [
+          42,
+          97
+        ],
+        [
+          48,
+          91
+        ],
+        [
+          54,
+          84
+        ],
+        [
+          55,
+          90
+        ],
+        [
+          54,
+          91
+        ],
+        [
+          55,
+          97
+        ],
+        [
+          42,
+          110
+        ],
+        [
+          48,
+          111
+        ],
+        [
+          54,
+          98
+        ],
+        [
+          55,
+          104
+        ],
+        [
+          54,
+          111
+        ],
+        [
+          55,
+          110
+        ],
+        [
+          56,
+          110
+        ],
+        [
+          62,
+          111
+        ],
+        [
+          63,
+          104
+        ],
+        [
+          69,
+          98
+        ],
+        [
+          63,
+          110
+        ],
+        [
+          69,
+          111
+        ],
+        [
+          70,
+          97
+        ],
+        [
+          76,
+          91
+        ],
+        [
+          82,
+          84
+        ],
+        [
+          83,
+          90
+        ],
+        [
+          82,
+          91
+        ],
+        [
+          83,
+          97
+        ],
+        [
+          70,
+          110
+        ],
+        [
+          76,
+          111
+        ],
+        [
+          82,
+          98
+        ],
+        [
+          83,
+          104
+        ],
+        [
+          82,
+          111
+        ],
+        [
+          83,
+          110
+        ],
+        [
+          84,
+          110
+        ],
+        [
+          90,
+          111
+        ],
+        [
+          91,
+          104
+        ],
+        [
+          97,
+          98
+        ],
+        [
+          91,
+          110
+        ],
+        [
+          97,
+          111
+        ],
+        [
+          98,
+          110
+        ],
+        [
+          104,
+          111
+        ],
+        [
+          110,
+          111
+        ]
+      ],
+      "raw_normalized_row_pairs": 0,
+      "kept_normalized_row_pairs": 0
+    }
+  ],
+  "canonical_raw_rows_sha256": "21b80e77ebb3594fd6fefb2af61693dee187ce1b7f19030c650b51bd7770f96f",
+  "canonical_kept_rows_sha256": "7f230623234188b7c73c8d4f74b9f8e695cbfbc12b655afec4fb42e1a28a0da6",
+  "manifest_sha256": "495aff4a206d458d9775ac7c78b0a045176dd2e03077b06dc306847f009cded7",
+  "source_sha256": {
+    "enumerate_b1_f27_paired_g_rows.py": "82692755e9f7e04277013e57ae371190e1af3efec5537350ba5e4caf8316a1b3",
+    "b1_f27_paired_g_seventh_inventory.json": "b5e1a77324c4a0c138d1bbf415d7955c24cf593f150135930fe9741557e9b350",
+    "b1_f27_paired_g_seventh_audit.json": "cdcf949c8b9e950ae2ebbbab041b0fc1bcf88bcc51ef24bfa9365d304cd4c990",
+    "B1_F27_PAIRED_G_SEVENTH.md": "2bb480c0ae06a66cdf8ceb894b8ca46b37a9b138d3d9ca9231aca01095a3254e",
+    "MANDATORY_CORE_ISOLATION.md": "72129f1a810b07a8bcd975e5df353cc1dbc43d063e13c8ff887ba4748bb14537",
+    "mandatory_core_isolation_audit.json": "67d7c82cae127c23260a3f7b6affe3052a1afef728cad8f49fd54d27e3fa9f54",
+    "ENTRY_FIBER_FLAG.md": "b27eb51977104cd68aaff2e2f37db10c50bbf4a4dd4320502b15b0f609a01bbf",
+    "LOCAL_EQUALITY_FLAG.md": "f34cf260276c6551266564c1ee2264dc823aeaa4f33b4ae8f8261aedeec596a8"
+  },
+  "scope": "Every individual K-covered mandatory-protected row in all five typed seventh survivors. Exact overlap atoms and every single-letter initial mask. No coupled-row exclusion or model or extremal F value."
+}

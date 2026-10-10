@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-08",
+  "status": "audited auxiliary progress; no new extremum",
+  "active_workers": [],
+  "unresolved": [
+    13,
+    9,
+    1
+  ],
+  "interval": [
+    11,
+    12
+  ],
+  "paper_and_release_unchanged": true,
+  "retracted_caps": [
+    "P2<=5",
+    "P3<=6",
+    "P4<=7"
+  ],
+  "corrected_search_negative_scope": "restricted odd-core family only",
+  "new_condition": "compression(n-4)>=12 => cover(P5)<=3 at n>=8",
+  "six_image_controls": {
+    "row_assignments": 117649,
+    "literal_maps": 651840,
+    "survivors": 14,
+    "singular_survivors": 0
+  },
+  "source_sha256": {
+    "CURRENT_FRONTIER.md": "c68eb92a62ab7ed4bb3d5b75a3b14f924c171ff6925309a579a46c95b8f24952",
+    "active_research.json": "dbb454a69addcc93213c9438d0320e14526b4fb6a5f499445ee2e4d55c155646",
+    "SHORT_PAIR_SPAN.md": "86180cc5a5ac1bb7829bb371926659439b5f83c25759562ee3c74cd7a5e86b70",
+    "LOCAL_EQUALITY_FLAG.md": "f34cf260276c6551266564c1ee2264dc823aeaa4f33b4ae8f8261aedeec596a8",
+    "local_equality_flag_audit.json": "b908e60013672ce875cf351a478e95b0faf5fc72f2428f00fcc209be1f9e4d40",
+    "BINARY_FIELD_FLAG.md": "d39ae0873b9f5a7e396ad769251d3854d9a2c919503b404d1f829e039fc901bc",
+    "binary_field_flag_audit.json": "605c2f4620def7fa6338f5419d04ea64f6b7e00dce0ad2f58dc24d0e056971ad",
+    "CODIMENSION_FOUR_P5_DICHOTOMY.md": "85ad20c2893b9536de3f5bdcaf5fe3645667dc00367d92b44f604e2ff87799be",
+    "seven_vertex_rank_check.json": "d9d49b1529592be1298f169e2f5cfe568fd0d6b68aed30c18845cf9f3f266a26",
+    "cycle_seven_six_images_audit.json": "f075ad9cddd1818db95f5259debd348fda75e146a859d21546dcd2e15989cb99",
+    "audit_cycle_seven_six_images.cpp": "e2ce0510c1d9cdb8483103a438a7bd8ff894830bca30b5e67346ade1b5c00b95",
+    "check_cycle_seven_six_images.py": "45fb6e8723cedf0df61fff710c557176c2572403b390a1b387383168d815ec89",
+    "cycle_seven_six_images_literal.json": "f6bf59c3681a98841796c979251607122460511296e2db245a5fae99a8f8a31c",
+    "odd_core_search_audit.json": "352399ffb6a7fc183f44419c9c9a223d1e992c581556a5676491a372a0b9741f",
+    "check_odd_core_results.py": "85f6d6303365a8db7dfb36533b03884d2fffd5a8956678b2c68fae2474d11ccb",
+    "probe_odd_core.cpp": "220581ab270caa0bf8b219cb9be3adce2581cf591cf8925eff762a2737339ffa",
+    "probe_odd_core_higher.cpp": "d0d3076efba64d5f29f269c3b4a2e8961352f908f7ad38139f217c554b7d2071",
+    "odd_core_proved_pruning_n13.json": "1910a930f14f585652cfd1d5f41edbb0dc628aaf444345a4258c5b5f974e59e0",
+    "odd_core_corank2_n13.json": "086a37961204171f88ca9e94415b508d49e1ce6c1d84a44e37ec7c7656d61cc0",
+    "odd_core_corank3_n13.json": "e2fe5a9e94703fea0a74bc68ed68e3492f5346e396155867616fedc68c7e3a3c",
+    "odd_core_corank2_sanitized_n11.json": "c8787b236a1c706c1348488bb83b82c3e17da8d25d74a0e3a564e2c5e894959f",
+    "odd_core_corank3_sanitized_n11.json": "cec2be24e4aeb07750eced92ce5e6b5a5a4d6329428aee260513fbbca8a9dd14",
+    "synthesize_flag_boolean.py": "e01dad9ba1cbefffb8a5149bb85addb3d7c95b66707bab5bb62aa2f547589de9",
+    "boolean_independent_flag_control_n13.json": "09590b2bc18e8fa879690470fde2fe6dacb51f3acfc454d9d2de8ba41c871ac5",
+    "boolean_independent_cover5_n13_binary.json": "df005844a2a9a06ccfc43f6fae43397605baa4ab561779a25db51bfcc0d3dc64",
+    "README.md": "d21b17c8476937601757def5f3734b636a19fd781f535fccf39d1a89778f5365"
+  }
+}

@@ -1,0 +1,307 @@
+{
+  "status": "pass",
+  "odd_cycle_controls": [
+    {
+      "n": 5,
+      "k": 2,
+      "full_rank": 5,
+      "zero_set_cases": [
+        {
+          "c": 1,
+          "zero_sets": 5,
+          "maximum_avoiding": 3,
+          "image_rank_lower": 3
+        },
+        {
+          "c": 2,
+          "zero_sets": 10,
+          "maximum_avoiding": 2,
+          "image_rank_lower": 2
+        }
+      ]
+    },
+    {
+      "n": 7,
+      "k": 3,
+      "full_rank": 7,
+      "zero_set_cases": [
+        {
+          "c": 1,
+          "zero_sets": 7,
+          "maximum_avoiding": 4,
+          "image_rank_lower": 5
+        },
+        {
+          "c": 2,
+          "zero_sets": 21,
+          "maximum_avoiding": 3,
+          "image_rank_lower": 4
+        },
+        {
+          "c": 3,
+          "zero_sets": 35,
+          "maximum_avoiding": 2,
+          "image_rank_lower": 3
+        }
+      ]
+    },
+    {
+      "n": 9,
+      "k": 4,
+      "full_rank": 9,
+      "zero_set_cases": [
+        {
+          "c": 1,
+          "zero_sets": 9,
+          "maximum_avoiding": 5,
+          "image_rank_lower": 7
+        },
+        {
+          "c": 2,
+          "zero_sets": 36,
+          "maximum_avoiding": 4,
+          "image_rank_lower": 6
+        },
+        {
+          "c": 3,
+          "zero_sets": 84,
+          "maximum_avoiding": 3,
+          "image_rank_lower": 5
+        },
+        {
+          "c": 4,
+          "zero_sets": 126,
+          "maximum_avoiding": 2,
+          "image_rank_lower": 4
+        }
+      ]
+    },
+    {
+      "n": 11,
+      "k": 5,
+      "full_rank": 11,
+      "zero_set_cases": [
+        {
+          "c": 1,
+          "zero_sets": 11,
+          "maximum_avoiding": 6,
+          "image_rank_lower": 9
+        },
+        {
+          "c": 2,
+          "zero_sets": 55,
+          "maximum_avoiding": 5,
+          "image_rank_lower": 8
+        },
+        {
+          "c": 3,
+          "zero_sets": 165,
+          "maximum_avoiding": 4,
+          "image_rank_lower": 7
+        },
+        {
+          "c": 4,
+          "zero_sets": 330,
+          "maximum_avoiding": 3,
+          "image_rank_lower": 6
+        },
+        {
+          "c": 5,
+          "zero_sets": 462,
+          "maximum_avoiding": 2,
+          "image_rank_lower": 5
+        }
+      ]
+    },
+    {
+      "n": 13,
+      "k": 6,
+      "full_rank": 13,
+      "zero_set_cases": [
+        {
+          "c": 1,
+          "zero_sets": 13,
+          "maximum_avoiding": 7,
+          "image_rank_lower": 11
+        },
+        {
+          "c": 2,
+          "zero_sets": 78,
+          "maximum_avoiding": 6,
+          "image_rank_lower": 10
+        },
+        {
+          "c": 3,
+          "zero_sets": 286,
+          "maximum_avoiding": 5,
+          "image_rank_lower": 9
+        },
+        {
+          "c": 4,
+          "zero_sets": 715,
+          "maximum_avoiding": 4,
+          "image_rank_lower": 8
+        },
+        {
+          "c": 5,
+          "zero_sets": 1287,
+          "maximum_avoiding": 3,
+          "image_rank_lower": 7
+        },
+        {
+          "c": 6,
+          "zero_sets": 1716,
+          "maximum_avoiding": 2,
+          "image_rank_lower": 6
+        }
+      ]
+    },
+    {
+      "n": 15,
+      "k": 7,
+      "full_rank": 15,
+      "zero_set_cases": [
+        {
+          "c": 1,
+          "zero_sets": 15,
+          "maximum_avoiding": 8,
+          "image_rank_lower": 13
+        },
+        {
+          "c": 2,
+          "zero_sets": 105,
+          "maximum_avoiding": 7,
+          "image_rank_lower": 12
+        },
+        {
+          "c": 3,
+          "zero_sets": 455,
+          "maximum_avoiding": 6,
+          "image_rank_lower": 11
+        },
+        {
+          "c": 4,
+          "zero_sets": 1365,
+          "maximum_avoiding": 5,
+          "image_rank_lower": 10
+        },
+        {
+          "c": 5,
+          "zero_sets": 3003,
+          "maximum_avoiding": 4,
+          "image_rank_lower": 9
+        },
+        {
+          "c": 6,
+          "zero_sets": 5005,
+          "maximum_avoiding": 3,
+          "image_rank_lower": 8
+        },
+        {
+          "c": 7,
+          "zero_sets": 6435,
+          "maximum_avoiding": 2,
+          "image_rank_lower": 7
+        }
+      ]
+    },
+    {
+      "n": 17,
+      "k": 8,
+      "full_rank": 17,
+      "zero_set_cases": [
+        {
+          "c": 1,
+          "zero_sets": 17,
+          "maximum_avoiding": 9,
+          "image_rank_lower": 15
+        },
+        {
+          "c": 2,
+          "zero_sets": 136,
+          "maximum_avoiding": 8,
+          "image_rank_lower": 14
+        },
+        {
+          "c": 3,
+          "zero_sets": 680,
+          "maximum_avoiding": 7,
+          "image_rank_lower": 13
+        },
+        {
+          "c": 4,
+          "zero_sets": 2380,
+          "maximum_avoiding": 6,
+          "image_rank_lower": 12
+        },
+        {
+          "c": 5,
+          "zero_sets": 6188,
+          "maximum_avoiding": 5,
+          "image_rank_lower": 11
+        },
+        {
+          "c": 6,
+          "zero_sets": 12376,
+          "maximum_avoiding": 4,
+          "image_rank_lower": 10
+        },
+        {
+          "c": 7,
+          "zero_sets": 19448,
+          "maximum_avoiding": 3,
+          "image_rank_lower": 9
+        },
+        {
+          "c": 8,
+          "zero_sets": 24310,
+          "maximum_avoiding": 2,
+          "image_rank_lower": 8
+        }
+      ]
+    }
+  ],
+  "zero_sets_checked": 87369,
+  "C5_tested_by_corank": [
+    720,
+    3600,
+    1800
+  ],
+  "C5_accepted_by_corank": [
+    10,
+    20,
+    40
+  ],
+  "C5_singular_boundary": {
+    "row": [
+      2,
+      3,
+      0,
+      0,
+      1,
+      5
+    ],
+    "inputs": [
+      37,
+      41,
+      42,
+      50
+    ],
+    "images": [
+      37,
+      37,
+      41,
+      42
+    ],
+    "corank": 1
+  },
+  "complete_C7_literal_maps": 651840,
+  "source_sha256": {
+    "ODD_CYCLE_SPAN_REFINEMENT.md": "eaca9eb216862e7c9f2bbc6ea27af29328e2779a043d375ed171d5734811ffc4",
+    "check_odd_cycle_span.py": "41db9745affd8f4866abe6d0398f5c21009175434c200636c72de983ccc51f38",
+    "check_short_pair_span.py": "a958663be64dabbcfbbdc1478c69be6bebb214267f5795c9ea44f1a528504a24",
+    "cycle_seven_six_images_literal.json": "f6bf59c3681a98841796c979251607122460511296e2db245a5fae99a8f8a31c",
+    "seven_vertex_rank_check.json": "d9d49b1529592be1298f169e2f5cfe568fd0d6b68aed30c18845cf9f3f266a26"
+  },
+  "scope": "Finite adversarial controls; uniform rank refinement follows the separate paper proof and cited critical-graph classification. No new extremal value."
+}

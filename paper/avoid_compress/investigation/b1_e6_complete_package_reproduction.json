@@ -1,0 +1,858 @@
+{
+  "status": "pass",
+  "archive": "certificates/b1_e6_complete.zip",
+  "sha256": "125da06dce316abb45f2b711045ec4df868c98f577fb96244058eff6ae33651b",
+  "files": 41,
+  "checksum_entries": 40,
+  "data_files_reproduced_byte_identically": 3,
+  "audits_reproduced_byte_identically": 3,
+  "complete_literal_masks": 163800,
+  "complete_augmented_ranks": 28632,
+  "complete_coupled_pairs_per_implementation": 119664,
+  "runs": [
+    {
+      "script": "enumerate_b1_f27_paired_g_seventh.py",
+      "exit": 0,
+      "outputs": [
+        [
+          {
+            "G": [
+              1,
+              8
+            ],
+            "H": [
+              9
+            ],
+            "labels": 4,
+            "forms": 12,
+            "mandatory": [
+              0,
+              3,
+              5,
+              6,
+              9
+            ],
+            "extras": [],
+            "covered_extras": [],
+            "rows": 76,
+            "supply_rows": 34,
+            "pairs": 48
+          },
+          {
+            "G": [
+              1,
+              8
+            ],
+            "H": [
+              1,
+              2
+            ],
+            "labels": 1,
+            "forms": 10,
+            "mandatory": [
+              0,
+              3,
+              5,
+              6
+            ],
+            "extras": [
+              [
+                4,
+                7
+              ],
+              [
+                7,
+                8
+              ]
+            ],
+            "covered_extras": [],
+            "rows": 42,
+            "supply_rows": 0,
+            "pairs": 0
+          },
+          {
+            "G": [
+              1,
+              8
+            ],
+            "H": [
+              1,
+              7
+            ],
+            "labels": 1,
+            "forms": 10,
+            "mandatory": [
+              0,
+              3,
+              5,
+              6
+            ],
+            "extras": [
+              [
+                2,
+                4
+              ],
+              [
+                2,
+                8
+              ]
+            ],
+            "covered_extras": [
+              [
+                2,
+                4
+              ],
+              [
+                2,
+                8
+              ]
+            ],
+            "rows": 42,
+            "supply_rows": 0,
+            "pairs": 0
+          },
+          {
+            "G": [
+              1,
+              8
+            ],
+            "H": [
+              1,
+              9
+            ],
+            "labels": 4,
+            "forms": 8,
+            "mandatory": [
+              0,
+              3,
+              5,
+              6
+            ],
+            "extras": [],
+            "covered_extras": [],
+            "rows": 50,
+            "supply_rows": 8,
+            "pairs": 0
+          },
+          {
+            "G": [
+              1,
+              8
+            ],
+            "H": [
+              2,
+              4
+            ],
+            "labels": 1,
+            "forms": 10,
+            "mandatory": [
+              0,
+              3,
+              5,
+              6
+            ],
+            "extras": [
+              [
+                1,
+                7
+              ],
+              [
+                2,
+                8
+              ]
+            ],
+            "covered_extras": [
+              [
+                1,
+                7
+              ],
+              [
+                2,
+                8
+              ]
+            ],
+            "rows": 42,
+            "supply_rows": 0,
+            "pairs": 0
+          },
+          {
+            "G": [
+              1,
+              8
+            ],
+            "H": [
+              2,
+              8
+            ],
+            "labels": 1,
+            "forms": 10,
+            "mandatory": [
+              0,
+              3,
+              5,
+              6
+            ],
+            "extras": [
+              [
+                1,
+                7
+              ],
+              [
+                2,
+                4
+              ]
+            ],
+            "covered_extras": [
+              [
+                1,
+                7
+              ],
+              [
+                2,
+                4
+              ]
+            ],
+            "rows": 42,
+            "supply_rows": 0,
+            "pairs": 0
+          },
+          {
+            "G": [
+              1,
+              8
+            ],
+            "H": [
+              2,
+              9
+            ],
+            "labels": 4,
+            "forms": 10,
+            "mandatory": [
+              0,
+              3,
+              5,
+              6
+            ],
+            "extras": [],
+            "covered_extras": [],
+            "rows": 42,
+            "supply_rows": 0,
+            "pairs": 0
+          },
+          {
+            "G": [
+              1,
+              8
+            ],
+            "H": [
+              1,
+              2,
+              9
+            ],
+            "labels": 4,
+            "forms": 7,
+            "mandatory": [
+              0,
+              3,
+              5,
+              6
+            ],
+            "extras": [],
+            "covered_extras": [],
+            "rows": 42,
+            "supply_rows": 0,
+            "pairs": 0
+          },
+          {
+            "G": [
+              2,
+              8
+            ],
+            "H": [
+              9
+            ],
+            "labels": 4,
+            "forms": 12,
+            "mandatory": [
+              0,
+              3,
+              5,
+              6,
+              9
+            ],
+            "extras": [],
+            "covered_extras": [],
+            "rows": 128,
+            "supply_rows": 48,
+            "pairs": 243
+          },
+          {
+            "G": [
+              2,
+              8
+            ],
+            "H": [
+              1,
+              2
+            ],
+            "labels": 1,
+            "forms": 10,
+            "mandatory": [
+              0,
+              3,
+              5,
+              6
+            ],
+            "extras": [
+              [
+                4,
+                7
+              ],
+              [
+                4,
+                8
+              ]
+            ],
+            "covered_extras": [],
+            "rows": 80,
+            "supply_rows": 0,
+            "pairs": 0
+          },
+          {
+            "G": [
+              2,
+              8
+            ],
+            "H": [
+              1,
+              7
+            ],
+            "labels": 1,
+            "forms": 10,
+            "mandatory": [
+              0,
+              3,
+              5,
+              6
+            ],
+            "extras": [
+              [
+                1,
+                8
+              ],
+              [
+                2,
+                4
+              ]
+            ],
+            "covered_extras": [
+              [
+                1,
+                8
+              ],
+              [
+                2,
+                4
+              ]
+            ],
+            "rows": 82,
+            "supply_rows": 0,
+            "pairs": 0
+          },
+          {
+            "G": [
+              2,
+              8
+            ],
+            "H": [
+              1,
+              8
+            ],
+            "labels": 1,
+            "forms": 10,
+            "mandatory": [
+              0,
+              3,
+              5,
+              6
+            ],
+            "extras": [
+              [
+                1,
+                7
+              ],
+              [
+                2,
+                4
+              ]
+            ],
+            "covered_extras": [
+              [
+                1,
+                7
+              ],
+              [
+                2,
+                4
+              ]
+            ],
+            "rows": 82,
+            "supply_rows": 2,
+            "pairs": 24
+          },
+          {
+            "G": [
+              2,
+              8
+            ],
+            "H": [
+              1,
+              9
+            ],
+            "labels": 4,
+            "forms": 10,
+            "mandatory": [
+              0,
+              3,
+              5,
+              6
+            ],
+            "extras": [],
+            "covered_extras": [],
+            "rows": 82,
+            "supply_rows": 2,
+            "pairs": 24
+          },
+          {
+            "G": [
+              2,
+              8
+            ],
+            "H": [
+              2,
+              4
+            ],
+            "labels": 1,
+            "forms": 10,
+            "mandatory": [
+              0,
+              3,
+              5,
+              6
+            ],
+            "extras": [
+              [
+                1,
+                7
+              ],
+              [
+                1,
+                8
+              ]
+            ],
+            "covered_extras": [
+              [
+                1,
+                7
+              ],
+              [
+                1,
+                8
+              ]
+            ],
+            "rows": 82,
+            "supply_rows": 0,
+            "pairs": 0
+          },
+          {
+            "G": [
+              2,
+              8
+            ],
+            "H": [
+              2,
+              9
+            ],
+            "labels": 4,
+            "forms": 8,
+            "mandatory": [
+              0,
+              3,
+              5,
+              6
+            ],
+            "extras": [],
+            "covered_extras": [],
+            "rows": 112,
+            "supply_rows": 32,
+            "pairs": 81
+          },
+          {
+            "G": [
+              2,
+              8
+            ],
+            "H": [
+              1,
+              2,
+              9
+            ],
+            "labels": 4,
+            "forms": 7,
+            "mandatory": [
+              0,
+              3,
+              5,
+              6
+            ],
+            "extras": [],
+            "covered_extras": [],
+            "rows": 80,
+            "supply_rows": 0,
+            "pairs": 0
+          }
+        ]
+      ]
+    },
+    {
+      "script": "check_b1_f27_paired_g_seventh.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "status": "pass",
+          "orbits": 16,
+          "labels": 40,
+          "masks": 163800,
+          "ranktests": 28632,
+          "counts": [
+            {
+              "G": [
+                1,
+                8
+              ],
+              "geometric_orbits": 8,
+              "labelled_H": 20,
+              "all_alphabet_excluded_H": [
+                [
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  7
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  2,
+                  8
+                ],
+                [
+                  2,
+                  9
+                ],
+                [
+                  1,
+                  2,
+                  9
+                ]
+              ],
+              "binary_zero_pair_H": [
+                [
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  7
+                ],
+                [
+                  1,
+                  9
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  2,
+                  8
+                ],
+                [
+                  2,
+                  9
+                ],
+                [
+                  1,
+                  2,
+                  9
+                ]
+              ],
+              "remaining_binary_H": [
+                [
+                  9
+                ]
+              ],
+              "binary_field_pairs": 48,
+              "original_sixth_pairs": 24,
+              "remaining_original_sixth_pairs": 24
+            },
+            {
+              "G": [
+                2,
+                8
+              ],
+              "geometric_orbits": 8,
+              "labelled_H": 20,
+              "all_alphabet_excluded_H": [
+                [
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  7
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  1,
+                  2,
+                  9
+                ]
+              ],
+              "binary_zero_pair_H": [
+                [
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  7
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  1,
+                  2,
+                  9
+                ]
+              ],
+              "remaining_binary_H": [
+                [
+                  9
+                ],
+                [
+                  1,
+                  8
+                ],
+                [
+                  1,
+                  9
+                ],
+                [
+                  2,
+                  9
+                ]
+              ],
+              "binary_field_pairs": 372,
+              "original_sixth_pairs": 81,
+              "remaining_original_sixth_pairs": 81
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "script": "enumerate_b1_f27_paired_g_rows.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "G": [
+            1,
+            8
+          ],
+          "H": [
+            9
+          ],
+          "raw_rows": 3168,
+          "kept_rows": 1728,
+          "raw_pairs": 0,
+          "kept_pairs": 0,
+          "counts": {
+            "kept": 1728,
+            "no_single_letter_initial_image": 1440
+          }
+        },
+        {
+          "G": [
+            2,
+            8
+          ],
+          "H": [
+            9
+          ],
+          "raw_rows": 4800,
+          "kept_rows": 2880,
+          "raw_pairs": 228096,
+          "kept_pairs": 85536,
+          "counts": {
+            "kept": 2880,
+            "no_single_letter_initial_image": 1920
+          }
+        },
+        {
+          "G": [
+            2,
+            8
+          ],
+          "H": [
+            1,
+            8
+          ],
+          "raw_rows": 2016,
+          "kept_rows": 1824,
+          "raw_pairs": 27648,
+          "kept_pairs": 27648,
+          "counts": {
+            "kept": 1824,
+            "no_single_letter_initial_image": 192
+          }
+        },
+        {
+          "G": [
+            2,
+            8
+          ],
+          "H": [
+            1,
+            9
+          ],
+          "raw_rows": 2016,
+          "kept_rows": 1236,
+          "raw_pairs": 27648,
+          "kept_pairs": 6480,
+          "counts": {
+            "kept": 1236,
+            "no_single_letter_initial_image": 780
+          }
+        },
+        {
+          "G": [
+            2,
+            8
+          ],
+          "H": [
+            2,
+            9
+          ],
+          "raw_rows": 3840,
+          "kept_rows": 1920,
+          "raw_pairs": 0,
+          "kept_pairs": 0,
+          "counts": {
+            "kept": 1920,
+            "no_single_letter_initial_image": 1920
+          }
+        }
+      ]
+    },
+    {
+      "script": "check_b1_f27_paired_g_rows.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "G": [
+            1,
+            8
+          ],
+          "H": [
+            9
+          ],
+          "complete_pairs": 0,
+          "primary_candidates": 0,
+          "secondary_survivors": 0
+        },
+        {
+          "G": [
+            2,
+            8
+          ],
+          "H": [
+            9
+          ],
+          "complete_pairs": 85536,
+          "primary_candidates": 0,
+          "secondary_survivors": 0
+        },
+        {
+          "G": [
+            2,
+            8
+          ],
+          "H": [
+            1,
+            8
+          ],
+          "complete_pairs": 27648,
+          "primary_candidates": 0,
+          "secondary_survivors": 0
+        },
+        {
+          "G": [
+            2,
+            8
+          ],
+          "H": [
+            1,
+            9
+          ],
+          "complete_pairs": 6480,
+          "primary_candidates": 0,
+          "secondary_survivors": 0
+        },
+        {
+          "G": [
+            2,
+            8
+          ],
+          "H": [
+            2,
+            9
+          ],
+          "complete_pairs": 0,
+          "primary_candidates": 0,
+          "secondary_survivors": 0
+        },
+        {
+          "status": "pass",
+          "whole_binary_G18_G28_excluded": true,
+          "raw_rows": 15840,
+          "complete_pairs_per_implementation": 119664
+        }
+      ]
+    },
+    {
+      "script": "check_b1_e6_composition.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "status": "pass",
+          "whole_binary_E6_excluded": true,
+          "remaining_fourth_pairs": 41,
+          "remaining_fifth_pairs": 161,
+          "remaining_selected_sixth_pairs": 443
+        }
+      ]
+    }
+  ],
+  "source_sha256": {
+    "check_b1_e6_complete_package.py": "1eaa03148d5b7b97f2ffc06e4c92e4c00c5731e1f8140115b71b880df9298bb0"
+  }
+}

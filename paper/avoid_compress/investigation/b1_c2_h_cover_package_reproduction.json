@@ -1,0 +1,71 @@
+{
+  "status": "pass",
+  "archive": "certificates/b1_c2_h_cover.zip",
+  "sha256": "86d2dddc3e879bb2c1d72746864fa0f0d7c0317a11b63929adf746cadc1c7061",
+  "files": 13,
+  "checksum_entries": 12,
+  "isolated_checker_exit": 0,
+  "reproduced_audit_byte_identical": true,
+  "isolated_generator_exit": 0,
+  "reproduced_inventory_byte_identical": true,
+  "checker_output": [
+    {
+      "n": 6,
+      "assignments": 752
+    },
+    {
+      "n": 7,
+      "assignments": 11952
+    },
+    {
+      "n": 8,
+      "assignments": 301824
+    },
+    {
+      "status": "pass",
+      "kernels": [
+        {
+          "D": [
+            4
+          ],
+          "original_pairs": 14,
+          "row_patterns": 170,
+          "kernel_pairs": 497,
+          "classification": {
+            "closed_G": 17,
+            "singleton_C_outputs": 480
+          },
+          "universal_closed_graph_rows": 34
+        },
+        {
+          "D": [
+            1,
+            4
+          ],
+          "original_pairs": 3,
+          "row_patterns": 42,
+          "kernel_pairs": 54,
+          "classification": {
+            "overlapping_D": 54
+          },
+          "universal_closed_graph_rows": 0
+        }
+      ],
+      "ports": {
+        "complete_L_output_permutations": 362880,
+        "complete_F_J_output_injections": 362880,
+        "F_injections_with_outside_predecessor_of4": 322560,
+        "F_injections_permuting_J": 40320,
+        "scope": "Complete individual ordinary block-output systems at13 states. Small literal rows separately check the coupled short words; not transition-pair enumeration."
+      },
+      "literal": [
+        752,
+        11952,
+        301824
+      ]
+    }
+  ],
+  "source_sha256": {
+    "check_b1_c2_h_cover_package.py": "5179fb1d46824d2a38868e8d29cf4d6b4596b04e54f9885bd0a56d1353c1a7e1"
+  }
+}

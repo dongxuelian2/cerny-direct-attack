@@ -1,0 +1,23 @@
+{
+  "n": 6,
+  "s": 3,
+  "target": 10,
+  "alphabet_size": 3,
+  "protected": 0,
+  "kernel": [
+    0,
+    1
+  ],
+  "free_subset": true,
+  "first_file": null,
+  "fixed_file": null,
+  "tight_refinement_cuts": true,
+  "status": "unsat_encoding_not_certified",
+  "iterations": 1,
+  "early_pattern": 1,
+  "witness": null,
+  "rejected_candidates": [],
+  "seconds": 0.034462100000382634,
+  "z3_version": "4.16.0",
+  "scope": "Lower-potential finite synthesis; negative output is not an upper bound."
+}

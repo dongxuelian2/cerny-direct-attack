@@ -1,0 +1,126 @@
+{
+  "status": "pass",
+  "packages": [
+    {
+      "archive": "certificates/b1_mixed_c3_new2.zip",
+      "sha256": "749201045df3e5c5ff651cc501428500a9c726b968ed537aa2f0c0d15726ee86",
+      "files": 15,
+      "checksum_entries": 14,
+      "isolated_checker_exit": 0,
+      "reproduced_audit_byte_identical": true,
+      "checker_output": {
+        "status": "pass",
+        "F_kernel_partitions": 50574,
+        "L_kernel_partitions": 4140,
+        "L_output_injections": 40320,
+        "core_ports": 240,
+        "canonical_cores": 12,
+        "literal_rows": [
+          720,
+          6480
+        ],
+        "frontier": {
+          "additional_binary_third_profile_exclusions": [
+            "b1_out_c5_third3",
+            "b1_out_c5_third5",
+            "b1_out_c5_third7",
+            "b1_out_c5_third9"
+          ],
+          "b1_C3_mixed_remaining_D": [
+            [
+              6
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              0,
+              1,
+              6
+            ],
+            [
+              0,
+              2,
+              6
+            ],
+            [
+              0,
+              1,
+              2,
+              6
+            ]
+          ],
+          "remaining_binary_joint": 26,
+          "remaining_unrestricted_joint": 43,
+          "remaining_binary_typed_third_orbits": 169,
+          "remaining_binary_profile_pairs": 930,
+          "extremal_interval": [
+            11,
+            12
+          ]
+        }
+      }
+    },
+    {
+      "archive": "certificates/b1_mixed_c3_singleton.zip",
+      "sha256": "00aa5286432b6203593690f46a635c4f2e2806e7be8b023e3d7efe396a64ee48",
+      "files": 15,
+      "checksum_entries": 14,
+      "isolated_checker_exit": 0,
+      "reproduced_audit_byte_identical": true,
+      "checker_output": {
+        "status": "pass",
+        "R_kernels": 4140,
+        "F_R_permutations": 40320,
+        "literal_rows": 7776,
+        "frontier": {
+          "additional_binary_third_profile_exclusions": [
+            "b1_out_c5_third2"
+          ],
+          "b1_C3_mixed_remaining_D": [
+            [
+              0,
+              6
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              0,
+              1,
+              6
+            ],
+            [
+              0,
+              2,
+              6
+            ],
+            [
+              0,
+              1,
+              2,
+              6
+            ]
+          ],
+          "remaining_binary_joint": 26,
+          "remaining_unrestricted_joint": 43,
+          "remaining_binary_typed_third_orbits": 168,
+          "remaining_binary_profile_pairs": 927,
+          "extremal_interval": [
+            11,
+            12
+          ]
+        }
+      }
+    }
+  ],
+  "source_sha256": {
+    "check_b1_mixed_c3_packages.py": "23ae8b94aab63363a1ce6fe4e18e575d6777348a508f7f44a87f09738f41b7d6"
+  }
+}

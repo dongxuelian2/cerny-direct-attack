@@ -1,0 +1,847 @@
+{
+  "status": "diagnostic_joint_slices_finished",
+  "n": 13,
+  "s": 9,
+  "r": 1,
+  "target": 12,
+  "alphabet_size": 2,
+  "admitted_orbits": 43,
+  "requested_orbits": [
+    "b1_out_c1",
+    "b1_out_c2",
+    "b1_out_c3",
+    "b1_out_c4",
+    "b1_out_c5",
+    "b1_out_c6",
+    "b1_in_c1",
+    "b1_in_c2",
+    "b1_in_c3",
+    "b1_in_c4",
+    "b1_in_c5",
+    "b2_mixed_c1",
+    "b2_mixed_c2",
+    "b2_mixed_c3",
+    "b2_mixed_c4",
+    "b2_mixed_c5",
+    "b2_mixed_c6",
+    "b2_mixed_c7",
+    "b2_mixed_c8",
+    "b2_mixed_c9",
+    "b2_mixed_c10",
+    "b2_mixed_c11",
+    "b2_mixed_c12",
+    "b2_in_c1",
+    "b2_in_c2",
+    "b2_in_c3",
+    "b2_in_c4",
+    "b2_in_c5",
+    "b2_in_c6",
+    "b3_mixed_c1",
+    "b3_mixed_c2",
+    "b3_mixed_c3",
+    "b3_mixed_c4",
+    "b3_mixed_c5",
+    "b3_mixed_c6",
+    "b3_mixed_c7",
+    "b3_mixed_c8",
+    "b3_mixed_c9",
+    "b3_mixed_c10",
+    "b3_mixed_c11",
+    "b3_in_c1",
+    "b3_in_c2",
+    "b3_in_c3"
+  ],
+  "reports": [
+    {
+      "id": "b1_out_c1",
+      "file": "joint_fiber_b1_out_c1_k2.json",
+      "B": [
+        4
+      ],
+      "C": [
+        5
+      ],
+      "status": "unknown: timeout",
+      "iterations": 9,
+      "seconds": 15.021157399999993,
+      "safe_words": 14,
+      "trap_cuts": 79,
+      "sha256": "0f7d301373e232f44727d7f56838eb0cc847be6d8c742e81879a9b9ed1266aa8"
+    },
+    {
+      "id": "b1_out_c2",
+      "file": "joint_fiber_b1_out_c2_k2.json",
+      "B": [
+        4
+      ],
+      "C": [
+        0
+      ],
+      "status": "unknown: timeout",
+      "iterations": 4,
+      "seconds": 9.931421499999999,
+      "safe_words": 14,
+      "trap_cuts": 74,
+      "sha256": "d7f9ec4b67d52fda448f15c8012c7ab152cbcc1e7f27a6d14b752781a96ada26"
+    },
+    {
+      "id": "b1_out_c3",
+      "file": "joint_fiber_b1_out_c3_k2.json",
+      "B": [
+        4
+      ],
+      "C": [
+        0,
+        5
+      ],
+      "status": "unknown: timeout",
+      "iterations": 3,
+      "seconds": 8.742198200000018,
+      "safe_words": 14,
+      "trap_cuts": 73,
+      "sha256": "2f6028693b498ff7895431ba5bdd7ab38cfbc6a99d544e0e597237cd1145a759"
+    },
+    {
+      "id": "b1_out_c4",
+      "file": "joint_fiber_b1_out_c4_k2.json",
+      "B": [
+        4
+      ],
+      "C": [
+        0,
+        1
+      ],
+      "status": "unknown: timeout",
+      "iterations": 5,
+      "seconds": 10.4673856,
+      "safe_words": 14,
+      "trap_cuts": 75,
+      "sha256": "f4c1c5daf2a42364507766604ade6eca3c6a65c8ef0f234a8abde7862e194f8e"
+    },
+    {
+      "id": "b1_out_c5",
+      "file": "joint_fiber_b1_out_c5_k2.json",
+      "B": [
+        4
+      ],
+      "C": [
+        0,
+        1,
+        5
+      ],
+      "status": "unknown: timeout",
+      "iterations": 1,
+      "seconds": 5.0202575999999794,
+      "safe_words": 14,
+      "trap_cuts": 71,
+      "sha256": "42ea3fbe1085ea2f54ee5d3540c72c4296a23a445e1e03407ac3851071a91ba3"
+    },
+    {
+      "id": "b1_out_c6",
+      "file": "joint_fiber_b1_out_c6_k2.json",
+      "B": [
+        4
+      ],
+      "C": [
+        0,
+        1,
+        2
+      ],
+      "status": "unknown: timeout",
+      "iterations": 1,
+      "seconds": 5.022811400000023,
+      "safe_words": 14,
+      "trap_cuts": 71,
+      "sha256": "93ac9214b5ce7e40b84c4cf0ec6523ab0c4186d205c0e3cabb1829cba378f4fc"
+    },
+    {
+      "id": "b1_in_c1",
+      "file": "joint_fiber_b1_in_c1_k2.json",
+      "B": [
+        0
+      ],
+      "C": [
+        4
+      ],
+      "status": "unknown: timeout",
+      "iterations": 3,
+      "seconds": 8.101987800000018,
+      "safe_words": 7,
+      "trap_cuts": 35,
+      "sha256": "e79e53299932c652936c0454bde072c2f2486ab6802f5ff72393bf63c4475771"
+    },
+    {
+      "id": "b1_in_c2",
+      "file": "joint_fiber_b1_in_c2_k2.json",
+      "B": [
+        0
+      ],
+      "C": [
+        1
+      ],
+      "status": "unknown: timeout",
+      "iterations": 1,
+      "seconds": 5.068548099999987,
+      "safe_words": 7,
+      "trap_cuts": 33,
+      "sha256": "566c366e413af58b9f1f0962c56fb3e2c999f1ad9c4fb98a2fdad3dbc0355f19"
+    },
+    {
+      "id": "b1_in_c3",
+      "file": "joint_fiber_b1_in_c3_k2.json",
+      "B": [
+        0
+      ],
+      "C": [
+        1,
+        4
+      ],
+      "status": "unknown: timeout",
+      "iterations": 5,
+      "seconds": 7.159814200000028,
+      "safe_words": 7,
+      "trap_cuts": 37,
+      "sha256": "5c30f5b0754354e5545a2a923dd0f91df8eb0aa8e0a94b5373605f21d6b3b7b1"
+    },
+    {
+      "id": "b1_in_c4",
+      "file": "joint_fiber_b1_in_c4_k2.json",
+      "B": [
+        0
+      ],
+      "C": [
+        1,
+        2
+      ],
+      "status": "unknown: timeout",
+      "iterations": 2,
+      "seconds": 5.598221599999988,
+      "safe_words": 7,
+      "trap_cuts": 34,
+      "sha256": "a6242609040cc1745b96c4a026b564f041d7ca11c63787eb929044e14cbf741e"
+    },
+    {
+      "id": "b1_in_c5",
+      "file": "joint_fiber_b1_in_c5_k2.json",
+      "B": [
+        0
+      ],
+      "C": [
+        1,
+        2,
+        4
+      ],
+      "status": "unknown: timeout",
+      "iterations": 1,
+      "seconds": 5.027707499999963,
+      "safe_words": 7,
+      "trap_cuts": 33,
+      "sha256": "f26eac5bbf688adcad6ae685a5a7720535498d84726324b1f23b964aa521be0c"
+    },
+    {
+      "id": "b2_mixed_c1",
+      "file": "joint_fiber_b2_mixed_c1_k2.json",
+      "B": [
+        0,
+        4
+      ],
+      "C": [
+        5
+      ],
+      "status": "unknown: timeout",
+      "iterations": 4,
+      "seconds": 7.789187600000048,
+      "safe_words": 8,
+      "trap_cuts": 42,
+      "sha256": "0d0e6ed1e9da064d04f67d17d2973e5b96d45d90af5e83404740ec1c211c5aac"
+    },
+    {
+      "id": "b2_mixed_c2",
+      "file": "joint_fiber_b2_mixed_c2_k2.json",
+      "B": [
+        0,
+        4
+      ],
+      "C": [
+        1
+      ],
+      "status": "unknown: timeout",
+      "iterations": 1,
+      "seconds": 5.017664200000013,
+      "safe_words": 8,
+      "trap_cuts": 39,
+      "sha256": "05fa527d8afffea6e69345d95fcb84a1f528942904afeac594f8371a67591004"
+    },
+    {
+      "id": "b2_mixed_c3",
+      "file": "joint_fiber_b2_mixed_c3_k2.json",
+      "B": [
+        0,
+        4
+      ],
+      "C": [
+        1,
+        5
+      ],
+      "status": "unknown: timeout",
+      "iterations": 1,
+      "seconds": 5.021051100000022,
+      "safe_words": 8,
+      "trap_cuts": 39,
+      "sha256": "67b95908c58c4994dea0f670a946b9bd70a5d20e1633ba953116fa3ecbca571f"
+    },
+    {
+      "id": "b2_mixed_c4",
+      "file": "joint_fiber_b2_mixed_c4_k2.json",
+      "B": [
+        0,
+        4
+      ],
+      "C": [
+        1,
+        4
+      ],
+      "status": "unknown: timeout",
+      "iterations": 4,
+      "seconds": 6.90181419999999,
+      "safe_words": 8,
+      "trap_cuts": 42,
+      "sha256": "ad75cf06781735697ad360c00166416926cca1661dfc3f9d3e5ebeedae950747"
+    },
+    {
+      "id": "b2_mixed_c5",
+      "file": "joint_fiber_b2_mixed_c5_k2.json",
+      "B": [
+        0,
+        4
+      ],
+      "C": [
+        1,
+        2
+      ],
+      "status": "unknown: timeout",
+      "iterations": 2,
+      "seconds": 5.700472099999956,
+      "safe_words": 8,
+      "trap_cuts": 40,
+      "sha256": "10dafcb5141bd2443c3d9d173971024352ca80e7ad6b908fa5c442ab6b74e392"
+    },
+    {
+      "id": "b2_mixed_c6",
+      "file": "joint_fiber_b2_mixed_c6_k2.json",
+      "B": [
+        0,
+        4
+      ],
+      "C": [
+        1,
+        2,
+        5
+      ],
+      "status": "unknown: timeout",
+      "iterations": 2,
+      "seconds": 5.797535100000005,
+      "safe_words": 11,
+      "trap_cuts": 39,
+      "sha256": "c8f9c3696db805d51a107ba3b0150ced4213346de0b6eea0d54925581e241eaf"
+    },
+    {
+      "id": "b2_mixed_c7",
+      "file": "joint_fiber_b2_mixed_c7_k2.json",
+      "B": [
+        0,
+        4
+      ],
+      "C": [
+        1,
+        2,
+        4
+      ],
+      "status": "unknown: timeout",
+      "iterations": 1,
+      "seconds": 5.023819099999969,
+      "safe_words": 8,
+      "trap_cuts": 39,
+      "sha256": "71d3af70930f0a8a0a50ff9784b0ecef70349a3a5a841e12524c1d0f992d6be2"
+    },
+    {
+      "id": "b2_mixed_c8",
+      "file": "joint_fiber_b2_mixed_c8_k2.json",
+      "B": [
+        0,
+        4
+      ],
+      "C": [
+        0,
+        5
+      ],
+      "status": "unknown: timeout",
+      "iterations": 5,
+      "seconds": 14.038680699999986,
+      "safe_words": 13,
+      "trap_cuts": 42,
+      "sha256": "305486a8f86c9a3f8d807b92969884f8ec4c224c59a11758298b8ba73e79361a"
+    },
+    {
+      "id": "b2_mixed_c9",
+      "file": "joint_fiber_b2_mixed_c9_k2.json",
+      "B": [
+        0,
+        4
+      ],
+      "C": [
+        0,
+        1
+      ],
+      "status": "unknown: timeout",
+      "iterations": 2,
+      "seconds": 5.677116500000011,
+      "safe_words": 8,
+      "trap_cuts": 40,
+      "sha256": "288f4e00efdbe854c7c62984008973639d912263c76bb9e17890710c56ab9f17"
+    },
+    {
+      "id": "b2_mixed_c10",
+      "file": "joint_fiber_b2_mixed_c10_k2.json",
+      "B": [
+        0,
+        4
+      ],
+      "C": [
+        0,
+        1,
+        5
+      ],
+      "status": "unknown: timeout",
+      "iterations": 1,
+      "seconds": 5.012683699999911,
+      "safe_words": 8,
+      "trap_cuts": 39,
+      "sha256": "e1f746050acc64a4bb80190e55910c0b43463adf9c7fe55e6f414be08f91fc25"
+    },
+    {
+      "id": "b2_mixed_c11",
+      "file": "joint_fiber_b2_mixed_c11_k2.json",
+      "B": [
+        0,
+        4
+      ],
+      "C": [
+        0,
+        1,
+        2
+      ],
+      "status": "unknown: timeout",
+      "iterations": 1,
+      "seconds": 5.026075399999968,
+      "safe_words": 8,
+      "trap_cuts": 39,
+      "sha256": "d671c76c81dda06408a66b371dd17ae9a01b90a5529b8c8e601397db3fb63ba8"
+    },
+    {
+      "id": "b2_mixed_c12",
+      "file": "joint_fiber_b2_mixed_c12_k2.json",
+      "B": [
+        0,
+        4
+      ],
+      "C": [
+        0,
+        1,
+        2,
+        5
+      ],
+      "status": "unknown: timeout",
+      "iterations": 1,
+      "seconds": 5.023365900000044,
+      "safe_words": 8,
+      "trap_cuts": 39,
+      "sha256": "8b23eeb915a0724612ea70119fb9df205469c4925e9e5e5b6bf414459fe86ab1"
+    },
+    {
+      "id": "b2_in_c1",
+      "file": "joint_fiber_b2_in_c1_k2.json",
+      "B": [
+        0,
+        1
+      ],
+      "C": [
+        4
+      ],
+      "status": "unknown: timeout",
+      "iterations": 4,
+      "seconds": 10.952663700000016,
+      "safe_words": 4,
+      "trap_cuts": 10,
+      "sha256": "3db57566b2f920515ddcb8c1cf1aaf3eef8f45e94be0310d968359d5b3c812f3"
+    },
+    {
+      "id": "b2_in_c2",
+      "file": "joint_fiber_b2_in_c2_k2.json",
+      "B": [
+        0,
+        1
+      ],
+      "C": [
+        2
+      ],
+      "status": "unknown: timeout",
+      "iterations": 1,
+      "seconds": 5.021635300000071,
+      "safe_words": 4,
+      "trap_cuts": 7,
+      "sha256": "fc6b781e871f32c76ac7a59a69702ace603fa7f683ec488f556eb6bcd13391e7"
+    },
+    {
+      "id": "b2_in_c3",
+      "file": "joint_fiber_b2_in_c3_k2.json",
+      "B": [
+        0,
+        1
+      ],
+      "C": [
+        2,
+        4
+      ],
+      "status": "unknown: timeout",
+      "iterations": 1,
+      "seconds": 5.013505299999906,
+      "safe_words": 4,
+      "trap_cuts": 7,
+      "sha256": "f885d50a924a848ac127a0e01cd29793123ca9f56b3d287b69f2ed251c51757c"
+    },
+    {
+      "id": "b2_in_c4",
+      "file": "joint_fiber_b2_in_c4_k2.json",
+      "B": [
+        0,
+        1
+      ],
+      "C": [
+        0,
+        4
+      ],
+      "status": "unknown: timeout",
+      "iterations": 2,
+      "seconds": 5.31702539999992,
+      "safe_words": 4,
+      "trap_cuts": 8,
+      "sha256": "ea5db934288c98a8d69d446cf92e6d6776b8fb9e5e8cdeb8b521cae96b925759"
+    },
+    {
+      "id": "b2_in_c5",
+      "file": "joint_fiber_b2_in_c5_k2.json",
+      "B": [
+        0,
+        1
+      ],
+      "C": [
+        0,
+        2
+      ],
+      "status": "unknown: timeout",
+      "iterations": 6,
+      "seconds": 12.86755089999997,
+      "safe_words": 4,
+      "trap_cuts": 12,
+      "sha256": "e7a529fe9bbf6f597fa5c2e847ff6c217d9b5f4109c429b9b6019ea4dd5d26f3"
+    },
+    {
+      "id": "b2_in_c6",
+      "file": "joint_fiber_b2_in_c6_k2.json",
+      "B": [
+        0,
+        1
+      ],
+      "C": [
+        0,
+        2,
+        4
+      ],
+      "status": "unknown: timeout",
+      "iterations": 1,
+      "seconds": 5.024328399999945,
+      "safe_words": 4,
+      "trap_cuts": 7,
+      "sha256": "c0d0764d8b12aea5a964bbc5a3bee15704e98a34502028cc1d55105f30c9d09d"
+    },
+    {
+      "id": "b3_mixed_c1",
+      "file": "joint_fiber_b3_mixed_c1_k2.json",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        5
+      ],
+      "status": "unknown: timeout",
+      "iterations": 1,
+      "seconds": 5.056623599999966,
+      "safe_words": 4,
+      "trap_cuts": 3,
+      "sha256": "605964767d8ab6b3adf22a7fc246c21759d7be53f0f44a0d81963675dc7122ed"
+    },
+    {
+      "id": "b3_mixed_c2",
+      "file": "joint_fiber_b3_mixed_c2_k2.json",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        2
+      ],
+      "status": "unknown: timeout",
+      "iterations": 1,
+      "seconds": 5.0657823000000235,
+      "safe_words": 4,
+      "trap_cuts": 3,
+      "sha256": "7efe6c403e7a40b8f6b492ffacab34b30a822362dabad82e533ae01915926dd3"
+    },
+    {
+      "id": "b3_mixed_c3",
+      "file": "joint_fiber_b3_mixed_c3_k2.json",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        2,
+        5
+      ],
+      "status": "unknown: timeout",
+      "iterations": 4,
+      "seconds": 8.77822100000003,
+      "safe_words": 4,
+      "trap_cuts": 6,
+      "sha256": "f1c4fb0989873645f0856794ad8606a4faa1e632abbed51448e59461c227ee0d"
+    },
+    {
+      "id": "b3_mixed_c4",
+      "file": "joint_fiber_b3_mixed_c4_k2.json",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        2,
+        4
+      ],
+      "status": "unknown: timeout",
+      "iterations": 1,
+      "seconds": 5.017819099999997,
+      "safe_words": 4,
+      "trap_cuts": 3,
+      "sha256": "8e46eb8221cbd4cd5c63b90ce0ed86fcb31f547b193462f3d23046f0b743b7c0"
+    },
+    {
+      "id": "b3_mixed_c5",
+      "file": "joint_fiber_b3_mixed_c5_k2.json",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        0,
+        5
+      ],
+      "status": "uncertified_unsat_encoding",
+      "iterations": 1,
+      "seconds": 2.510091000000102,
+      "safe_words": 4,
+      "trap_cuts": 3,
+      "sha256": "e72182fd1edc72fa93e1d43fd5d3845f36b3887dcd90e8fb033018976c6bbcda"
+    },
+    {
+      "id": "b3_mixed_c6",
+      "file": "joint_fiber_b3_mixed_c6_k2.json",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        0,
+        2
+      ],
+      "status": "uncertified_unsat_encoding",
+      "iterations": 1,
+      "seconds": 0.2495228999999881,
+      "safe_words": 4,
+      "trap_cuts": 3,
+      "sha256": "f46c3e6bc4206450a58d0bb2021b5ef05c095bb9131e2e676e9e73c6e190c322"
+    },
+    {
+      "id": "b3_mixed_c7",
+      "file": "joint_fiber_b3_mixed_c7_k2.json",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        0,
+        2,
+        5
+      ],
+      "status": "unknown: timeout",
+      "iterations": 1,
+      "seconds": 5.01515280000001,
+      "safe_words": 4,
+      "trap_cuts": 3,
+      "sha256": "60290a4a72d7c5b37cf039a2b2fef1eea84f383b0cfc4ccd4f4931b867db8dcf"
+    },
+    {
+      "id": "b3_mixed_c8",
+      "file": "joint_fiber_b3_mixed_c8_k2.json",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        0,
+        2,
+        4
+      ],
+      "status": "unknown: timeout",
+      "iterations": 1,
+      "seconds": 5.016487500000039,
+      "safe_words": 4,
+      "trap_cuts": 3,
+      "sha256": "102f61458efd843b31bc2d26d6fb33088e42ebff6023758b6b569ecbab7f61d1"
+    },
+    {
+      "id": "b3_mixed_c9",
+      "file": "joint_fiber_b3_mixed_c9_k2.json",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        0,
+        1,
+        5
+      ],
+      "status": "unknown: timeout",
+      "iterations": 1,
+      "seconds": 5.021421800000098,
+      "safe_words": 4,
+      "trap_cuts": 3,
+      "sha256": "162f8649477a8dd76fab561a1c29406620fe487297bd19828a92c08bb760ab9a"
+    },
+    {
+      "id": "b3_mixed_c10",
+      "file": "joint_fiber_b3_mixed_c10_k2.json",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        0,
+        1,
+        2
+      ],
+      "status": "uncertified_unsat_encoding",
+      "iterations": 1,
+      "seconds": 0.823972499999968,
+      "safe_words": 4,
+      "trap_cuts": 3,
+      "sha256": "3fc544614fd5fbb3578d9cf56f2fd17b341f3b3d7895fd1c8722dd37a879a481"
+    },
+    {
+      "id": "b3_mixed_c11",
+      "file": "joint_fiber_b3_mixed_c11_k2.json",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        0,
+        1,
+        2,
+        5
+      ],
+      "status": "unknown: timeout",
+      "iterations": 1,
+      "seconds": 5.021545400000036,
+      "safe_words": 4,
+      "trap_cuts": 3,
+      "sha256": "37c713d75388e64945f378fab915ad50456442066222d3c48e8aa1e583f0d846"
+    },
+    {
+      "id": "b3_in_c1",
+      "file": "joint_fiber_b3_in_c1_k2.json",
+      "B": [
+        0,
+        1,
+        2
+      ],
+      "C": [
+        4
+      ],
+      "status": "unknown: timeout",
+      "iterations": 1,
+      "seconds": 5.057975800000008,
+      "safe_words": 4,
+      "trap_cuts": 0,
+      "sha256": "98dd21087d5cb0f4c6a390e7437ba2e9ccd06f8cfa70b453b999b517c6077dfd"
+    },
+    {
+      "id": "b3_in_c2",
+      "file": "joint_fiber_b3_in_c2_k2.json",
+      "B": [
+        0,
+        1,
+        2
+      ],
+      "C": [
+        0,
+        4
+      ],
+      "status": "uncertified_unsat_encoding",
+      "iterations": 1,
+      "seconds": 0.20815849999996772,
+      "safe_words": 4,
+      "trap_cuts": 0,
+      "sha256": "ea91fcf6e9b6d6c76a5a00f51a9e5c9dd6f036abcf5dbef46f0eb0346c51ec1e"
+    },
+    {
+      "id": "b3_in_c3",
+      "file": "joint_fiber_b3_in_c3_k2.json",
+      "B": [
+        0,
+        1,
+        2
+      ],
+      "C": [
+        0,
+        1,
+        4
+      ],
+      "status": "uncertified_unsat_encoding",
+      "iterations": 1,
+      "seconds": 0.4626822999999831,
+      "safe_words": 4,
+      "trap_cuts": 0,
+      "sha256": "a24f0c37e90d7222cb887382531704c6df3c81f26a4b884564cc1fbf7da8f4f1"
+    }
+  ],
+  "source_sha256": {
+    "run_joint_fiber_slices.py": "75c355ef7a5c18c0536d0c3a5997ccac39e31ecbcef34fed9fb2b90277d06bbe",
+    "enumerate_joint_fiber_orbits.py": "ec5143f659de8c63dffcb24bbaf787529c9d67f023ee2f3fd9a9ee90a082ad00",
+    "synthesize_flag_boolean.py": "3149d60b6145f56ba1e18d5327837730c29fb9dbf915c77147c5254eb4a5535f",
+    "alphabet_check.py": "5a93272df21227051061770d3edc48fd2aaeabc6062c4a385593689444b538df",
+    "joint_fiber_orbits.json": "5288927749db4c028b01ffcb3134bfe661fd05d5946ba30a63826ab1d22d08b9"
+  },
+  "scope": "All requested joint fiber cases admitted, including overlaps. Bounded synthesis only: neither timeout nor uncertified UNSAT is an upper certificate."
+}

@@ -1,0 +1,135 @@
+{
+  "status": "pass",
+  "parameter": [
+    13,
+    9,
+    1
+  ],
+  "admission": {
+    "original_joint_orbits": 43,
+    "labelled_ordered_pairs": 4806,
+    "excluded_labelled_pairs": 6,
+    "excluded_joint": "b1_in_c2",
+    "alphabet": "arbitrary finite",
+    "binary_third_profiles_discharged": 3,
+    "binary_earlier_profile_pairs_discharged": 42,
+    "third_profiles": [
+      [
+        2
+      ],
+      [
+        4
+      ],
+      [
+        2,
+        4
+      ]
+    ],
+    "cover_floors_h1_through10": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      3,
+      4
+    ]
+  },
+  "third_intersection_controls": {
+    "original_B1_B2_third_orbits": 235,
+    "complete_labelled_D_choices": 1482,
+    "literal_nine_set_intersection_tests": 177512,
+    "excluded_third_orbits": 11,
+    "excluded_canonical_labelled_D_choices": 30,
+    "excluded_profiles": [
+      "b1_out_c2_third1",
+      "b1_in_c1_third1",
+      "b1_in_c2_third1",
+      "b1_in_c2_third2",
+      "b1_in_c2_third3",
+      "b1_in_c3_third1",
+      "b2_mixed_c2_third1",
+      "b2_mixed_c7_third2",
+      "b2_mixed_c9_third10",
+      "b2_in_c4_third10",
+      "b2_in_c6_third4"
+    ],
+    "remaining_arbitrary_alphabet_geometries_in_this_inventory": 224,
+    "scope": "The235-orbit B1/B2 inventory, including extra Boolean-fiber shapes; B3 is not included."
+  },
+  "complete_small_row_controls": [
+    {
+      "n": 2,
+      "alphabet_size": 2,
+      "complete_ordered_row_assignments": 16,
+      "strong_sync_models": 6,
+      "forbidden_cover_controls": 6,
+      "independent_actual_subset_BFS_controls": 6
+    },
+    {
+      "n": 3,
+      "alphabet_size": 2,
+      "complete_ordered_row_assignments": 729,
+      "strong_sync_models": 240,
+      "forbidden_cover_controls": 1440,
+      "independent_actual_subset_BFS_controls": 256
+    },
+    {
+      "n": 4,
+      "alphabet_size": 2,
+      "complete_ordered_row_assignments": 65536,
+      "strong_sync_models": 18648,
+      "forbidden_cover_controls": 522144,
+      "independent_actual_subset_BFS_controls": 704
+    },
+    {
+      "n": 3,
+      "alphabet_size": 3,
+      "complete_ordered_row_assignments": 19683,
+      "strong_sync_models": 13218,
+      "forbidden_cover_controls": 79308,
+      "independent_actual_subset_BFS_controls": 256
+    }
+  ],
+  "frontier_controls": {
+    "frontier_certificates": 290,
+    "distinct_row_models": 147,
+    "forbidden_cover_controls": 123545,
+    "protected_pair_bound_controls": 290,
+    "scope": "All290 existing verified frontier examples; repeated row models are cached, no claim of290 distinct automata."
+  },
+  "seeded_larger_alphabet_controls": {
+    "seed": 20261009,
+    "proposed_models": 300,
+    "strong_sync_models": 152,
+    "forbidden_cover_controls": 25286,
+    "n_range": [
+      4,
+      9
+    ],
+    "alphabet_range": [
+      2,
+      4
+    ],
+    "scope": "Seeded controls, not exhaustive beyond the separately listed domains."
+  },
+  "source_sha256": {
+    "check_compression_cover_floor.py": "2277db686879ff572521cb57f45bafaa2973b01877978bb3e0afe98cb0267a2d",
+    "enumerate_compression_cover_floor.py": "ead70553bfa0cc89f40072bce5a3ca3d4447c84fb5ef2827ea8d69c084f99f8b",
+    "compression_cover_floor_inventory.json": "f5568bb35c2191996af35ecc288174e4deedaf18f7a4a8cc035ff0a480b0d0b9",
+    "compression_cover_primary_source.json": "46d312e9482895d7b15ebf183f1f6310cda53ce17f55857b71e0a0bf93b13122",
+    "COMPRESSION_COVER_FLOOR.md": "19d9e05c70a0ec5cafa7f9faf8d85baf0a32cc977302d192762407bd2211c26d",
+    "joint_fiber_orbits.json": "337c10463e9e7861d2cbc91cd9aba085d231a0a5173628340b5b283747b161b4",
+    "small_first_third_inventory.json": "ea00650e65207784313446cec6bf6d38b6f48223b327dcc218e9c6f34cf703c1",
+    "frontier_certificates.json": "a693fb99f497365d745e5885be495e89c0796bda7b6c70e80c2a14149f1ea204",
+    "alphabet_check.py": "5a93272df21227051061770d3edc48fd2aaeabc6062c4a385593689444b538df",
+    "ENTRY_FIBER_FLAG.md": "b27eb51977104cd68aaff2e2f37db10c50bbf4a4dd4320502b15b0f609a01bbf",
+    "SECOND_ENTRANCE_FIBER.md": "664e379a346274ec88c59130741dc43251717eb53a16979198b76e18a165f34b",
+    "LOCAL_EQUALITY_FLAG.md": "f34cf260276c6551266564c1ee2264dc823aeaa4f33b4ae8f8261aedeec596a8",
+    "CODIMENSION_FOUR_P5_DICHOTOMY.md": "c404c5cb5059d50ed8c08d3deec712392fe08fcf34c33c078286e2abde2fe6af"
+  },
+  "scope": "Known compression-theorem cover floor and complete arbitrary-alphabet whole-joint exclusion. Finite controls supplement the symbolic argument; no full13-state scan, new F value or numerical alphabet separation."
+}

@@ -1,0 +1,84 @@
+{
+  "status": "diagnostic_slices_finished",
+  "n": 13,
+  "s": 9,
+  "r": 1,
+  "target": 12,
+  "alphabet_size": 3,
+  "requested_cases": [
+    "b1_out",
+    "b1_in",
+    "b2_mixed",
+    "b2_in",
+    "b3_mixed",
+    "b3_in"
+  ],
+  "reports": [
+    {
+      "case": "b1_out",
+      "file": "fiber_slice_b1_out_k3.json",
+      "status": "unknown: timeout",
+      "iterations": 6,
+      "seconds": 28.709342499998456,
+      "safe_words": 6,
+      "trap_cuts": 4,
+      "sha256": "bcc980409d3b8324495900ab7df530057e7c21e448fe6ad465ff1b93f3907877"
+    },
+    {
+      "case": "b1_in",
+      "file": "fiber_slice_b1_in_k3.json",
+      "status": "unknown: timeout",
+      "iterations": 6,
+      "seconds": 50.18608509999467,
+      "safe_words": 0,
+      "trap_cuts": 5,
+      "sha256": "23a23b9493630e575f8cbc6f3fd7734ae47a61443d50d3e98dbce26a2a8cb2fc"
+    },
+    {
+      "case": "b2_mixed",
+      "file": "fiber_slice_b2_mixed_k3.json",
+      "status": "unknown: timeout",
+      "iterations": 8,
+      "seconds": 60.429271699998935,
+      "safe_words": 7,
+      "trap_cuts": 5,
+      "sha256": "be20e8c8039439d7ee51e1c1df721fde15d67234282c45265fd4455837c1429f"
+    },
+    {
+      "case": "b2_in",
+      "file": "fiber_slice_b2_in_k3.json",
+      "status": "unknown: timeout",
+      "iterations": 1,
+      "seconds": 20.05795809999836,
+      "safe_words": 0,
+      "trap_cuts": 0,
+      "sha256": "7a37ce5e64188f04cef61b16cd98d7b954475f8445ccba52f68fd453f62b2d52"
+    },
+    {
+      "case": "b3_mixed",
+      "file": "fiber_slice_b3_mixed_k3.json",
+      "status": "unknown: timeout",
+      "iterations": 1,
+      "seconds": 20.05081159999827,
+      "safe_words": 0,
+      "trap_cuts": 0,
+      "sha256": "ce63f1738a4a881b883d35adb12f7aa9bd7d7be5ebe6b87dab179685bf8796c6"
+    },
+    {
+      "case": "b3_in",
+      "file": "fiber_slice_b3_in_k3.json",
+      "status": "unknown: timeout",
+      "iterations": 1,
+      "seconds": 20.053998399998818,
+      "safe_words": 0,
+      "trap_cuts": 0,
+      "sha256": "fe8f865cddb9e5f2ded31366103d6841aab8619fc0cefccc3baf9cfe847117f0"
+    }
+  ],
+  "source_sha256": {
+    "run_fiber_slices.py": "687303e4c6309a32ca0b32ed4288853ec7a17e31a869afca66fb8209b71cb329",
+    "synthesize_flag_boolean.py": "dbb9ee8897871b5c19f64fb485d0a7be5fc9d40ebea09037630f20dac837e4b9",
+    "alphabet_check.py": "5a93272df21227051061770d3edc48fd2aaeabc6062c4a385593689444b538df"
+  },
+  "scope": "Complete symbolic six-slice admission, but bounded synthesis only; no negative upper certificate."
+}

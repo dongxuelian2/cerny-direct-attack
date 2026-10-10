@@ -1,0 +1,421 @@
+{
+  "status": "pass",
+  "archive": "certificates/singleton_c_d15_e12_unrestricted.zip",
+  "sha256": "a027289ef41aeac6bf9231d7d9dfeac907fd5c2973c8ceb82dfd7ec78758f564",
+  "files": 25,
+  "checksum_entries": 24,
+  "data_files_reproduced_byte_identically": 3,
+  "audits_reproduced_byte_identically": 3,
+  "complete_individual_rows": 3384,
+  "complete_binary_ordered_controls_through_n9": 619776,
+  "complete_distinct_ternary_supplier_sets_through_n7": 100736,
+  "seeded_larger_alphabet_controls": 24000,
+  "labelled_extensions_checked": 32,
+  "whole_third_types_excluded": 0,
+  "normalized_binary_fourth_pairs_excluded": 18,
+  "runs": [
+    {
+      "script": "enumerate_b1_c4_fourth.py",
+      "exit": 0,
+      "outputs": []
+    },
+    {
+      "script": "check_b1_c4_fourth.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "status": "pass",
+          "geometric_orbits": 20,
+          "labelled_E": 131,
+          "all_subset_masks_tested": 536445,
+          "augmented_rank_tests": 5757,
+          "counts": [
+            {
+              "D": [
+                1
+              ],
+              "geometric_orbits": 3,
+              "labelled_E": 17,
+              "all_alphabet_excluded_E": [
+                [
+                  2
+                ],
+                [
+                  5
+                ],
+                [
+                  2,
+                  5
+                ]
+              ],
+              "remaining_unrestricted_E": [],
+              "remaining_binary_E": [],
+              "remaining_binary_field_pairs": 0,
+              "original_third_pairs": 14,
+              "remaining_original_third_pairs": 0
+            },
+            {
+              "D": [
+                5
+              ],
+              "geometric_orbits": 5,
+              "labelled_E": 31,
+              "all_alphabet_excluded_E": [
+                [
+                  1
+                ]
+              ],
+              "remaining_unrestricted_E": [
+                [
+                  6
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  1,
+                  2,
+                  6
+                ]
+              ],
+              "remaining_binary_E": [
+                [
+                  6
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  1,
+                  2,
+                  6
+                ]
+              ],
+              "remaining_binary_field_pairs": 164,
+              "original_third_pairs": 14,
+              "remaining_original_third_pairs": 14
+            },
+            {
+              "D": [
+                1,
+                2
+              ],
+              "geometric_orbits": 2,
+              "labelled_E": 24,
+              "all_alphabet_excluded_E": [],
+              "remaining_unrestricted_E": [
+                [
+                  5
+                ],
+                [
+                  1,
+                  5
+                ]
+              ],
+              "remaining_binary_E": [
+                [
+                  5
+                ],
+                [
+                  1,
+                  5
+                ]
+              ],
+              "remaining_binary_field_pairs": 50,
+              "original_third_pairs": 14,
+              "remaining_original_third_pairs": 14
+            },
+            {
+              "D": [
+                1,
+                5
+              ],
+              "geometric_orbits": 7,
+              "labelled_E": 31,
+              "all_alphabet_excluded_E": [
+                [
+                  2
+                ]
+              ],
+              "remaining_unrestricted_E": [
+                [
+                  6
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  1,
+                  2,
+                  6
+                ]
+              ],
+              "remaining_binary_E": [
+                [
+                  6
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  1,
+                  2,
+                  6
+                ]
+              ],
+              "remaining_binary_field_pairs": 118,
+              "original_third_pairs": 14,
+              "remaining_original_third_pairs": 14
+            },
+            {
+              "D": [
+                1,
+                2,
+                5
+              ],
+              "geometric_orbits": 3,
+              "labelled_E": 28,
+              "all_alphabet_excluded_E": [],
+              "remaining_unrestricted_E": [
+                [
+                  6
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  1,
+                  2,
+                  6
+                ]
+              ],
+              "remaining_binary_E": [
+                [
+                  6
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  1,
+                  2,
+                  6
+                ]
+              ],
+              "remaining_binary_field_pairs": 27,
+              "original_third_pairs": 14,
+              "remaining_original_third_pairs": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "script": "enumerate_c4_d15_e12_unrestricted.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "status": "complete_D15_E12_individual_control_domains",
+          "rows": 3384
+        }
+      ]
+    },
+    {
+      "script": "check_c4_d15_e12_unrestricted.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "n": 6,
+          "individual_rows": 40,
+          "complete_binary_ordered_alphabets": 256,
+          "complete_distinct_ternary_supplier_sets": 3456,
+          "seeded_larger_alphabets": 6000,
+          "strongly_connected_controls": 6321,
+          "synchronizing_controls": 6321,
+          "contradiction_word_cases": {
+            "supplier_enters_guard1": 3699,
+            "T_2_to_1_preimage2_is5": 1517,
+            "preserver_5_to_1_fixed2": 1105
+          }
+        },
+        {
+          "n": 7,
+          "individual_rows": 128,
+          "complete_binary_ordered_alphabets": 2048,
+          "complete_distinct_ternary_supplier_sets": 97280,
+          "seeded_larger_alphabets": 6000,
+          "strongly_connected_controls": 48012,
+          "synchronizing_controls": 46896,
+          "contradiction_word_cases": {
+            "kernel_inside_O": 32608,
+            "supplier_enters_guard1": 8462,
+            "T_2_to_1_ordinary_preimage2": 2291,
+            "T_2_to_1_preimage2_is5": 1784,
+            "preserver_5_to_1_fixed2": 1231,
+            "preserver_5_to_1_free_preimage2": 1636
+          }
+        },
+        {
+          "n": 8,
+          "individual_rows": 528,
+          "complete_binary_ordered_alphabets": 27648,
+          "complete_distinct_ternary_supplier_sets": 0,
+          "seeded_larger_alphabets": 6000,
+          "strongly_connected_controls": 7933,
+          "synchronizing_controls": 7807,
+          "contradiction_word_cases": {
+            "kernel_inside_O": 5675,
+            "supplier_enters_guard1": 1138,
+            "T_2_to_1_ordinary_preimage2": 802,
+            "T_2_to_1_preimage2_is5": 255,
+            "preserver_5_to_1_fixed2": 17,
+            "preserver_5_to_1_free_preimage2": 46
+          }
+        },
+        {
+          "n": 9,
+          "individual_rows": 2688,
+          "complete_binary_ordered_alphabets": 589824,
+          "complete_distinct_ternary_supplier_sets": 0,
+          "seeded_larger_alphabets": 6000,
+          "strongly_connected_controls": 100874,
+          "synchronizing_controls": 98834,
+          "contradiction_word_cases": {
+            "kernel_inside_O": 69979,
+            "supplier_enters_guard1": 15460,
+            "T_2_to_1_ordinary_preimage2": 12563,
+            "T_2_to_1_preimage2_is5": 2834,
+            "preserver_5_to_1_free_preimage2": 31,
+            "preserver_5_to_1_fixed2": 7
+          }
+        },
+        {
+          "status": "pass",
+          "parameter": [
+            13,
+            9,
+            1
+          ],
+          "B": [
+            0
+          ],
+          "C": [
+            4
+          ],
+          "D": [
+            1,
+            5
+          ],
+          "E": [
+            1,
+            2
+          ],
+          "unrestricted_E12_paper_excluded": true,
+          "complete_individual_fields": 12,
+          "complete_individual_rows": 3384,
+          "complete_binary_ordered_alphabets_through_n9": 619776,
+          "complete_distinct_ternary_supplier_sets_through_n7": 100736,
+          "seeded_larger_alphabets": 24000,
+          "seed": 20261010,
+          "constructive_examples": 80,
+          "boundary_depths": [
+            7,
+            4
+          ],
+          "scope": "Paper proof excludes unrestricted conditional D15/E12 fourth geometry only. Complete finite rows/supplier alphabets and seeded controls support the proof; remaining E, whole third/joint and numerical F are unresolved."
+        }
+      ]
+    },
+    {
+      "script": "check_singleton_c_d15_e12_transport.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "status": "pass",
+          "parameter": [
+            13,
+            9,
+            1
+          ],
+          "excluded_root_E12_extensions": [
+            "b1_in_c1_third4",
+            "b1_out_c2_third4"
+          ],
+          "complete_root_extension_cuts": 2,
+          "normalized_binary_fourth_pairs_excluded": 18,
+          "labelled_field_transports_checked": 32,
+          "Boolean_identities_checked": 128,
+          "remaining_C4_D15_E": [
+            [
+              6
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              1,
+              2,
+              6
+            ]
+          ],
+          "remaining_C4_D15_geometries": 5,
+          "remaining_C4_D15_E_labels": 29,
+          "remaining_C4_D15_binary_pairs": 109,
+          "whole_third_types_removed": 0,
+          "binary_parent_pairs_removed": 0,
+          "scope": "Two normalized arbitrary-alphabet E12 fourth cuts only. All D15 parent profiles remain admitted through other E. Broad third/joint counts and numerical F extrema unchanged."
+        }
+      ]
+    }
+  ],
+  "source_sha256": {
+    "check_singleton_c_d15_e12_certificate_package.py": "bccfac1285c0289059151ac709da63086f4bdbdc6f7ef1cea4cd300303f43724"
+  }
+}

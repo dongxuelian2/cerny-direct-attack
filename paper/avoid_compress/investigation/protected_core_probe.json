@@ -1,0 +1,294 @@
+{
+  "tested": 770,
+  "best": {
+    "12": {
+      "s": 8,
+      "r": 1,
+      "largest_local_value_in_scope": 11,
+      "unrestricted_upper": 11
+    },
+    "13": {
+      "s": 9,
+      "r": 1,
+      "largest_local_value_in_scope": 11,
+      "unrestricted_upper": 12
+    },
+    "14": {
+      "s": 10,
+      "r": 1,
+      "largest_local_value_in_scope": 11,
+      "unrestricted_upper": 13
+    },
+    "15": {
+      "s": 11,
+      "r": 1,
+      "largest_local_value_in_scope": 11,
+      "unrestricted_upper": 14
+    },
+    "16": {
+      "s": 12,
+      "r": 1,
+      "largest_local_value_in_scope": 11,
+      "unrestricted_upper": 15
+    }
+  },
+  "accepted": [
+    {
+      "n": 12,
+      "s": 8,
+      "r": 1,
+      "alphabet_size": 2,
+      "rows": [
+        [
+          1,
+          0,
+          2,
+          3,
+          4,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          5
+        ],
+        [
+          8,
+          0,
+          1,
+          2,
+          3,
+          6,
+          7,
+          4,
+          9,
+          10,
+          4,
+          11
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "A": [
+        0
+      ],
+      "value": 11,
+      "compression": 11,
+      "reaching": "baaaaaabbbaaaa",
+      "attaining": "aaaaaabaaab",
+      "reset": "bababaaaababaaababababaaaabbbbbbababaaaabbbbbbabaaabaaab",
+      "state_scores": {
+        "0": 11,
+        "1": 10,
+        "2": 9,
+        "3": 8,
+        "4": 7,
+        "5": 1,
+        "6": 2,
+        "7": 3
+      }
+    },
+    {
+      "n": 12,
+      "s": 8,
+      "r": 1,
+      "alphabet_size": 2,
+      "rows": [
+        [
+          0,
+          2,
+          1,
+          3,
+          4,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          5
+        ],
+        [
+          8,
+          0,
+          1,
+          2,
+          3,
+          6,
+          7,
+          4,
+          9,
+          10,
+          4,
+          11
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "A": [
+        0
+      ],
+      "value": 11,
+      "compression": 11,
+      "reaching": "baaaaaabbbaaaa",
+      "attaining": "aaaaaabaaab",
+      "reset": "baaabbaaabbaaabbaabababaaaabbbbbababaaaabbbbbbbbaaabaaab",
+      "state_scores": {
+        "0": 11,
+        "1": 10,
+        "2": 9,
+        "3": 8,
+        "4": 7,
+        "5": 1,
+        "6": 2,
+        "7": 3
+      }
+    },
+    {
+      "n": 12,
+      "s": 8,
+      "r": 1,
+      "alphabet_size": 2,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          2,
+          4,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          5
+        ],
+        [
+          8,
+          0,
+          1,
+          2,
+          3,
+          6,
+          7,
+          4,
+          9,
+          10,
+          4,
+          11
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "A": [
+        0
+      ],
+      "value": 11,
+      "compression": 11,
+      "reaching": "baaaaaabbbaaaa",
+      "attaining": "aaaaaabaaab",
+      "reset": "bababaaaababaaababababaaaababbbbababaaaabbbbbbbbaaabaaab",
+      "state_scores": {
+        "0": 11,
+        "1": 10,
+        "2": 9,
+        "3": 8,
+        "4": 7,
+        "5": 1,
+        "6": 2,
+        "7": 3
+      }
+    },
+    {
+      "n": 12,
+      "s": 8,
+      "r": 1,
+      "alphabet_size": 2,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          3,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          5
+        ],
+        [
+          8,
+          0,
+          1,
+          2,
+          3,
+          6,
+          7,
+          4,
+          9,
+          10,
+          4,
+          11
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "A": [
+        0
+      ],
+      "value": 11,
+      "compression": 11,
+      "reaching": "baaaaaabbbaaaa",
+      "attaining": "aaaaaabaaab",
+      "reset": "bababaaaabbbaaabaaababaaaabababbbabaaaababbbbbbaaabaaab",
+      "state_scores": {
+        "0": 11,
+        "1": 10,
+        "2": 9,
+        "3": 8,
+        "4": 7,
+        "5": 1,
+        "6": 2,
+        "7": 3
+      }
+    }
+  ],
+  "scope": "Only P transpositions and seven choices of p0 b in one fixed base structure. Failed cases are not upper bounds."
+}

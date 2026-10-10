@@ -1,0 +1,57 @@
+{
+  "status": "pass",
+  "parameter": [
+    13,
+    9,
+    1
+  ],
+  "complete_geometries": 4,
+  "prefix_transports_checked": 53790,
+  "canonical_prefixes": 406,
+  "four_vertex_planes_checked": 24,
+  "literal_letter_maps_checked": 748788,
+  "flag_tree_nodes_checked": 6152,
+  "tree_counts": {
+    "prefix_transports": 53790,
+    "nodes": 6152,
+    "depth_2": 406,
+    "depth_3": 5382,
+    "missing_required_group": 4958,
+    "maximal_graph_not_SC": 786,
+    "internal_nodes": 408,
+    "orbits": 406,
+    "literal_letters": 748788,
+    "depth_4": 16,
+    "depth_5": 60,
+    "depth_6": 144,
+    "depth_7": 144
+  },
+  "new_excluded_third_ids": [
+    "b3_mixed_c3_third1",
+    "b3_mixed_c3_third4",
+    "b3_mixed_c3_third6",
+    "b3_mixed_c3_third9"
+  ],
+  "new_unrestricted_joint_exclusions": [
+    "b3_mixed_c3"
+  ],
+  "remaining_unrestricted_B3_geometries": 1,
+  "remaining_unrestricted_third_geometries": 137,
+  "remaining_unrestricted_joints": 21,
+  "source_sha256": {
+    "check_c3_staircase.py": "87b84e5e4963a970b111af2521a5df6027b580a793a172586b2690a3617cd6e5",
+    "check_b3_staircase.py": "e60a8c1aea412946cf3d3fbb3f8998750e6ca042d899f69661499b72e37a0fe3",
+    "c3_staircase_inventory.json": "4f0bdbbf91c14d1c910c5099238fafb15ed8c7e737824328d09d160b8faaf487",
+    "c3_staircase_prefix_audit.json": "097a6bccd1f27f2dea0b692deb7cdd29d24ffe4a35a3e5cac171f16e8b6c75f7",
+    "c3_staircase_first_inventory.json": "cf50b6c566cde721e4a2c196401ca1820fbdfce7ab6d7407a711e95c66a379df",
+    "c3_staircase_plane_inventory.json": "27f58eec3d23f05c8d40859c92ea2c5ad14c743385f2a3b937001709ae9ba3a2",
+    "b3_inverse_clique_inventory.json": "9ecd3987de54bb51d35afbb1ab266a89e8d4714e53c7d71798104b68abdd470d",
+    "b3_third_cover_inventory.json": "72f7c22ce95ca425221d77e463c737697bebb7b4c9991978eccae0bfaf65c4d1",
+    "c3_staircase_baseline_state.json": "2ca9e84d6df53674db07630c4af24555b80260359381ef36580e9fd870983c0e",
+    "AUXILIARY_AUDIT_20261010_21.json": "f63875728e817220ce884f90df27f3a4776e062366f037b0e8ba5f58ac5c8734",
+    "C3_STAIRCASE_EXCLUSION.md": "619516b4f05e8c520a71b55b1c1452aac69e424fad90e37433bed90a3e24b443",
+    "B3_STAIRCASE_FLAG_EXCLUSION.md": "5455291ed385dafa0f302408d0c7db7d6300f8ea1075c8e326daf442bf8b6318",
+    "b3_staircase_controls_audit.json": "7bdc2fee34696ab0c9e7577a52457567bf3f66890a48e48790a6c276245515ab"
+  },
+  "scope": "Complete arbitrary-alphabet C3 staircase exclusions with all companion fields, literal letters, four-vertex planes and actual R choices. No numerical F value or alphabet separation."
+}

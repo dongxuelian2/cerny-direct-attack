@@ -1,0 +1,176 @@
+{
+  "status": "audited necessary exclusion",
+  "early_type": 3,
+  "state_range": "n>=6",
+  "alphabet": "arbitrary finite",
+  "reachability_not_needed": true,
+  "new_exact_maximum": false,
+  "reports": {
+    "path3_mixing_audit.json": {
+      "status": "pass",
+      "domain_controls": [
+        {
+          "n": 6,
+          "mixing_T": 4,
+          "equality_five": 2,
+          "maximum_domain": 5
+        },
+        {
+          "n": 7,
+          "mixing_T": 18,
+          "equality_five": 6,
+          "maximum_domain": 5
+        }
+      ],
+      "profiles": 24,
+      "distance_vectors": 120,
+      "sole_vector": [
+        4,
+        1,
+        5,
+        3,
+        2
+      ],
+      "all_profiles_flags_and_vectors_match": true,
+      "boundary_control": {
+        "n": 5,
+        "rows": [
+          [
+            1,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            1,
+            4,
+            0,
+            2,
+            3
+          ]
+        ],
+        "S": [
+          1,
+          3
+        ],
+        "reaching": "abbabba",
+        "reset": "abbbbabbbbabbbba",
+        "projected_exit": 5,
+        "actual_compression": 10
+      },
+      "scope": "Mixing-T exclusion controls only; other type-3 branches remain."
+    },
+    "path3_closed_T_audit.json": {
+      "status": "pass",
+      "reports": [
+        {
+          "n": 6,
+          "checks": {
+            "A_mix": 8,
+            "B_mix": 8,
+            "D0_mix": 8,
+            "D2_mix": 8,
+            "f0_at_most_one_good": 168,
+            "f0_kernel_good": 32,
+            "f0_t2_z3": 8,
+            "f0_t3_z2": 8
+          },
+          "maxima": {
+            "A_mix": 3,
+            "B_mix": 3,
+            "D0_mix": 3,
+            "D2_mix": 3,
+            "f0_at_most_one_good": 3,
+            "f0_kernel_good": 3,
+            "f0_t2_z3": 3,
+            "f0_t3_z2": 4
+          },
+          "four_image_equalities": 2
+        },
+        {
+          "n": 7,
+          "checks": {
+            "A_mix": 108,
+            "B_mix": 108,
+            "D0_mix": 108,
+            "D2_mix": 108,
+            "f0_at_most_one_good": 3456,
+            "f0_kernel_good": 432,
+            "f0_t2_z3": 108,
+            "f0_t3_z2": 108
+          },
+          "maxima": {
+            "A_mix": 3,
+            "B_mix": 3,
+            "D0_mix": 3,
+            "D2_mix": 3,
+            "f0_at_most_one_good": 3,
+            "f0_kernel_good": 3,
+            "f0_t2_z3": 3,
+            "f0_t3_z2": 4
+          },
+          "four_image_equalities": 24
+        }
+      ],
+      "actions": 19,
+      "distance_vectors": 24,
+      "candidates": 0,
+      "all_profiles_flags_and_vectors_match": true,
+      "scope": "Closed-T branch plus closed-D0 exclusion; other type-3 branches remain."
+    },
+    "path3_no_T_audit.json": {
+      "status": "pass",
+      "reports": [
+        {
+          "n": 6,
+          "B": 6,
+          "D2": 6,
+          "missing0": 120,
+          "triples": 4320,
+          "case_counts": {
+            "t_bad": 2592,
+            "t2": 864,
+            "t3": 864
+          },
+          "maximum_two_step_domain": 4,
+          "mixing_D0_checks": 24
+        },
+        {
+          "n": 7,
+          "B": 24,
+          "D2": 24,
+          "missing0": 720,
+          "triples": 414720,
+          "case_counts": {
+            "t_bad": 276480,
+            "t2": 69120,
+            "t3": 69120
+          },
+          "maximum_two_step_domain": 4,
+          "mixing_D0_checks": 432
+        }
+      ],
+      "independent_native_counts_match": true,
+      "scope": "Finite controls of the symbolic no-T counting proof; no new exact maximum."
+    }
+  },
+  "sanitizer_reruns_identical": 3,
+  "source_sha256": {
+    "PATH3_EARLY_EXCLUSION.md": "8c81cb78f8596d03c0af0f69d754968940a4924ad7b81880e2329ff167044a73",
+    "path3_mixing_actions.py": "5f223d5da2a9d34bda2831d308f3e15e3516c224203f2e70436f9b44217b9855",
+    "audit_path3_mixing.cpp": "bd8d5250bd31674b38b1a8b45ce82242662a7eec6ed404e222ef5a50b2ae6563",
+    "audit_path3_mixing.py": "821509ece9cbc150205e5eb3ba8ccd20bab716c19b9288ab3ef8188b19f58518",
+    "path3_closed_T_actions.py": "55edc4eab734db542570781dbe08c7cea0dab11b1cb2d7a04e8584593238dee5",
+    "audit_path3_closed_T.cpp": "b49259c31dd7ecf7b374d7c2b700b4ba551ba7a2d92b3c37b26f30c11eb29982",
+    "audit_path3_closed_T_domains.py": "d4bcc6e2ddbec2eb2bb5ffd3845b52a34afdd6febebc3d89618ac99ae16c3f5b",
+    "audit_path3_no_T.cpp": "9480c1fe63e86ced0258976022d94b615e51d86c0ca61520d397ddff25e621bb",
+    "audit_path3_no_T.py": "409a2060373d2cec15a2da31d866299df9e1ec0aeeeb586a0926ac133584b079",
+    "early_pair_alphabet_pool.py": "3613cd1c6d344f96d080d982726ce2e9a72e0152ab9c2ba7dd6ad4a0577802d0",
+    "early_alphabet_pool_n6.json": "fed321f4dacf51bd0223bb79bbd0e5b0fd7e19cb6675e006d94053422cadbc0a",
+    "early_alphabet_pool_n7.json": "cf9afaf91f1c34b5a0a037fd9e9c57100b9fb9b4d730443412ce116208da2757",
+    "verify_certificates.py": "bac918ddbbc97057660a16f0c27a1374fee1b69dcfeec5a14bcc4613244010cf"
+  },
+  "scope": "Audited component exclusion. The combined all-type proof is accepted; this component alone is not an all-parameter classification.",
+  "current_combined_authority": "CODIMENSION_THREE_UPPER_PROOF.md and codimension_three_upper_audit.json: all nine types excluded; exact F_bin=F=min(n-r,9) at codimension three."
+}

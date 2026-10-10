@@ -1,0 +1,98 @@
+{
+  "status": "pass",
+  "state_range": "all finite nonempty Q; kernel pair requires n>=2",
+  "complete_partition_pairs": 77598,
+  "complete_map_output_instances": 93444,
+  "complete_protected_set_cases": 1198200,
+  "stats": [
+    {
+      "n": 2,
+      "indexed_atoms": 1,
+      "input_output_partition_pairs": 1,
+      "map_output_partition_instances": 4,
+      "protected_set_cases": 4
+    },
+    {
+      "n": 2,
+      "indexed_atoms": 2,
+      "input_output_partition_pairs": 16,
+      "map_output_partition_instances": 16,
+      "protected_set_cases": 64
+    },
+    {
+      "n": 2,
+      "indexed_atoms": 3,
+      "input_output_partition_pairs": 81,
+      "map_output_partition_instances": 36,
+      "protected_set_cases": 324
+    },
+    {
+      "n": 2,
+      "indexed_atoms": 4,
+      "input_output_partition_pairs": 256,
+      "map_output_partition_instances": 64,
+      "protected_set_cases": 1024
+    },
+    {
+      "n": 3,
+      "indexed_atoms": 1,
+      "input_output_partition_pairs": 1,
+      "map_output_partition_instances": 27,
+      "protected_set_cases": 8
+    },
+    {
+      "n": 3,
+      "indexed_atoms": 2,
+      "input_output_partition_pairs": 64,
+      "map_output_partition_instances": 216,
+      "protected_set_cases": 512
+    },
+    {
+      "n": 3,
+      "indexed_atoms": 3,
+      "input_output_partition_pairs": 729,
+      "map_output_partition_instances": 729,
+      "protected_set_cases": 5832
+    },
+    {
+      "n": 3,
+      "indexed_atoms": 4,
+      "input_output_partition_pairs": 4096,
+      "map_output_partition_instances": 1728,
+      "protected_set_cases": 32768
+    },
+    {
+      "n": 4,
+      "indexed_atoms": 1,
+      "input_output_partition_pairs": 1,
+      "map_output_partition_instances": 256,
+      "protected_set_cases": 16
+    },
+    {
+      "n": 4,
+      "indexed_atoms": 2,
+      "input_output_partition_pairs": 256,
+      "map_output_partition_instances": 4096,
+      "protected_set_cases": 4096
+    },
+    {
+      "n": 4,
+      "indexed_atoms": 3,
+      "input_output_partition_pairs": 6561,
+      "map_output_partition_instances": 20736,
+      "protected_set_cases": 104976
+    },
+    {
+      "n": 4,
+      "indexed_atoms": 4,
+      "input_output_partition_pairs": 65536,
+      "map_output_partition_instances": 65536,
+      "protected_set_cases": 1048576
+    }
+  ],
+  "source_sha256": {
+    "check_exact_atom_kernel_compatibility.py": "c0f6854c7526877f37cc9b95e74c358a62680ca1d04def882cff1e3caafffe09",
+    "EXACT_ATOM_KERNEL_COMPATIBILITY.md": "8e5f0c0ba700bfc36c0c84dd7c933193bf6e0b093f992c7907c0f6054ff275b0"
+  },
+  "scope": "Uniform exact letter-atom realizability criterion, validated against all indexed small partitions/maps. No automaton equality claim."
+}

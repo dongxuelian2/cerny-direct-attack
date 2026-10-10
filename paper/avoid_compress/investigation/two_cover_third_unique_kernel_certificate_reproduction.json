@@ -1,0 +1,15 @@
+{
+  "status": "pass",
+  "archive": "certificates/two_cover_third_unique_kernel.zip",
+  "sha256": "64b6ba991261c7415a40d4c159318b55d890cf668341e1b90250ace8ed3c9491",
+  "files": 34,
+  "checksum_entries": 33,
+  "audits_reproduced_byte_identically": 1,
+  "checker_exit": 0,
+  "two_cover_geometries": 43,
+  "fields_reconstructed": 311,
+  "global_kernel_classes": 765,
+  "source_sha256": {
+    "package_two_cover_third_unique_kernel_certificate.py": "fa523cce687d2d367ec1136d528f3c15bb499b906642583752b797eae4fdd002"
+  }
+}

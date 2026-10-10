@@ -1,0 +1,76 @@
+{
+  "status": "audited necessary exclusions",
+  "types": [
+    4,
+    5
+  ],
+  "type4_state_range": "n>=5",
+  "type4_requires_synchronization": true,
+  "type4_requires_strong_connectivity": false,
+  "type5_requires_synchronization": false,
+  "new_exact_maximum": false,
+  "type4_report": {
+    "status": "pass",
+    "domain_controls": [
+      {
+        "n": 6,
+        "compatible_letters": 143,
+        "missing1_letters": 12,
+        "case_counts": {
+          "t_bad": 4,
+          "closed": 4,
+          "mixing": 4
+        }
+      },
+      {
+        "n": 7,
+        "compatible_letters": 815,
+        "missing1_letters": 48,
+        "case_counts": {
+          "t_bad": 24,
+          "closed": 8,
+          "mixing": 16
+        }
+      }
+    ],
+    "profile_counts": [
+      33,
+      37
+    ],
+    "distance_vectors_per_domain": 720,
+    "candidates": 0,
+    "all_profiles_flags_and_vectors_match": true,
+    "scope": "Finite controls of a separate uniform type-4 reduction; no new exact maximum."
+  },
+  "type5_report": {
+    "status": "pass",
+    "reports": [
+      {
+        "n": 6,
+        "compatible_letters": 63,
+        "new_02_inverse_pairs": 0
+      },
+      {
+        "n": 7,
+        "compatible_letters": 239,
+        "new_02_inverse_pairs": 0
+      }
+    ],
+    "scope": "Finite control of a size-independent elementary proof; no new exact maximum."
+  },
+  "type4_sanitizer_report_identical": true,
+  "source_sha256": {
+    "TYPE4_EARLY_EXCLUSION.md": "21411862336e24aae431bf5b63676a6c734453b6b9e2208d6d57322985b4ab67",
+    "type4_reduced_actions.py": "8f0a031bd789102b30ee9b463d24cb07045eaa2a36f5edeb4b6286d3fad33bd3",
+    "audit_type4_actions.cpp": "d9318b7ea14f51b6264427ea9427436f90b4664b95fb5b095a2af92f12bafba6",
+    "audit_type4_domains.py": "0fa1edbea10d05fdead5d53cf3f2adb8cbcb7ce7e8b8f997a2d9c54a5c42e0c0",
+    "TYPE5_EARLY_EXCLUSION.md": "4e6a90d601a869aab502875bccbe760f3e7f0fc0802a11ec756625aa09317be3",
+    "check_type5_exclusion.py": "1dc51cfab97ebb82e4eb5a03b688b193baa158cf5f8c1c9561e599eca3d97dc1",
+    "early_pair_alphabet_pool.py": "3613cd1c6d344f96d080d982726ce2e9a72e0152ab9c2ba7dd6ad4a0577802d0",
+    "early_alphabet_pool_n6.json": "fed321f4dacf51bd0223bb79bbd0e5b0fd7e19cb6675e006d94053422cadbc0a",
+    "early_alphabet_pool_n7.json": "cf9afaf91f1c34b5a0a037fd9e9c57100b9fb9b4d730443412ce116208da2757"
+  },
+  "remaining_types": [],
+  "scope": "Audited component exclusion. The combined all-type proof is accepted; this component alone is not an all-parameter classification.",
+  "current_combined_authority": "CODIMENSION_THREE_UPPER_PROOF.md and codimension_three_upper_audit.json: all nine types excluded; exact F_bin=F=min(n-r,9) at codimension three."
+}

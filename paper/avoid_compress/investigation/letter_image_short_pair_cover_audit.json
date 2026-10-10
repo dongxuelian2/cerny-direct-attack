@@ -1,0 +1,53 @@
+{
+  "status": "pass",
+  "uniform_cover_transfer": "all n, h>=0, finite alphabets",
+  "forbidden_protected_image": "n>=4, synchronizing, |K|=2, K covers P5",
+  "complete_n4_map_graph_cover_instances": 262144,
+  "qualifying_map_graph_covers": 173080,
+  "semantic_cover_transfers": 6638520,
+  "semantic_stats": [
+    {
+      "n": 3,
+      "alphabet": 2,
+      "complete_ordered_alphabets": 729,
+      "qualifying_sync_two_cover_cases": 0
+    },
+    {
+      "n": 3,
+      "alphabet": 3,
+      "complete_ordered_alphabets": 19683,
+      "qualifying_sync_two_cover_cases": 0
+    },
+    {
+      "n": 4,
+      "alphabet": 2,
+      "complete_ordered_alphabets": 65536,
+      "qualifying_sync_two_cover_cases": 144
+    }
+  ],
+  "forbidden_image_letter_checks": 288,
+  "missing_output_boundary": {
+    "row": [
+      0,
+      0,
+      2,
+      3
+    ],
+    "graph": [
+      [
+        0,
+        1
+      ]
+    ],
+    "K": []
+  },
+  "source_sha256": {
+    "check_letter_image_short_pair_cover.py": "3baa8bdf08d6d882807edf3e57913efe57621b15702b2b8eceed85b0edf44f78",
+    "LETTER_IMAGE_SHORT_PAIR_COVER.md": "192036c7674d5347b3b2b2325b7daf15d074777bdc78ad0e6734b78209fecdfe",
+    "TWO_COVER_UNIQUE_IMMEDIATE_PAIR.md": "94830c865d87774a5f15ab64c7da04d4a55d3cc06e632a9c5856fb0efc2e9d0c",
+    "two_cover_unique_immediate_pair_audit.json": "e8fc3e11282b31f64e1011ab8adf3c7b1323693e8e5a1b738fcd3563e7a478bf",
+    "TWO_COVER_P3_CLASSIFICATION.md": "17342ebefdef09dfa52894aca2228b9614c0c012e2bdbfa914134510066f2a98",
+    "two_cover_p3_classification_audit.json": "52a4cf499453a4923b3f41ba3fbf8ab872ba7b80016dae81604294cfd89895e4"
+  },
+  "scope": "Uniform elementary cover transfer and credited-refinement consequence; no F value."
+}

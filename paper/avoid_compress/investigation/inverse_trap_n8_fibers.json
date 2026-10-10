@@ -1,0 +1,1 @@
+{"n":8,"s":5,"target":10,"completed":true,"compression_witness_found":false,"first_classes":61,"visited_classes":61,"assignments":171968,"discarded":41088,"leaves":39803,"candidate_strong_sync":0,"rows":[[],[]],"S":[],"orbit_export_mode":false,"seconds":0.0464653,"implementation":"Inverse discovery with a partial reverse-trap cut, numeric pair BFS and recursive covers."}

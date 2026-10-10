@@ -1,0 +1,21 @@
+{
+  "status": "pass",
+  "archive_sha256": "56c34db078e9cdabce0b9ce50f71edbc3af1d0aebb78707d86918025521dbe0d",
+  "archive_files": 17,
+  "checksum_entries": 16,
+  "isolated_checker_exit": 0,
+  "reproduced_audit_byte_identical": true,
+  "checker_output": {
+    "status": "pass",
+    "moving_orbits_n13": 240,
+    "labelled_moving_rows_n13": 40320,
+    "complete_n13_assignments": 27216000,
+    "independent_n9_assignments": 2016,
+    "proof_cases": 7,
+    "remaining_binary": 30,
+    "remaining_unrestricted": 43
+  },
+  "source_sha256": {
+    "check_c7_third_profile_package.py": "816d4f980a7479f57221e52893be719f162c8f3c365decb3e98e3acadf6b0b21"
+  }
+}

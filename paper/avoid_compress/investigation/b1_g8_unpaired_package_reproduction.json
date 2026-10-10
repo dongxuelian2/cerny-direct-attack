@@ -1,0 +1,84 @@
+{
+  "status": "pass",
+  "archive": "certificates/b1_g8_unpaired.zip",
+  "sha256": "995db323d486e16eca3b36a0dc5fbc437d3f8bb704ce565157cf745c47b86472",
+  "files": 21,
+  "checksum_entries": 20,
+  "data_files_reproduced_byte_identically": 2,
+  "audits_reproduced_byte_identically": 1,
+  "complete_coupled_pairs_per_implementation": 110203776,
+  "runs": [
+    {
+      "script": "enumerate_b1_g8_unpaired_rows.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "H": [
+            9
+          ],
+          "raw_individual_rows": 163680,
+          "kept_individual_rows": 39672,
+          "raw_normalized_row_pairs": 1696665600,
+          "kept_normalized_row_pairs": 91664640,
+          "counts": {
+            "uncovered_P5_depth2": 37440,
+            "kept": 39672,
+            "protected_P7_depth2": 38736,
+            "no_single_letter_initial_image": 47616,
+            "protected_P7_depth3": 216
+          }
+        },
+        {
+          "H": [
+            2,
+            9
+          ],
+          "raw_individual_rows": 117120,
+          "kept_individual_rows": 32856,
+          "raw_normalized_row_pairs": 348652800,
+          "kept_normalized_row_pairs": 18539136,
+          "counts": {
+            "protected_P7_depth2": 6192,
+            "kept": 32856,
+            "uncovered_P5_depth2": 52848,
+            "no_single_letter_initial_image": 25152,
+            "protected_P7_depth3": 72
+          }
+        }
+      ]
+    },
+    {
+      "script": "check_b1_g8_unpaired.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "H": [
+            9
+          ],
+          "status": "pass",
+          "complete_pairs": 91664640,
+          "survivors": 0
+        },
+        {
+          "H": [
+            2,
+            9
+          ],
+          "status": "pass",
+          "complete_pairs": 18539136,
+          "survivors": 0
+        },
+        {
+          "status": "pass",
+          "whole_binary_G8_excluded": true,
+          "raw_row_domain": 280800,
+          "complete_coupled_pairs_per_implementation": 110203776,
+          "remaining_E6_F7_field_pairs": 365
+        }
+      ]
+    }
+  ],
+  "source_sha256": {
+    "check_b1_g8_unpaired_package.py": "2c38863a106ac9c49e69d3eb0ef5a478c2a4328e82e5a4ef8dd16ac7d7dfc9b1"
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "status": "pass",
+  "parameter": [
+    13,
+    9,
+    1
+  ],
+  "D": [
+    1,
+    2,
+    5
+  ],
+  "alphabet": "binary only",
+  "binary_E6_E26_excluded": true,
+  "build_flags": [
+    "-std=c++17",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-pedantic"
+  ],
+  "bare_algorithm_controls": 3,
+  "independent_symmetry_checks": 1440,
+  "high_initial_masks_checked": 40320,
+  "all_parent_fourth_pairs": 12,
+  "canonical_raw_rows_sha256": "5427d09185a59a15570e1fdbe6e9e7a668bf47f4f3a83b003f78f01d626eed5d",
+  "canonical_kept_rows_sha256": "560be76750a6755c33b0c6189fb7dff7742385ef931402cf0be3d7beb711a0f3",
+  "pointwise_transports_sha256": "2d36cd13b6af8444b5a5d5b78bd4d140d20b1a066cffbed7e056b8cbcf4958cb",
+  "pointwise_transports_checked": 119520,
+  "complete_pair_scans": [
+    {
+      "E": [
+        6
+      ],
+      "raw_rows": 161280,
+      "kept_rows": 74880,
+      "raw_literal_pair_product": 2133734400,
+      "kept_literal_pair_product": 746496000,
+      "representatives_per_field": [
+        58,
+        134,
+        58,
+        134
+      ],
+      "complete_representative_pairs": 4498560,
+      "parent_field_pairs": 3,
+      "reverse_pair_cases": {
+        "disjoint_initial_mask": 822384,
+        "not_strongly_connected": 3676176
+      },
+      "forward_pair_cases": {
+        "not_strongly_connected": 4498560
+      },
+      "zero_candidates_both_algorithms": true
+    },
+    {
+      "E": [
+        2,
+        6
+      ],
+      "raw_rows": 80640,
+      "kept_rows": 44640,
+      "raw_literal_pair_product": 1219276800,
+      "kept_literal_pair_product": 354585600,
+      "representatives_per_field": [
+        0,
+        58,
+        44,
+        66,
+        0,
+        58,
+        44,
+        66
+      ],
+      "complete_representative_pairs": 2665440,
+      "parent_field_pairs": 9,
+      "reverse_pair_cases": {
+        "disjoint_initial_mask": 1203408,
+        "not_strongly_connected": 1357632,
+        "uncovered_P5_depth3": 52788,
+        "uncovered_P5_depth4": 51612
+      },
+      "forward_pair_cases": {
+        "not_strongly_connected": 2386872,
+        "uncovered_P5_depth2": 83628,
+        "uncovered_P5_depth3": 74256,
+        "uncovered_P5_depth4": 120684
+      },
+      "zero_candidates_both_algorithms": true
+    }
+  ],
+  "raw_individual_rows": 241920,
+  "checked_representative_pairs_per_implementation": 7164000,
+  "source_sha256": {
+    "check_d125_fourth_rows.py": "bf24428f5b9d0825e07014864bcbf0278a850c86bfafe7ef245b9d748233d39e",
+    "enumerate_d125_fourth_rows.py": "2e8226c9af0c51be9cc8b75900bcde633c949d7f8a9f17fb4a40b9d4b43a00b4",
+    "d125_fourth_rows_inventory.json": "95fd6986ab185dcfef971edc9c8f06bb577bb3ebb37d22cb12ec9dc70e28c2a9",
+    "d125_fourth_rows_fields.txt": "8b89411948279add4295637d149542c59f7dee0196f1d889414aecf153f804c9",
+    "check_d125_fourth_rows.cpp": "13c5ed04b2b93afb8453c7a9b03c891deca3f4643573c83894a3fefdd84fe537",
+    "check_d125_fourth_forward.cpp": "26303c5ce1be29db64e8aebb7b4de3de1fac47aaecfa24affed6accb2a19cf60",
+    "D125_ROW_NORMALIZATION.md": "c4ed7d3a51fd7d44513c824909f83566b7dada17af3039e4383195bcb32fedd4",
+    "D125_FOURTH_ROWS.md": "f052ba8887182f877bbbe5fc7f0e1ac874c2ec9bc4a46d3ee309e91f1d0e6855",
+    "b1_c14_nonsingleton_fourth_inventory.json": "0092cf5570c14be895d357afbae3a14dff4af0fa239b0c42e1f5e7bd4a5bdcae",
+    "b1_c14_nonsingleton_fourth_audit.json": "c61f8792d1152eea0eb7de557c9ee6129922e400e898bdb88acd1708ec3da7d3",
+    "B1_C14_NONSINGLETON_D_FOURTH.md": "2d0e3e1ff1595b0efd75a7d0c83cd12d92dc967346dd8d5539699d51e733d16a",
+    "MANDATORY_CORE_ISOLATION.md": "72129f1a810b07a8bcd975e5df353cc1dbc43d063e13c8ff887ba4748bb14537",
+    "mandatory_core_isolation_audit.json": "67d7c82cae127c23260a3f7b6affe3052a1afef728cad8f49fd54d27e3fa9f54",
+    "LOCAL_EQUALITY_FLAG.md": "f34cf260276c6551266564c1ee2264dc823aeaa4f33b4ae8f8261aedeec596a8",
+    "ENTRY_FIBER_FLAG.md": "b27eb51977104cd68aaff2e2f37db10c50bbf4a4dd4320502b15b0f609a01bbf"
+  },
+  "scope": "Complete binary D125/E6,E26 negatives, including all twelve parent fields. Unrestricted alphabets and other D types remain; no global F value."
+}

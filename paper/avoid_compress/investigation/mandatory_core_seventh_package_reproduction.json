@@ -1,0 +1,391 @@
+{
+  "status": "pass",
+  "archive": "certificates/mandatory_core_seventh.zip",
+  "sha256": "47702370adc68cf9cbf0725343c2cca2121717eeb1cf47e7a758ef1e15023ffa",
+  "files": 20,
+  "checksum_entries": 19,
+  "inventories_reproduced_byte_identically": 1,
+  "audits_reproduced_byte_identically": 2,
+  "runs": [
+    {
+      "script": "check_mandatory_core_isolation.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "n": 2,
+          "alphabet_size": 2,
+          "complete_ordered_row_assignments": 16,
+          "strong_sync_models": 6,
+          "all_size_ge_two_subsets": 6,
+          "mandatory_incident_pair_tests": 6,
+          "nonvacuous_subset_controls": 0
+        },
+        {
+          "n": 3,
+          "alphabet_size": 2,
+          "complete_ordered_row_assignments": 729,
+          "strong_sync_models": 240,
+          "all_size_ge_two_subsets": 960,
+          "mandatory_incident_pair_tests": 1296,
+          "nonvacuous_subset_controls": 60
+        },
+        {
+          "n": 4,
+          "alphabet_size": 2,
+          "complete_ordered_row_assignments": 65536,
+          "strong_sync_models": 18648,
+          "all_size_ge_two_subsets": 205128,
+          "mandatory_incident_pair_tests": 291888,
+          "nonvacuous_subset_controls": 1872
+        },
+        {
+          "n": 3,
+          "alphabet_size": 3,
+          "complete_ordered_row_assignments": 19683,
+          "strong_sync_models": 13218,
+          "all_size_ge_two_subsets": 52872,
+          "mandatory_incident_pair_tests": 59238,
+          "nonvacuous_subset_controls": 1188
+        },
+        {
+          "status": "pass",
+          "frontier": {
+            "certificates": 290,
+            "distinct_row_models": 147,
+            "mandatory_incident_pair_tests": 9776,
+            "nonvacuous_certificate_controls": 172,
+            "core_points_outside_original_A": 664,
+            "strict_guarantee_improvement_controls": [
+              {
+                "frontier_index": 5,
+                "n": 4,
+                "s": 3,
+                "x": 2,
+                "ac_singleton": 2,
+                "compression": 3,
+                "old_depth_guarantee": 0,
+                "new_depth_guarantee": 1,
+                "actual_incident_distance": 3
+              },
+              {
+                "frontier_index": 11,
+                "n": 5,
+                "s": 3,
+                "x": 3,
+                "ac_singleton": 3,
+                "compression": 4,
+                "old_depth_guarantee": 0,
+                "new_depth_guarantee": 1,
+                "actual_incident_distance": 4
+              },
+              {
+                "frontier_index": 13,
+                "n": 5,
+                "s": 4,
+                "x": 2,
+                "ac_singleton": 2,
+                "compression": 3,
+                "old_depth_guarantee": 0,
+                "new_depth_guarantee": 1,
+                "actual_incident_distance": 4
+              },
+              {
+                "frontier_index": 14,
+                "n": 5,
+                "s": 4,
+                "x": 2,
+                "ac_singleton": 2,
+                "compression": 3,
+                "old_depth_guarantee": 0,
+                "new_depth_guarantee": 1,
+                "actual_incident_distance": 4
+              },
+              {
+                "frontier_index": 23,
+                "n": 6,
+                "s": 4,
+                "x": 3,
+                "ac_singleton": 3,
+                "compression": 5,
+                "old_depth_guarantee": 0,
+                "new_depth_guarantee": 2,
+                "actual_incident_distance": 5
+              },
+              {
+                "frontier_index": 23,
+                "n": 6,
+                "s": 4,
+                "x": 4,
+                "ac_singleton": 4,
+                "compression": 5,
+                "old_depth_guarantee": 1,
+                "new_depth_guarantee": 2,
+                "actual_incident_distance": 4
+              },
+              {
+                "frontier_index": 24,
+                "n": 6,
+                "s": 4,
+                "x": 3,
+                "ac_singleton": 3,
+                "compression": 4,
+                "old_depth_guarantee": 0,
+                "new_depth_guarantee": 1,
+                "actual_incident_distance": 6
+              },
+              {
+                "frontier_index": 26,
+                "n": 6,
+                "s": 5,
+                "x": 2,
+                "ac_singleton": 2,
+                "compression": 3,
+                "old_depth_guarantee": 0,
+                "new_depth_guarantee": 1,
+                "actual_incident_distance": 5
+              },
+              {
+                "frontier_index": 27,
+                "n": 6,
+                "s": 5,
+                "x": 2,
+                "ac_singleton": 2,
+                "compression": 3,
+                "old_depth_guarantee": 0,
+                "new_depth_guarantee": 1,
+                "actual_incident_distance": 5
+              },
+              {
+                "frontier_index": 28,
+                "n": 6,
+                "s": 5,
+                "x": 2,
+                "ac_singleton": 2,
+                "compression": 3,
+                "old_depth_guarantee": 0,
+                "new_depth_guarantee": 1,
+                "actual_incident_distance": 5
+              },
+              {
+                "frontier_index": 38,
+                "n": 7,
+                "s": 4,
+                "x": 5,
+                "ac_singleton": 5,
+                "compression": 6,
+                "old_depth_guarantee": 1,
+                "new_depth_guarantee": 2,
+                "actual_incident_distance": 6
+              },
+              {
+                "frontier_index": 41,
+                "n": 7,
+                "s": 5,
+                "x": 0,
+                "ac_singleton": 4,
+                "compression": 6,
+                "old_depth_guarantee": 1,
+                "new_depth_guarantee": 3,
+                "actual_incident_distance": 7
+              }
+            ],
+            "strong_connectivity_boundary_control": {
+              "frontier_index": 23,
+              "n": 7,
+              "S": [
+                0,
+                3,
+                4,
+                5
+              ],
+              "rows": [
+                [
+                  0,
+                  0,
+                  1,
+                  3,
+                  4,
+                  5,
+                  5
+                ],
+                [
+                  3,
+                  1,
+                  3,
+                  4,
+                  5,
+                  2,
+                  2
+                ]
+              ],
+              "cloned_state": 5,
+              "transient_state": 6,
+              "mandatory_core": [
+                4,
+                5
+              ],
+              "compression": 5,
+              "m": 3,
+              "violating_pair": [
+                5,
+                6
+              ],
+              "merging_distance": 1,
+              "strongly_connected": false,
+              "synchronizing": true,
+              "actual_reachable_image": true,
+              "reaching": "aa",
+              "reset": "aababaababaabbabbaa"
+            }
+          },
+          "seeded": {
+            "seed": 20261009,
+            "proposed_models": 500,
+            "strong_sync_models": 262,
+            "all_subsets_checked": 37580,
+            "mandatory_incident_pair_tests": 16446,
+            "n_range": [
+              4,
+              9
+            ],
+            "alphabet_range": [
+              2,
+              4
+            ]
+          },
+          "conditional_cuts": [
+            {
+              "branch": "E6_F2",
+              "one_count_depth": 6,
+              "nine_set_family": 40,
+              "mandatory": [
+                0,
+                2,
+                3,
+                5,
+                6
+              ],
+              "core_isolation_depth": 7,
+              "remaining_P5_cover": [
+                1
+              ],
+              "excluded_for_arbitrary_finite_alphabet": true
+            },
+            {
+              "branch": "E6_F7_G2",
+              "one_count_depth": 5,
+              "nine_set_family": 20,
+              "mandatory": [
+                0,
+                2,
+                3,
+                5,
+                6,
+                7
+              ],
+              "core_isolation_depth": 7,
+              "remaining_P5_cover": [
+                1
+              ],
+              "excluded_for_arbitrary_finite_alphabet": true
+            },
+            {
+              "branch": "E6_F7_G8_H2",
+              "one_count_depth": 4,
+              "nine_set_family": 8,
+              "mandatory": [
+                0,
+                2,
+                3,
+                5,
+                6,
+                7,
+                8
+              ],
+              "core_isolation_depth": 7,
+              "remaining_P5_cover": [
+                1
+              ],
+              "excluded_for_arbitrary_finite_alphabet": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "script": "enumerate_b1_seventh.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "status": "necessary_seventh_inventory",
+          "parameter": [
+            13,
+            9,
+            1
+          ],
+          "E": [
+            6
+          ],
+          "F": [
+            7
+          ],
+          "G": [
+            8
+          ],
+          "geometric_orbits": 7,
+          "labelled_H": 19,
+          "additional_Boolean_orbits": 3,
+          "additional_covered_orbits": 0,
+          "binary_field_pairs": 3474,
+          "scope": "All necessary seventh geometry/Boolean/field admission in E6/F7/G8. Uncovered companions retained; every mandatory point is protected by the separate P7 core theorem. H2 cover cut is separate. No exclusion, automaton existence or F value asserted by inventory."
+        }
+      ]
+    },
+    {
+      "script": "check_b1_seventh.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "status": "pass",
+          "parameter": [
+            13,
+            9,
+            1
+          ],
+          "branch": {
+            "E": [
+              6
+            ],
+            "F": [
+              7
+            ],
+            "G": [
+              8
+            ]
+          },
+          "alphabet": "arbitrary finite",
+          "complete_geometric_orbits": 7,
+          "complete_labelled_H_choices": 19,
+          "all_subset_masks_tested": 77805,
+          "cell_constant_augmented_rank_tests": 7405,
+          "common_seventh_after_cover": true,
+          "additional_Boolean_orbits": 3,
+          "additional_covered_orbits": 0,
+          "excluded_H": [
+            2
+          ],
+          "excluded_field_pairs": 1094,
+          "remaining_geometric_orbits": 6,
+          "remaining_labelled_H": 18,
+          "remaining_binary_field_pairs": 2380,
+          "all_original_sixth_pairs_retained": 365,
+          "mandatory_isolation_depth": 7,
+          "scope": "Complete seventh space/Boolean/field admission, common fiber after explicit cover filtering, and mandatory-core all-alphabet H2 exclusion. No whole sixth/fifth/joint exclusion, full13-state automaton scan, F value or numerical alphabet separation."
+        }
+      ]
+    }
+  ],
+  "source_sha256": {
+    "check_mandatory_core_seventh_package.py": "43e903c8b7fb1308cd1b9b43243fb2a1a1ab28c1ea5bf879c960a0a0c78df6b2"
+  }
+}

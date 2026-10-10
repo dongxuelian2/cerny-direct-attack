@@ -1,0 +1,872 @@
+{
+  "status": "pass",
+  "n": 13,
+  "s": 9,
+  "r": 1,
+  "target": 12,
+  "counts": {
+    "b1_out": {
+      "orbits": 6,
+      "labelled_C": 63
+    },
+    "b1_in": {
+      "orbits": 5,
+      "labelled_C": 39
+    },
+    "b2_mixed": {
+      "orbits": 12,
+      "labelled_C": 73
+    },
+    "b2_in": {
+      "orbits": 6,
+      "labelled_C": 57
+    },
+    "b3_mixed": {
+      "orbits": 11,
+      "labelled_C": 71
+    },
+    "b3_in": {
+      "orbits": 3,
+      "labelled_C": 63
+    }
+  },
+  "orbits": 43,
+  "overlap_orbits": 20,
+  "records": [
+    {
+      "id": "b1_out_c1",
+      "B_case": "b1_out",
+      "B": [
+        4
+      ],
+      "C": [
+        5
+      ],
+      "cell_signature": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "orbit_size": 8
+    },
+    {
+      "id": "b1_out_c2",
+      "B_case": "b1_out",
+      "B": [
+        4
+      ],
+      "C": [
+        0
+      ],
+      "cell_signature": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "orbit_size": 3
+    },
+    {
+      "id": "b1_out_c3",
+      "B_case": "b1_out",
+      "B": [
+        4
+      ],
+      "C": [
+        0,
+        5
+      ],
+      "cell_signature": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "orbit_size": 24
+    },
+    {
+      "id": "b1_out_c4",
+      "B_case": "b1_out",
+      "B": [
+        4
+      ],
+      "C": [
+        0,
+        1
+      ],
+      "cell_signature": [
+        0,
+        2,
+        0,
+        0
+      ],
+      "orbit_size": 3
+    },
+    {
+      "id": "b1_out_c5",
+      "B_case": "b1_out",
+      "B": [
+        4
+      ],
+      "C": [
+        0,
+        1,
+        5
+      ],
+      "cell_signature": [
+        0,
+        2,
+        0,
+        1
+      ],
+      "orbit_size": 24
+    },
+    {
+      "id": "b1_out_c6",
+      "B_case": "b1_out",
+      "B": [
+        4
+      ],
+      "C": [
+        0,
+        1,
+        2
+      ],
+      "cell_signature": [
+        0,
+        3,
+        0,
+        0
+      ],
+      "orbit_size": 1
+    },
+    {
+      "id": "b1_in_c1",
+      "B_case": "b1_in",
+      "B": [
+        0
+      ],
+      "C": [
+        4
+      ],
+      "cell_signature": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "orbit_size": 9
+    },
+    {
+      "id": "b1_in_c2",
+      "B_case": "b1_in",
+      "B": [
+        0
+      ],
+      "C": [
+        1
+      ],
+      "cell_signature": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "orbit_size": 2
+    },
+    {
+      "id": "b1_in_c3",
+      "B_case": "b1_in",
+      "B": [
+        0
+      ],
+      "C": [
+        1,
+        4
+      ],
+      "cell_signature": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "orbit_size": 18
+    },
+    {
+      "id": "b1_in_c4",
+      "B_case": "b1_in",
+      "B": [
+        0
+      ],
+      "C": [
+        1,
+        2
+      ],
+      "cell_signature": [
+        0,
+        2,
+        0,
+        0
+      ],
+      "orbit_size": 1
+    },
+    {
+      "id": "b1_in_c5",
+      "B_case": "b1_in",
+      "B": [
+        0
+      ],
+      "C": [
+        1,
+        2,
+        4
+      ],
+      "cell_signature": [
+        0,
+        2,
+        0,
+        1
+      ],
+      "orbit_size": 9
+    },
+    {
+      "id": "b2_mixed_c1",
+      "B_case": "b2_mixed",
+      "B": [
+        0,
+        4
+      ],
+      "C": [
+        5
+      ],
+      "cell_signature": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "orbit_size": 8
+    },
+    {
+      "id": "b2_mixed_c2",
+      "B_case": "b2_mixed",
+      "B": [
+        0,
+        4
+      ],
+      "C": [
+        1
+      ],
+      "cell_signature": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "orbit_size": 2
+    },
+    {
+      "id": "b2_mixed_c3",
+      "B_case": "b2_mixed",
+      "B": [
+        0,
+        4
+      ],
+      "C": [
+        1,
+        5
+      ],
+      "cell_signature": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "orbit_size": 16
+    },
+    {
+      "id": "b2_mixed_c4",
+      "B_case": "b2_mixed",
+      "B": [
+        0,
+        4
+      ],
+      "C": [
+        1,
+        4
+      ],
+      "cell_signature": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "orbit_size": 2
+    },
+    {
+      "id": "b2_mixed_c5",
+      "B_case": "b2_mixed",
+      "B": [
+        0,
+        4
+      ],
+      "C": [
+        1,
+        2
+      ],
+      "cell_signature": [
+        0,
+        2,
+        0,
+        0
+      ],
+      "orbit_size": 1
+    },
+    {
+      "id": "b2_mixed_c6",
+      "B_case": "b2_mixed",
+      "B": [
+        0,
+        4
+      ],
+      "C": [
+        1,
+        2,
+        5
+      ],
+      "cell_signature": [
+        0,
+        2,
+        0,
+        1
+      ],
+      "orbit_size": 8
+    },
+    {
+      "id": "b2_mixed_c7",
+      "B_case": "b2_mixed",
+      "B": [
+        0,
+        4
+      ],
+      "C": [
+        1,
+        2,
+        4
+      ],
+      "cell_signature": [
+        0,
+        2,
+        1,
+        0
+      ],
+      "orbit_size": 1
+    },
+    {
+      "id": "b2_mixed_c8",
+      "B_case": "b2_mixed",
+      "B": [
+        0,
+        4
+      ],
+      "C": [
+        0,
+        5
+      ],
+      "cell_signature": [
+        1,
+        0,
+        0,
+        1
+      ],
+      "orbit_size": 8
+    },
+    {
+      "id": "b2_mixed_c9",
+      "B_case": "b2_mixed",
+      "B": [
+        0,
+        4
+      ],
+      "C": [
+        0,
+        1
+      ],
+      "cell_signature": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "orbit_size": 2
+    },
+    {
+      "id": "b2_mixed_c10",
+      "B_case": "b2_mixed",
+      "B": [
+        0,
+        4
+      ],
+      "C": [
+        0,
+        1,
+        5
+      ],
+      "cell_signature": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "orbit_size": 16
+    },
+    {
+      "id": "b2_mixed_c11",
+      "B_case": "b2_mixed",
+      "B": [
+        0,
+        4
+      ],
+      "C": [
+        0,
+        1,
+        2
+      ],
+      "cell_signature": [
+        1,
+        2,
+        0,
+        0
+      ],
+      "orbit_size": 1
+    },
+    {
+      "id": "b2_mixed_c12",
+      "B_case": "b2_mixed",
+      "B": [
+        0,
+        4
+      ],
+      "C": [
+        0,
+        1,
+        2,
+        5
+      ],
+      "cell_signature": [
+        1,
+        2,
+        0,
+        1
+      ],
+      "orbit_size": 8
+    },
+    {
+      "id": "b2_in_c1",
+      "B_case": "b2_in",
+      "B": [
+        0,
+        1
+      ],
+      "C": [
+        4
+      ],
+      "cell_signature": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "orbit_size": 9
+    },
+    {
+      "id": "b2_in_c2",
+      "B_case": "b2_in",
+      "B": [
+        0,
+        1
+      ],
+      "C": [
+        2
+      ],
+      "cell_signature": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "orbit_size": 1
+    },
+    {
+      "id": "b2_in_c3",
+      "B_case": "b2_in",
+      "B": [
+        0,
+        1
+      ],
+      "C": [
+        2,
+        4
+      ],
+      "cell_signature": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "orbit_size": 9
+    },
+    {
+      "id": "b2_in_c4",
+      "B_case": "b2_in",
+      "B": [
+        0,
+        1
+      ],
+      "C": [
+        0,
+        4
+      ],
+      "cell_signature": [
+        1,
+        0,
+        0,
+        1
+      ],
+      "orbit_size": 18
+    },
+    {
+      "id": "b2_in_c5",
+      "B_case": "b2_in",
+      "B": [
+        0,
+        1
+      ],
+      "C": [
+        0,
+        2
+      ],
+      "cell_signature": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "orbit_size": 2
+    },
+    {
+      "id": "b2_in_c6",
+      "B_case": "b2_in",
+      "B": [
+        0,
+        1
+      ],
+      "C": [
+        0,
+        2,
+        4
+      ],
+      "cell_signature": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "orbit_size": 18
+    },
+    {
+      "id": "b3_mixed_c1",
+      "B_case": "b3_mixed",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        5
+      ],
+      "cell_signature": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "orbit_size": 8
+    },
+    {
+      "id": "b3_mixed_c2",
+      "B_case": "b3_mixed",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        2
+      ],
+      "cell_signature": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "orbit_size": 1
+    },
+    {
+      "id": "b3_mixed_c3",
+      "B_case": "b3_mixed",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        2,
+        5
+      ],
+      "cell_signature": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "orbit_size": 8
+    },
+    {
+      "id": "b3_mixed_c4",
+      "B_case": "b3_mixed",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        2,
+        4
+      ],
+      "cell_signature": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "orbit_size": 1
+    },
+    {
+      "id": "b3_mixed_c5",
+      "B_case": "b3_mixed",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        0,
+        5
+      ],
+      "cell_signature": [
+        1,
+        0,
+        0,
+        1
+      ],
+      "orbit_size": 16
+    },
+    {
+      "id": "b3_mixed_c6",
+      "B_case": "b3_mixed",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        0,
+        2
+      ],
+      "cell_signature": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "orbit_size": 2
+    },
+    {
+      "id": "b3_mixed_c7",
+      "B_case": "b3_mixed",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        0,
+        2,
+        5
+      ],
+      "cell_signature": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "orbit_size": 16
+    },
+    {
+      "id": "b3_mixed_c8",
+      "B_case": "b3_mixed",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        0,
+        2,
+        4
+      ],
+      "cell_signature": [
+        1,
+        1,
+        1,
+        0
+      ],
+      "orbit_size": 2
+    },
+    {
+      "id": "b3_mixed_c9",
+      "B_case": "b3_mixed",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        0,
+        1,
+        5
+      ],
+      "cell_signature": [
+        2,
+        0,
+        0,
+        1
+      ],
+      "orbit_size": 8
+    },
+    {
+      "id": "b3_mixed_c10",
+      "B_case": "b3_mixed",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        0,
+        1,
+        2
+      ],
+      "cell_signature": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "orbit_size": 1
+    },
+    {
+      "id": "b3_mixed_c11",
+      "B_case": "b3_mixed",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        0,
+        1,
+        2,
+        5
+      ],
+      "cell_signature": [
+        2,
+        1,
+        0,
+        1
+      ],
+      "orbit_size": 8
+    },
+    {
+      "id": "b3_in_c1",
+      "B_case": "b3_in",
+      "B": [
+        0,
+        1,
+        2
+      ],
+      "C": [
+        4
+      ],
+      "cell_signature": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "orbit_size": 9
+    },
+    {
+      "id": "b3_in_c2",
+      "B_case": "b3_in",
+      "B": [
+        0,
+        1,
+        2
+      ],
+      "C": [
+        0,
+        4
+      ],
+      "cell_signature": [
+        1,
+        0,
+        0,
+        1
+      ],
+      "orbit_size": 27
+    },
+    {
+      "id": "b3_in_c3",
+      "B_case": "b3_in",
+      "B": [
+        0,
+        1,
+        2
+      ],
+      "C": [
+        0,
+        1,
+        4
+      ],
+      "cell_signature": [
+        2,
+        0,
+        0,
+        1
+      ],
+      "orbit_size": 27
+    }
+  ],
+  "source_sha256": {
+    "enumerate_joint_fiber_orbits.py": "ec5143f659de8c63dffcb24bbaf787529c9d67f023ee2f3fd9a9ee90a082ad00",
+    "run_fiber_slices.py": "687303e4c6309a32ca0b32ed4288853ec7a17e31a869afca66fb8209b71cb329",
+    "alphabet_check.py": "5a93272df21227051061770d3edc48fd2aaeabc6062c4a385593689444b538df",
+    "SECOND_ENTRANCE_FIBER.md": "664e379a346274ec88c59130741dc43251717eb53a16979198b76e18a165f34b",
+    "SIX_ENTRANCE_FIBER_SLICES.md": "cf3243ede2673a849fda2b9e988a4e5576c5709793e266127aa8400785cea4fd",
+    "overlapping_entrance_control.json": "cf83beaa924bcfd2ccabee06bdf9aa0a6abc1966d2148552657fecdf35668cb3"
+  },
+  "scope": "Complete admission under proved clique/cover and fiber cuts. No certified exclusion or exact new value. Overlapping B,C cases retained."
+}

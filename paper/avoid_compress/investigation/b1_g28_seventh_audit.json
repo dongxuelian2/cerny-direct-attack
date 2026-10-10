@@ -1,0 +1,398 @@
+{
+  "status": "pass",
+  "parameter": [
+    13,
+    9,
+    1
+  ],
+  "branch": {
+    "E": [
+      6
+    ],
+    "F": [
+      7
+    ],
+    "G": [
+      2,
+      8
+    ]
+  },
+  "geometric_orbits": 7,
+  "labelled_H": 19,
+  "all_subset_masks_tested": 77805,
+  "augmented_rank_tests": 10733,
+  "records": [
+    {
+      "H": [
+        9
+      ],
+      "labels": 4,
+      "forms": 12,
+      "mandatory": [
+        0,
+        3,
+        5,
+        6,
+        7,
+        9
+      ],
+      "additional_Boolean_fibers": [
+        [
+          10,
+          11,
+          12
+        ]
+      ],
+      "additional_covered_fibers": [],
+      "binary_field_pairs": 1094
+    },
+    {
+      "H": [
+        1,
+        2
+      ],
+      "labels": 1,
+      "forms": 12,
+      "mandatory": [
+        0,
+        3,
+        5,
+        6,
+        7
+      ],
+      "additional_Boolean_fibers": [
+        [
+          4,
+          8
+        ]
+      ],
+      "additional_covered_fibers": [],
+      "binary_field_pairs": 0
+    },
+    {
+      "H": [
+        1,
+        8
+      ],
+      "labels": 1,
+      "forms": 12,
+      "mandatory": [
+        0,
+        3,
+        5,
+        6,
+        7
+      ],
+      "additional_Boolean_fibers": [
+        [
+          2,
+          4
+        ]
+      ],
+      "additional_covered_fibers": [
+        [
+          2,
+          4
+        ]
+      ],
+      "binary_field_pairs": 0
+    },
+    {
+      "H": [
+        1,
+        9
+      ],
+      "labels": 4,
+      "forms": 12,
+      "mandatory": [
+        0,
+        3,
+        5,
+        6,
+        7
+      ],
+      "additional_Boolean_fibers": [],
+      "additional_covered_fibers": [],
+      "binary_field_pairs": 48
+    },
+    {
+      "H": [
+        2,
+        4
+      ],
+      "labels": 1,
+      "forms": 12,
+      "mandatory": [
+        0,
+        3,
+        5,
+        6,
+        7
+      ],
+      "additional_Boolean_fibers": [
+        [
+          1,
+          8
+        ]
+      ],
+      "additional_covered_fibers": [
+        [
+          1,
+          8
+        ]
+      ],
+      "binary_field_pairs": 0
+    },
+    {
+      "H": [
+        2,
+        9
+      ],
+      "labels": 4,
+      "forms": 12,
+      "mandatory": [
+        0,
+        3,
+        5,
+        6,
+        7
+      ],
+      "additional_Boolean_fibers": [],
+      "additional_covered_fibers": [],
+      "binary_field_pairs": 243
+    },
+    {
+      "H": [
+        1,
+        2,
+        9
+      ],
+      "labels": 4,
+      "forms": 9,
+      "mandatory": [
+        0,
+        3,
+        5,
+        6,
+        7
+      ],
+      "additional_Boolean_fibers": [],
+      "additional_covered_fibers": [],
+      "binary_field_pairs": 0
+    }
+  ],
+  "all_alphabet_crossed_exclusions": [
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      8
+    ],
+    [
+      2,
+      4
+    ],
+    [
+      1,
+      2,
+      9
+    ]
+  ],
+  "crossed_controls": [
+    {
+      "H": [
+        1,
+        2
+      ],
+      "individual_field_tuples": 5040,
+      "disjoint_tuples": 0
+    },
+    {
+      "H": [
+        1,
+        8
+      ],
+      "individual_field_tuples": 5040,
+      "disjoint_tuples": 0
+    },
+    {
+      "H": [
+        2,
+        4
+      ],
+      "individual_field_tuples": 5040,
+      "disjoint_tuples": 0
+    },
+    {
+      "H": [
+        1,
+        2,
+        9
+      ],
+      "individual_field_tuples": 5040,
+      "disjoint_tuples": 0
+    },
+    {
+      "H": [
+        1,
+        2,
+        10
+      ],
+      "individual_field_tuples": 5040,
+      "disjoint_tuples": 0
+    },
+    {
+      "H": [
+        1,
+        2,
+        11
+      ],
+      "individual_field_tuples": 5040,
+      "disjoint_tuples": 0
+    },
+    {
+      "H": [
+        1,
+        2,
+        12
+      ],
+      "individual_field_tuples": 5040,
+      "disjoint_tuples": 0
+    }
+  ],
+  "binary_only_excluded_H": [
+    1,
+    9
+  ],
+  "binary_H19_controls": {
+    "original_field_pairs_checked": 48,
+    "complete_normalized_L_rows": 6912,
+    "complete_normalized_X_rows": 384,
+    "complete_n13_normalized_row_pairs": 2654208,
+    "proof_cases": {
+      "missing_C_target": 1327104,
+      "protected_LXX": 663552,
+      "protected_XXX": 663552
+    },
+    "literal_word_examples": {
+      "protected_LXX": {
+        "pair": [
+          3,
+          9
+        ],
+        "word": "LXX",
+        "L": [
+          3,
+          0,
+          7,
+          1,
+          0,
+          5,
+          6,
+          2,
+          7,
+          9,
+          10,
+          11,
+          12
+        ],
+        "X": [
+          0,
+          2,
+          7,
+          3,
+          9,
+          4,
+          5,
+          6,
+          7,
+          2,
+          10,
+          11,
+          12
+        ]
+      },
+      "protected_XXX": {
+        "pair": [
+          5,
+          4
+        ],
+        "word": "XXX",
+        "L": [
+          3,
+          0,
+          7,
+          4,
+          0,
+          5,
+          6,
+          2,
+          7,
+          9,
+          10,
+          11,
+          12
+        ],
+        "X": [
+          0,
+          2,
+          7,
+          3,
+          9,
+          1,
+          5,
+          6,
+          7,
+          2,
+          10,
+          11,
+          12
+        ]
+      }
+    }
+  },
+  "remaining_unrestricted_H": [
+    [
+      9
+    ],
+    [
+      1,
+      9
+    ],
+    [
+      2,
+      9
+    ]
+  ],
+  "remaining_unrestricted_geometries": 3,
+  "remaining_unrestricted_labels": 12,
+  "remaining_binary_H": [
+    [
+      9
+    ],
+    [
+      2,
+      9
+    ]
+  ],
+  "remaining_binary_geometries": 2,
+  "remaining_binary_labels": 8,
+  "remaining_binary_field_pairs": 1337,
+  "all_original_sixth_pairs_retained": 365,
+  "source_sha256": {
+    "check_b1_g28_seventh.py": "8c50d3a0f7b1a60b9723e06d22a88770493bff8a0aa1d8506c5a049d413c4a54",
+    "enumerate_b1_g28_seventh.py": "f7ac27bc6b79bb7cbed8a52dfc4760e4b0c26f9086ece61d57e168b64eef7977",
+    "b1_g28_seventh_inventory.json": "fa023efc254fd7480ed0b282937ea149c782d774501882c38cade637af5f696a",
+    "B1_G28_SEVENTH_ENTRANCE.md": "5a25e9ad31ebaaf6d77d6b7d283931934d92a43bfcd0e545adc0f60639c25be2",
+    "b1_sixth_inventory.json": "5efb53a113d850a7055e8c7374775ee6f6e84c166845f9dd80410d19f346c761",
+    "b1_sixth_audit.json": "56c3a1e6171e6bb55797f5f36b87f14e86e5735657e5259f08184c44271e09c9",
+    "B1_SIXTH_ENTRANCE.md": "aaa7d422335c8f3addd1374d7fc545784f608d436e4a13b3c5d251e5a4d895d8",
+    "MANDATORY_CORE_ISOLATION.md": "72129f1a810b07a8bcd975e5df353cc1dbc43d063e13c8ff887ba4748bb14537",
+    "mandatory_core_isolation_audit.json": "67d7c82cae127c23260a3f7b6affe3052a1afef728cad8f49fd54d27e3fa9f54",
+    "ENTRY_FIBER_FLAG.md": "b27eb51977104cd68aaff2e2f37db10c50bbf4a4dd4320502b15b0f609a01bbf",
+    "LOCAL_EQUALITY_FLAG.md": "f34cf260276c6551266564c1ee2264dc823aeaa4f33b4ae8f8261aedeec596a8"
+  },
+  "scope": "Complete capacity2 seventh space, all companions and four all-alphabet crossed exclusions, plus binary H19 three-letter proof. No whole G28/E6/F7 removal, exact F value, or numerical separation."
+}

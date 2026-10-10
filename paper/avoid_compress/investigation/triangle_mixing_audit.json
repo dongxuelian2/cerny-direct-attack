@@ -1,0 +1,20 @@
+{
+  "status": "pass",
+  "reports": [
+    {
+      "n": 6,
+      "singular_case_a_letters": 36,
+      "required_permutations": 12,
+      "checked_letter_pairs": 432,
+      "maximum_domain_intersection": 4
+    },
+    {
+      "n": 7,
+      "singular_case_a_letters": 192,
+      "required_permutations": 48,
+      "checked_letter_pairs": 9216,
+      "maximum_domain_intersection": 4
+    }
+  ],
+  "scope": "Finite literal controls of the uniform Case A argument; no exact maximum asserted."
+}

@@ -1,0 +1,556 @@
+{
+  "status": "pass",
+  "archive": "certificates/singleton_c_d5_e12_e126_unrestricted.zip",
+  "sha256": "fe0d9b85cb9ca596b78df1323a01cd9aa0405840934e8612d7b4fdfd268843fb",
+  "files": 37,
+  "checksum_entries": 36,
+  "data_files_reproduced_byte_identically": 3,
+  "audits_reproduced_byte_identically": 7,
+  "complete_conditional_individual_rows": 3648,
+  "complete_binary_ordered_controls_through_n8": 147840,
+  "complete_distinct_ternary_sets_through_n7": 312992,
+  "seeded_larger_alphabet_controls": 24000,
+  "labelled_extensions_checked": 128,
+  "whole_third_types_excluded": 0,
+  "new_binary_parent_pairs_removed": 0,
+  "runs": [
+    {
+      "script": "enumerate_b1_c4_fourth.py",
+      "exit": 0,
+      "outputs": []
+    },
+    {
+      "script": "check_b1_c4_fourth.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "status": "pass",
+          "geometric_orbits": 20,
+          "labelled_E": 131,
+          "all_subset_masks_tested": 536445,
+          "augmented_rank_tests": 5757,
+          "counts": [
+            {
+              "D": [
+                1
+              ],
+              "geometric_orbits": 3,
+              "labelled_E": 17,
+              "all_alphabet_excluded_E": [
+                [
+                  2
+                ],
+                [
+                  5
+                ],
+                [
+                  2,
+                  5
+                ]
+              ],
+              "remaining_unrestricted_E": [],
+              "remaining_binary_E": [],
+              "remaining_binary_field_pairs": 0,
+              "original_third_pairs": 14,
+              "remaining_original_third_pairs": 0
+            },
+            {
+              "D": [
+                5
+              ],
+              "geometric_orbits": 5,
+              "labelled_E": 31,
+              "all_alphabet_excluded_E": [
+                [
+                  1
+                ]
+              ],
+              "remaining_unrestricted_E": [
+                [
+                  6
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  1,
+                  2,
+                  6
+                ]
+              ],
+              "remaining_binary_E": [
+                [
+                  6
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  1,
+                  2,
+                  6
+                ]
+              ],
+              "remaining_binary_field_pairs": 164,
+              "original_third_pairs": 14,
+              "remaining_original_third_pairs": 14
+            },
+            {
+              "D": [
+                1,
+                2
+              ],
+              "geometric_orbits": 2,
+              "labelled_E": 24,
+              "all_alphabet_excluded_E": [],
+              "remaining_unrestricted_E": [
+                [
+                  5
+                ],
+                [
+                  1,
+                  5
+                ]
+              ],
+              "remaining_binary_E": [
+                [
+                  5
+                ],
+                [
+                  1,
+                  5
+                ]
+              ],
+              "remaining_binary_field_pairs": 50,
+              "original_third_pairs": 14,
+              "remaining_original_third_pairs": 14
+            },
+            {
+              "D": [
+                1,
+                5
+              ],
+              "geometric_orbits": 7,
+              "labelled_E": 31,
+              "all_alphabet_excluded_E": [
+                [
+                  2
+                ]
+              ],
+              "remaining_unrestricted_E": [
+                [
+                  6
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  1,
+                  2,
+                  6
+                ]
+              ],
+              "remaining_binary_E": [
+                [
+                  6
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  1,
+                  2,
+                  6
+                ]
+              ],
+              "remaining_binary_field_pairs": 118,
+              "original_third_pairs": 14,
+              "remaining_original_third_pairs": 14
+            },
+            {
+              "D": [
+                1,
+                2,
+                5
+              ],
+              "geometric_orbits": 3,
+              "labelled_E": 28,
+              "all_alphabet_excluded_E": [],
+              "remaining_unrestricted_E": [
+                [
+                  6
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  1,
+                  2,
+                  6
+                ]
+              ],
+              "remaining_binary_E": [
+                [
+                  6
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  1,
+                  2,
+                  6
+                ]
+              ],
+              "remaining_binary_field_pairs": 27,
+              "original_third_pairs": 14,
+              "remaining_original_third_pairs": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "script": "check_finite_independent_image_trap.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "status": "pass",
+          "complete_n4_ordered_binary_alphabets": 65536,
+          "graphs_per_alphabet": 32,
+          "tested_h": [
+            1,
+            2
+          ],
+          "qualified_alphabet_graph_depth_controls": 76560,
+          "qualified_nonsynchronizing_alphabets": 7184,
+          "qualifying_histogram": {
+            "h1_N6": 7184,
+            "h2_N6": 7184,
+            "h1_N5": 12120,
+            "h2_N5": 15960,
+            "h1_N4": 7376,
+            "h2_N4": 14856,
+            "h1_N3": 2168,
+            "h2_N3": 7256,
+            "h1_N2": 312,
+            "h2_N2": 1944,
+            "h2_N1": 192,
+            "h1_N1": 8
+          },
+          "scope": "Uniform paper proof and complete n4 alphabet/graph controls, with forward pair and full/subset BFS; concrete graph counts checked n7..13. No F value."
+        }
+      ]
+    },
+    {
+      "script": "check_two_cover_p3_classification.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "status": "pass",
+          "uniform_state_range": "n>=4",
+          "alphabet": "arbitrary finite",
+          "complete_fixed_cover_graphs_through_n9": 43680,
+          "complete_n4_ordered_binary_alphabets": 65536,
+          "qualifying_synchronizing_controls": 24,
+          "qualifying_strongly_connected_controls": 24,
+          "semantic_shape_histogram": {
+            "four_vertex_path": 16,
+            "triangle": 8
+          },
+          "scope": "Uniform necessary P3 graph classification under a two-state P5 cover. Full graph/semantic controls support the paper proof. No E6/E26 exclusion, F value or alphabet separation."
+        }
+      ]
+    },
+    {
+      "script": "check_two_cover_unique_immediate_pair.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "status": "pass",
+          "uniform_state_range": "n>=4",
+          "alphabet": "arbitrary finite",
+          "known_refinement_application": true,
+          "complete_n4_ordered_binary_alphabets": 65536,
+          "alphabets_with_multiple_immediate_pairs": 54592,
+          "compressible_pairs_checked_against_five_bound": 303888,
+          "qualifying_sync_fixed_cover_controls": 24,
+          "literal_two_pair_sequences": 18012,
+          "n3_essential_boundary": {
+            "rows": [
+              [
+                1,
+                2,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ]
+            ],
+            "K": [
+              0,
+              1
+            ],
+            "outside_K_size": 1,
+            "immediate_pairs": 3,
+            "synchronizing": true
+          },
+          "scope": "Direct credited compression-refinement consequence, complete n4 controls and literal pair-sequence construction. No new F value or priority claim."
+        }
+      ]
+    },
+    {
+      "script": "check_letter_image_short_pair_cover.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "status": "pass",
+          "uniform_cover_transfer": "all n, h>=0, finite alphabets",
+          "forbidden_protected_image": "n>=4, synchronizing, |K|=2, K covers P5",
+          "complete_n4_map_graph_cover_instances": 262144,
+          "qualifying_map_graph_covers": 173080,
+          "semantic_cover_transfers": 6638520,
+          "semantic_stats": [
+            {
+              "n": 3,
+              "alphabet": 2,
+              "complete_ordered_alphabets": 729,
+              "qualifying_sync_two_cover_cases": 0
+            },
+            {
+              "n": 3,
+              "alphabet": 3,
+              "complete_ordered_alphabets": 19683,
+              "qualifying_sync_two_cover_cases": 0
+            },
+            {
+              "n": 4,
+              "alphabet": 2,
+              "complete_ordered_alphabets": 65536,
+              "qualifying_sync_two_cover_cases": 144
+            }
+          ],
+          "forbidden_image_letter_checks": 288,
+          "missing_output_boundary": {
+            "row": [
+              0,
+              0,
+              2,
+              3
+            ],
+            "graph": [
+              [
+                0,
+                1
+              ]
+            ],
+            "K": []
+          },
+          "scope": "Uniform elementary cover transfer and credited-refinement consequence; no F value."
+        }
+      ]
+    },
+    {
+      "script": "enumerate_c4_d5_e12_unique_kernel.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "status": "complete_conditional_D5_E12_unique_kernel_domains",
+          "rows": 3648
+        }
+      ]
+    },
+    {
+      "script": "check_c4_d5_e12_unique_kernel.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "n": 6,
+          "individual_rows": 48,
+          "complete_binary_ordered_alphabets": 960,
+          "complete_distinct_ternary_sets": 10872,
+          "seeded_alphabets": 6000,
+          "synchronizing_controls": 0,
+          "strongly_connected_controls": 10714,
+          "dual_supplier_controls": 12524,
+          "R_short_words": 0,
+          "J_short_words": 0,
+          "proper_closed_graphs": 17832,
+          "histogram": {
+            "proper_closed_pair_graph": 17832
+          }
+        },
+        {
+          "n": 7,
+          "individual_rows": 144,
+          "complete_binary_ordered_alphabets": 8640,
+          "complete_distinct_ternary_sets": 302120,
+          "seeded_alphabets": 6000,
+          "synchronizing_controls": 145465,
+          "strongly_connected_controls": 173354,
+          "dual_supplier_controls": 217319,
+          "R_short_words": 247381,
+          "J_short_words": 0,
+          "proper_closed_graphs": 69379,
+          "histogram": {
+            "outside_K_2": 134320,
+            "outside_K_3": 91956,
+            "proper_closed_pair_graph": 69379,
+            "outside_K_4": 21105
+          }
+        },
+        {
+          "n": 8,
+          "individual_rows": 576,
+          "complete_binary_ordered_alphabets": 138240,
+          "complete_distinct_ternary_sets": 0,
+          "seeded_alphabets": 6000,
+          "synchronizing_controls": 35603,
+          "strongly_connected_controls": 38531,
+          "dual_supplier_controls": 105813,
+          "R_short_words": 113910,
+          "J_short_words": 0,
+          "proper_closed_graphs": 30330,
+          "histogram": {
+            "outside_K_2": 89844,
+            "outside_K_3": 21704,
+            "proper_closed_pair_graph": 30330,
+            "outside_K_4": 2362
+          }
+        },
+        {
+          "n": 9,
+          "individual_rows": 2880,
+          "complete_binary_ordered_alphabets": 0,
+          "complete_distinct_ternary_sets": 0,
+          "seeded_alphabets": 6000,
+          "synchronizing_controls": 4506,
+          "strongly_connected_controls": 4291,
+          "dual_supplier_controls": 4487,
+          "R_short_words": 5844,
+          "J_short_words": 0,
+          "proper_closed_graphs": 156,
+          "histogram": {
+            "outside_K_2": 5321,
+            "outside_K_3": 498,
+            "proper_closed_pair_graph": 156,
+            "outside_K_4": 25
+          }
+        },
+        {
+          "status": "pass",
+          "parameter": [
+            13,
+            9,
+            1
+          ],
+          "D": [
+            5
+          ],
+          "excluded_E": [
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              2,
+              6
+            ]
+          ],
+          "alphabet": "arbitrary finite",
+          "E12_needs_mandatory_isolation": true,
+          "E126_needs_mandatory_isolation": false,
+          "complete_conditional_individual_rows": 3648,
+          "unique_kernel_domain_restriction_explicit": true,
+          "complete_binary_ordered_alphabets_through_n8": 147840,
+          "complete_distinct_ternary_sets_through_n7": 312992,
+          "seeded_larger_alphabets": 24000,
+          "constructive_samples": 30,
+          "closed_pair_samples": 10,
+          "boundary_depths": [
+            6,
+            4
+          ],
+          "scope": "Two conditional arbitrary-alphabet D5 fourth exclusions. E6/E16, whole third and numerical F unresolved."
+        }
+      ]
+    },
+    {
+      "script": "check_singleton_c_d5_e12_e126_transport.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "status": "pass",
+          "parameter": [
+            13,
+            9,
+            1
+          ],
+          "labelled_extensions_checked": 128,
+          "Boolean_identities_checked": 512,
+          "new_normalized_unrestricted_fourth_cuts_both_roots": 4,
+          "newly_removed_current_binary_fourth_pairs_both_roots": 164,
+          "remaining_C4_D5_E": [
+            [
+              6
+            ],
+            [
+              1,
+              6
+            ]
+          ],
+          "remaining_C4_geometries": 2,
+          "remaining_C4_E_labels": 21,
+          "remaining_C4_binary_pairs": 82,
+          "whole_third_types_removed": 0,
+          "binary_parent_pairs_removed": 0,
+          "scope": "Two complete E geometries excluded at both singleton-C/D5 roots; E6/E16 and all F extrema unresolved."
+        }
+      ]
+    }
+  ],
+  "source_sha256": {
+    "check_singleton_c_d5_e12_e126_certificate_package.py": "53399ad6da65d5bca774ce92e5ef2cffbfd8bfb6cd9478a37c3aa24fbbea5537"
+  }
+}

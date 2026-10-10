@@ -1,0 +1,2129 @@
+{
+  "tested": 1497,
+  "scope": "Only single-edge subdivisions in each letter, or a new fixed point for that letter.",
+  "certificates": [
+    {
+      "n": 10,
+      "s": 7,
+      "r": 2,
+      "value": 8,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          5,
+          4,
+          4,
+          8,
+          7,
+          9
+        ],
+        [
+          1,
+          9,
+          4,
+          5,
+          0,
+          7,
+          3,
+          6,
+          8,
+          2
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        9
+      ],
+      "A": [
+        2,
+        9
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababbb",
+      "reset": "abbbabababbabababbabababbabababbbababbbabaababbbaba",
+      "source": "subdivision of checked (9,6,1) witness"
+    },
+    {
+      "n": 10,
+      "s": 7,
+      "r": 2,
+      "value": 8,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          5,
+          4,
+          4,
+          8,
+          7,
+          9
+        ],
+        [
+          1,
+          2,
+          9,
+          5,
+          0,
+          7,
+          3,
+          6,
+          8,
+          4
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        9
+      ],
+      "A": [
+        2,
+        9
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababbb",
+      "reset": "abbbabababbabababbabababbabababbbababbbabaababbbaba",
+      "source": "subdivision of checked (9,6,1) witness"
+    },
+    {
+      "n": 10,
+      "s": 7,
+      "r": 2,
+      "value": 8,
+      "rows": [
+        [
+          0,
+          9,
+          2,
+          3,
+          5,
+          4,
+          4,
+          8,
+          7,
+          1
+        ],
+        [
+          1,
+          2,
+          4,
+          5,
+          0,
+          7,
+          3,
+          6,
+          8,
+          9
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        9
+      ],
+      "A": [
+        2,
+        9
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababba",
+      "reset": "abbbabababbababbbabaababbbababbbababababbabaababbbaba",
+      "source": "subdivision of checked (9,6,1) witness"
+    },
+    {
+      "n": 10,
+      "s": 7,
+      "r": 2,
+      "value": 8,
+      "rows": [
+        [
+          0,
+          9,
+          2,
+          3,
+          5,
+          4,
+          4,
+          8,
+          7,
+          1
+        ],
+        [
+          1,
+          9,
+          4,
+          5,
+          0,
+          7,
+          3,
+          6,
+          8,
+          2
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        9
+      ],
+      "A": [
+        2,
+        9
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababba",
+      "reset": "abbbabababbbababbbabababbbababbbabaababbbabaababbbaba",
+      "source": "subdivision of checked (9,6,1) witness"
+    },
+    {
+      "n": 10,
+      "s": 7,
+      "r": 2,
+      "value": 8,
+      "rows": [
+        [
+          0,
+          9,
+          2,
+          3,
+          5,
+          4,
+          4,
+          8,
+          7,
+          1
+        ],
+        [
+          1,
+          2,
+          9,
+          5,
+          0,
+          7,
+          3,
+          6,
+          8,
+          4
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        9
+      ],
+      "A": [
+        2,
+        9
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababba",
+      "reset": "abbbababbbababbbababbbababbbabaababbbabaababbbaba",
+      "source": "subdivision of checked (9,6,1) witness"
+    },
+    {
+      "n": 10,
+      "s": 7,
+      "r": 2,
+      "value": 8,
+      "rows": [
+        [
+          0,
+          1,
+          9,
+          3,
+          5,
+          4,
+          4,
+          8,
+          7,
+          2
+        ],
+        [
+          1,
+          2,
+          4,
+          5,
+          0,
+          7,
+          3,
+          6,
+          8,
+          9
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        9
+      ],
+      "A": [
+        2,
+        9
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababbb",
+      "reset": "abbbababbbabababbbababbbababbbabaababbbabaababbbaba",
+      "source": "subdivision of checked (9,6,1) witness"
+    },
+    {
+      "n": 10,
+      "s": 7,
+      "r": 2,
+      "value": 8,
+      "rows": [
+        [
+          0,
+          1,
+          9,
+          3,
+          5,
+          4,
+          4,
+          8,
+          7,
+          2
+        ],
+        [
+          1,
+          9,
+          4,
+          5,
+          0,
+          7,
+          3,
+          6,
+          8,
+          2
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        9
+      ],
+      "A": [
+        2,
+        9
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababbb",
+      "reset": "abbbababbbababbbababbbababbbabababbbabaababbbaba",
+      "source": "subdivision of checked (9,6,1) witness"
+    },
+    {
+      "n": 10,
+      "s": 7,
+      "r": 2,
+      "value": 8,
+      "rows": [
+        [
+          0,
+          1,
+          9,
+          3,
+          5,
+          4,
+          4,
+          8,
+          7,
+          2
+        ],
+        [
+          1,
+          2,
+          9,
+          5,
+          0,
+          7,
+          3,
+          6,
+          8,
+          4
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        9
+      ],
+      "A": [
+        2,
+        9
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababbb",
+      "reset": "abbbababbbababbbababbbababbbabababbbabaababbbaba",
+      "source": "subdivision of checked (9,6,1) witness"
+    },
+    {
+      "n": 11,
+      "s": 8,
+      "r": 2,
+      "value": 9,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          5,
+          9,
+          8,
+          10
+        ],
+        [
+          1,
+          2,
+          10,
+          5,
+          6,
+          0,
+          8,
+          4,
+          7,
+          9,
+          3
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        10
+      ],
+      "A": [
+        3,
+        10
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababbbb",
+      "reset": "abbbabababbabababbababababbabababbbabababbbabababbbabaababbbaba",
+      "source": "subdivision of checked (10,7,1) witness"
+    },
+    {
+      "n": 11,
+      "s": 8,
+      "r": 2,
+      "value": 9,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          5,
+          9,
+          8,
+          10
+        ],
+        [
+          1,
+          2,
+          3,
+          10,
+          6,
+          0,
+          8,
+          4,
+          7,
+          9,
+          5
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        10
+      ],
+      "A": [
+        3,
+        10
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababbbb",
+      "reset": "abbbabababbabababbababababbabababbbabababbbabababbbabaababbbaba",
+      "source": "subdivision of checked (10,7,1) witness"
+    },
+    {
+      "n": 11,
+      "s": 8,
+      "r": 2,
+      "value": 9,
+      "rows": [
+        [
+          0,
+          1,
+          10,
+          3,
+          4,
+          6,
+          5,
+          5,
+          9,
+          8,
+          2
+        ],
+        [
+          1,
+          2,
+          3,
+          5,
+          6,
+          0,
+          8,
+          4,
+          7,
+          9,
+          10
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        10
+      ],
+      "A": [
+        3,
+        10
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababbba",
+      "reset": "abbbabababbabababbbabababbbababbbababbbababbababbbabaababbbaba",
+      "source": "subdivision of checked (10,7,1) witness"
+    },
+    {
+      "n": 11,
+      "s": 8,
+      "r": 2,
+      "value": 9,
+      "rows": [
+        [
+          0,
+          1,
+          10,
+          3,
+          4,
+          6,
+          5,
+          5,
+          9,
+          8,
+          2
+        ],
+        [
+          1,
+          2,
+          10,
+          5,
+          6,
+          0,
+          8,
+          4,
+          7,
+          9,
+          3
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        10
+      ],
+      "A": [
+        3,
+        10
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababbba",
+      "reset": "abbbabababbbababbbabababbababbbababababbbababbbabaababbbaba",
+      "source": "subdivision of checked (10,7,1) witness"
+    },
+    {
+      "n": 11,
+      "s": 8,
+      "r": 2,
+      "value": 9,
+      "rows": [
+        [
+          0,
+          1,
+          10,
+          3,
+          4,
+          6,
+          5,
+          5,
+          9,
+          8,
+          2
+        ],
+        [
+          1,
+          2,
+          3,
+          10,
+          6,
+          0,
+          8,
+          4,
+          7,
+          9,
+          5
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        10
+      ],
+      "A": [
+        3,
+        10
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababbba",
+      "reset": "abbbabababbababbbabaababbbababbbababbbabababbbabaababbbaba",
+      "source": "subdivision of checked (10,7,1) witness"
+    },
+    {
+      "n": 11,
+      "s": 8,
+      "r": 2,
+      "value": 9,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          10,
+          4,
+          6,
+          5,
+          5,
+          9,
+          8,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          5,
+          6,
+          0,
+          8,
+          4,
+          7,
+          9,
+          10
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        10
+      ],
+      "A": [
+        3,
+        10
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababbbb",
+      "reset": "abbbababbbababbbababbbababbbababbaabbbababbbabaababbbaba",
+      "source": "subdivision of checked (10,7,1) witness"
+    },
+    {
+      "n": 11,
+      "s": 8,
+      "r": 2,
+      "value": 9,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          10,
+          4,
+          6,
+          5,
+          5,
+          9,
+          8,
+          3
+        ],
+        [
+          1,
+          2,
+          10,
+          5,
+          6,
+          0,
+          8,
+          4,
+          7,
+          9,
+          3
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        10
+      ],
+      "A": [
+        3,
+        10
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababbbb",
+      "reset": "abbbababbbabaababbbabababbbababbbababbbababababbbabaababbbaba",
+      "source": "subdivision of checked (10,7,1) witness"
+    },
+    {
+      "n": 11,
+      "s": 8,
+      "r": 2,
+      "value": 9,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          10,
+          4,
+          6,
+          5,
+          5,
+          9,
+          8,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          10,
+          6,
+          0,
+          8,
+          4,
+          7,
+          9,
+          5
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        10
+      ],
+      "A": [
+        3,
+        10
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababbbb",
+      "reset": "abbbababbbabaababbbabababbbababbbababbbababababbbabaababbbaba",
+      "source": "subdivision of checked (10,7,1) witness"
+    },
+    {
+      "n": 11,
+      "s": 8,
+      "r": 2,
+      "value": 9,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          5,
+          4,
+          4,
+          8,
+          7,
+          9,
+          10
+        ],
+        [
+          10,
+          9,
+          4,
+          5,
+          0,
+          7,
+          3,
+          6,
+          8,
+          2,
+          1
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        9,
+        10
+      ],
+      "A": [
+        2,
+        9
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababbbb",
+      "reset": "abbbabababbabababbababababbabababbbabababbbabababbbabaababbbaba",
+      "source": "subdivision of checked (10,7,2) witness"
+    },
+    {
+      "n": 11,
+      "s": 8,
+      "r": 2,
+      "value": 9,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          5,
+          4,
+          4,
+          8,
+          7,
+          9,
+          10
+        ],
+        [
+          1,
+          10,
+          4,
+          5,
+          0,
+          7,
+          3,
+          6,
+          8,
+          2,
+          9
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        9,
+        10
+      ],
+      "A": [
+        2,
+        9
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababbbb",
+      "reset": "abbbabababbabababbababababbabababbbabababbbabababbbabaababbbaba",
+      "source": "subdivision of checked (10,7,2) witness"
+    },
+    {
+      "n": 11,
+      "s": 8,
+      "r": 2,
+      "value": 9,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          5,
+          4,
+          4,
+          8,
+          7,
+          9,
+          10
+        ],
+        [
+          1,
+          9,
+          4,
+          5,
+          10,
+          7,
+          3,
+          6,
+          8,
+          2,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        9,
+        10
+      ],
+      "A": [
+        2,
+        9
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababbbb",
+      "reset": "abbbabababbabababbababababbabababbbabababbbabababbbabaababbbaba",
+      "source": "subdivision of checked (10,7,2) witness"
+    },
+    {
+      "n": 11,
+      "s": 8,
+      "r": 2,
+      "value": 9,
+      "rows": [
+        [
+          10,
+          1,
+          2,
+          3,
+          5,
+          4,
+          4,
+          8,
+          7,
+          9,
+          0
+        ],
+        [
+          10,
+          9,
+          4,
+          5,
+          0,
+          7,
+          3,
+          6,
+          8,
+          2,
+          1
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        9,
+        10
+      ],
+      "A": [
+        2,
+        9
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "ababababb",
+      "reset": "abbbabababbabababbabababbabababbabababbbabababbabaababbbaba",
+      "source": "subdivision of checked (10,7,2) witness"
+    },
+    {
+      "n": 11,
+      "s": 8,
+      "r": 2,
+      "value": 9,
+      "rows": [
+        [
+          10,
+          1,
+          2,
+          3,
+          5,
+          4,
+          4,
+          8,
+          7,
+          9,
+          0
+        ],
+        [
+          1,
+          9,
+          4,
+          5,
+          10,
+          7,
+          3,
+          6,
+          8,
+          2,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        9,
+        10
+      ],
+      "A": [
+        2,
+        9
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "ababababb",
+      "reset": "abbbabababbabababbabababbabababbabababbbabababbabaababbbaba",
+      "source": "subdivision of checked (10,7,2) witness"
+    },
+    {
+      "n": 11,
+      "s": 8,
+      "r": 2,
+      "value": 9,
+      "rows": [
+        [
+          0,
+          10,
+          2,
+          3,
+          5,
+          4,
+          4,
+          8,
+          7,
+          9,
+          1
+        ],
+        [
+          10,
+          9,
+          4,
+          5,
+          0,
+          7,
+          3,
+          6,
+          8,
+          2,
+          1
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        9,
+        10
+      ],
+      "A": [
+        2,
+        9
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababbab",
+      "reset": "abbbababbbababbbababbbababbbababbbabbbaabababbabaababbbaba",
+      "source": "subdivision of checked (10,7,2) witness"
+    },
+    {
+      "n": 11,
+      "s": 8,
+      "r": 2,
+      "value": 9,
+      "rows": [
+        [
+          0,
+          10,
+          2,
+          3,
+          5,
+          4,
+          4,
+          8,
+          7,
+          9,
+          1
+        ],
+        [
+          1,
+          10,
+          4,
+          5,
+          0,
+          7,
+          3,
+          6,
+          8,
+          2,
+          9
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        9,
+        10
+      ],
+      "A": [
+        2,
+        9
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababbab",
+      "reset": "abbbababbbababbbababbbababbbababbbabbbaabababbabaababbbaba",
+      "source": "subdivision of checked (10,7,2) witness"
+    },
+    {
+      "n": 11,
+      "s": 8,
+      "r": 2,
+      "value": 9,
+      "rows": [
+        [
+          0,
+          1,
+          10,
+          3,
+          5,
+          4,
+          4,
+          8,
+          7,
+          9,
+          2
+        ],
+        [
+          1,
+          10,
+          4,
+          5,
+          0,
+          7,
+          3,
+          6,
+          8,
+          2,
+          9
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        9,
+        10
+      ],
+      "A": [
+        2,
+        9
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababbba",
+      "reset": "abbbabababbababbbabaababbbababbbababbbabababbbabaababbbaba",
+      "source": "subdivision of checked (10,7,2) witness"
+    },
+    {
+      "n": 11,
+      "s": 8,
+      "r": 2,
+      "value": 9,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          10,
+          4,
+          4,
+          8,
+          7,
+          9,
+          5
+        ],
+        [
+          1,
+          9,
+          4,
+          5,
+          10,
+          7,
+          3,
+          6,
+          8,
+          2,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        9,
+        10
+      ],
+      "A": [
+        2,
+        9
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "ababaabbb",
+      "reset": "abbbabababbabababbabababbabababbabababbabababbabababbbaba",
+      "source": "subdivision of checked (10,7,2) witness"
+    },
+    {
+      "n": 11,
+      "s": 8,
+      "r": 2,
+      "value": 9,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          5,
+          4,
+          4,
+          8,
+          7,
+          10,
+          9
+        ],
+        [
+          1,
+          10,
+          4,
+          5,
+          0,
+          7,
+          3,
+          6,
+          8,
+          2,
+          9
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        9,
+        10
+      ],
+      "A": [
+        2,
+        9
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababbba",
+      "reset": "abbbabababbbababbbabababbababbbababababbbababbbabaababbbaba",
+      "source": "subdivision of checked (10,7,2) witness"
+    },
+    {
+      "n": 11,
+      "s": 8,
+      "r": 3,
+      "value": 8,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          5,
+          4,
+          4,
+          8,
+          7,
+          9,
+          10
+        ],
+        [
+          1,
+          10,
+          4,
+          5,
+          0,
+          7,
+          3,
+          6,
+          8,
+          2,
+          9
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        9,
+        10
+      ],
+      "A": [
+        2,
+        9,
+        10
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababbb",
+      "reset": "abbbabababbabababbababababbabababbbabababbbabababbbabaababbbaba",
+      "source": "subdivision of checked (10,7,2) witness"
+    },
+    {
+      "n": 11,
+      "s": 8,
+      "r": 3,
+      "value": 8,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          5,
+          4,
+          4,
+          8,
+          7,
+          9,
+          10
+        ],
+        [
+          1,
+          9,
+          10,
+          5,
+          0,
+          7,
+          3,
+          6,
+          8,
+          2,
+          4
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        9,
+        10
+      ],
+      "A": [
+        2,
+        9,
+        10
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababbb",
+      "reset": "abbbabababbabababbababababbabababbbabababbbabababbbabaababbbaba",
+      "source": "subdivision of checked (10,7,2) witness"
+    },
+    {
+      "n": 11,
+      "s": 8,
+      "r": 3,
+      "value": 8,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          5,
+          4,
+          4,
+          8,
+          7,
+          9,
+          10
+        ],
+        [
+          1,
+          9,
+          4,
+          5,
+          0,
+          7,
+          3,
+          6,
+          8,
+          10,
+          2
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        9,
+        10
+      ],
+      "A": [
+        2,
+        9,
+        10
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababbb",
+      "reset": "abbbabababbabababbababababbabababbbabababbbabababbbabaababbbaba",
+      "source": "subdivision of checked (10,7,2) witness"
+    },
+    {
+      "n": 11,
+      "s": 8,
+      "r": 3,
+      "value": 8,
+      "rows": [
+        [
+          0,
+          10,
+          2,
+          3,
+          5,
+          4,
+          4,
+          8,
+          7,
+          9,
+          1
+        ],
+        [
+          1,
+          9,
+          4,
+          5,
+          0,
+          7,
+          3,
+          6,
+          8,
+          2,
+          10
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        9,
+        10
+      ],
+      "A": [
+        2,
+        9,
+        10
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababba",
+      "reset": "abbbababbbabababbabababbbababbbabababbbababbbabaababbbaba",
+      "source": "subdivision of checked (10,7,2) witness"
+    },
+    {
+      "n": 11,
+      "s": 8,
+      "r": 3,
+      "value": 8,
+      "rows": [
+        [
+          0,
+          10,
+          2,
+          3,
+          5,
+          4,
+          4,
+          8,
+          7,
+          9,
+          1
+        ],
+        [
+          1,
+          10,
+          4,
+          5,
+          0,
+          7,
+          3,
+          6,
+          8,
+          2,
+          9
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        9,
+        10
+      ],
+      "A": [
+        2,
+        9,
+        10
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababba",
+      "reset": "abbbababbbababbbababbbababbbababbbabbbaabababbabaababbbaba",
+      "source": "subdivision of checked (10,7,2) witness"
+    },
+    {
+      "n": 11,
+      "s": 8,
+      "r": 3,
+      "value": 8,
+      "rows": [
+        [
+          0,
+          10,
+          2,
+          3,
+          5,
+          4,
+          4,
+          8,
+          7,
+          9,
+          1
+        ],
+        [
+          1,
+          9,
+          10,
+          5,
+          0,
+          7,
+          3,
+          6,
+          8,
+          2,
+          4
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        9,
+        10
+      ],
+      "A": [
+        2,
+        9,
+        10
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababba",
+      "reset": "abbbababbbababbbababbbababbbabababbbabaabababbabaababbbaba",
+      "source": "subdivision of checked (10,7,2) witness"
+    },
+    {
+      "n": 11,
+      "s": 8,
+      "r": 3,
+      "value": 8,
+      "rows": [
+        [
+          0,
+          10,
+          2,
+          3,
+          5,
+          4,
+          4,
+          8,
+          7,
+          9,
+          1
+        ],
+        [
+          1,
+          9,
+          4,
+          5,
+          0,
+          7,
+          3,
+          6,
+          8,
+          10,
+          2
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        9,
+        10
+      ],
+      "A": [
+        2,
+        9,
+        10
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababba",
+      "reset": "abbbabababbbababababbababbbabaababbbababbbabaababbbabaababbbaba",
+      "source": "subdivision of checked (10,7,2) witness"
+    },
+    {
+      "n": 11,
+      "s": 8,
+      "r": 3,
+      "value": 8,
+      "rows": [
+        [
+          0,
+          1,
+          10,
+          3,
+          5,
+          4,
+          4,
+          8,
+          7,
+          9,
+          2
+        ],
+        [
+          1,
+          9,
+          4,
+          5,
+          0,
+          7,
+          3,
+          6,
+          8,
+          2,
+          10
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        9,
+        10
+      ],
+      "A": [
+        2,
+        9,
+        10
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababbb",
+      "reset": "abbbababbbababbbababbbababbbababbaabbbababbbabaababbbaba",
+      "source": "subdivision of checked (10,7,2) witness"
+    },
+    {
+      "n": 11,
+      "s": 8,
+      "r": 3,
+      "value": 8,
+      "rows": [
+        [
+          0,
+          1,
+          10,
+          3,
+          5,
+          4,
+          4,
+          8,
+          7,
+          9,
+          2
+        ],
+        [
+          1,
+          10,
+          4,
+          5,
+          0,
+          7,
+          3,
+          6,
+          8,
+          2,
+          9
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        9,
+        10
+      ],
+      "A": [
+        2,
+        9,
+        10
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababbb",
+      "reset": "abbbabababbababbbabaababbbababbbababbbabababbbabaababbbaba",
+      "source": "subdivision of checked (10,7,2) witness"
+    },
+    {
+      "n": 11,
+      "s": 8,
+      "r": 3,
+      "value": 8,
+      "rows": [
+        [
+          0,
+          1,
+          10,
+          3,
+          5,
+          4,
+          4,
+          8,
+          7,
+          9,
+          2
+        ],
+        [
+          1,
+          9,
+          10,
+          5,
+          0,
+          7,
+          3,
+          6,
+          8,
+          2,
+          4
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        9,
+        10
+      ],
+      "A": [
+        2,
+        9,
+        10
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababbb",
+      "reset": "abbbababbbabaababbbabababbbababbbababbbababababbbabaababbbaba",
+      "source": "subdivision of checked (10,7,2) witness"
+    },
+    {
+      "n": 11,
+      "s": 8,
+      "r": 3,
+      "value": 8,
+      "rows": [
+        [
+          0,
+          1,
+          10,
+          3,
+          5,
+          4,
+          4,
+          8,
+          7,
+          9,
+          2
+        ],
+        [
+          1,
+          9,
+          4,
+          5,
+          0,
+          7,
+          3,
+          6,
+          8,
+          10,
+          2
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        9,
+        10
+      ],
+      "A": [
+        2,
+        9,
+        10
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababbb",
+      "reset": "abbbababbbabaababbbabababbbababbbababbbababababbbabaababbbaba",
+      "source": "subdivision of checked (10,7,2) witness"
+    },
+    {
+      "n": 11,
+      "s": 8,
+      "r": 3,
+      "value": 8,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          5,
+          4,
+          4,
+          8,
+          7,
+          10,
+          9
+        ],
+        [
+          1,
+          9,
+          4,
+          5,
+          0,
+          7,
+          3,
+          6,
+          8,
+          2,
+          10
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        9,
+        10
+      ],
+      "A": [
+        2,
+        9,
+        10
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababbb",
+      "reset": "abbbabababbabababbbabababbbababbbababbbababbababbbabaababbbaba",
+      "source": "subdivision of checked (10,7,2) witness"
+    },
+    {
+      "n": 11,
+      "s": 8,
+      "r": 3,
+      "value": 8,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          5,
+          4,
+          4,
+          8,
+          7,
+          10,
+          9
+        ],
+        [
+          1,
+          10,
+          4,
+          5,
+          0,
+          7,
+          3,
+          6,
+          8,
+          2,
+          9
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        9,
+        10
+      ],
+      "A": [
+        2,
+        9,
+        10
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababbb",
+      "reset": "abbbabababbbababbbabababbababbbababababbbababbbabaababbbaba",
+      "source": "subdivision of checked (10,7,2) witness"
+    },
+    {
+      "n": 11,
+      "s": 8,
+      "r": 3,
+      "value": 8,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          5,
+          4,
+          4,
+          8,
+          7,
+          10,
+          9
+        ],
+        [
+          1,
+          9,
+          10,
+          5,
+          0,
+          7,
+          3,
+          6,
+          8,
+          2,
+          4
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        9,
+        10
+      ],
+      "A": [
+        2,
+        9,
+        10
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababbb",
+      "reset": "abbbabababbababbbabaababbbababbbababbbabababbbabaababbbaba",
+      "source": "subdivision of checked (10,7,2) witness"
+    },
+    {
+      "n": 11,
+      "s": 8,
+      "r": 3,
+      "value": 8,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          5,
+          4,
+          4,
+          8,
+          7,
+          10,
+          9
+        ],
+        [
+          1,
+          9,
+          4,
+          5,
+          0,
+          7,
+          3,
+          6,
+          8,
+          10,
+          2
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        9,
+        10
+      ],
+      "A": [
+        2,
+        9,
+        10
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababbb",
+      "reset": "abbbabababbbababbbabababbababbbababababbbababbbabaababbbaba",
+      "source": "subdivision of checked (10,7,2) witness"
+    }
+  ]
+}

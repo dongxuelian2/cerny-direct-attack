@@ -1,0 +1,62 @@
+{
+  "status": "pass",
+  "archive": "certificates/three_cover_atom.zip",
+  "sha256": "c9293a32066df4423babf828824ffdc1cd0f5e3045adc467798c06ed35c1b660",
+  "files": 45,
+  "checksum_entries": 44,
+  "audits_reproduced_byte_identically": 2,
+  "data_files_reproduced_byte_identically": 1,
+  "runs": [
+    {
+      "script": "check_general_atom_kernel_controls.py",
+      "exit": 0,
+      "output": {
+        "status": "pass",
+        "single_partition_criterion_instances": 159736,
+        "raw_map_output_instances": 129241,
+        "binary_partition_coverage_instances": 53882,
+        "raw_binary_map_output_instances": 1120753,
+        "scope": "Complete labelled-map controls of uniform single-letter quotient and two-letter incoming coverage criteria. No F theorem."
+      }
+    },
+    {
+      "script": "enumerate_three_cover_atom_kernels.py",
+      "exit": 0,
+      "output": {
+        "status": "generated",
+        "geometries": 362,
+        "fields": 2529,
+        "unrestricted_excluded": 103,
+        "binary_pairs_excluded": 42
+      }
+    },
+    {
+      "script": "check_three_cover_atom_kernels.py",
+      "exit": 0,
+      "output": {
+        "status": "pass",
+        "historical_geometries": 362,
+        "fields_checked": 2529,
+        "compatible_kernel_instances": 67700,
+        "literal_graph_catalogs": 23,
+        "counts": {
+          "new_binary_types": 11,
+          "new_binary_geometry": 38,
+          "new_binary_pairs": 22,
+          "new_unrestricted_B1_B2": 40,
+          "new_unrestricted_B3": 47,
+          "remaining_binary_types": 107,
+          "remaining_binary_pairs": 459,
+          "remaining_binary_geometry": 122,
+          "remaining_unrestricted_B1_B2": 141,
+          "remaining_unrestricted_B3": 67,
+          "remaining_binary_joints": 18,
+          "remaining_unrestricted_joints": 34
+        }
+      }
+    }
+  ],
+  "source_sha256": {
+    "package_three_cover_atom_certificate.py": "c34284c5a0eb026d03b5e5c602b88076ce49e6a65c673670c1e4f9270ca43f52"
+  }
+}

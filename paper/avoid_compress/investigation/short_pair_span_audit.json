@@ -1,0 +1,91 @@
+{
+  "status": "all_finite_controls_passed",
+  "exact_rational_rank": true,
+  "exhaustive_graphs": [
+    {
+      "n": 1,
+      "graphs": 1,
+      "max_rank_by_cover": {
+        "0": 1
+      }
+    },
+    {
+      "n": 2,
+      "graphs": 2,
+      "max_rank_by_cover": {
+        "0": 1,
+        "1": 2
+      }
+    },
+    {
+      "n": 3,
+      "graphs": 8,
+      "max_rank_by_cover": {
+        "0": 1,
+        "1": 2,
+        "2": 3
+      }
+    },
+    {
+      "n": 4,
+      "graphs": 64,
+      "max_rank_by_cover": {
+        "0": 1,
+        "1": 2,
+        "2": 3,
+        "3": 4
+      }
+    },
+    {
+      "n": 5,
+      "graphs": 1024,
+      "max_rank_by_cover": {
+        "0": 1,
+        "1": 2,
+        "2": 3,
+        "3": 5,
+        "4": 5
+      }
+    },
+    {
+      "n": 6,
+      "graphs": 32768,
+      "max_rank_by_cover": {
+        "0": 1,
+        "1": 2,
+        "2": 3,
+        "3": 5,
+        "4": 6,
+        "5": 6
+      }
+    }
+  ],
+  "random_graphs": 2000,
+  "exhaustive_automata": [
+    {
+      "n": 2,
+      "ordered_binary_automata": 16,
+      "strongly_connected_synchronizing": 6,
+      "inequalities": 0
+    },
+    {
+      "n": 3,
+      "ordered_binary_automata": 729,
+      "strongly_connected_synchronizing": 240,
+      "inequalities": 792
+    },
+    {
+      "n": 4,
+      "ordered_binary_automata": 65536,
+      "strongly_connected_synchronizing": 18648,
+      "inequalities": 209040
+    }
+  ],
+  "random_automata": 300,
+  "random_sc_sync": 177,
+  "random_inequalities": 4552,
+  "seed": 8042026,
+  "seconds": 2.5780000000013388,
+  "checker_sha256": "a958663be64dabbcfbbdc1478c69be6bebb214267f5795c9ea44f1a528504a24",
+  "scope": "Finite controls only; uniform proof is SHORT_PAIR_SPAN.md."
+}

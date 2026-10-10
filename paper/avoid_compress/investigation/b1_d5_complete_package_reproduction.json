@@ -1,0 +1,1169 @@
+{
+  "status": "pass",
+  "archive": "certificates/b1_d5_complete.zip",
+  "sha256": "be7aa5f24ac2f66a4bf399cf2158c1bc01aa0776d50e947b3fba4fc57b8cdcb4",
+  "files": 42,
+  "checksum_entries": 41,
+  "data_files_reproduced_byte_identically": 3,
+  "audits_reproduced_byte_identically": 3,
+  "complete_literal_masks": 241605,
+  "complete_augmented_ranks": 39365,
+  "complete_coupled_pairs_per_implementation": 5689728,
+  "whole_binary_D5_excluded": true,
+  "runs": [
+    {
+      "script": "enumerate_b1_e26_f7_seventh.py",
+      "exit": 0,
+      "outputs": [
+        [
+          {
+            "G": [
+              8
+            ],
+            "H": [
+              9
+            ],
+            "labels": 4,
+            "forms": 12,
+            "mandatory": [
+              0,
+              3,
+              5,
+              7,
+              8,
+              9
+            ],
+            "extras": [
+              [
+                10,
+                11,
+                12
+              ]
+            ],
+            "covered_extras": [],
+            "rows": 128,
+            "supply_rows": 64,
+            "pairs": 1094
+          },
+          {
+            "G": [
+              8
+            ],
+            "H": [
+              1,
+              2
+            ],
+            "labels": 1,
+            "forms": 12,
+            "mandatory": [
+              0,
+              3,
+              5,
+              7,
+              8
+            ],
+            "extras": [
+              [
+                4,
+                6
+              ]
+            ],
+            "covered_extras": [],
+            "rows": 64,
+            "supply_rows": 0,
+            "pairs": 0
+          },
+          {
+            "G": [
+              8
+            ],
+            "H": [
+              1,
+              6
+            ],
+            "labels": 1,
+            "forms": 12,
+            "mandatory": [
+              0,
+              3,
+              5,
+              7,
+              8
+            ],
+            "extras": [
+              [
+                2,
+                4
+              ]
+            ],
+            "covered_extras": [
+              [
+                2,
+                4
+              ]
+            ],
+            "rows": 64,
+            "supply_rows": 0,
+            "pairs": 0
+          },
+          {
+            "G": [
+              8
+            ],
+            "H": [
+              1,
+              9
+            ],
+            "labels": 4,
+            "forms": 12,
+            "mandatory": [
+              0,
+              3,
+              5,
+              7,
+              8
+            ],
+            "extras": [],
+            "covered_extras": [],
+            "rows": 66,
+            "supply_rows": 2,
+            "pairs": 48
+          },
+          {
+            "G": [
+              8
+            ],
+            "H": [
+              2,
+              4
+            ],
+            "labels": 1,
+            "forms": 12,
+            "mandatory": [
+              0,
+              3,
+              5,
+              7,
+              8
+            ],
+            "extras": [
+              [
+                1,
+                6
+              ]
+            ],
+            "covered_extras": [
+              [
+                1,
+                6
+              ]
+            ],
+            "rows": 64,
+            "supply_rows": 0,
+            "pairs": 0
+          },
+          {
+            "G": [
+              8
+            ],
+            "H": [
+              2,
+              9
+            ],
+            "labels": 4,
+            "forms": 12,
+            "mandatory": [
+              0,
+              3,
+              5,
+              7,
+              8
+            ],
+            "extras": [],
+            "covered_extras": [],
+            "rows": 72,
+            "supply_rows": 8,
+            "pairs": 108
+          },
+          {
+            "G": [
+              8
+            ],
+            "H": [
+              1,
+              2,
+              9
+            ],
+            "labels": 4,
+            "forms": 9,
+            "mandatory": [
+              0,
+              3,
+              5,
+              7,
+              8
+            ],
+            "extras": [],
+            "covered_extras": [],
+            "rows": 64,
+            "supply_rows": 0,
+            "pairs": 0
+          },
+          {
+            "G": [
+              1,
+              8
+            ],
+            "H": [
+              9
+            ],
+            "labels": 4,
+            "forms": 12,
+            "mandatory": [
+              0,
+              3,
+              5,
+              7,
+              9
+            ],
+            "extras": [],
+            "covered_extras": [],
+            "rows": 76,
+            "supply_rows": 34,
+            "pairs": 48
+          },
+          {
+            "G": [
+              1,
+              8
+            ],
+            "H": [
+              1,
+              2
+            ],
+            "labels": 1,
+            "forms": 10,
+            "mandatory": [
+              0,
+              3,
+              5,
+              7
+            ],
+            "extras": [
+              [
+                4,
+                6
+              ],
+              [
+                6,
+                8
+              ]
+            ],
+            "covered_extras": [],
+            "rows": 42,
+            "supply_rows": 0,
+            "pairs": 0
+          },
+          {
+            "G": [
+              1,
+              8
+            ],
+            "H": [
+              1,
+              6
+            ],
+            "labels": 1,
+            "forms": 10,
+            "mandatory": [
+              0,
+              3,
+              5,
+              7
+            ],
+            "extras": [
+              [
+                2,
+                4
+              ],
+              [
+                2,
+                8
+              ]
+            ],
+            "covered_extras": [
+              [
+                2,
+                4
+              ],
+              [
+                2,
+                8
+              ]
+            ],
+            "rows": 42,
+            "supply_rows": 0,
+            "pairs": 0
+          },
+          {
+            "G": [
+              1,
+              8
+            ],
+            "H": [
+              1,
+              9
+            ],
+            "labels": 4,
+            "forms": 8,
+            "mandatory": [
+              0,
+              3,
+              5,
+              7
+            ],
+            "extras": [],
+            "covered_extras": [],
+            "rows": 50,
+            "supply_rows": 8,
+            "pairs": 0
+          },
+          {
+            "G": [
+              1,
+              8
+            ],
+            "H": [
+              2,
+              4
+            ],
+            "labels": 1,
+            "forms": 10,
+            "mandatory": [
+              0,
+              3,
+              5,
+              7
+            ],
+            "extras": [
+              [
+                1,
+                6
+              ],
+              [
+                2,
+                8
+              ]
+            ],
+            "covered_extras": [
+              [
+                1,
+                6
+              ],
+              [
+                2,
+                8
+              ]
+            ],
+            "rows": 42,
+            "supply_rows": 0,
+            "pairs": 0
+          },
+          {
+            "G": [
+              1,
+              8
+            ],
+            "H": [
+              2,
+              8
+            ],
+            "labels": 1,
+            "forms": 10,
+            "mandatory": [
+              0,
+              3,
+              5,
+              7
+            ],
+            "extras": [
+              [
+                1,
+                6
+              ],
+              [
+                2,
+                4
+              ]
+            ],
+            "covered_extras": [
+              [
+                1,
+                6
+              ],
+              [
+                2,
+                4
+              ]
+            ],
+            "rows": 42,
+            "supply_rows": 0,
+            "pairs": 0
+          },
+          {
+            "G": [
+              1,
+              8
+            ],
+            "H": [
+              2,
+              9
+            ],
+            "labels": 4,
+            "forms": 10,
+            "mandatory": [
+              0,
+              3,
+              5,
+              7
+            ],
+            "extras": [],
+            "covered_extras": [],
+            "rows": 42,
+            "supply_rows": 0,
+            "pairs": 0
+          },
+          {
+            "G": [
+              1,
+              8
+            ],
+            "H": [
+              1,
+              2,
+              9
+            ],
+            "labels": 4,
+            "forms": 7,
+            "mandatory": [
+              0,
+              3,
+              5,
+              7
+            ],
+            "extras": [],
+            "covered_extras": [],
+            "rows": 42,
+            "supply_rows": 0,
+            "pairs": 0
+          },
+          {
+            "G": [
+              2,
+              8
+            ],
+            "H": [
+              9
+            ],
+            "labels": 4,
+            "forms": 12,
+            "mandatory": [
+              0,
+              3,
+              5,
+              7,
+              9
+            ],
+            "extras": [],
+            "covered_extras": [],
+            "rows": 88,
+            "supply_rows": 40,
+            "pairs": 108
+          },
+          {
+            "G": [
+              2,
+              8
+            ],
+            "H": [
+              1,
+              2
+            ],
+            "labels": 1,
+            "forms": 10,
+            "mandatory": [
+              0,
+              3,
+              5,
+              7
+            ],
+            "extras": [
+              [
+                4,
+                6
+              ],
+              [
+                4,
+                8
+              ]
+            ],
+            "covered_extras": [],
+            "rows": 48,
+            "supply_rows": 0,
+            "pairs": 0
+          },
+          {
+            "G": [
+              2,
+              8
+            ],
+            "H": [
+              1,
+              6
+            ],
+            "labels": 1,
+            "forms": 10,
+            "mandatory": [
+              0,
+              3,
+              5,
+              7
+            ],
+            "extras": [
+              [
+                1,
+                8
+              ],
+              [
+                2,
+                4
+              ]
+            ],
+            "covered_extras": [
+              [
+                1,
+                8
+              ],
+              [
+                2,
+                4
+              ]
+            ],
+            "rows": 50,
+            "supply_rows": 0,
+            "pairs": 0
+          },
+          {
+            "G": [
+              2,
+              8
+            ],
+            "H": [
+              1,
+              8
+            ],
+            "labels": 1,
+            "forms": 10,
+            "mandatory": [
+              0,
+              3,
+              5,
+              7
+            ],
+            "extras": [
+              [
+                1,
+                6
+              ],
+              [
+                2,
+                4
+              ]
+            ],
+            "covered_extras": [
+              [
+                1,
+                6
+              ],
+              [
+                2,
+                4
+              ]
+            ],
+            "rows": 50,
+            "supply_rows": 2,
+            "pairs": 6
+          },
+          {
+            "G": [
+              2,
+              8
+            ],
+            "H": [
+              1,
+              9
+            ],
+            "labels": 4,
+            "forms": 10,
+            "mandatory": [
+              0,
+              3,
+              5,
+              7
+            ],
+            "extras": [],
+            "covered_extras": [],
+            "rows": 50,
+            "supply_rows": 2,
+            "pairs": 6
+          },
+          {
+            "G": [
+              2,
+              8
+            ],
+            "H": [
+              2,
+              4
+            ],
+            "labels": 1,
+            "forms": 10,
+            "mandatory": [
+              0,
+              3,
+              5,
+              7
+            ],
+            "extras": [
+              [
+                1,
+                6
+              ],
+              [
+                1,
+                8
+              ]
+            ],
+            "covered_extras": [
+              [
+                1,
+                6
+              ],
+              [
+                1,
+                8
+              ]
+            ],
+            "rows": 50,
+            "supply_rows": 0,
+            "pairs": 0
+          },
+          {
+            "G": [
+              2,
+              8
+            ],
+            "H": [
+              2,
+              9
+            ],
+            "labels": 4,
+            "forms": 8,
+            "mandatory": [
+              0,
+              3,
+              5,
+              7
+            ],
+            "extras": [],
+            "covered_extras": [],
+            "rows": 56,
+            "supply_rows": 8,
+            "pairs": 0
+          },
+          {
+            "G": [
+              2,
+              8
+            ],
+            "H": [
+              1,
+              2,
+              9
+            ],
+            "labels": 4,
+            "forms": 7,
+            "mandatory": [
+              0,
+              3,
+              5,
+              7
+            ],
+            "extras": [],
+            "covered_extras": [],
+            "rows": 48,
+            "supply_rows": 0,
+            "pairs": 0
+          }
+        ]
+      ]
+    },
+    {
+      "script": "check_b1_e26_f7_seventh.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "status": "pass",
+          "orbits": 23,
+          "labels": 59,
+          "masks": 241605,
+          "ranktests": 39365,
+          "counts": [
+            {
+              "G": [
+                8
+              ],
+              "geometric_orbits": 7,
+              "labelled_H": 19,
+              "all_alphabet_excluded_H": [
+                [
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  1,
+                  2,
+                  9
+                ]
+              ],
+              "binary_zero_pair_H": [
+                [
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  1,
+                  2,
+                  9
+                ]
+              ],
+              "remaining_binary_H": [
+                [
+                  9
+                ],
+                [
+                  1,
+                  9
+                ],
+                [
+                  2,
+                  9
+                ]
+              ],
+              "binary_field_pairs": 1250,
+              "original_sixth_pairs": 365,
+              "remaining_original_sixth_pairs": 365
+            },
+            {
+              "G": [
+                1,
+                8
+              ],
+              "geometric_orbits": 8,
+              "labelled_H": 20,
+              "all_alphabet_excluded_H": [
+                [
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  2,
+                  8
+                ],
+                [
+                  2,
+                  9
+                ],
+                [
+                  1,
+                  2,
+                  9
+                ]
+              ],
+              "binary_zero_pair_H": [
+                [
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  1,
+                  9
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  2,
+                  8
+                ],
+                [
+                  2,
+                  9
+                ],
+                [
+                  1,
+                  2,
+                  9
+                ]
+              ],
+              "remaining_binary_H": [
+                [
+                  9
+                ]
+              ],
+              "binary_field_pairs": 48,
+              "original_sixth_pairs": 24,
+              "remaining_original_sixth_pairs": 24
+            },
+            {
+              "G": [
+                2,
+                8
+              ],
+              "geometric_orbits": 8,
+              "labelled_H": 20,
+              "all_alphabet_excluded_H": [
+                [
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  1,
+                  2,
+                  9
+                ]
+              ],
+              "binary_zero_pair_H": [
+                [
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  2,
+                  9
+                ],
+                [
+                  1,
+                  2,
+                  9
+                ]
+              ],
+              "remaining_binary_H": [
+                [
+                  9
+                ],
+                [
+                  1,
+                  8
+                ],
+                [
+                  1,
+                  9
+                ]
+              ],
+              "binary_field_pairs": 120,
+              "original_sixth_pairs": 54,
+              "remaining_original_sixth_pairs": 54
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "script": "enumerate_b1_e26_f7_seventh_rows.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "G": [
+            8
+          ],
+          "H": [
+            9
+          ],
+          "raw_rows": 23424,
+          "kept_rows": 10848,
+          "raw_pairs": 27832320,
+          "kept_pairs": 5454720,
+          "counts": {
+            "kept": 10848,
+            "no_single_letter_initial_image": 10848,
+            "protected_P7_depth2": 1728
+          }
+        },
+        {
+          "G": [
+            8
+          ],
+          "H": [
+            1,
+            9
+          ],
+          "raw_rows": 10176,
+          "kept_rows": 5040,
+          "raw_pairs": 552960,
+          "kept_pairs": 69120,
+          "counts": {
+            "kept": 5040,
+            "no_single_letter_initial_image": 5040,
+            "protected_P7_depth2": 96
+          }
+        },
+        {
+          "G": [
+            8
+          ],
+          "H": [
+            2,
+            9
+          ],
+          "raw_rows": 10944,
+          "kept_rows": 5232,
+          "raw_pairs": 1327104,
+          "kept_pairs": 165888,
+          "counts": {
+            "kept": 5232,
+            "no_single_letter_initial_image": 5232,
+            "protected_P7_depth2": 480
+          }
+        },
+        {
+          "G": [
+            1,
+            8
+          ],
+          "H": [
+            9
+          ],
+          "raw_rows": 2592,
+          "kept_rows": 1416,
+          "raw_pairs": 0,
+          "kept_pairs": 0,
+          "counts": {
+            "kept": 1416,
+            "no_single_letter_initial_image": 1176
+          }
+        },
+        {
+          "G": [
+            2,
+            8
+          ],
+          "H": [
+            9
+          ],
+          "raw_rows": 2880,
+          "kept_rows": 1560,
+          "raw_pairs": 0,
+          "kept_pairs": 0,
+          "counts": {
+            "kept": 1560,
+            "no_single_letter_initial_image": 1320
+          }
+        },
+        {
+          "G": [
+            2,
+            8
+          ],
+          "H": [
+            1,
+            8
+          ],
+          "raw_rows": 576,
+          "kept_rows": 528,
+          "raw_pairs": 0,
+          "kept_pairs": 0,
+          "counts": {
+            "kept": 528,
+            "no_single_letter_initial_image": 48
+          }
+        },
+        {
+          "G": [
+            2,
+            8
+          ],
+          "H": [
+            1,
+            9
+          ],
+          "raw_rows": 576,
+          "kept_rows": 336,
+          "raw_pairs": 0,
+          "kept_pairs": 0,
+          "counts": {
+            "kept": 336,
+            "no_single_letter_initial_image": 240
+          }
+        }
+      ]
+    },
+    {
+      "script": "check_b1_e26_f7_seventh_rows.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "G": [
+            8
+          ],
+          "H": [
+            9
+          ],
+          "complete_pairs": 5454720,
+          "primary_candidates": 0,
+          "secondary_survivors": 0
+        },
+        {
+          "G": [
+            8
+          ],
+          "H": [
+            1,
+            9
+          ],
+          "complete_pairs": 69120,
+          "primary_candidates": 0,
+          "secondary_survivors": 0
+        },
+        {
+          "G": [
+            8
+          ],
+          "H": [
+            2,
+            9
+          ],
+          "complete_pairs": 165888,
+          "primary_candidates": 0,
+          "secondary_survivors": 0
+        },
+        {
+          "G": [
+            1,
+            8
+          ],
+          "H": [
+            9
+          ],
+          "complete_pairs": 0,
+          "primary_candidates": 0,
+          "secondary_survivors": 0
+        },
+        {
+          "G": [
+            2,
+            8
+          ],
+          "H": [
+            9
+          ],
+          "complete_pairs": 0,
+          "primary_candidates": 0,
+          "secondary_survivors": 0
+        },
+        {
+          "G": [
+            2,
+            8
+          ],
+          "H": [
+            1,
+            8
+          ],
+          "complete_pairs": 0,
+          "primary_candidates": 0,
+          "secondary_survivors": 0
+        },
+        {
+          "G": [
+            2,
+            8
+          ],
+          "H": [
+            1,
+            9
+          ],
+          "complete_pairs": 0,
+          "primary_candidates": 0,
+          "secondary_survivors": 0
+        },
+        {
+          "status": "pass",
+          "whole_binary_G8_G18_G28_excluded": true,
+          "raw_individual_rows": 51168,
+          "checked_retained_pairs_per_implementation": 5689728
+        }
+      ]
+    },
+    {
+      "script": "check_b1_d5_composition.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "status": "pass",
+          "whole_binary_D5_third_excluded": true,
+          "removed_D5_third_pairs": 14,
+          "complete_new_coupled_pairs_per_implementation": 5689728
+        }
+      ]
+    }
+  ],
+  "source_sha256": {
+    "check_b1_d5_complete_package.py": "1336de8aad72332858fb68baff1896843eb125dbb0c3917230053b2ea85513c6"
+  }
+}

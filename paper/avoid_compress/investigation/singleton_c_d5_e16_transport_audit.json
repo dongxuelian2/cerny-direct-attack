@@ -1,0 +1,57 @@
+{
+  "status": "pass",
+  "parameter": [
+    13,
+    9,
+    1
+  ],
+  "coverage": [
+    {
+      "id": "b1_in_c1_third2",
+      "D_labels": 8,
+      "E_labels_per_D": 14,
+      "labelled_extensions": 112,
+      "normalized_fourth_pairs_excluded": 41,
+      "whole_third_excluded": false
+    },
+    {
+      "id": "b1_out_c2_third2",
+      "D_labels": 8,
+      "E_labels_per_D": 14,
+      "labelled_extensions": 112,
+      "normalized_fourth_pairs_excluded": 41,
+      "whole_third_excluded": false
+    }
+  ],
+  "labelled_extensions_checked": 224,
+  "Boolean_identities_checked": 896,
+  "new_unrestricted_fourth_cuts_both_roots": 2,
+  "newly_removed_current_binary_fourth_pairs_both_roots": 82,
+  "remaining_C4_D5_E": [
+    [
+      6
+    ]
+  ],
+  "remaining_C4_geometries": 1,
+  "remaining_C4_E_labels": 7,
+  "remaining_C4_binary_pairs": 41,
+  "whole_third_types_removed": 0,
+  "binary_parent_pairs_removed": 0,
+  "source_sha256": {
+    "check_singleton_c_d5_e16_transport.py": "d55d7b553751fcfce605d5a435dc052b03589ccd69368fef3f1eedc7c8ec2867",
+    "SINGLETON_C_D5_E16_UNRESTRICTED_EXCLUSION.md": "d5d1cfa915b022f2b7b7e7c4db8cae04235665a265e33722a35337e54aec2ca7",
+    "TWO_COVER_PROTECTED_KERNEL_OBSTRUCTION.md": "0154adc2c6680fc7c2692680e043c37bad770847072a67bc4740595dab295900",
+    "two_cover_protected_kernel_graph_audit.json": "b01678e0bbeb4b3aed6373f8faa487c409b9f3dab2728de1b6096b61e4c8e3d9",
+    "b1_c4_fourth_audit.json": "f2d0ab7b95611e4ebe0e9fd5addcf30708be2f034f146d20a0cdc82e25cde5be",
+    "b1_c4_fourth_inventory.json": "c9a26a19d52b0dbf8806e84fddab5156366aabab591d10e335e29d65c7b25517",
+    "B1_C4_FOURTH_SPACE.md": "3e6ab0c3a886c489ce7d9217378984af34f234c699833e2c02098669fe798d93",
+    "small_first_third_inventory.json": "ea00650e65207784313446cec6bf6d38b6f48223b327dcc218e9c6f34cf703c1",
+    "small_first_third_audit.json": "a7eff7aec7da7c19e847d965c49c46820d2ff2b804143364a7cadb69e9ffaef4",
+    "SMALL_FIRST_THIRD_ADMISSION.md": "3393586186e33deca585422e32c31cb7f6a70000af2f46b352a9c14be7187571",
+    "MANDATORY_CORE_ISOLATION.md": "72129f1a810b07a8bcd975e5df353cc1dbc43d063e13c8ff887ba4748bb14537",
+    "mandatory_core_isolation_audit.json": "67d7c82cae127c23260a3f7b6affe3052a1afef728cad8f49fd54d27e3fa9f54",
+    "ENTRY_FIBER_FLAG.md": "b27eb51977104cd68aaff2e2f37db10c50bbf4a4dd4320502b15b0f609a01bbf",
+    "LOCAL_EQUALITY_FLAG.md": "f34cf260276c6551266564c1ee2264dc823aeaa4f33b4ae8f8261aedeec596a8"
+  },
+  "scope": "Complete E16 cuts at both roots. E6, whole D5 and numerical F unresolved."
+}

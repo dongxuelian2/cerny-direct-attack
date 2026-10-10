@@ -1,0 +1,19 @@
+{
+  "n": 11,
+  "s": 8,
+  "target": 10,
+  "letters": 3,
+  "protected": 1,
+  "early_pattern": 8,
+  "common_kernel": [
+    0,
+    1
+  ],
+  "build_seconds": 7.4701475000001665,
+  "seconds": 127.58570499999769,
+  "status": "unknown: timeout",
+  "iterations": 1,
+  "witness": null,
+  "rejected_candidates": [],
+  "scope": "Bounded-alphabet exact Boolean pair closures; negative output not certified."
+}

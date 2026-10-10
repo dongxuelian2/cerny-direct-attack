@@ -1,0 +1,13 @@
+{
+  "status": "pass",
+  "method": "Inverse cases and literal full-row subset images",
+  "counts": {
+    "permutation": 896,
+    "missing01": 4032,
+    "missing23": 2016,
+    "missing_other": 224
+  },
+  "profiles": 177,
+  "all_primary_profiles_equal": true,
+  "scope": "Complete independent matching-type projection audit, not a global maximum."
+}
