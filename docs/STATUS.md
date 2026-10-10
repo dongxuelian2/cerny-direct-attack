@@ -13,3 +13,7 @@ The publication source was frozen at `5024b2eb15f77b3022c59800badbffc008d89fda` 
 ## Problem 4 research snapshot, 2026-10-10
 
 The separately imported [Problem 4 handoff](../paper/avoid_compress/HANDOFF.md) contains the current partial-answer manuscript, its 109-file supplement, and the latest 119-audit auxiliary snapshot. Exact regions and conditional computational exclusions have separate P4 result entries. The complete problem and both extrema at (13,9,1) remain unresolved; both lie in [11,12]. This addition does not extend the frozen Lean/OpenMath verification scope.
+
+## Problem 4 independent continuation, 2026-10-10
+
+The [continuation audit](../proofs/paper/problem4_continuation_audit.md) adds a sharp graph peeling lemma, justified short-pair caps, a written P3=K4 exclusion and a computer-assisted P6=C7 exclusion. Independent finite checks and paper arguments have separate result IDs. The twelve-shape P3 list is certified only with its additional cover/rank hypotheses; six historical exclusion labels remain unverified. Both extrema at (13,9,1) remain in [11,12]. These results are separate from the imported snapshot and do not change the frozen formal inventory or manuscript.

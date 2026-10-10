@@ -1807,6 +1807,96 @@
       "proof_check_status": "Navigation and scope record for the 2026-10-10 snapshot; current work starts at b3_mixed_c1_third2. Retracted higher-layer cardinality caps and solver timeouts are explicitly excluded as upper-bound evidence.",
       "dependencies": "investigation/active_research.json, CURRENT_FRONTIER.md and AUXILIARY_AUDIT_20261010_22.json",
       "priority": "OPEN"
+    },
+    {
+      "id": "P4-PEELING",
+      "name": "Sharp sparse-graph Frankl-Pin peeling",
+      "status": "PROVED ON PAPER",
+      "scope": "Simple graph on n vertices, m>=1, n-m>=2, Delta<=m and tau<=m: p_(n-m)>=min(edge count,3m-1). K_(3,m) with isolates attains 3m-1 at 3m edges for m>=3.",
+      "source": "proofs/paper/problem4_short_pair_peeling.md",
+      "proof_check_status": "Written minimum-cover peeling proof and uniform sharpness argument; finite controls indexed separately.",
+      "dependencies": "Frankl-Pin sequence definition; elementary minimum-cover and degree inequalities",
+      "priority": "OPEN"
+    },
+    {
+      "id": "P4-PAIR-CAPS",
+      "name": "Justified higher-layer short-pair edge caps",
+      "status": "PROVED ON PAPER",
+      "scope": "SC synchronizing DFA, |S|=n-m>=2, c(S)>=L; 1<=h<=L-m-1 and 0<=b=binom(m+2,2)+h-L<=3m-2 imply |P_h|<=b. In particular m=4,L=12 gives |P_h|<=h+3 for h=1..7; arbitrary finite alphabets, no image assumption.",
+      "source": "proofs/paper/problem4_short_pair_peeling.md",
+      "proof_check_status": "New sequence proof supplies the missing edge-count bridge; historical failed searches are not retroactively certified.",
+      "dependencies": "P4-PEELING; SC distance from S; Kisielewicz-Kowalski-Szykula CIAA 2016 Theorem 1",
+      "priority": "OPEN"
+    },
+    {
+      "id": "P4-RANK-TRANSFER",
+      "name": "Compression from an available rank-s word",
+      "status": "PROVED ON PAPER",
+      "scope": "Synchronizing DFA with original word u of rank s>=2: every s-set compresses within |u|+n-s+1. For codimension four and compression>=12, all letters have rank>=n-2.",
+      "source": "proofs/paper/problem4_short_pair_peeling.md",
+      "proof_check_status": "Kernel-block equal-sum span proof; does not require SC or initial-image reachability.",
+      "dependencies": "Trajectory span stabilization; kernel-block dimension; original word costs",
+      "priority": "OPEN"
+    },
+    {
+      "id": "P4-K4-EXCLUSION",
+      "name": "No K4 at the third short-pair layer",
+      "status": "PROVED ON PAPER",
+      "scope": "n>=8, SC synchronizing DFA with an (n-4)-set requiring at least 12 letters to compress: P3 is not K4 plus isolated vertices. Arbitrary finite alphabets and arbitrary initial subsets.",
+      "source": "proofs/paper/problem4_short_pair_peeling.md",
+      "proof_check_status": "Written normalization, strong-connectivity entries and explicit at-least-eleven-edge P7 contradiction. No Lean verification.",
+      "dependencies": "P4-PAIR-CAPS; P4-RANK-TRANSFER; inherited tau(P5)<=3 in CODIMENSION_FOUR_P5_DICHOTOMY.md and ODD_CYCLE_SPAN_REFINEMENT.md",
+      "priority": "OPEN"
+    },
+    {
+      "id": "P4-PAIR-CONTROLS",
+      "name": "Finite peeling and K4 inverse-edge controls",
+      "status": "COMPUTATIONALLY VERIFIED",
+      "scope": "41031 labeled graph/parameter instances through six vertices; K_(3,4) sharpness on 13 vertices; all 40320 outside permutations in the normalized n13 K4 branch plus 48 local g alternatives.",
+      "source": "proofs/paper/problem4_continuation_audit.md",
+      "proof_check_status": "Literal hole-set sequence ordering, inverse edges, and cardinalities recomputed; 10080 eleven-edge and 30240 twelve-edge outcomes. Supports rather than proves uniform statements.",
+      "dependencies": "computations/src/problem4_peeling_controls.py; computations/src/problem4_k4_controls.py; Python standard library",
+      "priority": "OPEN"
+    },
+    {
+      "id": "P4-C7-SIXTH",
+      "name": "No seven-cycle at the sixth short-pair layer",
+      "status": "PROVED ON PAPER",
+      "scope": "n>=8, SC synchronizing DFA with an (n-4)-set requiring at least 12 letters to compress: P6 is not C7 plus isolated vertices. Arbitrary finite alphabets; no reachability or protected-set premise.",
+      "source": "proofs/paper/problem4_c7_sixth_layer.md",
+      "proof_check_status": "Computer-assisted uniform proof: single-letter projection to eight states, exhaustive joint distance rejection, independent literal/action and distance checks. Not formally verified.",
+      "dependencies": "P4-RANK-TRANSFER; trajectory span growth; maximum independent triples of C7; P4-C7-CERTIFICATE",
+      "priority": "OPEN"
+    },
+    {
+      "id": "P4-C7-CERTIFICATE",
+      "name": "Complete C7 action and joint-distance rejection",
+      "status": "COMPUTATIONALLY VERIFIED",
+      "scope": "All 604800 eight-state maps with at most two cycle kernel edges, independently filtered from all 8^8 literal maps; 1484 retained actions, 896 signatures, 3960 subset distance vectors, 14 candidate vectors and all 3919104 joint pair-distance assignments.",
+      "source": "proofs/paper/problem4_c7_sixth_layer.md",
+      "proof_check_status": "Two map enumerations agree byte-for-byte. C++ full integer scan and independent Python 4946-node partial search both give zero survivors; both accept the artificial chain control.",
+      "dependencies": "computations/src/problem4_c7_profiles.cpp; problem4_c7_distances.cpp; problem4_c7_audit.py; C++17 and Python standard library",
+      "priority": "OPEN"
+    },
+    {
+      "id": "P4-P3-SHAPES",
+      "name": "Conditional twelve-shape P3 classification",
+      "status": "COMPUTATIONALLY VERIFIED",
+      "scope": "Graphs with tau=3, Delta<=4, at most six edges, empty intersection of minimum covers, and maximum-independent-set row rank>=4: exactly the supplied twelve nonisolated types. Applies to the automaton branch tau(P3)=tau(P6)=3; global branch completeness is not claimed.",
+      "source": "proofs/paper/problem4_continuation_audit.md",
+      "proof_check_status": "All labeled graphs on support sizes 4..6 tested with rational rank and explicit isomorphism canonicalization. Six old exclusion labels remain unverified.",
+      "dependencies": "Inherited tight-exchange support bound; computations/src/problem4_p3_shapes.py; P4-PAIR-CAPS",
+      "priority": "OPEN"
+    },
+    {
+      "id": "P4-CONTINUATION-20261010",
+      "name": "Continuation scope and unverified historical labels",
+      "status": "EXPLORATORY",
+      "scope": "Verified new K4/C7 exclusions do not settle the first unknown: both extrema at (13,9,1) remain in [11,12]. Records conditional shape scope, nine exploratory P6 supports, rejected projection-power cuts and unavailable previous conversation artifacts.",
+      "source": "proofs/paper/problem4_continuation_audit.md",
+      "proof_check_status": "Research/provenance navigation only; no blanket proof status. Manuscript, old certificates and frozen formal inventory unchanged.",
+      "dependencies": "P4-K4-EXCLUSION; P4-C7-SIXTH; P4-P3-SHAPES; explicit limitations in the note",
+      "priority": "OPEN"
     }
   ]
 }

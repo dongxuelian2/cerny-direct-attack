@@ -198,3 +198,6 @@ Each row is EXPLORATORY as a navigation record; individual theorem/control statu
 | [post_baseline/reproduction_log.md](../post_baseline/reproduction_log.md) | Baseline 复现日志 | EXPLORATORY |
 | [post_baseline/SPRINT_REPRODUCTION.md](../post_baseline/SPRINT_REPRODUCTION.md) | Reproduction and status map for the all-parameter sprint | EXPLORATORY |
 | [post_baseline/STRUCTURAL_REPRODUCTION.md](../post_baseline/STRUCTURAL_REPRODUCTION.md) | Reproducing the structural research | EXPLORATORY |
+| [proofs/paper/problem4_short_pair_peeling.md](../proofs/paper/problem4_short_pair_peeling.md) | Short-pair peeling and a verified K4 exclusion | EXPLORATORY |
+| [proofs/paper/problem4_c7_sixth_layer.md](../proofs/paper/problem4_c7_sixth_layer.md) | Excluding a seven-cycle at the sixth short-pair layer | EXPLORATORY |
+| [proofs/paper/problem4_continuation_audit.md](../proofs/paper/problem4_continuation_audit.md) | Problem 4 continuation: verified results and remaining scope | EXPLORATORY |
