@@ -1,0 +1,295 @@
+{
+  "status": "pass",
+  "parameter": [
+    13,
+    9,
+    1
+  ],
+  "branch": {
+    "E": [
+      6
+    ],
+    "F": [
+      7
+    ],
+    "G": [
+      8
+    ]
+  },
+  "alphabet": "binary only",
+  "build_flags": [
+    "-std=c++17",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-pedantic"
+  ],
+  "compiler_diagnostics": "",
+  "independent_row_generation": "Inject outside-guard inputs, then assign guard to each target; no kernel templates.",
+  "smaller_complete_proof_case_histograms_matched": 8,
+  "runs": [
+    {
+      "status": "pass",
+      "n": 10,
+      "H": [
+        1,
+        2
+      ],
+      "left_rows": 768,
+      "right_rows": 8,
+      "complete_normalized_row_pairs": 6144,
+      "proof_cases": {
+        "missing_C_target": 3072,
+        "outside_XL_extra_kernel": 384,
+        "protected_LX_H12": 1152,
+        "protected_XX": 1536
+      }
+    },
+    {
+      "status": "pass",
+      "n": 11,
+      "H": [
+        1,
+        2
+      ],
+      "left_rows": 3456,
+      "right_rows": 24,
+      "complete_normalized_row_pairs": 82944,
+      "proof_cases": {
+        "missing_C_target": 41472,
+        "outside_XL_extra_kernel": 4608,
+        "protected_LX_H12": 16128,
+        "protected_XX": 20736
+      }
+    },
+    {
+      "status": "pass",
+      "n": 13,
+      "H": [
+        1,
+        2
+      ],
+      "left_rows": 115200,
+      "right_rows": 480,
+      "complete_normalized_row_pairs": 55296000,
+      "proof_cases": {
+        "missing_C_target": 27648000,
+        "outside_XL_extra_kernel": 2211840,
+        "protected_LX_H12": 11612160,
+        "protected_XX": 13824000
+      }
+    },
+    {
+      "status": "pass",
+      "n": 10,
+      "H": [
+        1,
+        9
+      ],
+      "left_rows": 768,
+      "right_rows": 16,
+      "complete_normalized_row_pairs": 12288,
+      "proof_cases": {
+        "gamma1_closed_four_cycle": 192,
+        "gamma1_protected_LX": 576,
+        "gamma1_protected_XX": 2304,
+        "gamma4_closed_four_cycle": 192,
+        "gamma4_missing_incoming_j": 192,
+        "gamma4_outside_XXL_zj": 192,
+        "gamma4_protected_LX": 2304,
+        "gamma4_protected_XXL_unique": 192,
+        "missing_C_target": 6144
+      }
+    },
+    {
+      "status": "pass",
+      "n": 11,
+      "H": [
+        1,
+        9
+      ],
+      "left_rows": 3456,
+      "right_rows": 72,
+      "complete_normalized_row_pairs": 248832,
+      "proof_cases": {
+        "gamma1_closed_four_cycle": 768,
+        "gamma1_outside_XL": 768,
+        "gamma1_outside_XX": 6912,
+        "gamma1_protected_LX": 5376,
+        "gamma1_protected_XX": 48384,
+        "gamma4_closed_four_cycle": 768,
+        "gamma4_missing_incoming_j": 1536,
+        "gamma4_outside_LL": 6912,
+        "gamma4_outside_LXL_unique": 384,
+        "gamma4_outside_LX_extra": 768,
+        "gamma4_outside_XL": 2304,
+        "gamma4_outside_XXL_zj": 768,
+        "gamma4_protected_LX": 48384,
+        "gamma4_protected_XXL_unique": 384,
+        "missing_C_target": 124416
+      }
+    },
+    {
+      "status": "pass",
+      "n": 13,
+      "H": [
+        1,
+        9
+      ],
+      "left_rows": 115200,
+      "right_rows": 2400,
+      "complete_normalized_row_pairs": 276480000,
+      "proof_cases": {
+        "gamma1_closed_four_cycle": 110592,
+        "gamma1_outside_XL": 331776,
+        "gamma1_outside_XX": 8294400,
+        "gamma1_protected_LX": 2322432,
+        "gamma1_protected_XX": 58060800,
+        "gamma4_closed_four_cycle": 110592,
+        "gamma4_missing_incoming_j": 442368,
+        "gamma4_outside_LL": 8294400,
+        "gamma4_outside_LXL_unique": 82944,
+        "gamma4_outside_LX_extra": 331776,
+        "gamma4_outside_XL": 1658880,
+        "gamma4_outside_XXL_zj": 110592,
+        "gamma4_protected_LX": 58060800,
+        "gamma4_protected_XXL_unique": 27648,
+        "missing_C_target": 138240000
+      }
+    },
+    {
+      "status": "pass",
+      "n": 10,
+      "H": [
+        2,
+        4
+      ],
+      "left_rows": 768,
+      "right_rows": 16,
+      "complete_normalized_row_pairs": 12288,
+      "proof_cases": {
+        "gamma1_closed_four_cycle": 192,
+        "gamma1_initial_one_count_incompatible": 192,
+        "gamma1_missing_incoming2": 192,
+        "gamma1_protected_LX": 2304,
+        "gamma1_protected_XXL_z2": 192,
+        "gamma4_closed_four_cycle": 192,
+        "gamma4_protected_LX": 576,
+        "gamma4_protected_XX": 2304,
+        "missing_C_target": 6144
+      }
+    },
+    {
+      "status": "pass",
+      "n": 11,
+      "H": [
+        2,
+        4
+      ],
+      "left_rows": 3456,
+      "right_rows": 72,
+      "complete_normalized_row_pairs": 248832,
+      "proof_cases": {
+        "gamma1_closed_four_cycle": 1536,
+        "gamma1_initial_one_count_incompatible": 768,
+        "gamma1_missing_incoming2": 3072,
+        "gamma1_outside_XL": 4608,
+        "gamma1_protected_LX": 48384,
+        "gamma1_protected_XXL_unique": 768,
+        "gamma1_protected_XXL_z2": 1536,
+        "gamma1_protected_XX_extra": 1536,
+        "gamma4_closed_four_cycle": 1536,
+        "gamma4_outside_LL": 1536,
+        "gamma4_protected_LX": 10752,
+        "gamma4_protected_XX": 48384,
+        "missing_C_target": 124416
+      }
+    },
+    {
+      "status": "pass",
+      "n": 13,
+      "H": [
+        2,
+        4
+      ],
+      "left_rows": 115200,
+      "right_rows": 2400,
+      "complete_normalized_row_pairs": 276480000,
+      "proof_cases": {
+        "gamma1_closed_four_cycle": 442368,
+        "gamma1_initial_one_count_incompatible": 110592,
+        "gamma1_missing_incoming2": 1769472,
+        "gamma1_outside_XL": 6635520,
+        "gamma1_protected_LX": 58060800,
+        "gamma1_protected_XXL_unique": 331776,
+        "gamma1_protected_XXL_z2": 442368,
+        "gamma1_protected_XX_extra": 1327104,
+        "gamma4_closed_four_cycle": 442368,
+        "gamma4_outside_LL": 1327104,
+        "gamma4_protected_LX": 9289728,
+        "gamma4_protected_XX": 58060800,
+        "missing_C_target": 138240000
+      }
+    },
+    {
+      "status": "pass",
+      "n": 10,
+      "H": [
+        1,
+        2,
+        9
+      ],
+      "left_rows": 768,
+      "right_rows": 8,
+      "complete_normalized_row_pairs": 6144,
+      "proof_cases": {
+        "missing_C_target": 3072,
+        "protected_LX_H129": 1536,
+        "protected_XX": 1536
+      }
+    },
+    {
+      "status": "pass",
+      "n": 11,
+      "H": [
+        1,
+        2,
+        9
+      ],
+      "left_rows": 3456,
+      "right_rows": 24,
+      "complete_normalized_row_pairs": 82944,
+      "proof_cases": {
+        "missing_C_target": 41472,
+        "protected_LX_H129": 20736,
+        "protected_XX": 20736
+      }
+    },
+    {
+      "status": "pass",
+      "n": 13,
+      "H": [
+        1,
+        2,
+        9
+      ],
+      "left_rows": 115200,
+      "right_rows": 480,
+      "complete_normalized_row_pairs": 55296000,
+      "proof_cases": {
+        "missing_C_target": 27648000,
+        "protected_LX_H129": 13824000,
+        "protected_XX": 13824000
+      }
+    }
+  ],
+  "complete_n13_normalized_row_pairs": 663552000,
+  "source_sha256": {
+    "check_paired_seventh_cpp.py": "75891930957ca87d7926c6460e9ed1a6c2454e1d9c6b4246ed1c6ef849567b1f",
+    "check_paired_seventh_rows.cpp": "d1527018b7d37b0f0e922da90d9243779a1b35c0f54fc5c5437ff30d41cda925",
+    "check_b1_e6_f7_g8_seventh.py": "c99925aa937448aac1cf2ec79c11ab27405d4d594984e744a4b40e5ac970728b",
+    "b1_e6_f7_g8_seventh_audit.json": "dfe2b9c0ab13ea0b03bfbd90490d728bf7a5525d186e065c541a50a5011c3cc8",
+    "B1_E6_F7_G8_PAIRED_SEVENTH_EXCLUSIONS.md": "59f5f54064178b6912cb452adee0bf018f81be5b4b24186c62c8783ffda5fc3c"
+  },
+  "scope": "Complete coupled n13 normalized rows for four conditional paired H geometries only. Every protected assignment retained. Does not classify H9/H29, arbitrary alphabets, all n13 automata, or an exact F value."
+}

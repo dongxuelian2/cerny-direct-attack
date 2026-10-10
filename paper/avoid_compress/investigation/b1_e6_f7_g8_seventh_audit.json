@@ -1,0 +1,665 @@
+{
+  "status": "pass",
+  "parameter": [
+    13,
+    9,
+    1
+  ],
+  "branch": {
+    "E": [
+      6
+    ],
+    "F": [
+      7
+    ],
+    "G": [
+      8
+    ]
+  },
+  "alphabet": "binary only",
+  "excluded_H": [
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      9
+    ],
+    [
+      2,
+      4
+    ],
+    [
+      1,
+      2,
+      9
+    ]
+  ],
+  "mandatory_core_isolation_depth": 7,
+  "kernel_controls": [
+    {
+      "H": [
+        1,
+        2
+      ],
+      "original_field_pairs": 48,
+      "row_patterns": 402,
+      "compatible_kernel_pairs": 240
+    },
+    {
+      "H": [
+        1,
+        9
+      ],
+      "original_field_pairs": 48,
+      "row_patterns": 410,
+      "compatible_kernel_pairs": 1200
+    },
+    {
+      "H": [
+        2,
+        4
+      ],
+      "original_field_pairs": 48,
+      "row_patterns": 410,
+      "compatible_kernel_pairs": 1200
+    },
+    {
+      "H": [
+        1,
+        2,
+        9
+      ],
+      "original_field_pairs": 48,
+      "row_patterns": 402,
+      "compatible_kernel_pairs": 240
+    }
+  ],
+  "complete_literal_controls": [
+    {
+      "n": 10,
+      "H": [
+        1,
+        2
+      ],
+      "complete_normalized_row_pairs": 6144,
+      "proof_cases": {
+        "missing_C_target": 3072,
+        "outside_XL_extra_kernel": 384,
+        "protected_LX_H12": 1152,
+        "protected_XX": 1536
+      },
+      "independent_forward_BFS_case_controls": {
+        "missing_C_target": {
+          "strongly_connected": false,
+          "synchronizing": false,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "protected_LX_H12": {
+          "strongly_connected": false,
+          "synchronizing": false,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "protected_XX": {
+          "strongly_connected": false,
+          "synchronizing": false,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "outside_XL_extra_kernel": {
+          "strongly_connected": false,
+          "synchronizing": true,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        }
+      }
+    },
+    {
+      "n": 11,
+      "H": [
+        1,
+        2
+      ],
+      "complete_normalized_row_pairs": 82944,
+      "proof_cases": {
+        "missing_C_target": 41472,
+        "outside_XL_extra_kernel": 4608,
+        "protected_LX_H12": 16128,
+        "protected_XX": 20736
+      },
+      "independent_forward_BFS_case_controls": {
+        "missing_C_target": {
+          "strongly_connected": false,
+          "synchronizing": false,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "protected_LX_H12": {
+          "strongly_connected": false,
+          "synchronizing": false,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "protected_XX": {
+          "strongly_connected": false,
+          "synchronizing": false,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "outside_XL_extra_kernel": {
+          "strongly_connected": false,
+          "synchronizing": false,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        }
+      }
+    },
+    {
+      "n": 10,
+      "H": [
+        1,
+        9
+      ],
+      "complete_normalized_row_pairs": 12288,
+      "proof_cases": {
+        "gamma1_closed_four_cycle": 192,
+        "gamma1_protected_LX": 576,
+        "gamma1_protected_XX": 2304,
+        "gamma4_closed_four_cycle": 192,
+        "gamma4_missing_incoming_j": 192,
+        "gamma4_outside_XXL_zj": 192,
+        "gamma4_protected_LX": 2304,
+        "gamma4_protected_XXL_unique": 192,
+        "missing_C_target": 6144
+      },
+      "independent_forward_BFS_case_controls": {
+        "missing_C_target": {
+          "strongly_connected": false,
+          "synchronizing": false,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "gamma4_protected_LX": {
+          "strongly_connected": false,
+          "synchronizing": false,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "gamma1_protected_XX": {
+          "strongly_connected": false,
+          "synchronizing": false,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "gamma1_protected_LX": {
+          "strongly_connected": false,
+          "synchronizing": true,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "gamma4_protected_XXL_unique": {
+          "strongly_connected": false,
+          "synchronizing": true,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "gamma4_outside_XXL_zj": {
+          "strongly_connected": true,
+          "synchronizing": true,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "gamma4_missing_incoming_j": {
+          "strongly_connected": false,
+          "synchronizing": true,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "gamma4_closed_four_cycle": {
+          "strongly_connected": true,
+          "synchronizing": false,
+          "protected_distance_violation": false,
+          "uncovered_distance_violation": false
+        },
+        "gamma1_closed_four_cycle": {
+          "strongly_connected": true,
+          "synchronizing": false,
+          "protected_distance_violation": false,
+          "uncovered_distance_violation": false
+        }
+      }
+    },
+    {
+      "n": 11,
+      "H": [
+        1,
+        9
+      ],
+      "complete_normalized_row_pairs": 248832,
+      "proof_cases": {
+        "gamma1_closed_four_cycle": 768,
+        "gamma1_outside_XL": 768,
+        "gamma1_outside_XX": 6912,
+        "gamma1_protected_LX": 5376,
+        "gamma1_protected_XX": 48384,
+        "gamma4_closed_four_cycle": 768,
+        "gamma4_missing_incoming_j": 1536,
+        "gamma4_outside_LL": 6912,
+        "gamma4_outside_LXL_unique": 384,
+        "gamma4_outside_LX_extra": 768,
+        "gamma4_outside_XL": 2304,
+        "gamma4_outside_XXL_zj": 768,
+        "gamma4_protected_LX": 48384,
+        "gamma4_protected_XXL_unique": 384,
+        "missing_C_target": 124416
+      },
+      "independent_forward_BFS_case_controls": {
+        "missing_C_target": {
+          "strongly_connected": false,
+          "synchronizing": false,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "gamma4_protected_LX": {
+          "strongly_connected": false,
+          "synchronizing": false,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "gamma1_protected_XX": {
+          "strongly_connected": false,
+          "synchronizing": false,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "gamma1_protected_LX": {
+          "strongly_connected": false,
+          "synchronizing": false,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "gamma1_outside_XX": {
+          "strongly_connected": false,
+          "synchronizing": true,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "gamma4_protected_XXL_unique": {
+          "strongly_connected": false,
+          "synchronizing": false,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "gamma4_outside_LXL_unique": {
+          "strongly_connected": false,
+          "synchronizing": true,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "gamma4_outside_XXL_zj": {
+          "strongly_connected": false,
+          "synchronizing": false,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "gamma4_outside_XL": {
+          "strongly_connected": true,
+          "synchronizing": true,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "gamma4_missing_incoming_j": {
+          "strongly_connected": false,
+          "synchronizing": false,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "gamma4_closed_four_cycle": {
+          "strongly_connected": false,
+          "synchronizing": false,
+          "protected_distance_violation": false,
+          "uncovered_distance_violation": false
+        },
+        "gamma4_outside_LX_extra": {
+          "strongly_connected": true,
+          "synchronizing": true,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "gamma1_closed_four_cycle": {
+          "strongly_connected": false,
+          "synchronizing": false,
+          "protected_distance_violation": false,
+          "uncovered_distance_violation": false
+        },
+        "gamma4_outside_LL": {
+          "strongly_connected": false,
+          "synchronizing": true,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "gamma1_outside_XL": {
+          "strongly_connected": true,
+          "synchronizing": true,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        }
+      }
+    },
+    {
+      "n": 10,
+      "H": [
+        2,
+        4
+      ],
+      "complete_normalized_row_pairs": 12288,
+      "proof_cases": {
+        "gamma1_closed_four_cycle": 192,
+        "gamma1_initial_one_count_incompatible": 192,
+        "gamma1_missing_incoming2": 192,
+        "gamma1_protected_LX": 2304,
+        "gamma1_protected_XXL_z2": 192,
+        "gamma4_closed_four_cycle": 192,
+        "gamma4_protected_LX": 576,
+        "gamma4_protected_XX": 2304,
+        "missing_C_target": 6144
+      },
+      "independent_forward_BFS_case_controls": {
+        "missing_C_target": {
+          "strongly_connected": false,
+          "synchronizing": false,
+          "protected_distance_violation": false,
+          "uncovered_distance_violation": false
+        },
+        "gamma4_protected_XX": {
+          "strongly_connected": false,
+          "synchronizing": false,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "gamma4_protected_LX": {
+          "strongly_connected": false,
+          "synchronizing": true,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "gamma1_protected_LX": {
+          "strongly_connected": false,
+          "synchronizing": false,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "gamma4_closed_four_cycle": {
+          "strongly_connected": true,
+          "synchronizing": false,
+          "protected_distance_violation": false,
+          "uncovered_distance_violation": false
+        },
+        "gamma1_protected_XXL_z2": {
+          "strongly_connected": false,
+          "synchronizing": true,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "gamma1_initial_one_count_incompatible": {
+          "strongly_connected": true,
+          "synchronizing": true,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "gamma1_closed_four_cycle": {
+          "strongly_connected": true,
+          "synchronizing": false,
+          "protected_distance_violation": false,
+          "uncovered_distance_violation": false
+        },
+        "gamma1_missing_incoming2": {
+          "strongly_connected": false,
+          "synchronizing": true,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        }
+      }
+    },
+    {
+      "n": 11,
+      "H": [
+        2,
+        4
+      ],
+      "complete_normalized_row_pairs": 248832,
+      "proof_cases": {
+        "gamma1_closed_four_cycle": 1536,
+        "gamma1_initial_one_count_incompatible": 768,
+        "gamma1_missing_incoming2": 3072,
+        "gamma1_outside_XL": 4608,
+        "gamma1_protected_LX": 48384,
+        "gamma1_protected_XXL_unique": 768,
+        "gamma1_protected_XXL_z2": 1536,
+        "gamma1_protected_XX_extra": 1536,
+        "gamma4_closed_four_cycle": 1536,
+        "gamma4_outside_LL": 1536,
+        "gamma4_protected_LX": 10752,
+        "gamma4_protected_XX": 48384,
+        "missing_C_target": 124416
+      },
+      "independent_forward_BFS_case_controls": {
+        "missing_C_target": {
+          "strongly_connected": false,
+          "synchronizing": false,
+          "protected_distance_violation": false,
+          "uncovered_distance_violation": false
+        },
+        "gamma4_protected_XX": {
+          "strongly_connected": false,
+          "synchronizing": false,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "gamma4_protected_LX": {
+          "strongly_connected": false,
+          "synchronizing": false,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "gamma1_protected_LX": {
+          "strongly_connected": false,
+          "synchronizing": false,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "gamma4_outside_LL": {
+          "strongly_connected": true,
+          "synchronizing": true,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "gamma4_closed_four_cycle": {
+          "strongly_connected": false,
+          "synchronizing": false,
+          "protected_distance_violation": false,
+          "uncovered_distance_violation": false
+        },
+        "gamma1_protected_XXL_z2": {
+          "strongly_connected": false,
+          "synchronizing": false,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "gamma1_initial_one_count_incompatible": {
+          "strongly_connected": false,
+          "synchronizing": false,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "gamma1_protected_XXL_unique": {
+          "strongly_connected": true,
+          "synchronizing": true,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "gamma1_outside_XL": {
+          "strongly_connected": true,
+          "synchronizing": true,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "gamma1_closed_four_cycle": {
+          "strongly_connected": false,
+          "synchronizing": false,
+          "protected_distance_violation": false,
+          "uncovered_distance_violation": false
+        },
+        "gamma1_missing_incoming2": {
+          "strongly_connected": false,
+          "synchronizing": false,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "gamma1_protected_XX_extra": {
+          "strongly_connected": true,
+          "synchronizing": true,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        }
+      }
+    },
+    {
+      "n": 10,
+      "H": [
+        1,
+        2,
+        9
+      ],
+      "complete_normalized_row_pairs": 6144,
+      "proof_cases": {
+        "missing_C_target": 3072,
+        "protected_LX_H129": 1536,
+        "protected_XX": 1536
+      },
+      "independent_forward_BFS_case_controls": {
+        "missing_C_target": {
+          "strongly_connected": false,
+          "synchronizing": false,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "protected_LX_H129": {
+          "strongly_connected": false,
+          "synchronizing": true,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "protected_XX": {
+          "strongly_connected": false,
+          "synchronizing": true,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        }
+      }
+    },
+    {
+      "n": 11,
+      "H": [
+        1,
+        2,
+        9
+      ],
+      "complete_normalized_row_pairs": 82944,
+      "proof_cases": {
+        "missing_C_target": 41472,
+        "protected_LX_H129": 20736,
+        "protected_XX": 20736
+      },
+      "independent_forward_BFS_case_controls": {
+        "missing_C_target": {
+          "strongly_connected": false,
+          "synchronizing": false,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "protected_LX_H129": {
+          "strongly_connected": false,
+          "synchronizing": true,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        },
+        "protected_XX": {
+          "strongly_connected": false,
+          "synchronizing": true,
+          "protected_distance_violation": true,
+          "uncovered_distance_violation": true
+        }
+      }
+    }
+  ],
+  "complete_n13_short_ports": {
+    "H12_X_systems": 120,
+    "H129_X_systems": 120,
+    "ordinary_L_systems": 600,
+    "L_systems_omitting2": 96
+  },
+  "complete_n13_overlap_hard_ports": [
+    {
+      "H": [
+        1,
+        9
+      ],
+      "all_hard_branch_full_letter_systems": {
+        "gamma1_L_letters": 9216,
+        "gamma1_X_letters": 192,
+        "gamma4_L_letters": 9216,
+        "gamma4_X_letters": 192
+      },
+      "full_letter_assignments": 18816,
+      "all_four_ordinary_labels_checked": true
+    },
+    {
+      "H": [
+        2,
+        4
+      ],
+      "all_hard_branch_full_letter_systems": {
+        "gamma1_L_letters": 9216,
+        "gamma1_X_letters": 192,
+        "gamma4_L_letters": 9216,
+        "gamma4_X_letters": 192
+      },
+      "full_letter_assignments": 18816,
+      "all_four_ordinary_labels_checked": true,
+      "initial_nine_set_controls": 40
+    }
+  ],
+  "removed_seventh_field_pairs": 192,
+  "remaining_H": [
+    [
+      9
+    ],
+    [
+      2,
+      9
+    ]
+  ],
+  "remaining_geometric_orbits": 2,
+  "remaining_labelled_H": 8,
+  "remaining_field_pairs": 2188,
+  "all_original_sixth_pairs_retained": 365,
+  "source_sha256": {
+    "check_b1_e6_f7_g8_seventh.py": "c99925aa937448aac1cf2ec79c11ab27405d4d594984e744a4b40e5ac970728b",
+    "enumerate_b1_e6_f7_g8_seventh.py": "f8f7d8076fcdd70affe5b30316865ea427674f98b4756eb02b80ef6b5075ddfc",
+    "b1_e6_f7_g8_seventh_kernel_inventory.json": "473bd3b388f3a6f5cb759116ef6ce1409b135b1659163a796e36e11358fcfdf8",
+    "B1_E6_F7_G8_PAIRED_SEVENTH_EXCLUSIONS.md": "59f5f54064178b6912cb452adee0bf018f81be5b4b24186c62c8783ffda5fc3c",
+    "check_b1_e6_overlap_fifth.py": "2902ba57b4678e4e49c1a34111520f9ab514ae99b7995f1ecd621be6e0f18dbc",
+    "b1_seventh_inventory.json": "50935d2704772d8afea7571881ea9b0e013748e0f93346e530254cf0d689247b",
+    "b1_seventh_audit.json": "f09ffc28b6725adce8ccf587e19ede6c6496afe7c2bd60208a13bbe553510b33",
+    "B1_SEVENTH_ENTRANCE.md": "6a00a1170ad9f24dfbe5b61aacf06b24af4993fd8868ffb093ab3801c7d9953e",
+    "MANDATORY_CORE_ISOLATION.md": "72129f1a810b07a8bcd975e5df353cc1dbc43d063e13c8ff887ba4748bb14537",
+    "mandatory_core_isolation_audit.json": "67d7c82cae127c23260a3f7b6affe3052a1afef728cad8f49fd54d27e3fa9f54",
+    "ENTRY_FIBER_FLAG.md": "b27eb51977104cd68aaff2e2f37db10c50bbf4a4dd4320502b15b0f609a01bbf",
+    "LOCAL_EQUALITY_FLAG.md": "f34cf260276c6551266564c1ee2264dc823aeaa4f33b4ae8f8261aedeec596a8"
+  },
+  "scope": "Four conditional binary seventh exclusions; every protected8 assignment and actual one-count exception retained. Independent finite controls supplement the symbolic proof. No full n13 coupled-row scan, entire G8/fifth/third/joint exclusion, unrestricted paired exclusion, exact F value or numerical alphabet separation."
+}

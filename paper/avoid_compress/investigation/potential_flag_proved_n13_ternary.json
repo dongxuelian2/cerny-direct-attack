@@ -1,0 +1,26 @@
+{
+  "n": 13,
+  "s": 9,
+  "target": 12,
+  "alphabet_size": 3,
+  "protected": 1,
+  "kernel": null,
+  "free_subset": true,
+  "first_file": null,
+  "fixed_file": null,
+  "tight_refinement_cuts": false,
+  "status": "unknown: timeout",
+  "iterations": 1,
+  "early_pattern": null,
+  "span_cover_h": 4,
+  "refinement_cuts": true,
+  "proved_refinement_caps": {
+    "1": 4
+  },
+  "local_span_prefix": 2,
+  "witness": null,
+  "rejected_candidates": [],
+  "seconds": 120.03435759999411,
+  "z3_version": "4.16.0",
+  "scope": "Lower-potential finite synthesis; negative output is not an upper bound."
+}

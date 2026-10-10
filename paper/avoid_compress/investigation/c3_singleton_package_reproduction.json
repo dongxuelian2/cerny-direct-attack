@@ -1,0 +1,22 @@
+{
+  "status": "pass",
+  "archive_sha256": "d142ea8f3edbbe5e633a6ccc6fb09ab06be4a5af45109f2c93312fe311ebae84",
+  "archive_files": 15,
+  "checksum_entries": 14,
+  "isolated_checker_exit": 0,
+  "reproduced_audit_byte_identical": true,
+  "checker_output": {
+    "status": "pass",
+    "binary_letter_pairs": 14,
+    "abstract_X_kernels": 27041,
+    "typed_core_maps": 306,
+    "nonconstant_core_configurations": 864,
+    "binary_c3_excluded": true,
+    "binary_first_fiber_maximum_size_n13": 2,
+    "remaining_binary_joint": 29,
+    "remaining_unrestricted_joint": 43
+  },
+  "source_sha256": {
+    "check_c3_singleton_package.py": "33103648ad9bd4b7adb599b4713927d72e10329d5ba548be23c3abedaacc6d96"
+  }
+}

@@ -1,0 +1,1 @@
+{"n":11,"m":3,"s":8,"r":1,"target":9,"involutions":76,"redirected_maps":2280,"strong_maps":432,"synchronizing_maps":432,"subset_tests":4320,"best":9,"scope":"Restricted odd-core family only; negative output is not a global upper bound","rows":[[0,1,2,3,4,6,5,10,5,9,7],[1,2,3,4,5,0,7,8,9,6,10]],"S":[0,1,2,3,4,5,8,9],"A":[4]}

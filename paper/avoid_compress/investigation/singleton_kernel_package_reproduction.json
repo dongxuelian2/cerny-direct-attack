@@ -1,0 +1,40 @@
+{
+  "status": "pass",
+  "archive_sha256": "4b27b88e135ed25ff48274bd66a5b079f4f264ece74da83ad5226a44f6340815",
+  "checksum_entries": 20,
+  "archive_files": 21,
+  "isolated_checker_exit": 0,
+  "reproduced_audit_byte_identical": true,
+  "checker_output": {
+    "status": "pass",
+    "literal_n9": {
+      "row_assignments": 3456,
+      "isolated_synchronizing_rows": 408,
+      "strong_rows": 147,
+      "subset_tests": 147,
+      "tested_delay_histogram": [
+        0,
+        0,
+        0,
+        0,
+        127,
+        17,
+        3,
+        0,
+        0
+      ]
+    },
+    "n13": {
+      "n": 13,
+      "moving_orbits": 180,
+      "row_assignments": 43545600,
+      "subset_tests": 162091,
+      "original_parameter_exclusion": true
+    },
+    "remaining_binary": 38,
+    "remaining_unrestricted": 43
+  },
+  "source_sha256": {
+    "check_singleton_kernel_package.py": "78e064e440b36b83e4ac6a2a1e65c59f59601d2b66e6083706dfafe6fe99026b"
+  }
+}

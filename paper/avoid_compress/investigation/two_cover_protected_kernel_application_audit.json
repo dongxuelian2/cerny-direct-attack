@@ -1,0 +1,1236 @@
+{
+  "status": "pass",
+  "parameter": [
+    13,
+    9,
+    1
+  ],
+  "all_inventory_unrestricted_excluded_ids": [
+    "b1_out_c2_third3",
+    "b1_out_c2_third4",
+    "b1_out_c3_third1",
+    "b1_out_c4_third1",
+    "b1_in_c1_third3",
+    "b1_in_c1_third4",
+    "b1_in_c3_third2",
+    "b1_in_c3_third3",
+    "b1_in_c3_third4",
+    "b1_in_c3_third5",
+    "b1_in_c3_third6",
+    "b1_in_c3_third7",
+    "b1_in_c4_third1",
+    "b1_in_c4_third2",
+    "b2_mixed_c1_third1",
+    "b2_mixed_c2_third2",
+    "b2_mixed_c2_third3",
+    "b2_mixed_c2_third4",
+    "b2_mixed_c2_third5",
+    "b2_mixed_c2_third6",
+    "b2_mixed_c2_third7",
+    "b2_mixed_c3_third1",
+    "b2_mixed_c4_third1",
+    "b2_mixed_c4_third9",
+    "b2_mixed_c8_third1",
+    "b2_mixed_c9_third1",
+    "b2_mixed_c10_third1",
+    "b2_mixed_c11_third3",
+    "b2_in_c1_third1",
+    "b2_in_c2_third1",
+    "b2_in_c2_third2",
+    "b2_in_c4_third1",
+    "b2_in_c5_third5",
+    "b2_in_c6_third3"
+  ],
+  "all_inventory_binary_excluded_ids": [
+    "b1_out_c2_third3",
+    "b1_out_c2_third4",
+    "b1_out_c3_third1",
+    "b1_out_c4_third1",
+    "b1_in_c1_third3",
+    "b1_in_c1_third4",
+    "b1_in_c3_third2",
+    "b1_in_c3_third3",
+    "b1_in_c3_third4",
+    "b1_in_c3_third5",
+    "b1_in_c3_third6",
+    "b1_in_c3_third7",
+    "b1_in_c4_third1",
+    "b1_in_c4_third2",
+    "b2_mixed_c1_third1",
+    "b2_mixed_c2_third2",
+    "b2_mixed_c2_third3",
+    "b2_mixed_c2_third4",
+    "b2_mixed_c2_third5",
+    "b2_mixed_c2_third6",
+    "b2_mixed_c2_third7",
+    "b2_mixed_c3_third1",
+    "b2_mixed_c4_third1",
+    "b2_mixed_c4_third9",
+    "b2_mixed_c8_third1",
+    "b2_mixed_c9_third1",
+    "b2_mixed_c10_third1",
+    "b2_mixed_c11_third3",
+    "b2_in_c1_third1",
+    "b2_in_c2_third1",
+    "b2_in_c2_third2",
+    "b2_in_c4_third1",
+    "b2_in_c5_third5",
+    "b2_in_c6_third3"
+  ],
+  "records": [
+    {
+      "id": "b1_out_c2_third3",
+      "B": [
+        4
+      ],
+      "C": [
+        0
+      ],
+      "D": [
+        1,
+        2
+      ],
+      "mandatory": [
+        0,
+        3,
+        4
+      ],
+      "residual_P5_cover": [
+        1,
+        2
+      ],
+      "kernel": [
+        1,
+        2
+      ],
+      "supplier_key": "preC",
+      "supplier_target": 0,
+      "one_count_prefix": 8,
+      "m": 4,
+      "compression_lower_bound": 12,
+      "required_prefix": 5,
+      "conservative_compression_threshold": 12
+    },
+    {
+      "id": "b1_out_c2_third4",
+      "B": [
+        4
+      ],
+      "C": [
+        0
+      ],
+      "D": [
+        1,
+        5
+      ],
+      "mandatory": [
+        0,
+        3,
+        4
+      ],
+      "residual_P5_cover": [
+        1,
+        2
+      ],
+      "kernel": [
+        1,
+        5
+      ],
+      "supplier_key": "preC",
+      "supplier_target": 0,
+      "one_count_prefix": 8,
+      "m": 4,
+      "compression_lower_bound": 12,
+      "required_prefix": 5,
+      "conservative_compression_threshold": 12
+    },
+    {
+      "id": "b1_out_c3_third1",
+      "B": [
+        4
+      ],
+      "C": [
+        0,
+        5
+      ],
+      "D": [
+        1
+      ],
+      "mandatory": [
+        1,
+        3,
+        4
+      ],
+      "residual_P5_cover": [
+        0,
+        2
+      ],
+      "kernel": [
+        0,
+        5
+      ],
+      "supplier_key": "preB",
+      "supplier_target": 4,
+      "one_count_prefix": 9,
+      "m": 4,
+      "compression_lower_bound": 12,
+      "required_prefix": 5,
+      "conservative_compression_threshold": 12
+    },
+    {
+      "id": "b1_out_c4_third1",
+      "B": [
+        4
+      ],
+      "C": [
+        0,
+        1
+      ],
+      "D": [
+        2
+      ],
+      "mandatory": [
+        2,
+        3,
+        4
+      ],
+      "residual_P5_cover": [
+        0,
+        1
+      ],
+      "kernel": [
+        0,
+        1
+      ],
+      "supplier_key": "preB",
+      "supplier_target": 4,
+      "one_count_prefix": 9,
+      "m": 4,
+      "compression_lower_bound": 12,
+      "required_prefix": 5,
+      "conservative_compression_threshold": 12
+    },
+    {
+      "id": "b1_in_c1_third3",
+      "B": [
+        0
+      ],
+      "C": [
+        4
+      ],
+      "D": [
+        1,
+        2
+      ],
+      "mandatory": [
+        0,
+        3,
+        4
+      ],
+      "residual_P5_cover": [
+        1,
+        2
+      ],
+      "kernel": [
+        1,
+        2
+      ],
+      "supplier_key": "preC",
+      "supplier_target": 4,
+      "one_count_prefix": 8,
+      "m": 4,
+      "compression_lower_bound": 12,
+      "required_prefix": 5,
+      "conservative_compression_threshold": 12
+    },
+    {
+      "id": "b1_in_c1_third4",
+      "B": [
+        0
+      ],
+      "C": [
+        4
+      ],
+      "D": [
+        1,
+        5
+      ],
+      "mandatory": [
+        0,
+        3,
+        4
+      ],
+      "residual_P5_cover": [
+        1,
+        2
+      ],
+      "kernel": [
+        1,
+        5
+      ],
+      "supplier_key": "preC",
+      "supplier_target": 4,
+      "one_count_prefix": 8,
+      "m": 4,
+      "compression_lower_bound": 12,
+      "required_prefix": 5,
+      "conservative_compression_threshold": 12
+    },
+    {
+      "id": "b1_in_c3_third2",
+      "B": [
+        0
+      ],
+      "C": [
+        1,
+        4
+      ],
+      "D": [
+        5
+      ],
+      "mandatory": [
+        0,
+        3,
+        5
+      ],
+      "residual_P5_cover": [
+        1,
+        2
+      ],
+      "kernel": [
+        1,
+        4
+      ],
+      "supplier_key": "preB",
+      "supplier_target": 0,
+      "one_count_prefix": 9,
+      "m": 4,
+      "compression_lower_bound": 12,
+      "required_prefix": 5,
+      "conservative_compression_threshold": 12
+    },
+    {
+      "id": "b1_in_c3_third3",
+      "B": [
+        0
+      ],
+      "C": [
+        1,
+        4
+      ],
+      "D": [
+        1,
+        2
+      ],
+      "mandatory": [
+        0,
+        3
+      ],
+      "residual_P5_cover": [
+        1,
+        2
+      ],
+      "kernel": [
+        1,
+        4
+      ],
+      "supplier_key": "preB",
+      "supplier_target": 0,
+      "one_count_prefix": 9,
+      "m": 4,
+      "compression_lower_bound": 12,
+      "required_prefix": 5,
+      "conservative_compression_threshold": 12
+    },
+    {
+      "id": "b1_in_c3_third4",
+      "B": [
+        0
+      ],
+      "C": [
+        1,
+        4
+      ],
+      "D": [
+        1,
+        5
+      ],
+      "mandatory": [
+        0,
+        3
+      ],
+      "residual_P5_cover": [
+        1,
+        2
+      ],
+      "kernel": [
+        1,
+        4
+      ],
+      "supplier_key": "preB",
+      "supplier_target": 0,
+      "one_count_prefix": 9,
+      "m": 4,
+      "compression_lower_bound": 12,
+      "required_prefix": 5,
+      "conservative_compression_threshold": 12
+    },
+    {
+      "id": "b1_in_c3_third5",
+      "B": [
+        0
+      ],
+      "C": [
+        1,
+        4
+      ],
+      "D": [
+        2,
+        4
+      ],
+      "mandatory": [
+        0,
+        3
+      ],
+      "residual_P5_cover": [
+        1,
+        2
+      ],
+      "kernel": [
+        1,
+        4
+      ],
+      "supplier_key": "preB",
+      "supplier_target": 0,
+      "one_count_prefix": 9,
+      "m": 4,
+      "compression_lower_bound": 12,
+      "required_prefix": 5,
+      "conservative_compression_threshold": 12
+    },
+    {
+      "id": "b1_in_c3_third6",
+      "B": [
+        0
+      ],
+      "C": [
+        1,
+        4
+      ],
+      "D": [
+        2,
+        5
+      ],
+      "mandatory": [
+        0,
+        3
+      ],
+      "residual_P5_cover": [
+        1,
+        2
+      ],
+      "kernel": [
+        1,
+        4
+      ],
+      "supplier_key": "preB",
+      "supplier_target": 0,
+      "one_count_prefix": 9,
+      "m": 4,
+      "compression_lower_bound": 12,
+      "required_prefix": 5,
+      "conservative_compression_threshold": 12
+    },
+    {
+      "id": "b1_in_c3_third7",
+      "B": [
+        0
+      ],
+      "C": [
+        1,
+        4
+      ],
+      "D": [
+        1,
+        2,
+        5
+      ],
+      "mandatory": [
+        0,
+        3
+      ],
+      "residual_P5_cover": [
+        1,
+        2
+      ],
+      "kernel": [
+        1,
+        4
+      ],
+      "supplier_key": "preB",
+      "supplier_target": 0,
+      "one_count_prefix": 9,
+      "m": 4,
+      "compression_lower_bound": 12,
+      "required_prefix": 5,
+      "conservative_compression_threshold": 12
+    },
+    {
+      "id": "b1_in_c4_third1",
+      "B": [
+        0
+      ],
+      "C": [
+        1,
+        2
+      ],
+      "D": [
+        4
+      ],
+      "mandatory": [
+        0,
+        3,
+        4
+      ],
+      "residual_P5_cover": [
+        1,
+        2
+      ],
+      "kernel": [
+        1,
+        2
+      ],
+      "supplier_key": "preB",
+      "supplier_target": 0,
+      "one_count_prefix": 9,
+      "m": 4,
+      "compression_lower_bound": 12,
+      "required_prefix": 5,
+      "conservative_compression_threshold": 12
+    },
+    {
+      "id": "b1_in_c4_third2",
+      "B": [
+        0
+      ],
+      "C": [
+        1,
+        2
+      ],
+      "D": [
+        1,
+        4
+      ],
+      "mandatory": [
+        0,
+        3
+      ],
+      "residual_P5_cover": [
+        1,
+        2
+      ],
+      "kernel": [
+        1,
+        2
+      ],
+      "supplier_key": "preB",
+      "supplier_target": 0,
+      "one_count_prefix": 9,
+      "m": 4,
+      "compression_lower_bound": 12,
+      "required_prefix": 5,
+      "conservative_compression_threshold": 12
+    },
+    {
+      "id": "b2_mixed_c1_third1",
+      "B": [
+        0,
+        4
+      ],
+      "C": [
+        5
+      ],
+      "D": [
+        1
+      ],
+      "mandatory": [
+        1,
+        3,
+        5
+      ],
+      "residual_P5_cover": [
+        0,
+        2
+      ],
+      "kernel": [
+        0,
+        4
+      ],
+      "supplier_key": "preA",
+      "supplier_target": 3,
+      "one_count_prefix": 10,
+      "m": 4,
+      "compression_lower_bound": 12,
+      "required_prefix": 5,
+      "conservative_compression_threshold": 12
+    },
+    {
+      "id": "b2_mixed_c2_third2",
+      "B": [
+        0,
+        4
+      ],
+      "C": [
+        1
+      ],
+      "D": [
+        5
+      ],
+      "mandatory": [
+        1,
+        3,
+        5
+      ],
+      "residual_P5_cover": [
+        0,
+        2
+      ],
+      "kernel": [
+        0,
+        4
+      ],
+      "supplier_key": "preA",
+      "supplier_target": 3,
+      "one_count_prefix": 10,
+      "m": 4,
+      "compression_lower_bound": 12,
+      "required_prefix": 5,
+      "conservative_compression_threshold": 12
+    },
+    {
+      "id": "b2_mixed_c2_third3",
+      "B": [
+        0,
+        4
+      ],
+      "C": [
+        1
+      ],
+      "D": [
+        0,
+        2
+      ],
+      "mandatory": [
+        1,
+        3
+      ],
+      "residual_P5_cover": [
+        0,
+        2
+      ],
+      "kernel": [
+        0,
+        4
+      ],
+      "supplier_key": "preA",
+      "supplier_target": 3,
+      "one_count_prefix": 10,
+      "m": 4,
+      "compression_lower_bound": 12,
+      "required_prefix": 5,
+      "conservative_compression_threshold": 12
+    },
+    {
+      "id": "b2_mixed_c2_third4",
+      "B": [
+        0,
+        4
+      ],
+      "C": [
+        1
+      ],
+      "D": [
+        0,
+        5
+      ],
+      "mandatory": [
+        1,
+        3
+      ],
+      "residual_P5_cover": [
+        0,
+        2
+      ],
+      "kernel": [
+        0,
+        4
+      ],
+      "supplier_key": "preA",
+      "supplier_target": 3,
+      "one_count_prefix": 10,
+      "m": 4,
+      "compression_lower_bound": 12,
+      "required_prefix": 5,
+      "conservative_compression_threshold": 12
+    },
+    {
+      "id": "b2_mixed_c2_third5",
+      "B": [
+        0,
+        4
+      ],
+      "C": [
+        1
+      ],
+      "D": [
+        2,
+        4
+      ],
+      "mandatory": [
+        1,
+        3
+      ],
+      "residual_P5_cover": [
+        0,
+        2
+      ],
+      "kernel": [
+        0,
+        4
+      ],
+      "supplier_key": "preA",
+      "supplier_target": 3,
+      "one_count_prefix": 10,
+      "m": 4,
+      "compression_lower_bound": 12,
+      "required_prefix": 5,
+      "conservative_compression_threshold": 12
+    },
+    {
+      "id": "b2_mixed_c2_third6",
+      "B": [
+        0,
+        4
+      ],
+      "C": [
+        1
+      ],
+      "D": [
+        2,
+        5
+      ],
+      "mandatory": [
+        1,
+        3
+      ],
+      "residual_P5_cover": [
+        0,
+        2
+      ],
+      "kernel": [
+        0,
+        4
+      ],
+      "supplier_key": "preA",
+      "supplier_target": 3,
+      "one_count_prefix": 10,
+      "m": 4,
+      "compression_lower_bound": 12,
+      "required_prefix": 5,
+      "conservative_compression_threshold": 12
+    },
+    {
+      "id": "b2_mixed_c2_third7",
+      "B": [
+        0,
+        4
+      ],
+      "C": [
+        1
+      ],
+      "D": [
+        0,
+        2,
+        5
+      ],
+      "mandatory": [
+        1,
+        3
+      ],
+      "residual_P5_cover": [
+        0,
+        2
+      ],
+      "kernel": [
+        0,
+        4
+      ],
+      "supplier_key": "preA",
+      "supplier_target": 3,
+      "one_count_prefix": 10,
+      "m": 4,
+      "compression_lower_bound": 12,
+      "required_prefix": 5,
+      "conservative_compression_threshold": 12
+    },
+    {
+      "id": "b2_mixed_c3_third1",
+      "B": [
+        0,
+        4
+      ],
+      "C": [
+        1,
+        5
+      ],
+      "D": [
+        2
+      ],
+      "mandatory": [
+        2,
+        3
+      ],
+      "residual_P5_cover": [
+        0,
+        1
+      ],
+      "kernel": [
+        0,
+        4
+      ],
+      "supplier_key": "preA",
+      "supplier_target": 3,
+      "one_count_prefix": 10,
+      "m": 4,
+      "compression_lower_bound": 12,
+      "required_prefix": 5,
+      "conservative_compression_threshold": 12
+    },
+    {
+      "id": "b2_mixed_c4_third1",
+      "B": [
+        0,
+        4
+      ],
+      "C": [
+        1,
+        4
+      ],
+      "D": [
+        2
+      ],
+      "mandatory": [
+        2,
+        3
+      ],
+      "residual_P5_cover": [
+        0,
+        1
+      ],
+      "kernel": [
+        0,
+        4
+      ],
+      "supplier_key": "preA",
+      "supplier_target": 3,
+      "one_count_prefix": 10,
+      "m": 4,
+      "compression_lower_bound": 12,
+      "required_prefix": 5,
+      "conservative_compression_threshold": 12
+    },
+    {
+      "id": "b2_mixed_c4_third9",
+      "B": [
+        0,
+        4
+      ],
+      "C": [
+        1,
+        4
+      ],
+      "D": [
+        0,
+        1,
+        2
+      ],
+      "mandatory": [
+        2,
+        3,
+        4
+      ],
+      "residual_P5_cover": [
+        0,
+        1
+      ],
+      "kernel": [
+        0,
+        4
+      ],
+      "supplier_key": "preA",
+      "supplier_target": 3,
+      "one_count_prefix": 10,
+      "m": 4,
+      "compression_lower_bound": 12,
+      "required_prefix": 5,
+      "conservative_compression_threshold": 12
+    },
+    {
+      "id": "b2_mixed_c8_third1",
+      "B": [
+        0,
+        4
+      ],
+      "C": [
+        0,
+        5
+      ],
+      "D": [
+        1
+      ],
+      "mandatory": [
+        1,
+        3
+      ],
+      "residual_P5_cover": [
+        0,
+        2
+      ],
+      "kernel": [
+        0,
+        4
+      ],
+      "supplier_key": "preA",
+      "supplier_target": 3,
+      "one_count_prefix": 10,
+      "m": 4,
+      "compression_lower_bound": 12,
+      "required_prefix": 5,
+      "conservative_compression_threshold": 12
+    },
+    {
+      "id": "b2_mixed_c9_third1",
+      "B": [
+        0,
+        4
+      ],
+      "C": [
+        0,
+        1
+      ],
+      "D": [
+        2
+      ],
+      "mandatory": [
+        2,
+        3
+      ],
+      "residual_P5_cover": [
+        0,
+        1
+      ],
+      "kernel": [
+        0,
+        4
+      ],
+      "supplier_key": "preA",
+      "supplier_target": 3,
+      "one_count_prefix": 10,
+      "m": 4,
+      "compression_lower_bound": 12,
+      "required_prefix": 5,
+      "conservative_compression_threshold": 12
+    },
+    {
+      "id": "b2_mixed_c10_third1",
+      "B": [
+        0,
+        4
+      ],
+      "C": [
+        0,
+        1,
+        5
+      ],
+      "D": [
+        2
+      ],
+      "mandatory": [
+        2,
+        3
+      ],
+      "residual_P5_cover": [
+        0,
+        1
+      ],
+      "kernel": [
+        0,
+        4
+      ],
+      "supplier_key": "preA",
+      "supplier_target": 3,
+      "one_count_prefix": 10,
+      "m": 4,
+      "compression_lower_bound": 12,
+      "required_prefix": 5,
+      "conservative_compression_threshold": 12
+    },
+    {
+      "id": "b2_mixed_c11_third3",
+      "B": [
+        0,
+        4
+      ],
+      "C": [
+        0,
+        1,
+        2
+      ],
+      "D": [
+        1,
+        4
+      ],
+      "mandatory": [
+        2,
+        3,
+        4
+      ],
+      "residual_P5_cover": [
+        0,
+        1
+      ],
+      "kernel": [
+        0,
+        4
+      ],
+      "supplier_key": "preA",
+      "supplier_target": 3,
+      "one_count_prefix": 10,
+      "m": 4,
+      "compression_lower_bound": 12,
+      "required_prefix": 5,
+      "conservative_compression_threshold": 12
+    },
+    {
+      "id": "b2_in_c1_third1",
+      "B": [
+        0,
+        1
+      ],
+      "C": [
+        4
+      ],
+      "D": [
+        2
+      ],
+      "mandatory": [
+        2,
+        3,
+        4
+      ],
+      "residual_P5_cover": [
+        0,
+        1
+      ],
+      "kernel": [
+        0,
+        1
+      ],
+      "supplier_key": "preA",
+      "supplier_target": 3,
+      "one_count_prefix": 10,
+      "m": 4,
+      "compression_lower_bound": 12,
+      "required_prefix": 5,
+      "conservative_compression_threshold": 12
+    },
+    {
+      "id": "b2_in_c2_third1",
+      "B": [
+        0,
+        1
+      ],
+      "C": [
+        2
+      ],
+      "D": [
+        4
+      ],
+      "mandatory": [
+        2,
+        3,
+        4
+      ],
+      "residual_P5_cover": [
+        0,
+        1
+      ],
+      "kernel": [
+        0,
+        1
+      ],
+      "supplier_key": "preA",
+      "supplier_target": 3,
+      "one_count_prefix": 10,
+      "m": 4,
+      "compression_lower_bound": 12,
+      "required_prefix": 5,
+      "conservative_compression_threshold": 12
+    },
+    {
+      "id": "b2_in_c2_third2",
+      "B": [
+        0,
+        1
+      ],
+      "C": [
+        2
+      ],
+      "D": [
+        0,
+        4
+      ],
+      "mandatory": [
+        2,
+        3
+      ],
+      "residual_P5_cover": [
+        0,
+        1
+      ],
+      "kernel": [
+        0,
+        1
+      ],
+      "supplier_key": "preA",
+      "supplier_target": 3,
+      "one_count_prefix": 10,
+      "m": 4,
+      "compression_lower_bound": 12,
+      "required_prefix": 5,
+      "conservative_compression_threshold": 12
+    },
+    {
+      "id": "b2_in_c4_third1",
+      "B": [
+        0,
+        1
+      ],
+      "C": [
+        0,
+        4
+      ],
+      "D": [
+        2
+      ],
+      "mandatory": [
+        2,
+        3
+      ],
+      "residual_P5_cover": [
+        0,
+        1
+      ],
+      "kernel": [
+        0,
+        1
+      ],
+      "supplier_key": "preA",
+      "supplier_target": 3,
+      "one_count_prefix": 10,
+      "m": 4,
+      "compression_lower_bound": 12,
+      "required_prefix": 5,
+      "conservative_compression_threshold": 12
+    },
+    {
+      "id": "b2_in_c5_third5",
+      "B": [
+        0,
+        1
+      ],
+      "C": [
+        0,
+        2
+      ],
+      "D": [
+        1,
+        2,
+        4
+      ],
+      "mandatory": [
+        0,
+        3,
+        4
+      ],
+      "residual_P5_cover": [
+        1,
+        2
+      ],
+      "kernel": [
+        0,
+        1
+      ],
+      "supplier_key": "preA",
+      "supplier_target": 3,
+      "one_count_prefix": 10,
+      "m": 4,
+      "compression_lower_bound": 12,
+      "required_prefix": 5,
+      "conservative_compression_threshold": 12
+    },
+    {
+      "id": "b2_in_c6_third3",
+      "B": [
+        0,
+        1
+      ],
+      "C": [
+        0,
+        2,
+        4
+      ],
+      "D": [
+        1,
+        2
+      ],
+      "mandatory": [
+        1,
+        3,
+        4
+      ],
+      "residual_P5_cover": [
+        0,
+        2
+      ],
+      "kernel": [
+        0,
+        1
+      ],
+      "supplier_key": "preA",
+      "supplier_target": 3,
+      "one_count_prefix": 10,
+      "m": 4,
+      "compression_lower_bound": 12,
+      "required_prefix": 5,
+      "conservative_compression_threshold": 12
+    }
+  ],
+  "source_sha256": {
+    "check_two_cover_protected_kernel_application.py": "c06af0dd1d636f11460e0e3fd0b0c174d07d4d24375b0e9d856a83f431cad48c",
+    "TWO_COVER_PROTECTED_KERNEL_OBSTRUCTION.md": "0154adc2c6680fc7c2692680e043c37bad770847072a67bc4740595dab295900",
+    "two_cover_protected_kernel_graph_audit.json": "b01678e0bbeb4b3aed6373f8faa487c409b9f3dab2728de1b6096b61e4c8e3d9",
+    "two_cover_third_exact_kernel_audit.json": "0c136434ae3fca6b9059c48a2e6ca35558ea821c97884976854f5a0702003db9",
+    "small_first_third_audit.json": "a7eff7aec7da7c19e847d965c49c46820d2ff2b804143364a7cadb69e9ffaef4",
+    "mandatory_core_isolation_audit.json": "67d7c82cae127c23260a3f7b6affe3052a1afef728cad8f49fd54d27e3fa9f54",
+    "small_first_third_inventory.json": "ea00650e65207784313446cec6bf6d38b6f48223b327dcc218e9c6f34cf703c1",
+    "TWO_COVER_UNIQUE_IMMEDIATE_PAIR.md": "94830c865d87774a5f15ab64c7da04d4a55d3cc06e632a9c5856fb0efc2e9d0c",
+    "MANDATORY_CORE_ISOLATION.md": "72129f1a810b07a8bcd975e5df353cc1dbc43d063e13c8ff887ba4748bb14537",
+    "SMALL_FIRST_THIRD_ADMISSION.md": "3393586186e33deca585422e32c31cb7f6a70000af2f46b352a9c14be7187571",
+    "THIRD_ENTRANCE_SPACE.md": "01baa935bac82d8a8a878f3ee6fbf3778c167b2eb7fb114d0466c6794ebb5315",
+    "ENTRY_FIBER_FLAG.md": "b27eb51977104cd68aaff2e2f37db10c50bbf4a4dd4320502b15b0f609a01bbf",
+    "SECOND_ENTRANCE_FIBER.md": "664e379a346274ec88c59130741dc43251717eb53a16979198b76e18a165f34b",
+    "LOCAL_EQUALITY_FLAG.md": "f34cf260276c6551266564c1ee2264dc823aeaa4f33b4ae8f8261aedeec596a8"
+  },
+  "scope": "Uniform obstruction applied to explicit two-cover pair-entrance records only; current newly removed counts require historical accounting."
+}

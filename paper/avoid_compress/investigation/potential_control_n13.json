@@ -1,0 +1,99 @@
+{
+  "n": 13,
+  "s": 8,
+  "target": 12,
+  "alphabet_size": 3,
+  "protected": 1,
+  "kernel": null,
+  "free_subset": true,
+  "first_file": null,
+  "fixed_file": "investigation\\potential_fixed_n13.json",
+  "tight_refinement_cuts": false,
+  "status": "witness_verified",
+  "iterations": 1,
+  "witness": {
+    "n": 13,
+    "s": 8,
+    "r": 1,
+    "alphabet_size": 3,
+    "rows": [
+      [
+        7,
+        12,
+        3,
+        4,
+        5,
+        1,
+        0,
+        8,
+        9,
+        10,
+        1,
+        11,
+        6
+      ],
+      [
+        0,
+        12,
+        3,
+        4,
+        5,
+        7,
+        6,
+        8,
+        9,
+        10,
+        11,
+        2,
+        1
+      ],
+      [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    ],
+    "S": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      12
+    ],
+    "A": [
+      0
+    ],
+    "value": 12,
+    "compression": 14,
+    "reaching": "aaaabaaabaaaabbbbb",
+    "attaining": "aaaabaaaaaaa",
+    "reset": "aaaabaabbabbabbababbababbbbbaababaabaabbbabaaaaaaaabbababaaaa",
+    "state_scores": {
+      "0": 12,
+      "1": 9,
+      "2": 1,
+      "3": 2,
+      "4": 3,
+      "5": 4,
+      "6": 11,
+      "12": 10
+    }
+  },
+  "rejected_candidates": [],
+  "seconds": 0.3674883999992744,
+  "z3_version": "4.16.0",
+  "scope": "Lower-potential finite synthesis; negative output is not an upper bound."
+}

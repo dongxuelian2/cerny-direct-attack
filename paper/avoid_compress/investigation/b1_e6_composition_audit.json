@@ -1,0 +1,122 @@
+{
+  "status": "pass",
+  "parameter": [
+    13,
+    9,
+    1
+  ],
+  "alphabet": "binary only",
+  "whole_binary_E6_F27_excluded": true,
+  "whole_binary_E6_fourth_excluded": true,
+  "excluded_E": [
+    6
+  ],
+  "complete_F27_G": [
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      2,
+      8
+    ],
+    [
+      1,
+      7
+    ],
+    [
+      1,
+      8
+    ],
+    [
+      2,
+      4
+    ],
+    [
+      2,
+      8
+    ],
+    [
+      8
+    ]
+  ],
+  "complete_E6_F": [
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      2,
+      7
+    ],
+    [
+      1,
+      7
+    ],
+    [
+      2
+    ],
+    [
+      2,
+      4
+    ],
+    [
+      2,
+      7
+    ],
+    [
+      7
+    ]
+  ],
+  "eliminated_raw_E6_fifth_pairs": 414,
+  "removed_E6_fourth_field_pairs": 41,
+  "excluded_E_labels": 7,
+  "remaining_binary_E": [
+    [
+      2,
+      6
+    ]
+  ],
+  "remaining_fourth_geometries": 1,
+  "remaining_fourth_labels": 7,
+  "remaining_fourth_field_pairs": 41,
+  "remaining_fifth_geometries": 3,
+  "remaining_fifth_labels": 18,
+  "remaining_fifth_field_pairs": 161,
+  "remaining_selected_sixth_geometries": 3,
+  "remaining_selected_sixth_labels": 15,
+  "remaining_selected_sixth_field_pairs": 443,
+  "all_original_third_pairs_retained": 14,
+  "all_original_E26_fourth_pairs_retained": 41,
+  "complete_new_paired_G_pairs_per_implementation": 119664,
+  "source_sha256": {
+    "b1_fifth_audit.json": "2959688dd8e9436121de0c7d507f067dec042e262fe8a3f709f30b14ed95a973",
+    "b1_sixth_audit.json": "56c3a1e6171e6bb55797f5f36b87f14e86e5735657e5259f08184c44271e09c9",
+    "b1_e6_f2_audit.json": "033229fbd8c0af5db0dfb93aa46d990e7f6b7ba695de87ad8efd3d81e5e8d3a9",
+    "b1_e6_fifth_pair_audit.json": "c52c5896afc675ee70810ba6ec8844a565f938d3df2d711e3f89e487bf84f590",
+    "b1_e6_overlap_fifth_audit.json": "4a7aca6a54f506ff44fc039987166b0c17997fd7ca361342dc2d21e1a2852092",
+    "b1_g28_rows_audit.json": "c1ace7f9c9f555f7204fb0dcb8d43b5f82ebae2b7da3d5510829695c257f1cc6",
+    "b1_f27_g8_rows_audit.json": "b606292055934fbe61cce3aacded629418e3fe12daaf1deb8e37d1a7b419f89f",
+    "b1_f27_paired_g_seventh_audit.json": "cdcf949c8b9e950ae2ebbbab041b0fc1bcf88bcc51ef24bfa9365d304cd4c990",
+    "b1_f27_paired_g_rows_audit.json": "e70ac546cf6cda9570a5f5ba930f85610a66bdaf368693edee9e119ba7724df3",
+    "b1_fifth_inventory.json": "0dd60cd3e93146856caac48aa2772ef82f2e36481ac6347bd225722dab83e71f",
+    "b1_sixth_inventory.json": "5efb53a113d850a7055e8c7374775ee6f6e84c166845f9dd80410d19f346c761",
+    "b1_partial_cover_fourth_inventory.json": "bb51f2089ee4c5acdae2cb0c981f7238e4f51d8c074548a62fb241bba7cd0840",
+    "B1_FIFTH_ENTRANCE.md": "e8cc60b2a74a64a9110bdc29c16f3c244a3e93abcfa553282799cbd8b4c012b6",
+    "B1_SIXTH_ENTRANCE.md": "aaa7d422335c8f3addd1374d7fc545784f608d436e4a13b3c5d251e5a4d895d8",
+    "B1_PARTIAL_COVER_FOURTH.md": "e59becc3f2dd65b78a6de0bba1b895551c45735746a576f236e886c6bd110ee7",
+    "B1_E6_F2_EXCLUSION.md": "7de0fbcdf24165bb80ee204e80af34aeb3b266f37277206f1d36c8eb0fb43c64",
+    "B1_E6_F12_F127_EXCLUSION.md": "4cd03a6813d55867866a9c4155869c4a1b4d4c0ac47f9da62242340100718676",
+    "B1_E6_F17_EXCLUSION.md": "4508feac1ea45d45a4c7ee20f3ed47505677ae780a5a506545425c6589d3ec24",
+    "B1_E6_F24_EXCLUSION.md": "040812a3ba3eb8c9aee332145af54fb547419fb52ebe07a48414b1a4752ab85e",
+    "B1_E6_F7_EXCLUSION.md": "e8eec499c5621c1b22aa5ecb6f34c334f0f8e77881ccaa6a73f017aa2c58b368",
+    "B1_E6_F27_G8_EXCLUSION.md": "b59a2e24d5c4f0d3dab9699035933ce10af49b3381e04376d31914524a5a8e19",
+    "B1_F27_PAIRED_G_SEVENTH.md": "2bb480c0ae06a66cdf8ceb894b8ca46b37a9b138d3d9ca9231aca01095a3254e",
+    "B1_E6_F27_PAIRED_G_EXCLUSION.md": "a9603c850668e2d498baf760cc752f0124b883b90b9169a15f736d8b35c478ed",
+    "B1_E6_EXCLUSION.md": "04b131ad709eb7b31cdf492c67db08724d641145c9924db48dfd1ec6738f699a",
+    "check_b1_e6_composition.py": "b03ccb37d1130cd729f07cd1565ae718e0c59396cd59c4a2b6b757e4fda62e50"
+  },
+  "scope": "Complete set-by-set composition of new paired-G negatives and explicitly included older conditional exclusion premises. Excludes binary E6/F27 then all seven E6 fifths and entire E6 fourth. Does not rerun all earlier proofs here. No unrestricted E6, whole D5/third/joint or extremal F value or numerical separation."
+}

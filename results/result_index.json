@@ -1747,6 +1747,66 @@
       "proof_check_status": "OPEN.",
       "dependencies": "Complete DFA synchronization and original-letter word length",
       "priority": "KNOWN classical open conjecture"
+    },
+    {
+      "id": "P4-REGIONS",
+      "name": "Exact avoid-or-compress regions and binary reachable-image constructions",
+      "status": "PROVED ON PAPER",
+      "scope": "Szykula 2026 Open Problem 4, strongly connected synchronizing complete DFAs, 1<=r<s<=n, S an actual reachable image: both alphabet maxima are 1 at m=n-s=0, min(n-r,3m) for 1<=m<=3, and n-r for m>=4,n-r<=3m-1. Cofinal larger-gap witnesses attain n-r for every s-r>=3,n>=2s-r-1.",
+      "source": "paper/avoid_compress/main.tex",
+      "proof_check_status": "Current seven-page partial-answer manuscript; paper constructions and separate independent finite audits. No Lean verification or complete Problem 4 claim.",
+      "dependencies": "Known avoid-or-compress upper, cofinal and low-codimension construction proofs; reproducibility/COFINAL_PROOF.md and DEFECT_TWO_PROOF.md",
+      "priority": "OPEN"
+    },
+    {
+      "id": "P4-CODIM3",
+      "name": "Uniform arbitrary-alphabet codimension-three compression upper nine",
+      "status": "PROVED ON PAPER",
+      "scope": "Every (n-3)-subset of a strongly connected synchronizing complete DFA over any finite alphabet, n>=6, has a compressing word of length at most 9; subset reachability is not required. Computer-assisted all-n proof via symbolic reductions and complete action domains.",
+      "source": "paper/avoid_compress/reproducibility/CODIMENSION_THREE_UPPER_PROOF.md",
+      "proof_check_status": "Twelve proof notes and independent complete computational certificates; saved report bindings verified at handoff. Historical isolated rebuild is recorded separately; this is not formal-kernel verification.",
+      "dependencies": "Early-pair structure, nine ordered types, sixteen reduced domains, complete matching cube and independent C++/Python checkers",
+      "priority": "OPEN"
+    },
+    {
+      "id": "P4-FORMULA-REFUTED",
+      "name": "Refutation of the proposed two-cardinality formula",
+      "status": "REFUTED / NEGATIVE RESULT",
+      "scope": "For every n>=11,s=n-3,1<=r<=n-10, both binary and unrestricted maxima are 9, while min(n-r,binom(n-s+2,2)) is 10. No all-parameter replacement formula or alphabet separation is claimed.",
+      "source": "paper/avoid_compress/main.tex",
+      "proof_check_status": "Uniform codimension-three upper plus binary strongly connected synchronizing reachable-image lower constructions.",
+      "dependencies": "P4-REGIONS and P4-CODIM3; stated admissible parameter range",
+      "priority": "OPEN"
+    },
+    {
+      "id": "P4-FINITE-FRONTIER",
+      "name": "290 exact finite avoid-or-compress parameters",
+      "status": "COMPUTATIONALLY VERIFIED",
+      "scope": "All 286 admissible triples through n=12 plus (13,8,1) and (13,10,r),r=1,2,3; exact for binary and unrestricted alphabets by explicit witnesses meeting the justified uppers. Other n=13 parameters are outside this certificate.",
+      "source": "paper/avoid_compress/reproducibility/verify_frontier.py",
+      "proof_check_status": "Literal binary transitions, reachability, strong connectivity, synchronization and avoid-or-compress BFS are independently checked; fresh handoff execution recorded in SYNC_VALIDATION.json.",
+      "dependencies": "frontier_certificates.json and uniform proven upper regions; standard-library Python>=3.10",
+      "priority": "OPEN"
+    },
+    {
+      "id": "P4-C3-STAIRCASE",
+      "name": "Conditional complete C3 staircase exclusions at (13,9,1)",
+      "status": "COMPUTATIONALLY VERIFIED",
+      "scope": "Assuming an attaining length-12 example at (13,9,1), four remaining C3 third geometries are excluded in complete arbitrary-alphabet letter domains. The scoped certificate reconstructs 748788 letters and verifies 6152 flag-tree nodes; it gives no new extremal value.",
+      "source": "paper/avoid_compress/investigation/C3_STAIRCASE_EXCLUSION.md",
+      "proof_check_status": "Independent isolated three-inventory/two-audit byte-identical reproduction receipt preserved; fresh handoff checks latest 119 accumulated audit bindings and archives. Computational rejection coverage remains conditional on the explicit structural reductions.",
+      "dependencies": "C3_STAIRCASE_CERTIFICATE_README.md, c3_staircase.zip, equality flags, kernel-atom domains and explicit prefix transports",
+      "priority": "OPEN"
+    },
+    {
+      "id": "P4-OPEN-FRONTIER",
+      "name": "Remaining Problem 4 research and corrected historical search scope",
+      "status": "EXPLORATORY",
+      "scope": "The region m>=4,n-r>=3m remains unclassified as a whole; F_bin(13,9,1) and F(13,9,1) remain in [11,12]. Latest unrestricted geometry inventory has 136 B1/B2 plus one B3 case and 21 joints; binary inventory remains 105 types/448 profiles/120 geometries/18 joints. These counts are necessary structural scopes, not automaton witnesses or global extrema.",
+      "source": "paper/avoid_compress/HANDOFF.md",
+      "proof_check_status": "Navigation and scope record for the 2026-10-10 snapshot; current work starts at b3_mixed_c1_third2. Retracted higher-layer cardinality caps and solver timeouts are explicitly excluded as upper-bound evidence.",
+      "dependencies": "investigation/active_research.json, CURRENT_FRONTIER.md and AUXILIARY_AUDIT_20261010_22.json",
+      "priority": "OPEN"
     }
   ]
 }

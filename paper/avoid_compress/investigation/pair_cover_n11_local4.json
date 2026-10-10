@@ -1,0 +1,29 @@
+{
+  "n": 11,
+  "s": 8,
+  "target": 10,
+  "first": [
+    1,
+    2,
+    1,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    10,
+    9
+  ],
+  "kernel_pair": [
+    0,
+    2
+  ],
+  "status": "unknown: timeout",
+  "iterations": 78,
+  "seconds": 450.96913049999966,
+  "trap_cuts": 77,
+  "blocked_rows": 0,
+  "witness": null,
+  "scope": "Fixed first rank-one map; sole kernel union. Negative answers unverified."
+}

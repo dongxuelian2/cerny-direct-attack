@@ -1,0 +1,49 @@
+{
+  "status": "pass",
+  "admitted_type_pairs": [
+    [
+      "C",
+      "B"
+    ]
+  ],
+  "controls": [
+    {
+      "k": 3,
+      "quotient_actions": 243,
+      "all_states_reachable": 108,
+      "projected_affine_rank": 2
+    },
+    {
+      "k": 4,
+      "quotient_actions": 4096,
+      "all_states_reachable": 960,
+      "projected_affine_rank": 3
+    },
+    {
+      "k": 5,
+      "quotient_actions": 78125,
+      "all_states_reachable": 9000,
+      "projected_affine_rank": 4
+    }
+  ],
+  "binary_excluded_joint_orbits": [
+    "b3_in_c1",
+    "b3_in_c2",
+    "b3_in_c3"
+  ],
+  "binary_excluded_first_case": "b3_in",
+  "remaining_binary_first_cases": 5,
+  "remaining_binary_joint_orbits": 40,
+  "remaining_unrestricted_first_cases": 6,
+  "remaining_unrestricted_joint_orbits": 43,
+  "source_sha256": {
+    "BINARY_SINGLETON_SECOND_ENTRANCE_EXCLUSION.md": "2f73144f28ce182e4c2ea0dd69937d74abaa0bc44060af18c59337c4cc1bc2c2",
+    "check_binary_singleton_second_entrance.py": "4a755aaa0c697b805b9959b0c8e8e5fbb49964b75946ce54a98ff6b52364f762",
+    "BINARY_NEAR_EQUAL_ENTRANCE_EXCLUSION.md": "3da7e7d03cf0413a97749add3c0590a8efde2333d1c6b782d4303777d7be7085",
+    "SECOND_ENTRANCE_FIBER.md": "664e379a346274ec88c59130741dc43251717eb53a16979198b76e18a165f34b",
+    "ENTRY_FIBER_FLAG.md": "b27eb51977104cd68aaff2e2f37db10c50bbf4a4dd4320502b15b0f609a01bbf",
+    "LOCAL_EQUALITY_FLAG.md": "f34cf260276c6551266564c1ee2264dc823aeaa4f33b4ae8f8261aedeec596a8",
+    "check_short_pair_span.py": "a958663be64dabbcfbbdc1478c69be6bebb214267f5795c9ea44f1a528504a24"
+  },
+  "scope": "Symbolic arbitrary-k binary conditional exclusion and cover(P2) consequence. No unrestricted exclusion, numerical alphabet separation or new F value."
+}

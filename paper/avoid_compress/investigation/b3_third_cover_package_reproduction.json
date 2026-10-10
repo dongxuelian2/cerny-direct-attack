@@ -1,0 +1,66 @@
+{
+  "status": "pass",
+  "archive": "certificates/b3_third_cover.zip",
+  "sha256": "92c800b83a4e1c5181f4f42d528912dcdbe911e791a591db105a78aa6e7d0977",
+  "files": 18,
+  "checksum_entries": 17,
+  "reproduced_audit_byte_identical": true,
+  "reproduced_inventory_byte_identical": true,
+  "runs": [
+    {
+      "script": "enumerate_b3_third_cover.py",
+      "exit": 0,
+      "output": {
+        "joint_cases": 14,
+        "geometric_orbits": 127,
+        "labelled_D": 827,
+        "extra_boolean_fiber_orbits": 18,
+        "excluded_profiles": [
+          "b3_mixed_c4_third2",
+          "b3_mixed_c6_third5"
+        ]
+      }
+    },
+    {
+      "script": "check_b3_third_cover.py",
+      "exit": 0,
+      "output": {
+        "status": "pass",
+        "parameter": [
+          13,
+          9,
+          1
+        ],
+        "arbitrary_finite_alphabet": true,
+        "complete_joint_cases": 14,
+        "complete_geometric_orbits": 127,
+        "complete_labelled_D_choices": 827,
+        "literal_nine_family_membership_tests": 409365,
+        "independent_candidate_R_span_tests": 7397,
+        "additional_boolean_fiber_orbits": 18,
+        "historical_third_orbits_matched": 36,
+        "excluded_profiles": [
+          "b3_mixed_c4_third2",
+          "b3_mixed_c6_third5"
+        ],
+        "excluded_labelled_D_choices": 3,
+        "Boolean_equation_solutions": [
+          [
+            0,
+            1,
+            1,
+            0
+          ]
+        ],
+        "combined_geometric_orbits": 362,
+        "combined_labelled_D_choices": 2309,
+        "combined_excluded_orbits": 13,
+        "unrestricted_geometric_remaining": 349,
+        "scope": "Complete necessary B3 geometry, extra fibers and known-cover intersection cut; no full automaton search, F value or numerical alphabet separation."
+      }
+    }
+  ],
+  "source_sha256": {
+    "check_b3_third_cover_package.py": "6dcf16b42d4df6fa94f69e23bc964b848da6711168d9f57cc5b6c0953e5b7e58"
+  }
+}

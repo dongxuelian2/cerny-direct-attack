@@ -1,0 +1,53 @@
+{
+  "n": 5,
+  "s": 2,
+  "target": 10,
+  "first": [
+    1,
+    1,
+    2,
+    3,
+    4
+  ],
+  "kernel_pair": [
+    0,
+    1
+  ],
+  "status": "compression_witness_verified",
+  "iterations": 2,
+  "seconds": 0.014854099999865866,
+  "trap_cuts": 1,
+  "blocked_rows": 0,
+  "witness": {
+    "rows": [
+      [
+        1,
+        1,
+        2,
+        3,
+        4
+      ],
+      [
+        1,
+        3,
+        4,
+        2,
+        0
+      ]
+    ],
+    "S": [
+      1,
+      2
+    ],
+    "compression": 10,
+    "reaching": "abbabba",
+    "attaining": "bbbbabbbba",
+    "reset": "abbbbabbbbabbbba",
+    "protected": [],
+    "avoid_or_compress_scores": {
+      "1": 1,
+      "2": 1
+    }
+  },
+  "scope": "Fixed first rank-one map; sole kernel union. Negative answers unverified."
+}

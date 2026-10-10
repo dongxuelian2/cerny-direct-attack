@@ -1,0 +1,103 @@
+{
+  "status": "pass",
+  "induced_maps": 4,
+  "initial_choices": 12,
+  "first_line_rejected": 6,
+  "contradiction_patterns": 6,
+  "patterns": [
+    {
+      "beta": 0,
+      "Fx": 1,
+      "Fc": 2,
+      "S_B": 0,
+      "T_B": 1,
+      "TF_B": 2,
+      "TM_B": 0,
+      "fixed_first_letter": "M",
+      "forced_M_image_equality": "S",
+      "S_contains_c": false,
+      "T_contains_c": true,
+      "contradicts_outside_injectivity": true
+    },
+    {
+      "beta": 0,
+      "Fx": 1,
+      "Fc": 2,
+      "S_B": 2,
+      "T_B": 0,
+      "TF_B": 1,
+      "TM_B": 0,
+      "fixed_first_letter": "F",
+      "forced_M_image_equality": "T",
+      "S_contains_c": true,
+      "T_contains_c": false,
+      "contradicts_outside_injectivity": true
+    },
+    {
+      "beta": 0,
+      "Fx": 2,
+      "Fc": 1,
+      "S_B": 0,
+      "T_B": 2,
+      "TF_B": 1,
+      "TM_B": 0,
+      "fixed_first_letter": "M",
+      "forced_M_image_equality": "S",
+      "S_contains_c": false,
+      "T_contains_c": true,
+      "contradicts_outside_injectivity": true
+    },
+    {
+      "beta": 0,
+      "Fx": 2,
+      "Fc": 1,
+      "S_B": 1,
+      "T_B": 0,
+      "TF_B": 2,
+      "TM_B": 0,
+      "fixed_first_letter": "F",
+      "forced_M_image_equality": "T",
+      "S_contains_c": true,
+      "T_contains_c": false,
+      "contradicts_outside_injectivity": true
+    },
+    {
+      "beta": 1,
+      "Fx": 2,
+      "Fc": 0,
+      "S_B": 1,
+      "T_B": 0,
+      "TF_B": 2,
+      "TM_B": 1,
+      "fixed_first_letter": "M",
+      "forced_M_image_equality": "S",
+      "S_contains_c": true,
+      "T_contains_c": false,
+      "contradicts_outside_injectivity": true
+    },
+    {
+      "beta": 2,
+      "Fx": 1,
+      "Fc": 0,
+      "S_B": 2,
+      "T_B": 0,
+      "TF_B": 1,
+      "TM_B": 2,
+      "fixed_first_letter": "M",
+      "forced_M_image_equality": "S",
+      "S_contains_c": true,
+      "T_contains_c": false,
+      "contradicts_outside_injectivity": true
+    }
+  ],
+  "binary_excluded_orbit": "b3_in_c2",
+  "unrestricted_excluded_orbits": [],
+  "source_sha256": {
+    "BINARY_THREE_COVER_OVERLAP.md": "93f42f60c4c944659fa33e679f45b605e8ade7be266d3f3b848c2770b6cb9d20",
+    "check_binary_three_cover_overlap.py": "068accf834afe61e119f191402592a73c08a47cff98822554abd0db1b8ee225f",
+    "SECOND_ENTRANCE_FIBER.md": "664e379a346274ec88c59130741dc43251717eb53a16979198b76e18a165f34b",
+    "ENTRY_FIBER_FLAG.md": "b27eb51977104cd68aaff2e2f37db10c50bbf4a4dd4320502b15b0f609a01bbf",
+    "LOCAL_EQUALITY_FLAG.md": "f34cf260276c6551266564c1ee2264dc823aeaa4f33b4ae8f8261aedeec596a8"
+  },
+  "scope": "Symbolic binary conditional exclusion plus a complete literal four-map check; no new F maximum or alphabet separation."
+}

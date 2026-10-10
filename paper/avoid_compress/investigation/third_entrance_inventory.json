@@ -1,0 +1,2765 @@
+{
+  "status": "geometric_inventory",
+  "n": 13,
+  "s": 9,
+  "r": 1,
+  "counts": {
+    "b3_mixed_c3": {
+      "D_orbits": 12,
+      "labelled_D": 65,
+      "orbits_with_additional_fiber": 4
+    },
+    "b3_mixed_c7": {
+      "D_orbits": 16,
+      "labelled_D": 64,
+      "orbits_with_additional_fiber": 2
+    },
+    "b3_mixed_c11": {
+      "D_orbits": 8,
+      "labelled_D": 59,
+      "orbits_with_additional_fiber": 0
+    }
+  },
+  "records": [
+    {
+      "case": "b3_mixed_c3",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        2,
+        5
+      ],
+      "D": [
+        6
+      ],
+      "cell_signature": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "labelled_D": 7,
+      "expected_orbit_size": 7,
+      "feasible_nine_sets": 36,
+      "allowed_preC_fibers": [
+        {
+          "R": [
+            0,
+            1,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            2,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "1",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            6
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        }
+      ],
+      "extra_fourth_fibers": [],
+      "id": "b3_mixed_c3_d1"
+    },
+    {
+      "case": "b3_mixed_c3",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        2,
+        5
+      ],
+      "D": [
+        0,
+        2
+      ],
+      "cell_signature": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "labelled_D": 2,
+      "expected_orbit_size": 2,
+      "feasible_nine_sets": 21,
+      "allowed_preC_fibers": [
+        {
+          "R": [
+            0,
+            1,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            0,
+            2
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        },
+        {
+          "R": [
+            2,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "1",
+            "0"
+          ]
+        }
+      ],
+      "extra_fourth_fibers": [],
+      "id": "b3_mixed_c3_d2"
+    },
+    {
+      "case": "b3_mixed_c3",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        2,
+        5
+      ],
+      "D": [
+        0,
+        5
+      ],
+      "cell_signature": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "labelled_D": 2,
+      "expected_orbit_size": 2,
+      "feasible_nine_sets": 21,
+      "allowed_preC_fibers": [
+        {
+          "R": [
+            0,
+            1,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            0,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        },
+        {
+          "R": [
+            1,
+            2,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "1",
+            "-1"
+          ]
+        },
+        {
+          "R": [
+            2,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "1",
+            "0"
+          ]
+        }
+      ],
+      "extra_fourth_fibers": [
+        [
+          1,
+          2,
+          4
+        ]
+      ],
+      "id": "b3_mixed_c3_d3"
+    },
+    {
+      "case": "b3_mixed_c3",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        2,
+        5
+      ],
+      "D": [
+        0,
+        6
+      ],
+      "cell_signature": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "labelled_D": 14,
+      "expected_orbit_size": 14,
+      "feasible_nine_sets": 26,
+      "allowed_preC_fibers": [
+        {
+          "R": [
+            0,
+            1,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            2,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "1",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            0,
+            6
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        }
+      ],
+      "extra_fourth_fibers": [],
+      "id": "b3_mixed_c3_d4"
+    },
+    {
+      "case": "b3_mixed_c3",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        2,
+        5
+      ],
+      "D": [
+        2,
+        4
+      ],
+      "cell_signature": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "labelled_D": 1,
+      "expected_orbit_size": 1,
+      "feasible_nine_sets": 21,
+      "allowed_preC_fibers": [
+        {
+          "R": [
+            0,
+            1,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            2,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        },
+        {
+          "R": [
+            0,
+            1,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "1",
+            "-1"
+          ]
+        },
+        {
+          "R": [
+            2,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "1",
+            "0"
+          ]
+        }
+      ],
+      "extra_fourth_fibers": [
+        [
+          0,
+          1,
+          5
+        ]
+      ],
+      "id": "b3_mixed_c3_d5"
+    },
+    {
+      "case": "b3_mixed_c3",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        2,
+        5
+      ],
+      "D": [
+        2,
+        6
+      ],
+      "cell_signature": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "labelled_D": 7,
+      "expected_orbit_size": 7,
+      "feasible_nine_sets": 21,
+      "allowed_preC_fibers": [
+        {
+          "R": [
+            0,
+            1,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            2,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "1",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            2,
+            6
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        }
+      ],
+      "extra_fourth_fibers": [],
+      "id": "b3_mixed_c3_d6"
+    },
+    {
+      "case": "b3_mixed_c3",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        2,
+        5
+      ],
+      "D": [
+        0,
+        1,
+        2
+      ],
+      "cell_signature": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        0
+      ],
+      "labelled_D": 1,
+      "expected_orbit_size": 1,
+      "feasible_nine_sets": 21,
+      "allowed_preC_fibers": [
+        {
+          "R": [
+            0,
+            1,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            0,
+            1,
+            2
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        },
+        {
+          "R": [
+            2,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "1",
+            "0"
+          ]
+        }
+      ],
+      "extra_fourth_fibers": [],
+      "id": "b3_mixed_c3_d7"
+    },
+    {
+      "case": "b3_mixed_c3",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        2,
+        5
+      ],
+      "D": [
+        0,
+        1,
+        5
+      ],
+      "cell_signature": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      "labelled_D": 1,
+      "expected_orbit_size": 1,
+      "feasible_nine_sets": 21,
+      "allowed_preC_fibers": [
+        {
+          "R": [
+            0,
+            1,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            0,
+            1,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        },
+        {
+          "R": [
+            2,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "1",
+            "-1"
+          ]
+        },
+        {
+          "R": [
+            2,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "1",
+            "0"
+          ]
+        }
+      ],
+      "extra_fourth_fibers": [
+        [
+          2,
+          4
+        ]
+      ],
+      "id": "b3_mixed_c3_d8"
+    },
+    {
+      "case": "b3_mixed_c3",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        2,
+        5
+      ],
+      "D": [
+        0,
+        1,
+        6
+      ],
+      "cell_signature": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      "labelled_D": 7,
+      "expected_orbit_size": 7,
+      "feasible_nine_sets": 16,
+      "allowed_preC_fibers": [
+        {
+          "R": [
+            0,
+            1,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            2,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "1",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            0,
+            1,
+            6
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        }
+      ],
+      "extra_fourth_fibers": [],
+      "id": "b3_mixed_c3_d9"
+    },
+    {
+      "case": "b3_mixed_c3",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        2,
+        5
+      ],
+      "D": [
+        0,
+        2,
+        4
+      ],
+      "cell_signature": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "labelled_D": 2,
+      "expected_orbit_size": 2,
+      "feasible_nine_sets": 21,
+      "allowed_preC_fibers": [
+        {
+          "R": [
+            0,
+            1,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            0,
+            2,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        },
+        {
+          "R": [
+            1,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "1",
+            "-1"
+          ]
+        },
+        {
+          "R": [
+            2,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "1",
+            "0"
+          ]
+        }
+      ],
+      "extra_fourth_fibers": [
+        [
+          1,
+          5
+        ]
+      ],
+      "id": "b3_mixed_c3_d10"
+    },
+    {
+      "case": "b3_mixed_c3",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        2,
+        5
+      ],
+      "D": [
+        0,
+        2,
+        6
+      ],
+      "cell_signature": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "labelled_D": 14,
+      "expected_orbit_size": 14,
+      "feasible_nine_sets": 15,
+      "allowed_preC_fibers": [
+        {
+          "R": [
+            0,
+            1,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            2,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "1",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            0,
+            2,
+            6
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        }
+      ],
+      "extra_fourth_fibers": [],
+      "id": "b3_mixed_c3_d11"
+    },
+    {
+      "case": "b3_mixed_c3",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        2,
+        5
+      ],
+      "D": [
+        0,
+        1,
+        2,
+        6
+      ],
+      "cell_signature": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        0
+      ],
+      "labelled_D": 7,
+      "expected_orbit_size": 7,
+      "feasible_nine_sets": 9,
+      "allowed_preC_fibers": [
+        {
+          "R": [
+            0,
+            1,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            2,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "1",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            0,
+            1,
+            2,
+            6
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        }
+      ],
+      "extra_fourth_fibers": [],
+      "id": "b3_mixed_c3_d12"
+    },
+    {
+      "case": "b3_mixed_c7",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        0,
+        2,
+        5
+      ],
+      "D": [
+        6
+      ],
+      "cell_signature": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "labelled_D": 7,
+      "expected_orbit_size": 7,
+      "feasible_nine_sets": 25,
+      "allowed_preC_fibers": [
+        {
+          "R": [
+            0,
+            1,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            0,
+            2,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "1",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            6
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        }
+      ],
+      "extra_fourth_fibers": [],
+      "id": "b3_mixed_c7_d1"
+    },
+    {
+      "case": "b3_mixed_c7",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        0,
+        2,
+        5
+      ],
+      "D": [
+        0,
+        6
+      ],
+      "cell_signature": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "labelled_D": 7,
+      "expected_orbit_size": 7,
+      "feasible_nine_sets": 24,
+      "allowed_preC_fibers": [
+        {
+          "R": [
+            0,
+            1,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            0,
+            2,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "1",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            0,
+            6
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        }
+      ],
+      "extra_fourth_fibers": [],
+      "id": "b3_mixed_c7_d2"
+    },
+    {
+      "case": "b3_mixed_c7",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        0,
+        2,
+        5
+      ],
+      "D": [
+        1,
+        2
+      ],
+      "cell_signature": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "labelled_D": 1,
+      "expected_orbit_size": 1,
+      "feasible_nine_sets": 14,
+      "allowed_preC_fibers": [
+        {
+          "R": [
+            0,
+            1,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            1,
+            2
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        },
+        {
+          "R": [
+            0,
+            2,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "1",
+            "0"
+          ]
+        }
+      ],
+      "extra_fourth_fibers": [],
+      "id": "b3_mixed_c7_d3"
+    },
+    {
+      "case": "b3_mixed_c7",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        0,
+        2,
+        5
+      ],
+      "D": [
+        1,
+        5
+      ],
+      "cell_signature": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "labelled_D": 1,
+      "expected_orbit_size": 1,
+      "feasible_nine_sets": 14,
+      "allowed_preC_fibers": [
+        {
+          "R": [
+            0,
+            1,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            1,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        },
+        {
+          "R": [
+            0,
+            2,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "1",
+            "0"
+          ]
+        }
+      ],
+      "extra_fourth_fibers": [],
+      "id": "b3_mixed_c7_d4"
+    },
+    {
+      "case": "b3_mixed_c7",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        0,
+        2,
+        5
+      ],
+      "D": [
+        1,
+        6
+      ],
+      "cell_signature": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "labelled_D": 7,
+      "expected_orbit_size": 7,
+      "feasible_nine_sets": 15,
+      "allowed_preC_fibers": [
+        {
+          "R": [
+            0,
+            1,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            0,
+            2,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "1",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            1,
+            6
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        }
+      ],
+      "extra_fourth_fibers": [],
+      "id": "b3_mixed_c7_d5"
+    },
+    {
+      "case": "b3_mixed_c7",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        0,
+        2,
+        5
+      ],
+      "D": [
+        2,
+        4
+      ],
+      "cell_signature": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "labelled_D": 1,
+      "expected_orbit_size": 1,
+      "feasible_nine_sets": 14,
+      "allowed_preC_fibers": [
+        {
+          "R": [
+            0,
+            1,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            2,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        },
+        {
+          "R": [
+            0,
+            2,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "1",
+            "0"
+          ]
+        }
+      ],
+      "extra_fourth_fibers": [],
+      "id": "b3_mixed_c7_d6"
+    },
+    {
+      "case": "b3_mixed_c7",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        0,
+        2,
+        5
+      ],
+      "D": [
+        2,
+        6
+      ],
+      "cell_signature": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "labelled_D": 7,
+      "expected_orbit_size": 7,
+      "feasible_nine_sets": 15,
+      "allowed_preC_fibers": [
+        {
+          "R": [
+            0,
+            1,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            0,
+            2,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "1",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            2,
+            6
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        }
+      ],
+      "extra_fourth_fibers": [],
+      "id": "b3_mixed_c7_d7"
+    },
+    {
+      "case": "b3_mixed_c7",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        0,
+        2,
+        5
+      ],
+      "D": [
+        0,
+        1,
+        2
+      ],
+      "cell_signature": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "labelled_D": 1,
+      "expected_orbit_size": 1,
+      "feasible_nine_sets": 15,
+      "allowed_preC_fibers": [
+        {
+          "R": [
+            0,
+            1,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            0,
+            1,
+            2
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        },
+        {
+          "R": [
+            0,
+            2,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "1",
+            "0"
+          ]
+        }
+      ],
+      "extra_fourth_fibers": [],
+      "id": "b3_mixed_c7_d8"
+    },
+    {
+      "case": "b3_mixed_c7",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        0,
+        2,
+        5
+      ],
+      "D": [
+        0,
+        1,
+        5
+      ],
+      "cell_signature": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "labelled_D": 1,
+      "expected_orbit_size": 1,
+      "feasible_nine_sets": 15,
+      "allowed_preC_fibers": [
+        {
+          "R": [
+            0,
+            1,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            0,
+            1,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        },
+        {
+          "R": [
+            0,
+            2,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "1",
+            "-1"
+          ]
+        },
+        {
+          "R": [
+            0,
+            2,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "1",
+            "0"
+          ]
+        }
+      ],
+      "extra_fourth_fibers": [
+        [
+          0,
+          2,
+          4
+        ]
+      ],
+      "id": "b3_mixed_c7_d9"
+    },
+    {
+      "case": "b3_mixed_c7",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        0,
+        2,
+        5
+      ],
+      "D": [
+        0,
+        1,
+        6
+      ],
+      "cell_signature": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "labelled_D": 7,
+      "expected_orbit_size": 7,
+      "feasible_nine_sets": 14,
+      "allowed_preC_fibers": [
+        {
+          "R": [
+            0,
+            1,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            0,
+            2,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "1",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            0,
+            1,
+            6
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        }
+      ],
+      "extra_fourth_fibers": [],
+      "id": "b3_mixed_c7_d10"
+    },
+    {
+      "case": "b3_mixed_c7",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        0,
+        2,
+        5
+      ],
+      "D": [
+        0,
+        2,
+        4
+      ],
+      "cell_signature": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "labelled_D": 1,
+      "expected_orbit_size": 1,
+      "feasible_nine_sets": 15,
+      "allowed_preC_fibers": [
+        {
+          "R": [
+            0,
+            1,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            0,
+            2,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        },
+        {
+          "R": [
+            0,
+            1,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "1",
+            "-1"
+          ]
+        },
+        {
+          "R": [
+            0,
+            2,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "1",
+            "0"
+          ]
+        }
+      ],
+      "extra_fourth_fibers": [
+        [
+          0,
+          1,
+          5
+        ]
+      ],
+      "id": "b3_mixed_c7_d11"
+    },
+    {
+      "case": "b3_mixed_c7",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        0,
+        2,
+        5
+      ],
+      "D": [
+        0,
+        2,
+        6
+      ],
+      "cell_signature": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "labelled_D": 7,
+      "expected_orbit_size": 7,
+      "feasible_nine_sets": 14,
+      "allowed_preC_fibers": [
+        {
+          "R": [
+            0,
+            1,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            0,
+            2,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "1",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            0,
+            2,
+            6
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        }
+      ],
+      "extra_fourth_fibers": [],
+      "id": "b3_mixed_c7_d12"
+    },
+    {
+      "case": "b3_mixed_c7",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        0,
+        2,
+        5
+      ],
+      "D": [
+        1,
+        2,
+        4
+      ],
+      "cell_signature": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "labelled_D": 1,
+      "expected_orbit_size": 1,
+      "feasible_nine_sets": 14,
+      "allowed_preC_fibers": [
+        {
+          "R": [
+            0,
+            1,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            1,
+            2,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        },
+        {
+          "R": [
+            0,
+            2,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "1",
+            "0"
+          ]
+        }
+      ],
+      "extra_fourth_fibers": [],
+      "id": "b3_mixed_c7_d13"
+    },
+    {
+      "case": "b3_mixed_c7",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        0,
+        2,
+        5
+      ],
+      "D": [
+        1,
+        2,
+        5
+      ],
+      "cell_signature": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "labelled_D": 1,
+      "expected_orbit_size": 1,
+      "feasible_nine_sets": 14,
+      "allowed_preC_fibers": [
+        {
+          "R": [
+            0,
+            1,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            0,
+            2,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "1",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            1,
+            2,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        }
+      ],
+      "extra_fourth_fibers": [],
+      "id": "b3_mixed_c7_d14"
+    },
+    {
+      "case": "b3_mixed_c7",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        0,
+        2,
+        5
+      ],
+      "D": [
+        1,
+        2,
+        6
+      ],
+      "cell_signature": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "labelled_D": 7,
+      "expected_orbit_size": 7,
+      "feasible_nine_sets": 9,
+      "allowed_preC_fibers": [
+        {
+          "R": [
+            0,
+            1,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            0,
+            2,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "1",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            1,
+            2,
+            6
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        }
+      ],
+      "extra_fourth_fibers": [],
+      "id": "b3_mixed_c7_d15"
+    },
+    {
+      "case": "b3_mixed_c7",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        0,
+        2,
+        5
+      ],
+      "D": [
+        0,
+        1,
+        2,
+        6
+      ],
+      "cell_signature": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "labelled_D": 7,
+      "expected_orbit_size": 7,
+      "feasible_nine_sets": 8,
+      "allowed_preC_fibers": [
+        {
+          "R": [
+            0,
+            1,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            0,
+            2,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "1",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            0,
+            1,
+            2,
+            6
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        }
+      ],
+      "extra_fourth_fibers": [],
+      "id": "b3_mixed_c7_d16"
+    },
+    {
+      "case": "b3_mixed_c11",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        0,
+        1,
+        2,
+        5
+      ],
+      "D": [
+        6
+      ],
+      "cell_signature": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "labelled_D": 7,
+      "expected_orbit_size": 7,
+      "feasible_nine_sets": 14,
+      "allowed_preC_fibers": [
+        {
+          "R": [
+            0,
+            1,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            0,
+            1,
+            2,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "1",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            6
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        }
+      ],
+      "extra_fourth_fibers": [],
+      "id": "b3_mixed_c11_d1"
+    },
+    {
+      "case": "b3_mixed_c11",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        0,
+        1,
+        2,
+        5
+      ],
+      "D": [
+        0,
+        6
+      ],
+      "cell_signature": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "labelled_D": 14,
+      "expected_orbit_size": 14,
+      "feasible_nine_sets": 13,
+      "allowed_preC_fibers": [
+        {
+          "R": [
+            0,
+            1,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            0,
+            1,
+            2,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "1",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            0,
+            6
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        }
+      ],
+      "extra_fourth_fibers": [],
+      "id": "b3_mixed_c11_d2"
+    },
+    {
+      "case": "b3_mixed_c11",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        0,
+        1,
+        2,
+        5
+      ],
+      "D": [
+        2,
+        4
+      ],
+      "cell_signature": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "labelled_D": 1,
+      "expected_orbit_size": 1,
+      "feasible_nine_sets": 7,
+      "allowed_preC_fibers": [
+        {
+          "R": [
+            0,
+            1,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            2,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        },
+        {
+          "R": [
+            0,
+            1,
+            2,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "1",
+            "0"
+          ]
+        }
+      ],
+      "extra_fourth_fibers": [],
+      "id": "b3_mixed_c11_d3"
+    },
+    {
+      "case": "b3_mixed_c11",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        0,
+        1,
+        2,
+        5
+      ],
+      "D": [
+        2,
+        6
+      ],
+      "cell_signature": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "labelled_D": 7,
+      "expected_orbit_size": 7,
+      "feasible_nine_sets": 9,
+      "allowed_preC_fibers": [
+        {
+          "R": [
+            0,
+            1,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            0,
+            1,
+            2,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "1",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            2,
+            6
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        }
+      ],
+      "extra_fourth_fibers": [],
+      "id": "b3_mixed_c11_d4"
+    },
+    {
+      "case": "b3_mixed_c11",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        0,
+        1,
+        2,
+        5
+      ],
+      "D": [
+        0,
+        1,
+        6
+      ],
+      "cell_signature": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      "labelled_D": 7,
+      "expected_orbit_size": 7,
+      "feasible_nine_sets": 12,
+      "allowed_preC_fibers": [
+        {
+          "R": [
+            0,
+            1,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            0,
+            1,
+            2,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "1",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            0,
+            1,
+            6
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        }
+      ],
+      "extra_fourth_fibers": [],
+      "id": "b3_mixed_c11_d5"
+    },
+    {
+      "case": "b3_mixed_c11",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        0,
+        1,
+        2,
+        5
+      ],
+      "D": [
+        0,
+        2,
+        4
+      ],
+      "cell_signature": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "labelled_D": 2,
+      "expected_orbit_size": 2,
+      "feasible_nine_sets": 8,
+      "allowed_preC_fibers": [
+        {
+          "R": [
+            0,
+            1,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            0,
+            2,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        },
+        {
+          "R": [
+            0,
+            1,
+            2,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "1",
+            "0"
+          ]
+        }
+      ],
+      "extra_fourth_fibers": [],
+      "id": "b3_mixed_c11_d6"
+    },
+    {
+      "case": "b3_mixed_c11",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        0,
+        1,
+        2,
+        5
+      ],
+      "D": [
+        0,
+        2,
+        6
+      ],
+      "cell_signature": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "labelled_D": 14,
+      "expected_orbit_size": 14,
+      "feasible_nine_sets": 8,
+      "allowed_preC_fibers": [
+        {
+          "R": [
+            0,
+            1,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            0,
+            1,
+            2,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "1",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            0,
+            2,
+            6
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        }
+      ],
+      "extra_fourth_fibers": [],
+      "id": "b3_mixed_c11_d7"
+    },
+    {
+      "case": "b3_mixed_c11",
+      "B": [
+        0,
+        1,
+        4
+      ],
+      "C": [
+        0,
+        1,
+        2,
+        5
+      ],
+      "D": [
+        0,
+        1,
+        2,
+        6
+      ],
+      "cell_signature": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        2
+      ],
+      "labelled_D": 7,
+      "expected_orbit_size": 7,
+      "feasible_nine_sets": 7,
+      "allowed_preC_fibers": [
+        {
+          "R": [
+            0,
+            1,
+            4
+          ],
+          "coefficients": [
+            "0",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            0,
+            1,
+            2,
+            5
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "1",
+            "0"
+          ]
+        },
+        {
+          "R": [
+            0,
+            1,
+            2,
+            6
+          ],
+          "coefficients": [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        }
+      ],
+      "extra_fourth_fibers": [],
+      "id": "b3_mixed_c11_d8"
+    }
+  ],
+  "source_sha256": {
+    "enumerate_third_entrance.py": "062683a0a279b288b5fe69a36ce02f9e6407e062c4197b9a86497ac94f33125b",
+    "THIRD_ENTRANCE_SPACE.md": "01baa935bac82d8a8a878f3ee6fbf3778c167b2eb7fb114d0466c6794ebb5315",
+    "ENTRY_FIBER_FLAG.md": "b27eb51977104cd68aaff2e2f37db10c50bbf4a4dd4320502b15b0f609a01bbf",
+    "SECOND_ENTRANCE_FIBER.md": "664e379a346274ec88c59130741dc43251717eb53a16979198b76e18a165f34b",
+    "LOCAL_EQUALITY_FLAG.md": "f34cf260276c6551266564c1ee2264dc823aeaa4f33b4ae8f8261aedeec596a8"
+  },
+  "scope": "Complete geometric third-preimage admission for the three retained B3 cases. No automaton or F exclusion; additional fibers are retained rather than assuming a common third fiber."
+}

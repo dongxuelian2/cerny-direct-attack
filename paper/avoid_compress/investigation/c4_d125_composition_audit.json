@@ -1,0 +1,210 @@
+{
+  "status": "pass",
+  "parameter": [
+    13,
+    9,
+    1
+  ],
+  "B": [
+    0
+  ],
+  "C": [
+    4
+  ],
+  "D": [
+    1,
+    2,
+    5
+  ],
+  "excluded_third_id": "b1_in_c1_third5",
+  "whole_binary_third_excluded": true,
+  "excluded_D_labels": 8,
+  "complete_original_third_pairs": 14,
+  "earlier_excluded_parent_pairs": 5,
+  "newly_removed_previously_remaining_pairs": 9,
+  "complete_fourth_geometries": 3,
+  "complete_E_labels": 28,
+  "checked_actual_row_fourth_pairs": 27,
+  "complete_representative_pairs_per_implementation": 145980000,
+  "coverage": [
+    {
+      "E": [
+        6
+      ],
+      "labels": 7,
+      "remaining_parent_pairs": [
+        [
+          0,
+          7
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          7
+        ]
+      ],
+      "complete_actual_field_pairs": 9,
+      "rows": 604800,
+      "kept_rows": 432000,
+      "representative_pairs": 73483200
+    },
+    {
+      "E": [
+        1,
+        6
+      ],
+      "labels": 14,
+      "remaining_parent_pairs": [
+        [
+          0,
+          7
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          7
+        ]
+      ],
+      "complete_actual_field_pairs": 9,
+      "rows": 1330560,
+      "kept_rows": 429120,
+      "representative_pairs": 49026240
+    },
+    {
+      "E": [
+        1,
+        2,
+        6
+      ],
+      "labels": 7,
+      "remaining_parent_pairs": [
+        [
+          0,
+          7
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          7
+        ]
+      ],
+      "complete_actual_field_pairs": 9,
+      "rows": 604800,
+      "kept_rows": 207360,
+      "representative_pairs": 23470560
+    }
+  ],
+  "unrestricted_remaining_E": [
+    [
+      6
+    ],
+    [
+      1,
+      6
+    ],
+    [
+      1,
+      2,
+      6
+    ]
+  ],
+  "source_sha256": {
+    "check_c4_d125_composition.py": "8d921ecf80bddf02555a730c08956d88b3f53ebe81319fc7e6ef42cdb0941e11",
+    "C4_D125_COMPLETE_EXCLUSION.md": "756e5fac74d9748d93db205f078c22d4306dc770b39eb467dea996a5fb656f24",
+    "C4_D125_ROW_COVER.md": "a37bffc8d70be8a48feac9660230b8f32967433ebf1113ae0165c80edc305ff9",
+    "c4_d125_fourth_rows_audit.json": "a161810c9809a3cef0d6cce0aa527353f08a765db6002a43b0dee32ee7119d9c",
+    "b1_c4_fourth_inventory.json": "c9a26a19d52b0dbf8806e84fddab5156366aabab591d10e335e29d65c7b25517",
+    "b1_c4_fourth_audit.json": "f2d0ab7b95611e4ebe0e9fd5addcf30708be2f034f146d20a0cdc82e25cde5be",
+    "B1_C4_FOURTH_SPACE.md": "3e6ab0c3a886c489ce7d9217378984af34f234c699833e2c02098669fe798d93",
+    "small_first_third_inventory.json": "ea00650e65207784313446cec6bf6d38b6f48223b327dcc218e9c6f34cf703c1",
+    "small_first_third_audit.json": "a7eff7aec7da7c19e847d965c49c46820d2ff2b804143364a7cadb69e9ffaef4",
+    "SMALL_FIRST_THIRD_ADMISSION.md": "3393586186e33deca585422e32c31cb7f6a70000af2f46b352a9c14be7187571",
+    "common_block_profiles_audit.json": "e6806d42e4e8ba159dbe8a2aa42bb7c6b0198a90d7bbb30e907b5f0ca8082488",
+    "COMMON_BLOCK_SINGLETON_C_PROFILES.md": "83984f841d1020ebd3d27ede0995bb0ebfbc68363f0e6cdf04bad82ef4aad302",
+    "COMMON_COLLAPSING_BLOCK_TRAP.md": "99fd89dc0987a4e1dca74e8551588fb124e1466ab44fce38495f1db8045cd4f0",
+    "closed_merging_block_audit.json": "2b6bbad0145af443a816359ef3ab8ca8c7b45d0cb4d8da2b7d011e6a7fc0f29b",
+    "CLOSED_MERGING_BLOCK.md": "febcb02e7d5a9b5c496384b9fee29f11a5fa108aa9f53724951c366ea516e241"
+  },
+  "scope": "Whole binary B0/C4/D125 conditional type exclusion. Unrestricted E6/E16/E126, other third/joint types and both F extrema remain unclassified."
+}

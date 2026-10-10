@@ -1,0 +1,106 @@
+{
+  "status": "pass",
+  "archive": "certificates/compression_cover_floor.zip",
+  "sha256": "808e9974ff84c9943b294afc26e8c4146388a0938256026770f4cef9a36d5ad3",
+  "files": 16,
+  "checksum_entries": 15,
+  "isolated_checker_exit": 0,
+  "reproduced_audit_byte_identical": true,
+  "isolated_generator_exit": 0,
+  "reproduced_inventory_byte_identical": true,
+  "checker_output": [
+    {
+      "n": 2,
+      "alphabet_size": 2,
+      "complete_ordered_row_assignments": 16,
+      "strong_sync_models": 6,
+      "forbidden_cover_controls": 6,
+      "independent_actual_subset_BFS_controls": 6
+    },
+    {
+      "n": 3,
+      "alphabet_size": 2,
+      "complete_ordered_row_assignments": 729,
+      "strong_sync_models": 240,
+      "forbidden_cover_controls": 1440,
+      "independent_actual_subset_BFS_controls": 256
+    },
+    {
+      "n": 4,
+      "alphabet_size": 2,
+      "complete_ordered_row_assignments": 65536,
+      "strong_sync_models": 18648,
+      "forbidden_cover_controls": 522144,
+      "independent_actual_subset_BFS_controls": 704
+    },
+    {
+      "n": 3,
+      "alphabet_size": 3,
+      "complete_ordered_row_assignments": 19683,
+      "strong_sync_models": 13218,
+      "forbidden_cover_controls": 79308,
+      "independent_actual_subset_BFS_controls": 256
+    },
+    {
+      "status": "pass",
+      "admission": {
+        "original_joint_orbits": 43,
+        "labelled_ordered_pairs": 4806,
+        "excluded_labelled_pairs": 6,
+        "excluded_joint": "b1_in_c2",
+        "alphabet": "arbitrary finite",
+        "binary_third_profiles_discharged": 3,
+        "binary_earlier_profile_pairs_discharged": 42,
+        "third_profiles": [
+          [
+            2
+          ],
+          [
+            4
+          ],
+          [
+            2,
+            4
+          ]
+        ],
+        "cover_floors_h1_through10": [
+          1,
+          1,
+          2,
+          2,
+          2,
+          3,
+          3,
+          3,
+          3,
+          4
+        ]
+      },
+      "frontier": {
+        "frontier_certificates": 290,
+        "distinct_row_models": 147,
+        "forbidden_cover_controls": 123545,
+        "protected_pair_bound_controls": 290,
+        "scope": "All290 existing verified frontier examples; repeated row models are cached, no claim of290 distinct automata."
+      },
+      "random_controls": {
+        "seed": 20261009,
+        "proposed_models": 300,
+        "strong_sync_models": 152,
+        "forbidden_cover_controls": 25286,
+        "n_range": [
+          4,
+          9
+        ],
+        "alphabet_range": [
+          2,
+          4
+        ],
+        "scope": "Seeded controls, not exhaustive beyond the separately listed domains."
+      }
+    }
+  ],
+  "source_sha256": {
+    "check_compression_cover_floor_package.py": "a0c97205272e00415d5455e56d3004e9b4703e16a315bd6faa76015c4b8bf48a"
+  }
+}

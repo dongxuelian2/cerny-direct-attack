@@ -1,0 +1,44 @@
+{
+  "binary_lower_witness_verified": true,
+  "hole_table_verified": true,
+  "pairs_checked": 55,
+  "run_counts_match": true,
+  "comparisons": [
+    {
+      "n": 6,
+      "first_classes": 23,
+      "assignments": 30900,
+      "prunes": 10781,
+      "leaves": 2636
+    },
+    {
+      "n": 7,
+      "first_classes": 38,
+      "assignments": 216358,
+      "prunes": 86355,
+      "leaves": 17168
+    },
+    {
+      "n": 8,
+      "first_classes": 61,
+      "assignments": 1659113,
+      "prunes": 698177,
+      "leaves": 134208
+    },
+    {
+      "n": 9,
+      "first_classes": 94,
+      "assignments": 14165373,
+      "prunes": 6083041,
+      "leaves": 1193336
+    },
+    {
+      "n": 11,
+      "first_classes": 209,
+      "assignments": 1415723476,
+      "prunes": 611559458,
+      "leaves": 129412072
+    }
+  ],
+  "scope": "Binary maximum at (11,8,1) only. Original unrestricted-alphabet F is not refuted by this result."
+}

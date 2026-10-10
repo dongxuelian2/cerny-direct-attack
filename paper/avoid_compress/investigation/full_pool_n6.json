@@ -1,0 +1,80 @@
+{
+  "n": 6,
+  "s": 3,
+  "target": 10,
+  "records": [
+    {
+      "pattern": 0,
+      "alphabet_pool_size": 155,
+      "alphabet_size_cutoff": null,
+      "status": "unsat_complete_pool_encoding_not_certified",
+      "witness": null,
+      "seconds": 0.2530666000020574
+    },
+    {
+      "pattern": 1,
+      "alphabet_pool_size": 143,
+      "alphabet_size_cutoff": null,
+      "status": "unsat_complete_pool_encoding_not_certified",
+      "witness": null,
+      "seconds": 0.024601799999800278
+    },
+    {
+      "pattern": 2,
+      "alphabet_pool_size": 137,
+      "alphabet_size_cutoff": null,
+      "status": "unsat_complete_pool_encoding_not_certified",
+      "witness": null,
+      "seconds": 0.5264330999998492
+    },
+    {
+      "pattern": 3,
+      "alphabet_pool_size": 149,
+      "alphabet_size_cutoff": null,
+      "status": "unsat_complete_pool_encoding_not_certified",
+      "witness": null,
+      "seconds": 0.3464854000012565
+    },
+    {
+      "pattern": 4,
+      "alphabet_pool_size": 143,
+      "alphabet_size_cutoff": null,
+      "status": "unsat_complete_pool_encoding_not_certified",
+      "witness": null,
+      "seconds": 0.16287569999985863
+    },
+    {
+      "pattern": 5,
+      "alphabet_pool_size": 63,
+      "alphabet_size_cutoff": null,
+      "status": "unsat_complete_pool_encoding_not_certified",
+      "witness": null,
+      "seconds": 6.628804399999353
+    },
+    {
+      "pattern": 6,
+      "alphabet_pool_size": 71,
+      "alphabet_size_cutoff": null,
+      "status": "unsat_complete_pool_encoding_not_certified",
+      "witness": null,
+      "seconds": 0.46805070000118576
+    },
+    {
+      "pattern": 7,
+      "alphabet_pool_size": 95,
+      "alphabet_size_cutoff": null,
+      "status": "unsat_complete_pool_encoding_not_certified",
+      "witness": null,
+      "seconds": 0.5745518999974593
+    },
+    {
+      "pattern": 8,
+      "alphabet_pool_size": 111,
+      "alphabet_size_cutoff": null,
+      "status": "unknown: timeout",
+      "witness": null,
+      "seconds": 10.019409900000028
+    }
+  ],
+  "scope": "Finite complete letter-pool synthesis; negative output is not certified."
+}

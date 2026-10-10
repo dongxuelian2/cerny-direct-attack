@@ -1,0 +1,85 @@
+{
+  "status": "pass",
+  "parameter": [
+    13,
+    9,
+    1
+  ],
+  "B": [
+    0
+  ],
+  "C": [
+    1,
+    4
+  ],
+  "whole_binary_D12_D24_excluded": true,
+  "excluded_third_types": [
+    {
+      "D": [
+        1,
+        2
+      ],
+      "excluded_third_id": "b1_in_c3_third3",
+      "removed_original_third_pairs": 3,
+      "complete_fourth_geometries": 3,
+      "complete_E_labels": 24,
+      "checked_actual_row_fourth_pairs": 24,
+      "unrestricted_remaining_E": [
+        [
+          5
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          5
+        ]
+      ]
+    },
+    {
+      "D": [
+        2,
+        4
+      ],
+      "excluded_third_id": "b1_in_c3_third5",
+      "removed_original_third_pairs": 3,
+      "complete_fourth_geometries": 4,
+      "complete_E_labels": 32,
+      "checked_actual_row_fourth_pairs": 24,
+      "unrestricted_remaining_E": [
+        [
+          5
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          5
+        ]
+      ]
+    }
+  ],
+  "removed_original_third_pairs": 6,
+  "complete_fourth_geometries": 7,
+  "complete_E_labels": 56,
+  "checked_actual_row_fourth_geometries": 6,
+  "checked_actual_row_fourth_pairs": 48,
+  "new_complete_representative_pairs_per_implementation": 162575280,
+  "source_sha256": {
+    "check_b1_d12_d24_composition.py": "3c9e91561a9f55effbc70c0ccb194c956c62a3f19b4d26133d80bfce38447099",
+    "B1_D12_D24_EXCLUSION.md": "36735b38e39b70203f733d0530f4e8686dd711e5612a605082f2da85d777414e",
+    "D12_D24_ROW_COVER.md": "1fee99864f43f456fdd862ad18b5f82f775906ed6fb1717c8dfdc78e961c3d9f",
+    "d12_d24_fourth_rows_audit.json": "722ee423736f26cca695d5cf97d69ec3babfb3d5dfdc4c8f77fd05e89a16eb7d",
+    "b1_c14_nonsingleton_fourth_inventory.json": "0092cf5570c14be895d357afbae3a14dff4af0fa239b0c42e1f5e7bd4a5bdcae",
+    "b1_c14_nonsingleton_fourth_audit.json": "c61f8792d1152eea0eb7de557c9ee6129922e400e898bdb88acd1708ec3da7d3",
+    "B1_C14_NONSINGLETON_D_FOURTH.md": "2d0e3e1ff1595b0efd75a7d0c83cd12d92dc967346dd8d5539699d51e733d16a",
+    "small_first_third_inventory.json": "ea00650e65207784313446cec6bf6d38b6f48223b327dcc218e9c6f34cf703c1",
+    "small_first_third_audit.json": "a7eff7aec7da7c19e847d965c49c46820d2ff2b804143364a7cadb69e9ffaef4",
+    "SMALL_FIRST_THIRD_ADMISSION.md": "3393586186e33deca585422e32c31cb7f6a70000af2f46b352a9c14be7187571"
+  },
+  "scope": "Whole binary D12,D24 exclusions. Unrestricted E5,E15,E25 and other D/joint types remain; no exact F value or numerical separation."
+}

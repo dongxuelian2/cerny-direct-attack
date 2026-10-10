@@ -1,0 +1,49 @@
+{
+  "status": "pass",
+  "complete_individual_rows": 192,
+  "complete_ordered_alphabets": 37056,
+  "finite_control_stats": [
+    {
+      "alphabet_size": 1,
+      "complete_ordered_controls": 192,
+      "qualified_nonsynchronizing": 0
+    },
+    {
+      "alphabet_size": 2,
+      "complete_ordered_controls": 36864,
+      "qualified_nonsynchronizing": 320
+    }
+  ],
+  "qualified_nonsynchronizing_controls": 320,
+  "strongly_connected_nonsynchronizing_control": {
+    "rows": [
+      [
+        2,
+        3,
+        2,
+        3
+      ],
+      [
+        2,
+        3,
+        1,
+        0
+      ]
+    ],
+    "closed_frames": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ]
+    ]
+  },
+  "source_sha256": {
+    "check_saturated_two_guard_trap.py": "f190ae056b04b5b292826e2e462f8d058c8166014cbe553ba789827ed984b5cf",
+    "SATURATED_TWO_GUARD_TRAP.md": "c03f6e6ac8fd0a396ceda271d7be717107aa479b4c4ac28bbcf4b09ecd90e645"
+  },
+  "scope": "Paper proof for all n>=4 and finite alphabets; complete n4 one/two-letter controls supplement it. No new extremum."
+}

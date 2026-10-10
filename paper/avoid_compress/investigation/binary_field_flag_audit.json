@@ -1,0 +1,6435 @@
+{
+  "status": "all_independent_controls_passed",
+  "frontier_controls": 87,
+  "additional_fixed_control": 1,
+  "records": [
+    {
+      "n": 3,
+      "s": 3,
+      "r": 2,
+      "target": 1,
+      "prefix_word": "",
+      "basis_masks": [
+        7
+      ],
+      "common_protected": [
+        0,
+        1,
+        2
+      ],
+      "relations": []
+    },
+    {
+      "n": 4,
+      "s": 3,
+      "r": 1,
+      "target": 3,
+      "prefix_word": "ab",
+      "basis_masks": [
+        14,
+        13,
+        11
+      ],
+      "common_protected": [
+        3
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 4
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "s": 3,
+      "r": 2,
+      "target": 2,
+      "prefix_word": "a",
+      "basis_masks": [
+        14,
+        7
+      ],
+      "common_protected": [
+        1,
+        2
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "s": 3,
+      "r": 1,
+      "target": 4,
+      "prefix_word": "aab",
+      "basis_masks": [
+        28,
+        26,
+        25,
+        22
+      ],
+      "common_protected": [
+        4
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 8
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "s": 3,
+      "r": 2,
+      "target": 3,
+      "prefix_word": "aa",
+      "basis_masks": [
+        25,
+        21,
+        19
+      ],
+      "common_protected": [
+        0,
+        4
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 2
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "s": 5,
+      "r": 4,
+      "target": 1,
+      "prefix_word": "",
+      "basis_masks": [
+        31
+      ],
+      "common_protected": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "relations": []
+    },
+    {
+      "n": 6,
+      "s": 3,
+      "r": 1,
+      "target": 5,
+      "prefix_word": "aaba",
+      "basis_masks": [
+        56,
+        50,
+        49,
+        44,
+        35
+      ],
+      "common_protected": [
+        5
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 1
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "s": 3,
+      "r": 2,
+      "target": 4,
+      "prefix_word": "aaa",
+      "basis_masks": [
+        49,
+        41,
+        37,
+        35
+      ],
+      "common_protected": [
+        0,
+        5
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 2
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "s": 5,
+      "r": 3,
+      "target": 3,
+      "prefix_word": "ab",
+      "basis_masks": [
+        62,
+        61,
+        59
+      ],
+      "common_protected": [
+        3,
+        4,
+        5
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 4
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "s": 5,
+      "r": 4,
+      "target": 2,
+      "prefix_word": "a",
+      "basis_masks": [
+        62,
+        31
+      ],
+      "common_protected": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        }
+      ]
+    },
+    {
+      "n": 7,
+      "s": 3,
+      "r": 1,
+      "target": 6,
+      "prefix_word": "bbbbb",
+      "basis_masks": [
+        49,
+        82,
+        52,
+        88,
+        84,
+        28
+      ],
+      "common_protected": [
+        4
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 32
+        }
+      ]
+    },
+    {
+      "n": 7,
+      "s": 3,
+      "r": 2,
+      "target": 5,
+      "prefix_word": "aaaa",
+      "basis_masks": [
+        97,
+        81,
+        73,
+        69,
+        67
+      ],
+      "common_protected": [
+        0,
+        6
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 2
+        }
+      ]
+    },
+    {
+      "n": 7,
+      "s": 5,
+      "r": 1,
+      "target": 6,
+      "prefix_word": "ababb",
+      "basis_masks": [
+        87,
+        55,
+        31,
+        47,
+        94,
+        117
+      ],
+      "common_protected": [
+        2
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 19
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 32
+        }
+      ]
+    },
+    {
+      "n": 7,
+      "s": 5,
+      "r": 2,
+      "target": 5,
+      "prefix_word": "babb",
+      "basis_masks": [
+        121,
+        124,
+        122,
+        118,
+        110
+      ],
+      "common_protected": [
+        5,
+        6
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 11
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 16
+        }
+      ]
+    },
+    {
+      "n": 7,
+      "s": 5,
+      "r": 3,
+      "target": 4,
+      "prefix_word": "aab",
+      "basis_masks": [
+        124,
+        122,
+        121,
+        118
+      ],
+      "common_protected": [
+        4,
+        5,
+        6
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 8
+        }
+      ]
+    },
+    {
+      "n": 7,
+      "s": 5,
+      "r": 4,
+      "target": 3,
+      "prefix_word": "aa",
+      "basis_masks": [
+        121,
+        117,
+        115
+      ],
+      "common_protected": [
+        0,
+        4,
+        5,
+        6
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 2
+        }
+      ]
+    },
+    {
+      "n": 7,
+      "s": 7,
+      "r": 6,
+      "target": 1,
+      "prefix_word": "",
+      "basis_masks": [
+        127
+      ],
+      "common_protected": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "relations": []
+    },
+    {
+      "n": 8,
+      "s": 3,
+      "r": 1,
+      "target": 7,
+      "prefix_word": "aaaaaa",
+      "basis_masks": [
+        7,
+        13,
+        25,
+        49,
+        97,
+        193,
+        131
+      ],
+      "common_protected": [
+        0
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 5,
+          "letter": 0,
+          "coefficient_mask": 64
+        },
+        {
+          "i": 5,
+          "letter": 1,
+          "coefficient_mask": 1
+        }
+      ]
+    },
+    {
+      "n": 8,
+      "s": 3,
+      "r": 2,
+      "target": 6,
+      "prefix_word": "aaaaa",
+      "basis_masks": [
+        193,
+        194,
+        196,
+        200,
+        208,
+        224
+      ],
+      "common_protected": [
+        6,
+        7
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 1
+        }
+      ]
+    },
+    {
+      "n": 8,
+      "s": 5,
+      "r": 1,
+      "target": 7,
+      "prefix_word": "bbbbbb",
+      "basis_masks": [
+        121,
+        115,
+        103,
+        167,
+        174,
+        188,
+        248
+      ],
+      "common_protected": [
+        5
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 28
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 5,
+          "letter": 0,
+          "coefficient_mask": 44
+        },
+        {
+          "i": 5,
+          "letter": 1,
+          "coefficient_mask": 64
+        }
+      ]
+    },
+    {
+      "n": 8,
+      "s": 5,
+      "r": 2,
+      "target": 6,
+      "prefix_word": "bbbba",
+      "basis_masks": [
+        115,
+        103,
+        167,
+        171,
+        59,
+        91
+      ],
+      "common_protected": [
+        0,
+        1
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 14
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 1
+        }
+      ]
+    },
+    {
+      "n": 8,
+      "s": 5,
+      "r": 3,
+      "target": 5,
+      "prefix_word": "bbbb",
+      "basis_masks": [
+        115,
+        103,
+        167,
+        171,
+        59
+      ],
+      "common_protected": [
+        0,
+        1,
+        5
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 14
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 16
+        }
+      ]
+    },
+    {
+      "n": 8,
+      "s": 5,
+      "r": 4,
+      "target": 4,
+      "prefix_word": "aaa",
+      "basis_masks": [
+        241,
+        242,
+        244,
+        248
+      ],
+      "common_protected": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 1
+        }
+      ]
+    },
+    {
+      "n": 8,
+      "s": 7,
+      "r": 5,
+      "target": 3,
+      "prefix_word": "ab",
+      "basis_masks": [
+        191,
+        127,
+        254
+      ],
+      "common_protected": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 4
+        }
+      ]
+    },
+    {
+      "n": 8,
+      "s": 7,
+      "r": 6,
+      "target": 2,
+      "prefix_word": "b",
+      "basis_masks": [
+        127,
+        254
+      ],
+      "common_protected": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 2
+        }
+      ]
+    },
+    {
+      "n": 9,
+      "s": 3,
+      "r": 1,
+      "target": 8,
+      "prefix_word": "aaaaaaa",
+      "basis_masks": [
+        7,
+        13,
+        25,
+        49,
+        97,
+        193,
+        385,
+        261
+      ],
+      "common_protected": [
+        0
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 5,
+          "letter": 0,
+          "coefficient_mask": 64
+        },
+        {
+          "i": 5,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 6,
+          "letter": 0,
+          "coefficient_mask": 128
+        },
+        {
+          "i": 6,
+          "letter": 1,
+          "coefficient_mask": 1
+        }
+      ]
+    },
+    {
+      "n": 9,
+      "s": 3,
+      "r": 2,
+      "target": 7,
+      "prefix_word": "aaaaaa",
+      "basis_masks": [
+        385,
+        386,
+        388,
+        392,
+        400,
+        416,
+        448
+      ],
+      "common_protected": [
+        7,
+        8
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 5,
+          "letter": 0,
+          "coefficient_mask": 64
+        },
+        {
+          "i": 5,
+          "letter": 1,
+          "coefficient_mask": 1
+        }
+      ]
+    },
+    {
+      "n": 9,
+      "s": 5,
+      "r": 1,
+      "target": 8,
+      "prefix_word": "bbbbbba",
+      "basis_masks": [
+        241,
+        227,
+        199,
+        327,
+        333,
+        345,
+        121,
+        185
+      ],
+      "common_protected": [
+        0
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 28
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 5,
+          "letter": 0,
+          "coefficient_mask": 44
+        },
+        {
+          "i": 5,
+          "letter": 1,
+          "coefficient_mask": 64
+        },
+        {
+          "i": 6,
+          "letter": 0,
+          "coefficient_mask": 128
+        },
+        {
+          "i": 6,
+          "letter": 1,
+          "coefficient_mask": 1
+        }
+      ]
+    },
+    {
+      "n": 9,
+      "s": 5,
+      "r": 2,
+      "target": 7,
+      "prefix_word": "bbbbbb",
+      "basis_masks": [
+        241,
+        227,
+        199,
+        327,
+        333,
+        345,
+        121
+      ],
+      "common_protected": [
+        0,
+        6
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 28
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 5,
+          "letter": 0,
+          "coefficient_mask": 44
+        },
+        {
+          "i": 5,
+          "letter": 1,
+          "coefficient_mask": 64
+        }
+      ]
+    },
+    {
+      "n": 9,
+      "s": 5,
+      "r": 3,
+      "target": 6,
+      "prefix_word": "aaaaa",
+      "basis_masks": [
+        31,
+        55,
+        103,
+        199,
+        391,
+        279
+      ],
+      "common_protected": [
+        0,
+        1,
+        2
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 1
+        }
+      ]
+    },
+    {
+      "n": 9,
+      "s": 5,
+      "r": 4,
+      "target": 5,
+      "prefix_word": "aaaa",
+      "basis_masks": [
+        481,
+        482,
+        484,
+        488,
+        496
+      ],
+      "common_protected": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 1
+        }
+      ]
+    },
+    {
+      "n": 9,
+      "s": 7,
+      "r": 3,
+      "target": 6,
+      "prefix_word": "babab",
+      "basis_masks": [
+        239,
+        351,
+        223,
+        127,
+        191,
+        382
+      ],
+      "common_protected": [
+        1,
+        2,
+        3
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 7
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 32
+        }
+      ]
+    },
+    {
+      "n": 9,
+      "s": 7,
+      "r": 4,
+      "target": 5,
+      "prefix_word": "bbbb",
+      "basis_masks": [
+        239,
+        223,
+        351,
+        375,
+        487
+      ],
+      "common_protected": [
+        0,
+        1,
+        2,
+        6
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 14
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 16
+        }
+      ]
+    },
+    {
+      "n": 9,
+      "s": 7,
+      "r": 5,
+      "target": 4,
+      "prefix_word": "bab",
+      "basis_masks": [
+        223,
+        367,
+        239,
+        463
+      ],
+      "common_protected": [
+        0,
+        1,
+        2,
+        3,
+        6
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 8
+        }
+      ]
+    },
+    {
+      "n": 9,
+      "s": 7,
+      "r": 6,
+      "target": 3,
+      "prefix_word": "bb",
+      "basis_masks": [
+        223,
+        351,
+        127
+      ],
+      "common_protected": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 4
+        }
+      ]
+    },
+    {
+      "n": 9,
+      "s": 9,
+      "r": 8,
+      "target": 1,
+      "prefix_word": "",
+      "basis_masks": [
+        511
+      ],
+      "common_protected": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "relations": []
+    },
+    {
+      "n": 10,
+      "s": 3,
+      "r": 1,
+      "target": 9,
+      "prefix_word": "aaaaaaaa",
+      "basis_masks": [
+        7,
+        13,
+        25,
+        49,
+        97,
+        193,
+        385,
+        769,
+        515
+      ],
+      "common_protected": [
+        0
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 5,
+          "letter": 0,
+          "coefficient_mask": 64
+        },
+        {
+          "i": 5,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 6,
+          "letter": 0,
+          "coefficient_mask": 128
+        },
+        {
+          "i": 6,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 7,
+          "letter": 0,
+          "coefficient_mask": 256
+        },
+        {
+          "i": 7,
+          "letter": 1,
+          "coefficient_mask": 1
+        }
+      ]
+    },
+    {
+      "n": 10,
+      "s": 3,
+      "r": 2,
+      "target": 8,
+      "prefix_word": "aaaaaaa",
+      "basis_masks": [
+        769,
+        770,
+        772,
+        776,
+        784,
+        800,
+        832,
+        896
+      ],
+      "common_protected": [
+        8,
+        9
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 5,
+          "letter": 0,
+          "coefficient_mask": 64
+        },
+        {
+          "i": 5,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 6,
+          "letter": 0,
+          "coefficient_mask": 128
+        },
+        {
+          "i": 6,
+          "letter": 1,
+          "coefficient_mask": 1
+        }
+      ]
+    },
+    {
+      "n": 10,
+      "s": 5,
+      "r": 1,
+      "target": 9,
+      "prefix_word": "bbbbbbbb",
+      "basis_masks": [
+        496,
+        481,
+        451,
+        391,
+        647,
+        654,
+        668,
+        696,
+        248
+      ],
+      "common_protected": [
+        7
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 5,
+          "letter": 0,
+          "coefficient_mask": 56
+        },
+        {
+          "i": 5,
+          "letter": 1,
+          "coefficient_mask": 64
+        },
+        {
+          "i": 6,
+          "letter": 0,
+          "coefficient_mask": 88
+        },
+        {
+          "i": 6,
+          "letter": 1,
+          "coefficient_mask": 128
+        },
+        {
+          "i": 7,
+          "letter": 0,
+          "coefficient_mask": 152
+        },
+        {
+          "i": 7,
+          "letter": 1,
+          "coefficient_mask": 256
+        }
+      ]
+    },
+    {
+      "n": 10,
+      "s": 5,
+      "r": 2,
+      "target": 8,
+      "prefix_word": "aaaaaab",
+      "basis_masks": [
+        31,
+        55,
+        103,
+        199,
+        391,
+        775,
+        527,
+        59
+      ],
+      "common_protected": [
+        0,
+        1
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 7
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 7
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 31
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 31
+        },
+        {
+          "i": 5,
+          "letter": 0,
+          "coefficient_mask": 64
+        },
+        {
+          "i": 5,
+          "letter": 1,
+          "coefficient_mask": 124
+        },
+        {
+          "i": 6,
+          "letter": 0,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 6,
+          "letter": 1,
+          "coefficient_mask": 128
+        }
+      ]
+    },
+    {
+      "n": 10,
+      "s": 5,
+      "r": 3,
+      "target": 7,
+      "prefix_word": "aaaaaa",
+      "basis_masks": [
+        31,
+        55,
+        103,
+        199,
+        391,
+        775,
+        527
+      ],
+      "common_protected": [
+        0,
+        1,
+        2
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 5,
+          "letter": 0,
+          "coefficient_mask": 64
+        },
+        {
+          "i": 5,
+          "letter": 1,
+          "coefficient_mask": 1
+        }
+      ]
+    },
+    {
+      "n": 10,
+      "s": 5,
+      "r": 4,
+      "target": 6,
+      "prefix_word": "aaaaa",
+      "basis_masks": [
+        961,
+        962,
+        964,
+        968,
+        976,
+        992
+      ],
+      "common_protected": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 1
+        }
+      ]
+    },
+    {
+      "n": 10,
+      "s": 7,
+      "r": 1,
+      "target": 9,
+      "prefix_word": "abababbb",
+      "basis_masks": [
+        191,
+        127,
+        367,
+        623,
+        815,
+        847,
+        942,
+        701,
+        635
+      ],
+      "common_protected": [
+        3
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 7
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 11
+        },
+        {
+          "i": 5,
+          "letter": 0,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 5,
+          "letter": 1,
+          "coefficient_mask": 64
+        },
+        {
+          "i": 6,
+          "letter": 0,
+          "coefficient_mask": 67
+        },
+        {
+          "i": 6,
+          "letter": 1,
+          "coefficient_mask": 128
+        },
+        {
+          "i": 7,
+          "letter": 0,
+          "coefficient_mask": 143
+        },
+        {
+          "i": 7,
+          "letter": 1,
+          "coefficient_mask": 256
+        }
+      ]
+    },
+    {
+      "n": 10,
+      "s": 7,
+      "r": 2,
+      "target": 8,
+      "prefix_word": "abababb",
+      "basis_masks": [
+        607,
+        575,
+        695,
+        823,
+        919,
+        935,
+        982,
+        861
+      ],
+      "common_protected": [
+        2,
+        9
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 7
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 11
+        },
+        {
+          "i": 5,
+          "letter": 0,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 5,
+          "letter": 1,
+          "coefficient_mask": 64
+        },
+        {
+          "i": 6,
+          "letter": 0,
+          "coefficient_mask": 67
+        },
+        {
+          "i": 6,
+          "letter": 1,
+          "coefficient_mask": 128
+        }
+      ]
+    },
+    {
+      "n": 10,
+      "s": 7,
+      "r": 3,
+      "target": 7,
+      "prefix_word": "bbbbbb",
+      "basis_masks": [
+        487,
+        463,
+        415,
+        671,
+        699,
+        755,
+        995
+      ],
+      "common_protected": [
+        0,
+        1,
+        7
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 28
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 5,
+          "letter": 0,
+          "coefficient_mask": 44
+        },
+        {
+          "i": 5,
+          "letter": 1,
+          "coefficient_mask": 64
+        }
+      ]
+    },
+    {
+      "n": 10,
+      "s": 7,
+      "r": 4,
+      "target": 6,
+      "prefix_word": "bbbba",
+      "basis_masks": [
+        463,
+        415,
+        671,
+        687,
+        239,
+        367
+      ],
+      "common_protected": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 14
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 1
+        }
+      ]
+    },
+    {
+      "n": 10,
+      "s": 7,
+      "r": 5,
+      "target": 5,
+      "prefix_word": "bbbb",
+      "basis_masks": [
+        463,
+        415,
+        671,
+        687,
+        239
+      ],
+      "common_protected": [
+        0,
+        1,
+        2,
+        3,
+        7
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 14
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 16
+        }
+      ]
+    },
+    {
+      "n": 10,
+      "s": 7,
+      "r": 6,
+      "target": 4,
+      "prefix_word": "aaa",
+      "basis_masks": [
+        1009,
+        1010,
+        1012,
+        1016
+      ],
+      "common_protected": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 1
+        }
+      ]
+    },
+    {
+      "n": 10,
+      "s": 9,
+      "r": 7,
+      "target": 3,
+      "prefix_word": "ab",
+      "basis_masks": [
+        767,
+        511,
+        1022
+      ],
+      "common_protected": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 4
+        }
+      ]
+    },
+    {
+      "n": 10,
+      "s": 9,
+      "r": 8,
+      "target": 2,
+      "prefix_word": "b",
+      "basis_masks": [
+        511,
+        1022
+      ],
+      "common_protected": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 2
+        }
+      ]
+    },
+    {
+      "n": 11,
+      "s": 3,
+      "r": 1,
+      "target": 10,
+      "prefix_word": "aaaaaaaaa",
+      "basis_masks": [
+        7,
+        13,
+        25,
+        49,
+        97,
+        193,
+        385,
+        769,
+        1537,
+        1029
+      ],
+      "common_protected": [
+        0
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 5,
+          "letter": 0,
+          "coefficient_mask": 64
+        },
+        {
+          "i": 5,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 6,
+          "letter": 0,
+          "coefficient_mask": 128
+        },
+        {
+          "i": 6,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 7,
+          "letter": 0,
+          "coefficient_mask": 256
+        },
+        {
+          "i": 7,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 8,
+          "letter": 0,
+          "coefficient_mask": 512
+        },
+        {
+          "i": 8,
+          "letter": 1,
+          "coefficient_mask": 1
+        }
+      ]
+    },
+    {
+      "n": 11,
+      "s": 3,
+      "r": 2,
+      "target": 9,
+      "prefix_word": "aaaaaaaa",
+      "basis_masks": [
+        1537,
+        1538,
+        1540,
+        1544,
+        1552,
+        1568,
+        1600,
+        1664,
+        1792
+      ],
+      "common_protected": [
+        9,
+        10
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 5,
+          "letter": 0,
+          "coefficient_mask": 64
+        },
+        {
+          "i": 5,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 6,
+          "letter": 0,
+          "coefficient_mask": 128
+        },
+        {
+          "i": 6,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 7,
+          "letter": 0,
+          "coefficient_mask": 256
+        },
+        {
+          "i": 7,
+          "letter": 1,
+          "coefficient_mask": 1
+        }
+      ]
+    },
+    {
+      "n": 11,
+      "s": 5,
+      "r": 1,
+      "target": 10,
+      "prefix_word": "aaaaaabab",
+      "basis_masks": [
+        31,
+        59,
+        115,
+        227,
+        451,
+        899,
+        1795,
+        659,
+        1315,
+        721
+      ],
+      "common_protected": [
+        0
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 7
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 7
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 28
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 44
+        },
+        {
+          "i": 5,
+          "letter": 0,
+          "coefficient_mask": 64
+        },
+        {
+          "i": 5,
+          "letter": 1,
+          "coefficient_mask": 44
+        },
+        {
+          "i": 6,
+          "letter": 0,
+          "coefficient_mask": 88
+        },
+        {
+          "i": 6,
+          "letter": 1,
+          "coefficient_mask": 128
+        },
+        {
+          "i": 7,
+          "letter": 0,
+          "coefficient_mask": 256
+        },
+        {
+          "i": 7,
+          "letter": 1,
+          "coefficient_mask": 367
+        },
+        {
+          "i": 8,
+          "letter": 0,
+          "coefficient_mask": 508
+        },
+        {
+          "i": 8,
+          "letter": 1,
+          "coefficient_mask": 512
+        }
+      ]
+    },
+    {
+      "n": 11,
+      "s": 5,
+      "r": 2,
+      "target": 9,
+      "prefix_word": "aaaaaabb",
+      "basis_masks": [
+        31,
+        55,
+        103,
+        199,
+        391,
+        775,
+        1543,
+        87,
+        155
+      ],
+      "common_protected": [
+        0,
+        1
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 14
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 14
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 62
+        },
+        {
+          "i": 5,
+          "letter": 0,
+          "coefficient_mask": 64
+        },
+        {
+          "i": 5,
+          "letter": 1,
+          "coefficient_mask": 62
+        },
+        {
+          "i": 6,
+          "letter": 0,
+          "coefficient_mask": 124
+        },
+        {
+          "i": 6,
+          "letter": 1,
+          "coefficient_mask": 128
+        },
+        {
+          "i": 7,
+          "letter": 0,
+          "coefficient_mask": 138
+        },
+        {
+          "i": 7,
+          "letter": 1,
+          "coefficient_mask": 256
+        }
+      ]
+    },
+    {
+      "n": 11,
+      "s": 5,
+      "r": 3,
+      "target": 8,
+      "prefix_word": "aaaaaaa",
+      "basis_masks": [
+        31,
+        55,
+        103,
+        199,
+        391,
+        775,
+        1543,
+        1047
+      ],
+      "common_protected": [
+        0,
+        1,
+        2
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 5,
+          "letter": 0,
+          "coefficient_mask": 64
+        },
+        {
+          "i": 5,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 6,
+          "letter": 0,
+          "coefficient_mask": 128
+        },
+        {
+          "i": 6,
+          "letter": 1,
+          "coefficient_mask": 1
+        }
+      ]
+    },
+    {
+      "n": 11,
+      "s": 5,
+      "r": 4,
+      "target": 7,
+      "prefix_word": "aaaaaa",
+      "basis_masks": [
+        1921,
+        1922,
+        1924,
+        1928,
+        1936,
+        1952,
+        1984
+      ],
+      "common_protected": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 5,
+          "letter": 0,
+          "coefficient_mask": 64
+        },
+        {
+          "i": 5,
+          "letter": 1,
+          "coefficient_mask": 1
+        }
+      ]
+    },
+    {
+      "n": 11,
+      "s": 7,
+      "r": 1,
+      "target": 10,
+      "prefix_word": "aaabaabbb",
+      "basis_masks": [
+        1822,
+        1598,
+        1150,
+        254,
+        351,
+        671,
+        1311,
+        1934,
+        1815,
+        1946
+      ],
+      "common_protected": [
+        1
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 7
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 7
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 11
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 13
+        },
+        {
+          "i": 5,
+          "letter": 0,
+          "coefficient_mask": 64
+        },
+        {
+          "i": 5,
+          "letter": 1,
+          "coefficient_mask": 76
+        },
+        {
+          "i": 6,
+          "letter": 0,
+          "coefficient_mask": 21
+        },
+        {
+          "i": 6,
+          "letter": 1,
+          "coefficient_mask": 128
+        },
+        {
+          "i": 7,
+          "letter": 0,
+          "coefficient_mask": 181
+        },
+        {
+          "i": 7,
+          "letter": 1,
+          "coefficient_mask": 256
+        },
+        {
+          "i": 8,
+          "letter": 0,
+          "coefficient_mask": 259
+        },
+        {
+          "i": 8,
+          "letter": 1,
+          "coefficient_mask": 512
+        }
+      ]
+    },
+    {
+      "n": 11,
+      "s": 7,
+      "r": 2,
+      "target": 9,
+      "prefix_word": "aaabaabb",
+      "basis_masks": [
+        1822,
+        1598,
+        1150,
+        254,
+        351,
+        671,
+        1311,
+        1934,
+        1815
+      ],
+      "common_protected": [
+        1,
+        2
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 7
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 7
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 11
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 13
+        },
+        {
+          "i": 5,
+          "letter": 0,
+          "coefficient_mask": 64
+        },
+        {
+          "i": 5,
+          "letter": 1,
+          "coefficient_mask": 76
+        },
+        {
+          "i": 6,
+          "letter": 0,
+          "coefficient_mask": 21
+        },
+        {
+          "i": 6,
+          "letter": 1,
+          "coefficient_mask": 128
+        },
+        {
+          "i": 7,
+          "letter": 0,
+          "coefficient_mask": 181
+        },
+        {
+          "i": 7,
+          "letter": 1,
+          "coefficient_mask": 256
+        }
+      ]
+    },
+    {
+      "n": 11,
+      "s": 7,
+      "r": 3,
+      "target": 8,
+      "prefix_word": "aaabaab",
+      "basis_masks": [
+        1822,
+        1598,
+        1150,
+        254,
+        351,
+        671,
+        1311,
+        1934
+      ],
+      "common_protected": [
+        1,
+        2,
+        3
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 7
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 7
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 11
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 13
+        },
+        {
+          "i": 5,
+          "letter": 0,
+          "coefficient_mask": 64
+        },
+        {
+          "i": 5,
+          "letter": 1,
+          "coefficient_mask": 76
+        },
+        {
+          "i": 6,
+          "letter": 0,
+          "coefficient_mask": 21
+        },
+        {
+          "i": 6,
+          "letter": 1,
+          "coefficient_mask": 128
+        }
+      ]
+    },
+    {
+      "n": 11,
+      "s": 7,
+      "r": 4,
+      "target": 7,
+      "prefix_word": "aaabaa",
+      "basis_masks": [
+        1822,
+        1598,
+        1150,
+        254,
+        351,
+        671,
+        1311
+      ],
+      "common_protected": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 7
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 7
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 11
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 13
+        },
+        {
+          "i": 5,
+          "letter": 0,
+          "coefficient_mask": 64
+        },
+        {
+          "i": 5,
+          "letter": 1,
+          "coefficient_mask": 76
+        }
+      ]
+    },
+    {
+      "n": 11,
+      "s": 7,
+      "r": 5,
+      "target": 6,
+      "prefix_word": "aaaaa",
+      "basis_masks": [
+        127,
+        223,
+        415,
+        799,
+        1567,
+        1119
+      ],
+      "common_protected": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 1
+        }
+      ]
+    },
+    {
+      "n": 11,
+      "s": 7,
+      "r": 6,
+      "target": 5,
+      "prefix_word": "aaaa",
+      "basis_masks": [
+        2017,
+        2018,
+        2020,
+        2024,
+        2032
+      ],
+      "common_protected": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 1
+        }
+      ]
+    },
+    {
+      "n": 11,
+      "s": 9,
+      "r": 5,
+      "target": 6,
+      "prefix_word": "aabbb",
+      "basis_masks": [
+        1279,
+        511,
+        767,
+        1022,
+        1021,
+        1019
+      ],
+      "common_protected": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 11
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 19
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 32
+        }
+      ]
+    },
+    {
+      "n": 11,
+      "s": 9,
+      "r": 6,
+      "target": 5,
+      "prefix_word": "aabb",
+      "basis_masks": [
+        1279,
+        511,
+        767,
+        1022,
+        1021
+      ],
+      "common_protected": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 11
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 16
+        }
+      ]
+    },
+    {
+      "n": 11,
+      "s": 9,
+      "r": 7,
+      "target": 4,
+      "prefix_word": "aaa",
+      "basis_masks": [
+        511,
+        895,
+        1663,
+        1407
+      ],
+      "common_protected": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 1
+        }
+      ]
+    },
+    {
+      "n": 11,
+      "s": 9,
+      "r": 8,
+      "target": 3,
+      "prefix_word": "aa",
+      "basis_masks": [
+        2041,
+        2042,
+        2044
+      ],
+      "common_protected": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 1
+        }
+      ]
+    },
+    {
+      "n": 11,
+      "s": 11,
+      "r": 10,
+      "target": 1,
+      "prefix_word": "",
+      "basis_masks": [
+        2047
+      ],
+      "common_protected": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "relations": []
+    },
+    {
+      "n": 12,
+      "s": 3,
+      "r": 1,
+      "target": 11,
+      "prefix_word": "aaaaaaaaaa",
+      "basis_masks": [
+        7,
+        13,
+        25,
+        49,
+        97,
+        193,
+        385,
+        769,
+        1537,
+        3073,
+        2051
+      ],
+      "common_protected": [
+        0
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 5,
+          "letter": 0,
+          "coefficient_mask": 64
+        },
+        {
+          "i": 5,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 6,
+          "letter": 0,
+          "coefficient_mask": 128
+        },
+        {
+          "i": 6,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 7,
+          "letter": 0,
+          "coefficient_mask": 256
+        },
+        {
+          "i": 7,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 8,
+          "letter": 0,
+          "coefficient_mask": 512
+        },
+        {
+          "i": 8,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 9,
+          "letter": 0,
+          "coefficient_mask": 1024
+        },
+        {
+          "i": 9,
+          "letter": 1,
+          "coefficient_mask": 1
+        }
+      ]
+    },
+    {
+      "n": 12,
+      "s": 3,
+      "r": 2,
+      "target": 10,
+      "prefix_word": "aaaaaaaaa",
+      "basis_masks": [
+        3073,
+        3074,
+        3076,
+        3080,
+        3088,
+        3104,
+        3136,
+        3200,
+        3328,
+        3584
+      ],
+      "common_protected": [
+        10,
+        11
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 5,
+          "letter": 0,
+          "coefficient_mask": 64
+        },
+        {
+          "i": 5,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 6,
+          "letter": 0,
+          "coefficient_mask": 128
+        },
+        {
+          "i": 6,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 7,
+          "letter": 0,
+          "coefficient_mask": 256
+        },
+        {
+          "i": 7,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 8,
+          "letter": 0,
+          "coefficient_mask": 512
+        },
+        {
+          "i": 8,
+          "letter": 1,
+          "coefficient_mask": 1
+        }
+      ]
+    },
+    {
+      "n": 12,
+      "s": 5,
+      "r": 1,
+      "target": 11,
+      "prefix_word": "aaaaaaaaab",
+      "basis_masks": [
+        31,
+        59,
+        115,
+        227,
+        451,
+        899,
+        1795,
+        3587,
+        3079,
+        2063,
+        61
+      ],
+      "common_protected": [
+        0
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 7
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 11
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 11
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 59
+        },
+        {
+          "i": 5,
+          "letter": 0,
+          "coefficient_mask": 64
+        },
+        {
+          "i": 5,
+          "letter": 1,
+          "coefficient_mask": 91
+        },
+        {
+          "i": 6,
+          "letter": 0,
+          "coefficient_mask": 128
+        },
+        {
+          "i": 6,
+          "letter": 1,
+          "coefficient_mask": 91
+        },
+        {
+          "i": 7,
+          "letter": 0,
+          "coefficient_mask": 256
+        },
+        {
+          "i": 7,
+          "letter": 1,
+          "coefficient_mask": 472
+        },
+        {
+          "i": 8,
+          "letter": 0,
+          "coefficient_mask": 512
+        },
+        {
+          "i": 8,
+          "letter": 1,
+          "coefficient_mask": 728
+        },
+        {
+          "i": 9,
+          "letter": 0,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 9,
+          "letter": 1,
+          "coefficient_mask": 1024
+        }
+      ]
+    },
+    {
+      "n": 12,
+      "s": 5,
+      "r": 2,
+      "target": 10,
+      "prefix_word": "aaaaaaaab",
+      "basis_masks": [
+        31,
+        55,
+        103,
+        199,
+        391,
+        775,
+        1543,
+        3079,
+        2063,
+        59
+      ],
+      "common_protected": [
+        0,
+        1
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 7
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 7
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 31
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 31
+        },
+        {
+          "i": 5,
+          "letter": 0,
+          "coefficient_mask": 64
+        },
+        {
+          "i": 5,
+          "letter": 1,
+          "coefficient_mask": 127
+        },
+        {
+          "i": 6,
+          "letter": 0,
+          "coefficient_mask": 128
+        },
+        {
+          "i": 6,
+          "letter": 1,
+          "coefficient_mask": 127
+        },
+        {
+          "i": 7,
+          "letter": 0,
+          "coefficient_mask": 256
+        },
+        {
+          "i": 7,
+          "letter": 1,
+          "coefficient_mask": 508
+        },
+        {
+          "i": 8,
+          "letter": 0,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 8,
+          "letter": 1,
+          "coefficient_mask": 512
+        }
+      ]
+    },
+    {
+      "n": 12,
+      "s": 5,
+      "r": 3,
+      "target": 9,
+      "prefix_word": "aaaaaaaa",
+      "basis_masks": [
+        31,
+        55,
+        103,
+        199,
+        391,
+        775,
+        1543,
+        3079,
+        2063
+      ],
+      "common_protected": [
+        0,
+        1,
+        2
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 5,
+          "letter": 0,
+          "coefficient_mask": 64
+        },
+        {
+          "i": 5,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 6,
+          "letter": 0,
+          "coefficient_mask": 128
+        },
+        {
+          "i": 6,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 7,
+          "letter": 0,
+          "coefficient_mask": 256
+        },
+        {
+          "i": 7,
+          "letter": 1,
+          "coefficient_mask": 1
+        }
+      ]
+    },
+    {
+      "n": 12,
+      "s": 5,
+      "r": 4,
+      "target": 8,
+      "prefix_word": "aaaaaaa",
+      "basis_masks": [
+        3841,
+        3842,
+        3844,
+        3848,
+        3856,
+        3872,
+        3904,
+        3968
+      ],
+      "common_protected": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 5,
+          "letter": 0,
+          "coefficient_mask": 64
+        },
+        {
+          "i": 5,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 6,
+          "letter": 0,
+          "coefficient_mask": 128
+        },
+        {
+          "i": 6,
+          "letter": 1,
+          "coefficient_mask": 1
+        }
+      ]
+    },
+    {
+      "n": 12,
+      "s": 7,
+      "r": 1,
+      "target": 11,
+      "prefix_word": "aaaaabaaab",
+      "basis_masks": [
+        127,
+        251,
+        499,
+        995,
+        1987,
+        3971,
+        3907,
+        3719,
+        3343,
+        2591,
+        3193
+      ],
+      "common_protected": [
+        0
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 5,
+          "letter": 0,
+          "coefficient_mask": 35
+        },
+        {
+          "i": 5,
+          "letter": 1,
+          "coefficient_mask": 64
+        },
+        {
+          "i": 6,
+          "letter": 0,
+          "coefficient_mask": 128
+        },
+        {
+          "i": 6,
+          "letter": 1,
+          "coefficient_mask": 227
+        },
+        {
+          "i": 7,
+          "letter": 0,
+          "coefficient_mask": 256
+        },
+        {
+          "i": 7,
+          "letter": 1,
+          "coefficient_mask": 355
+        },
+        {
+          "i": 8,
+          "letter": 0,
+          "coefficient_mask": 512
+        },
+        {
+          "i": 8,
+          "letter": 1,
+          "coefficient_mask": 611
+        },
+        {
+          "i": 9,
+          "letter": 0,
+          "coefficient_mask": 974
+        },
+        {
+          "i": 9,
+          "letter": 1,
+          "coefficient_mask": 1024
+        }
+      ]
+    },
+    {
+      "n": 12,
+      "s": 7,
+      "r": 2,
+      "target": 10,
+      "prefix_word": "aaaaaaaab",
+      "basis_masks": [
+        127,
+        247,
+        487,
+        967,
+        1927,
+        3847,
+        3599,
+        3103,
+        2111,
+        251
+      ],
+      "common_protected": [
+        0,
+        1
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 7
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 11
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 19
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 19
+        },
+        {
+          "i": 5,
+          "letter": 0,
+          "coefficient_mask": 64
+        },
+        {
+          "i": 5,
+          "letter": 1,
+          "coefficient_mask": 112
+        },
+        {
+          "i": 6,
+          "letter": 0,
+          "coefficient_mask": 128
+        },
+        {
+          "i": 6,
+          "letter": 1,
+          "coefficient_mask": 176
+        },
+        {
+          "i": 7,
+          "letter": 0,
+          "coefficient_mask": 256
+        },
+        {
+          "i": 7,
+          "letter": 1,
+          "coefficient_mask": 304
+        },
+        {
+          "i": 8,
+          "letter": 0,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 8,
+          "letter": 1,
+          "coefficient_mask": 512
+        }
+      ]
+    },
+    {
+      "n": 12,
+      "s": 7,
+      "r": 3,
+      "target": 9,
+      "prefix_word": "aaaaaaaa",
+      "basis_masks": [
+        127,
+        247,
+        487,
+        967,
+        1927,
+        3847,
+        3599,
+        3103,
+        2111
+      ],
+      "common_protected": [
+        0,
+        1,
+        2
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 7
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 11
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 19
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 19
+        },
+        {
+          "i": 5,
+          "letter": 0,
+          "coefficient_mask": 64
+        },
+        {
+          "i": 5,
+          "letter": 1,
+          "coefficient_mask": 112
+        },
+        {
+          "i": 6,
+          "letter": 0,
+          "coefficient_mask": 128
+        },
+        {
+          "i": 6,
+          "letter": 1,
+          "coefficient_mask": 176
+        },
+        {
+          "i": 7,
+          "letter": 0,
+          "coefficient_mask": 256
+        },
+        {
+          "i": 7,
+          "letter": 1,
+          "coefficient_mask": 304
+        }
+      ]
+    },
+    {
+      "n": 12,
+      "s": 7,
+      "r": 4,
+      "target": 8,
+      "prefix_word": "aaaaaab",
+      "basis_masks": [
+        127,
+        223,
+        415,
+        799,
+        1567,
+        3103,
+        2111,
+        239
+      ],
+      "common_protected": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 7
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 7
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 31
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 31
+        },
+        {
+          "i": 5,
+          "letter": 0,
+          "coefficient_mask": 64
+        },
+        {
+          "i": 5,
+          "letter": 1,
+          "coefficient_mask": 124
+        },
+        {
+          "i": 6,
+          "letter": 0,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 6,
+          "letter": 1,
+          "coefficient_mask": 128
+        }
+      ]
+    },
+    {
+      "n": 12,
+      "s": 7,
+      "r": 5,
+      "target": 7,
+      "prefix_word": "aaaaaa",
+      "basis_masks": [
+        127,
+        223,
+        415,
+        799,
+        1567,
+        3103,
+        2111
+      ],
+      "common_protected": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 5,
+          "letter": 0,
+          "coefficient_mask": 64
+        },
+        {
+          "i": 5,
+          "letter": 1,
+          "coefficient_mask": 1
+        }
+      ]
+    },
+    {
+      "n": 12,
+      "s": 7,
+      "r": 6,
+      "target": 6,
+      "prefix_word": "aaaaa",
+      "basis_masks": [
+        4033,
+        4034,
+        4036,
+        4040,
+        4048,
+        4064
+      ],
+      "common_protected": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 1
+        }
+      ]
+    },
+    {
+      "n": 12,
+      "s": 9,
+      "r": 3,
+      "target": 9,
+      "prefix_word": "abababbb",
+      "basis_masks": [
+        767,
+        511,
+        1407,
+        2431,
+        3199,
+        3391,
+        3710,
+        2813,
+        2555
+      ],
+      "common_protected": [
+        3,
+        4,
+        5
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 7
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 11
+        },
+        {
+          "i": 5,
+          "letter": 0,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 5,
+          "letter": 1,
+          "coefficient_mask": 64
+        },
+        {
+          "i": 6,
+          "letter": 0,
+          "coefficient_mask": 67
+        },
+        {
+          "i": 6,
+          "letter": 1,
+          "coefficient_mask": 128
+        },
+        {
+          "i": 7,
+          "letter": 0,
+          "coefficient_mask": 143
+        },
+        {
+          "i": 7,
+          "letter": 1,
+          "coefficient_mask": 256
+        }
+      ]
+    },
+    {
+      "n": 12,
+      "s": 9,
+      "r": 4,
+      "target": 8,
+      "prefix_word": "abababb",
+      "basis_masks": [
+        767,
+        511,
+        1407,
+        2431,
+        3199,
+        3391,
+        3710,
+        2813
+      ],
+      "common_protected": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 7
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 11
+        },
+        {
+          "i": 5,
+          "letter": 0,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 5,
+          "letter": 1,
+          "coefficient_mask": 64
+        },
+        {
+          "i": 6,
+          "letter": 0,
+          "coefficient_mask": 67
+        },
+        {
+          "i": 6,
+          "letter": 1,
+          "coefficient_mask": 128
+        }
+      ]
+    },
+    {
+      "n": 12,
+      "s": 9,
+      "r": 5,
+      "target": 7,
+      "prefix_word": "ababab",
+      "basis_masks": [
+        767,
+        511,
+        1407,
+        2431,
+        3199,
+        3391,
+        3710
+      ],
+      "common_protected": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 7
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 11
+        },
+        {
+          "i": 5,
+          "letter": 0,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 5,
+          "letter": 1,
+          "coefficient_mask": 64
+        }
+      ]
+    },
+    {
+      "n": 12,
+      "s": 9,
+      "r": 6,
+      "target": 6,
+      "prefix_word": "ababa",
+      "basis_masks": [
+        767,
+        511,
+        1407,
+        2431,
+        3199,
+        3391
+      ],
+      "common_protected": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 7
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 11
+        }
+      ]
+    },
+    {
+      "n": 12,
+      "s": 9,
+      "r": 7,
+      "target": 5,
+      "prefix_word": "abab",
+      "basis_masks": [
+        767,
+        511,
+        1407,
+        2431,
+        3199
+      ],
+      "common_protected": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 7
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 16
+        }
+      ]
+    },
+    {
+      "n": 12,
+      "s": 9,
+      "r": 8,
+      "target": 4,
+      "prefix_word": "aaa",
+      "basis_masks": [
+        4081,
+        4082,
+        4084,
+        4088
+      ],
+      "common_protected": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 1
+        }
+      ]
+    },
+    {
+      "n": 12,
+      "s": 11,
+      "r": 9,
+      "target": 3,
+      "prefix_word": "bb",
+      "basis_masks": [
+        4094,
+        4093,
+        4091
+      ],
+      "common_protected": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 4
+        }
+      ]
+    },
+    {
+      "n": 12,
+      "s": 11,
+      "r": 10,
+      "target": 2,
+      "prefix_word": "a",
+      "basis_masks": [
+        4093,
+        4094
+      ],
+      "common_protected": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        }
+      ]
+    },
+    {
+      "n": 13,
+      "s": 7,
+      "r": 1,
+      "target": 12,
+      "prefix_word": "aaaaaabaaab",
+      "basis_masks": [
+        127,
+        251,
+        499,
+        995,
+        1987,
+        3971,
+        7939,
+        3719,
+        7435,
+        6683,
+        5179,
+        2293
+      ],
+      "common_protected": [
+        0
+      ],
+      "relations": [
+        {
+          "i": 0,
+          "letter": 0,
+          "coefficient_mask": 2
+        },
+        {
+          "i": 0,
+          "letter": 1,
+          "coefficient_mask": 1
+        },
+        {
+          "i": 1,
+          "letter": 0,
+          "coefficient_mask": 4
+        },
+        {
+          "i": 1,
+          "letter": 1,
+          "coefficient_mask": 7
+        },
+        {
+          "i": 2,
+          "letter": 0,
+          "coefficient_mask": 8
+        },
+        {
+          "i": 2,
+          "letter": 1,
+          "coefficient_mask": 11
+        },
+        {
+          "i": 3,
+          "letter": 0,
+          "coefficient_mask": 16
+        },
+        {
+          "i": 3,
+          "letter": 1,
+          "coefficient_mask": 19
+        },
+        {
+          "i": 4,
+          "letter": 0,
+          "coefficient_mask": 32
+        },
+        {
+          "i": 4,
+          "letter": 1,
+          "coefficient_mask": 35
+        },
+        {
+          "i": 5,
+          "letter": 0,
+          "coefficient_mask": 64
+        },
+        {
+          "i": 5,
+          "letter": 1,
+          "coefficient_mask": 35
+        },
+        {
+          "i": 6,
+          "letter": 0,
+          "coefficient_mask": 70
+        },
+        {
+          "i": 6,
+          "letter": 1,
+          "coefficient_mask": 128
+        },
+        {
+          "i": 7,
+          "letter": 0,
+          "coefficient_mask": 256
+        },
+        {
+          "i": 7,
+          "letter": 1,
+          "coefficient_mask": 355
+        },
+        {
+          "i": 8,
+          "letter": 0,
+          "coefficient_mask": 512
+        },
+        {
+          "i": 8,
+          "letter": 1,
+          "coefficient_mask": 710
+        },
+        {
+          "i": 9,
+          "letter": 0,
+          "coefficient_mask": 1024
+        },
+        {
+          "i": 9,
+          "letter": 1,
+          "coefficient_mask": 1222
+        },
+        {
+          "i": 10,
+          "letter": 0,
+          "coefficient_mask": 2047
+        },
+        {
+          "i": 10,
+          "letter": 1,
+          "coefficient_mask": 2048
+        }
+      ]
+    }
+  ],
+  "source_sha256": "12848a0798d5d6e7b9dbf6845fe927d3b6e0ea9309d63a238bd5592ebbeea855",
+  "scope": "Independent prefix-word and complete XOR-relation checks; no new maximum."
+}

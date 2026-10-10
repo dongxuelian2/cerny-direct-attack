@@ -1,0 +1,136 @@
+{
+  "status": "pass",
+  "parameter": [
+    13,
+    9,
+    1
+  ],
+  "branch": {
+    "E": [
+      6
+    ],
+    "F": [
+      7
+    ],
+    "G": [
+      8
+    ]
+  },
+  "alphabet": "binary only",
+  "excluded_H": [
+    [
+      9
+    ],
+    [
+      2,
+      9
+    ]
+  ],
+  "whole_binary_G8_excluded": true,
+  "build_flags": [
+    "-std=c++17",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-pedantic"
+  ],
+  "positive_negative_algorithm_controls": 3,
+  "all_manifest_fields_checked": 256,
+  "all_parent_field_pairs_checked": 2188,
+  "canonical_raw_rows_sha256": "fd42fd19885e94c38ea8b51def4a4407736ebe64d1b0348aae79ab022d68d047",
+  "canonical_kept_rows_sha256": "a3e9b8328e79cf425c2df92e4947d2f837479eea043b32bb8d54026edc14a416",
+  "complete_pair_scans": [
+    {
+      "H": [
+        9
+      ],
+      "raw_individual_rows": 163680,
+      "kept_individual_rows": 39672,
+      "raw_normalized_row_pairs": 1696665600,
+      "checked_kept_pairs": 91664640,
+      "reverse_pair_cases": {
+        "disjoint_initial_mask": 15011520,
+        "not_strongly_connected": 68849232,
+        "not_synchronizing": 2500896,
+        "protected_P7_depth2": 2153304,
+        "protected_P7_depth3": 343272,
+        "protected_P7_depth4": 3456,
+        "uncovered_P5_depth2": 2104920,
+        "uncovered_P5_depth3": 698040
+      },
+      "forward_pair_cases": {
+        "not_strongly_connected": 80117904,
+        "not_synchronizing": 3782280,
+        "protected_P7_depth2": 3663792,
+        "protected_P7_depth3": 585336,
+        "protected_P7_depth4": 5760,
+        "uncovered_P5_depth2": 2669352,
+        "uncovered_P5_depth3": 840216
+      },
+      "zero_reverse_candidates": true,
+      "zero_forward_necessary_survivors": true
+    },
+    {
+      "H": [
+        2,
+        9
+      ],
+      "raw_individual_rows": 117120,
+      "kept_individual_rows": 32856,
+      "raw_normalized_row_pairs": 348652800,
+      "checked_kept_pairs": 18539136,
+      "reverse_pair_cases": {
+        "disjoint_initial_mask": 3050688,
+        "not_strongly_connected": 13610256,
+        "not_synchronizing": 270504,
+        "protected_P7_depth2": 386460,
+        "protected_P7_depth3": 72756,
+        "protected_P7_depth4": 4032,
+        "uncovered_P5_depth2": 1047384,
+        "uncovered_P5_depth3": 97056
+      },
+      "forward_pair_cases": {
+        "not_strongly_connected": 15908724,
+        "not_synchronizing": 366768,
+        "protected_P7_depth2": 522396,
+        "protected_P7_depth3": 94680,
+        "protected_P7_depth4": 4032,
+        "uncovered_P5_depth2": 1491444,
+        "uncovered_P5_depth3": 151092
+      },
+      "zero_reverse_candidates": true,
+      "zero_forward_necessary_survivors": true
+    }
+  ],
+  "raw_normalized_pair_domain": 2045318400,
+  "checked_retained_pairs_per_implementation": 110203776,
+  "remaining_binary_E6_F7_G": [
+    [
+      2,
+      8
+    ]
+  ],
+  "remaining_E6_F7_field_pairs": 365,
+  "all_original_fifth_pairs_retained": 122,
+  "source_sha256": {
+    "check_b1_g8_unpaired.py": "672d531114ba0af032c4c715eb265a70dd6cc2b7cb785dbf4928ebc78bae672f",
+    "enumerate_b1_g8_unpaired_rows.py": "c275c0eed4a3d9020b695eb1dcdb7d232b58bf715ebc3ebf97b8b8c377387084",
+    "b1_g8_unpaired_rows.json": "3ff246684c1b48a756e2a1653d07f01902519baebf6785d2d8ceae96f2923b97",
+    "b1_g8_unpaired_fields.txt": "3a39e8cc1c0950741999bbe03706f2416f790635c0ad3c943fec5559f06e4f31",
+    "check_g8_unpaired_rows.cpp": "8f792dbae4bbd558e60f1740328f7f8ab8ff4b4a17316b003269f1941134d3ad",
+    "check_g8_unpaired_forward.cpp": "99efd21f0f2a6a3f09536a6eddcdedf271c75e139ed885c455a10000cd77e652",
+    "B1_E6_F7_G8_EXCLUSION.md": "18c51d78e9fa7a119907d87c8e95c694faf939bb64326740375f838ae227ec0e",
+    "b1_seventh_inventory.json": "50935d2704772d8afea7571881ea9b0e013748e0f93346e530254cf0d689247b",
+    "b1_seventh_audit.json": "f09ffc28b6725adce8ccf587e19ede6c6496afe7c2bd60208a13bbe553510b33",
+    "B1_SEVENTH_ENTRANCE.md": "6a00a1170ad9f24dfbe5b61aacf06b24af4993fd8868ffb093ab3801c7d9953e",
+    "MANDATORY_CORE_ISOLATION.md": "72129f1a810b07a8bcd975e5df353cc1dbc43d063e13c8ff887ba4748bb14537",
+    "mandatory_core_isolation_audit.json": "67d7c82cae127c23260a3f7b6affe3052a1afef728cad8f49fd54d27e3fa9f54",
+    "b1_sixth_inventory.json": "5efb53a113d850a7055e8c7374775ee6f6e84c166845f9dd80410d19f346c761",
+    "b1_e6_f7_g8_seventh_audit.json": "dfe2b9c0ab13ea0b03bfbd90490d728bf7a5525d186e065c541a50a5011c3cc8",
+    "paired_seventh_cpp_audit.json": "4e0781058a5b51164ccfc641e959bc37069da6981d8a60fea86e310717db003e",
+    "B1_E6_F7_G8_PAIRED_SEVENTH_EXCLUSIONS.md": "59f5f54064178b6912cb452adee0bf018f81be5b4b24186c62c8783ffda5fc3c",
+    "ENTRY_FIBER_FLAG.md": "b27eb51977104cd68aaff2e2f37db10c50bbf4a4dd4320502b15b0f609a01bbf",
+    "LOCAL_EQUALITY_FLAG.md": "f34cf260276c6551266564c1ee2264dc823aeaa4f33b4ae8f8261aedeec596a8"
+  },
+  "scope": "Complete binary H9/H29 row-domain and two coupled negative scans; combined with audited H2/paired-H premises excludes entire conditional E6/F7/G8 geometry. No other G, whole fifth/third/joint exclusion, arbitrary-alphabet G8 exclusion, exact F value or numerical separation."
+}

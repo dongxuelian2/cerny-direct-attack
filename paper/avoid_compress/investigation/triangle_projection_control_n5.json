@@ -1,0 +1,48 @@
+{
+  "certificate": {
+    "n": 5,
+    "s": 2,
+    "r": 0,
+    "alphabet_size": 3,
+    "rows": [
+      [
+        3,
+        3,
+        2,
+        1,
+        4
+      ],
+      [
+        0,
+        2,
+        1,
+        4,
+        3
+      ],
+      [
+        1,
+        0,
+        2,
+        3,
+        4
+      ]
+    ],
+    "S": [
+      2,
+      4
+    ],
+    "A": [],
+    "value": 9,
+    "compression": 9,
+    "reaching": "acbabacbab",
+    "attaining": "bcbcbacba",
+    "reset": "acbababcbaabacba",
+    "state_scores": {
+      "2": 1,
+      "4": 1
+    }
+  },
+  "projected_exit_word": "bcba",
+  "projected_exit_distance": 4,
+  "scope": "Natural positive for the projected distance-four check; actual compression is nine, not ten. No new maximum."
+}

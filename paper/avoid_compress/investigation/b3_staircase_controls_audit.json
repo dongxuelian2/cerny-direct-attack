@@ -1,0 +1,28 @@
+{
+  "status": "pass",
+  "complete_rank_control_states": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "constant_cardinality_families": 2238,
+  "characteristic_span_memberships": 21378,
+  "labelled_map_control_states": [
+    2,
+    3,
+    4
+  ],
+  "four_state_prefix": "S={0,1},T={0,2},R={0,3}; all graphs, maps, two-atom fields, both guard sizes and empty/singleton J.",
+  "block_assignment_domains": 202848,
+  "literal_map_instances": 1055552,
+  "positive_domains": 22400,
+  "source_sha256": {
+    "check_b3_staircase_controls.py": "3d426921ce2f77508c837db3bed1d3f63faa74aa1e94d5d39beb0e978754e783",
+    "check_b3_staircase.py": "e60a8c1aea412946cf3d3fbb3f8998750e6ca042d899f69661499b72e37a0fe3",
+    "enumerate_b3_staircase.py": "17f52e1d73e11648f52c5d4ad4d759d0d5edf093992305be7840e80691ca0b6a",
+    "B3_STAIRCASE_FLAG_EXCLUSION.md": "5455291ed385dafa0f302408d0c7db7d6300f8ea1075c8e326daf442bf8b6318"
+  },
+  "scope": "Exact modular/rational rank and independent block-assignment controls. No numerical F value."
+}

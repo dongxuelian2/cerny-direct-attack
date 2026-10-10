@@ -1,0 +1,1 @@
+{"n":2,"map_count":4,"first_map_orbits":3,"tested":12,"strongly_connected_synchronizing":4,"subset_searches":1,"completed":true,"results":[{"s":2,"r":1,"maximum_binary":1,"candidate_bound":1,"S_mask":3,"A_mask":2,"rows":[[0,0],[1,0]]}],"seconds":0.0011273}

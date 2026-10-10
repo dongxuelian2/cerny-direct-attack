@@ -1,0 +1,62 @@
+{
+  "n": 5,
+  "s": 2,
+  "target": 10,
+  "alphabet_size": 3,
+  "protected": 0,
+  "kernel": [
+    0,
+    2
+  ],
+  "free_subset": false,
+  "first_file": null,
+  "status": "witness_verified",
+  "iterations": 1,
+  "witness": {
+    "n": 5,
+    "s": 2,
+    "r": 0,
+    "alphabet_size": 3,
+    "rows": [
+      [
+        0,
+        1,
+        0,
+        3,
+        4
+      ],
+      [
+        4,
+        3,
+        0,
+        2,
+        1
+      ],
+      [
+        4,
+        3,
+        0,
+        2,
+        1
+      ]
+    ],
+    "S": [
+      0,
+      1
+    ],
+    "A": [],
+    "value": 10,
+    "compression": 10,
+    "reaching": "abbabba",
+    "attaining": "bbbbabbbba",
+    "reset": "abbbbabbbbabbbba",
+    "state_scores": {
+      "0": 1,
+      "1": 1
+    }
+  },
+  "rejected_candidates": [],
+  "seconds": 10.457160800000565,
+  "z3_version": "4.16.0",
+  "scope": "Finite alphabet synthesis. Negative solver output is not a certified upper bound."
+}

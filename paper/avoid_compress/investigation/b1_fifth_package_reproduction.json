@@ -1,0 +1,430 @@
+{
+  "status": "pass",
+  "archive": "certificates/b1_fifth.zip",
+  "sha256": "e3df26254c94df08ace410b5457d87e1893a42f66eb8dfae2aa4b456dc5b7be8",
+  "files": 23,
+  "checksum_entries": 22,
+  "inventories_reproduced_byte_identically": 2,
+  "audits_reproduced_byte_identically": 3,
+  "runs": [
+    {
+      "script": "enumerate_b1_fifth.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "counts": {
+            "6": {
+              "geometric_orbits": 7,
+              "labelled_F": 27,
+              "additional_Boolean_orbits": 0,
+              "additional_covered_orbits": 0,
+              "binary_typed_orbits": 7,
+              "binary_fifth_field_pairs": 414
+            },
+            "2,6": {
+              "geometric_orbits": 7,
+              "labelled_F": 27,
+              "additional_Boolean_orbits": 3,
+              "additional_covered_orbits": 2,
+              "binary_typed_orbits": 3,
+              "binary_fifth_field_pairs": 161
+            }
+          },
+          "profiles": 14
+        }
+      ]
+    },
+    {
+      "script": "check_b1_fifth.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "status": "pass",
+          "parameter": [
+            13,
+            9,
+            1
+          ],
+          "complete_geometric_orbits": 14,
+          "complete_labelled_F_choices": 54,
+          "all_subset_masks_tested": 221130,
+          "cell_constant_augmented_rank_tests": 6410,
+          "arbitrary_alphabet_crossed_fiber_exclusions": [
+            {
+              "F": [
+                1,
+                2
+              ],
+              "all_individual_preimage_tuples": 120,
+              "disjoint_tuples": 0
+            },
+            {
+              "F": [
+                1,
+                6
+              ],
+              "all_individual_preimage_tuples": 120,
+              "disjoint_tuples": 0
+            },
+            {
+              "F": [
+                2,
+                4
+              ],
+              "all_individual_preimage_tuples": 120,
+              "disjoint_tuples": 0
+            },
+            {
+              "F": [
+                1,
+                2,
+                7
+              ],
+              "all_individual_preimage_tuples": 120,
+              "disjoint_tuples": 0
+            }
+          ],
+          "remaining_E26_fifth_geometry": [
+            [
+              7
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              2,
+              7
+            ]
+          ],
+          "remaining_E26_labelled_choices": 18,
+          "binary_field_pairs": {
+            "E6": 414,
+            "E26": 161
+          },
+          "all_original_third_pairs_retained": 14,
+          "scope": "Complete necessary fifth geometry and field admission, plus four all-alphabet crossed-fiber conditional exclusions. No whole E/third/joint exclusion, F value, transition-pair scan or numerical alphabet separation."
+        }
+      ]
+    },
+    {
+      "script": "enumerate_b1_e6_f2_letters.py",
+      "exit": 0,
+      "outputs": [
+        [
+          {
+            "n": 7,
+            "templates": 32,
+            "full_letters": 80,
+            "ordinary_kernel": 0
+          },
+          {
+            "n": 8,
+            "templates": 32,
+            "full_letters": 168,
+            "ordinary_kernel": 8
+          },
+          {
+            "n": 9,
+            "templates": 32,
+            "full_letters": 528,
+            "ordinary_kernel": 48
+          },
+          {
+            "n": 13,
+            "templates": 32,
+            "full_letters": 524160,
+            "ordinary_kernel": 120960
+          }
+        ]
+      ]
+    },
+    {
+      "script": "check_b1_e6_f2.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "status": "pass",
+          "parameter": [
+            13,
+            9,
+            1
+          ],
+          "alphabet": "arbitrary finite",
+          "excluded_fifth": [
+            2
+          ],
+          "fourth": [
+            6
+          ],
+          "complete_individual_letter_controls": [
+            {
+              "n": 7,
+              "complete_individual_letters": 80,
+              "all_known_preimage_templates": 32,
+              "permutations": 16,
+              "C_kernel_letters": 64,
+              "ordinary_kernel_letters": 0,
+              "proof_controls": {
+                "graph_witnesses": 0,
+                "singleton_protected_witnesses": 0,
+                "C_swap_or_collapse_witnesses": 0,
+                "proper_incoming1": 8,
+                "absent1": 32
+              },
+              "unordered_row_hash_sum": "42ca38206f7b1343b3fa66e4f9acd091cb6152a83bcf1ae3d4f301944731683c"
+            },
+            {
+              "n": 8,
+              "complete_individual_letters": 168,
+              "all_known_preimage_templates": 32,
+              "permutations": 32,
+              "C_kernel_letters": 128,
+              "ordinary_kernel_letters": 8,
+              "proof_controls": {
+                "graph_witnesses": 84,
+                "singleton_protected_witnesses": 52,
+                "C_swap_or_collapse_witnesses": 32,
+                "proper_incoming1": 16,
+                "absent1": 68
+              },
+              "unordered_row_hash_sum": "53ce087b758f24d172404bd78c9ded166a9acb8a1bcce423f1fc776819d0f0ea"
+            },
+            {
+              "n": 9,
+              "complete_individual_letters": 528,
+              "all_known_preimage_templates": 32,
+              "permutations": 96,
+              "C_kernel_letters": 384,
+              "ordinary_kernel_letters": 48,
+              "proof_controls": {
+                "graph_witnesses": 528,
+                "singleton_protected_witnesses": 336,
+                "C_swap_or_collapse_witnesses": 192,
+                "proper_incoming1": 48,
+                "absent1": 216
+              },
+              "unordered_row_hash_sum": "db53d5b92ecc25aa966080ae5f43dcabe22fe55c10e063f66dd5f22c0537d197"
+            },
+            {
+              "n": 13,
+              "complete_individual_letters": 524160,
+              "all_known_preimage_templates": 32,
+              "permutations": 80640,
+              "C_kernel_letters": 322560,
+              "ordinary_kernel_letters": 120960,
+              "proof_controls": {
+                "graph_witnesses": 1572480,
+                "singleton_protected_witnesses": 1088640,
+                "C_swap_or_collapse_witnesses": 483840,
+                "proper_incoming1": 40320,
+                "absent1": 221760
+              },
+              "unordered_row_hash_sum": "9c0b1f893f867a4c3a44f1aef8714e59fa38dc07eb2b5df45baed56c1845fad4"
+            }
+          ],
+          "independent_pair_graph_controls": {
+            "arbitrary_star_graphs": 1589,
+            "independent_n_minus_one_sets_tested": 11757,
+            "one_point_P2_cover_admission_control": {
+              "rows": [
+                [
+                  1,
+                  2,
+                  0
+                ],
+                [
+                  0,
+                  2,
+                  2
+                ]
+              ],
+              "P1": [
+                [
+                  1,
+                  2
+                ]
+              ],
+              "P2": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  2
+                ]
+              ],
+              "cover": [
+                1
+              ],
+              "strongly_connected": true,
+              "synchronizing": true,
+              "scope": "Three-state control, not the E6/F2 thirteen-state branch or an equality claim."
+            }
+          },
+          "correct_isolation_depth": 2,
+          "uses_one_point_P3_floor": false,
+          "removed_binary_fifth_field_pairs": 122,
+          "scope": "Complete conditional E6/F2 exclusion for every finite alphabet. Two symbolic proofs with full individual-letter controls. No full thirteen-state transition-pair scan, whole E6 exclusion, F value or alphabet separation."
+        }
+      ]
+    },
+    {
+      "script": "check_b1_e6_fifth_pair_exclusions.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "n": 8,
+          "F": [
+            1,
+            2
+          ],
+          "pairs": 512
+        },
+        {
+          "n": 9,
+          "F": [
+            1,
+            2
+          ],
+          "pairs": 6912
+        },
+        {
+          "n": 10,
+          "F": [
+            1,
+            2
+          ],
+          "pairs": 147456
+        },
+        {
+          "n": 8,
+          "F": [
+            1,
+            2,
+            7
+          ],
+          "pairs": 512
+        },
+        {
+          "n": 9,
+          "F": [
+            1,
+            2,
+            7
+          ],
+          "pairs": 6912
+        },
+        {
+          "n": 10,
+          "F": [
+            1,
+            2,
+            7
+          ],
+          "pairs": 147456
+        },
+        {
+          "status": "pass",
+          "controls": [
+            {
+              "n": 8,
+              "F": [
+                1,
+                2
+              ],
+              "complete_normalized_row_pairs": 512,
+              "proof_cases": {
+                "missing_C_target": 256,
+                "outside_XL_extra_kernel": 32,
+                "protected_LX_F12": 96,
+                "protected_XX": 128
+              }
+            },
+            {
+              "n": 9,
+              "F": [
+                1,
+                2
+              ],
+              "complete_normalized_row_pairs": 6912,
+              "proof_cases": {
+                "missing_C_target": 3456,
+                "outside_XL_extra_kernel": 384,
+                "protected_LX_F12": 1344,
+                "protected_XX": 1728
+              }
+            },
+            {
+              "n": 10,
+              "F": [
+                1,
+                2
+              ],
+              "complete_normalized_row_pairs": 147456,
+              "proof_cases": {
+                "missing_C_target": 73728,
+                "outside_XL_extra_kernel": 6912,
+                "protected_LX_F12": 29952,
+                "protected_XX": 36864
+              }
+            },
+            {
+              "n": 8,
+              "F": [
+                1,
+                2,
+                7
+              ],
+              "complete_normalized_row_pairs": 512,
+              "proof_cases": {
+                "missing_C_target": 256,
+                "protected_LX_F127": 128,
+                "protected_XX": 128
+              }
+            },
+            {
+              "n": 9,
+              "F": [
+                1,
+                2,
+                7
+              ],
+              "complete_normalized_row_pairs": 6912,
+              "proof_cases": {
+                "missing_C_target": 3456,
+                "protected_LX_F127": 1728,
+                "protected_XX": 1728
+              }
+            },
+            {
+              "n": 10,
+              "F": [
+                1,
+                2,
+                7
+              ],
+              "complete_normalized_row_pairs": 147456,
+              "proof_cases": {
+                "missing_C_target": 73728,
+                "protected_LX_F127": 36864,
+                "protected_XX": 36864
+              }
+            }
+          ],
+          "ports": {
+            "F12_ordinary_X_systems": 5040,
+            "F127_ordinary_X_systems": 5040,
+            "ordinary_L_systems": 35280,
+            "L_systems_omitting2": 4320
+          },
+          "remaining_field_pairs": 268
+        }
+      ]
+    }
+  ],
+  "source_sha256": {
+    "check_b1_fifth_package.py": "b0eb2322ce87856ca32807ccf84c9668273192a01efd7eed4595882024851898"
+  }
+}

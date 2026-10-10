@@ -1,0 +1,556 @@
+{
+  "status": "pass",
+  "archive": "certificates/b1_d12_d24_complete.zip",
+  "sha256": "409137445ba3ca651ac0158818a73f42a388cd0f2e7ed89b215755957db864fc",
+  "files": 26,
+  "checksum_entries": 25,
+  "data_files_reproduced_byte_identically": 3,
+  "audits_reproduced_byte_identically": 3,
+  "raw_individual_rows": 8305920,
+  "pointwise_transports_checked": 4122720,
+  "complete_representative_pairs_per_implementation": 162575280,
+  "whole_binary_D12_D24_excluded": true,
+  "runs": [
+    {
+      "script": "enumerate_b1_c14_nonsingleton_fourth.py",
+      "exit": 0,
+      "outputs": []
+    },
+    {
+      "script": "check_b1_c14_nonsingleton_fourth.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "status": "pass",
+          "geometric_orbits": 27,
+          "labelled_E": 148,
+          "all_subset_masks_tested": 606060,
+          "augmented_rank_tests": 10444,
+          "counts": [
+            {
+              "D": [
+                1,
+                2
+              ],
+              "geometric_orbits": 3,
+              "labelled_E": 24,
+              "all_alphabet_excluded_E": [],
+              "remaining_unrestricted_E": [
+                [
+                  5
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  2,
+                  5
+                ]
+              ],
+              "remaining_binary_E": [
+                [
+                  5
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  2,
+                  5
+                ]
+              ],
+              "remaining_binary_field_pairs": 24,
+              "original_third_pairs": 3,
+              "remaining_original_third_pairs": 3
+            },
+            {
+              "D": [
+                1,
+                5
+              ],
+              "geometric_orbits": 8,
+              "labelled_E": 32,
+              "all_alphabet_excluded_E": [
+                [
+                  2
+                ]
+              ],
+              "remaining_unrestricted_E": [
+                [
+                  6
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  1,
+                  2,
+                  6
+                ]
+              ],
+              "remaining_binary_E": [
+                [
+                  6
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  1,
+                  2,
+                  6
+                ]
+              ],
+              "remaining_binary_field_pairs": 42,
+              "original_third_pairs": 3,
+              "remaining_original_third_pairs": 3
+            },
+            {
+              "D": [
+                2,
+                4
+              ],
+              "geometric_orbits": 4,
+              "labelled_E": 32,
+              "all_alphabet_excluded_E": [
+                [
+                  1,
+                  2,
+                  5
+                ]
+              ],
+              "remaining_unrestricted_E": [
+                [
+                  5
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  2,
+                  5
+                ]
+              ],
+              "remaining_binary_E": [
+                [
+                  5
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  2,
+                  5
+                ]
+              ],
+              "remaining_binary_field_pairs": 24,
+              "original_third_pairs": 3,
+              "remaining_original_third_pairs": 3
+            },
+            {
+              "D": [
+                2,
+                5
+              ],
+              "geometric_orbits": 7,
+              "labelled_E": 31,
+              "all_alphabet_excluded_E": [
+                [
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  1,
+                  2,
+                  6
+                ]
+              ],
+              "remaining_unrestricted_E": [
+                [
+                  6
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  2,
+                  6
+                ]
+              ],
+              "remaining_binary_E": [
+                [
+                  6
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  2,
+                  6
+                ]
+              ],
+              "remaining_binary_field_pairs": 56,
+              "original_third_pairs": 14,
+              "remaining_original_third_pairs": 14
+            },
+            {
+              "D": [
+                1,
+                2,
+                5
+              ],
+              "geometric_orbits": 5,
+              "labelled_E": 29,
+              "all_alphabet_excluded_E": [
+                [
+                  2,
+                  4
+                ]
+              ],
+              "remaining_unrestricted_E": [
+                [
+                  6
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  1,
+                  2,
+                  6
+                ]
+              ],
+              "remaining_binary_E": [
+                [
+                  6
+                ],
+                [
+                  2,
+                  6
+                ]
+              ],
+              "remaining_binary_field_pairs": 12,
+              "original_third_pairs": 3,
+              "remaining_original_third_pairs": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "script": "enumerate_d12_d24_fourth_rows.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "D": [
+            1,
+            2
+          ],
+          "E": [
+            5
+          ],
+          "raw_individual_rows": 1370880,
+          "raw_literal_pair_product": 73156608000
+        },
+        {
+          "D": [
+            1,
+            2
+          ],
+          "E": [
+            1,
+            5
+          ],
+          "raw_individual_rows": 725760,
+          "raw_literal_pair_product": 39016857600
+        },
+        {
+          "D": [
+            1,
+            2
+          ],
+          "E": [
+            2,
+            5
+          ],
+          "raw_individual_rows": 887040,
+          "raw_literal_pair_product": 48771072000
+        },
+        {
+          "D": [
+            2,
+            4
+          ],
+          "E": [
+            5
+          ],
+          "raw_individual_rows": 2499840,
+          "raw_literal_pair_product": 585252864000
+        },
+        {
+          "D": [
+            2,
+            4
+          ],
+          "E": [
+            1,
+            5
+          ],
+          "raw_individual_rows": 725760,
+          "raw_literal_pair_product": 39016857600
+        },
+        {
+          "D": [
+            2,
+            4
+          ],
+          "E": [
+            2,
+            5
+          ],
+          "raw_individual_rows": 2096640,
+          "raw_literal_pair_product": 395045683200
+        }
+      ]
+    },
+    {
+      "script": "check_d12_d24_fourth_rows.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "D": [
+            1,
+            2
+          ],
+          "E": [
+            5
+          ],
+          "complete_pairs": 27205920,
+          "zero_candidates": true
+        },
+        {
+          "D": [
+            1,
+            2
+          ],
+          "E": [
+            1,
+            5
+          ],
+          "complete_pairs": 8779680,
+          "zero_candidates": true
+        },
+        {
+          "D": [
+            1,
+            2
+          ],
+          "E": [
+            2,
+            5
+          ],
+          "complete_pairs": 16168320,
+          "zero_candidates": true
+        },
+        {
+          "D": [
+            2,
+            4
+          ],
+          "E": [
+            5
+          ],
+          "complete_pairs": 70801920,
+          "zero_candidates": true
+        },
+        {
+          "D": [
+            2,
+            4
+          ],
+          "E": [
+            1,
+            5
+          ],
+          "complete_pairs": 8159760,
+          "zero_candidates": true
+        },
+        {
+          "D": [
+            2,
+            4
+          ],
+          "E": [
+            2,
+            5
+          ],
+          "complete_pairs": 31459680,
+          "zero_candidates": true
+        },
+        {
+          "status": "pass",
+          "parameter": [
+            13,
+            9,
+            1
+          ],
+          "alphabet": "binary only",
+          "all_D12_D24_binary_fourth_survivors_excluded": true,
+          "build_flags": [
+            "-std=c++17",
+            "-O2",
+            "-Wall",
+            "-Wextra",
+            "-pedantic"
+          ],
+          "bare_algorithm_controls": 3,
+          "independent_symmetry_checks": 30240,
+          "high_initial_masks_checked": 3404160,
+          "all_parent_fourth_pairs": 48,
+          "canonical_raw_rows_sha256": "34b7b712fc893fd32cbb8ae66ab6ccfe123e274dbe8fc5044a309c05394cafdf",
+          "canonical_kept_rows_sha256": "0185d19574de9af67a33e7d182f667e7334b26a38e30f6470f4adb597ebf1f2c",
+          "pointwise_transports_sha256": "308dcb677de4f3babddcd3ed583d8d133f6ea51d354c78d0c13bbe2225b90422",
+          "pointwise_transports_checked": 4122720,
+          "raw_individual_rows": 8305920,
+          "checked_representative_pairs_per_implementation": 162575280,
+          "scope": "Complete binary D12/D24 E5,E15,E25 actual row negatives with all companions and48 fourth pairs. Unrestricted and other D types remain; no global F value."
+        }
+      ]
+    },
+    {
+      "script": "check_b1_d12_d24_composition.py",
+      "exit": 0,
+      "outputs": [
+        {
+          "status": "pass",
+          "parameter": [
+            13,
+            9,
+            1
+          ],
+          "B": [
+            0
+          ],
+          "C": [
+            1,
+            4
+          ],
+          "whole_binary_D12_D24_excluded": true,
+          "excluded_third_types": [
+            {
+              "D": [
+                1,
+                2
+              ],
+              "excluded_third_id": "b1_in_c3_third3",
+              "removed_original_third_pairs": 3,
+              "complete_fourth_geometries": 3,
+              "complete_E_labels": 24,
+              "checked_actual_row_fourth_pairs": 24,
+              "unrestricted_remaining_E": [
+                [
+                  5
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  2,
+                  5
+                ]
+              ]
+            },
+            {
+              "D": [
+                2,
+                4
+              ],
+              "excluded_third_id": "b1_in_c3_third5",
+              "removed_original_third_pairs": 3,
+              "complete_fourth_geometries": 4,
+              "complete_E_labels": 32,
+              "checked_actual_row_fourth_pairs": 24,
+              "unrestricted_remaining_E": [
+                [
+                  5
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  2,
+                  5
+                ]
+              ]
+            }
+          ],
+          "removed_original_third_pairs": 6,
+          "complete_fourth_geometries": 7,
+          "complete_E_labels": 56,
+          "checked_actual_row_fourth_geometries": 6,
+          "checked_actual_row_fourth_pairs": 48,
+          "new_complete_representative_pairs_per_implementation": 162575280,
+          "scope": "Whole binary D12,D24 exclusions. Unrestricted E5,E15,E25 and other D/joint types remain; no exact F value or numerical separation."
+        }
+      ]
+    }
+  ],
+  "source_sha256": {
+    "check_d12_d24_certificate_package.py": "460aa4bd51101c08a11e42f0ed7ad1046ba5a9fe5e8a76ffc1b7a61e65ce2ba2"
+  }
+}

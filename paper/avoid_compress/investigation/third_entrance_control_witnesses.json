@@ -1,0 +1,916 @@
+{
+  "status": "selected_existing_controls",
+  "witnesses": [
+    {
+      "n": 7,
+      "s": 5,
+      "r": 1,
+      "value": 6,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          5,
+          4,
+          4
+        ],
+        [
+          1,
+          2,
+          4,
+          6,
+          0,
+          3,
+          5
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        4,
+        6
+      ],
+      "A": [
+        2
+      ],
+      "reaching": "abbabb",
+      "attaining": "ababba",
+      "reset": "abbababbababbababbaababba",
+      "source": "exhaustive binary cover, n<=7",
+      "alphabet_size": 2,
+      "binary_upper": 6,
+      "unrestricted_upper": 6,
+      "exact_binary": true,
+      "exact_unrestricted": true
+    },
+    {
+      "n": 8,
+      "s": 5,
+      "r": 1,
+      "value": 7,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          5
+        ],
+        [
+          1,
+          2,
+          7,
+          4,
+          6,
+          5,
+          0,
+          3
+        ]
+      ],
+      "S": [
+        0,
+        3,
+        4,
+        5,
+        6
+      ],
+      "A": [
+        5
+      ],
+      "reaching": "ababbbbba",
+      "attaining": "bbbbbba",
+      "reset": "abbabbabbabbabbbabbbbababbbba",
+      "source": "structured_n8.json",
+      "alphabet_size": 2,
+      "binary_upper": 7,
+      "unrestricted_upper": 7,
+      "exact_binary": true,
+      "exact_unrestricted": true
+    },
+    {
+      "n": 9,
+      "s": 5,
+      "r": 1,
+      "value": 8,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          6
+        ],
+        [
+          6,
+          2,
+          8,
+          4,
+          5,
+          7,
+          0,
+          1,
+          3
+        ]
+      ],
+      "S": [
+        0,
+        4,
+        5,
+        6,
+        7
+      ],
+      "A": [
+        0
+      ],
+      "reaching": "ababababbbbb",
+      "attaining": "bbbbbbab",
+      "reset": "abbbabbabbababbabbabaabbabbabbba",
+      "source": "structured_n9.json",
+      "alphabet_size": 2,
+      "binary_upper": 8,
+      "unrestricted_upper": 8,
+      "exact_binary": true,
+      "exact_unrestricted": true
+    },
+    {
+      "n": 9,
+      "s": 6,
+      "r": 1,
+      "value": 8,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          5,
+          4,
+          4,
+          8,
+          7
+        ],
+        [
+          1,
+          2,
+          4,
+          5,
+          0,
+          7,
+          3,
+          6,
+          8
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6
+      ],
+      "A": [
+        2
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababbb",
+      "reset": "abbbababbbababbbabababababbabaababbbabaababbbaba",
+      "source": "active_n9_h5.json",
+      "alphabet_size": 2,
+      "binary_upper": 8,
+      "unrestricted_upper": 8,
+      "exact_binary": true,
+      "exact_unrestricted": true
+    },
+    {
+      "n": 10,
+      "s": 5,
+      "r": 1,
+      "value": 9,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          7
+        ],
+        [
+          1,
+          2,
+          9,
+          4,
+          5,
+          6,
+          8,
+          7,
+          0,
+          3
+        ]
+      ],
+      "S": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "A": [
+        7
+      ],
+      "reaching": "abababababbbbbb",
+      "attaining": "bbbbbbbba",
+      "reset": "abbbababbababbababbabaabbbabbabbbba",
+      "source": "structured_n10.json",
+      "alphabet_size": 2,
+      "binary_upper": 9,
+      "unrestricted_upper": 9,
+      "exact_binary": true,
+      "exact_unrestricted": true
+    },
+    {
+      "n": 10,
+      "s": 6,
+      "r": 1,
+      "value": 9,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          7
+        ],
+        [
+          1,
+          2,
+          3,
+          9,
+          5,
+          6,
+          8,
+          7,
+          0,
+          4
+        ]
+      ],
+      "S": [
+        0,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "A": [
+        7
+      ],
+      "reaching": "abababbbbbba",
+      "attaining": "bbbbbbbba",
+      "reset": "abbbabbababbababbababbaabbbababbbbba",
+      "source": "structured_n10.json",
+      "alphabet_size": 2,
+      "binary_upper": 9,
+      "unrestricted_upper": 9,
+      "exact_binary": true,
+      "exact_unrestricted": true
+    },
+    {
+      "n": 10,
+      "s": 7,
+      "r": 1,
+      "value": 9,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          5,
+          9,
+          8
+        ],
+        [
+          1,
+          2,
+          3,
+          5,
+          6,
+          0,
+          8,
+          4,
+          7,
+          9
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7
+      ],
+      "A": [
+        3
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababbbb",
+      "reset": "abbbabababbabababbabababbabababbbababbbabaababbbaba",
+      "source": "active_n10_h5.json",
+      "alphabet_size": 2,
+      "binary_upper": 9,
+      "unrestricted_upper": 9,
+      "exact_binary": true,
+      "exact_unrestricted": true
+    },
+    {
+      "n": 11,
+      "s": 5,
+      "r": 1,
+      "value": 10,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          5
+        ],
+        [
+          4,
+          0,
+          3,
+          1,
+          2,
+          6,
+          1,
+          8,
+          9,
+          1,
+          7
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "A": [
+        0
+      ],
+      "reaching": "bbbb",
+      "attaining": "aaaaaabaab",
+      "reset": "baaabaababbaaabaababbbabaab",
+      "source": "cofinal construction independently certified at finite parameter",
+      "alphabet_size": 2,
+      "binary_upper": 10,
+      "unrestricted_upper": 10,
+      "exact_binary": true,
+      "exact_unrestricted": true
+    },
+    {
+      "n": 11,
+      "s": 6,
+      "r": 1,
+      "value": 10,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          2
+        ],
+        [
+          2,
+          0,
+          3,
+          4,
+          5,
+          1,
+          7,
+          8,
+          9,
+          1,
+          6
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "A": [
+        0
+      ],
+      "reaching": "bbbbb",
+      "attaining": "aaaaaaaabb",
+      "reset": "baabbabbaabaabaabbabbbbaaaaabbabaaab",
+      "source": "reuse_n11.json",
+      "alphabet_size": 2,
+      "binary_upper": 10,
+      "unrestricted_upper": 10,
+      "exact_binary": true,
+      "exact_unrestricted": true
+    },
+    {
+      "n": 11,
+      "s": 7,
+      "r": 1,
+      "value": 10,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          7,
+          8,
+          9,
+          10,
+          5
+        ],
+        [
+          7,
+          8,
+          1,
+          2,
+          3,
+          6,
+          4,
+          0,
+          9,
+          4,
+          10
+        ]
+      ],
+      "S": [
+        1,
+        2,
+        3,
+        4,
+        8,
+        9,
+        10
+      ],
+      "A": [
+        1
+      ],
+      "reaching": "baabaabb",
+      "attaining": "aaaababaab",
+      "reset": "bbaababbbaababbbaababbbaababbbaababbbabaabbbaababaabaab",
+      "source": "mutate_n11_s7_r1_k2.json",
+      "alphabet_size": 2,
+      "binary_upper": 10,
+      "unrestricted_upper": 10,
+      "exact_binary": true,
+      "exact_unrestricted": true
+    },
+    {
+      "n": 12,
+      "s": 5,
+      "r": 1,
+      "value": 11,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          2
+        ],
+        [
+          2,
+          0,
+          3,
+          4,
+          1,
+          6,
+          7,
+          1,
+          9,
+          10,
+          1,
+          5
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "A": [
+        0
+      ],
+      "reaching": "bbbb",
+      "attaining": "aaaaaaaaabb",
+      "reset": "baababaaaabbaaaabaababaabaababaab",
+      "source": "reuse_n12.json",
+      "alphabet_size": 2,
+      "binary_upper": 11,
+      "unrestricted_upper": 11,
+      "exact_binary": true,
+      "exact_unrestricted": true
+    },
+    {
+      "n": 12,
+      "s": 6,
+      "r": 1,
+      "value": 11,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          4
+        ],
+        [
+          3,
+          0,
+          1,
+          4,
+          5,
+          2,
+          1,
+          8,
+          9,
+          10,
+          1,
+          7
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "A": [
+        0
+      ],
+      "reaching": "bbbbb",
+      "attaining": "aaaaaabaaab",
+      "reset": "baabaaabaabaaaaaabaabbbbabaaabbabaaab",
+      "source": "cofinal construction independently certified at finite parameter",
+      "alphabet_size": 2,
+      "binary_upper": 11,
+      "unrestricted_upper": 11,
+      "exact_binary": true,
+      "exact_unrestricted": true
+    },
+    {
+      "n": 12,
+      "s": 7,
+      "r": 1,
+      "value": 11,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          2
+        ],
+        [
+          6,
+          0,
+          3,
+          4,
+          5,
+          1,
+          7,
+          8,
+          9,
+          10,
+          1,
+          11
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "A": [
+        0
+      ],
+      "reaching": "baaaabaabbbbaaaaa",
+      "attaining": "aaaaabaaaab",
+      "reset": "baababbabbabaabbbaaaabbabaabbabaaaab",
+      "source": "cofinal construction independently certified at finite parameter",
+      "alphabet_size": 2,
+      "binary_upper": 11,
+      "unrestricted_upper": 11,
+      "exact_binary": true,
+      "exact_unrestricted": true
+    },
+    {
+      "n": 12,
+      "s": 8,
+      "r": 1,
+      "value": 11,
+      "rows": [
+        [
+          0,
+          3,
+          2,
+          1,
+          5,
+          6,
+          8,
+          7,
+          9,
+          10,
+          11,
+          4
+        ],
+        [
+          2,
+          0,
+          7,
+          1,
+          5,
+          6,
+          3,
+          8,
+          9,
+          10,
+          3,
+          11
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "A": [
+        7
+      ],
+      "reaching": "baaaaaabbbaaaa",
+      "attaining": "aaaaaabaaab",
+      "reset": "bababaaaabbbaaabaaababaaaabababbbabaaaababbbbbbaaabaaab",
+      "source": "mutate_n12_s8_r1_k2_more.json",
+      "alphabet_size": 2,
+      "binary_upper": 11,
+      "unrestricted_upper": 11,
+      "exact_binary": true,
+      "exact_unrestricted": true
+    },
+    {
+      "n": 13,
+      "s": 8,
+      "r": 1,
+      "value": 12,
+      "rows": [
+        [
+          0,
+          12,
+          3,
+          4,
+          5,
+          7,
+          6,
+          8,
+          9,
+          10,
+          11,
+          2,
+          1
+        ],
+        [
+          7,
+          12,
+          3,
+          4,
+          5,
+          1,
+          0,
+          8,
+          9,
+          10,
+          1,
+          11,
+          6
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        12
+      ],
+      "A": [
+        0
+      ],
+      "reaching": "baaaaaaaabbbbaaaaa",
+      "attaining": "aaaaaaaababb",
+      "reset": "baabaabaabaabaababaababaaaaabbababbabaaaaaababbbabbaaaabaaaab",
+      "alphabet_size": 2,
+      "binary_upper": 12,
+      "unrestricted_upper": 12,
+      "exact_binary": true,
+      "exact_unrestricted": true,
+      "source": "Independent BFS audit of binary reduction at (13,8,1)"
+    },
+    {
+      "n": 11,
+      "s": 7,
+      "r": 1,
+      "alphabet_size": 2,
+      "rows": [
+        [
+          7,
+          2,
+          6,
+          8,
+          3,
+          4,
+          5,
+          0,
+          9,
+          6,
+          10
+        ],
+        [
+          0,
+          2,
+          7,
+          3,
+          4,
+          5,
+          6,
+          8,
+          9,
+          10,
+          1
+        ]
+      ],
+      "S": [
+        3,
+        4,
+        5,
+        6,
+        8,
+        9,
+        10
+      ],
+      "A": [
+        3
+      ],
+      "value": 10,
+      "compression": 10,
+      "reaching": "aababbaa",
+      "attaining": "bababaaaaa",
+      "reset": "aabbabaaabbabaaabbabaaabbabaaabbabaaababaaababababbabaa",
+      "state_scores": {
+        "3": 10,
+        "4": 9,
+        "5": 8,
+        "6": 7,
+        "8": 1,
+        "9": 2,
+        "10": 3
+      }
+    },
+    {
+      "n": 8,
+      "s": 5,
+      "r": 1,
+      "alphabet_size": 2,
+      "rows": [
+        [
+          2,
+          1,
+          0,
+          2,
+          4,
+          5,
+          6,
+          7
+        ],
+        [
+          1,
+          4,
+          2,
+          6,
+          5,
+          3,
+          7,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        6,
+        7
+      ],
+      "A": [
+        2
+      ],
+      "value": 7,
+      "compression": 7,
+      "reaching": "ababbbbba",
+      "attaining": "bbbbbba",
+      "reset": "abbabbabbabbabbbabbbbababbbba",
+      "state_scores": {
+        "0": 3,
+        "1": 4,
+        "2": 7,
+        "6": 1,
+        "7": 2
+      }
+    }
+  ],
+  "historical_source_sha256": {
+    "frontier_certificates.json": "a693fb99f497365d745e5885be495e89c0796bda7b6c70e80c2a14149f1ea204",
+    "boolean_local_prefix_control_n11.json": "6f3f5c2ed448d7b48e5c45ed38e146bc9559753b10444cfe667ebae267a0008d",
+    "boolean_local_prefix_control_n8.json": "6e3c3a0a7c047cc0ab5d403b8c75e0c4effbc8b8f247f0f0799e094130a7f651"
+  },
+  "scope": "Existing equality controls only; not a new extremum or exhaustive automaton cover."
+}

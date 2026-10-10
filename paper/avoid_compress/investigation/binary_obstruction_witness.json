@@ -1,0 +1,51 @@
+{
+  "n": 11,
+  "s": 8,
+  "r": 1,
+  "value": 9,
+  "rows": [
+    [
+      0,
+      1,
+      2,
+      3,
+      4,
+      7,
+      6,
+      5,
+      5,
+      10,
+      9
+    ],
+    [
+      1,
+      2,
+      3,
+      4,
+      5,
+      0,
+      7,
+      9,
+      6,
+      8,
+      10
+    ]
+  ],
+  "S": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    8
+  ],
+  "A": [
+    3
+  ],
+  "reaching": "abbbabaabb",
+  "attaining": "abababbbb",
+  "reset": "abbbabababbabababbababababbabababbbabababbbabababbbabaababbbaba",
+  "source": "Fixed five-state gadget and six-state cycle; direct independent BFS verification."
+}

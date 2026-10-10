@@ -1,0 +1,172 @@
+{
+  "status": "audited necessary exclusion",
+  "early_type": 7,
+  "state_range": "n>=6",
+  "alphabet": "arbitrary finite",
+  "reachability_not_needed": true,
+  "new_exact_maximum": false,
+  "reports": {
+    "status": "pass",
+    "reports": [
+      {
+        "n": 6,
+        "compatible_letters": 95,
+        "special_domain_checks": 44,
+        "B_four_cycle_checks": 4,
+        "reduced_letters": 47,
+        "normalized_B_two_cycles": 2,
+        "no_B_invariant_checks": 43,
+        "keeper_checks": 46,
+        "breaker_checks": 48,
+        "cases": {
+          "closed_U_A": 6,
+          "closed_U_T": 6,
+          "closed_P_A": 2,
+          "closed_P_T": 2,
+          "closed_P_B": 2,
+          "closed_V": 6,
+          "mixing_U_A": 6,
+          "mixing_U_T": 6,
+          "mixing_P_A": 2,
+          "mixing_P_T": 2,
+          "mixing_P_B": 2,
+          "mixing_V": 6
+        },
+        "maxima": {
+          "closed_U_A": 5,
+          "closed_U_T": 4,
+          "closed_P_A": 5,
+          "closed_P_T": 5,
+          "closed_P_B": 4,
+          "closed_V": 5,
+          "mixing_U_A": 3,
+          "mixing_U_T": 3,
+          "mixing_P_A": 3,
+          "mixing_P_T": 3,
+          "mixing_P_B": 2,
+          "mixing_V": 4
+        },
+        "equality_domains": {
+          "C_A": 2,
+          "C_T": 1,
+          "C_V": 2,
+          "D_w": 1
+        }
+      },
+      {
+        "n": 7,
+        "compatible_letters": 359,
+        "special_domain_checks": 168,
+        "B_four_cycle_checks": 12,
+        "reduced_letters": 179,
+        "normalized_B_two_cycles": 6,
+        "no_B_invariant_checks": 167,
+        "keeper_checks": 534,
+        "breaker_checks": 540,
+        "cases": {
+          "closed_U_A": 48,
+          "closed_U_T": 48,
+          "closed_P_A": 12,
+          "closed_P_T": 12,
+          "closed_P_B": 12,
+          "closed_V": 48,
+          "mixing_U_A": 96,
+          "mixing_U_T": 96,
+          "mixing_P_A": 24,
+          "mixing_P_T": 24,
+          "mixing_P_B": 24,
+          "mixing_V": 96
+        },
+        "maxima": {
+          "closed_U_A": 5,
+          "closed_U_T": 4,
+          "closed_P_A": 5,
+          "closed_P_T": 5,
+          "closed_P_B": 4,
+          "closed_V": 5,
+          "mixing_U_A": 3,
+          "mixing_U_T": 3,
+          "mixing_P_A": 3,
+          "mixing_P_T": 3,
+          "mixing_P_B": 2,
+          "mixing_V": 4
+        },
+        "equality_domains": {
+          "C_A": 8,
+          "C_T": 4,
+          "C_V": 12,
+          "D_w": 8
+        }
+      }
+    ],
+    "all_seven_profiles_flags_vectors_match": true,
+    "scope": "Finite controls and independent projection comparison, accompanying the uniform proof."
+  },
+  "independent_native_counts": [
+    {
+      "n": 6,
+      "compatible_letters": 95,
+      "reduced_letters": 47,
+      "normalized_B_two_cycles": 2,
+      "breaker_checks": 48,
+      "keeper_checks": 46,
+      "no_B_invariant_checks": 43,
+      "maximum_closed_domain": 5,
+      "maximum_mixing_domain": 4,
+      "equality_domains": {
+        "C_A": 2,
+        "C_T": 1,
+        "C_V": 2,
+        "D_w": 1
+      }
+    },
+    {
+      "n": 7,
+      "compatible_letters": 359,
+      "reduced_letters": 179,
+      "normalized_B_two_cycles": 6,
+      "breaker_checks": 540,
+      "keeper_checks": 534,
+      "no_B_invariant_checks": 167,
+      "maximum_closed_domain": 5,
+      "maximum_mixing_domain": 4,
+      "equality_domains": {
+        "C_A": 8,
+        "C_T": 4,
+        "C_V": 12,
+        "D_w": 8
+      }
+    },
+    {
+      "n": 9,
+      "compatible_letters": 10079,
+      "reduced_letters": 5039,
+      "normalized_B_two_cycles": 120,
+      "breaker_checks": 302400,
+      "keeper_checks": 302280,
+      "no_B_invariant_checks": 4799,
+      "maximum_closed_domain": 5,
+      "maximum_mixing_domain": 4,
+      "equality_domains": {
+        "C_A": 1152,
+        "C_T": 576,
+        "C_V": 2880,
+        "D_w": 2304
+      }
+    }
+  ],
+  "sanitizer_reruns_identical": 2,
+  "source_sha256": {
+    "TYPE7_EARLY_EXCLUSION.md": "36913f07b04d9a22043fb33226c2947e9d47f6535f16678f3f0718dd83d417d4",
+    "type7_reduced_actions.py": "cc34a7103ac6825c37cbfc5eae07739d934a66896c92c4ea152d55464b004bb2",
+    "audit_type7_actions.cpp": "518c0f65889f06ade1cbc2855ab2ad918a693b0cc41b2e033a7ae8277048e35f",
+    "audit_type7_domains.py": "4797b1f218aedd2e43fa3e3139f33fd767932f5f2b51114f2cbebbc3b135cd2a",
+    "audit_type7_breakers.cpp": "4f721483b5158e89c7ce2fe128c2f86bdf9bf7ac66723f9a8bc45c7d52384c6f",
+    "early_pair_alphabet_pool.py": "3613cd1c6d344f96d080d982726ce2e9a72e0152ab9c2ba7dd6ad4a0577802d0",
+    "early_alphabet_pool_n6.json": "fed321f4dacf51bd0223bb79bbd0e5b0fd7e19cb6675e006d94053422cadbc0a",
+    "early_alphabet_pool_n7.json": "cf9afaf91f1c34b5a0a037fd9e9c57100b9fb9b4d730443412ce116208da2757"
+  },
+  "remaining_types": [],
+  "scope": "Audited component exclusion. The combined all-type proof is accepted; this component alone is not an all-parameter classification.",
+  "current_combined_authority": "CODIMENSION_THREE_UPPER_PROOF.md and codimension_three_upper_audit.json: all nine types excluded; exact F_bin=F=min(n-r,9) at codimension three."
+}

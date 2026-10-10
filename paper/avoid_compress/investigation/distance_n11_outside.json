@@ -1,0 +1,16 @@
+{
+  "n": 11,
+  "s": 8,
+  "target": 10,
+  "kernel_pair": [
+    8,
+    9
+  ],
+  "first_file": null,
+  "status": "unknown: timeout",
+  "iterations": 1,
+  "seconds": 60.01859969999987,
+  "blocked_unreachable_rows": [],
+  "witness": null,
+  "scope": "Exact finite pair Bellman equations; negative solver answers unverified."
+}

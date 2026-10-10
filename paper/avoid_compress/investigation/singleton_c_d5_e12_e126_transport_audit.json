@@ -1,0 +1,64 @@
+{
+  "status": "pass",
+  "parameter": [
+    13,
+    9,
+    1
+  ],
+  "coverage": [
+    {
+      "id": "b1_in_c1_third2",
+      "D_labels": 8,
+      "E_labels_per_D": 8,
+      "labelled_extensions": 64,
+      "normalized_fourth_pairs_excluded": 82,
+      "whole_third_excluded": false
+    },
+    {
+      "id": "b1_out_c2_third2",
+      "D_labels": 8,
+      "E_labels_per_D": 8,
+      "labelled_extensions": 64,
+      "normalized_fourth_pairs_excluded": 82,
+      "whole_third_excluded": false
+    }
+  ],
+  "labelled_extensions_checked": 128,
+  "Boolean_identities_checked": 512,
+  "new_normalized_unrestricted_fourth_cuts_both_roots": 4,
+  "newly_removed_current_binary_fourth_pairs_both_roots": 164,
+  "remaining_C4_D5_E": [
+    [
+      6
+    ],
+    [
+      1,
+      6
+    ]
+  ],
+  "remaining_C4_geometries": 2,
+  "remaining_C4_E_labels": 21,
+  "remaining_C4_binary_pairs": 82,
+  "whole_third_types_removed": 0,
+  "binary_parent_pairs_removed": 0,
+  "source_sha256": {
+    "check_singleton_c_d5_e12_e126_transport.py": "a3d62ff5774f7a8ab48cea3047e6d58c2c874a30d069e5105b803109ed9f8c01",
+    "C4_D5_E12_E126_UNRESTRICTED_EXCLUSION.md": "921c8acd66ceaf7b797e497f81e2aa537ef9ecef32b2dcb447d12109b8aa250b",
+    "c4_d5_e12_e126_unrestricted_audit.json": "4685b5a0bfaaeff274298f23342c00af9d3639f0b8e6b0b363e59b457c9e55fe",
+    "letter_image_short_pair_cover_audit.json": "95f70d3699bcaaa44b1b28a7108a330a61a16f54a68e6a04def9b02628312d8c",
+    "b1_c4_fourth_audit.json": "f2d0ab7b95611e4ebe0e9fd5addcf30708be2f034f146d20a0cdc82e25cde5be",
+    "b1_c4_fourth_inventory.json": "c9a26a19d52b0dbf8806e84fddab5156366aabab591d10e335e29d65c7b25517",
+    "B1_C4_FOURTH_SPACE.md": "3e6ab0c3a886c489ce7d9217378984af34f234c699833e2c02098669fe798d93",
+    "small_first_third_inventory.json": "ea00650e65207784313446cec6bf6d38b6f48223b327dcc218e9c6f34cf703c1",
+    "small_first_third_audit.json": "a7eff7aec7da7c19e847d965c49c46820d2ff2b804143364a7cadb69e9ffaef4",
+    "SMALL_FIRST_THIRD_ADMISSION.md": "3393586186e33deca585422e32c31cb7f6a70000af2f46b352a9c14be7187571",
+    "MANDATORY_CORE_ISOLATION.md": "72129f1a810b07a8bcd975e5df353cc1dbc43d063e13c8ff887ba4748bb14537",
+    "mandatory_core_isolation_audit.json": "67d7c82cae127c23260a3f7b6affe3052a1afef728cad8f49fd54d27e3fa9f54",
+    "TWO_COVER_UNIQUE_IMMEDIATE_PAIR.md": "94830c865d87774a5f15ab64c7da04d4a55d3cc06e632a9c5856fb0efc2e9d0c",
+    "two_cover_unique_immediate_pair_audit.json": "e8fc3e11282b31f64e1011ab8adf3c7b1323693e8e5a1b738fcd3563e7a478bf",
+    "LETTER_IMAGE_SHORT_PAIR_COVER.md": "192036c7674d5347b3b2b2325b7daf15d074777bdc78ad0e6734b78209fecdfe",
+    "ENTRY_FIBER_FLAG.md": "b27eb51977104cd68aaff2e2f37db10c50bbf4a4dd4320502b15b0f609a01bbf",
+    "LOCAL_EQUALITY_FLAG.md": "f34cf260276c6551266564c1ee2264dc823aeaa4f33b4ae8f8261aedeec596a8"
+  },
+  "scope": "Two complete E geometries excluded at both singleton-C/D5 roots; E6/E16 and all F extrema unresolved."
+}

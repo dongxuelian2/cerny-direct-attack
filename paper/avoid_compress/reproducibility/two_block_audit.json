@@ -1,0 +1,11 @@
+{
+  "verified": true,
+  "instances": 221,
+  "maximum_n": 65,
+  "pair_checks": 68744,
+  "transition_inequalities": 137488,
+  "corruptions_rejected": 8,
+  "subset_bfs_instances": 216,
+  "larger_potential_cell_certificates": 5,
+  "scope": "Independent finite audit supporting the uniform symbolic proof; no extrapolated global upper bound."
+}

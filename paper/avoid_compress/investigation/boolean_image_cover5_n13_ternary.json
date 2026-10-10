@@ -1,0 +1,22 @@
+{
+  "n": 13,
+  "s": 9,
+  "r": 1,
+  "target": 12,
+  "alphabet_size": 3,
+  "status": "unknown: timeout",
+  "iterations": 1,
+  "seconds": 30.28025489999709,
+  "z3_version": "4.16.0",
+  "span_cover_h": 5,
+  "cycle_five": false,
+  "independent_flag": true,
+  "cover_by_images": true,
+  "safe_constraints": [],
+  "trap_cuts": [],
+  "blocked_rows": [],
+  "rejected": [],
+  "witness": null,
+  "source_sha256": "4ce2947949e4e6bcf967aff133a49c03abbced8ff85f6678f4e9d2913b7c470f",
+  "scope": "Full F2 flags with exact one-hot rows, graph connectivity and short-pair closures; synchronization and compression CEGIS. Negative output not a certified upper."
+}

@@ -1,0 +1,37 @@
+{
+  "verified": true,
+  "witnesses": 290,
+  "exact_binary": 290,
+  "exact_unrestricted": 290,
+  "maximum_n": 13,
+  "complete_through_n": 12,
+  "additional_exact_parameters": [
+    {
+      "n": 13,
+      "s": 8,
+      "r": 1,
+      "value": 12
+    },
+    {
+      "n": 13,
+      "s": 10,
+      "r": 1,
+      "value": 9
+    },
+    {
+      "n": 13,
+      "s": 10,
+      "r": 2,
+      "value": 9
+    },
+    {
+      "n": 13,
+      "s": 10,
+      "r": 3,
+      "value": 9
+    }
+  ],
+  "unresolved_binary": [],
+  "unresolved_unrestricted": [],
+  "scope": "All binary and unrestricted triples through n=12 plus (13,8,1) and (13,10,r=1,2,3) are exact. Other n>=13 parameters are not classified by this finite file. The codimension-three upper uses the uniform nine-type proof and complete action certificates."
+}

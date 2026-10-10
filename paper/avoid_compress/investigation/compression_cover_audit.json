@@ -1,0 +1,31 @@
+{
+  "records": [
+    {
+      "n": 5,
+      "s": 2,
+      "labelled_rank_one_maps": 1200,
+      "first_orbits": 14,
+      "tested": 3360,
+      "strong_sync": 1277,
+      "maximum_compression": 10,
+      "cpp_matches": true,
+      "cpp_witness_reachable": true,
+      "independent_generation": "All labelled rank-one transformations with explicit conjugacy marking.",
+      "independent_distance": "Ordinary forward BFS for each pair."
+    },
+    {
+      "n": 6,
+      "s": 3,
+      "labelled_rank_one_maps": 10800,
+      "first_orbits": 26,
+      "tested": 37440,
+      "strong_sync": 15231,
+      "maximum_compression": 9,
+      "cpp_matches": true,
+      "cpp_witness_reachable": true,
+      "independent_generation": "All labelled rank-one transformations with explicit conjugacy marking.",
+      "independent_distance": "Ordinary forward BFS for each pair."
+    }
+  ],
+  "scope": "Finite n=5,6 only; no all-parameter refutation."
+}

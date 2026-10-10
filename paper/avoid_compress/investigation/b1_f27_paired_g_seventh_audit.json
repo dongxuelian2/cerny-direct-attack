@@ -1,0 +1,943 @@
+{
+  "status": "pass",
+  "parameter": [
+    13,
+    9,
+    1
+  ],
+  "E": [
+    6
+  ],
+  "F": [
+    2,
+    7
+  ],
+  "geometric_orbits": 16,
+  "labelled_H": 40,
+  "all_subset_masks_tested": 163800,
+  "augmented_rank_tests": 28632,
+  "records": [
+    {
+      "G": [
+        1,
+        8
+      ],
+      "H": [
+        9
+      ],
+      "labels": 4,
+      "forms": 12,
+      "mandatory": [
+        0,
+        3,
+        5,
+        6,
+        9
+      ],
+      "additional_Boolean_fibers": [],
+      "additional_covered_fibers": [],
+      "complete_individual_tuple_controls": [
+        {
+          "R": [
+            9
+          ],
+          "individual_field_tuples": 5040,
+          "raw_compatible_tuples": 34,
+          "necessary_admissible_tuples": 34
+        }
+      ],
+      "all_alphabet_excluded": false,
+      "binary_field_pairs": 48
+    },
+    {
+      "G": [
+        1,
+        8
+      ],
+      "H": [
+        1,
+        2
+      ],
+      "labels": 1,
+      "forms": 10,
+      "mandatory": [
+        0,
+        3,
+        5,
+        6
+      ],
+      "additional_Boolean_fibers": [
+        [
+          4,
+          7
+        ],
+        [
+          7,
+          8
+        ]
+      ],
+      "additional_covered_fibers": [],
+      "complete_individual_tuple_controls": [
+        {
+          "R": [
+            1,
+            2
+          ],
+          "individual_field_tuples": 5040,
+          "raw_compatible_tuples": 0,
+          "necessary_admissible_tuples": 0
+        }
+      ],
+      "all_alphabet_excluded": true,
+      "binary_field_pairs": 0
+    },
+    {
+      "G": [
+        1,
+        8
+      ],
+      "H": [
+        1,
+        7
+      ],
+      "labels": 1,
+      "forms": 10,
+      "mandatory": [
+        0,
+        3,
+        5,
+        6
+      ],
+      "additional_Boolean_fibers": [
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          8
+        ]
+      ],
+      "additional_covered_fibers": [
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          8
+        ]
+      ],
+      "complete_individual_tuple_controls": [
+        {
+          "R": [
+            1,
+            7
+          ],
+          "individual_field_tuples": 5040,
+          "raw_compatible_tuples": 0,
+          "necessary_admissible_tuples": 0
+        },
+        {
+          "R": [
+            2,
+            4
+          ],
+          "individual_field_tuples": 5040,
+          "raw_compatible_tuples": 0,
+          "necessary_admissible_tuples": 0
+        },
+        {
+          "R": [
+            2,
+            8
+          ],
+          "individual_field_tuples": 5040,
+          "raw_compatible_tuples": 0,
+          "necessary_admissible_tuples": 0
+        }
+      ],
+      "all_alphabet_excluded": true,
+      "binary_field_pairs": 0
+    },
+    {
+      "G": [
+        1,
+        8
+      ],
+      "H": [
+        1,
+        9
+      ],
+      "labels": 4,
+      "forms": 8,
+      "mandatory": [
+        0,
+        3,
+        5,
+        6
+      ],
+      "additional_Boolean_fibers": [],
+      "additional_covered_fibers": [],
+      "complete_individual_tuple_controls": [
+        {
+          "R": [
+            1,
+            9
+          ],
+          "individual_field_tuples": 5040,
+          "raw_compatible_tuples": 8,
+          "necessary_admissible_tuples": 8
+        }
+      ],
+      "all_alphabet_excluded": false,
+      "binary_field_pairs": 0
+    },
+    {
+      "G": [
+        1,
+        8
+      ],
+      "H": [
+        2,
+        4
+      ],
+      "labels": 1,
+      "forms": 10,
+      "mandatory": [
+        0,
+        3,
+        5,
+        6
+      ],
+      "additional_Boolean_fibers": [
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          8
+        ]
+      ],
+      "additional_covered_fibers": [
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          8
+        ]
+      ],
+      "complete_individual_tuple_controls": [
+        {
+          "R": [
+            1,
+            7
+          ],
+          "individual_field_tuples": 5040,
+          "raw_compatible_tuples": 0,
+          "necessary_admissible_tuples": 0
+        },
+        {
+          "R": [
+            2,
+            4
+          ],
+          "individual_field_tuples": 5040,
+          "raw_compatible_tuples": 0,
+          "necessary_admissible_tuples": 0
+        },
+        {
+          "R": [
+            2,
+            8
+          ],
+          "individual_field_tuples": 5040,
+          "raw_compatible_tuples": 0,
+          "necessary_admissible_tuples": 0
+        }
+      ],
+      "all_alphabet_excluded": true,
+      "binary_field_pairs": 0
+    },
+    {
+      "G": [
+        1,
+        8
+      ],
+      "H": [
+        2,
+        8
+      ],
+      "labels": 1,
+      "forms": 10,
+      "mandatory": [
+        0,
+        3,
+        5,
+        6
+      ],
+      "additional_Boolean_fibers": [
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "additional_covered_fibers": [
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "complete_individual_tuple_controls": [
+        {
+          "R": [
+            1,
+            7
+          ],
+          "individual_field_tuples": 5040,
+          "raw_compatible_tuples": 0,
+          "necessary_admissible_tuples": 0
+        },
+        {
+          "R": [
+            2,
+            4
+          ],
+          "individual_field_tuples": 5040,
+          "raw_compatible_tuples": 0,
+          "necessary_admissible_tuples": 0
+        },
+        {
+          "R": [
+            2,
+            8
+          ],
+          "individual_field_tuples": 5040,
+          "raw_compatible_tuples": 0,
+          "necessary_admissible_tuples": 0
+        }
+      ],
+      "all_alphabet_excluded": true,
+      "binary_field_pairs": 0
+    },
+    {
+      "G": [
+        1,
+        8
+      ],
+      "H": [
+        2,
+        9
+      ],
+      "labels": 4,
+      "forms": 10,
+      "mandatory": [
+        0,
+        3,
+        5,
+        6
+      ],
+      "additional_Boolean_fibers": [],
+      "additional_covered_fibers": [],
+      "complete_individual_tuple_controls": [
+        {
+          "R": [
+            2,
+            9
+          ],
+          "individual_field_tuples": 5040,
+          "raw_compatible_tuples": 0,
+          "necessary_admissible_tuples": 0
+        }
+      ],
+      "all_alphabet_excluded": true,
+      "binary_field_pairs": 0
+    },
+    {
+      "G": [
+        1,
+        8
+      ],
+      "H": [
+        1,
+        2,
+        9
+      ],
+      "labels": 4,
+      "forms": 7,
+      "mandatory": [
+        0,
+        3,
+        5,
+        6
+      ],
+      "additional_Boolean_fibers": [],
+      "additional_covered_fibers": [],
+      "complete_individual_tuple_controls": [
+        {
+          "R": [
+            1,
+            2,
+            9
+          ],
+          "individual_field_tuples": 5040,
+          "raw_compatible_tuples": 0,
+          "necessary_admissible_tuples": 0
+        }
+      ],
+      "all_alphabet_excluded": true,
+      "binary_field_pairs": 0
+    },
+    {
+      "G": [
+        2,
+        8
+      ],
+      "H": [
+        9
+      ],
+      "labels": 4,
+      "forms": 12,
+      "mandatory": [
+        0,
+        3,
+        5,
+        6,
+        9
+      ],
+      "additional_Boolean_fibers": [],
+      "additional_covered_fibers": [],
+      "complete_individual_tuple_controls": [
+        {
+          "R": [
+            9
+          ],
+          "individual_field_tuples": 5040,
+          "raw_compatible_tuples": 48,
+          "necessary_admissible_tuples": 48
+        }
+      ],
+      "all_alphabet_excluded": false,
+      "binary_field_pairs": 243
+    },
+    {
+      "G": [
+        2,
+        8
+      ],
+      "H": [
+        1,
+        2
+      ],
+      "labels": 1,
+      "forms": 10,
+      "mandatory": [
+        0,
+        3,
+        5,
+        6
+      ],
+      "additional_Boolean_fibers": [
+        [
+          4,
+          7
+        ],
+        [
+          4,
+          8
+        ]
+      ],
+      "additional_covered_fibers": [],
+      "complete_individual_tuple_controls": [
+        {
+          "R": [
+            1,
+            2
+          ],
+          "individual_field_tuples": 5040,
+          "raw_compatible_tuples": 0,
+          "necessary_admissible_tuples": 0
+        }
+      ],
+      "all_alphabet_excluded": true,
+      "binary_field_pairs": 0
+    },
+    {
+      "G": [
+        2,
+        8
+      ],
+      "H": [
+        1,
+        7
+      ],
+      "labels": 1,
+      "forms": 10,
+      "mandatory": [
+        0,
+        3,
+        5,
+        6
+      ],
+      "additional_Boolean_fibers": [
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "additional_covered_fibers": [
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "complete_individual_tuple_controls": [
+        {
+          "R": [
+            1,
+            7
+          ],
+          "individual_field_tuples": 5040,
+          "raw_compatible_tuples": 0,
+          "necessary_admissible_tuples": 0
+        },
+        {
+          "R": [
+            1,
+            8
+          ],
+          "individual_field_tuples": 5040,
+          "raw_compatible_tuples": 2,
+          "necessary_admissible_tuples": 2
+        },
+        {
+          "R": [
+            2,
+            4
+          ],
+          "individual_field_tuples": 5040,
+          "raw_compatible_tuples": 0,
+          "necessary_admissible_tuples": 0
+        }
+      ],
+      "all_alphabet_excluded": true,
+      "binary_field_pairs": 0
+    },
+    {
+      "G": [
+        2,
+        8
+      ],
+      "H": [
+        1,
+        8
+      ],
+      "labels": 1,
+      "forms": 10,
+      "mandatory": [
+        0,
+        3,
+        5,
+        6
+      ],
+      "additional_Boolean_fibers": [
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "additional_covered_fibers": [
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "complete_individual_tuple_controls": [
+        {
+          "R": [
+            1,
+            7
+          ],
+          "individual_field_tuples": 5040,
+          "raw_compatible_tuples": 0,
+          "necessary_admissible_tuples": 0
+        },
+        {
+          "R": [
+            1,
+            8
+          ],
+          "individual_field_tuples": 5040,
+          "raw_compatible_tuples": 2,
+          "necessary_admissible_tuples": 2
+        },
+        {
+          "R": [
+            2,
+            4
+          ],
+          "individual_field_tuples": 5040,
+          "raw_compatible_tuples": 0,
+          "necessary_admissible_tuples": 0
+        }
+      ],
+      "all_alphabet_excluded": false,
+      "binary_field_pairs": 24
+    },
+    {
+      "G": [
+        2,
+        8
+      ],
+      "H": [
+        1,
+        9
+      ],
+      "labels": 4,
+      "forms": 10,
+      "mandatory": [
+        0,
+        3,
+        5,
+        6
+      ],
+      "additional_Boolean_fibers": [],
+      "additional_covered_fibers": [],
+      "complete_individual_tuple_controls": [
+        {
+          "R": [
+            1,
+            9
+          ],
+          "individual_field_tuples": 5040,
+          "raw_compatible_tuples": 2,
+          "necessary_admissible_tuples": 2
+        }
+      ],
+      "all_alphabet_excluded": false,
+      "binary_field_pairs": 24
+    },
+    {
+      "G": [
+        2,
+        8
+      ],
+      "H": [
+        2,
+        4
+      ],
+      "labels": 1,
+      "forms": 10,
+      "mandatory": [
+        0,
+        3,
+        5,
+        6
+      ],
+      "additional_Boolean_fibers": [
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          8
+        ]
+      ],
+      "additional_covered_fibers": [
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          8
+        ]
+      ],
+      "complete_individual_tuple_controls": [
+        {
+          "R": [
+            1,
+            7
+          ],
+          "individual_field_tuples": 5040,
+          "raw_compatible_tuples": 0,
+          "necessary_admissible_tuples": 0
+        },
+        {
+          "R": [
+            1,
+            8
+          ],
+          "individual_field_tuples": 5040,
+          "raw_compatible_tuples": 2,
+          "necessary_admissible_tuples": 2
+        },
+        {
+          "R": [
+            2,
+            4
+          ],
+          "individual_field_tuples": 5040,
+          "raw_compatible_tuples": 0,
+          "necessary_admissible_tuples": 0
+        }
+      ],
+      "all_alphabet_excluded": true,
+      "binary_field_pairs": 0
+    },
+    {
+      "G": [
+        2,
+        8
+      ],
+      "H": [
+        2,
+        9
+      ],
+      "labels": 4,
+      "forms": 8,
+      "mandatory": [
+        0,
+        3,
+        5,
+        6
+      ],
+      "additional_Boolean_fibers": [],
+      "additional_covered_fibers": [],
+      "complete_individual_tuple_controls": [
+        {
+          "R": [
+            2,
+            9
+          ],
+          "individual_field_tuples": 5040,
+          "raw_compatible_tuples": 32,
+          "necessary_admissible_tuples": 32
+        }
+      ],
+      "all_alphabet_excluded": false,
+      "binary_field_pairs": 81
+    },
+    {
+      "G": [
+        2,
+        8
+      ],
+      "H": [
+        1,
+        2,
+        9
+      ],
+      "labels": 4,
+      "forms": 7,
+      "mandatory": [
+        0,
+        3,
+        5,
+        6
+      ],
+      "additional_Boolean_fibers": [],
+      "additional_covered_fibers": [],
+      "complete_individual_tuple_controls": [
+        {
+          "R": [
+            1,
+            2,
+            9
+          ],
+          "individual_field_tuples": 5040,
+          "raw_compatible_tuples": 0,
+          "necessary_admissible_tuples": 0
+        }
+      ],
+      "all_alphabet_excluded": true,
+      "binary_field_pairs": 0
+    }
+  ],
+  "counts": [
+    {
+      "G": [
+        1,
+        8
+      ],
+      "geometric_orbits": 8,
+      "labelled_H": 20,
+      "all_alphabet_excluded_H": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          1,
+          2,
+          9
+        ]
+      ],
+      "binary_zero_pair_H": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          9
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          1,
+          2,
+          9
+        ]
+      ],
+      "remaining_binary_H": [
+        [
+          9
+        ]
+      ],
+      "binary_field_pairs": 48,
+      "original_sixth_pairs": 24,
+      "remaining_original_sixth_pairs": 24
+    },
+    {
+      "G": [
+        2,
+        8
+      ],
+      "geometric_orbits": 8,
+      "labelled_H": 20,
+      "all_alphabet_excluded_H": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          1,
+          2,
+          9
+        ]
+      ],
+      "binary_zero_pair_H": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          1,
+          2,
+          9
+        ]
+      ],
+      "remaining_binary_H": [
+        [
+          9
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          1,
+          9
+        ],
+        [
+          2,
+          9
+        ]
+      ],
+      "binary_field_pairs": 372,
+      "original_sixth_pairs": 81,
+      "remaining_original_sixth_pairs": 81
+    }
+  ],
+  "target_atoms": 9,
+  "complete_input_field_tuples_per_fiber": 5040,
+  "source_sha256": {
+    "check_b1_f27_paired_g_seventh.py": "396ef3e1d4dc1f8dc9d2d7447ca031c14e53bfd178709dffb91516cd10c35660",
+    "enumerate_b1_f27_paired_g_seventh.py": "356989f158d222ce818071fd0215460ce747020ea68b08d28b367a696c110728",
+    "b1_f27_paired_g_seventh_inventory.json": "b5e1a77324c4a0c138d1bbf415d7955c24cf593f150135930fe9741557e9b350",
+    "B1_F27_PAIRED_G_SEVENTH.md": "2bb480c0ae06a66cdf8ceb894b8ca46b37a9b138d3d9ca9231aca01095a3254e",
+    "b1_sixth_inventory.json": "5efb53a113d850a7055e8c7374775ee6f6e84c166845f9dd80410d19f346c761",
+    "b1_sixth_audit.json": "56c3a1e6171e6bb55797f5f36b87f14e86e5735657e5259f08184c44271e09c9",
+    "B1_SIXTH_ENTRANCE.md": "aaa7d422335c8f3addd1374d7fc545784f608d436e4a13b3c5d251e5a4d895d8",
+    "MANDATORY_CORE_ISOLATION.md": "72129f1a810b07a8bcd975e5df353cc1dbc43d063e13c8ff887ba4748bb14537",
+    "mandatory_core_isolation_audit.json": "67d7c82cae127c23260a3f7b6affe3052a1afef728cad8f49fd54d27e3fa9f54",
+    "ENTRY_FIBER_FLAG.md": "b27eb51977104cd68aaff2e2f37db10c50bbf4a4dd4320502b15b0f609a01bbf",
+    "LOCAL_EQUALITY_FLAG.md": "f34cf260276c6551266564c1ee2264dc823aeaa4f33b4ae8f8261aedeec596a8"
+  },
+  "scope": "Complete independent seventh geometry, every Boolean companion, overlapping-atom extension and5040-tuple completeness controls for each fresh/companion fiber. Some fibers excluded individually for every alphabet; binary zero-pair cuts explicitly separate. No whole G/F/E/third/joint or extremal F value."
+}

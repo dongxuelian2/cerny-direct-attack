@@ -1,0 +1,7432 @@
+{
+  "status": "The all-parameter U formula is refuted by the uniform codimension-three theorem. These 165 witnesses determine exact U values only for the listed n<=10 triples.",
+  "exhaustive_automaton_scope": "binary, strongly connected and synchronizing, n=2..7",
+  "constructive_certification_scope": "all triples n=2..10, with actual reachable images",
+  "certificates": [
+    {
+      "n": 2,
+      "s": 2,
+      "r": 1,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1
+      ],
+      "A": [
+        1
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "a",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 3,
+      "s": 2,
+      "r": 1,
+      "value": 2,
+      "rows": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        2
+      ],
+      "A": [
+        0
+      ],
+      "reaching": "abb",
+      "attaining": "aa",
+      "reset": "aa",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 3,
+      "s": 3,
+      "r": 1,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2
+      ],
+      "A": [
+        2
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "a",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 3,
+      "s": 3,
+      "r": 2,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2
+      ],
+      "A": [
+        1,
+        2
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "a",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 4,
+      "s": 2,
+      "r": 1,
+      "value": 3,
+      "rows": [
+        [
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          3,
+          0,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        3
+      ],
+      "A": [
+        0
+      ],
+      "reaching": "aabab",
+      "attaining": "aaa",
+      "reset": "aaa",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 4,
+      "s": 3,
+      "r": 1,
+      "value": 3,
+      "rows": [
+        [
+          0,
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          0
+        ]
+      ],
+      "S": [
+        1,
+        2,
+        3
+      ],
+      "A": [
+        3
+      ],
+      "reaching": "abbb",
+      "attaining": "aba",
+      "reset": "ababa",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 4,
+      "s": 3,
+      "r": 2,
+      "value": 2,
+      "rows": [
+        [
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3,
+          1
+        ]
+      ],
+      "S": [
+        1,
+        2,
+        3
+      ],
+      "A": [
+        1,
+        2
+      ],
+      "reaching": "b",
+      "attaining": "aa",
+      "reset": "aaa",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 4,
+      "s": 4,
+      "r": 1,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "A": [
+        3
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "a",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 4,
+      "s": 4,
+      "r": 2,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "A": [
+        2,
+        3
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "a",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 4,
+      "s": 4,
+      "r": 3,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "A": [
+        1,
+        2,
+        3
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "a",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 5,
+      "s": 2,
+      "r": 1,
+      "value": 4,
+      "rows": [
+        [
+          0,
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          3,
+          4,
+          0,
+          0,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        4
+      ],
+      "A": [
+        0
+      ],
+      "reaching": "aaabaab",
+      "attaining": "aaaa",
+      "reset": "aaaa",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 5,
+      "s": 3,
+      "r": 1,
+      "value": 4,
+      "rows": [
+        [
+          0,
+          0,
+          1,
+          3,
+          4
+        ],
+        [
+          1,
+          3,
+          3,
+          4,
+          2
+        ]
+      ],
+      "S": [
+        2,
+        3,
+        4
+      ],
+      "A": [
+        4
+      ],
+      "reaching": "bb",
+      "attaining": "aabb",
+      "reset": "aabaabb",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 5,
+      "s": 3,
+      "r": 2,
+      "value": 3,
+      "rows": [
+        [
+          0,
+          0,
+          1,
+          2,
+          4
+        ],
+        [
+          2,
+          3,
+          4,
+          4,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        3,
+        4
+      ],
+      "A": [
+        0,
+        4
+      ],
+      "reaching": "aababab",
+      "attaining": "aaa",
+      "reset": "aaabaa",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 5,
+      "s": 4,
+      "r": 1,
+      "value": 3,
+      "rows": [
+        [
+          0,
+          0,
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          0
+        ]
+      ],
+      "S": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "A": [
+        4
+      ],
+      "reaching": "abbbb",
+      "attaining": "aba",
+      "reset": "abababa",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 5,
+      "s": 4,
+      "r": 2,
+      "value": 3,
+      "rows": [
+        [
+          0,
+          0,
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          0
+        ]
+      ],
+      "S": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "A": [
+        3,
+        4
+      ],
+      "reaching": "abbbb",
+      "attaining": "aba",
+      "reset": "abababa",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 5,
+      "s": 4,
+      "r": 3,
+      "value": 2,
+      "rows": [
+        [
+          0,
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          1
+        ]
+      ],
+      "S": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "A": [
+        1,
+        2,
+        3
+      ],
+      "reaching": "b",
+      "attaining": "aa",
+      "reset": "aaaa",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 5,
+      "s": 5,
+      "r": 1,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "A": [
+        4
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "a",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 5,
+      "s": 5,
+      "r": 2,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "A": [
+        3,
+        4
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "a",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 5,
+      "s": 5,
+      "r": 3,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "A": [
+        2,
+        3,
+        4
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "a",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 5,
+      "s": 5,
+      "r": 4,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "A": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "a",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 6,
+      "s": 2,
+      "r": 1,
+      "value": 5,
+      "rows": [
+        [
+          0,
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          4,
+          5,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        5
+      ],
+      "A": [
+        0
+      ],
+      "reaching": "aaaabaaab",
+      "attaining": "aaaaa",
+      "reset": "aaaaa",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 6,
+      "s": 3,
+      "r": 1,
+      "value": 5,
+      "rows": [
+        [
+          0,
+          0,
+          0,
+          1,
+          4,
+          5
+        ],
+        [
+          2,
+          4,
+          5,
+          4,
+          5,
+          3
+        ]
+      ],
+      "S": [
+        3,
+        4,
+        5
+      ],
+      "A": [
+        5
+      ],
+      "reaching": "bb",
+      "attaining": "aabaa",
+      "reset": "aabaabaa",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 6,
+      "s": 3,
+      "r": 2,
+      "value": 4,
+      "rows": [
+        [
+          0,
+          0,
+          1,
+          2,
+          3,
+          5
+        ],
+        [
+          3,
+          4,
+          5,
+          5,
+          5,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        4,
+        5
+      ],
+      "A": [
+        0,
+        5
+      ],
+      "reaching": "aaabaabaab",
+      "attaining": "aaaa",
+      "reset": "aaaabaaa",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 6,
+      "s": 4,
+      "r": 1,
+      "value": 5,
+      "rows": [
+        [
+          0,
+          0,
+          1,
+          3,
+          4,
+          5
+        ],
+        [
+          3,
+          1,
+          3,
+          4,
+          5,
+          2
+        ]
+      ],
+      "S": [
+        0,
+        3,
+        4,
+        5
+      ],
+      "A": [
+        5
+      ],
+      "reaching": "aa",
+      "attaining": "babaa",
+      "reset": "aababaababaabbabbaa",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 6,
+      "s": 4,
+      "r": 2,
+      "value": 4,
+      "rows": [
+        [
+          0,
+          0,
+          1,
+          3,
+          4,
+          5
+        ],
+        [
+          1,
+          3,
+          3,
+          4,
+          5,
+          2
+        ]
+      ],
+      "S": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "A": [
+        4,
+        5
+      ],
+      "reaching": "bb",
+      "attaining": "aabb",
+      "reset": "aabaabaabb",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 6,
+      "s": 4,
+      "r": 3,
+      "value": 3,
+      "rows": [
+        [
+          0,
+          0,
+          1,
+          2,
+          4,
+          5
+        ],
+        [
+          2,
+          3,
+          4,
+          4,
+          5,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        3,
+        4,
+        5
+      ],
+      "A": [
+        0,
+        4,
+        5
+      ],
+      "reaching": "aabababab",
+      "attaining": "aaa",
+      "reset": "aaabaabaa",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 6,
+      "s": 5,
+      "r": 1,
+      "value": 3,
+      "rows": [
+        [
+          0,
+          0,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          0
+        ]
+      ],
+      "S": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "A": [
+        5
+      ],
+      "reaching": "abbbbb",
+      "attaining": "aba",
+      "reset": "ababababa",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 6,
+      "s": 5,
+      "r": 2,
+      "value": 3,
+      "rows": [
+        [
+          0,
+          0,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          0
+        ]
+      ],
+      "S": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "A": [
+        4,
+        5
+      ],
+      "reaching": "abbbbb",
+      "attaining": "aba",
+      "reset": "ababababa",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 6,
+      "s": 5,
+      "r": 3,
+      "value": 3,
+      "rows": [
+        [
+          0,
+          0,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          0
+        ]
+      ],
+      "S": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "A": [
+        3,
+        4,
+        5
+      ],
+      "reaching": "abbbbb",
+      "attaining": "aba",
+      "reset": "ababababa",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 6,
+      "s": 5,
+      "r": 4,
+      "value": 2,
+      "rows": [
+        [
+          0,
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          1
+        ]
+      ],
+      "S": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "A": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "reaching": "b",
+      "attaining": "aa",
+      "reset": "aaaaa",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 6,
+      "s": 6,
+      "r": 1,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "A": [
+        5
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "a",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 6,
+      "s": 6,
+      "r": 2,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "A": [
+        4,
+        5
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "a",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 6,
+      "s": 6,
+      "r": 3,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "A": [
+        3,
+        4,
+        5
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "a",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 6,
+      "s": 6,
+      "r": 4,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "A": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "a",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 6,
+      "s": 6,
+      "r": 5,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "A": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "a",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 7,
+      "s": 2,
+      "r": 1,
+      "value": 6,
+      "rows": [
+        [
+          0,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          5,
+          6,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        6
+      ],
+      "A": [
+        0
+      ],
+      "reaching": "aaaaabaaaab",
+      "attaining": "aaaaaa",
+      "reset": "aaaaaa",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 7,
+      "s": 3,
+      "r": 1,
+      "value": 6,
+      "rows": [
+        [
+          0,
+          0,
+          0,
+          0,
+          5,
+          4,
+          4
+        ],
+        [
+          1,
+          5,
+          3,
+          6,
+          4,
+          6,
+          2
+        ]
+      ],
+      "S": [
+        0,
+        4,
+        5
+      ],
+      "A": [
+        4
+      ],
+      "reaching": "a",
+      "attaining": "bbbbba",
+      "reset": "abbbbbabbbbba",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 7,
+      "s": 3,
+      "r": 2,
+      "value": 5,
+      "rows": [
+        [
+          0,
+          0,
+          1,
+          2,
+          3,
+          4,
+          6
+        ],
+        [
+          4,
+          5,
+          6,
+          6,
+          6,
+          6,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        5,
+        6
+      ],
+      "A": [
+        0,
+        6
+      ],
+      "reaching": "aaaabaaabaaab",
+      "attaining": "aaaaa",
+      "reset": "aaaaabaaaa",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 7,
+      "s": 4,
+      "r": 1,
+      "value": 6,
+      "rows": [
+        [
+          0,
+          0,
+          1,
+          2,
+          4,
+          5,
+          6
+        ],
+        [
+          3,
+          4,
+          4,
+          5,
+          5,
+          6,
+          1
+        ]
+      ],
+      "S": [
+        2,
+        4,
+        5,
+        6
+      ],
+      "A": [
+        6
+      ],
+      "reaching": "aaababababa",
+      "attaining": "aabaaa",
+      "reset": "aaabaaabaaabaaa",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 7,
+      "s": 4,
+      "r": 2,
+      "value": 5,
+      "rows": [
+        [
+          0,
+          0,
+          0,
+          1,
+          4,
+          5,
+          6
+        ],
+        [
+          2,
+          4,
+          5,
+          4,
+          5,
+          6,
+          3
+        ]
+      ],
+      "S": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "A": [
+        5,
+        6
+      ],
+      "reaching": "bb",
+      "attaining": "aabaa",
+      "reset": "aabaabaabaa",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 7,
+      "s": 4,
+      "r": 3,
+      "value": 4,
+      "rows": [
+        [
+          0,
+          0,
+          1,
+          2,
+          3,
+          5,
+          6
+        ],
+        [
+          3,
+          4,
+          5,
+          5,
+          5,
+          6,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        4,
+        5,
+        6
+      ],
+      "A": [
+        0,
+        5,
+        6
+      ],
+      "reaching": "aaabaabaabaab",
+      "attaining": "aaaa",
+      "reset": "aaaabaaabaaa",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 7,
+      "s": 5,
+      "r": 1,
+      "value": 6,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          5,
+          4,
+          4
+        ],
+        [
+          1,
+          2,
+          4,
+          6,
+          0,
+          3,
+          5
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        4,
+        6
+      ],
+      "A": [
+        2
+      ],
+      "reaching": "abbabb",
+      "attaining": "ababba",
+      "reset": "abbababbababbababbaababba",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 7,
+      "s": 5,
+      "r": 2,
+      "value": 5,
+      "rows": [
+        [
+          0,
+          0,
+          1,
+          3,
+          4,
+          5,
+          6
+        ],
+        [
+          3,
+          1,
+          3,
+          4,
+          5,
+          6,
+          2
+        ]
+      ],
+      "S": [
+        0,
+        3,
+        4,
+        5,
+        6
+      ],
+      "A": [
+        5,
+        6
+      ],
+      "reaching": "aa",
+      "attaining": "babaa",
+      "reset": "aababaababaababbaabbabbbaa",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 7,
+      "s": 5,
+      "r": 3,
+      "value": 4,
+      "rows": [
+        [
+          0,
+          0,
+          1,
+          3,
+          4,
+          5,
+          6
+        ],
+        [
+          1,
+          3,
+          3,
+          4,
+          5,
+          6,
+          2
+        ]
+      ],
+      "S": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "A": [
+        4,
+        5,
+        6
+      ],
+      "reaching": "bb",
+      "attaining": "aabb",
+      "reset": "aabaabaabaabb",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 7,
+      "s": 5,
+      "r": 4,
+      "value": 3,
+      "rows": [
+        [
+          0,
+          0,
+          1,
+          2,
+          4,
+          5,
+          6
+        ],
+        [
+          2,
+          3,
+          4,
+          4,
+          5,
+          6,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        3,
+        4,
+        5,
+        6
+      ],
+      "A": [
+        0,
+        4,
+        5,
+        6
+      ],
+      "reaching": "aababababab",
+      "attaining": "aaa",
+      "reset": "aaabaabaabaa",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 7,
+      "s": 6,
+      "r": 1,
+      "value": 3,
+      "rows": [
+        [
+          0,
+          0,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          0
+        ]
+      ],
+      "S": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "A": [
+        6
+      ],
+      "reaching": "abbbbbb",
+      "attaining": "aba",
+      "reset": "abababababa",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 7,
+      "s": 6,
+      "r": 2,
+      "value": 3,
+      "rows": [
+        [
+          0,
+          0,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          0
+        ]
+      ],
+      "S": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "A": [
+        5,
+        6
+      ],
+      "reaching": "abbbbbb",
+      "attaining": "aba",
+      "reset": "abababababa",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 7,
+      "s": 6,
+      "r": 3,
+      "value": 3,
+      "rows": [
+        [
+          0,
+          0,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          0
+        ]
+      ],
+      "S": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "A": [
+        4,
+        5,
+        6
+      ],
+      "reaching": "abbbbbb",
+      "attaining": "aba",
+      "reset": "abababababa",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 7,
+      "s": 6,
+      "r": 4,
+      "value": 3,
+      "rows": [
+        [
+          0,
+          0,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          0
+        ]
+      ],
+      "S": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "A": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "reaching": "abbbbbb",
+      "attaining": "aba",
+      "reset": "abababababa",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 7,
+      "s": 6,
+      "r": 5,
+      "value": 2,
+      "rows": [
+        [
+          0,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          1
+        ]
+      ],
+      "S": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "A": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "reaching": "b",
+      "attaining": "aa",
+      "reset": "aaaaaa",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 7,
+      "s": 7,
+      "r": 1,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "A": [
+        6
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "a",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 7,
+      "s": 7,
+      "r": 2,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "A": [
+        5,
+        6
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "a",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 7,
+      "s": 7,
+      "r": 3,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "A": [
+        4,
+        5,
+        6
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "a",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 7,
+      "s": 7,
+      "r": 4,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "A": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "a",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 7,
+      "s": 7,
+      "r": 5,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "A": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "a",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 7,
+      "s": 7,
+      "r": 6,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "A": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "a",
+      "source": "exhaustive binary cover, n<=7"
+    },
+    {
+      "n": 8,
+      "s": 2,
+      "r": 1,
+      "value": 7,
+      "rows": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          7
+        ],
+        [
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        7
+      ],
+      "A": [
+        7
+      ],
+      "reaching": "b",
+      "attaining": "aaaaaaa",
+      "reset": "aaaaaaa",
+      "source": "reuse_n8.json"
+    },
+    {
+      "n": 8,
+      "s": 3,
+      "r": 1,
+      "value": 7,
+      "rows": [
+        [
+          0,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          1
+        ],
+        [
+          1,
+          0,
+          2,
+          0,
+          2,
+          0,
+          2,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2
+      ],
+      "A": [
+        0
+      ],
+      "reaching": "b",
+      "attaining": "aaaaaab",
+      "reset": "baaaaaababaaaaaab",
+      "source": "reuse_n8.json"
+    },
+    {
+      "n": 8,
+      "s": 3,
+      "r": 2,
+      "value": 6,
+      "rows": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          6,
+          7
+        ],
+        [
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          7,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        6,
+        7
+      ],
+      "A": [
+        6,
+        7
+      ],
+      "reaching": "b",
+      "attaining": "aaaaaa",
+      "reset": "aaaaaabbaaaaaa",
+      "source": "reuse_n8.json"
+    },
+    {
+      "n": 8,
+      "s": 4,
+      "r": 1,
+      "value": 7,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          5
+        ],
+        [
+          1,
+          7,
+          3,
+          4,
+          6,
+          5,
+          0,
+          2
+        ]
+      ],
+      "S": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "A": [
+        5
+      ],
+      "reaching": "ababababbbbb",
+      "attaining": "bbbbbba",
+      "reset": "abbababbabbabaabbabbabbba",
+      "source": "structured_n8.json"
+    },
+    {
+      "n": 8,
+      "s": 4,
+      "r": 2,
+      "value": 6,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          0,
+          3,
+          0,
+          3,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "A": [
+        0,
+        1
+      ],
+      "reaching": "b",
+      "attaining": "aaaaab",
+      "reset": "baaaaabbaaaaabbabaaaaab",
+      "source": "reuse_n8.json"
+    },
+    {
+      "n": 8,
+      "s": 4,
+      "r": 3,
+      "value": 5,
+      "rows": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          5,
+          6,
+          7
+        ],
+        [
+          5,
+          5,
+          5,
+          5,
+          5,
+          6,
+          7,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        5,
+        6,
+        7
+      ],
+      "A": [
+        5,
+        6,
+        7
+      ],
+      "reaching": "b",
+      "attaining": "aaaaa",
+      "reset": "aaaaabbbaaaaabbbaaaaa",
+      "source": "reuse_n8.json"
+    },
+    {
+      "n": 8,
+      "s": 5,
+      "r": 1,
+      "value": 7,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          5
+        ],
+        [
+          1,
+          2,
+          7,
+          4,
+          6,
+          5,
+          0,
+          3
+        ]
+      ],
+      "S": [
+        0,
+        3,
+        4,
+        5,
+        6
+      ],
+      "A": [
+        5
+      ],
+      "reaching": "ababbbbba",
+      "attaining": "bbbbbba",
+      "reset": "abbabbabbabbabbbabbbbababbbba",
+      "source": "structured_n8.json"
+    },
+    {
+      "n": 8,
+      "s": 5,
+      "r": 2,
+      "value": 6,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          5
+        ],
+        [
+          1,
+          5,
+          7,
+          4,
+          6,
+          0,
+          2,
+          3
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        4,
+        5,
+        6
+      ],
+      "A": [
+        0,
+        1
+      ],
+      "reaching": "abababbbb",
+      "attaining": "bbbbab",
+      "reset": "abbabbabbabbbabbabbbabbabbbabba",
+      "source": "structured_n8.json"
+    },
+    {
+      "n": 8,
+      "s": 5,
+      "r": 3,
+      "value": 5,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          5
+        ],
+        [
+          1,
+          5,
+          7,
+          4,
+          6,
+          0,
+          2,
+          3
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        4,
+        5,
+        6
+      ],
+      "A": [
+        0,
+        1,
+        5
+      ],
+      "reaching": "abababbbb",
+      "attaining": "bbbba",
+      "reset": "abbabbabbabbbabbabbbabbabbbabba",
+      "source": "structured_n8.json"
+    },
+    {
+      "n": 8,
+      "s": 5,
+      "r": 4,
+      "value": 4,
+      "rows": [
+        [
+          1,
+          2,
+          3,
+          4,
+          4,
+          5,
+          6,
+          7
+        ],
+        [
+          4,
+          4,
+          4,
+          4,
+          5,
+          6,
+          7,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        4,
+        5,
+        6,
+        7
+      ],
+      "A": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "reaching": "b",
+      "attaining": "aaaa",
+      "reset": "aaaabbbbaaaabbbbaaaabbbbaaaa",
+      "source": "reuse_n8.json"
+    },
+    {
+      "n": 8,
+      "s": 6,
+      "r": 1,
+      "value": 6,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          5
+        ],
+        [
+          1,
+          2,
+          5,
+          4,
+          7,
+          0,
+          3,
+          6
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6
+      ],
+      "A": [
+        2
+      ],
+      "reaching": "abba",
+      "attaining": "babbba",
+      "reset": "abbbabbbabababbabbbababbbabbbaababbba",
+      "source": "structured_n8.json"
+    },
+    {
+      "n": 8,
+      "s": 6,
+      "r": 2,
+      "value": 6,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          5
+        ],
+        [
+          1,
+          2,
+          5,
+          4,
+          7,
+          0,
+          3,
+          6
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6
+      ],
+      "A": [
+        1,
+        2
+      ],
+      "reaching": "abba",
+      "attaining": "bababb",
+      "reset": "abbbabbbabababbabbbababbbabbbaababbba",
+      "source": "structured_n8.json"
+    },
+    {
+      "n": 8,
+      "s": 6,
+      "r": 3,
+      "value": 5,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          5
+        ],
+        [
+          1,
+          5,
+          3,
+          7,
+          6,
+          0,
+          2,
+          4
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6
+      ],
+      "A": [
+        0,
+        1,
+        5
+      ],
+      "reaching": "abbbba",
+      "attaining": "bbbba",
+      "reset": "abbbabababbabababbabababbabbbaabbba",
+      "source": "structured_n8.json"
+    },
+    {
+      "n": 8,
+      "s": 6,
+      "r": 4,
+      "value": 4,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          5
+        ],
+        [
+          1,
+          2,
+          5,
+          4,
+          6,
+          0,
+          7,
+          3
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6
+      ],
+      "A": [
+        0,
+        1,
+        2,
+        5
+      ],
+      "reaching": "abba",
+      "attaining": "baba",
+      "reset": "abababbbababbabbbabbbababaabbbaba",
+      "source": "structured_n8.json"
+    },
+    {
+      "n": 8,
+      "s": 6,
+      "r": 5,
+      "value": 3,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          5
+        ],
+        [
+          1,
+          2,
+          3,
+          5,
+          6,
+          0,
+          7,
+          4
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6
+      ],
+      "A": [
+        0,
+        1,
+        2,
+        3,
+        5
+      ],
+      "reaching": "aba",
+      "attaining": "bba",
+      "reset": "ababbababbababbababbabaabbaba",
+      "source": "structured_n8.json"
+    },
+    {
+      "n": 8,
+      "s": 7,
+      "r": 1,
+      "value": 3,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          5
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          7,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7
+      ],
+      "A": [
+        5
+      ],
+      "reaching": "abbbbbb",
+      "attaining": "aba",
+      "reset": "ababababababbbbbbaba",
+      "source": "structured_n8.json"
+    },
+    {
+      "n": 8,
+      "s": 7,
+      "r": 2,
+      "value": 3,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          5
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          7,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7
+      ],
+      "A": [
+        4,
+        5
+      ],
+      "reaching": "abbbbbb",
+      "attaining": "aba",
+      "reset": "ababababababbbbbbaba",
+      "source": "structured_n8.json"
+    },
+    {
+      "n": 8,
+      "s": 7,
+      "r": 3,
+      "value": 3,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          5
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          7,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7
+      ],
+      "A": [
+        3,
+        4,
+        5
+      ],
+      "reaching": "abbbbbb",
+      "attaining": "aba",
+      "reset": "ababababababbbbbbaba",
+      "source": "structured_n8.json"
+    },
+    {
+      "n": 8,
+      "s": 7,
+      "r": 4,
+      "value": 3,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          5
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          7,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7
+      ],
+      "A": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "reaching": "abbbbbb",
+      "attaining": "aba",
+      "reset": "ababababababbbbbbaba",
+      "source": "structured_n8.json"
+    },
+    {
+      "n": 8,
+      "s": 7,
+      "r": 5,
+      "value": 3,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          5
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          7,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7
+      ],
+      "A": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "reaching": "abbbbbb",
+      "attaining": "aba",
+      "reset": "ababababababbbbbbaba",
+      "source": "structured_n8.json"
+    },
+    {
+      "n": 8,
+      "s": 7,
+      "r": 6,
+      "value": 2,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          5
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          7,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "A": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "reaching": "a",
+      "attaining": "ba",
+      "reset": "ababababababbbbbbaba",
+      "source": "structured_n8.json"
+    },
+    {
+      "n": 8,
+      "s": 8,
+      "r": 1,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          5
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          7,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "A": [
+        7
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "ababababababbbbbbaba",
+      "source": "structured_n8.json"
+    },
+    {
+      "n": 8,
+      "s": 8,
+      "r": 2,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          5
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          7,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "A": [
+        6,
+        7
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "ababababababbbbbbaba",
+      "source": "structured_n8.json"
+    },
+    {
+      "n": 8,
+      "s": 8,
+      "r": 3,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          5
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          7,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "A": [
+        5,
+        6,
+        7
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "ababababababbbbbbaba",
+      "source": "structured_n8.json"
+    },
+    {
+      "n": 8,
+      "s": 8,
+      "r": 4,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          5
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          7,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "A": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "ababababababbbbbbaba",
+      "source": "structured_n8.json"
+    },
+    {
+      "n": 8,
+      "s": 8,
+      "r": 5,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          5
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          7,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "A": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "ababababababbbbbbaba",
+      "source": "structured_n8.json"
+    },
+    {
+      "n": 8,
+      "s": 8,
+      "r": 6,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          5
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          7,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "A": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "ababababababbbbbbaba",
+      "source": "structured_n8.json"
+    },
+    {
+      "n": 8,
+      "s": 8,
+      "r": 7,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          5
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          7,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "A": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "ababababababbbbbbaba",
+      "source": "structured_n8.json"
+    },
+    {
+      "n": 9,
+      "s": 2,
+      "r": 1,
+      "value": 8,
+      "rows": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          8
+        ],
+        [
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        8
+      ],
+      "A": [
+        8
+      ],
+      "reaching": "b",
+      "attaining": "aaaaaaaa",
+      "reset": "aaaaaaaa",
+      "source": "reuse_n9.json"
+    },
+    {
+      "n": 9,
+      "s": 3,
+      "r": 1,
+      "value": 8,
+      "rows": [
+        [
+          0,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          2
+        ],
+        [
+          1,
+          2,
+          0,
+          2,
+          0,
+          2,
+          0,
+          2,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2
+      ],
+      "A": [
+        0
+      ],
+      "reaching": "b",
+      "attaining": "aaaaaaab",
+      "reset": "baaaaaaabbaaaaaaab",
+      "source": "reuse_n9.json"
+    },
+    {
+      "n": 9,
+      "s": 3,
+      "r": 2,
+      "value": 7,
+      "rows": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          7,
+          8
+        ],
+        [
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        7,
+        8
+      ],
+      "A": [
+        7,
+        8
+      ],
+      "reaching": "b",
+      "attaining": "aaaaaaa",
+      "reset": "aaaaaaabbaaaaaaa",
+      "source": "reuse_n9.json"
+    },
+    {
+      "n": 9,
+      "s": 4,
+      "r": 1,
+      "value": 8,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          2
+        ],
+        [
+          2,
+          0,
+          3,
+          1,
+          5,
+          1,
+          7,
+          1,
+          4
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "A": [
+        0
+      ],
+      "reaching": "bbb",
+      "attaining": "aaaaaabb",
+      "reset": "baaabaaaabaaabaababaaab",
+      "source": "reuse_n9.json"
+    },
+    {
+      "n": 9,
+      "s": 4,
+      "r": 2,
+      "value": 7,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          2
+        ],
+        [
+          1,
+          2,
+          0,
+          3,
+          0,
+          3,
+          0,
+          3,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "A": [
+        0,
+        1
+      ],
+      "reaching": "b",
+      "attaining": "aaaaaab",
+      "reset": "baaaaaababaaaaaababbaaaaaab",
+      "source": "reuse_n9.json"
+    },
+    {
+      "n": 9,
+      "s": 4,
+      "r": 3,
+      "value": 6,
+      "rows": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          6,
+          7,
+          8
+        ],
+        [
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          7,
+          8,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        6,
+        7,
+        8
+      ],
+      "A": [
+        6,
+        7,
+        8
+      ],
+      "reaching": "b",
+      "attaining": "aaaaaa",
+      "reset": "aaaaaabbbaaaaaabbbaaaaaa",
+      "source": "reuse_n9.json"
+    },
+    {
+      "n": 9,
+      "s": 5,
+      "r": 1,
+      "value": 8,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          6
+        ],
+        [
+          6,
+          2,
+          8,
+          4,
+          5,
+          7,
+          0,
+          1,
+          3
+        ]
+      ],
+      "S": [
+        0,
+        4,
+        5,
+        6,
+        7
+      ],
+      "A": [
+        0
+      ],
+      "reaching": "ababababbbbb",
+      "attaining": "bbbbbbab",
+      "reset": "abbbabbabbababbabbabaabbabbabbba",
+      "source": "structured_n9.json"
+    },
+    {
+      "n": 9,
+      "s": 5,
+      "r": 2,
+      "value": 7,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          6
+        ],
+        [
+          6,
+          2,
+          8,
+          4,
+          5,
+          7,
+          0,
+          1,
+          3
+        ]
+      ],
+      "S": [
+        0,
+        4,
+        5,
+        6,
+        7
+      ],
+      "A": [
+        0,
+        6
+      ],
+      "reaching": "ababababbbbb",
+      "attaining": "bbbbbba",
+      "reset": "abbbabbabbababbabbabaabbabbabbba",
+      "source": "structured_n9.json"
+    },
+    {
+      "n": 9,
+      "s": 5,
+      "r": 3,
+      "value": 6,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          5,
+          6,
+          7,
+          8,
+          4
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          0,
+          4,
+          0,
+          4,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "A": [
+        0,
+        1,
+        2
+      ],
+      "reaching": "b",
+      "attaining": "aaaaab",
+      "reset": "baaaaabbaaaaabbaaaaabbbabaaaaab",
+      "source": "reuse_n9.json"
+    },
+    {
+      "n": 9,
+      "s": 5,
+      "r": 4,
+      "value": 5,
+      "rows": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          5,
+          6,
+          7,
+          8
+        ],
+        [
+          5,
+          5,
+          5,
+          5,
+          5,
+          6,
+          7,
+          8,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        5,
+        6,
+        7,
+        8
+      ],
+      "A": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "reaching": "b",
+      "attaining": "aaaaa",
+      "reset": "aaaaabbbbaaaaabbbbaaaaabbbbaaaaa",
+      "source": "reuse_n9.json"
+    },
+    {
+      "n": 9,
+      "s": 6,
+      "r": 1,
+      "value": 8,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          5,
+          4,
+          4,
+          8,
+          7
+        ],
+        [
+          1,
+          2,
+          4,
+          5,
+          0,
+          7,
+          3,
+          6,
+          8
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6
+      ],
+      "A": [
+        2
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababbb",
+      "reset": "abbbababbbababbbabababababbabaababbbabaababbbaba",
+      "source": "active_n9_h5.json"
+    },
+    {
+      "n": 9,
+      "s": 6,
+      "r": 2,
+      "value": 7,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          6
+        ],
+        [
+          6,
+          2,
+          3,
+          8,
+          5,
+          7,
+          0,
+          1,
+          4
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        4,
+        5,
+        6,
+        7
+      ],
+      "A": [
+        0,
+        6
+      ],
+      "reaching": "ababbbbba",
+      "attaining": "bbbbbba",
+      "reset": "abbabbabbabbababbbababbabbbababbabbbba",
+      "source": "structured_n9.json"
+    },
+    {
+      "n": 9,
+      "s": 6,
+      "r": 3,
+      "value": 6,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          6
+        ],
+        [
+          1,
+          2,
+          6,
+          8,
+          5,
+          7,
+          0,
+          3,
+          4
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        5,
+        6,
+        7
+      ],
+      "A": [
+        0,
+        1,
+        2
+      ],
+      "reaching": "abababbbb",
+      "attaining": "bbbbab",
+      "reset": "abbabbabbabbbabbabbbabbabbbabbaabbbabba",
+      "source": "structured_n9.json"
+    },
+    {
+      "n": 9,
+      "s": 6,
+      "r": 4,
+      "value": 5,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          6
+        ],
+        [
+          1,
+          2,
+          6,
+          8,
+          5,
+          7,
+          0,
+          3,
+          4
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        5,
+        6,
+        7
+      ],
+      "A": [
+        0,
+        1,
+        2,
+        6
+      ],
+      "reaching": "abababbbb",
+      "attaining": "bbbba",
+      "reset": "abbabbabbabbbabbabbbabbabbbabbaabbbabba",
+      "source": "structured_n9.json"
+    },
+    {
+      "n": 9,
+      "s": 6,
+      "r": 5,
+      "value": 4,
+      "rows": [
+        [
+          1,
+          2,
+          3,
+          4,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        [
+          4,
+          4,
+          4,
+          4,
+          5,
+          6,
+          7,
+          8,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "A": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "reaching": "b",
+      "attaining": "aaaa",
+      "reset": "aaaabbbbbaaaabbbbbaaaabbbbbaaaabbbbbaaaa",
+      "source": "reuse_n9.json"
+    },
+    {
+      "n": 9,
+      "s": 7,
+      "r": 1,
+      "value": 6,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          6
+        ],
+        [
+          1,
+          2,
+          3,
+          6,
+          5,
+          8,
+          0,
+          4,
+          7
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        7
+      ],
+      "A": [
+        3
+      ],
+      "reaching": "abba",
+      "attaining": "babbba",
+      "reset": "abbbabbbababbbababbbababbbababbbaababbba",
+      "source": "structured_n9.json"
+    },
+    {
+      "n": 9,
+      "s": 7,
+      "r": 2,
+      "value": 6,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          6
+        ],
+        [
+          1,
+          2,
+          3,
+          6,
+          5,
+          8,
+          0,
+          4,
+          7
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        7
+      ],
+      "A": [
+        2,
+        3
+      ],
+      "reaching": "abba",
+      "attaining": "babbba",
+      "reset": "abbbabbbababbbababbbababbbababbbaababbba",
+      "source": "structured_n9.json"
+    },
+    {
+      "n": 9,
+      "s": 7,
+      "r": 3,
+      "value": 6,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          6
+        ],
+        [
+          1,
+          2,
+          3,
+          6,
+          5,
+          8,
+          0,
+          4,
+          7
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        7
+      ],
+      "A": [
+        1,
+        2,
+        3
+      ],
+      "reaching": "abba",
+      "attaining": "bababb",
+      "reset": "abbbabbbababbbababbbababbbababbbaababbba",
+      "source": "structured_n9.json"
+    },
+    {
+      "n": 9,
+      "s": 7,
+      "r": 4,
+      "value": 5,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          6
+        ],
+        [
+          1,
+          2,
+          6,
+          4,
+          8,
+          7,
+          0,
+          3,
+          5
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        7
+      ],
+      "A": [
+        0,
+        1,
+        2,
+        6
+      ],
+      "reaching": "abbbba",
+      "attaining": "bbbba",
+      "reset": "abbbabababbabbbabbabababbbabbabbabbbaabbba",
+      "source": "structured_n9.json"
+    },
+    {
+      "n": 9,
+      "s": 7,
+      "r": 5,
+      "value": 4,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          6
+        ],
+        [
+          1,
+          2,
+          3,
+          6,
+          5,
+          7,
+          0,
+          8,
+          4
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        7
+      ],
+      "A": [
+        0,
+        1,
+        2,
+        3,
+        6
+      ],
+      "reaching": "abba",
+      "attaining": "baba",
+      "reset": "abababbbababbbabaabbbabaabbbabaabbbaba",
+      "source": "structured_n9.json"
+    },
+    {
+      "n": 9,
+      "s": 7,
+      "r": 6,
+      "value": 3,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          6
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          6,
+          7,
+          0,
+          8,
+          5
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        7
+      ],
+      "A": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6
+      ],
+      "reaching": "aba",
+      "attaining": "bba",
+      "reset": "ababbababbabababbababbababaabbabaabbaba",
+      "source": "structured_n9.json"
+    },
+    {
+      "n": 9,
+      "s": 8,
+      "r": 1,
+      "value": 3,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          6
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          8,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8
+      ],
+      "A": [
+        6
+      ],
+      "reaching": "abbbbbbb",
+      "attaining": "aba",
+      "reset": "abababababababbbbbbbaba",
+      "source": "structured_n9.json"
+    },
+    {
+      "n": 9,
+      "s": 8,
+      "r": 2,
+      "value": 3,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          6
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          8,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8
+      ],
+      "A": [
+        5,
+        6
+      ],
+      "reaching": "abbbbbbb",
+      "attaining": "aba",
+      "reset": "abababababababbbbbbbaba",
+      "source": "structured_n9.json"
+    },
+    {
+      "n": 9,
+      "s": 8,
+      "r": 3,
+      "value": 3,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          6
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          8,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8
+      ],
+      "A": [
+        4,
+        5,
+        6
+      ],
+      "reaching": "abbbbbbb",
+      "attaining": "aba",
+      "reset": "abababababababbbbbbbaba",
+      "source": "structured_n9.json"
+    },
+    {
+      "n": 9,
+      "s": 8,
+      "r": 4,
+      "value": 3,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          6
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          8,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8
+      ],
+      "A": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "reaching": "abbbbbbb",
+      "attaining": "aba",
+      "reset": "abababababababbbbbbbaba",
+      "source": "structured_n9.json"
+    },
+    {
+      "n": 9,
+      "s": 8,
+      "r": 5,
+      "value": 3,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          6
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          8,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8
+      ],
+      "A": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "reaching": "abbbbbbb",
+      "attaining": "aba",
+      "reset": "abababababababbbbbbbaba",
+      "source": "structured_n9.json"
+    },
+    {
+      "n": 9,
+      "s": 8,
+      "r": 6,
+      "value": 3,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          6
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          8,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8
+      ],
+      "A": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "reaching": "abbbbbbb",
+      "attaining": "aba",
+      "reset": "abababababababbbbbbbaba",
+      "source": "structured_n9.json"
+    },
+    {
+      "n": 9,
+      "s": 8,
+      "r": 7,
+      "value": 2,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          6
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          8,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "A": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "reaching": "a",
+      "attaining": "ba",
+      "reset": "abababababababbbbbbbaba",
+      "source": "structured_n9.json"
+    },
+    {
+      "n": 9,
+      "s": 9,
+      "r": 1,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          6
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          8,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "A": [
+        8
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "abababababababbbbbbbaba",
+      "source": "structured_n9.json"
+    },
+    {
+      "n": 9,
+      "s": 9,
+      "r": 2,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          6
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          8,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "A": [
+        7,
+        8
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "abababababababbbbbbbaba",
+      "source": "structured_n9.json"
+    },
+    {
+      "n": 9,
+      "s": 9,
+      "r": 3,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          6
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          8,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "A": [
+        6,
+        7,
+        8
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "abababababababbbbbbbaba",
+      "source": "structured_n9.json"
+    },
+    {
+      "n": 9,
+      "s": 9,
+      "r": 4,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          6
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          8,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "A": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "abababababababbbbbbbaba",
+      "source": "structured_n9.json"
+    },
+    {
+      "n": 9,
+      "s": 9,
+      "r": 5,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          6
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          8,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "A": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "abababababababbbbbbbaba",
+      "source": "structured_n9.json"
+    },
+    {
+      "n": 9,
+      "s": 9,
+      "r": 6,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          6
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          8,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "A": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "abababababababbbbbbbaba",
+      "source": "structured_n9.json"
+    },
+    {
+      "n": 9,
+      "s": 9,
+      "r": 7,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          6
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          8,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "A": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "abababababababbbbbbbaba",
+      "source": "structured_n9.json"
+    },
+    {
+      "n": 9,
+      "s": 9,
+      "r": 8,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          6
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          6,
+          8,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "A": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "abababababababbbbbbbaba",
+      "source": "structured_n9.json"
+    },
+    {
+      "n": 10,
+      "s": 2,
+      "r": 1,
+      "value": 9,
+      "rows": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          9
+        ],
+        [
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        9
+      ],
+      "A": [
+        9
+      ],
+      "reaching": "b",
+      "attaining": "aaaaaaaaa",
+      "reset": "aaaaaaaaa",
+      "source": "reuse_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 3,
+      "r": 1,
+      "value": 9,
+      "rows": [
+        [
+          0,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          1
+        ],
+        [
+          1,
+          0,
+          2,
+          0,
+          2,
+          0,
+          2,
+          0,
+          2,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2
+      ],
+      "A": [
+        0
+      ],
+      "reaching": "b",
+      "attaining": "aaaaaaaab",
+      "reset": "baaaaaaaababaaaaaaaab",
+      "source": "reuse_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 3,
+      "r": 2,
+      "value": 8,
+      "rows": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          8,
+          9
+        ],
+        [
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          9,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        8,
+        9
+      ],
+      "A": [
+        8,
+        9
+      ],
+      "reaching": "b",
+      "attaining": "aaaaaaaa",
+      "reset": "aaaaaaaabbaaaaaaaa",
+      "source": "reuse_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 4,
+      "r": 1,
+      "value": 9,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          4
+        ],
+        [
+          3,
+          0,
+          1,
+          2,
+          1,
+          6,
+          1,
+          8,
+          1,
+          5
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "A": [
+        0
+      ],
+      "reaching": "bbb",
+      "attaining": "aaaaaabbb",
+      "reset": "bbbaaaaaabbbbbaaaaaabbbbbaaaaaabbbb",
+      "source": "cofinal_audit.json"
+    },
+    {
+      "n": 10,
+      "s": 4,
+      "r": 2,
+      "value": 8,
+      "rows": [
+        [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          0,
+          3,
+          0,
+          3,
+          0,
+          3,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "A": [
+        0,
+        1
+      ],
+      "reaching": "b",
+      "attaining": "aaaaaaab",
+      "reset": "baaaaaaabbaaaaaaabbabaaaaaaab",
+      "source": "reuse_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 4,
+      "r": 3,
+      "value": 7,
+      "rows": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          7,
+          8,
+          9
+        ],
+        [
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          8,
+          9,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        7,
+        8,
+        9
+      ],
+      "A": [
+        7,
+        8,
+        9
+      ],
+      "reaching": "b",
+      "attaining": "aaaaaaa",
+      "reset": "aaaaaaabbbaaaaaaabbbaaaaaaa",
+      "source": "reuse_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 5,
+      "r": 1,
+      "value": 9,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          7
+        ],
+        [
+          1,
+          2,
+          9,
+          4,
+          5,
+          6,
+          8,
+          7,
+          0,
+          3
+        ]
+      ],
+      "S": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "A": [
+        7
+      ],
+      "reaching": "abababababbbbbb",
+      "attaining": "bbbbbbbba",
+      "reset": "abbbababbababbababbabaabbbabbabbbba",
+      "source": "structured_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 5,
+      "r": 2,
+      "value": 8,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          3
+        ],
+        [
+          3,
+          0,
+          1,
+          4,
+          2,
+          6,
+          2,
+          8,
+          2,
+          5
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "A": [
+        0,
+        1
+      ],
+      "reaching": "bbb",
+      "attaining": "aaaaaabb",
+      "reset": "baaabaaaabababaabababbababaaab",
+      "source": "reuse_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 5,
+      "r": 3,
+      "value": 7,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          3
+        ],
+        [
+          1,
+          2,
+          3,
+          0,
+          4,
+          0,
+          4,
+          0,
+          4,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "A": [
+        0,
+        1,
+        2
+      ],
+      "reaching": "b",
+      "attaining": "aaaaaab",
+      "reset": "baaaaaababaaaaaababaaaaaabbabbaaaaaab",
+      "source": "reuse_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 5,
+      "r": 4,
+      "value": 6,
+      "rows": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          6,
+          7,
+          8,
+          9
+        ],
+        [
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          7,
+          8,
+          9,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        6,
+        7,
+        8,
+        9
+      ],
+      "A": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "reaching": "b",
+      "attaining": "aaaaaa",
+      "reset": "aaaaaabbbbaaaaaabbbbaaaaaabbbbaaaaaa",
+      "source": "reuse_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 6,
+      "r": 1,
+      "value": 9,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          7
+        ],
+        [
+          1,
+          2,
+          3,
+          9,
+          5,
+          6,
+          8,
+          7,
+          0,
+          4
+        ]
+      ],
+      "S": [
+        0,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "A": [
+        7
+      ],
+      "reaching": "abababbbbbba",
+      "attaining": "bbbbbbbba",
+      "reset": "abbbabbababbababbababbaabbbababbbbba",
+      "source": "structured_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 6,
+      "r": 2,
+      "value": 8,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          7
+        ],
+        [
+          1,
+          7,
+          3,
+          9,
+          5,
+          6,
+          8,
+          0,
+          2,
+          4
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        5,
+        6,
+        7,
+        8
+      ],
+      "A": [
+        0,
+        1
+      ],
+      "reaching": "ababababbbbb",
+      "attaining": "bbbbbbab",
+      "reset": "abbababbabbababbaabbabbababbaabbbbabbba",
+      "source": "structured_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 6,
+      "r": 3,
+      "value": 7,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          7
+        ],
+        [
+          1,
+          7,
+          3,
+          9,
+          5,
+          6,
+          8,
+          0,
+          2,
+          4
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        5,
+        6,
+        7,
+        8
+      ],
+      "A": [
+        0,
+        1,
+        7
+      ],
+      "reaching": "ababababbbbb",
+      "attaining": "bbbbbba",
+      "reset": "abbababbabbababbaabbabbababbaabbbbabbba",
+      "source": "structured_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 6,
+      "r": 4,
+      "value": 6,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          5,
+          6,
+          7,
+          8,
+          9,
+          5
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          0,
+          5,
+          0,
+          5,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "A": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reaching": "b",
+      "attaining": "aaaaab",
+      "reset": "baaaaabbaaaaabbaaaaabbabaaaaabbbababaaaaab",
+      "source": "reuse_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 6,
+      "r": 5,
+      "value": 5,
+      "rows": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        [
+          5,
+          5,
+          5,
+          5,
+          5,
+          6,
+          7,
+          8,
+          9,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "A": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "reaching": "b",
+      "attaining": "aaaaa",
+      "reset": "aaaaabbbbbaaaaabbbbbaaaaabbbbbaaaaabbbbbaaaaa",
+      "source": "reuse_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 7,
+      "r": 1,
+      "value": 9,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          5,
+          9,
+          8
+        ],
+        [
+          1,
+          2,
+          3,
+          5,
+          6,
+          0,
+          8,
+          4,
+          7,
+          9
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7
+      ],
+      "A": [
+        3
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababbbb",
+      "reset": "abbbabababbabababbabababbabababbbababbbabaababbbaba",
+      "source": "active_n10_h5.json"
+    },
+    {
+      "n": 10,
+      "s": 7,
+      "r": 2,
+      "value": 8,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          5,
+          4,
+          4,
+          8,
+          7,
+          9
+        ],
+        [
+          1,
+          9,
+          4,
+          5,
+          0,
+          7,
+          3,
+          6,
+          8,
+          2
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        9
+      ],
+      "A": [
+        2,
+        9
+      ],
+      "reaching": "abbbabaabb",
+      "attaining": "abababbb",
+      "reset": "abbbabababbabababbabababbabababbbababbbabaababbbaba",
+      "source": "subdivision of checked (9,6,1) witness"
+    },
+    {
+      "n": 10,
+      "s": 7,
+      "r": 3,
+      "value": 7,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          7
+        ],
+        [
+          1,
+          7,
+          3,
+          4,
+          9,
+          6,
+          8,
+          0,
+          2,
+          5
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        5,
+        6,
+        7,
+        8
+      ],
+      "A": [
+        0,
+        1,
+        7
+      ],
+      "reaching": "ababbbbba",
+      "attaining": "bbbbbba",
+      "reset": "abbabbabbababbabbabbababbbbaabbbbabbbabbbba",
+      "source": "structured_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 7,
+      "r": 4,
+      "value": 6,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          7
+        ],
+        [
+          1,
+          2,
+          3,
+          7,
+          9,
+          6,
+          8,
+          0,
+          4,
+          5
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        7,
+        8
+      ],
+      "A": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reaching": "abababbbb",
+      "attaining": "bbbbab",
+      "reset": "abbabbabbbabbabababbbabbabbabbbabbabbaabbbabba",
+      "source": "structured_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 7,
+      "r": 5,
+      "value": 5,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          7
+        ],
+        [
+          1,
+          2,
+          3,
+          7,
+          9,
+          6,
+          8,
+          0,
+          4,
+          5
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        7,
+        8
+      ],
+      "A": [
+        0,
+        1,
+        2,
+        3,
+        7
+      ],
+      "reaching": "abababbbb",
+      "attaining": "bbbba",
+      "reset": "abbabbabbbabbabababbbabbabbabbbabbabbaabbbabba",
+      "source": "structured_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 7,
+      "r": 6,
+      "value": 4,
+      "rows": [
+        [
+          1,
+          2,
+          3,
+          4,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        [
+          4,
+          4,
+          4,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "A": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "reaching": "b",
+      "attaining": "aaaa",
+      "reset": "aaaabbbbbbaaaabbbbbbaaaabbbbbbaaaabbbbbbaaaabbbbbbaaaa",
+      "source": "reuse_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 8,
+      "r": 1,
+      "value": 6,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          7
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          7,
+          6,
+          9,
+          0,
+          5,
+          8
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8
+      ],
+      "A": [
+        4
+      ],
+      "reaching": "abba",
+      "attaining": "babbba",
+      "reset": "abbbababbbababbbababbbabbbaababbbaababbbaababbba",
+      "source": "structured_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 8,
+      "r": 2,
+      "value": 6,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          7
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          7,
+          6,
+          9,
+          0,
+          5,
+          8
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8
+      ],
+      "A": [
+        3,
+        4
+      ],
+      "reaching": "abba",
+      "attaining": "babbba",
+      "reset": "abbbababbbababbbababbbabbbaababbbaababbbaababbba",
+      "source": "structured_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 8,
+      "r": 3,
+      "value": 6,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          7
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          7,
+          6,
+          9,
+          0,
+          5,
+          8
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8
+      ],
+      "A": [
+        2,
+        3,
+        4
+      ],
+      "reaching": "abba",
+      "attaining": "babbba",
+      "reset": "abbbababbbababbbababbbabbbaababbbaababbbaababbba",
+      "source": "structured_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 8,
+      "r": 4,
+      "value": 6,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          7
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          7,
+          6,
+          9,
+          0,
+          5,
+          8
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8
+      ],
+      "A": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "reaching": "abba",
+      "attaining": "bababb",
+      "reset": "abbbababbbababbbababbbabbbaababbbaababbbaababbba",
+      "source": "structured_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 8,
+      "r": 5,
+      "value": 5,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          7
+        ],
+        [
+          1,
+          2,
+          3,
+          7,
+          5,
+          9,
+          8,
+          0,
+          4,
+          6
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8
+      ],
+      "A": [
+        0,
+        1,
+        2,
+        3,
+        7
+      ],
+      "reaching": "abbbba",
+      "attaining": "bbbba",
+      "reset": "abbbabbbabbbabbabbabababbabbabbbabbbaabbabbbaabbba",
+      "source": "structured_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 8,
+      "r": 6,
+      "value": 4,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          7
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          7,
+          6,
+          8,
+          0,
+          9,
+          5
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8
+      ],
+      "A": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        7
+      ],
+      "reaching": "abba",
+      "attaining": "baba",
+      "reset": "abababbbabbbabababbbabbbabaababbbabbbabaaba",
+      "source": "structured_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 8,
+      "r": 7,
+      "value": 3,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          7
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          8,
+          0,
+          9,
+          6
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8
+      ],
+      "A": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7
+      ],
+      "reaching": "aba",
+      "attaining": "bba",
+      "reset": "ababbababbababbabaabbabaabbabaabbabaabbaba",
+      "source": "structured_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 9,
+      "r": 1,
+      "value": 3,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          7
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          9,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9
+      ],
+      "A": [
+        7
+      ],
+      "reaching": "abbbbbbbb",
+      "attaining": "aba",
+      "reset": "ababababababababbbbbbbbaba",
+      "source": "structured_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 9,
+      "r": 2,
+      "value": 3,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          7
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          9,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9
+      ],
+      "A": [
+        6,
+        7
+      ],
+      "reaching": "abbbbbbbb",
+      "attaining": "aba",
+      "reset": "ababababababababbbbbbbbaba",
+      "source": "structured_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 9,
+      "r": 3,
+      "value": 3,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          7
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          9,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9
+      ],
+      "A": [
+        5,
+        6,
+        7
+      ],
+      "reaching": "abbbbbbbb",
+      "attaining": "aba",
+      "reset": "ababababababababbbbbbbbaba",
+      "source": "structured_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 9,
+      "r": 4,
+      "value": 3,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          7
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          9,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9
+      ],
+      "A": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "reaching": "abbbbbbbb",
+      "attaining": "aba",
+      "reset": "ababababababababbbbbbbbaba",
+      "source": "structured_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 9,
+      "r": 5,
+      "value": 3,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          7
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          9,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9
+      ],
+      "A": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "reaching": "abbbbbbbb",
+      "attaining": "aba",
+      "reset": "ababababababababbbbbbbbaba",
+      "source": "structured_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 9,
+      "r": 6,
+      "value": 3,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          7
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          9,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9
+      ],
+      "A": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "reaching": "abbbbbbbb",
+      "attaining": "aba",
+      "reset": "ababababababababbbbbbbbaba",
+      "source": "structured_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 9,
+      "r": 7,
+      "value": 3,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          7
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          9,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9
+      ],
+      "A": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "reaching": "abbbbbbbb",
+      "attaining": "aba",
+      "reset": "ababababababababbbbbbbbaba",
+      "source": "structured_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 9,
+      "r": 8,
+      "value": 2,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          7
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          9,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "A": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "reaching": "a",
+      "attaining": "ba",
+      "reset": "ababababababababbbbbbbbaba",
+      "source": "structured_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 10,
+      "r": 1,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          7
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          9,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "A": [
+        9
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "ababababababababbbbbbbbaba",
+      "source": "structured_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 10,
+      "r": 2,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          7
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          9,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "A": [
+        8,
+        9
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "ababababababababbbbbbbbaba",
+      "source": "structured_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 10,
+      "r": 3,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          7
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          9,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "A": [
+        7,
+        8,
+        9
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "ababababababababbbbbbbbaba",
+      "source": "structured_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 10,
+      "r": 4,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          7
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          9,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "A": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "ababababababababbbbbbbbaba",
+      "source": "structured_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 10,
+      "r": 5,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          7
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          9,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "A": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "ababababababababbbbbbbbaba",
+      "source": "structured_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 10,
+      "r": 6,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          7
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          9,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "A": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "ababababababababbbbbbbbaba",
+      "source": "structured_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 10,
+      "r": 7,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          7
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          9,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "A": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "ababababababababbbbbbbbaba",
+      "source": "structured_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 10,
+      "r": 8,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          7
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          9,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "A": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "ababababababababbbbbbbbaba",
+      "source": "structured_n10.json"
+    },
+    {
+      "n": 10,
+      "s": 10,
+      "r": 9,
+      "value": 1,
+      "rows": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          7
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          7,
+          9,
+          0
+        ]
+      ],
+      "S": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "A": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "reaching": "",
+      "attaining": "a",
+      "reset": "ababababababababbbbbbbbaba",
+      "source": "structured_n10.json"
+    }
+  ]
+}

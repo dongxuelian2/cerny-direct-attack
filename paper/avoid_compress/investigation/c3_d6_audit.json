@@ -1,0 +1,91 @@
+{
+  "status": "pass",
+  "row_profiles": [
+    "ABC",
+    "ABD",
+    "ACB",
+    "BAC",
+    "BAD",
+    "BCA"
+  ],
+  "binary_profile_pairs": [
+    [
+      "ABD",
+      "BCA"
+    ],
+    [
+      "ACB",
+      "BAD"
+    ],
+    [
+      "BAD",
+      "BCA"
+    ]
+  ],
+  "rank_audit": {
+    "M_column_membership_cases": 28,
+    "M_columns_in_K8": [
+      {
+        "r": 5,
+        "L": [
+          6
+        ]
+      }
+    ],
+    "constant_5_rank_six_cases": 42,
+    "proper_E_coordinate_cases": 1176
+  },
+  "proper_E_quotient_audit": {
+    "configurations": 432,
+    "contradiction_counts": {
+      "coordinate_conflict": 378,
+      "nine_set_reachability_conflict": 54
+    },
+    "coordinate_conflict_input_depth_counts": {
+      "0": 108,
+      "1": 120,
+      "2": 96,
+      "3": 54
+    },
+    "maximum_total_word_depth": 6
+  },
+  "literal_set_audit": {
+    "initial_nine_sets": 21,
+    "literal_X_permutations": 5040
+  },
+  "binary_c3_third_profiles_remaining": [
+    [
+      6
+    ]
+  ],
+  "unrestricted_c3_third_profiles_remaining": [
+    [
+      6
+    ],
+    [
+      0,
+      6
+    ],
+    [
+      2,
+      6
+    ],
+    [
+      0,
+      1,
+      6
+    ]
+  ],
+  "binary_joint_orbits_remaining": 30,
+  "unrestricted_joint_orbits_remaining": 43,
+  "source_sha256": {
+    "check_c3_d6.py": "38c9c09aefa326a884d4910194f188dcba70b506c21d75dc131bbdd42ab7f708",
+    "C3_D6_BINARY_EXCLUSION.md": "00ba7465f082ce20d1833b0893c50fb31406ab6df9c8a42c08983b446393ca4a",
+    "C3_TYPED_THIRD_ENTRANCES.md": "b34eba8b3579f62afa46fb7ce2e384fcd93f8bf2f94b431ecb18ba4d25d9de3a",
+    "THIRD_ENTRANCE_SPACE.md": "01baa935bac82d8a8a878f3ee6fbf3778c167b2eb7fb114d0466c6794ebb5315",
+    "ENTRY_FIBER_FLAG.md": "b27eb51977104cd68aaff2e2f37db10c50bbf4a4dd4320502b15b0f609a01bbf",
+    "SECOND_ENTRANCE_FIBER.md": "664e379a346274ec88c59130741dc43251717eb53a16979198b76e18a165f34b",
+    "LOCAL_EQUALITY_FLAG.md": "f34cf260276c6551266564c1ee2264dc823aeaa4f33b4ae8f8261aedeec596a8"
+  },
+  "scope": "Symbolic binary c3/D={2,6} exclusion with complete typed profiles, independent integer ranks and finite quotient checks. No complete c3 joint-orbit exclusion, new F value or numerical alphabet separation."
+}

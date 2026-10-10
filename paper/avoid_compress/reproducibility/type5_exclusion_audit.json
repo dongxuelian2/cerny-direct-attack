@@ -1,0 +1,16 @@
+{
+  "status": "pass",
+  "reports": [
+    {
+      "n": 6,
+      "compatible_letters": 63,
+      "new_02_inverse_pairs": 0
+    },
+    {
+      "n": 7,
+      "compatible_letters": 239,
+      "new_02_inverse_pairs": 0
+    }
+  ],
+  "scope": "Finite control of a size-independent elementary proof; no new exact maximum."
+}

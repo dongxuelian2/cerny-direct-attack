@@ -1,0 +1,4 @@
+# Preserve the literal bytes bound by paper and certificate SHA-256 receipts.
+* -text whitespace=cr-at-eol
+*.zip binary
+*.pdf binary

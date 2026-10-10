@@ -1,0 +1,38 @@
+{
+  "verified": true,
+  "parameter_triples": [
+    {
+      "n": 13,
+      "s": 10,
+      "r": 1,
+      "value": 9
+    },
+    {
+      "n": 13,
+      "s": 10,
+      "r": 2,
+      "value": 9
+    },
+    {
+      "n": 13,
+      "s": 10,
+      "r": 3,
+      "value": 9
+    }
+  ],
+  "exact_binary_value": 9,
+  "unrestricted_interval": [
+    9,
+    10
+  ],
+  "first_forms": 431,
+  "assignments": 19839983511,
+  "prunes": 185849863,
+  "complete_maps": 6761103983,
+  "eligible_maps": 0,
+  "implementations": 2,
+  "all_mathematical_counts_match": true,
+  "numeric_random_cases": 1000,
+  "numeric_positive_control_compression": 10,
+  "scope": "Computer-assisted binary upper with complete original C++ runs; this checker does not rerun the full negative covers."
+}

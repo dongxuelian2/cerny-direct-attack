@@ -1,0 +1,1797 @@
+{
+  "status": "necessary_inventory",
+  "parameter": [
+    13,
+    9,
+    1
+  ],
+  "B": [
+    4
+  ],
+  "C": [
+    0,
+    1,
+    5
+  ],
+  "D": [
+    2,
+    6
+  ],
+  "original_pairs": [
+    [
+      0,
+      7
+    ],
+    [
+      1,
+      6
+    ],
+    [
+      1,
+      7
+    ],
+    [
+      2,
+      5
+    ],
+    [
+      2,
+      7
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      3,
+      5
+    ],
+    [
+      3,
+      6
+    ],
+    [
+      3,
+      7
+    ],
+    [
+      4,
+      7
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      5,
+      7
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      7,
+      7
+    ]
+  ],
+  "records": [
+    {
+      "E": [
+        7
+      ],
+      "labelled_orbit_size": 6,
+      "rows": [
+        {
+          "base_row": 0,
+          "preimage_word": "ABCD",
+          "capacity": [
+            1,
+            1,
+            3,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 0,
+          "preimage_word": "ABCE",
+          "capacity": [
+            1,
+            1,
+            3,
+            1,
+            6
+          ]
+        },
+        {
+          "base_row": 1,
+          "preimage_word": "ABDC",
+          "capacity": [
+            1,
+            1,
+            2,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 1,
+          "preimage_word": "ABDE",
+          "capacity": [
+            1,
+            1,
+            2,
+            1,
+            6
+          ]
+        },
+        {
+          "base_row": 2,
+          "preimage_word": "ACBD",
+          "capacity": [
+            1,
+            1,
+            1,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 2,
+          "preimage_word": "ACBE",
+          "capacity": [
+            1,
+            1,
+            1,
+            1,
+            6
+          ]
+        },
+        {
+          "base_row": 3,
+          "preimage_word": "ACDB",
+          "capacity": [
+            1,
+            1,
+            2,
+            1,
+            6
+          ]
+        },
+        {
+          "base_row": 3,
+          "preimage_word": "ACDE",
+          "capacity": [
+            1,
+            1,
+            2,
+            1,
+            6
+          ]
+        },
+        {
+          "base_row": 4,
+          "preimage_word": "BACD",
+          "capacity": [
+            1,
+            1,
+            3,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 4,
+          "preimage_word": "BACE",
+          "capacity": [
+            1,
+            1,
+            3,
+            1,
+            6
+          ]
+        },
+        {
+          "base_row": 5,
+          "preimage_word": "BADC",
+          "capacity": [
+            1,
+            1,
+            2,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 5,
+          "preimage_word": "BADE",
+          "capacity": [
+            1,
+            1,
+            2,
+            1,
+            6
+          ]
+        },
+        {
+          "base_row": 6,
+          "preimage_word": "BCAD",
+          "capacity": [
+            1,
+            1,
+            1,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 6,
+          "preimage_word": "BCAE",
+          "capacity": [
+            1,
+            1,
+            1,
+            1,
+            6
+          ]
+        },
+        {
+          "base_row": 7,
+          "preimage_word": "BCDA",
+          "capacity": [
+            1,
+            1,
+            2,
+            1,
+            6
+          ]
+        },
+        {
+          "base_row": 7,
+          "preimage_word": "BCDE",
+          "capacity": [
+            1,
+            1,
+            2,
+            1,
+            6
+          ]
+        }
+      ],
+      "binary_fourth_profile_pairs": [
+        [
+          0,
+          15
+        ],
+        [
+          1,
+          14
+        ],
+        [
+          1,
+          15
+        ],
+        [
+          2,
+          13
+        ],
+        [
+          2,
+          15
+        ],
+        [
+          3,
+          12
+        ],
+        [
+          3,
+          13
+        ],
+        [
+          3,
+          14
+        ],
+        [
+          3,
+          15
+        ],
+        [
+          4,
+          11
+        ],
+        [
+          4,
+          15
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          5,
+          11
+        ],
+        [
+          5,
+          14
+        ],
+        [
+          5,
+          15
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          6,
+          11
+        ],
+        [
+          6,
+          13
+        ],
+        [
+          6,
+          15
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          7,
+          12
+        ],
+        [
+          7,
+          13
+        ],
+        [
+          7,
+          14
+        ],
+        [
+          7,
+          15
+        ],
+        [
+          8,
+          15
+        ],
+        [
+          9,
+          14
+        ],
+        [
+          9,
+          15
+        ],
+        [
+          10,
+          13
+        ],
+        [
+          10,
+          15
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          11,
+          13
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          11,
+          15
+        ],
+        [
+          12,
+          15
+        ],
+        [
+          13,
+          14
+        ],
+        [
+          13,
+          15
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          15,
+          15
+        ]
+      ],
+      "original_pairs": [
+        [
+          0,
+          7
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          7
+        ]
+      ],
+      "nine_set_forms": [
+        {
+          "c": 0,
+          "d": 2,
+          "hole": 8
+        },
+        {
+          "c": 0,
+          "d": 2,
+          "hole": 9
+        },
+        {
+          "c": 0,
+          "d": 2,
+          "hole": 10
+        },
+        {
+          "c": 0,
+          "d": 2,
+          "hole": 11
+        },
+        {
+          "c": 0,
+          "d": 2,
+          "hole": 12
+        },
+        {
+          "c": 0,
+          "d": 6,
+          "hole": 8
+        },
+        {
+          "c": 0,
+          "d": 6,
+          "hole": 9
+        },
+        {
+          "c": 0,
+          "d": 6,
+          "hole": 10
+        },
+        {
+          "c": 0,
+          "d": 6,
+          "hole": 11
+        },
+        {
+          "c": 0,
+          "d": 6,
+          "hole": 12
+        },
+        {
+          "c": 1,
+          "d": 2,
+          "hole": 8
+        },
+        {
+          "c": 1,
+          "d": 2,
+          "hole": 9
+        },
+        {
+          "c": 1,
+          "d": 2,
+          "hole": 10
+        },
+        {
+          "c": 1,
+          "d": 2,
+          "hole": 11
+        },
+        {
+          "c": 1,
+          "d": 2,
+          "hole": 12
+        },
+        {
+          "c": 1,
+          "d": 6,
+          "hole": 8
+        },
+        {
+          "c": 1,
+          "d": 6,
+          "hole": 9
+        },
+        {
+          "c": 1,
+          "d": 6,
+          "hole": 10
+        },
+        {
+          "c": 1,
+          "d": 6,
+          "hole": 11
+        },
+        {
+          "c": 1,
+          "d": 6,
+          "hole": 12
+        },
+        {
+          "c": 5,
+          "d": 2,
+          "hole": 8
+        },
+        {
+          "c": 5,
+          "d": 2,
+          "hole": 9
+        },
+        {
+          "c": 5,
+          "d": 2,
+          "hole": 10
+        },
+        {
+          "c": 5,
+          "d": 2,
+          "hole": 11
+        },
+        {
+          "c": 5,
+          "d": 2,
+          "hole": 12
+        },
+        {
+          "c": 5,
+          "d": 6,
+          "hole": 8
+        },
+        {
+          "c": 5,
+          "d": 6,
+          "hole": 9
+        },
+        {
+          "c": 5,
+          "d": 6,
+          "hole": 10
+        },
+        {
+          "c": 5,
+          "d": 6,
+          "hole": 11
+        },
+        {
+          "c": 5,
+          "d": 6,
+          "hole": 12
+        }
+      ],
+      "geometric_exclusion": null
+    },
+    {
+      "E": [
+        0,
+        7
+      ],
+      "labelled_orbit_size": 12,
+      "rows": [
+        {
+          "base_row": 0,
+          "preimage_word": "ABCD",
+          "capacity": [
+            1,
+            1,
+            3,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 1,
+          "preimage_word": "ABDC",
+          "capacity": [
+            1,
+            1,
+            2,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 1,
+          "preimage_word": "ABDE",
+          "capacity": [
+            1,
+            1,
+            2,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 2,
+          "preimage_word": "ACBD",
+          "capacity": [
+            1,
+            1,
+            1,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 3,
+          "preimage_word": "ACDB",
+          "capacity": [
+            1,
+            1,
+            2,
+            1,
+            6
+          ]
+        },
+        {
+          "base_row": 4,
+          "preimage_word": "BACD",
+          "capacity": [
+            1,
+            1,
+            3,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 5,
+          "preimage_word": "BADC",
+          "capacity": [
+            1,
+            1,
+            2,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 5,
+          "preimage_word": "BADE",
+          "capacity": [
+            1,
+            1,
+            2,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 6,
+          "preimage_word": "BCAD",
+          "capacity": [
+            1,
+            1,
+            1,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 7,
+          "preimage_word": "BCDA",
+          "capacity": [
+            1,
+            1,
+            2,
+            1,
+            6
+          ]
+        }
+      ],
+      "binary_fourth_profile_pairs": [
+        [
+          2,
+          8
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          9
+        ]
+      ],
+      "original_pairs": [
+        [
+          1,
+          6
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          7
+        ]
+      ],
+      "nine_set_forms": [
+        {
+          "c": 0,
+          "d": 2,
+          "hole": 7
+        },
+        {
+          "c": 0,
+          "d": 6,
+          "hole": 7
+        },
+        {
+          "c": 1,
+          "d": 2,
+          "hole": 8
+        },
+        {
+          "c": 1,
+          "d": 2,
+          "hole": 9
+        },
+        {
+          "c": 1,
+          "d": 2,
+          "hole": 10
+        },
+        {
+          "c": 1,
+          "d": 2,
+          "hole": 11
+        },
+        {
+          "c": 1,
+          "d": 2,
+          "hole": 12
+        },
+        {
+          "c": 1,
+          "d": 6,
+          "hole": 8
+        },
+        {
+          "c": 1,
+          "d": 6,
+          "hole": 9
+        },
+        {
+          "c": 1,
+          "d": 6,
+          "hole": 10
+        },
+        {
+          "c": 1,
+          "d": 6,
+          "hole": 11
+        },
+        {
+          "c": 1,
+          "d": 6,
+          "hole": 12
+        },
+        {
+          "c": 5,
+          "d": 2,
+          "hole": 8
+        },
+        {
+          "c": 5,
+          "d": 2,
+          "hole": 9
+        },
+        {
+          "c": 5,
+          "d": 2,
+          "hole": 10
+        },
+        {
+          "c": 5,
+          "d": 2,
+          "hole": 11
+        },
+        {
+          "c": 5,
+          "d": 2,
+          "hole": 12
+        },
+        {
+          "c": 5,
+          "d": 6,
+          "hole": 8
+        },
+        {
+          "c": 5,
+          "d": 6,
+          "hole": 9
+        },
+        {
+          "c": 5,
+          "d": 6,
+          "hole": 10
+        },
+        {
+          "c": 5,
+          "d": 6,
+          "hole": 11
+        },
+        {
+          "c": 5,
+          "d": 6,
+          "hole": 12
+        }
+      ],
+      "geometric_exclusion": null
+    },
+    {
+      "E": [
+        2,
+        7
+      ],
+      "labelled_orbit_size": 6,
+      "rows": [
+        {
+          "base_row": 0,
+          "preimage_word": "ABCD",
+          "capacity": [
+            1,
+            1,
+            3,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 0,
+          "preimage_word": "ABCE",
+          "capacity": [
+            1,
+            1,
+            3,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 1,
+          "preimage_word": "ABDC",
+          "capacity": [
+            1,
+            1,
+            2,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 2,
+          "preimage_word": "ACBD",
+          "capacity": [
+            1,
+            1,
+            1,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 2,
+          "preimage_word": "ACBE",
+          "capacity": [
+            1,
+            1,
+            1,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 3,
+          "preimage_word": "ACDB",
+          "capacity": [
+            1,
+            1,
+            2,
+            1,
+            6
+          ]
+        },
+        {
+          "base_row": 4,
+          "preimage_word": "BACD",
+          "capacity": [
+            1,
+            1,
+            3,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 4,
+          "preimage_word": "BACE",
+          "capacity": [
+            1,
+            1,
+            3,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 5,
+          "preimage_word": "BADC",
+          "capacity": [
+            1,
+            1,
+            2,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 6,
+          "preimage_word": "BCAD",
+          "capacity": [
+            1,
+            1,
+            1,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 6,
+          "preimage_word": "BCAE",
+          "capacity": [
+            1,
+            1,
+            1,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 7,
+          "preimage_word": "BCDA",
+          "capacity": [
+            1,
+            1,
+            2,
+            1,
+            6
+          ]
+        }
+      ],
+      "binary_fourth_profile_pairs": [
+        [
+          1,
+          11
+        ],
+        [
+          2,
+          10
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          11
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          8,
+          10
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "original_pairs": [
+        [
+          0,
+          7
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          7
+        ]
+      ],
+      "nine_set_forms": [
+        {
+          "c": 0,
+          "d": 2,
+          "hole": 7
+        },
+        {
+          "c": 0,
+          "d": 6,
+          "hole": 8
+        },
+        {
+          "c": 0,
+          "d": 6,
+          "hole": 9
+        },
+        {
+          "c": 0,
+          "d": 6,
+          "hole": 10
+        },
+        {
+          "c": 0,
+          "d": 6,
+          "hole": 11
+        },
+        {
+          "c": 0,
+          "d": 6,
+          "hole": 12
+        },
+        {
+          "c": 1,
+          "d": 2,
+          "hole": 7
+        },
+        {
+          "c": 1,
+          "d": 6,
+          "hole": 8
+        },
+        {
+          "c": 1,
+          "d": 6,
+          "hole": 9
+        },
+        {
+          "c": 1,
+          "d": 6,
+          "hole": 10
+        },
+        {
+          "c": 1,
+          "d": 6,
+          "hole": 11
+        },
+        {
+          "c": 1,
+          "d": 6,
+          "hole": 12
+        },
+        {
+          "c": 5,
+          "d": 2,
+          "hole": 7
+        },
+        {
+          "c": 5,
+          "d": 6,
+          "hole": 8
+        },
+        {
+          "c": 5,
+          "d": 6,
+          "hole": 9
+        },
+        {
+          "c": 5,
+          "d": 6,
+          "hole": 10
+        },
+        {
+          "c": 5,
+          "d": 6,
+          "hole": 11
+        },
+        {
+          "c": 5,
+          "d": 6,
+          "hole": 12
+        }
+      ],
+      "geometric_exclusion": null
+    },
+    {
+      "E": [
+        0,
+        1,
+        7
+      ],
+      "labelled_orbit_size": 6,
+      "rows": [
+        {
+          "base_row": 0,
+          "preimage_word": "ABCD",
+          "capacity": [
+            1,
+            1,
+            3,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 1,
+          "preimage_word": "ABDC",
+          "capacity": [
+            1,
+            1,
+            2,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 1,
+          "preimage_word": "ABDE",
+          "capacity": [
+            1,
+            1,
+            2,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 2,
+          "preimage_word": "ACBD",
+          "capacity": [
+            1,
+            1,
+            1,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 3,
+          "preimage_word": "ACDB",
+          "capacity": [
+            1,
+            1,
+            2,
+            1,
+            6
+          ]
+        },
+        {
+          "base_row": 4,
+          "preimage_word": "BACD",
+          "capacity": [
+            1,
+            1,
+            3,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 5,
+          "preimage_word": "BADC",
+          "capacity": [
+            1,
+            1,
+            2,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 5,
+          "preimage_word": "BADE",
+          "capacity": [
+            1,
+            1,
+            2,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 6,
+          "preimage_word": "BCAD",
+          "capacity": [
+            1,
+            1,
+            1,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 7,
+          "preimage_word": "BCDA",
+          "capacity": [
+            1,
+            1,
+            2,
+            1,
+            6
+          ]
+        }
+      ],
+      "binary_fourth_profile_pairs": [
+        [
+          2,
+          8
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          9
+        ]
+      ],
+      "original_pairs": [
+        [
+          1,
+          6
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          7
+        ]
+      ],
+      "nine_set_forms": [
+        {
+          "c": 0,
+          "d": 2,
+          "hole": 7
+        },
+        {
+          "c": 0,
+          "d": 6,
+          "hole": 7
+        },
+        {
+          "c": 1,
+          "d": 2,
+          "hole": 7
+        },
+        {
+          "c": 1,
+          "d": 6,
+          "hole": 7
+        },
+        {
+          "c": 5,
+          "d": 2,
+          "hole": 8
+        },
+        {
+          "c": 5,
+          "d": 2,
+          "hole": 9
+        },
+        {
+          "c": 5,
+          "d": 2,
+          "hole": 10
+        },
+        {
+          "c": 5,
+          "d": 2,
+          "hole": 11
+        },
+        {
+          "c": 5,
+          "d": 2,
+          "hole": 12
+        },
+        {
+          "c": 5,
+          "d": 6,
+          "hole": 8
+        },
+        {
+          "c": 5,
+          "d": 6,
+          "hole": 9
+        },
+        {
+          "c": 5,
+          "d": 6,
+          "hole": 10
+        },
+        {
+          "c": 5,
+          "d": 6,
+          "hole": 11
+        },
+        {
+          "c": 5,
+          "d": 6,
+          "hole": 12
+        }
+      ],
+      "geometric_exclusion": null
+    },
+    {
+      "E": [
+        0,
+        2,
+        7
+      ],
+      "labelled_orbit_size": 12,
+      "rows": [
+        {
+          "base_row": 0,
+          "preimage_word": "ABCD",
+          "capacity": [
+            1,
+            1,
+            3,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 1,
+          "preimage_word": "ABDC",
+          "capacity": [
+            1,
+            1,
+            2,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 2,
+          "preimage_word": "ACBD",
+          "capacity": [
+            1,
+            1,
+            1,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 3,
+          "preimage_word": "ACDB",
+          "capacity": [
+            1,
+            1,
+            2,
+            1,
+            6
+          ]
+        },
+        {
+          "base_row": 4,
+          "preimage_word": "BACD",
+          "capacity": [
+            1,
+            1,
+            3,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 5,
+          "preimage_word": "BADC",
+          "capacity": [
+            1,
+            1,
+            2,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 6,
+          "preimage_word": "BCAD",
+          "capacity": [
+            1,
+            1,
+            1,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 7,
+          "preimage_word": "BCDA",
+          "capacity": [
+            1,
+            1,
+            2,
+            1,
+            6
+          ]
+        }
+      ],
+      "binary_fourth_profile_pairs": [],
+      "original_pairs": [],
+      "nine_set_forms": [
+        {
+          "c": 0,
+          "d": 6,
+          "hole": 7
+        },
+        {
+          "c": 1,
+          "d": 2,
+          "hole": 7
+        },
+        {
+          "c": 1,
+          "d": 6,
+          "hole": 8
+        },
+        {
+          "c": 1,
+          "d": 6,
+          "hole": 9
+        },
+        {
+          "c": 1,
+          "d": 6,
+          "hole": 10
+        },
+        {
+          "c": 1,
+          "d": 6,
+          "hole": 11
+        },
+        {
+          "c": 1,
+          "d": 6,
+          "hole": 12
+        },
+        {
+          "c": 5,
+          "d": 2,
+          "hole": 7
+        },
+        {
+          "c": 5,
+          "d": 6,
+          "hole": 8
+        },
+        {
+          "c": 5,
+          "d": 6,
+          "hole": 9
+        },
+        {
+          "c": 5,
+          "d": 6,
+          "hole": 10
+        },
+        {
+          "c": 5,
+          "d": 6,
+          "hole": 11
+        },
+        {
+          "c": 5,
+          "d": 6,
+          "hole": 12
+        }
+      ],
+      "geometric_exclusion": "E meets both C and D"
+    },
+    {
+      "E": [
+        0,
+        1,
+        2,
+        7
+      ],
+      "labelled_orbit_size": 6,
+      "rows": [
+        {
+          "base_row": 0,
+          "preimage_word": "ABCD",
+          "capacity": [
+            1,
+            1,
+            3,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 1,
+          "preimage_word": "ABDC",
+          "capacity": [
+            1,
+            1,
+            2,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 2,
+          "preimage_word": "ACBD",
+          "capacity": [
+            1,
+            1,
+            1,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 3,
+          "preimage_word": "ACDB",
+          "capacity": [
+            1,
+            1,
+            2,
+            1,
+            6
+          ]
+        },
+        {
+          "base_row": 4,
+          "preimage_word": "BACD",
+          "capacity": [
+            1,
+            1,
+            3,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 5,
+          "preimage_word": "BADC",
+          "capacity": [
+            1,
+            1,
+            2,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 6,
+          "preimage_word": "BCAD",
+          "capacity": [
+            1,
+            1,
+            1,
+            2,
+            6
+          ]
+        },
+        {
+          "base_row": 7,
+          "preimage_word": "BCDA",
+          "capacity": [
+            1,
+            1,
+            2,
+            1,
+            6
+          ]
+        }
+      ],
+      "binary_fourth_profile_pairs": [],
+      "original_pairs": [],
+      "nine_set_forms": [
+        {
+          "c": 0,
+          "d": 6,
+          "hole": 7
+        },
+        {
+          "c": 1,
+          "d": 6,
+          "hole": 7
+        },
+        {
+          "c": 5,
+          "d": 2,
+          "hole": 7
+        },
+        {
+          "c": 5,
+          "d": 6,
+          "hole": 8
+        },
+        {
+          "c": 5,
+          "d": 6,
+          "hole": 9
+        },
+        {
+          "c": 5,
+          "d": 6,
+          "hole": 10
+        },
+        {
+          "c": 5,
+          "d": 6,
+          "hole": 11
+        },
+        {
+          "c": 5,
+          "d": 6,
+          "hole": 12
+        }
+      ],
+      "geometric_exclusion": "E meets both C and D"
+    }
+  ],
+  "source_sha256": {
+    "enumerate_b1_mixed_c3_fourth.py": "91189f5d106277b6d9e720ac441aee23ca39c9030503a47350c272337c6de970",
+    "small_first_third_inventory.json": "ea00650e65207784313446cec6bf6d38b6f48223b327dcc218e9c6f34cf703c1"
+  },
+  "scope": "All fourth-preimage fields on the original fourteen binary third-profile pairs. Neither full transition-table enumeration nor an extremum."
+}

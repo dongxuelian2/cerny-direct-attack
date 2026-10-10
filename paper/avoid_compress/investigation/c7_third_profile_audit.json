@@ -1,0 +1,122 @@
+{
+  "status": "pass",
+  "moving_covers": [
+    {
+      "n": 9,
+      "labelled_moving_rows": 48,
+      "moving_orbits": 32,
+      "initial_sets": 7
+    },
+    {
+      "n": 13,
+      "labelled_moving_rows": 40320,
+      "moving_orbits": 240,
+      "initial_sets": 15
+    }
+  ],
+  "complete_native_controls": [
+    {
+      "n": 9,
+      "assignments": 2016,
+      "minimum_outside_H_pair_distance_counts": {
+        "2": 1248,
+        "3": 48,
+        "4": 528,
+        "37": 192
+      }
+    },
+    {
+      "n": 13,
+      "assignments": 27216000,
+      "minimum_outside_H_pair_distance_counts": {
+        "2": 19958400,
+        "3": 302400,
+        "4": 5140800,
+        "79": 1814400
+      }
+    }
+  ],
+  "independent_literal_small": {
+    "assignments": 2016,
+    "proof_case_counts": {
+      "beta_1": 96,
+      "closure_G0": 144,
+      "closure_G1": 48,
+      "equal_new_outputs": 672,
+      "fixed_5_to_1": 48,
+      "fixed_6_to_2": 336,
+      "moving_6_to_2": 672
+    },
+    "independent_forward_pair_histogram": [
+      0,
+      0,
+      1248,
+      48,
+      528,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      192
+    ],
+    "pair_failure_counts": [
+      736,
+      1088,
+      192
+    ]
+  },
+  "full_sanitized_parameters": [
+    9,
+    13
+  ],
+  "additional_binary_excluded_joint_orbits": [
+    "b3_mixed_c7"
+  ],
+  "remaining_binary_joint_orbits": 30,
+  "remaining_unrestricted_joint_orbits": 43,
+  "source_sha256": {
+    "BINARY_THIRD_ENTRANCE_CROSSING.md": "882ab67ac959268191f2a849f0ef508154402d4aa99683538fe5dc8fe86627c7",
+    "C7_THIRD_PROFILE_EXCLUSION.md": "06ece825af7a0196b7a2fabb0383d7af1714bca1ac3b5267b55d5434556aa86e",
+    "C7_THIRD_PROFILE_NORMALIZATION.md": "90bba97ef7bbabce86cb8cce03e581139fb9555a3da97d55cc97b018d4773786",
+    "ENTRY_FIBER_FLAG.md": "b27eb51977104cd68aaff2e2f37db10c50bbf4a4dd4320502b15b0f609a01bbf",
+    "LOCAL_EQUALITY_FLAG.md": "f34cf260276c6551266564c1ee2264dc823aeaa4f33b4ae8f8261aedeec596a8",
+    "SECOND_ENTRANCE_FIBER.md": "664e379a346274ec88c59130741dc43251717eb53a16979198b76e18a165f34b",
+    "SINGLETON_THREE_KERNEL_EXCLUSION.md": "b6b5dd19f635826cc435542bdc23894b300d7e628480caafad9d164a139048b9",
+    "THIRD_ENTRANCE_SPACE.md": "01baa935bac82d8a8a878f3ee6fbf3778c167b2eb7fb114d0466c6794ebb5315",
+    "c7_third_profile_pairs_n13.json": "f1539f6204712c9ae04180a2c4fd839b4120de1b2751f439e67fab9a97db6fa7",
+    "c7_third_profile_pairs_n13_sanitized.json": "748e23abeb9d74cccb7a7761ff5b35625bf44ce25f1a62ab4381a77d67016417",
+    "c7_third_profile_pairs_n9.json": "1d6ee8e64da751ebb46b42c9db814e85b1299d921bda4efcab158ceb123d5c02",
+    "c7_third_profile_pairs_n9_sanitized.json": "a4f84e967f57442bee56dd84b7bd6fceb5d0f1023a0fcdc78f8d59ac7b15f776",
+    "check_c7_third_profile.py": "3539907847fdf2a217b6985392d6a2b9eb8bfb004f3a449b76483bb00657902b",
+    "probe_c7_third_profile.cpp": "68d8b1df054a54875f7721f938c16879f4a815e12baa32b68f1ef8d6e2d99fe8"
+  },
+  "scope": "Symbolic c7 exclusion with independently checked row cover, seven proof cases, forward pair BFS and backward closure. No new F value, unrestricted exclusion, or all-parameter formula."
+}

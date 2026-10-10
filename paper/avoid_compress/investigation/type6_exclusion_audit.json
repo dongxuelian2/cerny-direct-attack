@@ -1,0 +1,187 @@
+{
+  "status": "audited necessary exclusion",
+  "early_type": 6,
+  "state_range": "n>=6",
+  "alphabet": "arbitrary finite",
+  "requires_strong_connectivity": true,
+  "new_exact_maximum": false,
+  "report": {
+    "status": "pass",
+    "reports": [
+      {
+        "n": 6,
+        "compatible_letters": 71,
+        "orientation_domain_checks": 2,
+        "breaker_checks": 100,
+        "cases": {
+          "closed_U_bad": 12,
+          "closed_A_03": 2,
+          "closed_A_bad": 4,
+          "closed_U_03": 6,
+          "closed_V_03": 6,
+          "closed_B_bad": 4,
+          "closed_V_bad": 12,
+          "closed_B_03": 2,
+          "closed_T_other": 2,
+          "mixing_U_bad": 12,
+          "mixing_A_03": 2,
+          "mixing_A_bad": 4,
+          "mixing_U_03": 6,
+          "mixing_V_03": 6,
+          "mixing_B_bad": 4,
+          "mixing_V_bad": 12,
+          "mixing_B_03": 2,
+          "mixing_T_other": 2
+        },
+        "maxima": {
+          "closed_U_bad": 3,
+          "closed_A_03": 4,
+          "closed_A_bad": 3,
+          "closed_U_03": 4,
+          "closed_V_03": 2,
+          "closed_B_bad": 3,
+          "closed_V_bad": 3,
+          "closed_B_03": 2,
+          "closed_T_other": 2,
+          "mixing_U_bad": 1,
+          "mixing_A_03": 3,
+          "mixing_A_bad": 2,
+          "mixing_U_03": 4,
+          "mixing_V_03": 3,
+          "mixing_B_bad": 2,
+          "mixing_V_bad": 3,
+          "mixing_B_03": 3,
+          "mixing_T_other": 2
+        },
+        "keeper_checks": 34
+      },
+      {
+        "n": 7,
+        "compatible_letters": 263,
+        "orientation_domain_checks": 6,
+        "breaker_checks": 1116,
+        "cases": {
+          "closed_U_bad": 96,
+          "closed_A_03": 12,
+          "closed_A_bad": 24,
+          "closed_U_03": 48,
+          "closed_V_03": 48,
+          "closed_B_bad": 24,
+          "closed_V_bad": 96,
+          "closed_B_03": 12,
+          "closed_T_other": 12,
+          "mixing_U_bad": 192,
+          "mixing_A_03": 24,
+          "mixing_A_bad": 48,
+          "mixing_U_03": 96,
+          "mixing_V_03": 96,
+          "mixing_B_bad": 48,
+          "mixing_V_bad": 192,
+          "mixing_B_03": 24,
+          "mixing_T_other": 24
+        },
+        "maxima": {
+          "closed_U_bad": 3,
+          "closed_A_03": 4,
+          "closed_A_bad": 3,
+          "closed_U_03": 4,
+          "closed_V_03": 2,
+          "closed_B_bad": 3,
+          "closed_V_bad": 3,
+          "closed_B_03": 2,
+          "closed_T_other": 2,
+          "mixing_U_bad": 1,
+          "mixing_A_03": 3,
+          "mixing_A_bad": 2,
+          "mixing_U_03": 4,
+          "mixing_V_03": 3,
+          "mixing_B_bad": 2,
+          "mixing_V_bad": 3,
+          "mixing_B_03": 3,
+          "mixing_T_other": 2
+        },
+        "keeper_checks": 390
+      }
+    ],
+    "closed_II_profiles": 19,
+    "distance_vectors": 120,
+    "independent_breaker_checks": [
+      {
+        "n": 6,
+        "compatible_letters": 71,
+        "normalized_I": 2,
+        "breaker_checks": 100,
+        "keeper_checks": 34,
+        "maximum_two_step_domain": 4
+      },
+      {
+        "n": 7,
+        "compatible_letters": 263,
+        "normalized_I": 6,
+        "breaker_checks": 1116,
+        "keeper_checks": 390,
+        "maximum_two_step_domain": 4
+      },
+      {
+        "n": 9,
+        "compatible_letters": 7199,
+        "normalized_I": 120,
+        "breaker_checks": 619200,
+        "keeper_checks": 215880,
+        "maximum_two_step_domain": 4
+      }
+    ],
+    "sole_vector": [
+      2,
+      3,
+      4,
+      1,
+      5
+    ],
+    "all_profile_flags_and_vectors_match": true,
+    "boundary_control": {
+      "rows": [
+        [
+          1,
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          1,
+          0,
+          3
+        ]
+      ],
+      "S": [
+        0,
+        2
+      ],
+      "reaching": "abbbababbb",
+      "reset": "abbbabbbabbba",
+      "projected_exit": 5,
+      "actual_compression": 9
+    },
+    "scope": "Finite controls of the uniform type-6 exclusion; no new exact maximum alone."
+  },
+  "native_sanitizer_reports_identical": 2,
+  "source_sha256": {
+    "TYPE6_EARLY_EXCLUSION.md": "65a36caf9f7a742adcf111392370c22cd8702c72db8eea7787037480da0b1502",
+    "type6_closed_II_actions.py": "9f6a6ecd8e0b66b32ca4fdafa4204735743f233e81409c572d13763e30882670",
+    "audit_type6_closed_II.cpp": "f382b4146c40a2e8f82214e137e87faffb9c56141de9dc34ae4725f7557d532b",
+    "audit_type6_breakers.cpp": "4a580dd3638dcf2e3e1aac0754b9f731cf0b0c98b9cf53176e971d8409cd4b40",
+    "audit_type6_domains.py": "be26e241694fa6e562e0c948bbc5d1d0cf9409410cc2a62d3e6742c8e038f98b",
+    "early_pair_alphabet_pool.py": "3613cd1c6d344f96d080d982726ce2e9a72e0152ab9c2ba7dd6ad4a0577802d0",
+    "early_alphabet_pool_n6.json": "fed321f4dacf51bd0223bb79bbd0e5b0fd7e19cb6675e006d94053422cadbc0a",
+    "early_alphabet_pool_n7.json": "cf9afaf91f1c34b5a0a037fd9e9c57100b9fb9b4d730443412ce116208da2757",
+    "verify_certificates.py": "bac918ddbbc97057660a16f0c27a1374fee1b69dcfeec5a14bcc4613244010cf"
+  },
+  "remaining_early_types": [
+    7
+  ],
+  "current_combined_authority": "CODIMENSION_THREE_UPPER_PROOF.md and codimension_three_upper_audit.json: all nine types excluded; exact F_bin=F=min(n-r,9) at codimension three.",
+  "scope": "Audited component exclusion. The combined all-type proof is accepted; this component alone is not an all-parameter classification."
+}

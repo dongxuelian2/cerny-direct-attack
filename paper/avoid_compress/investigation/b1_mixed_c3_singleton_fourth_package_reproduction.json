@@ -1,0 +1,45 @@
+{
+  "status": "pass",
+  "archive": "certificates/b1_mixed_c3_singleton_fourth.zip",
+  "sha256": "54046b2cab6e4d8767017a87201d03fd6f58fafc83de1bcfe761ba1ceb0a62f0",
+  "files": 15,
+  "checksum_entries": 14,
+  "isolated_checker_exit": 0,
+  "reproduced_audit_byte_identical": true,
+  "isolated_generator_exit": 0,
+  "reproduced_inventory_byte_identical": true,
+  "checker_output": [
+    {
+      "n": 9,
+      "row_assignments": 111168
+    },
+    {
+      "n": 10,
+      "row_assignments": 1272672
+    },
+    {
+      "status": "pass",
+      "kernel": {
+        "fourth_field_pairs": 41,
+        "row_kernel_patterns": 264,
+        "compatible_kernel_pairs": 555,
+        "classification": {
+          "2q_both_constant": 210,
+          "2q_nonconstant_C": 45,
+          "closed": 210,
+          "iq_D_permutation": 30,
+          "iq_both_constant": 60
+        },
+        "closed_graph_configurations": 210,
+        "universal_graph_pair_checks": 1987
+      },
+      "literal_rows": [
+        111168,
+        1272672
+      ]
+    }
+  ],
+  "source_sha256": {
+    "check_b1_mixed_c3_singleton_fourth_package.py": "fca18c2722c7513879b8235c8e60fd10de693a7be50d799ee5a82833506eb9eb"
+  }
+}

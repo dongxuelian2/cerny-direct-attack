@@ -1,0 +1,140 @@
+{
+  "date": "2026-10-10",
+  "timezone": "Asia/Shanghai",
+  "status": "pass",
+  "base_commit": "187c0b1df7e1074bbc1843668caaeb1e2c5dded1",
+  "scope": "Sync existing partial-answer Problem 4 research and handoff; no new research.",
+  "snapshot_integrity": {
+    "status": "pass",
+    "snapshot_files": 1530,
+    "paper_checksum_entries": 121,
+    "auxiliary_audits": 119,
+    "source_bindings": 1569,
+    "latest_bound_sources": 913,
+    "historical_receipts": 104,
+    "validated_archives": 60,
+    "unresolved_interval": [
+      11,
+      12
+    ]
+  },
+  "repository_all_suite": {
+    "status": "PASS",
+    "unit_tests": 17,
+    "baseline_certificates": {
+      "bounds": 11,
+      "exact": 55,
+      "nonsynchronizing": 17
+    },
+    "integrity": {
+      "python_sources": 829,
+      "markdown_documents": 461,
+      "internal_links": 737
+    },
+    "formal": {
+      "accepted_modules": 11,
+      "declarations": 114,
+      "frozen_core_declarations": 100
+    },
+    "all_run_returncodes_zero": true
+  },
+  "independent_supplement_checks": {
+    "status": "pass",
+    "checks": [
+      {
+        "script": "checker.py",
+        "returncode": 0,
+        "seconds": 3.189
+      },
+      {
+        "script": "check_cofinal.py",
+        "returncode": 0,
+        "seconds": 4.316
+      },
+      {
+        "script": "check_boundary.py",
+        "returncode": 0,
+        "seconds": 0.286
+      },
+      {
+        "script": "check_defect_two.py",
+        "returncode": 0,
+        "seconds": 0.806
+      },
+      {
+        "script": "check_codimension_three.py",
+        "returncode": 0,
+        "seconds": 0.48
+      },
+      {
+        "script": "check_two_block.py",
+        "returncode": 0,
+        "seconds": 4.484
+      },
+      {
+        "script": "verify_certificates.py",
+        "returncode": 0,
+        "seconds": 0.086
+      },
+      {
+        "script": "verify_frontier.py",
+        "returncode": 0,
+        "seconds": 0.099
+      },
+      {
+        "script": "check_codimension_three_upper.py",
+        "returncode": 0,
+        "seconds": 0.141
+      }
+    ],
+    "face_records": 437,
+    "cofinal_records": 316,
+    "boundary_records": 33,
+    "codimension_one_records": 378,
+    "codimension_two_records": 300,
+    "codimension_three_records": 180,
+    "two_block_records": 221,
+    "finite_frontier_records": 290,
+    "complete_finite_frontier_through_n": 12,
+    "additional_n13_points": [
+      [
+        13,
+        8,
+        1
+      ],
+      [
+        13,
+        10,
+        1
+      ],
+      [
+        13,
+        10,
+        2
+      ],
+      [
+        13,
+        10,
+        3
+      ]
+    ]
+  },
+  "preservation": {
+    "prior_scientific_sources_changed": false,
+    "frozen_openmath_core_declarations": 100,
+    "paper_supplement_files": 109,
+    "auxiliary_certificate_archives": 56,
+    "release_archives": 3,
+    "archived_original_command_receipts": 104,
+    "original_byte_hashes_preserved": true,
+    "historical_local_path_metadata_publication": "Explicitly authorized by the user; retained as original receipt bytes.",
+    "regenerated_builds_and_duplicate_extractions_excluded": true,
+    "four_hash_bound_qa_sources_and_records_retained": true
+  },
+  "limits": [
+    "No complete Problem 4 solution, new extremal value, alphabet separation or new formal verification claim.",
+    "F_bin(13,9,1) and F(13,9,1) remain in [11,12].",
+    "Upper C++ full rebuild and auxiliary isolated regenerations were not repeated; historical receipts, current source bindings and archive integrity were verified.",
+    "Independent checkers ran in an isolated copy; frozen reports were not overwritten."
+  ]
+}

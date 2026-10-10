@@ -1,0 +1,89 @@
+{
+  "n": 13,
+  "s": 7,
+  "target": 12,
+  "alphabet_size": 2,
+  "protected": 1,
+  "kernel": null,
+  "free_subset": true,
+  "first_file": null,
+  "fixed_file": "..\\_qa\\full_flag_control_rows.json",
+  "tight_refinement_cuts": false,
+  "status": "witness_verified",
+  "iterations": 1,
+  "early_pattern": null,
+  "span_cover_h": null,
+  "refinement_cuts": false,
+  "proved_refinement_caps": {},
+  "local_span_prefix": null,
+  "cycle_five": false,
+  "binary_field_flag": true,
+  "witness": {
+    "n": 13,
+    "s": 7,
+    "r": 1,
+    "alphabet_size": 2,
+    "rows": [
+      [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        3
+      ],
+      [
+        2,
+        0,
+        3,
+        4,
+        5,
+        6,
+        1,
+        8,
+        9,
+        10,
+        11,
+        1,
+        7
+      ]
+    ],
+    "S": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "A": [
+      0
+    ],
+    "value": 12,
+    "compression": 12,
+    "reaching": "bbbbbb",
+    "attaining": "aaaaaabaaaab",
+    "reset": "abaababaabbababaabbaabbaabbbabaaaabbabaaaab",
+    "state_scores": {
+      "0": 12,
+      "1": 11,
+      "2": 1,
+      "3": 2,
+      "4": 3,
+      "5": 4,
+      "6": 5
+    }
+  },
+  "rejected_candidates": [],
+  "seconds": 2.432788599995547,
+  "z3_version": "4.16.0",
+  "scope": "Lower-potential finite synthesis; negative output is not an upper bound."
+}

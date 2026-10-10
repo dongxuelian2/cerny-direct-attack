@@ -1,0 +1,23 @@
+{
+  "n": 6,
+  "s": 3,
+  "target": 10,
+  "alphabet_size": 3,
+  "protected": 0,
+  "kernel": [
+    0,
+    3
+  ],
+  "free_subset": false,
+  "first_file": null,
+  "fixed_file": null,
+  "distinct_letters": true,
+  "tight_refinement_cuts": true,
+  "status": "unknown: timeout",
+  "iterations": 1,
+  "witness": null,
+  "rejected_candidates": [],
+  "seconds": 90.01771489999919,
+  "z3_version": "4.16.0",
+  "scope": "Finite alphabet synthesis. Negative solver output is not a certified upper bound."
+}

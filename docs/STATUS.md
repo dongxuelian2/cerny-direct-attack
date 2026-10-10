@@ -9,3 +9,7 @@ The freeze contains ten authoritative Lean modules and 100 declarations. The sep
 Publication is a packaging operation. Fresh check outcomes are recorded in [VALIDATION.md](VALIDATION.md). Historical `STATUS.json`, submission receipts, RESULTS entries and registry captures retain their original checkpoint meanings. Path redactions and public asset placement are documented in [archive](../archive/README.md); the original Git history and frozen artifact remain locally intact.
 
 The publication source was frozen at `5024b2eb15f77b3022c59800badbffc008d89fda` when this task began. Concurrent later commits in the original local research repository are outside this publication snapshot and remain intact there; they can be imported as separately reviewed thematic PRs. No later local result is silently assigned the validation status of this freeze.
+
+## Problem 4 research snapshot, 2026-10-10
+
+The separately imported [Problem 4 handoff](../paper/avoid_compress/HANDOFF.md) contains the current partial-answer manuscript, its 109-file supplement, and the latest 119-audit auxiliary snapshot. Exact regions and conditional computational exclusions have separate P4 result entries. The complete problem and both extrema at (13,9,1) remain unresolved; both lie in [11,12]. This addition does not extend the frozen Lean/OpenMath verification scope.

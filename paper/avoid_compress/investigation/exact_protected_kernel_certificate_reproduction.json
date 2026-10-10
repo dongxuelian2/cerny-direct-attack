@@ -1,0 +1,228 @@
+{
+  "status": "pass",
+  "archive": "certificates/exact_protected_kernel.zip",
+  "sha256": "60e4e88f5195a834a63c2539c7cf9225d45352bb83d6f275ec88720d95388fe3",
+  "files": 60,
+  "checksum_entries": 59,
+  "audits_reproduced_byte_identically": 5,
+  "runs": [
+    {
+      "script": "check_exact_atom_kernel_compatibility.py",
+      "exit": 0,
+      "output": {
+        "status": "pass",
+        "state_range": "all finite nonempty Q; kernel pair requires n>=2",
+        "complete_partition_pairs": 77598,
+        "complete_map_output_instances": 93444,
+        "complete_protected_set_cases": 1198200,
+        "scope": "Uniform exact letter-atom realizability criterion, validated against all indexed small partitions/maps. No automaton equality claim."
+      }
+    },
+    {
+      "script": "check_two_cover_third_exact_kernel.py",
+      "exit": 0,
+      "output": {
+        "status": "pass",
+        "parameter": [
+          13,
+          9,
+          1
+        ],
+        "two_cover_geometries": 43,
+        "exact_fields_reconstructed": 311,
+        "global_kernel_classes_checked": 765,
+        "all_inventory_unrestricted_excluded_ids": [
+          "b1_out_c2_third3",
+          "b1_out_c2_third5",
+          "b1_out_c4_third1",
+          "b1_out_c5_third1",
+          "b1_in_c1_third3",
+          "b1_in_c1_third5",
+          "b1_in_c3_third7",
+          "b1_in_c4_third1",
+          "b1_in_c4_third2",
+          "b1_in_c5_third1",
+          "b1_in_c5_third2",
+          "b1_in_c5_third3",
+          "b2_mixed_c2_third3",
+          "b2_mixed_c2_third4",
+          "b2_mixed_c2_third5",
+          "b2_mixed_c2_third6",
+          "b2_mixed_c2_third7",
+          "b2_mixed_c4_third9",
+          "b2_mixed_c10_third1",
+          "b2_mixed_c11_third3",
+          "b2_in_c1_third1",
+          "b2_in_c2_third1",
+          "b2_in_c2_third2",
+          "b2_in_c4_third1",
+          "b2_in_c5_third5",
+          "b2_in_c6_third3"
+        ],
+        "scope": "Exact letter atom/kernel compatibility plus protected-image cover cuts, only on explicit two-cover records. Retained automaton classes are necessary overapproximations."
+      }
+    },
+    {
+      "script": "check_two_cover_protected_kernel_graph.py",
+      "exit": 0,
+      "output": {
+        "status": "pass",
+        "complete_fixed_kernel_maps": 1728,
+        "matching_stabilization_controls": 520,
+        "singular_path_controls": 86,
+        "permutation_growth_controls": 8,
+        "singleton_isolation_boundary": {
+          "n": 4,
+          "row": [
+            3,
+            3,
+            0,
+            2
+          ],
+          "preE": [
+            2
+          ],
+          "new_edge": [
+            2,
+            3
+          ]
+        },
+        "permutation_growth_boundary": {
+          "n": 4,
+          "row": [
+            1,
+            3,
+            0,
+            2
+          ],
+          "K": [
+            0,
+            3
+          ],
+          "new_leaf_edges": [
+            [
+              1,
+              3
+            ]
+          ]
+        },
+        "scope": "Uniform written two-cover one-count kernel obstruction; exhaustive graph/map controls n4..6. No F maximum."
+      }
+    },
+    {
+      "script": "check_two_cover_protected_kernel_application.py",
+      "exit": 0,
+      "output": {
+        "status": "pass",
+        "parameter": [
+          13,
+          9,
+          1
+        ],
+        "all_inventory_unrestricted_excluded_ids": [
+          "b1_out_c2_third3",
+          "b1_out_c2_third4",
+          "b1_out_c3_third1",
+          "b1_out_c4_third1",
+          "b1_in_c1_third3",
+          "b1_in_c1_third4",
+          "b1_in_c3_third2",
+          "b1_in_c3_third3",
+          "b1_in_c3_third4",
+          "b1_in_c3_third5",
+          "b1_in_c3_third6",
+          "b1_in_c3_third7",
+          "b1_in_c4_third1",
+          "b1_in_c4_third2",
+          "b2_mixed_c1_third1",
+          "b2_mixed_c2_third2",
+          "b2_mixed_c2_third3",
+          "b2_mixed_c2_third4",
+          "b2_mixed_c2_third5",
+          "b2_mixed_c2_third6",
+          "b2_mixed_c2_third7",
+          "b2_mixed_c3_third1",
+          "b2_mixed_c4_third1",
+          "b2_mixed_c4_third9",
+          "b2_mixed_c8_third1",
+          "b2_mixed_c9_third1",
+          "b2_mixed_c10_third1",
+          "b2_mixed_c11_third3",
+          "b2_in_c1_third1",
+          "b2_in_c2_third1",
+          "b2_in_c2_third2",
+          "b2_in_c4_third1",
+          "b2_in_c5_third5",
+          "b2_in_c6_third3"
+        ],
+        "all_inventory_binary_excluded_ids": [
+          "b1_out_c2_third3",
+          "b1_out_c2_third4",
+          "b1_out_c3_third1",
+          "b1_out_c4_third1",
+          "b1_in_c1_third3",
+          "b1_in_c1_third4",
+          "b1_in_c3_third2",
+          "b1_in_c3_third3",
+          "b1_in_c3_third4",
+          "b1_in_c3_third5",
+          "b1_in_c3_third6",
+          "b1_in_c3_third7",
+          "b1_in_c4_third1",
+          "b1_in_c4_third2",
+          "b2_mixed_c1_third1",
+          "b2_mixed_c2_third2",
+          "b2_mixed_c2_third3",
+          "b2_mixed_c2_third4",
+          "b2_mixed_c2_third5",
+          "b2_mixed_c2_third6",
+          "b2_mixed_c2_third7",
+          "b2_mixed_c3_third1",
+          "b2_mixed_c4_third1",
+          "b2_mixed_c4_third9",
+          "b2_mixed_c8_third1",
+          "b2_mixed_c9_third1",
+          "b2_mixed_c10_third1",
+          "b2_mixed_c11_third3",
+          "b2_in_c1_third1",
+          "b2_in_c2_third1",
+          "b2_in_c2_third2",
+          "b2_in_c4_third1",
+          "b2_in_c5_third5",
+          "b2_in_c6_third3"
+        ],
+        "scope": "Uniform obstruction applied to explicit two-cover pair-entrance records only; current newly removed counts require historical accounting."
+      }
+    },
+    {
+      "script": "check_singleton_c_d5_e16_transport.py",
+      "exit": 0,
+      "output": {
+        "status": "pass",
+        "parameter": [
+          13,
+          9,
+          1
+        ],
+        "labelled_extensions_checked": 224,
+        "Boolean_identities_checked": 896,
+        "new_unrestricted_fourth_cuts_both_roots": 2,
+        "newly_removed_current_binary_fourth_pairs_both_roots": 82,
+        "remaining_C4_D5_E": [
+          [
+            6
+          ]
+        ],
+        "remaining_C4_geometries": 1,
+        "remaining_C4_E_labels": 7,
+        "remaining_C4_binary_pairs": 41,
+        "whole_third_types_removed": 0,
+        "binary_parent_pairs_removed": 0,
+        "scope": "Complete E16 cuts at both roots. E6, whole D5 and numerical F unresolved."
+      }
+    }
+  ],
+  "source_sha256": {
+    "package_exact_protected_kernel_certificate.py": "126dc9af370bf900da57f1cea2fe34ab0bdbda94aeae6bbea679c7da9164b3d1"
+  }
+}

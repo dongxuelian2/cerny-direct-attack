@@ -1,0 +1,66 @@
+{
+  "status": "complete",
+  "n": 9,
+  "s": 5,
+  "r": 1,
+  "sanitized": false,
+  "reports": [
+    {
+      "case": "inside1",
+      "file": "overlap_three_kernel_inside1_n9.json",
+      "complete": true,
+      "witness_found": false,
+      "row_assignments": 192,
+      "sha256": "caf147070e7cc61908a09756e824a0bc5bb11eca2ba4246aab22ffc2f2055955"
+    },
+    {
+      "case": "inside2",
+      "file": "overlap_three_kernel_inside2_n9.json",
+      "complete": true,
+      "witness_found": false,
+      "row_assignments": 768,
+      "sha256": "56a11ac009cc4105b8fbcc1d7fa75b01cfdfe2905f4c449a0f6e92805397d412"
+    },
+    {
+      "case": "outside1",
+      "file": "overlap_three_kernel_outside1_n9.json",
+      "complete": true,
+      "witness_found": false,
+      "row_assignments": 192,
+      "sha256": "f6339de47aca5939a019f961afe0189c47bba0fb955907188854fa483d2f9d30"
+    },
+    {
+      "case": "outside2",
+      "file": "overlap_three_kernel_outside2_n9.json",
+      "complete": true,
+      "witness_found": false,
+      "row_assignments": 768,
+      "sha256": "cb86ba13a99a04c455b5efac5f475dc2ef7e7ee8ece7f16dcc3e00873e6d500e"
+    },
+    {
+      "case": "common1",
+      "file": "overlap_three_kernel_common1_n9.json",
+      "complete": true,
+      "witness_found": false,
+      "row_assignments": 864,
+      "sha256": "7794dff320fb5c1b6c050a31e2fb898318aa182b0b8ce8e78fac83c720322485"
+    },
+    {
+      "case": "absent2",
+      "file": "overlap_three_kernel_absent2_n9.json",
+      "complete": true,
+      "witness_found": false,
+      "row_assignments": 1536,
+      "sha256": "86b72b267a2790ec61841361d9e98b538560bae8ded67f562e710b0d3c369ae1"
+    }
+  ],
+  "source_sha256": {
+    "run_overlap_kernel_scans.py": "f45798ab5edee468dbe3ba85c66f52e1ba443612aa95f92df3a148a7248c473f",
+    "probe_overlap_three_kernel.cpp": "0ac2318947fe9597f12b136b9786f79fef8c50f683b75badb3169d210b1b52db",
+    "kernel_probe_base.hpp": "cfb4cdfd47de02f649078bf2d25440c64cdd56e9aa9ae4595165eecf22d3fc31",
+    "OVERLAP_THREE_KERNEL_NORMALIZATION.md": "cffc61c44f54c3cef15830004bf53be61e5ff5be6331d21444ae375ec5db8cb6",
+    "LOCALIZED_BINARY_ENTRANCE_KERNEL.md": "98ea4c82bba1beae618e48d92f694c14afbe2cb458216aee15a1121216e6511d",
+    "alphabet_check.py": "5a93272df21227051061770d3edc48fd2aaeabc6062c4a385593689444b538df"
+  },
+  "scope": "Complete six-shape conditional B3, overlapping-C with one new point normalized family. No other-entrance or unrestricted exclusion."
+}

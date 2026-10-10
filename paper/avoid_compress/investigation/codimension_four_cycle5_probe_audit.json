@@ -1,0 +1,357 @@
+{
+  "status": "pass",
+  "parameter": [
+    13,
+    9,
+    1
+  ],
+  "complete_bounded_cycle_partitions": 11,
+  "literal_rows_per_partition": 105840,
+  "complete_bounded_row_pairs": 1164240,
+  "records": [
+    {
+      "partition": [
+        6
+      ],
+      "primary": {
+        "status": "complete_bounded_probe",
+        "core_cycle_partition": [
+          6
+        ],
+        "tested": 105840,
+        "strong": 75600,
+        "synchronizing": 75456,
+        "compression_admitted_rows": 0,
+        "reachable_admitted_rows": 0,
+        "local_initial_tests": 0,
+        "found_value12": false
+      },
+      "independent": {
+        "status": "complete_independent",
+        "tested": 105840,
+        "strong": 75600,
+        "synchronizing": 75456,
+        "compression_admitted_rows": 0,
+        "algorithm_controls": 5
+      }
+    },
+    {
+      "partition": [
+        5,
+        1
+      ],
+      "primary": {
+        "status": "complete_bounded_probe",
+        "core_cycle_partition": [
+          5,
+          1
+        ],
+        "tested": 105840,
+        "strong": 50400,
+        "synchronizing": 50400,
+        "compression_admitted_rows": 0,
+        "reachable_admitted_rows": 0,
+        "local_initial_tests": 0,
+        "found_value12": false
+      },
+      "independent": {
+        "status": "complete_independent",
+        "tested": 105840,
+        "strong": 50400,
+        "synchronizing": 50400,
+        "compression_admitted_rows": 0,
+        "algorithm_controls": 5
+      }
+    },
+    {
+      "partition": [
+        4,
+        2
+      ],
+      "primary": {
+        "status": "complete_bounded_probe",
+        "core_cycle_partition": [
+          4,
+          2
+        ],
+        "tested": 105840,
+        "strong": 62496,
+        "synchronizing": 61248,
+        "compression_admitted_rows": 0,
+        "reachable_admitted_rows": 0,
+        "local_initial_tests": 0,
+        "found_value12": false
+      },
+      "independent": {
+        "status": "complete_independent",
+        "tested": 105840,
+        "strong": 62496,
+        "synchronizing": 61248,
+        "compression_admitted_rows": 0,
+        "algorithm_controls": 5
+      }
+    },
+    {
+      "partition": [
+        4,
+        1,
+        1
+      ],
+      "primary": {
+        "status": "complete_bounded_probe",
+        "core_cycle_partition": [
+          4,
+          1,
+          1
+        ],
+        "tested": 105840,
+        "strong": 30240,
+        "synchronizing": 30080,
+        "compression_admitted_rows": 0,
+        "reachable_admitted_rows": 0,
+        "local_initial_tests": 0,
+        "found_value12": false
+      },
+      "independent": {
+        "status": "complete_independent",
+        "tested": 105840,
+        "strong": 30240,
+        "synchronizing": 30080,
+        "compression_admitted_rows": 0,
+        "algorithm_controls": 5
+      }
+    },
+    {
+      "partition": [
+        3,
+        3
+      ],
+      "primary": {
+        "status": "complete_bounded_probe",
+        "core_cycle_partition": [
+          3,
+          3
+        ],
+        "tested": 105840,
+        "strong": 65016,
+        "synchronizing": 64692,
+        "compression_admitted_rows": 0,
+        "reachable_admitted_rows": 0,
+        "local_initial_tests": 0,
+        "found_value12": false
+      },
+      "independent": {
+        "status": "complete_independent",
+        "tested": 105840,
+        "strong": 65016,
+        "synchronizing": 64692,
+        "compression_admitted_rows": 0,
+        "algorithm_controls": 5
+      }
+    },
+    {
+      "partition": [
+        3,
+        2,
+        1
+      ],
+      "primary": {
+        "status": "complete_bounded_probe",
+        "core_cycle_partition": [
+          3,
+          2,
+          1
+        ],
+        "tested": 105840,
+        "strong": 37800,
+        "synchronizing": 37080,
+        "compression_admitted_rows": 0,
+        "reachable_admitted_rows": 0,
+        "local_initial_tests": 0,
+        "found_value12": false
+      },
+      "independent": {
+        "status": "complete_independent",
+        "tested": 105840,
+        "strong": 37800,
+        "synchronizing": 37080,
+        "compression_admitted_rows": 0,
+        "algorithm_controls": 5
+      }
+    },
+    {
+      "partition": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "primary": {
+        "status": "complete_bounded_probe",
+        "core_cycle_partition": [
+          3,
+          1,
+          1,
+          1
+        ],
+        "tested": 105840,
+        "strong": 15120,
+        "synchronizing": 15120,
+        "compression_admitted_rows": 0,
+        "reachable_admitted_rows": 0,
+        "local_initial_tests": 0,
+        "found_value12": false
+      },
+      "independent": {
+        "status": "complete_independent",
+        "tested": 105840,
+        "strong": 15120,
+        "synchronizing": 15120,
+        "compression_admitted_rows": 0,
+        "algorithm_controls": 5
+      }
+    },
+    {
+      "partition": [
+        2,
+        2,
+        2
+      ],
+      "primary": {
+        "status": "complete_bounded_probe",
+        "core_cycle_partition": [
+          2,
+          2,
+          2
+        ],
+        "tested": 105840,
+        "strong": 44688,
+        "synchronizing": 40896,
+        "compression_admitted_rows": 0,
+        "reachable_admitted_rows": 0,
+        "local_initial_tests": 0,
+        "found_value12": false
+      },
+      "independent": {
+        "status": "complete_independent",
+        "tested": 105840,
+        "strong": 44688,
+        "synchronizing": 40896,
+        "compression_admitted_rows": 0,
+        "algorithm_controls": 5
+      }
+    },
+    {
+      "partition": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "primary": {
+        "status": "complete_bounded_probe",
+        "core_cycle_partition": [
+          2,
+          2,
+          1,
+          1
+        ],
+        "tested": 105840,
+        "strong": 18480,
+        "synchronizing": 17184,
+        "compression_admitted_rows": 0,
+        "reachable_admitted_rows": 0,
+        "local_initial_tests": 0,
+        "found_value12": false
+      },
+      "independent": {
+        "status": "complete_independent",
+        "tested": 105840,
+        "strong": 18480,
+        "synchronizing": 17184,
+        "compression_admitted_rows": 0,
+        "algorithm_controls": 5
+      }
+    },
+    {
+      "partition": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "primary": {
+        "status": "complete_bounded_probe",
+        "core_cycle_partition": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "tested": 105840,
+        "strong": 5040,
+        "synchronizing": 4608,
+        "compression_admitted_rows": 0,
+        "reachable_admitted_rows": 0,
+        "local_initial_tests": 0,
+        "found_value12": false
+      },
+      "independent": {
+        "status": "complete_independent",
+        "tested": 105840,
+        "strong": 5040,
+        "synchronizing": 4608,
+        "compression_admitted_rows": 0,
+        "algorithm_controls": 5
+      }
+    },
+    {
+      "partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "primary": {
+        "status": "complete_bounded_probe",
+        "core_cycle_partition": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "tested": 105840,
+        "strong": 0,
+        "synchronizing": 0,
+        "compression_admitted_rows": 0,
+        "reachable_admitted_rows": 0,
+        "local_initial_tests": 0,
+        "found_value12": false
+      },
+      "independent": {
+        "status": "complete_independent",
+        "tested": 105840,
+        "strong": 0,
+        "synchronizing": 0,
+        "compression_admitted_rows": 0,
+        "algorithm_controls": 5
+      }
+    }
+  ],
+  "canonical_raw_rows_sha256": "2196938cc0008c7acaea8a167b36d0024c116184720414e42ab8cd45a6499cd8",
+  "no_nine_subset_compression12_in_domain": true,
+  "source_sha256": {
+    "check_codimension_four_cycle5_probe.py": "70abd2ad208408e4edccdbfd0cac101e96cc2608f2d6c552aca2344d8b8027fd",
+    "probe_codimension_four_cycle5.cpp": "798c647cfa348635a9646483c207a4aafeff9ff8ec7b1e41f189d9db09de24cf",
+    "check_codimension_four_active7.cpp": "c50245e7551d4d56069770ec258ca4563aa3618d492b0c6a383f5d29367bc26a",
+    "codimension_four_cycle5_probe.json": "47d03aee22ce67e75b8761d947c75c70440757ff3d2a3a143a087023da197945",
+    "ACTIVE_SEVEN_CYCLE_PROBE.md": "fc80fa8ca4e501adbeb6fe64376d3c2474a5fad43509c729c16730dffb8acbae"
+  },
+  "scope": "Two complete independent algorithms agree on a restricted active-seven/rank-six a and seven-cycle-plus-arbitrary-permutation b domain. No global F bound or binary/unrestricted separation."
+}

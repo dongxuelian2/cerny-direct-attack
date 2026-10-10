@@ -1,0 +1,35 @@
+{
+  "status": "pass",
+  "date": "2026-10-09",
+  "source_diff_is_title_only": true,
+  "pdf_text_diff_is_title_only": true,
+  "pdf_pages": 7,
+  "latex_warnings": 0,
+  "visually_reviewed_current_pages": 7,
+  "mathematical_claims_and_parameters_unchanged": true,
+  "supplement_files_unchanged": 109,
+  "reproducibility_archive_byte_identical": true,
+  "current_checksum_entries_verified": 121,
+  "changed_previously_checksummed_files": [
+    "LITERATURE_NOVELTY_AUDIT.md",
+    "SOURCE_PROVENANCE.json",
+    "VALIDATION.json",
+    "main.pdf",
+    "main.tex",
+    "references.bib",
+    "release/arxiv-source.zip",
+    "release/submission-bundle.zip"
+  ],
+  "accepted_artifact_sha256": {
+    "main.tex": "a3ed2404f7f56bd76154299399b88d04da46d0ccfe6f2bd77f960333adbbfe72",
+    "main.pdf": "5c32800f56e8971ada72417093078eea4b56eba00d65cdfc184b49d9dc8520b4",
+    "references.bib": "d8e13874ea493e6498899e830b08996ab518f99afd937c06c22ecdd15a319d08",
+    "release/arxiv-source.zip": "d07f194747ee8f32fab70acaf47b73074c7be7f25c403775198bfa3bae4f6dd9",
+    "release/reproducibility.zip": "0b7646541b45fcbaaf4a5d4a53d1057cf40317aba1f2a5efd7dd5c1938c6a76c",
+    "release/submission-bundle.zip": "7311e8850e3f2a3509e7ae23f953cf12b1e4bc265b018e91ba21137a8c597bb8"
+  },
+  "source_sha256": {
+    "check_reference_variant_release.py": "94e075664e57868f1b20761d8ec52e92d371f13cd9012739aec0a08cab30b6ed"
+  },
+  "limits": "Citation title variant alignment only; PDF plural and publisher metadata singular are both valid titles for the same DOI."
+}
