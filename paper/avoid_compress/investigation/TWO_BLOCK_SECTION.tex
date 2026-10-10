@@ -1,0 +1,110 @@
+\section{A uniform two-block construction}
+\begin{theorem}\label{thm:two-block}
+Put $m=n-s\ge3$ and $q=n-r\ge2m+2$.
+There is a binary strongly connected synchronizing automaton with reachable
+$S$ attaining $\ac(S,A)=\min\{q,3m-1\}$.
+Consequently $\Max_{\rm bin}=\Max=U=q$ whenever $2m+2\le q\le3m-1$.
+For larger $q$ the construction gives only a lower bound.
+\end{theorem}
+\begin{proof}
+Write $t=m-1\ge2$ and $p=n-2t-1\ge r+3$.
+Take $P=\{p_0,\ldots,p_{p-1}\}$, $X=\{x_1,\ldots,x_t\}$,
+$Y=\{y_1,\ldots,y_t\}$ and one further state $z$.
+Letter $a$ interchanges the last two $P$-states, fixes the others, and
+cycles $x_1,\ldots,x_t,y_1,\ldots,y_t,z$.
+Letter $b$ sends $p_0$ to $y_1$, $p_i$ to $p_{i-1}$ for $i\ge1$,
+increments indices in $X,Y$ below $t$, sends both $x_t,y_t$ to $p_{p-1}$,
+and fixes $z$. Put $S=P\cup X$, $A=\{p_0,\ldots,p_{r-1}\}$ and $L=3t+2$.
+
+\emph{No compression before $L$.}
+For $\rho_i=\min\{i,p-2\}$ define a symmetric potential $D$ on unordered
+pairs, zero on singleton pairs, by the following table. Indices in $X,Y$
+run from $1$ to $t$, and indices in $P$ from $0$ to $p-1$.
+\begin{center}\small
+\begin{tabular}{ll}
+pair&potential\\ \hline
+$P$--$P$, $P$--$X$, $X$--$X$ (distinct)&$L$\\
+$\{x_i,y_j\}$, $j=i$&$t-i+1$\\
+$\{x_i,y_j\}$, $j>i$&$2t-i+1$\\
+$\{x_i,y_j\}$, $j<i$&$L-j$\\
+$\{x_i,z\}$&$2t-i+1$\\
+$\{y_i,y_j\}$, $i<j$&$L-j$\\
+$\{y_i,z\}$&$2t+1$\\
+$\{p_i,y_j\}$&$\min\{L,\max\{L-j,2t+3+\rho_i\}\}$\\
+$\{p_i,z\}$&$\min\{L,2t+2+\rho_i\}$
+\end{tabular}
+\end{center}
+Substitution in the two letter actions gives
+\[
+ D(E)\le1+D(Ea),\qquad D(E)\le1+D(Eb).
+\]
+Here are the boundary checks. The last-two-$P$ interchange preserves $\rho$;
+a downward $P$-step decreases it by at most one.
+For $P$--$Y$ pairs the $a$-boundary $y_t\to z$ decreases the second term
+from $2t+3+\rho$ to $2t+2+\rho$.
+The $b$-boundary $p_0\to y_1$ with $j<t$ has source $L-j$
+and target $L-j-1$, since $j\le t-1$; with $j=t$ its target is at least $L-1$.
+For $X$--$Y$, crossing $x_t$ under $a$ gives $Y$--$Y$ with potential $L-j-1$
+when $j<i$; crossing under $b$ gives $P$--$Y$ of at least that potential.
+The kernel pair $\{x_t,y_t\}$ has potential one.
+Crossing $y_t$ in a $Y$--$Y$ pair under $a$ gives $Y$--$z$ of
+potential $2t+1=L-t-1$.
+For $X$--$z$, the $a$-boundary is $\{x_t,z\}\to\{y_1,x_1\}$,
+with values $t+1,t$; for $Y$--$z$, every $a$-image has potential $2t$.
+All remaining cases either retain potential, decrement an index by one,
+or enter a type whose potential is at least the source minus one.
+Clipping at $L$ cannot increase a positive difference.
+Thus the inequalities hold for every index, not just tested sizes.
+Every distinct pair in $S$ has potential $L$.
+Telescoping along a merging word proves its length is at least $L$;
+every compression merges an initial pair, giving the claimed lower bound.
+
+\emph{No avoidance before $q$.}
+Use singleton $P$-cells and $t$ color cells, giving $x_i,y_i$ color $i$
+and $z$ color $1$. Let $T_a$ swap the last two $P$-cells and cycle the colors,
+and let $T_b$ cycle $p_0,1,\ldots,t,p_{p-1},\ldots,p_1$.
+For the incidence matrix $C$ both letters satisfy
+\[
+ D_\ell C=CT_\ell+f_z(e_1-e_2).
+\]
+These are the same row/column conventions and outer product as in~\eqref{eq:error}.
+Since $S$ has one state in every cell, expansion~\eqref{eq:expand} applies,
+with coefficients counting trajectories at $z$.
+A trajectory from $X$ needs at least $t+1$ steps to reach $z$;
+any entrance from $P$ starts at $y_1$ after at least one step and then needs
+at least $t$ more. Thus the first nonzero correction has position at least $t+2$.
+In the prescribed cell graph, color $2$ needs $t-1$ letters to enter $P$
+at $p_{p-1}$ and at least $p-r$ more to reach $A$.
+The only interchange is between adjacent last $P$-points and cannot shorten
+this descending path. A negative correction therefore reaches $A$ only at
+length at least $(t+2)+(t-1+p-r)=p+2t+1-r=q$.
+Before then every protected coordinate has multiplicity at least one.
+
+\emph{Attainment.}
+After $a^{2t}b$, the missing $P$-point is $p_{p-1}$; after a further $a$
+it is $p_{p-2}$. This is the unique $b^{p-r-1}$-preimage of $p_{r-1}$.
+Hence $a^{2t}bab^{p-r-1}$ omits that protected point at length $q$.
+The $X\cup Y\cup\{z\}$ portion after $a^{2t}b$ is
+$\{x_2,\ldots,x_t,y_1,z\}$. After $a^t$ it contains $x_t$ and $y_t$,
+so $a^{2t}ba^tb$ compresses at length $L$.
+The existence of $x_t$ in the preceding set uses $t\ge2$.
+Combining both upper witnesses with the lower bounds gives $\ac(S,A)=\min\{q,L\}$.
+
+\emph{Structural requirements.}
+Put $B=P\cup Y$, $h=p+t$ and $E=B\cup\{z\}$.
+Letter $b$ cycles $B$ in the order $p_0,y_1,\ldots,y_t,p_{p-1},\ldots,p_1$,
+and $Qb^t=E$. The $a$-cycle connects all other states to $B$, proving
+strong connectivity.
+On $E$, $d=a^{2t}b^h$ fixes $P$, cycles $y_1\to y_t\to\cdots\to y_1$,
+and sends $z$ to $y_t$. Thus $e=d^t$ fixes $B$ and sends $z$ to $y_1$.
+Since $Ba^{t+1}=S$, the original-letter word $b^tea^{t+1}$ reaches $S$.
+The word $a^{2t+1}$ fixes $X\cup Y\cup\{z\}$ and transposes the last two
+$P$-points, adjacent on the $b$-cycle. These words generate every permutation
+of $B$, with inverses realized by positive powers.
+Moreover $Ba=(B\setminus\{y_1\})\cup\{z\}$,
+$Bab=(B\setminus\{y_2\})\cup\{z\}$, and $Babe=B\setminus\{y_2\}$.
+Permutations route any pair in a current image into the kernel of $abe$;
+repeated compression synchronizes $B$. Prepending $b^te$ synchronizes $Q$.
+Finally $L=3m-1<\binom{m+2}{2}$ for $m\ge3$, so meeting $q\le L$
+determines both maxima as stated.
+\end{proof}
