@@ -1,6 +1,6 @@
 # Open problems
 
-- Szykuła 2026 Open Problem 4: m=n-s>=4,n-r>=3m; first unresolved binary/unrestricted point (13,9,1) in [11,12]. Continue from [the current handoff](../paper/avoid_compress/HANDOFF.md) and its sole remaining B3 geometry b3_mixed_c1_third2.
+- Szykuła 2026 Open Problem 4: m=n-s>=4,n-r>=3m; first unresolved binary/unrestricted point (13,9,1) in [11,12]. Continue from [the current handoff](../paper/avoid_compress/HANDOFF.md) and its remaining 84 unrestricted B1/B2 geometries; B3 is fully excluded.
 - General Černý square bound for arbitrary synchronizing complete DFAs (C-GENERAL).
 - Remaining weighted original-word extension/cost reductions outside the proved rooted/core-cycle subclasses; proper residual d>1 unpaired short-tail cases beyond the explicit solved conditions.
 - A general global reset-chain payment method that survives the quadratic actual-image extension obstruction.

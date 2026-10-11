@@ -1,0 +1,117 @@
+{
+  "status": "pass",
+  "archive": "certificates/b2_c5_first_pair.zip",
+  "sha256": "b14f315df69bdd1a4d0de83bc175c51f3a6ebb6c34ede211c6b04047f7244f05",
+  "files": 67,
+  "checksum_entries": 66,
+  "audits_reproduced_byte_identically": 2,
+  "data_files_reproduced_byte_identically": 1,
+  "runs": [
+    {
+      "script": "enumerate_b2_c5_first_pair.py",
+      "exit": 0,
+      "output": {
+        "status": "complete_necessary_exclusion_inventory",
+        "parameter": [
+          13,
+          9,
+          1
+        ],
+        "id": "b2_mixed_c5_third3",
+        "B": [
+          0,
+          4
+        ],
+        "C": [
+          1,
+          2
+        ],
+        "D": [
+          0,
+          5
+        ],
+        "stats": {
+          "nodes": 20072,
+          "depth_1": 64,
+          "depth_2": 1272,
+          "missing_required_group": 15840,
+          "depth_3": 2624,
+          "internal_nodes": 1892,
+          "prefixes": 64,
+          "literal_letters": 1002240,
+          "maximal_graph_not_SC": 2340,
+          "depth_4": 4352,
+          "depth_5": 11760
+        },
+        "scope": "Complete first-pair arbitrary-alphabet necessary staircase exclusion. No numerical F value, alphabet separation or all-parameter formula."
+      }
+    },
+    {
+      "script": "check_b2_c5_first_pair_controls.py",
+      "exit": 0,
+      "output": {
+        "status": "pass",
+        "positive_flag_controls": 2,
+        "adversarial_controls_rejected": 9,
+        "rejected": [
+          "wrong_basis",
+          "omitted_child",
+          "duplicate_child",
+          "wrong_domain_digest",
+          "wrong_supplier_size",
+          "wrong_missing_group",
+          "changed_next_image",
+          "false_no_growth",
+          "empty_closed_set"
+        ],
+        "scope": "Local branch, domain, supplier and closed-set checks only; no F theorem."
+      }
+    },
+    {
+      "script": "check_b2_c5_first_pair.py",
+      "exit": 0,
+      "output": {
+        "status": "pass",
+        "parameter": [
+          13,
+          9,
+          1
+        ],
+        "id": "b2_mixed_c5_third3",
+        "global_classes": 4,
+        "labelled_first_pairs": 12320,
+        "canonical_prefixes": 64,
+        "tree_counts": {
+          "nodes": 20072,
+          "depth_1": 64,
+          "depth_2": 1272,
+          "missing_required_group": 15840,
+          "depth_3": 2624,
+          "internal_nodes": 1892,
+          "prefixes": 64,
+          "literal_letters": 1002240,
+          "maximal_graph_not_SC": 2340,
+          "depth_4": 4352,
+          "depth_5": 11760
+        },
+        "maximum_basis_depth": 5,
+        "labelled_D_transports": 8,
+        "new_excluded_third_ids": [
+          "b2_mixed_c5_third3"
+        ],
+        "new_unrestricted_joint_exclusions": [],
+        "new_binary_joint_exclusions": [],
+        "remaining_unrestricted_geometries": 111,
+        "remaining_binary_geometries": 98,
+        "remaining_binary_typed": 94,
+        "remaining_binary_profiles": 435,
+        "remaining_binary_joints": 18,
+        "remaining_unrestricted_joints": 20,
+        "scope": "Complete first-pair arbitrary-alphabet necessary staircase exclusion. No numerical F value, alphabet separation or all-parameter formula."
+      }
+    }
+  ],
+  "source_sha256": {
+    "package_b2_c5_first_pair_certificate.py": "56698030c1c3019846973f6997597797bbe41d4479f27b1acbaa0caec02b32a1"
+  }
+}

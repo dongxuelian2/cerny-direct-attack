@@ -1,0 +1,26 @@
+{
+  "status": "frozen_conditional_scope",
+  "parameter": [
+    13,
+    9,
+    1
+  ],
+  "target_ac": 12,
+  "id": "b2_mixed_c5_third3",
+  "baseline": "b2_c5_first_pair_baseline_state.json",
+  "checkpoint": "AUXILIARY_AUDIT_20261011_02.json",
+  "global_classes": 4,
+  "labelled_first_pairs": 12320,
+  "canonical_prefixes": 64,
+  "scope": "Complete first-pair arbitrary-alphabet necessary staircase exclusion. No numerical F value, alphabet separation or all-parameter formula.",
+  "source_sha256": {
+    "b2_c5_first_pair_baseline_state.json": "49f32fad00371823a3c7d94df465a63c3da8a80a05dbbc19505a8a8b42064d98",
+    "AUXILIARY_AUDIT_20261011_02.json": "8dec27990c2e28fba9995e42fd3bc9ffb038305cac7018d24486a94e9c8f6b53",
+    "B2_C5_FIRST_PAIR_STAIRCASE_EXCLUSION.md": "3e641d1a44ae42e54c00aeaada373618f63dd7762adf3d02ed4d71a4aeff94e2",
+    "b1_b2_inverse_union_inventory.json": "0de09132a8c44236925a07223e3b42d7b4fe65450ed9fc86c9363bbe34d371cf",
+    "b1_b2_inverse_union_audit.json": "c868f8ae6c09351d9c2ac6f58e69ca19935841edf6c638d17516cb759b4981c1",
+    "small_first_third_inventory.json": "ea00650e65207784313446cec6bf6d38b6f48223b327dcc218e9c6f34cf703c1",
+    "LOCAL_EQUALITY_FLAG.md": "f34cf260276c6551266564c1ee2264dc823aeaa4f33b4ae8f8261aedeec596a8",
+    "local_equality_flag_audit.json": "b908e60013672ce875cf351a478e95b0faf5fc72f2428f00fcc209be1f9e4d40"
+  }
+}

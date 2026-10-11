@@ -1,0 +1,26 @@
+{
+  "status": "pass",
+  "positive_geometry_controls": 2,
+  "union_closure_controls": 7,
+  "adversarial_controls_rejected": 9,
+  "rejected": [
+    "missing_global_graph",
+    "duplicate_global_graph",
+    "invented_supplier",
+    "altered_arrows",
+    "improper_closed_set",
+    "wrong_mandatory_core",
+    "omitted_native_kernel",
+    "changed_field",
+    "false_retained_rejection"
+  ],
+  "source_sha256": {
+    "check_b1_b2_inverse_union_controls.py": "5847d505d459223e980d40d612e094cb0c7b7d3b28c02af2d8174b58d06fb242",
+    "check_b1_b2_inverse_union.py": "b2df414a7e885e3bdb10c9bb46b46c734e55a193088c0a645762d64688f5c28f",
+    "b1_b2_inverse_union_inventory.json": "0de09132a8c44236925a07223e3b42d7b4fe65450ed9fc86c9363bbe34d371cf",
+    "b1_b2_inverse_union_scope.json": "1602c6321c1daabaeaf53f2b0804066762afdb2a32e0efd413240ae415df9080",
+    "small_first_third_inventory.json": "ea00650e65207784313446cec6bf6d38b6f48223b327dcc218e9c6f34cf703c1",
+    "three_cover_atom_kernel_inventory.json": "fcfdd28eeb00f082206e166ab0b7bd7c3cee07a1ce21241e3e9a8be9e5bc7c5b"
+  },
+  "scope": "Local controls of exact certificate verification; no F theorem."
+}

@@ -38,6 +38,18 @@ def main():
             frozen_hashes[name] = actual
 
     hashes = dict(frozen_hashes)
+    large_data = json.loads((INV / 'large_data_manifest.json').read_text(encoding='utf-8'))
+    for name, record in large_data['files'].items():
+        archive = (INV / record['archive']).resolve()
+        assert archive.is_relative_to(INV) and digest(archive) == record['archive_sha256'], name
+        h = hashlib.sha256()
+        with zipfile.ZipFile(archive) as z:
+            assert z.getinfo(record['member']).file_size == record['bytes'], name
+            with z.open(record['member']) as source:
+                for block in iter(lambda: source.read(1024 * 1024), b''):
+                    h.update(block)
+        assert h.hexdigest() == record['sha256'], name
+        hashes[name] = h.hexdigest()
 
     def source_hash(name):
         if name not in hashes:
@@ -46,11 +58,13 @@ def main():
             hashes[name] = digest(target)
         return hashes[name]
 
-    latest = json.loads((INV / 'AUXILIARY_AUDIT_20261010_22.json').read_text(encoding='utf-8'))
+    latest_name = manifest['auxiliary_audit']
+    latest = json.loads((INV / latest_name).read_text(encoding='utf-8'))
     for name, expected in latest['source_sha256'].items():
         assert source_hash(name) == expected, 'Latest source binding: ' + name
     bindings = 0
-    assert len(latest['passed_audits']) == len(set(latest['passed_audits'])) == 119
+    audit_count = len(latest['passed_audits'])
+    assert audit_count == len(set(latest['passed_audits'])) == manifest['auxiliary_audits']
     for name in latest['passed_audits']:
         audit = json.loads((INV / name).read_text(encoding='utf-8'))
         assert audit['status'] == 'pass', name
@@ -73,14 +87,22 @@ def main():
         with zipfile.ZipFile(path) as z:
             assert len(z.namelist()) == len(set(z.namelist())) and z.testzip() is None, path.name
     active = json.loads((INV / 'active_research.json').read_text(encoding='utf-8'))
-    assert active['current_auxiliary_audit'] == 'AUXILIARY_AUDIT_20261010_22.json'
+    assert active['current_auxiliary_audit'] == latest_name
     assert active['workers'] == []
-    assert active['b3_third_cover']['combined_unrestricted_remaining_geometries'] == 137
-    assert active['b3_third_cover']['unrestricted_remaining_B3_geometries'] == 1
+    frontier = manifest['research_frontier']
+    assert active['b3_third_cover']['combined_unrestricted_remaining_geometries'] == frontier['unrestricted_geometries']
+    assert active['b3_third_cover']['unrestricted_remaining_B3_geometries'] == frontier['unrestricted_B3_geometries']
+    assert active['small_first_third_admission']['remaining_binary_typed_orbits'] == frontier['binary_types']
+    assert active['small_first_third_admission']['remaining_binary_profile_pairs'] == frontier['binary_profiles']
+    assert active['small_first_third_admission']['remaining_geometric_after_joint_and_third_exclusions'] == frontier['binary_geometries']
+    assert active['joint_fiber_cases']['unrestricted_remaining_orbits'] == frontier['unrestricted_joints']
+    assert active['joint_fiber_cases']['binary_remaining_orbits'] == frontier['binary_joints']
     print(json.dumps({'status': 'pass', 'snapshot_files': len(manifest['files']),
-                      'paper_checksum_entries': checks, 'auxiliary_audits': 119,
+                      'paper_checksum_entries': checks, 'auxiliary_audits': audit_count,
                       'source_bindings': bindings, 'latest_bound_sources': len(latest['source_sha256']),
                       'historical_receipts': len(frozen_hashes), 'validated_archives': len(archives) + 1,
+                      'archived_large_inventories': len(large_data['files']),
+                      'latest_auxiliary_audit': latest_name, 'research_frontier': frontier,
                       'unresolved_interval': [11, 12]}, indent=2))
 
 

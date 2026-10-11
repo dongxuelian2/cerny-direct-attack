@@ -1,0 +1,140 @@
+{
+  "status": "pass",
+  "archive": "certificates/b1_b2_inverse_union.zip",
+  "sha256": "9d55702749d65e2a6c4f5a47f9ce83eae20f74a2e5cf783d6ee236553afa15c8",
+  "files": 54,
+  "checksum_entries": 53,
+  "audits_reproduced_byte_identically": 2,
+  "data_files_reproduced_byte_identically": 1,
+  "runs": [
+    {
+      "script": "enumerate_b1_b2_inverse_union.py",
+      "exit": 0,
+      "output": {
+        "status": "complete_necessary_exclusion_inventory",
+        "parameter": [
+          13,
+          9,
+          1
+        ],
+        "geometries": 25,
+        "global_classes": 52524,
+        "counts": {
+          "preliminary_missing_supplier": 47051,
+          "missing_supplier": 5266,
+          "maximal_graph_not_SC": 203,
+          "retained_overapproximation": 4
+        },
+        "excluded_geometries": [
+          "b2_in_c4_third11",
+          "b2_in_c4_third3",
+          "b2_in_c4_third4",
+          "b2_in_c4_third9",
+          "b2_in_c5_third2",
+          "b2_in_c6_third1",
+          "b2_mixed_c10_third10",
+          "b2_mixed_c10_third11",
+          "b2_mixed_c10_third12",
+          "b2_mixed_c10_third13",
+          "b2_mixed_c10_third3",
+          "b2_mixed_c10_third4",
+          "b2_mixed_c11_third1",
+          "b2_mixed_c11_third2",
+          "b2_mixed_c11_third5",
+          "b2_mixed_c11_third6",
+          "b2_mixed_c12_third1",
+          "b2_mixed_c12_third7",
+          "b2_mixed_c8_third10",
+          "b2_mixed_c8_third13",
+          "b2_mixed_c8_third9",
+          "b2_mixed_c9_third11",
+          "b2_mixed_c9_third3",
+          "b2_mixed_c9_third9"
+        ],
+        "retained_control": "b2_mixed_c5_third3",
+        "scope": "Conditional B1/B2 exact one-letter inverse domains, arbitrary finite alphabets. No numerical F value, alphabet separation or all-parameter formula."
+      }
+    },
+    {
+      "script": "check_b1_b2_inverse_union_controls.py",
+      "exit": 0,
+      "output": {
+        "status": "pass",
+        "positive_geometry_controls": 2,
+        "union_closure_controls": 7,
+        "adversarial_controls_rejected": 9,
+        "rejected": [
+          "missing_global_graph",
+          "duplicate_global_graph",
+          "invented_supplier",
+          "altered_arrows",
+          "improper_closed_set",
+          "wrong_mandatory_core",
+          "omitted_native_kernel",
+          "changed_field",
+          "false_retained_rejection"
+        ],
+        "scope": "Local controls of exact certificate verification; no F theorem."
+      }
+    },
+    {
+      "script": "check_b1_b2_inverse_union.py",
+      "exit": 0,
+      "output": {
+        "status": "pass",
+        "parameter": [
+          13,
+          9,
+          1
+        ],
+        "geometries": 25,
+        "global_classes_checked": 52524,
+        "counts": {
+          "preliminary_missing_supplier": 47051,
+          "missing_supplier": 5266,
+          "maximal_graph_not_SC": 203,
+          "retained_overapproximation": 4
+        },
+        "new_excluded_third_ids": [
+          "b2_in_c4_third11",
+          "b2_in_c4_third3",
+          "b2_in_c4_third4",
+          "b2_in_c4_third9",
+          "b2_in_c5_third2",
+          "b2_in_c6_third1",
+          "b2_mixed_c10_third10",
+          "b2_mixed_c10_third11",
+          "b2_mixed_c10_third12",
+          "b2_mixed_c10_third13",
+          "b2_mixed_c10_third3",
+          "b2_mixed_c10_third4",
+          "b2_mixed_c11_third1",
+          "b2_mixed_c11_third2",
+          "b2_mixed_c11_third5",
+          "b2_mixed_c11_third6",
+          "b2_mixed_c12_third1",
+          "b2_mixed_c12_third7",
+          "b2_mixed_c8_third10",
+          "b2_mixed_c8_third13",
+          "b2_mixed_c8_third9",
+          "b2_mixed_c9_third11",
+          "b2_mixed_c9_third3",
+          "b2_mixed_c9_third9"
+        ],
+        "retained_control": "b2_mixed_c5_third3",
+        "new_unrestricted_joint_exclusions": [],
+        "new_binary_joint_exclusions": [],
+        "remaining_unrestricted_geometries": 112,
+        "remaining_binary_geometries": 99,
+        "remaining_binary_typed": 95,
+        "remaining_binary_profiles": 437,
+        "remaining_binary_joints": 18,
+        "remaining_unrestricted_joints": 20,
+        "scope": "Conditional B1/B2 exact one-letter inverse domains, arbitrary finite alphabets. No numerical F value, alphabet separation or all-parameter formula."
+      }
+    }
+  ],
+  "source_sha256": {
+    "package_b1_b2_inverse_union_certificate.py": "d1ed7fffde483d801c5861dc8486b65f3aa48d40d86cef60c52dce1f4d25d797"
+  }
+}
