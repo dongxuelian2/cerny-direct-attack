@@ -1,6 +1,6 @@
 # Open Problem 4 研究交接
 
-同步日期：2026-10-10（Asia/Shanghai）。这是 Szykuła 2026 年综述中的
+同步日期：2026-10-11（Asia/Shanghai）。这是 Szykuła 2026 年综述中的
 avoid-or-compress 问题。论文作者为 Qichao Wang，河北工业大学。
 **当前是部分解答，完整问题仍未解决；不构成一般 Černý 猜想的证明。**
 
@@ -11,8 +11,8 @@ avoid-or-compress 问题。论文作者为 Qichao Wang，河北工业大学。
    [reproducibility/CODIMENSION_THREE_UPPER_PROOF.md](reproducibility/CODIMENSION_THREE_UPPER_PROOF.md)：证明边界与计算辅助证明入口。
 3. [reproducibility/README.md](reproducibility/README.md)：109 个文件的论文补充材料、构造、独立检查器与有限证书。
 4. [investigation/active_research.json](investigation/active_research.json)：接续研究的当前机器可读状态，重点看 `next_structural_work`。
-5. [investigation/CURRENT_FRONTIER.md](investigation/CURRENT_FRONTIER.md)：按时间追加的研究记录；以末尾 2026-10-10 的 C3 staircase 更新为准。
-6. [investigation/AUXILIARY_AUDIT_20261010_22.json](investigation/AUXILIARY_AUDIT_20261010_22.json)：最新累计辅助审计及来源哈希。
+5. [investigation/CURRENT_FRONTIER.md](investigation/CURRENT_FRONTIER.md)：按时间追加的研究记录；以末尾 2026-10-11 的 few_graph_12 更新为准。
+6. [investigation/AUXILIARY_AUDIT_20261011_12.json](investigation/AUXILIARY_AUDIT_20261011_12.json)：最新累计 171 项辅助审计及来源哈希。
 
 ## 已证明或已核验的结论
 
@@ -40,20 +40,26 @@ avoid-or-compress 问题。论文作者为 Qichao Wang，河北工业大学。
 尚未整体确定的区域是 `m>=4,q>=3m`。最小未决点的二元和任意字母表极值
 `F_bin(13,9,1)`、`F(13,9,1)` 均仍在 **[11,12]**，未发现字母表分离。
 
-最新 C3 staircase 证书排除了全部四个剩余 C3 third geometries；独立检查
-重建 748,788 个字母并核验 6,152 个 flag-tree 节点。辅助分类中剩余
-136 个 B1/B2 加 1 个 B3 几何（共 137，21 个 unrestricted joints）；
-binary 范围仍为 105 types / 448 profiles / 120 geometries / 18 joints。
+10 月 11 日的 C1 word-staircase 排除了最后一个 B3 几何，完整 B3 范围已排除。
+随后 inverse-union、B2 first-pair、column、single-class 和 few_graph_06 到
+few_graph_12 证书继续缩小辅助分类：任意字母表剩余 84 个 B1/B2 几何、
+0 个 B3、17 个 joints；binary 剩余 74 types / 385 profiles / 77 geometries / 16 joints。
+最新累计审计核验 171 项通过报告、2,602 条来源绑定和 1,110 个最新绑定来源。
 这些是条件结构排除，不能据此宣布新的极值或完整上界。
 
-接手者优先处理唯一剩余 B3 几何 **b3_mixed_c1_third2**，从
-[C3_STAIRCASE_EXCLUSION.md](investigation/C3_STAIRCASE_EXCLUSION.md)、
-[B3_STAIRCASE_CERTIFICATE_README.md](investigation/B3_STAIRCASE_CERTIFICATE_README.md)
-及 `active_research.json` 的 `next_structural_work` 接续：完整保留 first-pair / plane
-域及四顶点平面中的所有实际 R 选择，继续使用 literal kernel-atom pools 和 staircase flags，
-随后推广到剩余 B1/B2 范围。不要把 basis-image safety 当充分条件，也不要假设平面不变。
+接手者应处理剩余 84 个任意字母表几何和 74 个 binary types / 385 个 profiles，
+从 [FEW_GRAPH_FIRST_PAIR_CERTIFICATES.md](investigation/FEW_GRAPH_FIRST_PAIR_CERTIFICATES.md)、
+[FEW_GRAPH_CERTIFICATE_README.md](investigation/FEW_GRAPH_CERTIFICATE_README.md)、
+[BASIS_COLUMN_REACHING_PRUNING.md](investigation/BASIS_COLUMN_REACHING_PRUNING.md)
+及 `active_research.json` 的 `next_structural_work` 接续。沿用可参数化的 full-pair
+drivers，保留 native fields、whole-graph transports、四份 profile-cut 列表和实际可达性。
+深度至少四的 column deductions 要求完整实际 prefix span；旧 28 个预算耗尽探测仍是未知。
+不要把 basis-image safety 当充分条件，也不要假设平面不变。
 
-旧 `P2<=5,P3<=6,P4<=7` 剪枝已撤回；不能复用相应负面搜索结论。
+旧 `P2<=5,P3<=6,P4<=7` 的无依据使用及相应负面搜索结论已撤回。
+远程已另有 [short-pair peeling 证明](../../proofs/paper/problem4_short_pair_peeling.md)
+和 [P6 C7 排除](../../proofs/paper/problem4_c7_sixth_layer.md)：在它们的精确假设下
+可使用新证明的 `|P_h|<=h+3`（1<=h<=7），但新证明不追认旧失效搜索报告。
 超时、受限族搜索失败和正向 maximal graph 均不是全局上界或实际 witness。
 历史审计是对应时点的记录；当前状态以最新累计审计和 active_research 为准。
 
@@ -61,7 +67,8 @@ binary 范围仍为 105 types / 448 profiles / 120 geometries / 18 joints。
 
 沿用现有 `paper/avoid_compress/` 路径；既有 `direct_attack/`、Lean、OpenMath
 冻结成果保持原样。论文、补充材料、所有唯一 investigation 源码/数据/日志、
-56 个证书归档及三个发布归档均保留。`_qa/`、`_release_*/`、编译产物、缓存和
+68 个不可变证书归档及三个发布归档均保留；另外保存了历史 inverse-union 探索归档。
+`_qa/`、`_release_*/`、编译产物、缓存和
 重复版面截图留在本地，均可由源码重新生成。例外是 `_qa/` 中四个被最新审计
 直接哈希绑定的参考文献标题校准源码/记录；它们也随本次交接保存。
 
@@ -71,6 +78,17 @@ binary 范围仍为 105 types / 448 profiles / 120 geometries / 18 joints。
 `python -B hydrate_historical_receipts.py`；解包前逐文件校验，原始日志默认不进入 Git。
 辅助证书 ZIP 和历史 receipt 不赋予 solver timeout 任何证明地位。
 
+166 MB 的 `c1_word_staircase_inventory.json` 超过 GitHub 单文件限制，其原始字节
+已完整存于现有 `certificates/c1_word_staircase.zip`；
+[large_data_manifest.json](investigation/large_data_manifest.json) 记录原始哈希、大小和归档成员。
+在 investigation 中运行 `python -B hydrate_large_data.py` 可逐字节校验并恢复，
+完整性检查无需先解包。其他唯一源码和数据沿用原路径。
+
+[inverse_union_exploration.zip](investigation/certificates/inverse_union_exploration.zip)
+保存旧探索源码、逐案例探测、批次摘要和 28 个预算耗尽记录的上下文。
+其中历史部分报告绑定过旧版本，归档的 `ARCHIVE_INDEX.json` 已明确列出；
+这些探索记录不具有最新已接受证书的证明地位。
+
 仓库根目录的交接完整性检查（不运行新搜索）：
 
 ```sh
@@ -79,8 +97,8 @@ python -B scripts/reproduce.py --suite all
 ```
 
 论文独立复现命令见 supplement README。运行会产生新 provenance 字段，建议在
-`.reproduction/` 的副本中执行；不要覆盖冻结审计。当前辅助 C3 证书可在独立目录
-解压 `investigation/certificates/c3_staircase.zip`，按其 README 复现。
+`.reproduction/` 的副本中执行；不要覆盖冻结审计。最新 first-pair 证书可在独立目录
+解压 `investigation/certificates/few_graph_12_first_pair.zip`，按其 README 复现。
 
 本次实际检查范围和结果见 [SYNC_VALIDATION.json](SYNC_VALIDATION.json)；
 [SYNC_SHA256.json](SYNC_SHA256.json) 绑定交接文件的原始字节，仓库 publication seal

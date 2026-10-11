@@ -2195,3 +2195,176 @@ binary105/448/120/joint18unchanged. Threeinventories andtwoaudits
 reproducebyte-identically inisolation. All119audits and121publication
 checksums pass;sixacceptedartifactsareunchanged. BothF(13,9,1)remain
 [11,12],goalactive/unachieved,andtheacceptedpaperremainsapartialanswer.
+
+
+## Complete B3 exclusion by actual short words
+
+11 October2026. The last B3 third geometry b3_mixed_c1_third2 is excluded
+by complete all-first-pair staircase domains with exact forced-letter
+short-word propagation. Every one of the 44082 labelled first pairs in
+all22 retained immediate-graph classes is transported to one of317 canonical
+prefixes, without the earlier exploratory prefix filter. All labelled maps
+and within-atom permutations are retained. Every singleton required-domain
+premise and every deleted letter's concrete word of length<=11 is stored.
+The independent checker assigns kernel blocks directly, composes words on
+sets, checks rational spans and every branch/proper closed set. Two valid
+inference controls and seven invalid-proof controls pass.
+
+Composition removes the whole C1 joint and the B3-mixed first branch;
+B3-in was previously excluded. All B3 branches are therefore excluded for
+arbitrary alphabets. Remaining unrestricted136 B1/B2 third geometries,
+joints20; binary105/448/120/joints18 unchanged. Complete joint/third
+composition gives three remaining first-fibre families for both alphabet
+classes: b1_out, b2_in and b2_mixed. The older first-level admission count
+four has not incorporated the already complete b1_in joint exclusions.
+The inventory and two core audits reproduce byte-identically in isolation.
+All122 audit reports, including the independent first-family composition,
+and121 publication checksums pass; six accepted artifacts are unchanged.
+Both F(13,9,1) remain [11,12], the full goal is active/unachieved, and the
+accepted paper remains a partial answer. This is not a numerical extremum
+or alphabet separation.
+
+
+## B1/B2 complete inverse-union domains
+
+11 October2026. The24 explicitly selected B1/B2 third geometries are
+excluded for arbitrary finite alphabets. Complete native exact kernel
+unions enumerate52,524 proposed immediate graphs; no alphabet bound or
+search timeout supplies a negative. The independent checker reconstructs
+all covered native kernels, graph catalogues by edge-subset tests, literal
+output-image colorings, all atom/type quotas, suppliers, proper closed sets
+and labelled D transports. A retained domain is checked as a control.
+Seven union-closure controls and nine deliberately corrupted proofs pass.
+
+The immutable54-file archive regenerates its inventory and both new audits
+byte-identically in isolation. Complete composition retains all four
+previous binary profile-cut lists. Remaining unrestricted112 B1/B2
+geometries, B3=0, joints20; binary95 typed families,437 profiles,99
+geometries, joints18. Both alphabet classes have three first-fibre families:
+b1_out, b2_in, b2_mixed. No additional whole joint is excluded.
+
+All124 audit reports and121 publication checksums pass. The six accepted
+publication artifacts are unchanged. Both F(13,9,1) remain [11,12], and
+the accepted paper remains a partial answer. The full goal is active and
+unachieved. The28 budget-exhausted earlier probes remain unresolved;
+the new certificate uses only complete, independently checked domains.
+
+
+## B2-mixed C5 complete first-pair staircase
+
+11 October2026. b2_mixed_c5_third3 is excluded for arbitrary finite
+alphabets. Its four retained immediate-graph classes supply12320 labelled
+first pairs, transported with the WHOLE graph to64 representatives.
+All1002240 initial literal letter maps and20072 flag nodes are checked
+independently by direct kernel-block assignments and rational elimination.
+Every branch ends by depth5:15840 missing required groups,2340 proper
+closed sets and1892 complete internal nodes. Zero forced-word rounds are
+used. Canonical D transports and every prefix multiplicity are checked.
+
+The immutable67-file package regenerates the inventory and both new audits
+byte-identically in isolation. Two positive flag controls and nine invalid
+proof controls pass. All126 audit reports and121 publication checksums
+pass. Complete composition retains all four previous profile-cut lists:
+unrestricted111 B1/B2 geometries, B3=0, joints20; binary94 typed families,
+435 profiles,98 geometries, joints18. No new whole joint is excluded.
+
+Both F(13,9,1) remain [11,12]. The accepted paper and six publication
+artifacts are unchanged and retain partial-answer scope. The full goal
+remains active and unachieved; no alphabet separation is claimed.
+
+
+## Five B2 sibling first-pair cuts and prefix-column controls
+
+11 October 2026. Five complete arbitrary-alphabet first-pair certificates
+exclude b2_in_c3_third5, b2_in_c3_third4, b2_mixed_c3_third4,
+b2_mixed_c3_third7 and b2_in_c6_third6. Their 54,040 labelled first pairs
+are transported with each whole P1 graph to 512 representatives. All
+7,685,280 initial literal maps and 70,431 flag nodes are checked by
+independent direct block assignments and rational elimination. Maximum
+basis depth is five. The leaf counts are 56,156 missing suppliers and
+8,531 proper closed sets, with 5,744 complete internal nodes. No
+forced-word deletion or numerical bound is inferred from a timeout.
+
+The new general SC reaching/cooccurrence lemma and full-prefix zero,
+equal and constant-one column deductions have a paper proof, exact
+rational controls on complete small row domains, all 290 actual witness
+controls, six positive controls and thirteen rejected corruptions. The
+loss-of-SC and basis-inequality counterexamples are checked explicitly.
+These column conditions make zero additional deletions in the five
+shallow certificates; their exclusions use the existing supplier/SC rules.
+
+The immutable certificate reproduces five inventories and eight audit
+reports byte-identically in isolation. All 134 existing/new audits and
+121 publication checksums pass. Both alphabet classes also lose the
+whole b2_in_c6 joint. Current unrestricted frontier: 106 B1/B2 geometries,
+B3=0, 19 joints. Binary: 89 typed families,424 profiles,93 geometries,
+17 joints. All four prior profile-cut lists remain merged. Both first
+families remain b1_out,b2_in,b2_mixed.
+
+Both F_bin(13,9,1) and F(13,9,1) remain [11,12]. The accepted partial
+paper and six publication artifacts are unchanged. No alphabet
+separation or full solution is claimed; the goal remains active.
+
+## Five single-class B2 first-pair cuts
+
+11 October 2026. Five full arbitrary-alphabet certificates exclude b2_mixed_c12_third4, b2_in_c1_third6, b2_mixed_c1_third11, b2_mixed_c1_third9, b2_mixed_c1_third10. Each has exactly one retained immediate graph class. All labelled ordered first pairs, whole-graph and native-kernel transports, literal maps and complete flag branches are checked independently. The trees stop at depth at most three, using supplier and proper-closed-set rejections. Column restrictions are unused. The immutable package regenerates seven audits and five inventories byte-identically in twelve isolated runs. All140 old/new audits and121 publication checksums pass.
+
+Unrestricted frontier:101 B1/B2 geometries, B3=0,18 joints. Binary:85 typed families,404 profiles,89 geometries,17 joints. This is five new unrestricted and four additional binary geometry exclusions; b2_mixed_c12 was already excluded binary and is now also excluded unrestricted. All four prior binary profile-cut lists remain merged. Both first-family sets remain b1_out,b2_in,b2_mixed.
+
+Both F_bin(13,9,1) and F(13,9,1) remain [11,12]. There is no numerical extremum, alphabet separation or complete formula. The accepted partial-answer paper and publication artifacts are unchanged. The goal remains active and unachieved.
+
+## Complete few-graph first pairs: few_graph_06
+
+11 October2026. Full arbitrary-alphabet certificates exclude b1_out_c5_third7, b2_mixed_c11_third4, b2_mixed_c5_third5, b1_out_c5_third8, b1_out_c5_third11. 21 retained immediate graphs and 25692 labelled first pairs are covered by 381 representatives. 8502720 literal maps and 19221 flag nodes are checked independently, with maximum basis depth 4. Column deletions: 0. Native graph / field transports are complete; twelve corrupted metadata records are rejected by the actual checker before its first literal-pool call. The immutable certificate regenerates 8 audits and 5 inventories byte-identically. All147 audits, 2068 bindings and121 publication checksums pass.
+
+Unrestricted frontier:96 B1/B2 geometries, B3=0,17 joints. Binary:83 types,400 profiles,87 geometries,16 joints. All four previous binary profile-cut lists remain merged. Whole-joint exclusions unrestricted: b2_mixed_c11; binary: b2_mixed_c11.
+
+Both F_bin(13,9,1) and F(13,9,1) remain [11,12]. No complete formula, alphabet separation or new numerical extremum follows. Accepted partial-answer paper and publication artifacts remain unchanged. The full goal remains active and unachieved.
+
+## Complete few-graph first pairs: few_graph_07
+
+11 October2026. Full arbitrary-alphabet certificates exclude b2_mixed_c10_third2, b2_in_c4_third6. 17 retained immediate graphs and 11648 labelled first pairs are covered by 219 representatives. 5925576 literal maps and 1183 flag nodes are checked independently, with maximum basis depth 3. Column deletions: 0. Native graph / field transports are complete; twelve corrupted metadata records are rejected by the actual checker before its first literal-pool call. The immutable certificate regenerates 5 audits and 2 inventories byte-identically. All151 audits, 2157 bindings and121 publication checksums pass.
+
+Unrestricted frontier:94 B1/B2 geometries, B3=0,17 joints. Binary:82 types,399 profiles,85 geometries,16 joints. All four previous binary profile-cut lists remain merged. Whole-joint exclusions unrestricted: none; binary: none.
+
+Both F_bin(13,9,1) and F(13,9,1) remain [11,12]. No complete formula, alphabet separation or new numerical extremum follows. Accepted partial-answer paper and publication artifacts remain unchanged. The full goal remains active and unachieved.
+
+## Complete few-graph first pairs: few_graph_08
+
+11 October2026. Full arbitrary-alphabet certificates exclude b1_out_c5_third3, b2_in_c4_third8. 20 retained immediate graphs and 27538 labelled first pairs are covered by 268 representatives. 6792960 literal maps and 2561 flag nodes are checked independently, with maximum basis depth 2. Column deletions: 0. Native graph / field transports are complete; twelve corrupted metadata records are rejected by the actual checker before its first literal-pool call. The immutable certificate regenerates 5 audits and 2 inventories byte-identically. All155 audits, 2246 bindings and121 publication checksums pass.
+
+Unrestricted frontier:92 B1/B2 geometries, B3=0,17 joints. Binary:81 types,397 profiles,84 geometries,16 joints. All four previous binary profile-cut lists remain merged. Whole-joint exclusions unrestricted: none; binary: none.
+
+Both F_bin(13,9,1) and F(13,9,1) remain [11,12]. No complete formula, alphabet separation or new numerical extremum follows. Accepted partial-answer paper and publication artifacts remain unchanged. The full goal remains active and unachieved.
+
+## Complete few-graph first pairs: few_graph_09
+
+11 October2026. Full arbitrary-alphabet certificates exclude b1_out_c5_third9, b2_mixed_c10_third7. 22 retained immediate graphs and 13238 labelled first pairs are covered by 475 representatives. 6714120 literal maps and 3041 flag nodes are checked independently, with maximum basis depth 4. Column deletions: 0. Native graph / field transports are complete; twelve corrupted metadata records are rejected by the actual checker before its first literal-pool call. The immutable certificate regenerates 5 audits and 2 inventories byte-identically. All159 audits, 2335 bindings and121 publication checksums pass.
+
+Unrestricted frontier:90 B1/B2 geometries, B3=0,17 joints. Binary:80 types,396 profiles,83 geometries,16 joints. All four previous binary profile-cut lists remain merged. Whole-joint exclusions unrestricted: none; binary: none.
+
+Both F_bin(13,9,1) and F(13,9,1) remain [11,12]. No complete formula, alphabet separation or new numerical extremum follows. Accepted partial-answer paper and publication artifacts remain unchanged. The full goal remains active and unachieved.
+
+## Complete few-graph first pairs: few_graph_10
+
+11 October2026. Full arbitrary-alphabet certificates exclude b2_mixed_c6_third4, b2_mixed_c3_third16. 26 retained immediate graphs and 13910 labelled first pairs are covered by 871 representatives. 9983760 literal maps and 14412 flag nodes are checked independently, with maximum basis depth 4. Column deletions: 0. Native graph / field transports are complete; twelve corrupted metadata records are rejected by the actual checker before its first literal-pool call. The immutable certificate regenerates 5 audits and 2 inventories byte-identically. All163 audits, 2424 bindings and121 publication checksums pass.
+
+Unrestricted frontier:88 B1/B2 geometries, B3=0,17 joints. Binary:78 types,392 profiles,81 geometries,16 joints. All four previous binary profile-cut lists remain merged. Whole-joint exclusions unrestricted: none; binary: none.
+
+Both F_bin(13,9,1) and F(13,9,1) remain [11,12]. No complete formula, alphabet separation or new numerical extremum follows. Accepted partial-answer paper and publication artifacts remain unchanged. The full goal remains active and unachieved.
+
+## Complete few-graph first pairs: few_graph_11
+
+11 October2026. Full arbitrary-alphabet certificates exclude b2_mixed_c3_third18, b2_mixed_c10_third15. 28 retained immediate graphs and 11180 labelled first pairs are covered by 688 representatives. 8544120 literal maps and 5474 flag nodes are checked independently, with maximum basis depth 4. Column deletions: 0. Native graph / field transports are complete; twelve corrupted metadata records are rejected by the actual checker before its first literal-pool call. The immutable certificate regenerates 5 audits and 2 inventories byte-identically. All167 audits, 2513 bindings and121 publication checksums pass.
+
+Unrestricted frontier:86 B1/B2 geometries, B3=0,17 joints. Binary:76 types,388 profiles,79 geometries,16 joints. All four previous binary profile-cut lists remain merged. Whole-joint exclusions unrestricted: none; binary: none.
+
+Both F_bin(13,9,1) and F(13,9,1) remain [11,12]. No complete formula, alphabet separation or new numerical extremum follows. Accepted partial-answer paper and publication artifacts remain unchanged. The full goal remains active and unachieved.
+
+## Complete few-graph first pairs: few_graph_12
+
+11 October2026. Full arbitrary-alphabet certificates exclude b2_mixed_c10_third17, b2_mixed_c7_third5. 30 retained immediate graphs and 5712 labelled first pairs are covered by 402 representatives. 3269280 literal maps and 913 flag nodes are checked independently, with maximum basis depth 4. Column deletions: 0. Native graph / field transports are complete; twelve corrupted metadata records are rejected by the actual checker before its first literal-pool call. The immutable certificate regenerates 5 audits and 2 inventories byte-identically. All171 audits, 2602 bindings and121 publication checksums pass.
+
+Unrestricted frontier:84 B1/B2 geometries, B3=0,17 joints. Binary:74 types,385 profiles,77 geometries,16 joints. All four previous binary profile-cut lists remain merged. Whole-joint exclusions unrestricted: none; binary: none.
+
+Both F_bin(13,9,1) and F(13,9,1) remain [11,12]. No complete formula, alphabet separation or new numerical extremum follows. Accepted partial-answer paper and publication artifacts remain unchanged. The full goal remains active and unachieved.

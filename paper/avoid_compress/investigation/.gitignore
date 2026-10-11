@@ -1,4 +1,6 @@
 # Byte-preserved historical local receipts are shipped in historical-local-receipts.zip.
+# This 166 MB inventory is preserved byte-identically in certificates/c1_word_staircase.zip.
+c1_word_staircase_inventory.json
 fiber_slice_b1_in_k2.json
 fiber_slice_b1_out_k2.json
 fiber_slice_b2_in_k2.json
