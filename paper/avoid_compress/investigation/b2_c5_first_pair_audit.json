@@ -1,0 +1,55 @@
+{
+  "status": "pass",
+  "parameter": [
+    13,
+    9,
+    1
+  ],
+  "id": "b2_mixed_c5_third3",
+  "global_classes": 4,
+  "labelled_first_pairs": 12320,
+  "canonical_prefixes": 64,
+  "tree_counts": {
+    "nodes": 20072,
+    "depth_1": 64,
+    "depth_2": 1272,
+    "missing_required_group": 15840,
+    "depth_3": 2624,
+    "internal_nodes": 1892,
+    "prefixes": 64,
+    "literal_letters": 1002240,
+    "maximal_graph_not_SC": 2340,
+    "depth_4": 4352,
+    "depth_5": 11760
+  },
+  "maximum_basis_depth": 5,
+  "labelled_D_transports": 8,
+  "new_excluded_third_ids": [
+    "b2_mixed_c5_third3"
+  ],
+  "new_unrestricted_joint_exclusions": [],
+  "new_binary_joint_exclusions": [],
+  "remaining_unrestricted_geometries": 111,
+  "remaining_binary_geometries": 98,
+  "remaining_binary_typed": 94,
+  "remaining_binary_profiles": 435,
+  "remaining_binary_joints": 18,
+  "remaining_unrestricted_joints": 20,
+  "source_sha256": {
+    "check_b2_c5_first_pair.py": "1919826ad66af970745751c1bdc54338f6927592954193b681ae8e1e7d10cb8f",
+    "b2_c5_first_pair_inventory.json": "f2f857e5bf62a4a2efdbc959191e77de9da90a198b689cfd6212fdbee9f828f4",
+    "b2_c5_first_pair_scope.json": "e02a576f2641c65be4e64d2be6c5928b0fb27103e9fb7402830b0f527b5afd66",
+    "B2_C5_FIRST_PAIR_STAIRCASE_EXCLUSION.md": "3e641d1a44ae42e54c00aeaada373618f63dd7762adf3d02ed4d71a4aeff94e2",
+    "b2_c5_first_pair_baseline_state.json": "49f32fad00371823a3c7d94df465a63c3da8a80a05dbbc19505a8a8b42064d98",
+    "AUXILIARY_AUDIT_20261011_02.json": "8dec27990c2e28fba9995e42fd3bc9ffb038305cac7018d24486a94e9c8f6b53",
+    "check_c1_word_staircase.py": "ec35afabcef8c28573138bf4745959c42a346efef38dd03350eedc8e4016c347",
+    "check_b3_staircase.py": "e60a8c1aea412946cf3d3fbb3f8998750e6ca042d899f69661499b72e37a0fe3",
+    "b1_b2_inverse_union_inventory.json": "0de09132a8c44236925a07223e3b42d7b4fe65450ed9fc86c9363bbe34d371cf",
+    "b1_b2_inverse_union_audit.json": "c868f8ae6c09351d9c2ac6f58e69ca19935841edf6c638d17516cb759b4981c1",
+    "small_first_third_inventory.json": "ea00650e65207784313446cec6bf6d38b6f48223b327dcc218e9c6f34cf703c1",
+    "common_block_profiles_audit.json": "e6806d42e4e8ba159dbe8a2aa42bb7c6b0198a90d7bbb30e907b5f0ca8082488",
+    "LOCAL_EQUALITY_FLAG.md": "f34cf260276c6551266564c1ee2264dc823aeaa4f33b4ae8f8261aedeec596a8",
+    "local_equality_flag_audit.json": "b908e60013672ce875cf351a478e95b0faf5fc72f2428f00fcc209be1f9e4d40"
+  },
+  "scope": "Complete first-pair arbitrary-alphabet necessary staircase exclusion. No numerical F value, alphabet separation or all-parameter formula."
+}

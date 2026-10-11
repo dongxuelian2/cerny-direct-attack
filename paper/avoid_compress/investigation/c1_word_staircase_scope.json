@@ -1,0 +1,16 @@
+{
+  "status": "necessary_scope",
+  "parameter": [
+    13,
+    9,
+    1
+  ],
+  "selected_geometries": [
+    "b3_mixed_c1_third2"
+  ],
+  "source_sha256": {
+    "C1_WORD_STAIRCASE_EXCLUSION.md": "69d143c2fb271fbcbb90f72063ddf1d0bff69b6db444249dc1a4d2aadd1b0917",
+    "c1_word_staircase_baseline_state.json": "8d67e5041ed84481c5792b227b2a678489f7e886d0feb61cec09573a25830e87",
+    "AUXILIARY_AUDIT_20261010_22.json": "668ac3feb95a89cc1bf7c636990376102a9186a2a70851e70bfaf6da660e1c71"
+  }
+}

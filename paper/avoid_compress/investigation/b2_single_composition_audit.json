@@ -1,0 +1,98 @@
+{
+  "status": "pass",
+  "parameter": [
+    13,
+    9,
+    1
+  ],
+  "target_ac": 12,
+  "new_excluded_third_ids": [
+    "b2_mixed_c12_third4",
+    "b2_in_c1_third6",
+    "b2_mixed_c1_third11",
+    "b2_mixed_c1_third9",
+    "b2_mixed_c1_third10"
+  ],
+  "new_unrestricted_joint_exclusions": [
+    "b2_mixed_c12"
+  ],
+  "new_binary_joint_exclusions": [],
+  "new_unrestricted_geometry_exclusions": [
+    "b2_mixed_c12_third4",
+    "b2_in_c1_third6",
+    "b2_mixed_c1_third11",
+    "b2_mixed_c1_third9",
+    "b2_mixed_c1_third10"
+  ],
+  "new_binary_geometry_exclusions": [
+    "b2_in_c1_third6",
+    "b2_mixed_c1_third11",
+    "b2_mixed_c1_third9",
+    "b2_mixed_c1_third10"
+  ],
+  "complete_labelled_first_pairs": 8498,
+  "retained_P1_classes": 5,
+  "tree_counts": {
+    "nodes": 3791,
+    "depth_1": 140,
+    "maximal_graph_not_SC": 737,
+    "prefixes": 140,
+    "literal_letters": 3531240,
+    "depth_2": 1043,
+    "missing_required_group": 2912,
+    "internal_nodes": 142,
+    "depth_3": 2608
+  },
+  "maximum_basis_depth": 3,
+  "column_rules_additional_deletions": 0,
+  "remaining_unrestricted_geometries": 101,
+  "remaining_binary_geometries": 89,
+  "remaining_binary_typed": 85,
+  "remaining_binary_profiles": 404,
+  "remaining_unrestricted_joints": 18,
+  "remaining_binary_joints": 17,
+  "all_four_prior_profile_cut_lists_merged": true,
+  "no_new_numerical_extremum": true,
+  "interval": [
+    11,
+    12
+  ],
+  "scope": "Five conditional B2 one-class exclusions; no F value, separation or complete formula.",
+  "source_sha256": {
+    "AUXILIARY_AUDIT_20261011_04.json": "f014ec7afd3bd13ff118bace8f7c23dd66c202782a25782bb61dc76627af2051",
+    "B2_COLUMN_FIRST_PAIR_EXCLUSION.md": "d041be392c0b4d7808ebdb4895742563dff27d7c5add08674bf7265ceace3009",
+    "B2_SINGLE_CLASS_FIRST_PAIR_EXCLUSION.md": "92d008986e058743138b4403bdecd45d9a8d39cae0622c15a75f473219f50b40",
+    "BASIS_COLUMN_REACHING_PRUNING.md": "00976976efdc29fdfbc8c2a2658d34c269d4a94be4271e7a2dda417ab6aaacdf",
+    "LOCAL_EQUALITY_FLAG.md": "f34cf260276c6551266564c1ee2264dc823aeaa4f33b4ae8f8261aedeec596a8",
+    "b2_in_c1_third6_single_audit.json": "93b974559220116aab39bc249cd44b1872983940a3e09e9ddfd81e93f0a32fef",
+    "b2_in_c1_third6_single_inventory.json": "f4bde46fe23decab2d8d997483f3b93199c862405a5d408876203146ff41036a",
+    "b2_mixed_c12_third4_single_audit.json": "de77011fe7b673d7b75a54451056299c6e64e6d960e1bd45090bcdf9ff28036b",
+    "b2_mixed_c12_third4_single_inventory.json": "c1e9f3915ccde4495b7676d26506f4fef2010e1f45121bd8d9b1f66c21a50152",
+    "b2_mixed_c1_third10_single_audit.json": "784f245540a5203e4264cf96c2b57aa902be2005667a2b61e20c257aefc8e1de",
+    "b2_mixed_c1_third10_single_inventory.json": "79c0745b381c42d5f6df346ffeae72c086051e71dad27ce32d97e2dd3288dbed",
+    "b2_mixed_c1_third11_single_audit.json": "ff05361e35718c491bae69b9c756d5c11450ea0d6af588ec834934f01628de89",
+    "b2_mixed_c1_third11_single_inventory.json": "49801cc939771895978062dfb912df1599317c0ad231eda7f8b075e3ab1e7de2",
+    "b2_mixed_c1_third9_single_audit.json": "4552ddafed73ea9b6c2c3bfd3ffa419b0fda5a1f6b8fbf4e7be05d9ff28da651",
+    "b2_mixed_c1_third9_single_inventory.json": "d648718dd0334363d9969c50a5f99b83a0088f3eb0a4ff886fb2de59d8899268",
+    "b2_single_baseline_state.json": "6ba00c038cb07b1e0e40c43e683246bb4bafa32004fcf1f9ec18ce369fd51621",
+    "b2_single_parent_domains.json": "912ade6cdeae83b2ed88f06f7eab7ae4b9fbd9a0d0212520542c15f46a1aa73e",
+    "b2_single_scope.json": "d3a314a0042ae9731f5216eaa1de3d97ab7121c4885be7b406e92d0690abf801",
+    "basis_column_reaching_audit.json": "d3b86c7210f1267e307ff0c94493453b38fc8ea5244a614b68da4145b760fdfc",
+    "basis_column_staircase.py": "f145cb5a2d09d9ba0c7b0e597c98bd53a940eb5096205e48206fc2ecf24b77cd",
+    "c1_word_staircase_letter_generator.py": "e644954e22c879ad9bab83eaed3eee3e4c2bdd9727f9701adf0f78d006a119fd",
+    "check_b1_b2_inverse_union.py": "b2df414a7e885e3bdb10c9bb46b46c734e55a193088c0a645762d64688f5c28f",
+    "check_b2_single_case.py": "f9c7ce5d183a9318da87b87d44076ccb5f20d1a2a918d5f25395675738a7c0a1",
+    "check_b2_single_composition.py": "1fd03eb3956ea2ff8eb044fb07d1543ab19d899fd0f41736a60da82237974072",
+    "check_b3_staircase.py": "e60a8c1aea412946cf3d3fbb3f8998750e6ca042d899f69661499b72e37a0fe3",
+    "check_basis_column_staircase.py": "fa4417026950dd3a0bba3e23b201e1a7c1a79f2297c7dcfd5b2d8bfa2c9e8076",
+    "check_c1_word_staircase.py": "ec35afabcef8c28573138bf4745959c42a346efef38dd03350eedc8e4016c347",
+    "common_block_profiles_audit.json": "e6806d42e4e8ba159dbe8a2aa42bb7c6b0198a90d7bbb30e907b5f0ca8082488",
+    "enumerate_b2_single_case.py": "5e4457abe78708d8bcf0ac460411a39edf073e1be29e37d0c6de7798bd9cdeca",
+    "enumerate_b3_staircase.py": "17f52e1d73e11648f52c5d4ad4d759d0d5edf093992305be7840e80691ca0b6a",
+    "enumerate_b3_staircase_first.py": "d253bd939b0ff2e9515563c7605a58b3503b0b53f7b36bbf02fa8af8a8c50fc8",
+    "enumerate_c1_word_staircase.py": "43afe8420707d563ca60168ed4194790419167413d16475ffd097be0adf7adaa",
+    "local_equality_flag_audit.json": "b908e60013672ce875cf351a478e95b0faf5fc72f2428f00fcc209be1f9e4d40",
+    "small_first_third_inventory.json": "ea00650e65207784313446cec6bf6d38b6f48223b327dcc218e9c6f34cf703c1",
+    "three_cover_atom_kernel_inventory.json": "fcfdd28eeb00f082206e166ab0b7bd7c3cee07a1ce21241e3e9a8be9e5bc7c5b"
+  }
+}

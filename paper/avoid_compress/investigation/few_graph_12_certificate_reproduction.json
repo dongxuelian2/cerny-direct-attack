@@ -1,0 +1,73 @@
+{
+  "status": "pass",
+  "archive": "certificates/few_graph_12_first_pair.zip",
+  "sha256": "84e4f78f3a476fd827874454610703ee9fdbc4ce921fdd8ecf27ee7a7df25dab",
+  "files": 45,
+  "checksum_entries": 44,
+  "audits_reproduced_byte_identically": 5,
+  "data_files_reproduced_byte_identically": 2,
+  "runs": [
+    {
+      "command": [
+        "check_basis_column_reaching.py"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "enumerate_few_graph_case.py",
+        "b2_mixed_c10_third17",
+        "--scope",
+        "few_graph_12_scope.json"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "enumerate_few_graph_case.py",
+        "b2_mixed_c7_third5",
+        "--scope",
+        "few_graph_12_scope.json"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "check_few_graph_case.py",
+        "b2_mixed_c10_third17",
+        "--scope",
+        "few_graph_12_scope.json"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "check_few_graph_case.py",
+        "b2_mixed_c7_third5",
+        "--scope",
+        "few_graph_12_scope.json"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "check_few_graph_controls.py",
+        "--scope",
+        "few_graph_12_scope.json"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "check_few_graph_composition.py",
+        "--scope",
+        "few_graph_12_scope.json"
+      ],
+      "exit": 0
+    }
+  ],
+  "source_sha256": {
+    "package_few_graph_certificate.py": "328dee10dd4b0e50ee8aad25aac565beca22b69963ab8679059986bdb92ed3be",
+    "few_graph_12_scope.json": "c5a563afac8f87de5ff0f52dc507650d8b7c1018355da434fa23864586921815"
+  }
+}

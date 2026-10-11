@@ -1802,10 +1802,10 @@
       "id": "P4-OPEN-FRONTIER",
       "name": "Remaining Problem 4 research and corrected historical search scope",
       "status": "EXPLORATORY",
-      "scope": "The region m>=4,n-r>=3m remains unclassified as a whole; F_bin(13,9,1) and F(13,9,1) remain in [11,12]. Latest unrestricted geometry inventory has 136 B1/B2 plus one B3 case and 21 joints; binary inventory remains 105 types/448 profiles/120 geometries/18 joints. These counts are necessary structural scopes, not automaton witnesses or global extrema.",
+      "scope": "The region m>=4,n-r>=3m remains unclassified as a whole; F_bin(13,9,1) and F(13,9,1) remain in [11,12]. At the 2026-10-11 checkpoint the unrestricted necessary geometry inventory has 84 B1/B2 cases, no B3 case and 17 joints; binary has 74 types/385 profiles/77 geometries/16 joints. These are conditional structural scopes, not witnesses or numerical extrema.",
       "source": "paper/avoid_compress/HANDOFF.md",
-      "proof_check_status": "Navigation and scope record for the 2026-10-10 snapshot; current work starts at b3_mixed_c1_third2. Retracted higher-layer cardinality caps and solver timeouts are explicitly excluded as upper-bound evidence.",
-      "dependencies": "investigation/active_research.json, CURRENT_FRONTIER.md and AUXILIARY_AUDIT_20261010_22.json",
+      "proof_check_status": "Navigation and scope record for AUXILIARY_AUDIT_20261011_12.json. Continue the remaining B1/B2 full-pair domains. Retracted historical negative reports stay retracted; separately proved short-pair caps have their own precise hypotheses.",
+      "dependencies": "investigation/active_research.json, CURRENT_FRONTIER.md and AUXILIARY_AUDIT_20261011_12.json",
       "priority": "OPEN"
     },
     {
@@ -1896,6 +1896,36 @@
       "source": "proofs/paper/problem4_continuation_audit.md",
       "proof_check_status": "Research/provenance navigation only; no blanket proof status. Manuscript, old certificates and frozen formal inventory unchanged.",
       "dependencies": "P4-K4-EXCLUSION; P4-C7-SIXTH; P4-P3-SHAPES; explicit limitations in the note",
+      "priority": "OPEN"
+    },
+    {
+      "id": "P4-C1-B3-COMPLETE",
+      "name": "Complete conditional exclusion of the final unrestricted B3 geometry",
+      "status": "COMPUTATIONALLY VERIFIED",
+      "scope": "At (13,9,1), assuming attaining avoid-or-compress length 12 and the audited equality/geometry reductions, complete C1 word-staircase domains exclude b3_mixed_c1_third2. Composition excludes the remaining unrestricted B3 family; no F value or alphabet separation follows.",
+      "source": "paper/avoid_compress/investigation/C1_WORD_STAIRCASE_EXCLUSION.md",
+      "proof_check_status": "Immutable package and historical isolated byte-identical regeneration retained. Current source bindings and archive hashes verified at synchronization; full search/regeneration was not repeated.",
+      "dependencies": "c1_word_staircase.zip, c1_word_staircase_audit.json, c1_frontier_first_composition_audit.json and the stated prior kernel-atom/equality premises",
+      "priority": "OPEN"
+    },
+    {
+      "id": "P4-FIRST-PAIR-20261011",
+      "name": "Additional complete scoped first-pair structural exclusions",
+      "status": "COMPUTATIONALLY VERIFIED",
+      "scope": "The explicitly selected inverse-union, B2 first-pair, column, single-class and few_graph_06..12 domains yield conditional arbitrary-alphabet exclusions at (13,9,1), target 12. Their accumulated composition leaves 84 unrestricted geometries/17 joints and binary 74 types/385 profiles/77 geometries/16 joints; the extrema remain in [11,12].",
+      "source": "paper/avoid_compress/investigation/FEW_GRAPH_FIRST_PAIR_CERTIFICATES.md",
+      "proof_check_status": "52 additional passed reports bring the cumulative count to 171 with 2602 source bindings. Each immutable package retains scope, counts, independent checks and isolated regeneration receipt. Synchronization verifies these bindings, not a new numerical theorem.",
+      "dependencies": "AUXILIARY_AUDIT_20261011_12.json, twelve 2026-10-11 certificate packages, exact scope files, transports and all four prior profile-cut lists",
+      "priority": "OPEN"
+    },
+    {
+      "id": "P4-PREFIX-COLUMN",
+      "name": "Strong-connectivity reaching and full-prefix column necessities",
+      "status": "PROVED ON PAPER",
+      "scope": "In a strongly connected synchronizing n-state DFA with |S|=s>=2 and m=n-s, every state is reached from S within m letters; actual-image cooccurrence implies d(p,q)>=c(S)-m. For an actual-row basis spanning the full prefix space V_i with i>=m, zero columns are impossible and equal or constant-one columns imply the stated pair-isolation constraints. Basis inequalities alone are insufficient.",
+      "source": "paper/avoid_compress/investigation/BASIS_COLUMN_REACHING_PRUNING.md",
+      "proof_check_status": "Written uniform necessary-condition proof; rational small-domain, 290 actual-witness and rejected-corruption controls are separate bound audits. No new extremum or formal-kernel claim.",
+      "dependencies": "basis_column_reaching_audit.json, basis_column_controls_audit.json, strong connectivity, synchronization and full actual prefix-span hypotheses",
       "priority": "OPEN"
     }
   ]

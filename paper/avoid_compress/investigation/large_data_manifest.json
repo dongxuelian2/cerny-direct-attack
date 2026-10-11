@@ -1,0 +1,12 @@
+{
+  "scope": "Large raw inventory preserved in the pre-existing immutable certificate archive; original bytes and source bindings unchanged.",
+  "files": {
+    "c1_word_staircase_inventory.json": {
+      "archive": "certificates/c1_word_staircase.zip",
+      "member": "c1_word_staircase/c1_word_staircase_inventory.json",
+      "sha256": "1f5e1ae5f79ed14c2824c169c23aade9bca3315655040e12565d62e3c66be33f",
+      "bytes": 166486625,
+      "archive_sha256": "39429575d0190ec37573116465ee5dc61ddf1c695ae256a63f2c1f3a321f5dda"
+    }
+  }
+}

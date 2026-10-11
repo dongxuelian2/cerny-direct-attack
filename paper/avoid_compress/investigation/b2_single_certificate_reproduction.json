@@ -1,0 +1,96 @@
+{
+  "status": "pass",
+  "archive": "certificates/b2_single_first_pair.zip",
+  "sha256": "a352598bd790654d6ca38d13874e8e1c6c39ad3c6e9668772fae3b3d4f720175",
+  "files": 49,
+  "checksum_entries": 48,
+  "audits_reproduced_byte_identically": 7,
+  "data_files_reproduced_byte_identically": 5,
+  "runs": [
+    {
+      "command": [
+        "check_basis_column_reaching.py"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "enumerate_b2_single_case.py",
+        "b2_mixed_c12_third4"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "enumerate_b2_single_case.py",
+        "b2_in_c1_third6"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "enumerate_b2_single_case.py",
+        "b2_mixed_c1_third11"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "enumerate_b2_single_case.py",
+        "b2_mixed_c1_third9"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "enumerate_b2_single_case.py",
+        "b2_mixed_c1_third10"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "check_b2_single_case.py",
+        "b2_mixed_c12_third4"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "check_b2_single_case.py",
+        "b2_in_c1_third6"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "check_b2_single_case.py",
+        "b2_mixed_c1_third11"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "check_b2_single_case.py",
+        "b2_mixed_c1_third9"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "check_b2_single_case.py",
+        "b2_mixed_c1_third10"
+      ],
+      "exit": 0
+    },
+    {
+      "command": [
+        "check_b2_single_composition.py"
+      ],
+      "exit": 0
+    }
+  ],
+  "source_sha256": {
+    "package_b2_single_certificate.py": "84917f9c2399a2e05c1db92e3b84f7d1eab3fa1486f081526fbc318929cfa4bc"
+  }
+}
