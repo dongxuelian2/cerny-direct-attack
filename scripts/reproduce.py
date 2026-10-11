@@ -172,7 +172,8 @@ def integrity():
                     if name not in allowed_missing:
                         errors.append(rel+': broken link '+link)
                 link_count += 1
-        if p.suffix.lower() not in ('.pdf','.docx','.png','.jpg'):
+        # Compressed ZIP bytes are binary; package checkers verify their contents.
+        if p.suffix.lower() not in ('.pdf','.docx','.png','.jpg','.zip'):
             s = p.read_text(encoding='utf-8', errors='replace')
             if re.search(r'gh[pousr]_[A-Za-z0-9]{20,}|sk-[A-Za-z0-9]{20,}|-----BEGIN [A-Z ]*PRIVATE KEY-----|AKIA[0-9A-Z]{16}', s):
                 errors.append('Potential secret: '+rel)

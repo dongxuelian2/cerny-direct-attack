@@ -17,3 +17,7 @@ The separately imported [Problem 4 handoff](../paper/avoid_compress/HANDOFF.md) 
 ## Problem 4 independent continuation, 2026-10-10
 
 The [continuation audit](../proofs/paper/problem4_continuation_audit.md) adds a sharp graph peeling lemma, justified short-pair caps, a written P3=K4 exclusion and a computer-assisted P6=C7 exclusion. Independent finite checks and paper arguments have separate result IDs. The twelve-shape P3 list is certified only with its additional cover/rank hypotheses; six historical exclusion labels remain unverified. Both extrema at (13,9,1) remain in [11,12]. These results are separate from the imported snapshot and do not change the frozen formal inventory or manuscript.
+
+## Problem 4 auxiliary snapshot, 2026-10-11
+
+The [updated handoff](../paper/avoid_compress/HANDOFF.md) records 171 passed auxiliary audits and 2,602 source bindings. Complete B3 exclusions leave 84 unrestricted B1/B2 geometries / 17 joints; binary remains 74 types / 385 profiles / 77 geometries / 16 joints. These are conditional structural cuts, while both extrema at (13,9,1) remain in [11,12]. The existing short-pair peeling and P6 C7 proof additions are preserved with their own hypotheses. The accepted paper, 109-file supplement and frozen formal core are unchanged. The oversized C1 inventory remains byte-identically available from its immutable certificate ZIP, with a hydration manifest.
