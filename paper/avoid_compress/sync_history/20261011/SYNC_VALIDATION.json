@@ -1,0 +1,169 @@
+{
+  "date": "2026-10-11",
+  "timezone": "Asia/Shanghai",
+  "status": "PASS",
+  "scope": "Synchronize existing 2026-10-11 auxiliary Problem 4 progress and handoff; no new research.",
+  "base_commit": "d03ab9e0848f9eebb3318f671fe16f721df4e4d9",
+  "latest_auxiliary_audit": "AUXILIARY_AUDIT_20261011_12.json",
+  "snapshot_integrity": {
+    "status": "pass",
+    "snapshot_files": 1736,
+    "paper_checksum_entries": 121,
+    "auxiliary_audits": 171,
+    "source_bindings": 2602,
+    "latest_bound_sources": 1110,
+    "historical_receipts": 104,
+    "validated_archives": 73,
+    "archived_large_inventories": 1,
+    "latest_auxiliary_audit": "AUXILIARY_AUDIT_20261011_12.json",
+    "research_frontier": {
+      "unrestricted_geometries": 84,
+      "unrestricted_B3_geometries": 0,
+      "unrestricted_joints": 17,
+      "binary_types": 74,
+      "binary_profiles": 385,
+      "binary_geometries": 77,
+      "binary_joints": 16
+    },
+    "unresolved_interval": [
+      11,
+      12
+    ]
+  },
+  "repository_validation": {
+    "command": "python -B scripts/reproduce.py --suite all",
+    "date_utc": "2026-10-11T13:18:09.178095+00:00",
+    "status": "PASS",
+    "unit_tests": 17,
+    "baseline_certificates": {
+      "bounds": 11,
+      "exact": 55,
+      "nonsynchronizing": 17
+    },
+    "integrity": {
+      "python_sources": 871,
+      "markdown_documents": 479,
+      "internal_links": 768
+    },
+    "formal": {
+      "accepted_modules": 11,
+      "declarations": 114,
+      "frozen_core_declarations": 100
+    },
+    "all_recorded_subprocesses_passed": true
+  },
+  "clean_staged_export_validation": {
+    "status": "PASS",
+    "checks": [
+      {
+        "name": "clean-export-integrity",
+        "status": "PASS"
+      },
+      {
+        "name": "large-data-hydration",
+        "status": "PASS"
+      },
+      {
+        "name": "large-data-hydration-idempotent",
+        "status": "PASS"
+      },
+      {
+        "name": "few-graph-12-controls",
+        "status": "PASS"
+      },
+      {
+        "name": "few-graph-12-composition",
+        "status": "PASS"
+      }
+    ],
+    "archive_text_scan": {
+      "paper/avoid_compress/investigation/certificates/b1_b2_inverse_union.zip": 54,
+      "paper/avoid_compress/investigation/certificates/b2_c5_first_pair.zip": 67,
+      "paper/avoid_compress/investigation/certificates/b2_column_first_pair.zip": 50,
+      "paper/avoid_compress/investigation/certificates/b2_single_first_pair.zip": 49,
+      "paper/avoid_compress/investigation/certificates/c1_word_staircase.zip": 46,
+      "paper/avoid_compress/investigation/certificates/few_graph_06_first_pair.zip": 51,
+      "paper/avoid_compress/investigation/certificates/few_graph_07_first_pair.zip": 45,
+      "paper/avoid_compress/investigation/certificates/few_graph_08_first_pair.zip": 45,
+      "paper/avoid_compress/investigation/certificates/few_graph_09_first_pair.zip": 45,
+      "paper/avoid_compress/investigation/certificates/few_graph_10_first_pair.zip": 45,
+      "paper/avoid_compress/investigation/certificates/few_graph_11_first_pair.zip": 45,
+      "paper/avoid_compress/investigation/certificates/few_graph_12_first_pair.zip": 45,
+      "paper/avoid_compress/investigation/certificates/inverse_union_exploration.zip": 123
+    },
+    "few_graph_12_controls_and_composition_match_original_bytes": true,
+    "metadata_rejections": 12,
+    "native_domains_verified": 2,
+    "composition": {
+      "status": "pass",
+      "parameter": [
+        13,
+        9,
+        1
+      ],
+      "target_ac": 12,
+      "new_excluded_third_ids": [
+        "b2_mixed_c10_third17",
+        "b2_mixed_c7_third5"
+      ],
+      "new_unrestricted_geometry_exclusions": [
+        "b2_mixed_c10_third17",
+        "b2_mixed_c7_third5"
+      ],
+      "new_binary_geometry_exclusions": [
+        "b2_mixed_c10_third17",
+        "b2_mixed_c7_third5"
+      ],
+      "new_unrestricted_joint_exclusions": [],
+      "new_binary_joint_exclusions": [],
+      "complete_labelled_first_pairs": 5712,
+      "retained_P1_classes": 30,
+      "tree_counts": {
+        "nodes": 913,
+        "depth_1": 402,
+        "missing_required_group": 649,
+        "prefixes": 402,
+        "literal_letters": 3269280,
+        "depth_2": 238,
+        "internal_nodes": 54,
+        "maximal_graph_not_SC": 210,
+        "depth_3": 73,
+        "depth_4": 200,
+        "column_nodes": 200,
+        "column_deletions": 0
+      },
+      "maximum_basis_depth": 4,
+      "column_rules_additional_deletions": 0,
+      "remaining_unrestricted_geometries": 84,
+      "remaining_binary_geometries": 77,
+      "remaining_binary_typed": 74,
+      "remaining_binary_profiles": 385,
+      "remaining_unrestricted_joints": 17,
+      "remaining_binary_joints": 16,
+      "all_four_prior_profile_cut_lists_merged": true,
+      "no_new_numerical_extremum": true,
+      "interval": [
+        11,
+        12
+      ],
+      "scope": "Conditional full first-pair exclusions only; no numerical F value, separation or all-parameter formula."
+    }
+  },
+  "preservation": {
+    "original_paper_and_supplement_checksums_verified": 121,
+    "accepted_scientific_artifact_hashes_unchanged": 6,
+    "accepted_certificate_archives": 68,
+    "historical_receipts_preserved": 104,
+    "large_inventory": "Original 166486625 bytes retained in certificates/c1_word_staircase.zip; SHA256 checked without hydration and after clean hydration.",
+    "historical_validation": "sync_history/20261010/SYNC_VALIDATION.json",
+    "main_short_pair_and_C7_proofs_retained": true
+  },
+  "limited_or_deferred_checks": [
+    "The full expensive new case regenerations were not rerun at synchronization; immutable accepted archives and original isolated reproduction receipts were hash-verified.",
+    "The 28 budget-exhausted inverse-union exploratory probes remain unknown. Five stale bindings in historical partial reports are explicitly recorded in the exploration archive.",
+    "Metadata controls verify scope completeness and invalid-metadata rejection; they do not replace the full literal/flag case audits.",
+    "Both extrema at (13,9,1) remain in [11,12]; no complete solution, alphabet separation or new Lean theorem is claimed."
+  ],
+  "sync_implementation_note": "ZIP compressed bytes are excluded from the text privacy scan; UTF-8 archive members of all newly added ZIPs were separately checked for credential/email patterns.",
+  "final_commit_checks": "After recording this report, reseal manifests and rerun snapshot integrity and the repository core suite."
+}

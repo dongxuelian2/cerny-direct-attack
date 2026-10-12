@@ -1,4 +1,4 @@
-"""Restore checksum-bound large inventories from their existing certificate archives."""
+"""Restore checksum-bound inventories and QA evidence to their original paths."""
 import hashlib
 import json
 from pathlib import Path
@@ -19,17 +19,21 @@ def digest(path):
 def main():
     assert __debug__, 'Keep assertions enabled'
     manifest = json.loads((ROOT / 'large_data_manifest.json').read_text(encoding='utf-8'))
+    archive_hashes = {}
     for name, record in manifest['files'].items():
         target = (ROOT / name).resolve()
         archive = (ROOT / record['archive']).resolve()
-        assert target.is_relative_to(ROOT) and archive.is_relative_to(ROOT)
-        assert digest(archive) == record['archive_sha256']
+        assert target.is_relative_to(ROOT.parent) and archive.is_relative_to(ROOT.parent)
+        if archive not in archive_hashes:
+            archive_hashes[archive] = digest(archive)
+        assert archive_hashes[archive] == record['archive_sha256']
         if target.exists():
             assert target.stat().st_size == record['bytes'] and digest(target) == record['sha256'], name
             continue
         temp_path = None
         try:
-            with zipfile.ZipFile(archive) as z, tempfile.NamedTemporaryFile(dir=ROOT, suffix='.tmp', delete=False) as f:
+            target.parent.mkdir(parents=True, exist_ok=True)
+            with zipfile.ZipFile(archive) as z, tempfile.NamedTemporaryFile(dir=target.parent, suffix='.tmp', delete=False) as f:
                 temp_path = Path(f.name)
                 assert z.getinfo(record['member']).file_size == record['bytes']
                 with z.open(record['member']) as source:

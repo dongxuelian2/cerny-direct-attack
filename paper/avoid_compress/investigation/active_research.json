@@ -84,7 +84,7 @@
     "ACTIVE_SEVEN_CYCLE_PROBE.md"
   ],
   "release_supplement_files": 109,
-  "instruction": "Goal active/unachieved. Full scope few_graph_12 is certified excluded. Unrestricted84/joints17; binary74 types/385 profiles/77 geometries/joints16. Both F(13,9,1) remain [11,12]. Accepted partial paper and publication unchanged.",
+  "instruction": "Goal active/unachieved. Complete filtration native cut excludes b1_out_c4_third3. Unrestricted73/joints16; binary63 types/348 profiles/66 geometries/joints15. Both F(13,9,1) remain [11,12]. Paper and publication unchanged.",
   "binary_exact_additional_n13": [
     {
       "n": 13,
@@ -200,7 +200,7 @@
     "additional_control": 1,
     "scope": "odd s only; no new extremum"
   },
-  "general_solver_status": "Complete first-pair scopes with 30 retained graphs, 5712 labelled pairs and 402 representatives pass independent native-domain, literal/rational flag checks, twelve metadata corruptions, and isolated byte-exact regeneration. No F value or alphabet separation follows.",
+  "general_solver_status": "Complete native first-pair domain with independent literal/rational checks and isolated byte-identical replay. No numerical extremum or separation.",
   "common_entrance_fiber": {
     "proof": "ENTRY_FIBER_FLAG.md",
     "audit": "entry_fiber_flag_audit.json",
@@ -225,7 +225,7 @@
     "joint_fiber_slices_k2_audit.json",
     "joint_fiber_slices_k3_audit.json"
   ],
-  "current_auxiliary_audit": "AUXILIARY_AUDIT_20261011_12.json",
+  "current_auxiliary_audit": "AUXILIARY_AUDIT_20261012_11.json",
   "second_entrance_fiber": {
     "proof": "SECOND_ENTRANCE_FIBER.md",
     "audit": "second_entrance_audit.json",
@@ -281,6 +281,7 @@
       "b1_out_c5",
       "b1_out_c6",
       "b2_in_c2",
+      "b2_in_c5",
       "b2_in_c6",
       "b2_mixed_c11",
       "b2_mixed_c12",
@@ -309,6 +310,7 @@
       "b1_out_c2",
       "b1_out_c6",
       "b2_in_c2",
+      "b2_in_c5",
       "b2_in_c6",
       "b2_mixed_c11",
       "b2_mixed_c12",
@@ -328,8 +330,8 @@
       "b3_mixed_c8",
       "b3_mixed_c9"
     ],
-    "binary_remaining_orbits": 16,
-    "unrestricted_remaining_orbits": 17,
+    "binary_remaining_orbits": 15,
+    "unrestricted_remaining_orbits": 16,
     "symbolic_exclusion_audit": "binary_singleton_second_entrance_audit.json",
     "scope": "Necessary structural restrictions only; no new extremum or numerical alphabet separation",
     "complete_conditional_exclusion_audits": [
@@ -371,7 +373,11 @@
       "b1_out_c2_third4",
       "b1_out_c2_third5",
       "b1_out_c3_third1",
+      "b1_out_c3_third10",
+      "b1_out_c3_third11",
+      "b1_out_c3_third12",
       "b1_out_c4_third1",
+      "b1_out_c4_third3",
       "b1_out_c5_third1",
       "b1_out_c5_third10",
       "b1_out_c5_third11",
@@ -383,6 +389,7 @@
       "b1_out_c5_third8",
       "b1_out_c5_third9",
       "b2_in_c1_third1",
+      "b2_in_c1_third3",
       "b2_in_c1_third6",
       "b2_in_c2_third1",
       "b2_in_c2_third2",
@@ -399,7 +406,10 @@
       "b2_in_c4_third6",
       "b2_in_c4_third8",
       "b2_in_c4_third9",
+      "b2_in_c5_third1",
       "b2_in_c5_third2",
+      "b2_in_c5_third3",
+      "b2_in_c5_third4",
       "b2_in_c5_third5",
       "b2_in_c6_third1",
       "b2_in_c6_third2",
@@ -461,6 +471,8 @@
       "b2_mixed_c4_third1",
       "b2_mixed_c4_third10",
       "b2_mixed_c4_third13",
+      "b2_mixed_c4_third2",
+      "b2_mixed_c4_third7",
       "b2_mixed_c4_third9",
       "b2_mixed_c5_third2",
       "b2_mixed_c5_third3",
@@ -468,6 +480,7 @@
       "b2_mixed_c5_third5",
       "b2_mixed_c5_third6",
       "b2_mixed_c6_third10",
+      "b2_mixed_c6_third11",
       "b2_mixed_c6_third12",
       "b2_mixed_c6_third2",
       "b2_mixed_c6_third3",
@@ -533,7 +546,11 @@
       "b1_out_c2_third4",
       "b1_out_c2_third5",
       "b1_out_c3_third1",
+      "b1_out_c3_third10",
+      "b1_out_c3_third11",
+      "b1_out_c3_third12",
       "b1_out_c4_third1",
+      "b1_out_c4_third3",
       "b1_out_c5_third1",
       "b1_out_c5_third11",
       "b1_out_c5_third3",
@@ -544,6 +561,7 @@
       "b1_out_c6_third2",
       "b1_out_c6_third3",
       "b2_in_c1_third1",
+      "b2_in_c1_third3",
       "b2_in_c1_third6",
       "b2_in_c2_third1",
       "b2_in_c2_third2",
@@ -560,7 +578,10 @@
       "b2_in_c4_third6",
       "b2_in_c4_third8",
       "b2_in_c4_third9",
+      "b2_in_c5_third1",
       "b2_in_c5_third2",
+      "b2_in_c5_third3",
+      "b2_in_c5_third4",
       "b2_in_c5_third5",
       "b2_in_c6_third1",
       "b2_in_c6_third2",
@@ -627,6 +648,8 @@
       "b2_mixed_c4_third1",
       "b2_mixed_c4_third10",
       "b2_mixed_c4_third13",
+      "b2_mixed_c4_third2",
+      "b2_mixed_c4_third7",
       "b2_mixed_c4_third9",
       "b2_mixed_c5_third2",
       "b2_mixed_c5_third3",
@@ -634,6 +657,7 @@
       "b2_mixed_c5_third5",
       "b2_mixed_c5_third6",
       "b2_mixed_c6_third10",
+      "b2_mixed_c6_third11",
       "b2_mixed_c6_third12",
       "b2_mixed_c6_third2",
       "b2_mixed_c6_third3",
@@ -810,7 +834,9 @@
     "b2_c5_first_pair_audit": "b2_c5_first_pair_audit.json",
     "b2_column_audit": "b2_column_composition_audit.json",
     "b2_single_audit": "b2_single_composition_audit.json",
-    "latest_few_graph_audit": "few_graph_12_composition_audit.json"
+    "latest_few_graph_audit": "few_graph_12_composition_audit.json",
+    "latest_graph_quotient_audit": "b1_out_c4_third3_filtration_full_audit.json",
+    "latest_binary_graph_quotient_audit": "b2_mixed_c4_third2_binary_supplier_full_audit.json"
   },
   "binary_entrance_cover_exclusion": {
     "proofs": [
@@ -1062,9 +1088,9 @@
     "audit": "small_first_third_audit.json",
     "scope": "Complete necessary admission before B2/C4 symbolic exclusion; not full transition-table search",
     "remaining_geometric_after_joint_exclusions": 179,
-    "remaining_binary_typed_orbits": 74,
-    "remaining_binary_profile_pairs": 385,
-    "latest_exclusion_audit": "few_graph_12_composition_audit.json",
+    "remaining_binary_typed_orbits": 63,
+    "remaining_binary_profile_pairs": 348,
+    "latest_exclusion_audit": "b1_out_c4_third3_filtration_full_audit.json",
     "latest_exclusion_audits": [
       "b1_mixed_c3_new2_audit.json",
       "b1_mixed_c3_singleton_audit.json",
@@ -1125,10 +1151,22 @@
       "few_graph_09_composition_audit.json",
       "few_graph_10_composition_audit.json",
       "few_graph_11_composition_audit.json",
-      "few_graph_12_composition_audit.json"
+      "few_graph_12_composition_audit.json",
+      "b1_out_c3_third10_graph_quotient_full_audit.json",
+      "b2_in_c5_third3_supplier_image_full_audit.json",
+      "b1_out_c3_third11_graph_quotient_full_audit.json",
+      "b2_mixed_c6_third11_supplier_image_full_audit.json",
+      "b1_out_c3_third12_supplier_image_full_audit.json",
+      "b2_mixed_c4_third2_binary_supplier_full_audit.json",
+      "b2_mixed_c4_third7_inverse_native_full_audit.json",
+      "b2_in_c5_third4_filtration_full_audit.json",
+      "b2_mixed_c4_third2_composite_filtration_full_audit.json",
+      "b2_in_c5_third1_filtration_full_audit.json",
+      "b2_in_c1_third3_filtration_full_audit.json",
+      "b1_out_c4_third3_filtration_full_audit.json"
     ],
-    "remaining_geometric_after_joint_and_third_exclusions": 77,
-    "unrestricted_remaining_geometric_in_B1_B2_inventory": 84
+    "remaining_geometric_after_joint_and_third_exclusions": 66,
+    "unrestricted_remaining_geometric_in_B1_B2_inventory": 73
   },
   "binary_singleton_first_second_cover": {
     "proof": "BINARY_SINGLETON_FIRST_SECOND_COVER.md",
@@ -1397,7 +1435,7 @@
     ],
     "unrestricted_remaining_B3_geometries": 0,
     "combined_B1_B2_B3_geometries": 362,
-    "combined_unrestricted_remaining_geometries": 84,
+    "combined_unrestricted_remaining_geometries": 73,
     "alphabet": "arbitrary finite",
     "scope": "Necessary geometry and existing-bound corollary only; binary B3 already excluded; no F value",
     "latest_exclusion_audit": "c1_word_staircase_audit.json"
@@ -7629,6 +7667,554 @@
       "remaining_binary_joints": 16,
       "certificate": "certificates/few_graph_12_first_pair.zip",
       "scope": "Conditional full first-pair exclusions only; no numerical F value, separation or all-parameter formula."
+    }
+  ],
+  "graph_first_quotient_cuts": [
+    {
+      "id": "b1_out_c3_third10",
+      "proof": "../_qa/GRAPH_FIRST_TRANSPORTS.md",
+      "audit": "b1_out_c3_third10_graph_quotient_full_audit.json",
+      "raw_graph_classes": 679,
+      "canonical_graph_classes": 26,
+      "labelled_first_pairs": 330708,
+      "canonical_prefixes": 887,
+      "tree_counts": {
+        "nodes": 14955,
+        "depth_1": 887,
+        "maximal_graph_not_SC": 3375,
+        "prefixes": 887,
+        "literal_letters": 18329808,
+        "depth_2": 6409,
+        "missing_required_group": 10775,
+        "depth_3": 6871,
+        "internal_nodes": 805,
+        "depth_4": 788,
+        "column_nodes": 788,
+        "column_deletions": 0
+      },
+      "maximum_basis_depth": 4,
+      "certificate": "../_qa/certificates/b1_out_c3_third10_full_flags.zip",
+      "new_unrestricted_geometry_exclusions": [
+        "b1_out_c3_third10"
+      ],
+      "new_binary_geometry_exclusions": [
+        "b1_out_c3_third10"
+      ],
+      "new_unrestricted_joint_exclusions": [],
+      "new_binary_joint_exclusions": [],
+      "scope": "Complete conditional exclusion of this native geometry at (13,9,1),target12, for arbitrary finite alphabets. No F value or alphabet separation."
+    },
+    {
+      "id": "b2_in_c5_third3",
+      "method": "supplier",
+      "proof": "../_qa/GRAPH_FIRST_TRANSPORTS.md",
+      "audit": "b2_in_c5_third3_supplier_image_full_audit.json",
+      "additional_proof": "../_qa/SUPPLIER_IMAGE_PROPAGATION.md",
+      "raw_graph_classes": 414,
+      "canonical_graph_classes": 13,
+      "labelled_first_pairs": 349440,
+      "canonical_prefixes": 295,
+      "tree_counts": {
+        "nodes": 7071,
+        "depth_1": 295,
+        "image_propagation_calls": 7071,
+        "image_propagation_steps": 738,
+        "image_deletions": 13440,
+        "image_forcings": 726,
+        "missing_required_group": 6295,
+        "prefixes": 295,
+        "literal_letters": 15697152,
+        "depth_2": 1912,
+        "maximal_graph_not_SC": 385,
+        "depth_3": 3984,
+        "internal_nodes": 391,
+        "depth_4": 880,
+        "column_nodes": 880,
+        "column_deletions": 0
+      },
+      "maximum_basis_depth": 4,
+      "certificate": "../_qa/certificates/b2_in_c5_third3_supplier_flags.zip",
+      "new_unrestricted_geometry_exclusions": [
+        "b2_in_c5_third3"
+      ],
+      "new_binary_geometry_exclusions": [
+        "b2_in_c5_third3"
+      ],
+      "new_unrestricted_joint_exclusions": [],
+      "new_binary_joint_exclusions": [],
+      "scope": "Complete conditional exclusion of this native geometry at (13,9,1),target12, for arbitrary finite alphabets. No F value or alphabet separation."
+    },
+    {
+      "id": "b1_out_c3_third11",
+      "method": "native",
+      "proof": "../_qa/GRAPH_FIRST_TRANSPORTS.md",
+      "audit": "b1_out_c3_third11_graph_quotient_full_audit.json",
+      "additional_proof": null,
+      "raw_graph_classes": 574,
+      "canonical_graph_classes": 30,
+      "labelled_first_pairs": 206550,
+      "canonical_prefixes": 2612,
+      "tree_counts": {
+        "nodes": 48891,
+        "depth_1": 2612,
+        "maximal_graph_not_SC": 15139,
+        "prefixes": 2612,
+        "literal_letters": 74100240,
+        "depth_2": 14974,
+        "missing_required_group": 30701,
+        "internal_nodes": 3051,
+        "depth_3": 27774,
+        "depth_4": 3531,
+        "column_nodes": 3531,
+        "column_deletions": 0
+      },
+      "maximum_basis_depth": 4,
+      "certificate": "../_qa/certificates/b1_out_c3_third11_full_flags.zip",
+      "new_unrestricted_geometry_exclusions": [
+        "b1_out_c3_third11"
+      ],
+      "new_binary_geometry_exclusions": [
+        "b1_out_c3_third11"
+      ],
+      "new_unrestricted_joint_exclusions": [],
+      "new_binary_joint_exclusions": [],
+      "scope": "Complete conditional exclusion of this native geometry at (13,9,1),target12, for arbitrary finite alphabets. No F value or alphabet separation."
+    },
+    {
+      "id": "b2_mixed_c6_third11",
+      "method": "supplier",
+      "proof": "../_qa/GRAPH_FIRST_TRANSPORTS.md",
+      "audit": "b2_mixed_c6_third11_supplier_image_full_audit.json",
+      "additional_proof": "../_qa/SUPPLIER_IMAGE_PROPAGATION.md",
+      "raw_graph_classes": 22,
+      "canonical_graph_classes": 13,
+      "labelled_first_pairs": 5280,
+      "canonical_prefixes": 442,
+      "tree_counts": {
+        "nodes": 2655,
+        "depth_1": 442,
+        "image_propagation_calls": 2655,
+        "image_propagation_steps": 13,
+        "image_deletions": 0,
+        "image_forcings": 13,
+        "maximal_graph_not_SC": 1019,
+        "prefixes": 442,
+        "literal_letters": 8156160,
+        "missing_required_group": 1446,
+        "depth_2": 1003,
+        "internal_nodes": 190,
+        "depth_3": 1210
+      },
+      "maximum_basis_depth": 3,
+      "certificate": "../_qa/certificates/b2_mixed_c6_third11_supplier_flags.zip",
+      "new_unrestricted_geometry_exclusions": [
+        "b2_mixed_c6_third11"
+      ],
+      "new_binary_geometry_exclusions": [
+        "b2_mixed_c6_third11"
+      ],
+      "new_unrestricted_joint_exclusions": [],
+      "new_binary_joint_exclusions": [],
+      "scope": "Complete conditional exclusion of this native geometry at (13,9,1),target12, for arbitrary finite alphabets. No F value or alphabet separation."
+    },
+    {
+      "id": "b1_out_c3_third12",
+      "method": "supplier",
+      "proof": "../_qa/GRAPH_FIRST_TRANSPORTS.md",
+      "audit": "b1_out_c3_third12_supplier_image_full_audit.json",
+      "additional_proof": "../_qa/SUPPLIER_IMAGE_PROPAGATION.md",
+      "raw_graph_classes": 48,
+      "canonical_graph_classes": 10,
+      "labelled_first_pairs": 10656,
+      "canonical_prefixes": 249,
+      "tree_counts": {
+        "nodes": 1197,
+        "depth_1": 249,
+        "image_propagation_calls": 1197,
+        "image_propagation_steps": 44,
+        "image_deletions": 5880,
+        "image_forcings": 43,
+        "missing_required_group": 857,
+        "prefixes": 249,
+        "literal_letters": 4230816,
+        "depth_2": 948,
+        "internal_nodes": 66,
+        "maximal_graph_not_SC": 274
+      },
+      "maximum_basis_depth": 2,
+      "certificate": "../_qa/certificates/b1_out_c3_third12_supplier_flags.zip",
+      "new_unrestricted_geometry_exclusions": [
+        "b1_out_c3_third12"
+      ],
+      "new_binary_geometry_exclusions": [
+        "b1_out_c3_third12"
+      ],
+      "new_unrestricted_joint_exclusions": [],
+      "new_binary_joint_exclusions": [],
+      "scope": "Complete conditional exclusion of this native geometry at (13,9,1),target12, for arbitrary finite alphabets. No F value or alphabet separation."
+    },
+    {
+      "id": "b2_mixed_c4_third2",
+      "method": "binary_supplier",
+      "binary_only": true,
+      "unrestricted_exclusion": false,
+      "proof": "../_qa/BINARY_SUPPLIER_COVER_20261012.md",
+      "audit": "b2_mixed_c4_third2_binary_supplier_full_audit.json",
+      "additional_proof": "../_qa/SUPPLIER_IMAGE_PROPAGATION.md",
+      "raw_graph_classes": 598,
+      "canonical_graph_classes": 29,
+      "labelled_first_pairs": 429016,
+      "canonical_prefixes": 1639,
+      "tree_counts": {
+        "nodes": 22904,
+        "depth_1": 1639,
+        "image_propagation_calls": 22904,
+        "image_propagation_steps": 14581,
+        "image_deletions": 229758,
+        "image_forcings": 13527,
+        "maximal_graph_not_SC": 4044,
+        "prefixes": 1639,
+        "literal_letters": 63698784,
+        "binary_supplier_cover": 943,
+        "depth_2": 7443,
+        "missing_required_group": 15833,
+        "internal_nodes": 2084,
+        "depth_3": 6277,
+        "depth_4": 2708,
+        "column_nodes": 7545,
+        "column_deletions": 0,
+        "depth_5": 1063,
+        "depth_6": 1806,
+        "depth_7": 1968
+      },
+      "maximum_basis_depth": 7,
+      "certificate": "../_qa/certificates/b2_mixed_c4_third2_binary_supplier_flags.zip",
+      "new_unrestricted_geometry_exclusions": [],
+      "new_binary_geometry_exclusions": [
+        "b2_mixed_c4_third2"
+      ],
+      "new_unrestricted_joint_exclusions": [],
+      "new_binary_joint_exclusions": [],
+      "scope": "Complete conditional binary-only exclusion of this native geometry at (13,9,1),target12. No unrestricted exclusion, new F value or alphabet separation."
+    },
+    {
+      "id": "b2_mixed_c4_third7",
+      "method": "inverse_star",
+      "proof": "B1_B2_INVERSE_UNION_EXCLUSION.md",
+      "audit": "b2_mixed_c4_third7_inverse_native_full_audit.json",
+      "domain": {
+        "id": "b2_mixed_c4_third7",
+        "global_classes": 18277,
+        "counts": {
+          "preliminary_missing_supplier": 15483,
+          "missing_supplier": 1722,
+          "maximal_graph_not_SC": 1072
+        },
+        "literal_output_colourings": 684443,
+        "quota_tests": 35453,
+        "labelled_D_transports": 1,
+        "closed_set_transports": 1072,
+        "native_covered_kernel_catalogue": 1022
+      },
+      "certificate": "../_qa/certificates/b2_mixed_c4_third7_inverse_star_geometry_20261012.zip",
+      "new_unrestricted_geometry_exclusions": [
+        "b2_mixed_c4_third7"
+      ],
+      "new_binary_geometry_exclusions": [
+        "b2_mixed_c4_third7"
+      ],
+      "new_unrestricted_joint_exclusions": [],
+      "new_binary_joint_exclusions": [],
+      "scope": "Complete conditional inverse-domain exclusion of b2_mixed_c4_third7 at(13,9,1),target12, for arbitrary finite alphabets. Existing native-field and P1<=4 premises only. No numerical F value, alphabet separation or full folded-profile transport."
+    },
+    {
+      "id": "b2_in_c5_third4",
+      "method": "filtration",
+      "proof": "../_qa/GRAPH_FIRST_TRANSPORTS.md",
+      "audit": "b2_in_c5_third4_filtration_full_audit.json",
+      "additional_proof": null,
+      "raw_graph_classes": 46,
+      "canonical_graph_classes": 5,
+      "labelled_first_pairs": 47936,
+      "canonical_prefixes": 82,
+      "tree_counts": {
+        "nodes": 456,
+        "depth_1": 82,
+        "image_propagation_calls": 456,
+        "image_propagation_steps": 110,
+        "image_deletions": 1200,
+        "image_forcings": 108,
+        "product_cuts": 0,
+        "product_words": 0,
+        "maximal_graph_not_SC": 103,
+        "prefixes": 82,
+        "literal_letters": 3831648,
+        "child_quotient_nodes": 55,
+        "raw_child_choices": 1248,
+        "representative_children": 374,
+        "omitted_child_choices": 874,
+        "child_quotient_generators": 187,
+        "depth_2": 196,
+        "depth_3": 158,
+        "missing_required_group": 298,
+        "internal_nodes": 55,
+        "depth_4": 20,
+        "column_nodes": 20,
+        "column_deletions": 0
+      },
+      "maximum_basis_depth": 4,
+      "certificate": "../_qa/certificates/b2_in_c5_third4_filtration_b2inc5third4_full_20261012_v8.zip",
+      "new_unrestricted_geometry_exclusions": [
+        "b2_in_c5_third4"
+      ],
+      "new_binary_geometry_exclusions": [
+        "b2_in_c5_third4"
+      ],
+      "new_unrestricted_joint_exclusions": [],
+      "new_binary_joint_exclusions": [],
+      "scope": "Complete conditional arbitrary finite alphabet exclusion of one native geometry at(13,9,1),target12. Every native prefix has an independently checked literal/rational tree and isolated byte-identical regeneration. No numerical F value, separation or full folded-profile transport."
+    },
+    {
+      "id": "b2_mixed_c4_third2",
+      "method": "composite_filtration",
+      "proof": "../_qa/REAL_FILTRATION_POOL_20261012.md",
+      "audit": "b2_mixed_c4_third2_composite_filtration_full_audit.json",
+      "raw_graph_classes": 598,
+      "canonical_graph_classes": 29,
+      "labelled_first_pairs": 429016,
+      "canonical_prefixes": 1639,
+      "tree_counts": {
+        "nodes": 12531,
+        "depth_1": 1639,
+        "image_propagation_calls": 12531,
+        "image_propagation_steps": 18115,
+        "image_deletions": 227190,
+        "image_forcings": 17444,
+        "product_cuts": 407,
+        "product_words": 860032,
+        "maximal_graph_not_SC": 1728,
+        "prefixes": 1639,
+        "literal_letters": 63698784,
+        "child_quotient_nodes": 1236,
+        "raw_child_choices": 18961,
+        "representative_children": 7623,
+        "omitted_child_choices": 11338,
+        "child_quotient_generators": 3234,
+        "depth_2": 4154,
+        "missing_required_group": 7315,
+        "depth_3": 1904,
+        "internal_nodes": 2538,
+        "depth_4": 927,
+        "column_nodes": 4834,
+        "column_deletions": 0,
+        "depth_5": 595,
+        "obligatory_word_products": 407,
+        "depth_6": 507,
+        "depth_7": 605,
+        "word_rounds": 32,
+        "word_deletions": 192,
+        "depth_8": 121,
+        "depth_9": 473,
+        "depth_10": 646,
+        "depth_11": 960,
+        "supplier_split_cuts": 534,
+        "supplier_split_branches": 2442,
+        "supplier_split_words": 3207168,
+        "filtration_pool_exclusion_cuts": 9,
+        "filtration_pool_exclusion_transported_letters": 3634
+      },
+      "maximum_basis_depth": 11,
+      "replays": [
+        {
+          "receipt": "b2_mixed_c4_third2_quotient_partial_0_966_reproduction_20261012_v6.json",
+          "archive": "certificates/b2_mixed_c4_third2_quotient_partial_0_966_20261012_v6.zip",
+          "sha256": "12d9cb1557a2aab834496978cef53cd75857bba708dae119d0dc295cb3271292",
+          "reports": 13,
+          "prefix_range": [
+            0,
+            966
+          ]
+        },
+        {
+          "receipt": "b2_mixed_c4_third2_filtration_range_967_1638_reproduction_20261012_v7.json",
+          "archive": "certificates/b2_mixed_c4_third2_filtration_range_967_1638_20261012_v7.zip",
+          "sha256": "15b0ad58f167ee00e410b9ef1c02bb2dc361eadbab1139c73db45c96d5f9aef7",
+          "reports": 18,
+          "prefix_range": [
+            967,
+            1638
+          ]
+        }
+      ],
+      "assembly_replay": {
+        "receipt": "b2_mixed_c4_third2_composite_filtration_scope_reproduction_20261012.json",
+        "archive": "certificates/b2_mixed_c4_third2_composite_filtration_scope_20261012.zip",
+        "sha256": "d2d60c7ae983cd2c17822b7afb621422aeaba33e3e739699d60fd4ac353900dc",
+        "reports": 1
+      },
+      "new_unrestricted_geometry_exclusions": [
+        "b2_mixed_c4_third2"
+      ],
+      "new_binary_geometry_exclusions": [],
+      "new_unrestricted_joint_exclusions": [],
+      "new_binary_joint_exclusions": [],
+      "scope": "Complete conditional exclusion of one native geometry at (13,9,1),target12, for finite arbitrary alphabets. All 1639 prefixes covered by two independently checked and isolated byte-identical tree ranges. Does not establish a new F value, alphabet separation or full folded-profile transport."
+    },
+    {
+      "id": "b2_in_c5_third1",
+      "method": "filtration",
+      "proof": "../_qa/GRAPH_FIRST_TRANSPORTS.md",
+      "audit": "b2_in_c5_third1_filtration_full_audit.json",
+      "additional_proof": null,
+      "raw_graph_classes": 80,
+      "canonical_graph_classes": 4,
+      "labelled_first_pairs": 119280,
+      "canonical_prefixes": 94,
+      "tree_counts": {
+        "nodes": 759,
+        "depth_1": 94,
+        "image_propagation_calls": 759,
+        "image_propagation_steps": 568,
+        "image_deletions": 16016,
+        "image_forcings": 523,
+        "product_cuts": 3,
+        "product_words": 5508,
+        "maximal_graph_not_SC": 78,
+        "prefixes": 94,
+        "literal_letters": 4489344,
+        "child_quotient_nodes": 104,
+        "raw_child_choices": 1906,
+        "representative_children": 641,
+        "omitted_child_choices": 1265,
+        "child_quotient_generators": 308,
+        "depth_2": 310,
+        "missing_required_group": 556,
+        "depth_3": 235,
+        "internal_nodes": 122,
+        "depth_4": 60,
+        "column_nodes": 120,
+        "column_deletions": 0,
+        "depth_5": 60,
+        "obligatory_word_products": 3
+      },
+      "maximum_basis_depth": 5,
+      "certificate": "../_qa/certificates/b2_in_c5_third1_filtration_b2inc5third1_full_20261012_v8.zip",
+      "new_unrestricted_geometry_exclusions": [
+        "b2_in_c5_third1"
+      ],
+      "new_binary_geometry_exclusions": [
+        "b2_in_c5_third1"
+      ],
+      "new_unrestricted_joint_exclusions": [
+        "b2_in_c5"
+      ],
+      "new_binary_joint_exclusions": [
+        "b2_in_c5"
+      ],
+      "scope": "Complete conditional arbitrary finite alphabet exclusion of one native geometry at(13,9,1),target12. Every native prefix has an independently checked literal/rational tree and isolated byte-identical regeneration. No numerical F value, separation or full folded-profile transport."
+    },
+    {
+      "id": "b2_in_c1_third3",
+      "method": "filtration",
+      "proof": "../_qa/GRAPH_FIRST_TRANSPORTS.md",
+      "audit": "b2_in_c1_third3_filtration_full_audit.json",
+      "additional_proof": null,
+      "raw_graph_classes": 73,
+      "canonical_graph_classes": 4,
+      "labelled_first_pairs": 107436,
+      "canonical_prefixes": 86,
+      "tree_counts": {
+        "nodes": 922,
+        "depth_1": 86,
+        "image_propagation_calls": 922,
+        "image_propagation_steps": 444,
+        "image_deletions": 3090,
+        "image_forcings": 430,
+        "product_cuts": 21,
+        "product_words": 14632,
+        "maximal_graph_not_SC": 203,
+        "prefixes": 86,
+        "literal_letters": 1583088,
+        "child_quotient_nodes": 107,
+        "raw_child_choices": 2092,
+        "representative_children": 793,
+        "omitted_child_choices": 1299,
+        "child_quotient_generators": 282,
+        "depth_2": 262,
+        "missing_required_group": 574,
+        "internal_nodes": 124,
+        "obligatory_word_products": 21,
+        "depth_3": 449,
+        "depth_4": 73,
+        "column_nodes": 125,
+        "column_deletions": 0,
+        "depth_5": 23,
+        "depth_6": 12,
+        "depth_7": 17,
+        "word_rounds": 11,
+        "word_deletions": 0
+      },
+      "maximum_basis_depth": 7,
+      "certificate": "../_qa/certificates/b2_in_c1_third3_filtration_b2inc1third3_full_20261012_v8.zip",
+      "new_unrestricted_geometry_exclusions": [
+        "b2_in_c1_third3"
+      ],
+      "new_binary_geometry_exclusions": [
+        "b2_in_c1_third3"
+      ],
+      "new_unrestricted_joint_exclusions": [],
+      "new_binary_joint_exclusions": [],
+      "scope": "Complete conditional arbitrary finite alphabet exclusion of one native geometry at(13,9,1),target12. Every native prefix has an independently checked literal/rational tree and isolated byte-identical regeneration. No numerical F value, separation or full folded-profile transport."
+    },
+    {
+      "id": "b1_out_c4_third3",
+      "method": "filtration",
+      "proof": "../_qa/GRAPH_FIRST_TRANSPORTS.md",
+      "audit": "b1_out_c4_third3_filtration_full_audit.json",
+      "additional_proof": null,
+      "raw_graph_classes": 370,
+      "canonical_graph_classes": 10,
+      "labelled_first_pairs": 414120,
+      "canonical_prefixes": 282,
+      "tree_counts": {
+        "nodes": 3373,
+        "depth_1": 282,
+        "image_propagation_calls": 3373,
+        "image_propagation_steps": 1787,
+        "image_deletions": 13620,
+        "image_forcings": 1731,
+        "product_cuts": 0,
+        "product_words": 0,
+        "maximal_graph_not_SC": 919,
+        "prefixes": 282,
+        "literal_letters": 10365216,
+        "child_quotient_nodes": 411,
+        "raw_child_choices": 7416,
+        "representative_children": 2889,
+        "omitted_child_choices": 4527,
+        "child_quotient_generators": 1050,
+        "depth_2": 896,
+        "missing_required_group": 1964,
+        "internal_nodes": 490,
+        "depth_3": 1575,
+        "depth_4": 412,
+        "column_nodes": 620,
+        "column_deletions": 0,
+        "depth_5": 92,
+        "depth_6": 48,
+        "depth_7": 68
+      },
+      "maximum_basis_depth": 7,
+      "certificate": "../_qa/certificates/b1_out_c4_third3_filtration_b1outc4third3_full_20261012_v8.zip",
+      "new_unrestricted_geometry_exclusions": [
+        "b1_out_c4_third3"
+      ],
+      "new_binary_geometry_exclusions": [
+        "b1_out_c4_third3"
+      ],
+      "new_unrestricted_joint_exclusions": [],
+      "new_binary_joint_exclusions": [],
+      "scope": "Complete conditional arbitrary finite alphabet exclusion of one native geometry at(13,9,1),target12. Every native prefix has an independently checked literal/rational tree and isolated byte-identical regeneration. No numerical F value, separation or full folded-profile transport."
     }
   ]
 }

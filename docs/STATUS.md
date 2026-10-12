@@ -21,3 +21,7 @@ The [continuation audit](../proofs/paper/problem4_continuation_audit.md) adds a 
 ## Problem 4 auxiliary snapshot, 2026-10-11
 
 The [updated handoff](../paper/avoid_compress/HANDOFF.md) records 171 passed auxiliary audits and 2,602 source bindings. Complete B3 exclusions leave 84 unrestricted B1/B2 geometries / 17 joints; binary remains 74 types / 385 profiles / 77 geometries / 16 joints. These are conditional structural cuts, while both extrema at (13,9,1) remain in [11,12]. The existing short-pair peeling and P6 C7 proof additions are preserved with their own hypotheses. The accepted paper, 109-file supplement and frozen formal core are unchanged. The oversized C1 inventory remains byte-identically available from its immutable certificate ZIP, with a hydration manifest.
+
+## Problem 4 auxiliary snapshot, 2026-10-12
+
+The [current continuation](../paper/avoid_compress/investigation/CONTINUATION_20261012.md) records 183 passed audits and 3,395 source bindings. Complete native graph-first, supplier, inverse and real-filtration scopes leave 73 unrestricted B1/B2 geometries / 16 joints; binary has 63 types / 348 profiles / 66 geometries / 15 joints. Both extrema remain in [11,12]. The composite b2_mixed_c4_third2 exclusion requires both ranges 0..966 and 967..1638; candidate967 is not a negative in the first report. Original paper/release and frozen formal sources are unchanged. Bound QA data are recoverable from immutable ZIPs at their original paths.
