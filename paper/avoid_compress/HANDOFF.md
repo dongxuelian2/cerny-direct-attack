@@ -1,6 +1,6 @@
 # Open Problem 4 研究交接
 
-同步日期：2026-10-11（Asia/Shanghai）。这是 Szykuła 2026 年综述中的
+同步日期：2026-10-12（Asia/Shanghai）。这是 Szykuła 2026 年综述中的
 avoid-or-compress 问题。论文作者为 Qichao Wang，河北工业大学。
 **当前是部分解答，完整问题仍未解决；不构成一般 Černý 猜想的证明。**
 
@@ -11,8 +11,8 @@ avoid-or-compress 问题。论文作者为 Qichao Wang，河北工业大学。
    [reproducibility/CODIMENSION_THREE_UPPER_PROOF.md](reproducibility/CODIMENSION_THREE_UPPER_PROOF.md)：证明边界与计算辅助证明入口。
 3. [reproducibility/README.md](reproducibility/README.md)：109 个文件的论文补充材料、构造、独立检查器与有限证书。
 4. [investigation/active_research.json](investigation/active_research.json)：接续研究的当前机器可读状态，重点看 `next_structural_work`。
-5. [investigation/CURRENT_FRONTIER.md](investigation/CURRENT_FRONTIER.md)：按时间追加的研究记录；以末尾 2026-10-11 的 few_graph_12 更新为准。
-6. [investigation/AUXILIARY_AUDIT_20261011_12.json](investigation/AUXILIARY_AUDIT_20261011_12.json)：最新累计 171 项辅助审计及来源哈希。
+5. [investigation/CURRENT_FRONTIER.md](investigation/CURRENT_FRONTIER.md)：按时间追加的研究记录；以末尾 2026-10-12 的 native geometry 更新为准。
+6. [investigation/AUXILIARY_AUDIT_20261012_11.json](investigation/AUXILIARY_AUDIT_20261012_11.json)：最新累计 183 项辅助审计及来源哈希。
 
 ## 已证明或已核验的结论
 
@@ -42,16 +42,21 @@ avoid-or-compress 问题。论文作者为 Qichao Wang，河北工业大学。
 
 10 月 11 日的 C1 word-staircase 排除了最后一个 B3 几何，完整 B3 范围已排除。
 随后 inverse-union、B2 first-pair、column、single-class 和 few_graph_06 到
-few_graph_12 证书继续缩小辅助分类：任意字母表剩余 84 个 B1/B2 几何、
-0 个 B3、17 个 joints；binary 剩余 74 types / 385 profiles / 77 geometries / 16 joints。
-最新累计审计核验 171 项通过报告、2,602 条来源绑定和 1,110 个最新绑定来源。
+few_graph_12 证书继续缩小辅助分类；10 月 12 日再经 graph-first quotient、
+supplier、inverse-native 和 real-filtration 的完整原生范围排除，任意字母表
+剩余 73 个 B1/B2 几何、0 个 B3、16 个 joints；binary 剩余
+63 types / 348 profiles / 66 geometries / 15 joints。
+最新累计审计核验 183 项通过报告、3,395 条来源绑定和 1,349 个最新绑定来源。
 这些是条件结构排除，不能据此宣布新的极值或完整上界。
 
-接手者应处理剩余 84 个任意字母表几何和 74 个 binary types / 385 个 profiles，
-从 [FEW_GRAPH_FIRST_PAIR_CERTIFICATES.md](investigation/FEW_GRAPH_FIRST_PAIR_CERTIFICATES.md)、
+接手者应处理剩余 73 个任意字母表几何和 63 个 binary types / 348 个 profiles，
+先读 [CONTINUATION_20261012.md](investigation/CONTINUATION_20261012.md)，包括
+candidate967 的两段完整范围与数据恢复位置，再从 [FEW_GRAPH_FIRST_PAIR_CERTIFICATES.md](investigation/FEW_GRAPH_FIRST_PAIR_CERTIFICATES.md)、
 [FEW_GRAPH_CERTIFICATE_README.md](investigation/FEW_GRAPH_CERTIFICATE_README.md)、
 [BASIS_COLUMN_REACHING_PRUNING.md](investigation/BASIS_COLUMN_REACHING_PRUNING.md)
-及 `active_research.json` 的 `next_structural_work` 接续。沿用可参数化的 full-pair
+及 `active_research.json` 的 `graph_first_quotient_cuts` 接续。其旧
+`next_structural_work` 摘要仍写 84/74；原始字节受审计绑定，以本次 73/63/348
+计数与 continuation 说明为准。沿用可参数化的 full-pair
 drivers，保留 native fields、whole-graph transports、四份 profile-cut 列表和实际可达性。
 深度至少四的 column deductions 要求完整实际 prefix span；旧 28 个预算耗尽探测仍是未知。
 不要把 basis-image safety 当充分条件，也不要假设平面不变。
@@ -67,9 +72,12 @@ drivers，保留 native fields、whole-graph transports、四份 profile-cut 列
 
 沿用现有 `paper/avoid_compress/` 路径；既有 `direct_attack/`、Lean、OpenMath
 冻结成果保持原样。论文、补充材料、所有唯一 investigation 源码/数据/日志、
-68 个不可变证书归档及三个发布归档均保留；另外保存了历史 inverse-union 探索归档。
-`_qa/`、`_release_*/`、编译产物、缓存和
-重复版面截图留在本地，均可由源码重新生成。例外是 `_qa/` 中四个被最新审计
+原有 68 个不可变证书归档及三个发布归档均保留；另外保留历史 inverse-union
+探索归档，并同步本轮 14 份原始证书/范围归档及一份绑定来源归档。
+本轮有证明价值的 `_qa/` 源码、笔记、证书及哈希绑定数据也纳入交接；数据可由
+`hydrate_large_data.py` 按原路径恢复。
+其他未绑定的 `_qa/`、`_release_*/`、编译产物、缓存和
+重复版面截图留在本地，均可由源码重新生成。此外，`_qa/` 中四个被最新审计
 直接哈希绑定的参考文献标题校准源码/记录；它们也随本次交接保存。
 
 少量历史 solver command receipts 含本机绝对路径；为保留哈希绑定的原始证据，
