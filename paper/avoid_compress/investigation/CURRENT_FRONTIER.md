@@ -2368,3 +2368,75 @@ Both F_bin(13,9,1) and F(13,9,1) remain [11,12]. No complete formula, alphabet s
 Unrestricted frontier:84 B1/B2 geometries, B3=0,17 joints. Binary:74 types,385 profiles,77 geometries,16 joints. All four previous binary profile-cut lists remain merged. Whole-joint exclusions unrestricted: none; binary: none.
 
 Both F_bin(13,9,1) and F(13,9,1) remain [11,12]. No complete formula, alphabet separation or new numerical extremum follows. Accepted partial-answer paper and publication artifacts remain unchanged. The full goal remains active and unachieved.
+
+## Complete graph-first quotient: b1_out_c3_third10
+
+11 October2026. The complete conditional arbitrary-alphabet exclusion covers all679 retained graphs, 330708 labelled ordered first pairs and887 representatives on26 target graphs. 18329808 literal maps and14955 flag nodes pass independent checks. Twelve metadata corruptions and two bijective graph-preserving protection violations are rejected. The immutable package regenerates the scope, both metadata audits and the complete flag report byte-identically.
+
+Unrestricted frontier:83 geometries,17 joints. Binary:73 types,382 profiles,76 geometries,16 joints. Both F values at (13,9,1) remain [11,12]. No new numerical extremum or alphabet separation. Accepted partial-answer paper and release unchanged; complete-answer goal active and unachieved.
+
+## Replayed native geometry: b2_in_c5_third3
+
+12 October2026. Complete conditional arbitrary-alphabet exclusion with method supplier: 414 retained native graphs, 349440 labelled ordered first pairs, 295 representatives on 13 target graphs. 15697152 literal maps and 7071 independently checked nodes. All 6 packaged reports regenerate byte-identically; fourteen metadata corruptions are rejected.
+
+Unrestricted frontier:82 geometries,17 joints. Binary:72 types,381 profiles,75 geometries,16 joints. Both F values at (13,9,1) remain [11,12]. Paper and publication unchanged. No new numerical extremum or alphabet separation. Goal active/unachieved.
+
+## Replayed native geometry: b1_out_c3_third11
+
+12 October2026. Complete conditional arbitrary-alphabet exclusion with method native: 574 retained native graphs, 206550 labelled ordered first pairs, 2612 representatives on 30 target graphs. 74100240 literal maps and 48891 independently checked nodes. All 4 packaged reports regenerate byte-identically; fourteen metadata corruptions are rejected.
+
+Unrestricted frontier:81 geometries,17 joints. Binary:71 types,367 profiles,74 geometries,16 joints. Both F values at (13,9,1) remain [11,12]. Paper and publication unchanged. No new numerical extremum or alphabet separation. Goal active/unachieved.
+
+## Replayed native geometry: b2_mixed_c6_third11
+
+12 October2026. Complete conditional arbitrary-alphabet exclusion with method supplier: 22 retained native graphs, 5280 labelled ordered first pairs, 442 representatives on 13 target graphs. 8156160 literal maps and 2655 independently checked nodes. All 6 packaged reports regenerate byte-identically; fourteen metadata corruptions are rejected.
+
+Unrestricted frontier:80 geometries,17 joints. Binary:70 types,364 profiles,73 geometries,16 joints. Both F values at (13,9,1) remain [11,12]. Paper and publication unchanged. No new numerical extremum or alphabet separation. Goal active/unachieved.
+
+## Replayed native geometry: b1_out_c3_third12
+
+12 October2026. Complete conditional arbitrary-alphabet exclusion with method supplier: 48 retained native graphs, 10656 labelled ordered first pairs, 249 representatives on 10 target graphs. 4230816 literal maps and 1197 independently checked nodes. All 6 packaged reports regenerate byte-identically; fourteen metadata corruptions are rejected.
+
+Unrestricted frontier:79 geometries,17 joints. Binary:69 types,361 profiles,72 geometries,16 joints. Both F values at (13,9,1) remain [11,12]. Paper and publication unchanged. No new numerical extremum or alphabet separation. Goal active/unachieved.
+
+## Replayed binary-only native geometry: b2_mixed_c4_third2
+
+12 October2026. Complete binary-only conditional exclusion: 598 raw graphs, 429016 labelled ordered first pairs, 1639 representatives, 63698784 literal maps and 22904 checked nodes. All seven reports regenerate byte-identically. Fourteen native-metadata corruptions and eleven binary-scope corruptions are rejected.
+
+Unrestricted frontier unchanged:79 geometries,17 joints. Binary:68 types,359 profiles,71 geometries,16 joints. Both F values at (13,9,1) remain [11,12]. No new exact extremum or alphabet separation. Paper and release unchanged; goal active/unachieved.
+
+## Replayed native geometry: b2_mixed_c4_third7
+
+12 October2026. Complete conditional inverse-native arbitrary-alphabet exclusion with method inverse_star: 18277 immediate graphs, 684443 independently checked literal output colorings, 35453 quota tests. Both packaged reports regenerate byte-identically. Nine corruptions are rejected, seven union controls pass, and a retained positive geometry is checked.
+
+Unrestricted frontier:78 geometries,17 joints. Binary:67 types,358 profiles,70 geometries,16 joints. Both F values at (13,9,1) remain [11,12]. Paper and publication unchanged. No new numerical extremum or alphabet separation. Goal active/unachieved.
+
+## Replayed native geometry: b2_in_c5_third4
+
+12 October2026. Complete conditional arbitrary-alphabet exclusion with method filtration: 46 retained native graphs, 47936 labelled ordered first pairs, 82 representatives on 5 target graphs. 3831648 literal maps and 456 independently checked nodes. All 18 packaged reports regenerate byte-identically; fourteen metadata corruptions are rejected.
+
+Unrestricted frontier:77 geometries,17 joints. Binary:66 types,355 profiles,69 geometries,16 joints. Both F values at (13,9,1) remain [11,12]. Paper and publication unchanged. No new numerical extremum or alphabet separation. Goal active/unachieved.
+
+## Replayed composite filtration geometry: b2_mixed_c4_third2
+
+12 October2026. Complete conditional arbitrary-alphabet exclusion:598 native graphs, 29 graph representatives,429016 labelled ordered first pairs,1639 prefix representatives. Two independently checked negative arrays cover0..966 and967..1638. Candidate967 in the first report is not counted as a negative there; its complete new proof is in the second range. The31 tree/control reports and one assembly audit regenerate byte-identically. Fourteen native metadata controls and ten scope-assembly mutations are rejected.
+
+Unrestricted frontier:76 geometries,17 joints. Binary unchanged:66 types,355 profiles,69 geometries,16 joints. Both F values at(13,9,1) remain[11,12]. No new numerical extremum, alphabet separation or full fold-profile transport. Paper and release unchanged; goal active/unachieved.
+
+## Replayed native geometry: b2_in_c5_third1
+
+12 October2026. Complete conditional arbitrary-alphabet exclusion with method filtration: 80 retained native graphs, 119280 labelled ordered first pairs, 94 representatives on 4 target graphs. 4489344 literal maps and 759 independently checked nodes. All 18 packaged reports regenerate byte-identically; fourteen metadata corruptions are rejected.
+
+Unrestricted frontier:75 geometries,16 joints. Binary:65 types,353 profiles,68 geometries,15 joints. Both F values at (13,9,1) remain [11,12]. Paper and publication unchanged. No new numerical extremum or alphabet separation. Goal active/unachieved.
+
+## Replayed native geometry: b2_in_c1_third3
+
+12 October2026. Complete conditional arbitrary-alphabet exclusion with method filtration: 73 retained native graphs, 107436 labelled ordered first pairs, 86 representatives on 4 target graphs. 1583088 literal maps and 922 independently checked nodes. All 18 packaged reports regenerate byte-identically; fourteen metadata corruptions are rejected.
+
+Unrestricted frontier:74 geometries,16 joints. Binary:64 types,351 profiles,67 geometries,15 joints. Both F values at (13,9,1) remain [11,12]. Paper and publication unchanged. No new numerical extremum or alphabet separation. Goal active/unachieved.
+
+## Replayed native geometry: b1_out_c4_third3
+
+12 October2026. Complete conditional arbitrary-alphabet exclusion with method filtration: 370 retained native graphs, 414120 labelled ordered first pairs, 282 representatives on 10 target graphs. 10365216 literal maps and 3373 independently checked nodes. All 18 packaged reports regenerate byte-identically; fourteen metadata corruptions are rejected.
+
+Unrestricted frontier:73 geometries,16 joints. Binary:63 types,348 profiles,66 geometries,15 joints. Both F values at (13,9,1) remain [11,12]. Paper and publication unchanged. No new numerical extremum or alphabet separation. Goal active/unachieved.

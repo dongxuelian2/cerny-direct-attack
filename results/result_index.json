@@ -1802,10 +1802,10 @@
       "id": "P4-OPEN-FRONTIER",
       "name": "Remaining Problem 4 research and corrected historical search scope",
       "status": "EXPLORATORY",
-      "scope": "The region m>=4,n-r>=3m remains unclassified as a whole; F_bin(13,9,1) and F(13,9,1) remain in [11,12]. At the 2026-10-11 checkpoint the unrestricted necessary geometry inventory has 84 B1/B2 cases, no B3 case and 17 joints; binary has 74 types/385 profiles/77 geometries/16 joints. These are conditional structural scopes, not witnesses or numerical extrema.",
+      "scope": "The region m>=4,n-r>=3m remains unclassified as a whole; F_bin(13,9,1) and F(13,9,1) remain in [11,12]. At the 2026-10-12 checkpoint the unrestricted necessary geometry inventory has 73 B1/B2 cases, no B3 case and 16 joints; binary has 63 types/348 profiles/66 geometries/15 joints. These are conditional structural scopes, not witnesses or numerical extrema.",
       "source": "paper/avoid_compress/HANDOFF.md",
-      "proof_check_status": "Navigation and scope record for AUXILIARY_AUDIT_20261011_12.json. Continue the remaining B1/B2 full-pair domains. Retracted historical negative reports stay retracted; separately proved short-pair caps have their own precise hypotheses.",
-      "dependencies": "investigation/active_research.json, CURRENT_FRONTIER.md and AUXILIARY_AUDIT_20261011_12.json",
+      "proof_check_status": "Navigation and scope record for AUXILIARY_AUDIT_20261012_11.json. Continue the remaining native B1/B2 full-pair domains, preserving actual reachability and all four profile-cut lists. Historical retractions and folded-premise limits remain explicit.",
+      "dependencies": "investigation/active_research.json, CURRENT_FRONTIER.md, CONTINUATION_20261012.md and AUXILIARY_AUDIT_20261012_11.json",
       "priority": "OPEN"
     },
     {
@@ -1926,6 +1926,16 @@
       "source": "paper/avoid_compress/investigation/BASIS_COLUMN_REACHING_PRUNING.md",
       "proof_check_status": "Written uniform necessary-condition proof; rational small-domain, 290 actual-witness and rejected-corruption controls are separate bound audits. No new extremum or formal-kernel claim.",
       "dependencies": "basis_column_reaching_audit.json, basis_column_controls_audit.json, strong connectivity, synchronization and full actual prefix-span hypotheses",
+      "priority": "OPEN"
+    },
+    {
+      "id": "P4-NATIVE-20261012",
+      "name": "Complete conditional native geometry replay and composite filtration exclusions",
+      "status": "COMPUTATIONALLY VERIFIED",
+      "scope": "At (13,9,1), target 12, twelve newly adopted native-domain reports cover explicitly listed graph-first quotient, supplier-image, inverse and real-filtration scopes. Composition leaves 73 unrestricted B1/B2 geometries/16 joints and binary 63 types/348 profiles/66 geometries/15 joints. The composite b2_mixed_c4_third2 scope needs both ranges 0..966 and 967..1638; candidate967 is not negative in the first range. No numerical extremum or complete folded-profile transport.",
+      "source": "paper/avoid_compress/investigation/CONTINUATION_20261012.md",
+      "proof_check_status": "183 cumulative passed reports with 3395 source bindings and 1349 latest bound sources. Original isolated byte-identical regeneration receipts and 14 immutable certificate/range ZIPs retained. Synchronization checks original bytes, complete dependency coverage and finite rejection controls; expensive full regenerations are not repeated.",
+      "dependencies": "AUXILIARY_AUDIT_20261011_13.json; AUXILIARY_AUDIT_20261012_01..11.json; full native-geometry audits; original QA certificate packages; four prior profile-cut lists; literal/flag hypotheses",
       "priority": "OPEN"
     }
   ]

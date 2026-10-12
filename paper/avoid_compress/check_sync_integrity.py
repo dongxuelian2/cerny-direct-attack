@@ -39,9 +39,13 @@ def main():
 
     hashes = dict(frozen_hashes)
     large_data = json.loads((INV / 'large_data_manifest.json').read_text(encoding='utf-8'))
+    archive_hashes = {}
     for name, record in large_data['files'].items():
         archive = (INV / record['archive']).resolve()
-        assert archive.is_relative_to(INV) and digest(archive) == record['archive_sha256'], name
+        assert archive.is_relative_to(ROOT), name
+        if archive not in archive_hashes:
+            archive_hashes[archive] = digest(archive)
+        assert archive_hashes[archive] == record['archive_sha256'], name
         h = hashlib.sha256()
         with zipfile.ZipFile(archive) as z:
             assert z.getinfo(record['member']).file_size == record['bytes'], name
@@ -82,7 +86,9 @@ def main():
     assert checks == 121
     for name, expected in latest['accepted_artifact_sha256'].items():
         assert digest(ROOT / name) == expected, name
-    archives = sorted((INV / 'certificates').glob('*.zip')) + sorted((ROOT / 'release').glob('*.zip'))
+    # Include adopted QA certificates, while excluding unrelated local QA builds.
+    archives = sorted({ROOT / name for name in manifest['files']
+                       if name.endswith('.zip') and ROOT / name != INV / historical['archive']})
     for path in archives:
         with zipfile.ZipFile(path) as z:
             assert len(z.namelist()) == len(set(z.namelist())) and z.testzip() is None, path.name

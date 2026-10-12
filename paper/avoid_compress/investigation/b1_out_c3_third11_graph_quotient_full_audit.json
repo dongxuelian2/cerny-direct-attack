@@ -1,0 +1,72 @@
+{
+  "status": "pass",
+  "id": "b1_out_c3_third11",
+  "parameter": [
+    13,
+    9,
+    1
+  ],
+  "target_ac": 12,
+  "raw_graph_classes": 574,
+  "canonical_graph_classes": 30,
+  "labelled_first_pairs": 206550,
+  "canonical_prefixes": 2612,
+  "checked_prefixes": 2612,
+  "tree_counts": {
+    "nodes": 48891,
+    "depth_1": 2612,
+    "maximal_graph_not_SC": 15139,
+    "prefixes": 2612,
+    "literal_letters": 74100240,
+    "depth_2": 14974,
+    "missing_required_group": 30701,
+    "internal_nodes": 3051,
+    "depth_3": 27774,
+    "depth_4": 3531,
+    "column_nodes": 3531,
+    "column_deletions": 0
+  },
+  "maximum_basis_depth": 4,
+  "metadata_corruptions_rejected": 14,
+  "complete_conditional_geometry_exclusion": true,
+  "new_excluded_third_ids": [
+    "b1_out_c3_third11"
+  ],
+  "byte_identical_scope_and_audit_reports": 4,
+  "archive": "../_qa/certificates/b1_out_c3_third11_full_flags.zip",
+  "no_new_numerical_extremum": true,
+  "interval": [
+    11,
+    12
+  ],
+  "scope": "Complete conditional exclusion of this native geometry at (13,9,1),target12, for arbitrary finite alphabets. No F value or alphabet separation.",
+  "source_sha256": {
+    "../_qa/b1_out_c3_third11_graph_quotient_scope.json": "18674a8d14835f21250ea735b9045b9527add7cce1daf484e29efcc528576f28",
+    "../_qa/compile_native_graph_quotient.py": "0718a88b2d613169ceef4d9655b871ecd1a7a117c1b50a81a37b8dac9a7697c4",
+    "../_qa/b1_out_c3_third11_inverse_probe.json": "cc936a9c691926c719ba634d295126a3e61f4cc450ad74ae001a510b61e755e3",
+    "small_first_third_inventory.json": "ea00650e65207784313446cec6bf6d38b6f48223b327dcc218e9c6f34cf703c1",
+    "three_cover_atom_kernel_inventory.json": "fcfdd28eeb00f082206e166ab0b7bd7c3cee07a1ce21241e3e9a8be9e5bc7c5b",
+    "check_b1_b2_inverse_union.py": "b2df414a7e885e3bdb10c9bb46b46c734e55a193088c0a645762d64688f5c28f",
+    "check_b3_staircase.py": "e60a8c1aea412946cf3d3fbb3f8998750e6ca042d899f69661499b72e37a0fe3",
+    "LOCAL_EQUALITY_FLAG.md": "f34cf260276c6551266564c1ee2264dc823aeaa4f33b4ae8f8261aedeec596a8",
+    "FEW_GRAPH_FIRST_PAIR_CERTIFICATES.md": "7126178e2d3d024c62993fbc74f7c110f2927b1ce371618f4ba47cfb159809c9",
+    "../_qa/b1_out_c3_third11_graph_quotient_transport_audit.json": "f29d887cba4547361b36c63236d6ef93170b9561e550c2fc79759f50245742ae",
+    "../_qa/check_native_graph_quotient.py": "12c8e999ba3b0be26526791cf1d404f6cddc5a0b8a263d59e25345c7472adb47",
+    "../_qa/GRAPH_FIRST_TRANSPORTS.md": "cf879d3404b2d6faf22fd7d09e69a8f3f590f059e1146ef9488a62e6cecf4c22",
+    "../_qa/b1_out_c3_third11_graph_transport_protection_audit.json": "e3bb629b0c2611ab0829850ed0babd9312fbbf703a7cf1b619c3511bf0d065c8",
+    "../_qa/check_native_graph_protection.py": "44f629dc9dbf812f9ec3cf2e494c7f2f172d890c14fe0e8247f0d9eeaad67ca8",
+    "../_qa/b1_out_c3_third11_graph_quotient_full_probe.json": "f80dc2b5ac937e29803f4f9c54c793c0dc726ee22bad7087c7703026692bec12",
+    "../_qa/probe_native_graph_quotient.py": "cf5af6b11038b14e0ce05d157cb3d1f94b499846f668cac7229803d80f2ac4ee",
+    "c1_word_staircase_letter_generator.py": "e644954e22c879ad9bab83eaed3eee3e4c2bdd9727f9701adf0f78d006a119fd",
+    "check_c1_word_staircase.py": "ec35afabcef8c28573138bf4745959c42a346efef38dd03350eedc8e4016c347",
+    "basis_column_staircase.py": "f145cb5a2d09d9ba0c7b0e597c98bd53a940eb5096205e48206fc2ecf24b77cd",
+    "check_basis_column_staircase.py": "fa4417026950dd3a0bba3e23b201e1a7c1a79f2297c7dcfd5b2d8bfa2c9e8076",
+    "BASIS_COLUMN_REACHING_PRUNING.md": "00976976efdc29fdfbc8c2a2658d34c269d4a94be4271e7a2dda417ab6aaacdf",
+    "basis_column_reaching_audit.json": "d3b86c7210f1267e307ff0c94493453b38fc8ea5244a614b68da4145b760fdfc",
+    "local_equality_flag_audit.json": "b908e60013672ce875cf351a478e95b0faf5fc72f2428f00fcc209be1f9e4d40",
+    "../_qa/b1_out_c3_third11_full_quotient_reproduction.json": "0fcc6a0101ef173cf95412092d214eef9a898763bb1efa2fb63ed44ce0762e3f",
+    "../_qa/package_native_graph_quotient.py": "01ddbb4d52b4c451368123e662debb2e1f8ad0440d90f6ebe8429d68c6da2913",
+    "../_qa/certificates/b1_out_c3_third11_full_flags.zip": "c5d997f1b33bb998856a4641928450fe43055fba9f641227d2ad3c9d2bee8bd6",
+    "../_qa/audit_native_graph_quotient.py": "97692a7ab53024d3fd6bf19e3103b089b9b47e316d227293a216823fc855275d"
+  }
+}
