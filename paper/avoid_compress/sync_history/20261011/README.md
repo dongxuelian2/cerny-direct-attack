@@ -1,1 +1,0 @@
-Historical 2026-10-11 synchronization receipts through AUXILIARY_AUDIT_20261011_12.json, preserved verbatim from main commit 2a7e2c5. Their original file scope is historical; the current handoff and receipts are two directories above.

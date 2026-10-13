@@ -1,4 +1,0 @@
-{"source": "input:106", "value": [0, 0], "P": 1, "F": 1, "Fk": 1, "Wk": 1, "rt": 1, "seconds": 0.0}
-{"source": "input:102221", "value": [0, 1], "P": 2, "F": 2, "Fk": 3, "Wk": 3, "rt": 2, "seconds": 2.061999999999898}
-{"source": "input:126367", "value": [0, 2], "P": 2, "F": 2, "Fk": 4, "Wk": 4, "rt": 2, "seconds": 2.57799999999952}
-{"arguments": {"n": 4, "alphabet": 3, "count": 100000, "seed": 20261018, "restart": 500, "mode": "exhaustive", "objective": "normal", "out": "<LOCAL_PATH>", "minimum_kappa": 2}, "counts": {"tested": 2763520, "sc_synchronizing": 1825392}, "best": [0, 2], "records": ["witness_000.json", "witness_001.json", "witness_002.json"], "seconds": 69.875, "scope": "Distinct-letter binary cover with overlap or exhaustive designated alphabets; random/adversarial modes are sampled, not nonexistence proofs."}

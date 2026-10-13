@@ -1,5 +1,0 @@
-EXPLORATORY discovery only.
-
-These are byte-identical source/raw records from the ignored native_build row-cone probe. NumPy phase-I chooses candidate bases; each retained feasible support or dual is checked exactly locally, but the full discovery code/coverage is not independently audited. Raw elapsed times are actual generation fields, not fabricated subprocess captures. The n5/d2 input is nonsynchronizing and is explicitly retained as such. No negative search, ordinary threshold or priority claim is promoted from this archive.
-
-The later standard-library checker independently checks213 named parameters, their exact weighted witnesses, all pair Bellman systems, small complete avoidance Bellman systems, and one compatible coprime square. Its finite scope and all-parameter paper proofs are documented separately. To replay exploratory discovery, copy the .py here to ignored direct_attack/native_build and invoke python -m direct_attack.native_build.probe_rank_one_balance_horizon using the bundled runtime; NumPy is needed.

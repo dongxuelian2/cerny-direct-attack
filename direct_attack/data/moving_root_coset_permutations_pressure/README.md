@@ -1,3 +1,0 @@
-EXPLORATORY sampled pressure only.
-
-Byte-identical source/raw fields from ignored native_build.1200 sampled proposals may duplicate;5988 subset calls use the original inverse graph. No independent coverage/search audit, all-n negative result, formal or general Cerny proof is claimed. Reported ratios come from the first qualifying BFS target, not exact optimized ratios. Times are actual generator fields, not fabricated subprocess captures. Reproduce by copying the source into ignored direct_attack/native_build and invoking python -m direct_attack.native_build.probe_mixed_coset_budget. The retained class theorem and the mixed seven-state boundary have separate independent checkers and explicit mathematical scopes.

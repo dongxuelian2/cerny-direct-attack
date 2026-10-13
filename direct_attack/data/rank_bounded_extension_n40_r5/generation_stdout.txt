@@ -1,5 +1,0 @@
-{"source": "seed:0", "max_extension": 74, "P": 119, "rt": 119, "R": 592, "seconds": 0.2809999999990396}
-{"source": "mutation:6009", "max_extension": 75, "P": 122, "rt": 122, "R": 600, "seconds": 2.639999999999418}
-{"source": "mutation:43173", "max_extension": 76, "P": 116, "rt": 116, "R": 864, "seconds": 18.34299999999712}
-{"source": "mutation:43198", "max_extension": 76, "P": 118, "rt": 118, "R": 864, "seconds": 18.34299999999712}
-{"arguments": {"n": 40, "rank": 5, "count": 100000, "seed": 20261016, "restart": 500, "limit": 20000, "seed_count": 200, "out": "direct_attack/data/rank_bounded_extension_n40_r5"}, "seeds": 204, "counts": {"permutation_mutations": 24861, "tested": 100000, "rank_r_sc": 83461, "exact_sc_sync": 83400, "graph_limit_rejected": 3, "nonsynchronizing": 58}, "best": [76, 118], "records": ["witness_000.json", "witness_001.json", "witness_002.json", "witness_003.json"], "seconds": 36.34299999999712, "scope": "Sampled fixed-cycle/rank-r families plus permutation/color mutations. Graph limit is rejection; no exhaustive or universal negative conclusion."}

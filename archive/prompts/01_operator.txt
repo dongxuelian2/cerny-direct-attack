@@ -1,1 +1,0 @@
-你正在接手 ORION SyncLab。先读 START_HERE.md、run.py 和 src/check_certificate.py。只运行 demo、compare --n 8 和测试，不改数学定义，不安装第三方包，不调用付费 API。记录工作目录、Python 版本、完整命令、退出码、输出文件。若失败，只修复第一个可复现的工程错误。你的验收标准是 C8 的精确长度49、marked下界19，以及全部测试通过。VERIFIED 仅代表 Python 检查通过，不得描述为 Lean 已认证。最后给出能由用户直接复制的下一条命令。
