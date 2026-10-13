@@ -1,7 +1,7 @@
 # Černý 猜想与同步自动机研究
 
 本项目研究同步自动机的重置字、像扩张，以及 avoid-or-compress 问题。
-**一般 Černý 猜想尚未解决；当前主攻的参数点 `(13,9,1)` 仍在 `[11,12]`。**
+**一般 Černý 猜想尚未解决；参数点 `(13,9,1)` 的计算辅助结论为 `F_bin = F = 11`。**
 
 ## 从哪里读
 
@@ -9,13 +9,13 @@
 
 - [问题与当前结论](PROOF.md#problem)：先了解正在研究什么、哪些结论仍未完成。
 - [下界构造](PROOF.md#constructions)与[低余维上界](PROOF.md#upper)：已有参数族和归约。
-- [余维四：短对图与入口排除](PROOF.md#frontier)：当前研究主线；已证明 `τ(P₆)=3`，第一、第二共同入口均至多二点。[九核心排除](PROOF.md#problem4-overlap-nine-cores)现已完成整个重叠二点入口分支：若两个入口均为二点集，它们必须不交。其余分支仍开放。
+- [余维四：短对图与入口排除](PROOF.md#frontier)：[完整布尔旗标](PROOF.md#problem4-full-fiber-flag)排除达到十二的全部入口组合，适用于任意有限字母表；与二字母下界十一匹配。
 - [条件分支](PROOF.md#branches)：需要额外假设的局部论证。
 - [像扩张](PROOF.md#extension)、[秩与核](PROOF.md#rank)、[策略与预算](PROOF.md#policy)、[锚点与最优语言](PROOF.md#anchors)：其他数学方向。
 - [探索记录](PROOF.md#exploration)：受限观察、失败路线和待证明机制。
 
 引用结论时链接到 `PROOF.md#章节锚点`。各节的适用范围不可省略；有限搜索不等于一般定理。
-论文源码见 [papers/problem4/main.tex](papers/problem4/main.tex)。
+论文源码见 [papers/problem4/main.tex](papers/problem4/main.tex)；最新参数点结论以研究正文为准。
 
 ## 怎样计算
 
@@ -31,14 +31,15 @@ python3 run.py script scripts/problem4/problem4_p3_entry.cpp --threads 3
 python3 run.py script scripts/problem4/problem4_p3_entry.cpp --two-three --threads 4
 python3 run.py script scripts/problem4/problem4_p3_entry.cpp --overlap-two-two --threads 4
 python3 run.py script scripts/problem4/problem4_tau2_overlap.cpp --threads 4
+python3 run.py script scripts/problem4/problem4_tau2_overlap.cpp --tau3-disjoint --sizes 1 1 --quotient --threads 8
 ```
 
-`open-point` 重建下界为 11 的自动机，不会据此宣称上界也是 11。
+`open-point` 重建并验证下界十一的自动机；上界来自完整旗标排除。
 `tau4` 重建并排除第六层四点覆盖的全部九个核心，包含两种独立字母枚举。
 `problem4_p3_entry.cpp` 重建三点入口剩余的三个核心，独立核对字母域和距离后排除它们。
 加 `--two-three` 则排除三点覆盖路线中“二点第一入口、三点第二入口”的完整分支。
 加 `--overlap-two-two` 则排除该路线中两个二点入口相交的全部 86 个有序核心选择。
-`problem4_tau2_overlap.cpp` 完整覆盖九个无三角形核心的第三入口，再自动生成并排除最后二十个第四入口域。
+`problem4_tau2_overlap.cpp` 从九个无三角形核心扩展到全部剩余入口组合，逐层生成完整前像域，并检查共同字母表的短词安全性。全域复现需运行[运行说明](docs/RUNNING.md)中的全部模式。
 程序、输入和运行方式见 [运行说明](docs/RUNNING.md)。生成数据和可执行文件写入忽略的 `build/`。
 
 ## 目录

@@ -62,17 +62,37 @@ python3 run.py script scripts/direct_attack/check_avoid_compress_all_gaps.py
 使用三点覆盖核心的原编号；旧模式的 `--core` 仍使用从零开始的局部编号。
 完整三点覆盖归约见[重叠二点入口](../PROOF.md#problem4-small-entrance-overlap)。
 
-`problem4_tau2_overlap.cpp --threads 4` 完整检查重叠入口的九个二点覆盖核心：
-276 个第三入口域包括 74 个单点域；从全部合法代表自动产生最后 20 个第四入口域，
-并全部排除。默认比较逐输入与匹配核两种枚举的完整映射、签名、标记和箭头；
-有理秩由整数消元与精确的模素数计算交叉检查，距离与强连通各用两种算法核对。
-线程按不重叠的入口域分工；本机四线程完整检查约三秒，首次编译另计。
-该结论只关闭两个二点入口相交的分支，(13,9,1) 仍在 [11,12]。
-数学完备性与边界见[九核心排除](../PROOF.md#problem4-overlap-nine-cores)。
+`problem4_tau2_overlap.cpp` 的默认模式检查重叠二点入口的九个二点覆盖核心：
+完整 276 个初始选择中，16 个被字面集合族直接排除；260 个进入字母域，
+四个幸存配置自动生成 20 个第四层域，全部排除。
 
-加 `--disjoint` 则检查不交二点入口的九个无三角形二点覆盖核心；完整 202 个
-第三入口选择仍有 22 个放松向量，程序返回三。这不包含 T5、三点覆盖核心或
-第四入口，不能作为不交分支的完整排除。
+其余模式覆盖全部不交入口。`--sizes b c` 指定第一、第二入口大小（一或二），
+默认检查二点覆盖十三核心；两者均为二点时，使用纸面筛选后的十个核心。
+加 `--tau3-disjoint` 检查三点覆盖中已排除 K4 后的十一核心。
+`--quotient` 在每层对完整入口序列取核心自同构代表，保留每个全局重命名轨道。
+
+完整重现新增上界需要默认重叠模式、上述已列的三点覆盖重叠模式，以及以下
+八个不交模式。线程按不同入口域分工；首次编译和机器差异会影响耗时。
+
+```sh
+for first in 1 2; do
+  for second in 1 2; do
+    python3 run.py script scripts/problem4/problem4_tau2_overlap.cpp --sizes "$first" "$second" --quotient --threads 8
+    python3 run.py script scripts/problem4/problem4_tau2_overlap.cpp --tau3-disjoint --sizes "$first" "$second" --quotient --threads 8
+  done
+done
+```
+
+默认旗标深度上限为十一；全部分支在第十层或更早已经归零。每个域比较逐输入
+赋值与核块单射的完整映射集、标记和箭头；秩由整数与模素数消元交叉核对。
+短词回溯允许任意字母表大小，并用小池的全部子字母表独立核对，含行为折叠前后
+两种模式。计算结果打印到终端，不读取保存的枚举库存或证书。
+数学完备性、每层的适用条件与结果见[完整布尔旗标](../PROOF.md#problem4-full-fiber-flag)。
+
+`--core ID`、`--depth k` 用于缩小研究域，不代表全局完成；二点覆盖编号为
+0–12，三点覆盖编号为 101–111。`--flag` 可跟十一项位掩码（B 至第十一入口，
+未使用的尾项填零），并配合 `--core` 重建一个指定入口域。若仍有放松解，
+内核返回三，统一入口会报告非零状态；这些解不是自动机见证。
 
 `scripts/problem4/experimental/tau2_third_pair_profiles.cpp --threads 4` 保留早期九个
 二点覆盖核心中“第三入口为核心边”的受限原型，默认独立核对两种映射生成器。
