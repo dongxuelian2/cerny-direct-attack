@@ -12,7 +12,7 @@ import argparse
 import subprocess
 import sys
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[3]
 for optional in (ROOT / 'build/independent-smt',):
     if optional.exists():
         sys.path.insert(0, str(optional))
@@ -168,7 +168,7 @@ def main():
     if executable is None:
         executable = build / 'independent_profiles'
         subprocess.run(['g++', '-std=c++17', '-O3', '-pthread',
-                        str(ROOT / 'scripts/problem4/problem4_core_profiles_check.cpp'),
+                        str(Path(__file__).with_name('problem4_core_profiles_check.cpp')),
                         '-o', str(executable)], check=True)
     for core_id in range(9) if args.core is None else [args.core]:
         run(core_id, executable.resolve(), args.timeout)

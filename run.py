@@ -110,9 +110,9 @@ def open_point(args):
 
 def c7(args):
     work, env = workspace('c7')
-    project = work/'scripts/problem4'
-    profiles = compile_cpp(ROOT/'scripts/problem4/problem4_c7_profiles.cpp')
-    distances = compile_cpp(ROOT/'scripts/problem4/problem4_c7_distances.cpp')
+    project = work/'scripts/problem4/upper_bound'
+    profiles = compile_cpp(ROOT/'scripts/problem4/upper_bound/problem4_c7_profiles.cpp')
+    distances = compile_cpp(ROOT/'scripts/problem4/upper_bound/problem4_c7_distances.cpp')
     def generate(name, flags):
         with (project/name).open('wb') as out:
             subprocess.run([str(profiles), *flags], stdout=out, check=True)
@@ -138,9 +138,9 @@ def families(args):
 def tau4(args):
     work, env = workspace('tau4')
     source = ROOT/'scripts/problem4'
-    classify = compile_cpp(source/'problem4_tau4_core.cpp')
-    primary = compile_cpp(source/'problem4_core_distances.cpp')
-    independent = compile_cpp(source/'problem4_core_profiles_check.cpp')
+    classify = compile_cpp(source/'upper_bound/problem4_tau4_core.cpp')
+    primary = compile_cpp(source/'upper_bound/problem4_core_distances.cpp')
+    independent = compile_cpp(source/'upper_bound/problem4_core_profiles_check.cpp')
     invoke([classify, '--threads', args.threads], work, env)
     # Fresh in-memory comparisons: no stored inventories or report files.
     def compare(core):
@@ -180,6 +180,24 @@ def script(args):
         raise ValueError('The selected file must be Python or C++.')
 
 
+
+def eleven(args):
+    """Reconstruct the complete fixed-parameter proof from source."""
+    open_point(args)
+    work, env = workspace('eleven')
+    upper_sources = ROOT/'scripts/problem4/upper_bound'
+    upper_copy = work/'scripts/problem4/upper_bound'
+    invoke([sys.executable, '-B', work/'scripts/problem4/check_eleven_lower.py'], work, env)
+    for name in ('problem4_peeling_controls.py', 'problem4_p3_shapes.py'):
+        invoke([sys.executable, '-B', upper_copy/name], upper_copy, env)
+    tau4(args)
+    flags = compile_cpp(upper_sources/'full_fiber_flags.cpp')
+    for options in ([], ['--tau3']):
+        invoke([flags, '--all-entrances', '--quotient', '--threads', args.threads, *options],
+               upper_copy, env)
+    print('Complete (13,9,1) lower witness and all-entrance upper domains passed.', flush=True)
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     sub = p.add_subparsers(dest='command', required=True)
@@ -187,6 +205,9 @@ def main():
     q.add_argument('--cerny', type=int, default=10); q.set_defaults(action=reset)
     q = sub.add_parser('open-point', help='Reconstruct the (13,9,1) lower witness, then recompute its value')
     q.set_defaults(action=open_point)
+    q = sub.add_parser('eleven', help='Recompute the complete (13,9,1) mathematical reduction and finite rejection')
+    q.add_argument('--threads', type=int, default=min(16, os.cpu_count() or 1))
+    q.set_defaults(action=eleven)
     q = sub.add_parser('c7', help='Generate both action domains and run the multi-threaded C7 exclusion')
     q.add_argument('--threads', type=int, default=min(16, os.cpu_count() or 1))
     q.add_argument('--independent', action='store_true', help='Also run the small independent Python check')
@@ -203,6 +224,8 @@ def main():
     args = p.parse_args()
     if getattr(args, 'threads', 1) < 1 or getattr(args, 'threads', 1) > 64:
         p.error('--threads must be 1..64')
+    if args.command == 'eleven' and args.threads > 32:
+        p.error('eleven --threads must be 1..32')
     try: args.action(args)
     except (ValueError, RuntimeError, subprocess.CalledProcessError) as e:
         p.exit(1, str(e)+'\n')

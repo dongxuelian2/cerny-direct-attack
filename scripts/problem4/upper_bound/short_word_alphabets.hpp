@@ -274,102 +274,184 @@ short_word_clique(const std::vector<std::vector<int>> &letters,
 }
 inline void short_word_clique_controls() {
   using namespace std;
-  vector<vector<int>> universe;
-  for (int shift : {0, 1, 12, 2, 11, 3, 10}) {
-    vector<int> f(13);
-    for (int q = 0; q < 13; ++q)
-      f[q] = (q + shift) % 13;
-    universe.push_back(f);
-  }
-  universe.push_back(vector<int>(13, 0));
-  constexpr unsigned start = 511, required = 7;
-  auto literal_image = [](unsigned mask, const vector<int> &f) {
-    unsigned out = 0;
-    for (int q = 0; q < 13; ++q)
-      if (mask >> q & 1)
-        out |= 1U << f[q];
-    return out;
-  };
-  bool pair_ok[8][8]{};
-  for (int i = 0; i < 8; ++i)
-    for (int j = 0; j < 8; ++j) {
+  for (int variant : {0, 1}) {
+    vector<vector<int>> universe;
+    for (int shift : {0, 1, 12, 2, 11, 3, 10}) {
+      vector<int> f(13);
+      for (int q = 0; q < 13; ++q)
+        f[q] = (q + shift) % 13;
+      universe.push_back(f);
+    }
+    universe.push_back(vector<int>(13, 0));
+    if (variant == 1) {
+      for (int q = 0; q < 13; ++q)
+        universe[3][q] = (8 - q + 13) % 13;
+      for (int i : {4, 5}) {
+        for (int q = 0; q < 13; ++q)
+          universe[i][q] = q;
+        swap(universe[i][i == 4 ? 1 : 4], universe[i][i == 4 ? 9 : 10]);
+      }
+    }
+    vector<pair<int, int>> core_edges =
+        variant == 0 ? vector<pair<int, int>>{}
+                     : vector<pair<int, int>>{{9, 11}, {10, 12}};
+    vector<int> lengths = variant == 0 ? vector<int>{} : vector<int>{1, 2};
+    auto literal_safe = [&](unsigned mask, int left) {
+      if (__builtin_popcount(mask) != 9 || !(mask & 8))
+        return false;
+      for (size_t i = 0; i < core_edges.size(); ++i) {
+        auto [u, v] = core_edges[i];
+        if (lengths[i] <= left && (mask >> u & 1) && (mask >> v & 1))
+          return false;
+      }
+      return true;
+    };
+    constexpr unsigned start = 511, required = 7;
+    auto literal_image = [](unsigned mask, const vector<int> &f) {
+      unsigned out = 0;
+      for (int q = 0; q < 13; ++q)
+        if (mask >> q & 1)
+          out |= 1U << f[q];
+      return out;
+    };
+    bool pair_ok[8][8]{};
+    for (int i = 0; i < 8; ++i)
+      for (int j = 0; j < 8; ++j) {
+        vector<unsigned> frontier{start};
+        bool safe = true;
+        for (int length = 0; length <= 3; ++length) {
+          vector<unsigned> next;
+          for (unsigned mask : frontier) {
+            if (!literal_safe(mask, 3 - length))
+              safe = false;
+            if (length < 3)
+              for (int f : {i, j})
+                next.push_back(literal_image(mask, universe[f]));
+          }
+          frontier = move(next);
+        }
+        pair_ok[i][j] = safe;
+      }
+    array<bool, 256> valid{};
+    for (unsigned selected = 1; selected < 256; ++selected) {
+      unsigned supply = 0;
+      bool clique = true;
+      for (int i = 0; i < 8; ++i)
+        if (selected >> i & 1) {
+          supply |= 1U << (i % 3);
+          for (int j = 0; j < 8; ++j)
+            if ((selected >> j & 1) && !pair_ok[i][j])
+              clique = false;
+        }
+      if (!clique || supply != required)
+        continue;
+      bool sc = true;
+      for (int start_state = 0; start_state < 13; ++start_state) {
+        unsigned visited = 1U << start_state;
+        vector<int> queue{start_state};
+        for (size_t at = 0; at < queue.size(); ++at)
+          for (int f = 0; f < 8; ++f)
+            if (selected >> f & 1) {
+              int out = universe[f][queue[at]];
+              if (!(visited >> out & 1)) {
+                visited |= 1U << out;
+                queue.push_back(out);
+              }
+            }
+        sc &= visited == 8191;
+      }
       vector<unsigned> frontier{start};
       bool safe = true;
       for (int length = 0; length <= 3; ++length) {
         vector<unsigned> next;
         for (unsigned mask : frontier) {
-          if (__builtin_popcount(mask) != 9 || !(mask & 8))
+          if (!literal_safe(mask, 3 - length))
             safe = false;
           if (length < 3)
-            for (int f : {i, j})
-              next.push_back(literal_image(mask, universe[f]));
+            for (int f = 0; f < 8; ++f)
+              if (selected >> f & 1)
+                next.push_back(literal_image(mask, universe[f]));
         }
         frontier = move(next);
       }
-      pair_ok[i][j] = safe;
+      valid[selected] = sc && safe;
     }
-  array<bool, 256> valid{};
-  for (unsigned selected = 1; selected < 256; ++selected) {
-    unsigned supply = 0;
-    bool clique = true;
-    for (int i = 0; i < 8; ++i)
-      if (selected >> i & 1) {
-        supply |= 1U << (i % 3);
-        for (int j = 0; j < 8; ++j)
-          if ((selected >> j & 1) && !pair_ok[i][j])
-            clique = false;
+    int positives = 0, negatives = 0;
+    for (unsigned pool = 0; pool < 256; ++pool) {
+      bool reference = false;
+      for (unsigned selected = pool; selected; selected = (selected - 1) & pool)
+        reference |= valid[selected];
+      vector<vector<int>> letters;
+      vector<unsigned> flags;
+      for (int i = 0; i < 8; ++i)
+        if (pool >> i & 1) {
+          letters.push_back(universe[i]);
+          flags.push_back(1U << (i % 3));
+        }
+      for (bool fold : {false, true}) {
+        auto answer =
+            short_word_clique(letters, flags, required, 3, {{start, 3}},
+                              core_edges, lengths, fold);
+        assert(answer.possible == reference);
       }
-    if (!clique || supply != required)
-      continue;
-    bool sc = true;
-    for (int start_state = 0; start_state < 13; ++start_state) {
-      unsigned visited = 1U << start_state;
-      vector<int> queue{start_state};
-      for (size_t at = 0; at < queue.size(); ++at)
-        for (int f = 0; f < 8; ++f)
-          if (selected >> f & 1) {
-            int out = universe[f][queue[at]];
-            if (!(visited >> out & 1)) {
-              visited |= 1U << out;
-              queue.push_back(out);
-            }
+      reference ? ++positives : ++negatives;
+    }
+    assert(positives > 0 && negatives > 0);
+  }
+  // Three noncommuting permutations are pairwise safe, but their mixed word
+  // abc omits the protected point. Their union is strongly connected and all
+  // three supply bits are necessary, so pair tests alone would accept them.
+  vector<vector<int>> triple(3, vector<int>(13));
+  for (auto &f : triple)
+    for (int q = 0; q < 13; ++q)
+      f[q] = q;
+  swap(triple[0][0], triple[0][9]);
+  swap(triple[1][0], triple[1][1]);
+  vector<int> cycle{2, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+  for (size_t q = 0; q < cycle.size(); ++q)
+    triple[1][cycle[q]] = cycle[(q + 1) % cycle.size()];
+  swap(triple[2][1], triple[2][3]);
+  for (int x = 0; x < 3; ++x)
+    for (int y = 0; y < 3; ++y) {
+      vector<unsigned> frontier{511};
+      for (int d = 0; d <= 3; ++d) {
+        vector<unsigned> next;
+        for (unsigned mask : frontier) {
+          assert(mask & 8);
+          for (int f : {x, y}) {
+            unsigned out = 0;
+            for (int q = 0; q < 13; ++q)
+              if (mask >> q & 1)
+                out |= 1U << triple[f][q];
+            next.push_back(out);
           }
-      sc &= visited == 8191;
-    }
-    vector<unsigned> frontier{start};
-    bool safe = true;
-    for (int length = 0; length <= 3; ++length) {
-      vector<unsigned> next;
-      for (unsigned mask : frontier) {
-        if (__builtin_popcount(mask) != 9 || !(mask & 8))
-          safe = false;
-        if (length < 3)
-          for (int f = 0; f < 8; ++f)
-            if (selected >> f & 1)
-              next.push_back(literal_image(mask, universe[f]));
+        }
+        frontier = move(next);
       }
-      frontier = move(next);
     }
-    valid[selected] = sc && safe;
+  unsigned bad = 511;
+  for (const auto &f : triple) {
+    unsigned next = 0;
+    for (int q = 0; q < 13; ++q)
+      if (bad >> q & 1)
+        next |= 1U << f[q];
+    bad = next;
   }
-  int positives = 0, negatives = 0;
-  for (unsigned pool = 0; pool < 256; ++pool) {
-    bool reference = false;
-    for (unsigned selected = pool; selected; selected = (selected - 1) & pool)
-      reference |= valid[selected];
-    vector<vector<int>> letters;
-    vector<unsigned> flags;
-    for (int i = 0; i < 8; ++i)
-      if (pool >> i & 1) {
-        letters.push_back(universe[i]);
-        flags.push_back(1U << (i % 3));
+  assert(!(bad & 8));
+  for (int start = 0; start < 13; ++start) {
+    vector<int> queue{start};
+    unsigned seen = 1U << start;
+    for (size_t i = 0; i < queue.size(); ++i)
+      for (const auto &f : triple) {
+        int v = f[queue[i]];
+        if (!(seen >> v & 1)) {
+          seen |= 1U << v;
+          queue.push_back(v);
+        }
       }
-    for (bool fold : {false, true}) {
-      auto answer = short_word_clique(letters, flags, required, 3, {{start, 3}},
-                                      {}, {}, fold);
-      assert(answer.possible == reference);
-    }
-    reference ? ++positives : ++negatives;
+    assert(seen == 8191);
   }
-  assert(positives > 0 && negatives > 0);
+  for (bool fold : {false, true})
+    assert(!short_word_clique(triple, {1, 2, 4}, 7, 3, {{511, 3}}, {}, {}, fold)
+                .possible);
 }
