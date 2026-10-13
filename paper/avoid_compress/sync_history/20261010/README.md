@@ -1,1 +1,0 @@
-Historical synchronization records for commit d57a2077e19932ff69bea9307b69110678e213de (2026-10-10). These retain their original file paths, scope and hashes; they are not manifests of the current checkout. Current records are two directories above.

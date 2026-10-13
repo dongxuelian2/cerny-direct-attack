@@ -1,9 +1,0 @@
-{"source": "seed:0", "value": [0, 0], "P": 49, "F": 49, "Fk": 49, "Wk": 49, "rt": 49, "seconds": 0.06300000000010186}
-{"source": "seed:18", "value": [0, 4], "P": 7, "F": 7, "Fk": 11, "Wk": 11, "rt": 7, "seconds": 0.06300000000010186}
-{"source": "seed:149", "value": [0, 5], "P": 10, "F": 10, "Fk": 15, "Wk": 15, "rt": 10, "seconds": 0.06300000000010186}
-{"source": "mutation:16", "value": [0, 6], "P": 4, "F": 4, "Fk": 10, "Wk": 12, "rt": 4, "seconds": 0.10900000000037835}
-{"source": "mutation:94", "value": [0, 7], "P": 5, "F": 5, "Fk": 12, "Wk": 15, "rt": 5, "seconds": 0.125}
-{"source": "mutation:1074", "value": [0, 8], "P": 5, "F": 5, "Fk": 13, "Wk": 15, "rt": 5, "seconds": 0.1720000000004802}
-{"source": "mutation:1082", "value": [0, 11], "P": 5, "F": 5, "Fk": 16, "Wk": 16, "rt": 5, "seconds": 0.1720000000004802}
-{"source": "mutation:35454", "value": [0, 13], "P": 3, "F": 3, "Fk": 16, "Wk": 17, "rt": 3, "seconds": 1.9690000000009604}
-{"arguments": {"n": 8, "alphabet": 3, "count": 100000, "seed": 20261019, "restart": 500, "mode": "adversarial", "objective": "normal", "out": "<LOCAL_PATH>", "minimum_kappa": 2}, "counts": {"tested": 100726, "sc_synchronizing": 94867}, "best": [0, 13], "records": ["witness_000.json", "witness_001.json", "witness_002.json", "witness_003.json", "witness_004.json", "witness_005.json", "witness_006.json", "witness_007.json"], "seconds": 5.21900000000096, "scope": "Distinct-letter binary cover with overlap or exhaustive designated alphabets; random/adversarial modes are sampled, not nonexistence proofs."}
