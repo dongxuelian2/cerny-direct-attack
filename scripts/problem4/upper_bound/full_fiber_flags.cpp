@@ -4,7 +4,7 @@
 // Representatives model ONE letter; never iterate anonymous isolated labels.
 // Direct input assignments are independently checked by kernel partitions
 // with injective outputs, including triangles, flags, and arrow unions.
-#include "problem4_short_word_cliques.hpp"
+#include "short_word_alphabets.hpp"
 #include <algorithm>
 #include <array>
 #include <atomic>
@@ -556,13 +556,11 @@ struct Case {
                     assert(__builtin_popcount(outputs) >= N - 2);
                     if (!fourth_allowed(f))
                       return;
-                    if ((!E || !(B & C)) &&
-                        (!safe_rank(f, 10, 3) || !safe_rank(f, 9, 8)))
+                    if (!safe_rank(f, 10, 3) || !safe_rank(f, 9, 8))
                       return;
-                    if (!(B & C))
-                      for (int level = 4; level <= depth(); ++level)
-                        if (!safe_rank(f, 9, 11 - level, false, level))
-                          return;
+                    for (int level = 4; level <= depth(); ++level)
+                      if (!safe_rank(f, 9, 11 - level, false, level))
+                        return;
                     ++domains;
                     raw_maps.push_back(canonical_map(f));
                     Action action;
@@ -601,7 +599,7 @@ struct Case {
                       mark.flags |= 1;
                     if (preB == C)
                       mark.flags |= 2;
-                    if (preC != (1 << n) && preC != B && preC != C)
+                    if (preC == D)
                       mark.flags |= 4;
                     return;
                   }
@@ -740,13 +738,11 @@ struct Case {
                       return;
                   if (!fourth_allowed(f))
                     return;
-                  if ((!E || !(B & C)) &&
-                      (!safe_rank(f, 10, 3, true) || !safe_rank(f, 9, 8, true)))
+                  if (!safe_rank(f, 10, 3, true) || !safe_rank(f, 9, 8, true))
                     return;
-                  if (!(B & C))
-                    for (int level = 4; level <= depth(); ++level)
-                      if (!safe_rank(f, 9, 11 - level, true, level))
-                        return;
+                  for (int level = 4; level <= depth(); ++level)
+                    if (!safe_rank(f, 9, 11 - level, true, level))
+                      return;
                   ++kernel_domains;
                   literal_maps.push_back(canonical_map(f));
                   Action action;
@@ -783,7 +779,8 @@ struct Case {
                   for (int q = 0; q < N; ++q)
                     mark.arrows[q < fixed() ? q : qj()] |=
                         1U << (f[q] < fixed() ? f[q] : qj());
-                  set<int> actualA, actualB, actualC, expectedB, expectedC;
+                  set<int> actualA, actualB, actualC, expectedB, expectedC,
+                      expectedD;
                   for (int q = 0; q < N; ++q) {
                     if (f[q] == n)
                       actualA.insert(q);
@@ -797,13 +794,14 @@ struct Case {
                       expectedB.insert(q);
                     if (C >> q & 1)
                       expectedC.insert(q);
+                    if (D >> q & 1)
+                      expectedD.insert(q);
                   }
                   if (actualA == expectedB)
                     mark.flags |= 1;
                   if (actualB == expectedC)
                     mark.flags |= 2;
-                  if (actualC != set<int>{n} && actualC != expectedB &&
-                      actualC != expectedC)
+                  if (actualC == expectedD)
                     mark.flags |= 4;
                   return;
                 }
@@ -1111,7 +1109,7 @@ struct Case {
     }
   }
   void derive_extensions(const vector<int> &e) {
-    if (depth() >= limit || (E && (B & C)))
+    if (depth() >= limit)
       return;
     vector<int> old = E ? closure(depth()) : all_third;
     int source = fiber_at(depth());
@@ -1238,14 +1236,14 @@ void controls() {
   // Exact equality of retained literal-map sets also checks rejection decisions
   // between the two generators and rank methods; no stored records are read.
   cout << "CONTROLS distance, rank, nonedge constraints, and all 32768 "
-          "six-point cover graphs and 256 short-word pools "
+          "six-point cover graphs and 512 short-word pools "
           "PASS"
        << endl;
 }
 int main(int argc, char **argv) {
   controls();
   int threads = 4, max_depth = 11, only_core = -1;
-  bool disjoint = false, tau3 = false, quotient = false;
+  bool disjoint = false, tau3 = false, quotient = false, all_entrances = false;
   int first_size = 2, second_size = 2;
   vector<int> explicit_flag;
   for (int i = 1; i < argc; ++i) {
@@ -1255,6 +1253,9 @@ int main(int argc, char **argv) {
       first_size = __builtin_popcount(unsigned(explicit_flag[0]));
       second_size = __builtin_popcount(unsigned(explicit_flag[1]));
       disjoint = true;
+    } else if (string(argv[i]) == "--all-entrances") {
+      all_entrances = true;
+      disjoint = true;
     } else if (string(argv[i]) == "--core" && i + 1 < argc)
       only_core = stoi(argv[++i]);
     else if (string(argv[i]) == "--quotient")
@@ -1263,7 +1264,8 @@ int main(int argc, char **argv) {
       first_size = stoi(argv[++i]);
       second_size = stoi(argv[++i]);
       disjoint = true;
-    } else if (string(argv[i]) == "--tau3-disjoint") {
+    } else if (string(argv[i]) == "--tau3-disjoint" ||
+               string(argv[i]) == "--tau3") {
       disjoint = true;
       tau3 = true;
     } else if (string(argv[i]) == "--disjoint")
@@ -1293,7 +1295,7 @@ int main(int argc, char **argv) {
   auto domain_cores = cores;
   if (disjoint)
     domain_cores.push_back({5, 5, "01 02 03 12 14"});
-  if (first_size == 1 || second_size == 1) {
+  if (all_entrances || first_size == 1 || second_size == 1) {
     domain_cores.push_back({0, 3, "01 02 12"});
     domain_cores.push_back({1, 4, "01 02 03 12"});
     domain_cores.push_back({2, 4, "01 02 03 12 13"});
@@ -1306,6 +1308,8 @@ int main(int argc, char **argv) {
         {107, 6, "05 14 23 45"},       {108, 6, "05 14 23 35 45"},
         {109, 6, "05 14 23 25 34"},    {110, 6, "05 14 23 34 35 45"},
         {111, 6, "05 14 23 25 34 45"}};
+  if (tau3 && all_entrances)
+    domain_cores.push_back({100, 4, "01 02 03 12 13 23"});
   if (only_core >= 0 &&
       none_of(domain_cores.begin(), domain_cores.end(),
               [&](const Core &c) { return c.id == only_core; }))
@@ -1346,49 +1350,71 @@ int main(int argc, char **argv) {
         automorphisms.push_back(permutation);
     } while (next_permutation(permutation.begin(), permutation.end()));
     symmetry_groups[core.id] = automorphisms;
-    auto first = first_size == 2 ? edges : vector<int>{1 << (core.n + 1)};
-    auto second = second_size == 2
-                      ? edges
-                      : vector<int>{1 << (core.n + 1 + (first_size == 1))};
-    for (int B : first)
-      for (int C : second)
-        if (B != C &&
-            __builtin_popcount(unsigned(B & C)) == (disjoint ? 0 : 1)) {
-          auto third = edges;
-          for (int u = 0; u < core.n; ++u)
-            for (int v = u + 1; v < core.n; ++v)
-              for (int w = v + 1; w < core.n; ++w)
-                if (find(edges.begin(), edges.end(), (1 << u) | (1 << v)) !=
-                        edges.end() &&
-                    find(edges.begin(), edges.end(), (1 << u) | (1 << w)) !=
-                        edges.end() &&
-                    find(edges.begin(), edges.end(), (1 << v) | (1 << w)) !=
-                        edges.end())
-                  third.push_back((1 << u) | (1 << v) | (1 << w));
-          third.push_back(
-              1 << (core.n + 1 + (first_size == 1) + (second_size == 1)));
-          for (int D : third)
-            if (D != B && D != C) {
-              ++initial_choices;
-              bool canonical = true;
-              if (quotient)
-                for (const auto &perm : automorphisms)
-                  if (vector<int>{transform(B, perm), transform(C, perm),
-                                  transform(D, perm)} < vector<int>{B, C, D})
-                    canonical = false;
-              if (!canonical)
-                continue;
-              ++canonical_choices;
-              Case trial(core, B, C, D);
-              if (trial.prepare())
-                jobs.push_back({core, B, C, D, 0, 0, 0, 0, 0, 0, 0, 0});
-            }
-        }
+    vector<int> core_cliques;
+    for (int mask = 1; mask < (1 << core.n); ++mask) {
+      if (__builtin_popcount(unsigned(mask)) < 2)
+        continue;
+      bool clique = true;
+      for (int u = 0; u < core.n; ++u)
+        for (int v = u + 1; v < core.n; ++v)
+          if ((mask >> u & 1) && (mask >> v & 1) &&
+              find(edges.begin(), edges.end(), (1 << u) | (1 << v)) ==
+                  edges.end())
+            clique = false;
+      if (clique)
+        core_cliques.push_back(mask);
+    }
+    vector<int> first =
+        first_size == 2 ? edges : vector<int>{1 << (core.n + 1)};
+    if (all_entrances) {
+      first = {1 << (core.n + 1)};
+      for (int mask : core_cliques)
+        if (__builtin_popcount(unsigned(mask)) <= 3)
+          first.push_back(mask);
+    }
+    for (int B : first) {
+      bool singleton_B = __builtin_popcount(unsigned(B)) == 1;
+      vector<int> second = second_size == 2
+                               ? edges
+                               : vector<int>{1 << (core.n + 1 + singleton_B)};
+      if (all_entrances) {
+        second = {1 << (core.n + 1 + singleton_B)};
+        for (int mask : core_cliques)
+          if (__builtin_popcount(unsigned(mask)) <= 3)
+            second.push_back(mask);
+      }
+      for (int C : second) {
+        if (B == C || (all_entrances ? ((B & C) == B || (B & C) == C)
+                                     : __builtin_popcount(unsigned(B & C)) !=
+                                           (disjoint ? 0 : 1)))
+          continue;
+        auto third = core_cliques;
+        third.push_back(1 << (core.n + 1 + singleton_B +
+                              (__builtin_popcount(unsigned(C)) == 1)));
+        for (int D : third)
+          if (D != B && D != C) {
+            ++initial_choices;
+            bool canonical = true;
+            if (quotient)
+              for (const auto &perm : automorphisms)
+                if (vector<int>{transform(B, perm), transform(C, perm),
+                                transform(D, perm)} < vector<int>{B, C, D})
+                  canonical = false;
+            if (!canonical)
+              continue;
+            ++canonical_choices;
+            Case trial(core, B, C, D);
+            if (trial.prepare())
+              jobs.push_back({core, B, C, D, 0, 0, 0, 0, 0, 0, 0, 0});
+          }
+      }
+    }
   }
   cout << "INITIAL choices=" << initial_choices
        << " symmetry_kept=" << canonical_choices
        << " family_reject=" << canonical_choices - int(jobs.size())
-       << " admitted=" << jobs.size() << endl;
+       << " admitted=" << jobs.size() << " all_entrances=" << all_entrances
+       << endl;
   auto key = [](const Job &job) {
     return array<int, 12>{job.core.id, job.B, job.C, job.D, job.E, job.F,
                           job.G,       job.H, job.I, job.J, job.K, job.L};
@@ -1486,8 +1512,12 @@ int main(int argc, char **argv) {
       survivors = stage(fourth, unused);
       fourth = move(unused);
     }
-    cout << "SCOPE disjoint " << (tau3 ? "tau3" : "tau2") << " with flag limit "
-         << max_depth << "; entry sizes " << first_size << "," << second_size
+    cout << "SCOPE " << (all_entrances ? "all entrances " : "disjoint ")
+         << (tau3 ? "tau3" : "tau2") << " with flag limit " << max_depth
+         << "; all_entrances=" << all_entrances << "; entry sizes "
+         << (all_entrances
+                 ? "1..3 (all ordered combinations)"
+                 : to_string(first_size) + "," + to_string(second_size))
          << "; quotient=" << quotient << "; core=" << only_core << endl;
     return survivors ? 3 : 0;
   }

@@ -12,12 +12,12 @@
 \newcommand{\one}{\mathbf 1}
 \title{Sharpness of the Avoid-or-Compress Bound for Reachable Images}
 \author{Qichao Wang\\Hebei University of Technology}
-\date{8 October 2026}
+\date{13 October 2026}
 \hypersetup{pdftitle={Sharpness of the Avoid-or-Compress Bound for Reachable Images},pdfauthor={Qichao Wang}}
 \begin{document}
 \maketitle
 \begin{abstract}
-Let $\ac(S,A)$ be the minimum word length omitting a state of $\varnothing\ne A\subsetneq S$ or compressing $S$. We prove sharpness of Szyku\l a's bound $n-|A|$ on the first two cardinality faces (proper $S$ on the second) and at every $n\ge2|S|-|A|-1$ for larger gaps. All witnesses are binary, strongly connected and synchronizing, with $S$ a reachable image. Put $m=n-|S|$ and $q=n-|A|$. Both binary and unrestricted maxima equal one for $m=0$, $\min\{q,3m\}$ for $1\le m\le3$, and $q$ for $m\ge4$, $q\le3m-1$. The codimension-three upper uses a computer-assisted structural proof and refutes $\min\{q,\binom{m+2}{2}\}$ at infinitely many parameters. Independently checked witnesses determine every parameter through $n=12$. The remaining region is unresolved; this is a partial answer to Szyku\l a's 2026 Open Problem~4.
+Let $\ac(S,A)$ be the minimum word length omitting a state of $\varnothing\ne A\subsetneq S$ or compressing $S$. We prove sharpness of Szyku\l a's bound $n-|A|$ on the first two cardinality faces (proper $S$ on the second) and at every $n\ge2|S|-|A|-1$ for larger gaps. All witnesses are binary, strongly connected and synchronizing, with $S$ a reachable image. Put $m=n-|S|$ and $q=n-|A|$. Both binary and unrestricted maxima equal one for $m=0$, $\min\{q,3m\}$ for $1\le m\le3$, and $q$ for $m\ge4$, $q\le3m-1$. The codimension-three upper uses a computer-assisted structural proof and refutes $\min\{q,\binom{m+2}{2}\}$ at infinitely many parameters. Independently checked witnesses determine every parameter through $n=12$. We also determine the first codimension-four boundary point: both maxima at $(13,9,1)$ equal eleven, by a complete arbitrary-alphabet computer-assisted proof. The other remaining parameters are unresolved; this is a partial answer to Szyku\l a's 2026 Open Problem~4.
 \end{abstract}
 
 \section{Statement and preliminaries}
@@ -301,7 +301,7 @@ A $T$--$T$ pair rotates one point to $z$ and then $a$ gives a $T$--$K$ pair.
 Hence every pair merges. Repeatedly merging two points of the current image synchronizes $Q$.
 
 \emph{Uniform upper bound.}
-The following proof uses complete finite action certificates; the supplement
+The following proof uses complete finite action certificates; the research sources
 contains all symbolic domain reductions and both independent enumerations.
 Put $P_h=\{E:|E|=2,\ |Ew|=1\text{ for some }|w|\le h\}$.
 A Frankl--Pin sequence consists of $s$-sets $S_i$ and pairs
@@ -326,7 +326,7 @@ by depth $i$ grow strictly before compression: a plateau would be
 invariant under all letters and could not be reset. Thus $|R_i|\ge i+1$.
 A common $\mathcal H$-preserving domain $D$ for tests of length at most
 $L$ contains $R_{6-L}$, so $|D|\ge7-L$.
-The symbolic classifications in the supplement either contradict this
+The symbolic classifications in the research sources either contradict this
 count or reduce to a domain with $k=7-L$ images.
 All its images are then reached by depth $6-L$, and every letter maps
 them into $\mathcal H$.
@@ -372,13 +372,13 @@ extra rows not extendible at a small $n$ only enlarge the graphs.
 One implementation uses inverse-pair templates and reverse exit closure;
 the other enumerates literal forward partial rows and searches forward
 for exits. All profiles, row-closure flags and surviving vectors coincide.
-The supplement supplies the full classifications, exact domains,
-fresh-label bounds, source and data for all nine cases.
+The research sources supplies the full classifications, exact domains,
+fresh-label bounds and implementations for all nine cases.
 This excludes compression ten and proves the uniform upper bound.
 Combining it with Lemma~\ref{lem:upper} and the lower construction gives
 the asserted local maximum for $n\ge10$, using Theorem~\ref{thm:main}
 when $r=n-4$. For $5\le n\le9$, independently checked binary witnesses
-in the supplement attain $U=\min\{n-r,9\}$ for every admissible $r$.
+in the research sources attain $U=\min\{n-r,9\}$ for every admissible $r$.
 \end{proof}
 
 \section{A uniform two-block construction}
@@ -492,6 +492,369 @@ Finally $L=3m-1<\binom{m+2}{2}$ for $m\ge3$, so meeting $q\le L$
 determines both maxima as stated.
 \end{proof}
 
+\section{The first codimension-four boundary point}
+\begin{theorem}[Computer-assisted exact value]\label{thm:eleven}
+For strongly connected synchronizing automata, with the conventions above,
+\[
+ \Max_{\rm bin}(13,9,1)=\Max(13,9,1)=11.
+\]
+The upper bound holds for every nine-state subset and every protected state
+in it, even without image reachability or an alphabet-size restriction.
+\end{theorem}
+We give the mathematical reduction, the finite domains and the rejecting
+conditions explicitly. The computation enumerates necessary conditions
+for a counterexample; a retained configuration is never asserted to be an
+automaton. The final calculation includes three-point entrances and $K_4$,
+so it does not depend on their earlier separate exclusions.
+
+\subsection{A literal lower witness}
+Taking $p=6,t=3,r=1$ in Theorem~\ref{thm:two-block} already proves the
+lower bound, including reachability and synchronization. For independent
+reconstruction, label the states $0,\ldots,12$ and use
+\[
+\begin{array}{c|rrrrrrrrrrrrr}
+q&0&1&2&3&4&5&6&7&8&9&10&11&12\\\hline
+a&0&1&2&3&5&4&7&8&9&10&11&12&6\\
+b&9&0&1&2&3&4&7&8&5&10&11&5&12
+\end{array}
+\]
+Set $S=\{0,\ldots,8\}$ and $A=\{0\}$. The actual reaching word is
+$b^3(a^6b^9)^3a^4$, and $a^6ba^3b$ compresses $S$ to eight states.
+The potential and incidence-matrix proof of Theorem~\ref{thm:two-block}
+gives safety through depth ten. Independently, a literal word tree checks
+all $4095$ words of lengths zero through eleven: the safe counts are
+\[1,2,4,8,16,32,64,128,256,512,1024,1984.\]
+The reference also checks state reachability, the displayed reaching word,
+and an explicit reset obtained by successive pair merges. Native subset
+BFS independently returns length eleven and visits $64$ subsets.
+
+\subsection{Short-pair and rank reductions}
+Assume, towards the upper bound, that $\ac(S,\{\alpha\})\ge12$.
+Lemma~\ref{lem:upper} makes it exactly twelve. All words through depth eleven
+are injective on $S$ and contain $\alpha$; in particular $c(S)\ge12$.
+Write $P_h$ for pairs merged within $h$ letters. The trajectory space
+$V_j=\langle\chi_SD_w:|w|\le j\rangle$ grows strictly until it is all of
+$\mathbb Q^{13}$: a plateau is invariant, whereas reset words followed by
+state paths give every coordinate row. Safety places $V_{11}$ in a
+12-dimensional hyperplane, and therefore
+\begin{equation}\label{eq:eleven-ranks}
+ \dim V_j=j+1\qquad(0\le j\le11).
+\end{equation}
+Every state is reached from $S$ in at most four letters: a shortest state
+path from $S$ uses distinct outside states after its initial point.
+Every such short image contains $\alpha$, so a pair touching $\alpha$
+cannot merge within seven further letters. Thus $\alpha$ is isolated in $P_7$.
+
+For completeness, the edge cap used below follows from a short graph
+argument. If a graph has degree and cover bounds $m$ and fewer than $3m$
+edges, an $(n-m)$-set inducing exactly one edge exists. Take a minimum cover
+$C$ of size $t$ and its independent complement $I$. Each $c\in C$ has an
+$I$-neighbor. If $d_I(c)\le m-t+2$, retain one such neighbor, remove the
+others, and add $c$ to $I$, then trim to size $n-m$. Otherwise
+$|E|\ge t(m-t+3)\ge3m$; for $t\le2$ the degree bound already contradicts
+this alternative. Repeating after edge deletion gives a Frankl--Pin
+sequence of length $\min\{|E|,3m-1\}$. Here $S$ is $P_h$-independent and
+$\Delta(P_h)\le4$ for $h\le7$: a vertex with five neighbors, reached within
+four letters, forces its nine-state image to contain one neighbor.
+The refinement of Kisielewicz--Kowalski--Szyku\l a then gives
+\begin{equation}\label{eq:eleven-cap}
+ |P_h|\le h+3\quad(1\le h\le7).
+\end{equation}
+Indeed $h+4$ edges would supply that many sequence pairs and compress
+within $15-(h+4)+h=11$. The pair recurrence also grows strictly before the
+complete graph, so $3\le|P_3|\le6$.
+
+Every letter has rank at least eleven. The needed rank-transfer bound is
+$c(T)\le|u|+13-r+1$ for an $r$-set $T$ and a rank-$r$ word $u$.
+If every $vu$ with $|v|\le13-r+1$ failed to compress $T$, their prefix rows
+would meet every kernel block once. They lie in the equal-block-sum space
+of dimension $13-r+1$, contradicting strict trajectory growth (or a reset
+row after a plateau). A rank-nine letter hence gives compression within
+six; smaller ranks compress immediately. A rank-ten letter $f$ first
+gives a word $fvf$ of length at most six and rank at most nine, which
+compresses $S$ within eleven by the same argument. Thus all smaller ranks
+are excluded.
+
+\subsection{The complete core reduction}
+We include the maximum-independent-set argument to specify the graph
+classification hypotheses. Fix a maximum independent set $I$, with cover
+$C$ of size $t$. All other maximum sets are $(I\setminus N_I(T))\cup T$,
+where $T\subseteq C$ is independent and $|N_I(T)|=|T|$. If $U$ is the union
+of such tight $T$, then $|N_I(U)|\le|U|$: adding a tight set cannot increase
+$|N_I(U)|-|U|$, since the intersection is independent and has at least as
+many neighbors as vertices. If the maximum sets cover all vertices,
+$U=C$, and only $C\cup N_I(C)$ can be nonisolated. When
+$|N_I(C)|=|C|$, the equality at every addition lets Hall match the new
+vertices to the new neighbors, giving a perfect matching between the two
+sides. Every maximum set takes one endpoint from each matching edge, so
+its row rank is at most $t+1$.
+
+The independent nine-state family of $P_6$ has cover number at most four.
+A cover of size at most two would give an independent eleven-state set
+with compression length at least seven, contradicting the Frankl--Pin
+bound six. If the cover number were four, all images through depth five
+would be maximum independent sets; they cover $Q$ by depth four and have
+row rank at least six. The argument just given makes the nonisolated core
+have six or seven vertices: the eight-vertex perfect-matching case has
+rank at most five. Degree at most four and at most nine edges complete the
+finite graph domain. Exhausting all $2^{15}+2^{21}$ labeled graphs leaves
+exactly the following nine types. Every orbit is checked against its
+listed representative.
+\begin{center}\small
+\begin{tabular}{crrrl}
+ID&vertices&safe rows&signatures&edges\\\hline
+0&6&2856&2676&01 04 05 12 15 23 25 34\\
+1&6&646&568&01 04 05 12 23 25 34 35 45\\
+2&7&16100&9580&01 04 12 23 34 56\\
+3&7&6424&3874&02 04 05 14 23 36 56\\
+4&7&1484&896&01 06 12 23 34 45 56\\
+5&7&564&310&01 05 06 12 15 23 34 45\\
+6&7&3232&2096&04 12 15 23 24 36 45 56\\
+7&7&270&158&01 04 12 23 25 36 45 56\\
+8&7&584&320&01 04 12 15 23 34 35 45 56
+\end{tabular}
+\end{center}
+Here ``safe rows'' counts letter representatives preserving at least five
+maximum sets. At most one isolated input enters the core: otherwise two
+core outputs occur in every safe image, spanning at most two dimensions
+(the fixed-pair multiplicity is checked for all classified graphs), while
+$\dim V_4\ge5$ and letter nullity at most two force at least three.
+For a classified family of $f$ sets, let $d_i$ be the exact first-exit
+length. Synchronization makes $1\le d_i\le f$, with all layers through
+$\max d_i$ present, and safety through five gives $\max d_i\ge6$.
+For a letter profile $p$, require $d_i\le1+d_{p(i)}$, with exit distance
+zero, and a descending supplier for every $i$. Core-edge distances are
+$e_j\in\{1,\ldots,6\}$, with the same inequalities and suppliers; a
+noncore input pair mapping to core edge $j$ forces $e_j=6$.
+Thus each letter is represented on the core plus one anonymous position.
+Only single-step profiles and a state quotient are used; that representative
+is never iterated. Two generators compare all profiles and their arrow
+unions. Exhaustive joint exit distances and pair distances retain $72$ and
+$6$ vectors for IDs 0 and 1 and none for the others. Every retained pool
+preserves the six-point core, contradicting strong connectivity. Hence
+\begin{equation}\label{eq:eleven-cover}
+ \tau(P_6)=3.
+\end{equation}
+
+An independent ten-state set of $P_6$ has compression length at least
+seven; its images through depth three are independent in $P_3$, cover
+$Q$, and span at least four dimensions. Thus $\Delta(P_3)\le3$ and
+$\tau(P_3)\in\{2,3\}$: a one-point cover would give an independent
+twelve-set of compression length at least four, exceeding the bound three.
+In the three-cover case the preceding tight-exchange
+argument bounds support by six. In the two-cover case, an adjacent cover
+pair has at most four outside neighbors. A nonadjacent cover pair of
+both degrees at most two also has support at most six; if one has degree
+three, the unique independent ten-set containing it forces the other
+vertex's neighborhood into its three neighbors. These exhaust the cases.
+Complete graph classification gives the following domains; these are
+necessary graph shapes, not asserted automata.
+\begin{center}\small
+\begin{tabular}{cl@{\qquad}cl}
+$\tau=2$ ID&edges&$\tau=3$ ID&edges\\\hline
+0&01 02 12&100&01 02 03 12 13 23\\
+1&01 02 03 12&101&01 23 24 34\\
+2&01 02 03 12 13&102&03 12 14 24 34\\
+3&01 02 13&103&03 04 12 14 23\\
+4&01 02 13 23&104&04 12 13 23 24 34\\
+5&01 02 03 12 14&105&03 04 12 14 23 34\\
+6&01 02 03 14&106&05 14 23\\
+7&01 02 03 14 24&107&05 14 23 45\\
+8&01 02 03 14 24 34&108&05 14 23 35 45\\
+9&01 02 13 24&109&05 14 23 25 34\\
+10&01 02 34&110&05 14 23 34 35 45\\
+11&01 02 03 14 15&111&05 14 23 25 34 45\\
+12&01 02 34 35&&
+\end{tabular}
+\end{center}
+The two-cover classification is independently generated from cover
+parameters and all labeled graphs with three to six edges. The three-cover
+classification checks degree at most four (a safe enlargement), empty
+minimum-cover intersection and maximum-independent-set row rank at least
+four. No connectedness assumption is imposed.
+
+\subsection{Complete entrance flags}
+For a mask $X\subseteq Q$ put $h_X=9\chi_X^T-\one$.
+All length-$i$ inverse words of $\alpha$ span
+$H_i=V_{11-i}^{\perp}$ of dimension $i+1$ for $0\le i\le11$.
+Inclusion follows from safety; a plateau would be letter-invariant and
+contain a reset-to-$\alpha$ column $8\one$, which is not orthogonal to
+$\chi_S$. This proves equality and strict growth.
+The Boolean columns in $H_1$ give a common first entrance $B$, with
+$f^{-1}(\alpha)\in\{\{\alpha\},B\}$ for every letter.
+On $Q\setminus\{\alpha\}$ the space is generated by $\one,\chi_B$;
+its complement meets $S$ in seven points and cannot be a one-count fiber.
+Strong connectivity requires the outside entrance. Similarly $H_2$ gives
+a common incomparable $C$, with
+$f^{-1}(B)\in\{\{\alpha\},B,C\}$. On the four membership cells of
+$B,C$, or the three cells when disjoint, Boolean vectors are the two
+indicators, their complements, or unions of whole cells. The one-count
+condition leaves just $B,C$ outside $\alpha$. Inclusion would prevent
+a difference state from being reached within four steps.
+Because $B$ is a $P_1$ clique and $C$ a $P_2$ clique, the rank bound and
+$|P_2|\le5$ give $|B|,|C|\le3$. We use this weaker bound and enumerate
+\emph{all} one-, two- and three-point choices, including intersections.
+
+Set $A_0=\{\alpha\},A_1=B,A_2=C$ and choose successively
+\[
+ A_{k+1}=f^{-1}(A_k),\qquad h_{A_{k+1}}\notin H_k.
+\]
+Some letter supplies this new direction: the earlier generators' images
+already lie in $H_k$, but $H_{k+1}$ is strictly larger. Each $A_k$ is an
+actual word fiber of length $k$. For $3\le k\le11$ form the complete family
+\[
+ \mathcal L_k=\{T:|T|=9,\ T\text{ independent in }P_3,
+                   \ |T\cap A_i|=1\ (0\le i\le k)\}.
+\]
+It contains all actual images through depth $11-k$ and annihilates the
+$k+1$ independent columns, so necessarily
+\begin{equation}\label{eq:eleven-family}
+ \operatorname{rank}\mathcal L_k=12-k,\qquad
+ \operatorname{span}\mathcal L_k=V_{11-k},\qquad
+ \mathcal B_k:=\{X:|X\cap T|=1\ \forall T\in\mathcal L_k\}
+              =\{X:h_X\in H_k\}.
+\end{equation}
+All $8192$ masks are checked; later fibers have no cardinality cutoff.
+Each letter must take $A_i$ backwards into $\mathcal B_{i+1}$.
+The subset of $\mathcal L_k$ that it maps safely into $\mathcal L_k$
+must span at least $11-k$ dimensions, since it contains all images through
+depth $10-k$. The independent ten-state $P_3$ family likewise has safe
+row rank at least three.
+
+The other filters have explicit depth limits. Through $k=7$ the family
+must cover $Q$. An implication $u\in T\Rightarrow v\in T$ then certifies
+an actual image containing both within four steps, forcing $d(u,v)\ge8$.
+A two-point one-count fiber cannot have a common $P_7$ neighbor, by the same
+arrival argument. For $k\le6$, backwards images of Boolean fibers are
+nonempty, incomparable with the old one-count fibers, and singleton fibers
+are isolated in $P_3$. Only actual word fibers, not arbitrary Boolean
+combinations, are treated as short merging cliques. The union of $P_3$,
+actual $A_i$ cliques for $i\le6$, inverse core edges and inverse $A_i$
+for $i\le5$ must have a three-vertex cover by~\eqref{eq:eleven-cover}.
+In the two-cover case $P_1$ is a single edge, a three-vertex path,
+two disjoint edges, a four-vertex path or a triangle: independent
+eleven-state sets through depth two cover $Q$ and span at least three;
+the degree bound two and the tight-exchange argument give support at most
+four when the cover number is two; $C_4$ has rank only two.
+
+The initial core and $A_0,B,C,D$ occupy at most ten points. At least three
+isolated points remain outside; every Boolean vector in $H_3$ is constant
+on them. Since $f^{-1}(C)$ is a $P_3$ clique, that constant must be zero.
+Together with the first two fiber spaces, this forbids anonymous inputs
+from entering $\alpha$ or $B\cup C$.
+
+To enumerate letters, name the core, $\alpha$ and all selected fiber
+supports, occupying $M$ explicit positions. Every other input has a
+singleton kernel block and cannot enter $\alpha$ or $B\cup C$, by the
+first three complete fiber spaces. If $q_0$ such inputs enter explicit
+outputs, then
+\[
+ 0\le q_0\le\min\{M-1-|B\cup C|,13-M\}.
+\]
+The remaining anonymous inputs biject to unused anonymous outputs.
+Normalize the entering inputs by their distinct explicit outputs and
+anonymous outputs by first occurrence. The full subset families are
+invariant under these independent renamings. Two enumerators use input
+assignments and, independently, injective outputs of kernel blocks:
+no collision, one edge, two disjoint edges, or one triangle. They compare
+complete normalized rows, profiles, exact entrance suppliers and arrow
+unions. New actual fibers promote their anonymous points to explicit
+positions. Core automorphisms act on the whole ordered flag at once.
+
+If $|\mathcal L_k|=12-k$, every row must actually occur within $11-k$,
+since the actual rows span that many dimensions. All letters therefore
+map these forced rows into $\mathcal L_{k-1}$. When $M\ge12$, at most one
+anonymous point remains and both renaming groups are trivial: the padded
+representative is an actual thirteen-state letter. Only then are powers
+and mixed words iterated. From a forced row at budget $k$, every reachable
+$(U,r)$ must satisfy
+\begin{equation}\label{eq:eleven-word}
+ |U|=9,\quad\alpha\in U,\quad
+ \{x,y\}\subseteq U\Longrightarrow d(x,y)>r
+ \quad\text{for each known core edge}.
+\end{equation}
+The prefix costs at most $11-r$, and a distance supplier would otherwise
+compress within eleven. Equal subsets retain their largest budget.
+
+\subsection{An arbitrary-alphabet finite rejection}
+Enumerate the exact core-edge distances $e\in\{1,2,3\}^{|E|}$, with maximum
+three. Every letter must obey $e_u\le1+e_{f(u)}$, with zero for collision;
+a nonedge mapping to a core edge forces its distance to be three.
+Each edge needs a descending supplier, each chosen actual fiber needs an
+exact supplier, and the same pool's state quotient must be strongly
+connected. Reverse pair BFS independently checks all distances.
+A failed enlarged pool cannot contain a counterexample alphabet.
+
+At $M\ge12$, form the pairwise short-word compatibility graph on the
+complete actual letter pool. A candidate alphabet is a clique but must
+also pass~\eqref{eq:eleven-word} for \emph{all} words over its whole alphabet.
+A finite backtrack chooses either an unmet supplier clause or a proper
+reachable set of the selected state graph; a strongly connected extension
+must choose a letter leaving that set. Branch on the first selected member
+of the clause, exclude preceding members in later branches, and intersect
+with pairwise-compatible candidates. After each addition beyond two
+letters, check all budgeted words of the selected alphabet. A failing
+partial alphabet cannot be repaired by enlargement. This covers arbitrary
+alphabet sizes; there is no binary restriction or timeout exclusion.
+
+For speed, budget-zero safe subsets form one class and failure class zero.
+At higher budgets classify safe subsets by the vector of lower successor
+classes for \emph{every raw letter}. Classify letters by their successor
+classes on all safe budget states reachable from the seeds. Induction
+shows that replacing a letter by an equivalent one preserves every
+budgeted word's safety. A safe alphabet can thus be expanded to the full
+union of its letter classes. Unite their suppliers and state arrows;
+this preserves safety and can only help suppliers and connectivity.
+Conversely, a class selection is exactly its union of concrete letters.
+The folded and raw existence problems are therefore equivalent.
+
+The resulting complete counts are in Table~\ref{tab:eleven-results}.
+At the last stage the surviving graph shapes have already reduced to
+three disjoint edges. Of the 283 tenth-layer domains, 207 fail the joint
+distance and supply conditions. Each of the other 76 retains one distance
+vector: 30 fail strong connectivity and the last 46 fail the common-word
+alphabet check.
+Every stage completes its full requested domain. This
+contradicts the counterexample assumption, proving the upper bound in
+Theorem~\ref{thm:eleven}. Combined with the literal lower witness, it gives
+both equalities.
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{r|rr|rr}
+&\multicolumn{2}{c|}{$\tau(P_3)=2$}&\multicolumn{2}{c}{$\tau(P_3)=3$}\\
+layer $k$&domains&retained vectors&domains&retained vectors\\\hline
+3&287&453&435&1108\\
+4&133&465&144&1122\\
+5&166&473&171&1142\\
+6&180&475&201&1151\\
+7&191&52&210&74\\
+8&154&21&98&12\\
+9&87&0&107&19\\
+10&--&--&283&0\\
+\end{tabular}
+\caption{Complete all-entrance flag searches, including three-point first and
+second entrances and $K_4$. The initial choices number 1513 and 3036;
+core automorphisms retain 537 and 1060 representatives, of which 287 and
+435 pass the complete family tests. Retained vectors are necessary-condition
+relaxations, not automata. A dash means an earlier layer already rejected
+all domains.}\label{tab:eleven-results}
+\end{table}
+
+\paragraph{Independent controls and numerical exactness.}
+In the flag calculation, integer elimination with gcd normalization and elimination modulo $65521$
+agree on every used rank. For a $d\le13$ zero-one minor, the augmented
+Hadamard bound is $(d+1)^{(d+1)/2}/2^d\le14^7/2^{13}<65521$, so modular
+rank is exactly rational rank here. Cover recursion is checked against
+literal three-covers on all $32768$ six-vertex graphs. The alphabet search,
+with and without folding, is compared with all subalphabets of $512$ small
+pools, using explicit word trees and independent reachability. These
+include noncommuting letters and finite-distance tests. A further strongly
+connected three-letter control is pairwise safe but has an unsafe
+three-letter word, requiring the whole-alphabet test to reject it.
+These controls support the finite arithmetic; the preceding reductions
+supply the coverage of every hypothetical thirteen-state counterexample.
+
 \section{The determined parameter region}
 \begin{theorem}\label{thm:region}
 Put $m=n-s$ and $q=n-r$. For all $1\le r<s\le n$,
@@ -500,13 +863,14 @@ Put $m=n-s$ and $q=n-r$. For all $1\le r<s\le n$,
  \begin{cases}
  1&m=0,\\
  \min\{q,3m\}&1\le m\le3,\\
- q&m\ge4,\ q\le3m-1.
+ q&m\ge4,\ q\le3m-1,\\
+ 11&(n,s,r)=(13,9,1).
  \end{cases}
 \]
-The region $m\ge4$, $q\ge3m$ is not determined here.
+Apart from $(13,9,1)$, the region $m\ge4$, $q\ge3m$ is not determined here.
 \end{theorem}
 \begin{proof}
-The case $m=0$ was proved above, and $m=3$ is Theorem~\ref{thm:binary}.
+The additional point is Theorem~\ref{thm:eleven}. The case $m=0$ was proved above, and $m=3$ is Theorem~\ref{thm:binary}.
 For $m\ge2$ and $q\le2m+1$, gaps one and two use the first two faces;
 larger gaps satisfy $n\ge2s-r-1$ and use Proposition~\ref{prop:gaps}.
 Together with the two-block band this gives $q$ throughout $m\ge3$, $q\le3m-1$.
@@ -553,15 +917,22 @@ The cases $q\le5$ were covered above, completing the proof.
 \end{proof}
 
 \paragraph{Reproducibility and scope.}
-The $109$-file supplement supplies the generators, independent lower checks,
-and complete case proofs for the upper bound, with standard-library Python
-and C++17 audits of sixteen domains and the matching cube.
-Finite controls check the symbolic reductions; they are not extrapolated.
-It verifies $290$ binary reachable-image witnesses: all $286$ triples
-with $2\le n\le12$, $(13,8,1)$, and $(13,10,r)$ for $r=1,2,3$.
-The proved upper bounds determine both maxima at all listed parameters.
-The complete finite frontier ends at $n=12$; $(13,9,1)$ remains in $[11,12]$.
-No alphabet separation or complete answer to Open Problem~4 is claimed.
+The research repository contains the mathematical body \texttt{PROOF.md},
+the paper source, and the necessary Python and C++17 implementations.
+The existing lower-family calculations cover all $286$ triples through
+$n=12$ and four additional thirteen-state triples; the present literal
+witness and complete upper calculation determine $(13,9,1)$ as well.
+Run \texttt{python3 run.py eleven --threads 8} from a clean source checkout
+with Python 3.10+ and a C++17 compiler. It regenerates the lower witness,
+graph classifications, both letter domains and the complete flag searches.
+Assertions remain enabled; nonzero relaxation survivors are a failing
+status, never an exclusion. Intermediate data and executables stay in the
+ignored \texttt{build/} directory; no saved enumeration inventory or
+external solver is needed. Individual commands and mathematical scope
+are documented in \texttt{docs/RUNNING.md}.
+This is a computer-assisted fixed-parameter proof, without Lean
+formalization; the general \v{C}ern\'y conjecture and the other unresolved
+parameters of Open Problem~4 remain open.
 
 \paragraph{AI assistance.}
 OpenAI tools assisted proof review, computational verification and manuscript editing. The author is responsible for the mathematical statements and their presentation.
@@ -571,7 +942,7 @@ OpenAI tools assisted proof review, computational verification and manuscript ed
 \begin{thebibliography}{9}
 \raggedright
 \bibitem{szykula2018} M. Szyku\l a.
-\emph{Improving the Upper Bound on the Length of the Shortest Reset Words}.
+\emph{Improving the Upper Bound on the Length of the Shortest Reset Word}.
 STACS 2018, LIPIcs 96, 56:1--56:13, 2018.
 \href{https://doi.org/10.4230/LIPIcs.STACS.2018.56}{doi:10.4230/LIPIcs.STACS.2018.56}.
 \bibitem{szykula2026} M. Szyku\l a.

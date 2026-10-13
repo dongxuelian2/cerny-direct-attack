@@ -2,11 +2,11 @@
 
 本文件是本仓库唯一的数学研究正文。定义、推导、反例、受限搜索结论与剩余问题均在这里维护；计算源码统一放在 `scripts/`。引用结论请指向本文件的章节锚点。
 
-**一般 Černý 猜想尚未解决。参数点 (13,9,1) 已由纸面归约与完整有限域检查确定：$F_{\rm bin}(13,9,1)=F(13,9,1)=11$。这是计算辅助证明，完整推导见[完整布尔旗标](#problem4-full-fiber-flag)。**
+**一般 Černý 猜想尚未解决。参数点 (13,9,1) 已由纸面归约与完整有限域检查确定：$F_{\rm bin}(13,9,1)=F(13,9,1)=11$。这是计算辅助证明，完整推导见[完整布尔旗标](#problem4-eleven-audit)。**
 
 阅读顺序：先读第 1 章的问题与状态，再读第 2–4 章的构造、上界与完整排除；第 5 章是条件分支，第 6–9 章是其他研究方向，第 10 章保留探索过程。各节沿用局部符号；进入新节须重新核对假设。
 
-既有章节保留原数学论证；本轮新增上界不表示重新证明全部历史结论。正文中的“证明”“有限穷尽”“受限搜索”“猜想/失效”有不同含义；历史运行记录不能替代证明，历史排除不得绕过后来的撤回或限制。程序怎样运行见 [运行说明](docs/RUNNING.md)。
+既有章节保留原数学论证；本轮精确值复核采用明确的完整依赖链，不把未经重建的历史探索当作证明前提。正文中的“证明”“有限穷尽”“受限搜索”“猜想/失效”有不同含义；历史运行记录不能替代证明，历史排除不得绕过后来的撤回或限制。程序怎样运行见 [运行说明](docs/RUNNING.md)。
 
 ## 目录
 
@@ -14,7 +14,7 @@
 - [2　Avoid-or-compress 的下界构造](#constructions)
 - [3　低余维上界与有限归约](#upper)
 - [4　余维四：短对图与第六层三点覆盖](#frontier)
-- [5　余维四的条件分支与未完成路线](#branches)
+- [5　余维四的历史条件分支与替代路线](#branches)
 - [6　像扩张：构造、障碍与代价](#extension)
 - [7　秩、核、置换与重置界](#rank)
 - [8　策略、历史信息与预算](#policy)
@@ -34,17 +34,17 @@
 |---|---|---|
 | 一般 Černý 猜想 | 未解决 | 第 6–9 章的方法和受限族 |
 | Avoid-or-compress 已处理区域 | 稿件给出 m≤3，以及 m≥4、q≤3m−1 的部分答案；余维三否定原二项式公式 | 第 2–3 章、[论文稿](papers/problem4/main.tex) |
-| (13,9,1) | 二字母与任意有限字母表均为 11；二块下界与完整旗标排除匹配 | [下界](#problem4-two-block-proof)、[上界](#problem4-full-fiber-flag) |
+| (13,9,1) | 二字母与任意有限字母表均为 11；二块下界与完整旗标排除匹配 | [下界](#problem4-two-block-proof)、[上界](#problem4-eleven-audit) |
 | 余维四短对图 | c(S)≥12 必有 τ(P6)=3；P3 两支核心均至多六点 | 第 4 章 |
-| (13,9,1) 的保护入口 | 目标十二时第一、第二入口均至多二点；四种大小组合现已全部排除 | [完整布尔旗标](#problem4-full-fiber-flag) |
+| (13,9,1) 的保护入口 | 最新全域排除包含全部一至三点第一、第二入口，包括相交情况 | [完整布尔旗标](#problem4-eleven-audit) |
 | P3 核心分类 | 二点覆盖十三类、三点覆盖十二类；两条路线均已排除目标十二 | 第 4 章 |
 
-在目标十二的假设下，第一、第二入口均至多二点。
-[重叠入口排除](#problem4-overlap-nine-cores)与[完整布尔旗标](#problem4-full-fiber-flag)
-覆盖全部大小组合。后者使用完整布尔空间、实际短像秩、字母幂和共同短词约束，
+最新复核把全部一至三点入口与 K4 一并纳入，不需要先用较强的二点入口界。
+[完整布尔旗标](#problem4-eleven-audit)覆盖全部大小组合与交叠情形，
+使用完整布尔空间、实际短像秩、字母幂和共同短词约束，
 最终排除所有有限字母表，配合二字母下界得到精确值十一。
 这是计算辅助证明，未作 Lean 形式化。后文较早章节的“仍开放”说明当时的局部
-边界；该参数点的当前结论以完整旗标节为准。
+边界；该参数点的当前结论以精确值复核节为准。
 
 <a id="constructions"></a>
 ## 2　Avoid-or-compress 的下界构造
@@ -2101,7 +2101,7 @@ unavailable earlier conversation's unnamed P7 branch.
 <a id="problem4-problem4-short-pair-peeling--finite-controls-and-reproduction"></a>
 #### Finite controls and reproduction
 
-The separate scripts under `computations/src` are supporting finite checks,
+The separate scripts under `scripts/problem4/upper_bound/` are supporting finite checks,
 not formal verification of the uniform arguments:
 
 - `problem4_peeling_controls.py` checks literal hole sets and the ordering
@@ -2881,8 +2881,8 @@ $$
 复算只需源码：
 
 ```sh
-python3 run.py script scripts/problem4/problem4_p3_shapes.py
-python3 run.py script scripts/problem4/problem4_p3_entry.cpp --threads 3
+python3 run.py script scripts/problem4/upper_bound/problem4_p3_shapes.py
+python3 run.py script scripts/problem4/upper_bound/problem4_p3_entry.cpp --threads 3
 ```
 
 <a id="problem4-second-entrance-three-reduction"></a>
@@ -3140,7 +3140,7 @@ $l=x$ 和 $l\in J$ 两种图的覆盖数均为四。核对只枚举三个小图�
 它们尚未全部排除，也未构造出达到十二的实例；两个极值仍在 $[11,12]$。
 
 ```sh
-python3 run.py script scripts/problem4/problem4_p3_entry.cpp --two-three --threads 4
+python3 run.py script scripts/problem4/upper_bound/problem4_p3_entry.cpp --two-three --threads 4
 ```
 
 <a id="problem4-small-entrance-overlap"></a>
@@ -3345,7 +3345,7 @@ $2,1$，因此必须被 (SF10) 拒绝。移除该过滤的临时对照使 ID 2 �
 从 582 增到 768；正式命令始终启用该必要条件。
 
 ```sh
-python3 run.py script scripts/problem4/problem4_p3_entry.cpp --overlap-two-two --threads 4
+python3 run.py script scripts/problem4/upper_bound/problem4_p3_entry.cpp --overlap-two-two --threads 4
 ```
 
 #### 重叠二点入口的二点覆盖归约
@@ -3590,7 +3590,7 @@ $(r+1)^{(r+1)/2}/2^r\le14^7/2^{13}<65521$，故模该素数的秩等于有理秩
 （首次编译另计）。
 
 ```sh
-python3 run.py script scripts/problem4/problem4_tau2_overlap.cpp --threads 4
+python3 run.py script scripts/problem4/upper_bound/full_fiber_flags.cpp --threads 4
 ```
 
 <a id="problem4-full-fiber-flag"></a>
@@ -3752,7 +3752,7 @@ $$
 每一层实际入口 $f^{-1}(A_i)=A_{i+1}$、每条核心边的距离下降，并使状态图
 强连通。这只是必要条件；找到这样的团仍不能宣称存在目标自动机。
 
-`scripts/problem4/problem4_short_word_cliques.hpp` 对任意大小的这个团作完整
+`scripts/problem4/upper_bound/short_word_alphabets.hpp` 对任意大小的这个团作完整
 回溯，没有二字母或其他字母表大小上限。每步选择一个尚未满足的供应要求，
 或当前已选字母状态图的一个真可达闭集 $R$。强连通扩展必含某个把 $R$
 映到外面的字母，所以两种情况都给出“至少选择池中某个字母”的有限分支。
@@ -3837,6 +3837,162 @@ $$
 这是该固定参数点的**计算辅助证明**，不是 Lean 形式化证明，也不解决一般
 Černý 猜想。源码、完整域生成和控制均从仓库重建，运行方式见
 [运行说明](docs/RUNNING.md)。
+
+<a id="problem4-eleven-audit"></a>
+### 精确值十一：扩大域复核与完整证明链
+
+**纸面归约加有限穷尽；2026-10-13。** 最新完整域直接证明
+
+$$
+\boxed{F_{\rm bin}(13,9,1)=F(13,9,1)=11.}
+$$
+
+更强的上界表述是：任意十三状态、强连通、同步的确定自动机，对任意九点
+$S$ 和其中任意保护点 $a$，都有 $\operatorname{ac}(S,\{a\})\le11$；
+这个上界不要求 $S$ 为可达像。下界例的 $S$ 则确实是可达像，所以满足两个
+极值定义的全部条件。证明方式为计算辅助证明；一般 Černý 猜想与其他开放
+参数仍未解决。
+
+此前已完成的四种一、二点入口路线是有效排除。本次将计算域主动扩大到
+**全部一至三点第一、第二入口，保留相交情况和 K4 核心**。新的完整排除因此
+不依赖[三点第一入口排除](#problem4-three-entrance-p3-reduction)、
+[三点第二入口排除](#problem4-second-entrance-three-reduction)、K4 的单独排除，
+或重叠二点入口的单独排除。这些较早论证保留为独立研究结果。
+本节是该参数点的当前引用入口；较早的局部开放状态与计数不冒充当前全域状态。
+
+#### 下界：明确的自动机与全部短词
+
+在状态 $0,\ldots,12$ 上，两个原始字母的转移行为
+
+```
+a = [0,1,2,3,5,4,7,8,9,10,11,12,6]
+b = [9,0,1,2,3,4,7,8,5,10,11,5,12]
+S = {0,1,2,3,4,5,6,7,8},   A = {0}.
+```
+
+这是[二块构造](#problem4-two-block-proof)中的 $p=6,t=3,r=1$。
+其纸面势函数证明压缩长度至少 $3t+2=11$；计数矩阵证明回避保护点至少需要
+$n-r=12$。强连通、同步的构造证明同样适用。实际原字母词
+
+$$
+v=b^3(a^6b^9)^3a^4,
+\qquad Qv=S,
+\qquad |S a^6ba^3b|=8
+$$
+
+给出可达性和长度十一的上界见证，故该实例的值恰为十一。
+
+新的独立参考 `scripts/problem4/check_eleven_lower.py` 直接写出上述转移表，
+不读取构造器、缓存或先前的最短距离。它检查长度零至十一的全部 $4095$ 个词，
+包含到达同一子集的不同词；逐层安全词数为
+
+$$
+1,2,4,8,16,32,64,128,256,512,1024,1984.
+$$
+
+所以十一之前的词全部安全，十一时已有 $64$ 个不安全词。参考还逐状态检查
+强连通，直接应用上述可达词，并逐对生成及应用实际重置词核对同步。
+独立原生子集 BFS 同时返回最短长度十一、访问 $64$ 个子集和词 `aaaaaabaaab`。
+这里的 $4095$ 是词树大小，$64$ 是 BFS 访问子集数，两者不能混作一个计数。
+
+#### 上界的依赖与完备性
+
+反设某个实例的值至少十二；一般回避或压缩上界使其恰为十二。于是全部
+长度至多十一的词不压缩 $S$ 且包含 $a$。最终证明只使用下列归约链：
+
+| 归约 | 假设与作用 | 证明位置或有限域 |
+|---|---|---|
+| 严格轨道增长与到达 | 強连通、同步给出 $\dim V_j=j+1$（$j\le11$）；每状态四步内从 $S$ 到达 | [等号旗标](#problem4-local-equality-flag)、[到达距离](#problem4-arrival-layer-obstruction) |
+| 短对边数与字母秩 | $|P_h|\le h+3$（$h\le7$），每字母秩至少十一 | [剥离与秩转移](#problem4-problem4-short-pair-peeling) |
+| 第六层覆盖 | 排除全部九个四覆盖核心，得到 $\tau(P_6)=3$ | [第六层定理](#problem4-sixth-layer-three-cover)；六、七点图与完整单步距离域 |
+| 第三层核心 | $\tau(P_3)=2$ 或 $3$，非孤立支持至多六点 | [六点归约](#problem4-p3-two-cover-six-core)；十三加十二核心，含 K4 |
+| 初始前像 | 第一入口 $B$、第二入口 $C$ 共用；两者不相包含、大小均至多三 | [第一入口](#problem4-entry-fiber-flag)、[第二入口](#problem4-second-entrance-fiber)；较强的二点界不参与本次最终证明 |
+| 每层完整域 | 实际词前像组成对偶旗标；完整九点族的秩与全布尔闭包精确描述这一层 | [完整布尔旗标](#problem4-full-fiber-flag)，(FF1)–(FF7) |
+| 同一字母表 | 精确入口供应、精确短对距离、强连通与全部预算内混合短词必须同时成立 | 全字母表回溯与行为折叠，见上一节；有限穷尽结果如下 |
+
+初始大小三的弱界无需三点入口排除：$B$ 的某个一字母入口合并整个 $B$，
+秩至少十一迫使 $|B|\le3$；$C$ 是两步合并团，四点团需要六条 $P_2$ 边，
+与 $|P_2|\le5$ 矛盾，故 $|C|\le3$。第三入口 $D$ 遍历核心的全部团，包括
+K4，以及一个新的孤立单点；反链与短对隔离保证单点不能取核心点或旧入口。
+第三层以后的实际前像由兼容映射自动生成，没有入口大小上限。
+
+一个单步归约细节在扩大域中仍有效。$A_0,B,C,D$ 的支持及核心共至多十点，
+所以至少三个 $P_3$ 孤点在其外。$H_3$ 的每个布尔向量在这些外部坐标上都
+取同一值；$f^{-1}(C)$ 又是 $P_3$ 的团，不能包含三个孤点。因此这个前像在
+所有这些坐标上为零。结合前两层分类，匿名输入不能映到 $a$ 或 $B\cup C$，
+(FF6) 的单步代表域由此完整。输入、输出匿名重命名各自独立；只有显式点
+至少十二、两种置换群都平凡时才迭代代表字母或混合词。
+
+供应标记现在逐项使用实际等式 $f^{-1}(A_i)=A_{i+1}$，包括
+$f^{-1}(C)=D$。较早第三层只要求供应一个新的方向，是更大的必要条件放松；
+收紧后仍全部排除。下一层可保留某个新方向的所有兼容映射，不要求它们能
+一起实现自动机；这个放宽保留每个真实反例，不会造成错误排除。
+
+#### 扩大域的实际完整结果
+
+执行 `full_fiber_flags.cpp --all-entrances --quotient`，三点覆盖再加
+`--tau3`。二点覆盖初始有序选择 $1513$ 个，自同构代表 $537$ 个，集合族过滤
+后 $287$ 个；三点覆盖分别为 $3036,1060,435$。程序核心编号为二点覆盖
+$0\ldots12$，三点覆盖 $100\ldots111$；$100$ 就是本次保留的 K4。
+每一层都完成请求的全部域；最终逐层计数为：
+
+| 层 $k$ | 二点覆盖域数 | 保留距离向量 | 三点覆盖域数 | 保留距离向量 |
+|---:|---:|---:|---:|---:|
+| 3 | 287 | 453 | 435 | 1108 |
+| 4 | 133 | 465 | 144 | 1122 |
+| 5 | 166 | 473 | 171 | 1142 |
+| 6 | 180 | 475 | 201 | 1151 |
+| 7 | 191 | 52 | 210 | 74 |
+| 8 | 154 | 21 | 98 | 12 |
+| 9 | 87 | 0 | 107 | 19 |
+| 10 | — | — | 283 | 0 |
+
+“保留距离向量”始终是必要条件放松解，不能视为自动机；破折号表示前层
+已经全部排除。二点覆盖在第九层归零。三点覆盖最后 $283$ 域全部属于三条
+不交边核心 $106$，在第十层全部归零。四覆盖核心的完整排除、两条第三层
+覆盖路线和下界结合，完成极值十一的论证。
+具体地，末层 $207$ 域没有共同距离与入口供应解；其余 $76$ 域各保留一个
+距离向量，其中 $30$ 个字母池不强连通，最后 $46$ 个被完整共同短词字母表
+检查拒绝。不能把全部 $283$ 域都说成在同一个过滤器上失败。
+
+#### 独立控制与计算精确性
+
+每个旗标字母域都比较逐输入赋值与核块单射两种生成器的**完整**规范代表集、
+距离签名、实际入口标记及状态箭头并。距离供应另用逆向对 BFS 核对；强连通
+用逐起点 BFS 与 Floyd 闭包核对。六步覆盖递归与全部 $32768$ 个六点图的
+直接三点覆盖枚举一致。
+
+旗标行秩分别用整数约分消元和模 $65521$ 消元计算。对阶数 $d\le13$ 的
+零一子式，增广 Hadamard 界为
+
+$$
+|\det|\le\frac{(d+1)^{(d+1)/2}}{2^d}
+\le\frac{14^7}{2^{13}}<65521.
+$$
+
+因此这里的模秩就是有理秩，不是概率检验。第六层核心图的模 $101$ 秩另由
+其行重至多三的子式界保证精确，不能把两个不同秩域的界混用。
+
+字母表回溯与行为折叠分别在两套八字母的全部 $512$ 个池上核对：参考实现
+穷尽每池的全部子字母表，逐词树检查三层安全性，逐起点检查强连通。第二套
+含不交换的字母及不同的已知对距离，原始和折叠搜索与参考逐池一致，均含
+正反例。此外构造三个置换：第一交换 $0,9$；第二交换 $0,1$ 并循环
+$2,4,5,6,7,8,9,10,11,12$；第三交换 $1,3$。从 $S=\{0,\ldots,8\}$ 保护
+$3$ 出发，任意两字母的三层词都安全，三字母状态图强连通，但按所列顺序
+各读一次就遗漏 $3$。三个独立供应标记强制同时选择它们，回溯正确拒绝。
+这个反控制专门防止把“两两相容”误当成全字母表安全。
+
+本轮 C++17 警告编译通过；包含全部十三点的一个最终核心 $106$ 域另用
+未定义行为检查完整运行，$3904$ 个代表在两套生成器中一致，短词拒绝且无
+检查错误。这是实现控制；全域结论来自上表中的完整运行与纸面完备性。
+
+全部必要源码集中到 `scripts/problem4/upper_bound/`。统一入口
+`python3 run.py eleven --threads 8` 重建下界、图分类、剥离控制、第六层排除及
+两条扩大入口域；断言保持开启，任何非零幸存均报告失败。结果打印到终端，
+中间数据和二进制留在忽略的 `build/`，不依赖已存证书、枚举库存或外部求解器。
+论文 `papers/problem4/main.tex` 已纳入这条证明链与同样的精确计数；其二块
+构造只在主稿保留一份，删除未被引用的重复片段。较早条件分支的研究状态在
+第 5 章明确保留为历史状态。运行说明见 [docs/RUNNING.md](docs/RUNNING.md)。
 
 <a id="problem4-problem4-continuation-audit"></a>
 <a id="problem4-problem4-continuation-audit--problem-4-continuation-verified-results-and-remaining-scope"></a>
@@ -3945,9 +4101,9 @@ verified or synchronized.
 Supporting standard-library controls:
 
 ```sh
-python3 run.py script scripts/problem4/problem4_peeling_controls.py
-python3 run.py script scripts/problem4/problem4_k4_controls.py
-python3 run.py script scripts/problem4/problem4_p3_shapes.py
+python3 run.py script scripts/problem4/upper_bound/problem4_peeling_controls.py
+python3 run.py script scripts/problem4/upper_bound/problem4_k4_controls.py
+python3 run.py script scripts/problem4/upper_bound/problem4_p3_shapes.py
 ```
 
 Observed outcomes: 41031 peeling graph/parameter instances; 40320 K4
@@ -3966,9 +4122,9 @@ Both distance checks accept the artificial positive control.
 
 
 <a id="branches"></a>
-## 5　余维四的条件分支与未完成路线
+## 5　余维四的历史条件分支与替代路线
 
-以下是带额外假设的局部分支材料。文件原有的 exclusion 标签不等于完整分类已经证明；适用性以第 4 章的边界说明为准。
+本章保留既有局部分支与研究时的探索状态；其中 (13,9,1) 的旧开放区间已经由[精确值复核](#problem4-eleven-audit)取代。以下是带额外假设的局部分支材料。文件原有的 exclusion 标签不等于完整分类已经证明；适用性以第 4 章的边界说明为准。
 
 - [Bounded active-seven construction probe](#problem4-active-seven-cycle-probe)
 - [Generalizing the fixed-parameter inverse-domain test](#problem4-b1-b2-inverse-union-exclusion)

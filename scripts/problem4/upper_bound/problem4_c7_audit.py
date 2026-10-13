@@ -1,6 +1,6 @@
 """Independent exact audit of literal C7 actions and distance incompatibility.
 
-Usage: python scripts/problem4/problem4_c7_audit.py .reproduction/problem4/literal.txt
+Run with freshly generated profiles via: python3 run.py c7 --independent
 No SAT solver, floating arithmetic, or third-party package is used.
 """
 from itertools import combinations, permutations
