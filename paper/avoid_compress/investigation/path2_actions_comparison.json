@@ -1,9 +1,0 @@
-{
-  "status": "pass",
-  "profiles": 22,
-  "distance_vectors": 120,
-  "candidates": 1,
-  "all_profiles_closure_flags_vectors_and_candidates_match": true,
-  "all_candidate_rows_preserve_five_states": true,
-  "scope": "Uniform reduction is separate; no new exact maximum."
-}

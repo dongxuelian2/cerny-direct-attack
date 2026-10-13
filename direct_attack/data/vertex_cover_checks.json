@@ -1,6 +1,0 @@
-{
-  "n_max": 5,
-  "graph_budget_forbidden_cases": 38610,
-  "verified": true,
-  "scope": "Complete cover existence decision; protected-subset mining uses heuristic filler states."
-}

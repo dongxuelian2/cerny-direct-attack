@@ -1,6 +1,0 @@
-{
-  "argv": ["-m", "direct_attack.check_quotient_fiber"],
-  "stdout": "{\"checked\": 230, \"profiles\": 10, \"higher_profiles\": 5440, \"seven_profiles\": 105, \"small_class_profiles\": 28112, \"three_class_profiles\": 5911, \"max_tail\": 8}\n",
-  "returncode": 0,
-  "note": "Targeted independent rerun after the pair-truncated theorem; the prior truncated-lift capture is preserved."
-}

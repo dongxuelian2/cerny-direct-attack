@@ -1,36 +1,64 @@
-# Černý direct attack
+# Černý 猜想与同步自动机研究
 
-Direct research on the Černý conjecture, with explicit proof boundaries and reproducible certificates. **The general conjecture remains OPEN.** This repository makes no priority claim for auxiliary results whose literature audit remains open.
+本项目研究同步自动机的重置字、像扩张，以及 avoid-or-compress 问题。
+**一般 Černý 猜想尚未解决；当前主攻的参数点 `(13,9,1)` 仍在 `[11,12]`。**
 
-The strongest current branches are:
+## 从哪里读
 
-- **Open Problem 4 (2026-10-12):** the seven-page partial-answer paper determines the low-codimension and cofinal regions, refutes the proposed formula, and preserves the latest conditional search reductions. The latest auxiliary snapshot has 183 audits, 73 remaining unrestricted geometries and no remaining B3 geometry; the first unresolved point (13,9,1) remains in [11,12]. [Paper](paper/avoid_compress/main.pdf), [research handoff](paper/avoid_compress/HANDOFF.md).
-- **Quadratic image-extension obstruction:** paper constructions refute every universal linear bound for the repository's actual-image extension quantity, including fixed binary alphabets. These are method obstructions; their automata still have square-bounded resets. [Proof](direct_attack/FIXED_ALPHABET_QUADRATIC_IMAGE_EXTENSION.md).
-- **Avoid-or-compress sharpness:** paper families attain the known bound along infinite state-count progressions for every fixed cardinality pair. The known upper bound is attributed in the source. [Proof](direct_attack/AVOID_COMPRESS_ALL_GAPS.md).
-- **Rank-two / low-rank permutation classes:** paper reset normal forms and linear bounds for explicitly restricted alphabets; higher-rank boundaries remain separate. [Proof](direct_attack/RANK_TWO_ONLY_NONPERMUTATIONS.md).
-- **Congruence/profile compression:** paper bounds for compressible minimum classes, refined by terminal-kernel arguments. No general short common suffix follows. [Profile bound](direct_attack/PROFILE_CLASS_COMPRESSION.md), [refinement](direct_attack/TERMINAL_KERNEL_FRANKL.md).
-- **Figure-3 / compress-with-another:** the completed family has paper specified-state threshold `4p`, and an original reset upper bound `3p²+4p−1`, for `p≥3`. The matching reset lower bound is conjectured. [Threshold](direct_attack/COMPRESS_OTHER_EXACT_LOWER.md), [reset](direct_attack/COMPRESS_OTHER_SHORT_RESET.md).
-- **Later subclass squares:** paper results cover stated rooted/core-cycle models, including primitive opposite output pairs with arbitrary tail geometry. They do not reduce arbitrary automata to those models. [Latest proof](direct_attack/OPPOSITE_KERNEL_PRIMITIVE_SQUARE.md).
+[PROOF.md](PROOF.md) 是唯一的数学研究正文，集中维护问题、定义、推导、反例和未解边界。
 
-**Formal verification:** the frozen OpenMath core has ten Lean 4.19.0 modules and 100 declarations (including helpers). It checks potential/graph soundness, C3/C4 finite subset paths, the literal Kari inverse-shrink obstruction and length-25 base cut, layered-pair certificate soundness, and the abstract reflection cut. A separate post-release module proves the literal n25 extension minimum 10. General family instantiations remain paper proofs. Two noncompiling baseline drafts are excluded. [Exact inventory and scope](formal/README.md).
+- [问题与当前结论](PROOF.md#problem)：先了解正在研究什么、哪些结论仍未完成。
+- [下界构造](PROOF.md#constructions)与[低余维上界](PROOF.md#upper)：已有参数族和归约。
+- [余维四：短对图与入口排除](PROOF.md#frontier)：当前研究主线；已证明 `τ(P₆)=3`，第一、第二共同入口均至多二点。[最新推导](PROOF.md#problem4-small-entrance-overlap)排除了三点覆盖路线的重叠二点入口，并给出短前像旗标与单点入口链限制。其余分支仍开放。
+- [条件分支](PROOF.md#branches)：需要额外假设的局部论证。
+- [像扩张](PROOF.md#extension)、[秩与核](PROOF.md#rank)、[策略与预算](PROOF.md#policy)、[锚点与最优语言](PROOF.md#anchors)：其他数学方向。
+- [探索记录](PROOF.md#exploration)：受限观察、失败路线和待证明机制。
 
-## Start here
+引用结论时链接到 `PROOF.md#章节锚点`。各节的适用范围不可省略；有限搜索不等于一般定理。
+论文源码见 [papers/problem4/main.tex](papers/problem4/main.tex)。
 
-Python 3.10+ needs no third-party packages. With Lean 4.19.0 on PATH:
+## 怎样计算
+
+需要 Python 3.10+ 和支持线程的 C++17 编译器（默认 `g++`，可用 `CXX` 指定）。
 
 ```sh
-python scripts/reproduce.py --suite core
-python scripts/reproduce.py --suite formal
+python3 run.py reset --cerny 12
+python3 run.py open-point
+python3 run.py c7 --threads 8
+python3 run.py c7 --threads 8 --independent
+python3 run.py tau4 --threads 8
+python3 run.py script scripts/problem4/problem4_p3_entry.cpp --threads 3
+python3 run.py script scripts/problem4/problem4_p3_entry.cpp --two-three --threads 4
+python3 run.py script scripts/problem4/problem4_p3_entry.cpp --overlap-two-two --threads 4
 ```
 
-Use `python3` on systems where that names Python 3. Windows wrappers are `scripts/check_core.ps1` and `scripts/check_formal.ps1`. [Reproduction guide](REPRODUCIBILITY.md) explains compiler selection, certificate replay, data hydration, and expensive audits.
+`open-point` 重建下界为 11 的自动机，不会据此宣称上界也是 11。
+`tau4` 重建并排除第六层四点覆盖的全部九个核心，包含两种独立字母枚举。
+`problem4_p3_entry.cpp` 重建三点入口剩余的三个核心，独立核对字母域和距离后排除它们。
+加 `--two-three` 则排除三点覆盖路线中“二点第一入口、三点第二入口”的完整分支。
+加 `--overlap-two-two` 则排除该路线中两个二点入口相交的全部 86 个有序核心选择。
+程序、输入和运行方式见 [运行说明](docs/RUNNING.md)。生成数据和可执行文件写入忽略的 `build/`。
 
-Read the [result index](results/theorem_index.md), [computational index](results/computational_index.md), [current status](docs/STATUS.md), and [collaboration guide](CONTRIBUTING.md). Detailed chronological records remain in [direct-attack results](direct_attack/RESULTS.md) and the [research ledger](POST_BASELINE_RESEARCH_LEDGER.md); historical statements retain their checkpoint scope and may be superseded by later entries.
+## 目录
 
-## Layout and provenance
+```text
+PROOF.md                 唯一数学研究正文，按问题和章节组织
+README.md                问题与阅读入口
+AGENTS.md                后续研究与编辑约定
+run.py                   统一运行入口
+scripts/
+  problem4/              avoid-or-compress 构造与计算
+  direct_attack/         像扩张、秩、核与重置字程序
+  anchors/               锚点、商与最优语言程序
+  automata/              小规模 Python 参考实现
+  native/                通用 C++ 搜索内核
+  tests/                 程序实现的局部回归检查
+papers/                  论文 LaTeX 源码
+formal/                  已有 Lean 数学源码
+docs/RUNNING.md          程序运行说明
+build/                   本地生成内容，不提交
+```
 
-`formal/`, `proofs/paper/`, and `computations/` are navigation layers. Existing `lean/`, `post_baseline/`, `direct_attack/`, `src/`, and `reference_results/` paths remain executable source locations because scripts and certificates depend on those paths. [Exact tree](docs/REPOSITORY_STRUCTURE.md).
-
-The [OpenMath freeze](submission/openmath/README.md) records commit `ac948e7001bff5428c22d236f96974856452d34d`, mathematical input `f30afd64643d785dff7ec5d44c730cb36a80dce6`, and original ZIP SHA-256 `1a09dadd3de876028430fa4dc7aa8353f600075d8daff9c5eae79e0a8ed7c050`. Historical Git objects and the exact original ZIP remain in the original local checkout; this public repository starts a documented publication snapshot, without rewriting that history. [Provenance and exclusions](archive/README.md).
-
-Bulky scientific inputs are checksum-verified [release assets](archive/assets.json). The public OpenMath payload has path-redacted metadata and a distinct checksum; it is explicitly not the immutable original ZIP. Sources and retained evidence are MIT licensed; cited third-party works keep their own rights. AI assistance and historical baseline provenance remain disclosed in the original submission report.
+新研究写入正文对应章节，必要程序加入 `scripts/` 对应主题；不要另建零散研究 Markdown、
+日期日志、结果库存或发布流程。大规模计算使用多线程 C++，Python 用于小规模参考与编排。
+具体规则见 [AGENTS.md](AGENTS.md)。源码采用 MIT 许可；研究与代码包含 AI 辅助。

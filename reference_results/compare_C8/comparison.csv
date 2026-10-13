@@ -1,6 +1,0 @@
-n,feature,concrete_subsets,abstract_classes,lower_bound,optimal_length,bound_ratio,construction_seconds,expanded_certificate_bytes,note
-8,cardinality,255,8,7,49,0.142857,0.001075,1211,All concrete subsets were enumerated; no asymptotic speedup claimed.
-8,marked,255,27,19,49,0.387755,0.001106,1300,All concrete subsets were enumerated; no asymptotic speedup claimed.
-8,maxgap,255,20,7,49,0.142857,0.001179,1206,All concrete subsets were enumerated; no asymptotic speedup claimed.
-8,gap_multiset,255,22,7,49,0.142857,0.001257,1212,All concrete subsets were enumerated; no asymptotic speedup claimed.
-8,identity,255,255,49,49,1.0,0.001454,1445,All concrete subsets were enumerated; no asymptotic speedup claimed.

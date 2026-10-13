@@ -1,6 +1,0 @@
-{
-  "status": "EXPLORATORY",
-  "provenance": "Manual transcription of actual exec_command stdout, returned by write_stdin session86573, chunk2edb84. Original execution used an inline Python -c equivalent to the archived probe source; no capture() subprocess record was saved. This is not a manufactured literal subprocess capture or an independently audited negative cover.",
-  "stdout": "{\"tested\": 8927, \"subsets\": 2914082, \"max_extension\": 10}\n",
-  "used_as_proof": false
-}

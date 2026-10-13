@@ -1,7 +1,0 @@
-{
-  "checker_argv": ["-m", "direct_attack.check_quotient_lift_counter"],
-  "checker_stdout": "{\"counter_n\": 4, \"counter_rt\": 3, \"quotient_rt\": 1, \"n3_alphabets_up_to3_qualifying\": 3714, \"n3_violations\": 0}\n",
-  "checker_returncode": 0,
-  "arbitrary_alphabet_state_minimum": "paper proof in QUOTIENT_FIBER_LIFT.md",
-  "finite_scope": "all ordered alphabets of size 1, 2, 3 on n=3, including duplicate letters"
-}

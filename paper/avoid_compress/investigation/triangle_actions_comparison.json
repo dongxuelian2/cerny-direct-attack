@@ -1,8 +1,0 @@
-{
-  "status": "pass",
-  "families": 3,
-  "profiles_and_row_closure_identical": true,
-  "distance_vectors_and_candidates_identical": true,
-  "natural_projected_exit_four_control_verified": true,
-  "scope": "Uniform reduction requires the accompanying proof."
-}

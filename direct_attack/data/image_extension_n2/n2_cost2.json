@@ -1,1 +1,0 @@
-{"schema":"direct_attack.image-extension.v1","n":2,"rows":[[0,0],[1,0]],"forward":[-1,1,2,0],"image_capacity":[0,1,1,2],"preimage_distances":{"1":[-1,1,2,0]},"costs":{"1":1,"2":2},"max_cost":2,"max_cost_by_rank":[null,2,null],"witness":{"start":2,"larger_image":3,"word":[0,1],"start_reach_word":[0,1],"larger_reach_word":[]},"source":"1"}

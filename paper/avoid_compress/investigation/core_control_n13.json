@@ -1,1 +1,0 @@
-{"n":13,"s":9,"target":11,"p":6,"t":3,"maps":66241,"slow_compression":1,"safe":1,"eligible":1,"permutation_count":1,"found":true,"rows":[[0,1,2,3,5,4,7,8,9,10,11,12,6],[9,0,1,2,3,4,7,8,5,10,11,5,12]],"S":[0,1,2,3,4,5,6,7,8],"protected_state":0,"seconds":0.0586192,"scope":"Exhaustive restricted two-block core neighborhood; no global upper bound."}

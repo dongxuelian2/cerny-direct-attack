@@ -1,9 +1,0 @@
-{
-  "generator_argv": ["-m", "direct_attack.congruence_extremal_scan"],
-  "generator_stdout": "{\"cases\": 22, \"simple\": 22, \"nonsimple\": 0, \"square_extremal_nonsimple\": 0}\n",
-  "generator_returncode": 0,
-  "checker_argv": ["-m", "direct_attack.check_congruence_extremal"],
-  "checker_stdout": "{\"checked\": 22, \"simple\": 22, \"square_extremal\": 5}\n",
-  "checker_returncode": 0,
-  "scope": "22 retained binary n=4..6 near-extremal isomorphism classes; not an exhaustive scan at larger n"
-}

@@ -1,3 +1,0 @@
-{"first_map_orbits": 19, "covering_pairs": 4864}
-{"source": "input:107", "value": [0, 0], "P": 1, "F": 1, "Fk": 1, "Wk": 1, "rt": 1, "seconds": 0.01600000000325963}
-{"arguments": {"n": 4, "alphabet": 2, "count": 100000, "seed": 20261017, "restart": 500, "mode": "first-map-orbits", "objective": "normal", "out": "direct_attack/data/seed_budget_binary_n4"}, "counts": {"tested": 4845, "sc_synchronizing": 1240}, "best": [0, 0], "records": ["witness_000.json"], "seconds": 0.11000000000058208, "scope": "Distinct-letter binary cover with overlap or exhaustive designated alphabets; random/adversarial modes are sampled, not nonexistence proofs."}

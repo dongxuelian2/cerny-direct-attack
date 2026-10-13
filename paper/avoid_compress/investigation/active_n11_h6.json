@@ -1,1 +1,0 @@
-{"n":11,"s":8,"r":1,"active_states":6,"tested_structured_rows":23587200,"exhaustive_all_automata":false,"value":9,"candidate_bound":10,"S_mask":383,"A_mask":8,"rows":[[0,1,2,3,4,5,7,6,6,10,9],[1,2,3,5,7,6,0,9,4,8,10]],"seconds":303.488}

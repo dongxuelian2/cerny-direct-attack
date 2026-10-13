@@ -1,8 +1,0 @@
-{
-  "verified": true,
-  "certificates": 23,
-  "vertices": 36253,
-  "corruptions_rejected": 3,
-  "independent": "ordinary-set forward BFS and separate state strong-connectivity checks",
-  "scope": "retained complete certificates only; no all-n class-reset conclusion"
-}

@@ -1,9 +1,0 @@
-{
-  "verified": true,
-  "certificates": 88,
-  "return_vertices": 17915,
-  "reverse_subset_vertices": 1120,
-  "corruptions_rejected": 4,
-  "independent": "packed deterministic-matrix closures; ordinary reverse-subset distances; literal original-letter words",
-  "scope": "retained finite certificates only; general return-monoid theorem is a separate paper proof"
-}

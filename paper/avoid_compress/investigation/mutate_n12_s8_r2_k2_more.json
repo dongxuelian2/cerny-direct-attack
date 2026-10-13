@@ -1,1 +1,0 @@
-{"n":12,"s":8,"r":2,"alphabet_size":2,"iterations":4001,"random_seed":1208022,"value":10,"S_mask":3870,"A_mask":6,"rows":[[0,1,2,11,4,6,7,8,9,10,5,3],[7,8,1,11,3,6,4,0,9,4,10,2]],"seconds":0.152796,"scope":"Bounded stochastic lower-bound search; no negative claim."}

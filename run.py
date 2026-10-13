@@ -1,132 +1,212 @@
-#!/usr/bin/env python3
-"""ORION SyncLab: deterministic local experiments, without third-party packages."""
-from __future__ import annotations
+"""Small research launcher. All generated files live under build/."""
 import argparse
-import csv
-import json
-import platform
-import random
+from concurrent.futures import ThreadPoolExecutor
+import os
+from pathlib import Path
+import re
+import shutil
+import subprocess
 import sys
 import time
-from pathlib import Path
-from src.engine import cerny, exact, abstract, FEATURES, write_json, SEED
-from src.check_certificate import check, read_json, validate_automaton
 
-ROOT=Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parent
+BUILD = ROOT / 'build'
+SOURCES = ('.py', '.cpp', '.hpp', '.h', '.in')
 
-def csv_write(path,rows):
-    p=Path(path);p.parent.mkdir(parents=True,exist_ok=True)
-    if rows:
-        with p.open('w',encoding='utf-8',newline='') as f:
-            writer=csv.DictWriter(f,fieldnames=list(rows[0]));writer.writeheader();writer.writerows(rows)
 
-def get_a(args):
-    return read_json(args.input) if args.input else cerny(args.n)
+def compiler():
+    name = os.environ.get('CXX', 'g++')
+    path = shutil.which(name)
+    if not path:
+        raise RuntimeError('Install a C++17 compiler or set CXX to its executable.')
+    return path
 
-def demo(args):
-    out=Path(args.out)
-    rows=[]
-    for n in range(2,args.max_n+1):
-        a=cerny(n);t=time.perf_counter();cert=exact(a)
-        check(cert);elapsed=time.perf_counter()-t
-        expected=(n-1)**2
-        if cert['lower_bound']!=expected:
-            raise RuntimeError(f'C{n} regression failed')
-        write_json(out/f'C{n}.json',cert)
-        row={'case':f'C{n}','n':n,'lower_bound':cert['lower_bound'],
-             'upper_bound':cert['upper_bound'],'verified':True,'seconds':round(elapsed,6)}
-        rows.append(row)
-        print(f"C{n}: lower={expected} upper={expected} VERIFIED")
-    csv_write(out/'summary.csv',rows)
-    write_json(out/'environment.json',{'python':sys.version,'platform':platform.platform(),'seed':SEED})
-    print(f'Output: {out.resolve()}')
 
-def solve(args):
-    cert=exact(get_a(args));write_json(args.out,cert)
-    print(json.dumps(check(cert),indent=2))
-    print(f'Certificate: {Path(args.out).resolve()}')
+def compile_cpp(source):
+    source = Path(source).resolve()
+    if not source.is_relative_to(ROOT):
+        raise ValueError('The C++ source must be inside this repository.')
+    out = BUILD / 'bin' / source.relative_to(ROOT).with_suffix('')
+    out.parent.mkdir(parents=True, exist_ok=True)
+    includes = set()
+    def dependencies(path):
+        for name in re.findall(r'^\s*#include\s+"([^"]+)"', path.read_text(), re.M):
+            dependency = (path.parent/name).resolve()
+            if dependency not in includes:
+                includes.add(dependency)
+                dependencies(dependency)
+    dependencies(source)
+    if not out.exists() or any(p.stat().st_mtime > out.stat().st_mtime for p in [source, *includes, Path(__file__)]):
+        subprocess.run([compiler(), '-std=c++17', '-O3', '-pthread', str(source), '-o', str(out)], check=True)
+    return out
 
-def compare(args):
-    a=get_a(args);ex=exact(a);out=Path(args.out);rows=[]
-    for mode in FEATURES:
-        cert,row=abstract(a,mode,ex);rows.append(row)
-        write_json(out/f'{mode}.json',cert)
-        print(f"{mode:14} classes={row['abstract_classes']:5} lower={row['lower_bound']:4} optimal={row['optimal_length']:4}")
-    csv_write(out/'comparison.csv',rows)
-    print(f'Output: {out.resolve()}')
 
-def mutate(args):
-    if not 2<=args.n<=10:
-        raise ValueError('Single-transition scan is restricted to 2 <= n <= 10')
-    base=cerny(args.n);out=Path(args.out);results=[]
-    count=0
-    for letter in range(2):
-        for state in range(args.n):
-            old=base['transitions'][letter][state]
-            for target in range(args.n):
-                if target==old:continue
-                a=json.loads(json.dumps(base))
-                a['name']=f'C{args.n}_letter{letter}_state{state}_to{target}'
-                a['transitions'][letter][state]=target
-                cert=exact(a);count+=1
-                row={'case':a['name'],'changed_letter':letter,'changed_state':state,
-                     'old_target':old,'new_target':target,'synchronizing':cert['kind']!='nonsynchronizing',
-                     'reset_length':cert.get('upper_bound','')}
-                results.append(row);write_json(out/'certificates'/f"{a['name']}.json",cert)
-    csv_write(out/'mutation_scan.csv',results)
-    write_json(out/'scope.json',{'n':args.n,'scanned_labelled_automata':count,
-               'scope':'Exactly one transition differs from the labelled Cerny baseline. No isomorphism reduction; no universal classification claim.'})
-    print(f'Scanned {count} labelled one-transition changes. All certificates checked.')
-    print(f'Output: {out.resolve()}')
+def workspace(task):
+    dest = BUILD / 'work' / task
+    if dest.exists() and task != 'manual':
+        shutil.rmtree(dest)
+    elif dest.exists():
+        # Keep producer outputs, while removing Python modules deleted from source.
+        for old in dest.rglob('*.py'):
+            if not (ROOT/old.relative_to(dest)).is_file():
+                old.unlink()
+    for folder in ('scripts',):
+        for source in (ROOT / folder).rglob('*'):
+            if source.is_file() and source.suffix in SOURCES:
+                target = dest / source.relative_to(ROOT)
+                target.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copyfile(source, target)
+    (dest / 'scripts/direct_attack/data').mkdir(parents=True, exist_ok=True)
+    env = dict(os.environ, PYTHONDONTWRITEBYTECODE='1')
+    env['PYTHONPATH'] = os.pathsep.join([str(dest), str(dest/'scripts'), str(dest/'scripts/problem4'), str(dest/'scripts/anchors')])
+    env['CXX'] = compiler()
+    return dest, env
 
-def verify(args):
-    print(json.dumps(check(read_json(args.certificate)),indent=2))
 
-def witness(args):
-    cert=read_json(args.certificate);check(cert)
-    if cert['kind']=='nonsynchronizing':
-        raise ValueError('This certificate has no reset word')
-    a=cert['automaton'];n,letters,rows=validate_automaton(a)
-    states=list(range(n));print('start:',states)
-    for i,x in enumerate(cert['word'],1):
-        states=sorted({rows[x][q] for q in states})
-        print(f'{i:3} {letters[x]} -> {states}')
-    print('length:',len(cert['word']))
+def invoke(argv, cwd, env=None, **kwargs):
+    tick = time.perf_counter()
+    subprocess.run(list(map(str, argv)), cwd=cwd, env=env, check=True, **kwargs)
+    print(f'Completed in {time.perf_counter()-tick:.3f}s', flush=True)
 
-def export_lean(args):
-    cert=read_json(args.certificate);check(cert)
-    from src.lean_export import export
-    output=export(cert,ROOT/'lean'/'CertificateCore.lean')
-    p=Path(args.out);p.parent.mkdir(parents=True,exist_ok=True);p.write_text(output,encoding='utf-8')
-    print(f'Lean source generated: {p.resolve()}')
-    print('STATUS: source draft; compile with the pinned Lean toolchain before making a formal-verification claim.')
 
-def landmarks(args):
-    from src.engine import landmark_experiment
-    a=get_a(args);n,_,_=validate_automaton(a);out=Path(args.out);rows=[]
-    for r in range(n+1):
-        cert,row=landmark_experiment(a,r);rows.append(row)
-        write_json(out/f'r{r}.json',cert)
-        print(f"r={r:2} classes={row['abstract_classes']:5} lower={row['lower_bound']:4} optimal={row['optimal_length']:4}")
-    csv_write(out/'landmarks.csv',rows)
-    print(f'Output: {out.resolve()}')
+def cerny(n):
+    if not 2 <= n <= 24:
+        raise ValueError('The dense subset search supports 2 <= n <= 24.')
+    return [[(q+1) % n for q in range(n)], list(range(n-1))+[0]]
+
+
+def reset(args):
+    rows = cerny(args.cerny)
+    record = f'reset {args.cerny} 2 ' + ' '.join(str(q) for row in rows for q in row) + '\n'
+    exe = compile_cpp(ROOT/'scripts/native/subset_search.cpp')
+    tick = time.perf_counter()
+    result = subprocess.run([str(exe)], input=record, text=True, capture_output=True, check=True)
+    values = list(map(int, result.stdout.split()))
+    word = ''.join('ab'[i] for i in values[2:])
+    print(f'C{args.cerny}: shortest reset length {values[0]}, visited {values[1]} subsets')
+    print('word:', word)
+    print(f'Search time: {time.perf_counter()-tick:.3f}s (including process startup)')
+
+
+def open_point(args):
+    work, env = workspace('open-point')
+    sys.path.insert(0, str(work/'scripts/problem4'))
+    from two_block_family import construct
+    z = construct(6, 3, 1)
+    def mask(values): return sum(1 << q for q in values)
+    record = f'avoid {z["n"]} 2 {mask(z["S"])} {mask(z["A"])} ' + ' '.join(str(q) for row in z['rows'] for q in row) + '\n'
+    result = subprocess.run([str(compile_cpp(ROOT/'scripts/native/subset_search.cpp'))], input=record, text=True, capture_output=True, check=True)
+    length, visited, *letters = map(int, result.stdout.split())
+    word = ''.join('ab'[a] for a in letters)
+    # Independently apply the construction's reaching/reset words and the C++ witness.
+    from verify_certificates import apply, strong
+    assert strong(z['rows']) and apply(range(13), z['reaching'], z['rows']) == set(z['S'])
+    assert len(apply(range(13), z['reset'], z['rows'])) == 1
+    end = apply(z['S'], word, z['rows'])
+    assert length == 11 and (len(end) < 9 or not set(z['A']) <= end)
+    print(f'(13,9,1): binary construction attains {length}; visited {visited} subsets; word={word}')
+    print('This establishes the lower bound 11. The mathematical upper bound is 12; the point remains open.')
+
+
+def c7(args):
+    work, env = workspace('c7')
+    project = work/'scripts/problem4'
+    profiles = compile_cpp(ROOT/'scripts/problem4/problem4_c7_profiles.cpp')
+    distances = compile_cpp(ROOT/'scripts/problem4/problem4_c7_distances.cpp')
+    def generate(name, flags):
+        with (project/name).open('wb') as out:
+            subprocess.run([str(profiles), *flags], stdout=out, check=True)
+    with ThreadPoolExecutor(max_workers=2) as pool:
+        futures = [pool.submit(generate, 'c7-partition.txt', []), pool.submit(generate, 'c7-literal.txt', ['--literal'])]
+        for future in futures: future.result()
+    if (project/'c7-partition.txt').read_bytes() != (project/'c7-literal.txt').read_bytes():
+        raise RuntimeError('The independent action generators disagree.')
+    with (project/'c7-literal.txt').open('rb') as source:
+        invoke([distances, '--threads', args.threads], project, env, stdin=source)
+    if args.independent:
+        invoke([sys.executable, '-B', 'problem4_c7_audit.py', 'c7-literal.txt'], project, env)
+
+
+def families(args):
+    work, env = workspace('families')
+    project = work/'scripts/problem4'
+    for name in ('generator.py', 'checker.py', 'check_cofinal.py', 'check_boundary.py',
+                 'check_defect_two.py', 'check_codimension_three.py', 'two_block_family.py', 'check_two_block.py'):
+        invoke([sys.executable, '-B', name], project, env)
+
+
+def tau4(args):
+    work, env = workspace('tau4')
+    source = ROOT/'scripts/problem4'
+    classify = compile_cpp(source/'problem4_tau4_core.cpp')
+    primary = compile_cpp(source/'problem4_core_distances.cpp')
+    independent = compile_cpp(source/'problem4_core_profiles_check.cpp')
+    invoke([classify, '--threads', args.threads], work, env)
+    # Fresh in-memory comparisons: no stored inventories or report files.
+    def compare(core):
+        commands = ([str(exe), '--profiles', str(core)] for exe in (primary, independent))
+        a, b = (subprocess.check_output(cmd, cwd=work, env=env) for cmd in commands)
+        if a != b:
+            raise RuntimeError(f'Core {core}: independent action/arrow generators disagree.')
+        return core, len(a.splitlines())
+    with ThreadPoolExecutor(max_workers=min(args.threads, 9)) as pool:
+        for core, signatures in pool.map(compare, range(9)):
+            print(f'Core {core}: all {signatures} signatures and arrow unions agree', flush=True)
+    invoke([primary, '--threads', args.threads], work, env)
+
+
+def upper(args):
+    work, env = workspace('upper')
+    project = work/'scripts/problem4'
+    invoke([sys.executable, '-B', 'check_codimension_three_upper.py', '--rerun', '--compiler', compiler(),
+            '--build-dir', BUILD/'bin/codimension-three'], project, env)
+
+
+def script(args):
+    source = (ROOT / args.source).resolve()
+    if not source.is_relative_to(ROOT/'scripts') or not source.is_file():
+        raise ValueError('Select an existing scripts/*.py or scripts/*.cpp source.')
+    work, env = workspace('manual')
+    target = work / source.relative_to(ROOT)
+    if source.suffix == '.py':
+        if source.is_relative_to(ROOT/'scripts/direct_attack'):
+            module = '.'.join(source.relative_to(ROOT/'scripts').with_suffix('').parts)
+            invoke([sys.executable, '-B', '-m', module, *args.arguments], work, env)
+        else:
+            invoke([sys.executable, '-B', target.name, *args.arguments], target.parent, env)
+    elif source.suffix == '.cpp':
+        invoke([compile_cpp(source), *args.arguments], target.parent, env)
+    else:
+        raise ValueError('The selected file must be Python or C++.')
+
 
 def main():
-    p=argparse.ArgumentParser(description=__doc__)
-    sp=p.add_subparsers(dest='command',required=True)
-    d=sp.add_parser('demo');d.add_argument('--max-n',type=int,default=8);d.add_argument('--out',default='results/demo');d.set_defaults(func=demo)
-    s=sp.add_parser('solve');s.add_argument('--n',type=int,default=4);s.add_argument('--input');s.add_argument('--out',default='results/certificate.json');s.set_defaults(func=solve)
-    s=sp.add_parser('compare');s.add_argument('--n',type=int,default=8);s.add_argument('--input');s.add_argument('--out',default='results/compare');s.set_defaults(func=compare)
-    s=sp.add_parser('mutate');s.add_argument('--n',type=int,default=6);s.add_argument('--out',default='results/mutations');s.set_defaults(func=mutate)
-    s=sp.add_parser('landmarks');s.add_argument('--n',type=int,default=8);s.add_argument('--input');s.add_argument('--out',default='results/landmarks');s.set_defaults(func=landmarks)
-    s=sp.add_parser('verify');s.add_argument('certificate');s.set_defaults(func=verify)
-    s=sp.add_parser('witness');s.add_argument('certificate');s.set_defaults(func=witness)
-    s=sp.add_parser('export-lean');s.add_argument('certificate');s.add_argument('--out',default='lean/Generated.lean');s.set_defaults(func=export_lean)
-    args=p.parse_args()
-    try:
-        args.func(args)
-    except (ValueError,OSError,KeyError,TypeError,RuntimeError) as e:
-        p.exit(2,f'ERROR: {e}\n')
+    p = argparse.ArgumentParser(description=__doc__)
+    sub = p.add_subparsers(dest='command', required=True)
+    q = sub.add_parser('reset', help='Exact C++ reset search on a Cerny automaton')
+    q.add_argument('--cerny', type=int, default=10); q.set_defaults(action=reset)
+    q = sub.add_parser('open-point', help='Reconstruct the (13,9,1) lower witness, then recompute its value')
+    q.set_defaults(action=open_point)
+    q = sub.add_parser('c7', help='Generate both action domains and run the multi-threaded C7 exclusion')
+    q.add_argument('--threads', type=int, default=min(16, os.cpu_count() or 1))
+    q.add_argument('--independent', action='store_true', help='Also run the small independent Python check')
+    q.set_defaults(action=c7)
+    q = sub.add_parser('tau4', help='Reconstruct and exclude all nine cover-four P6 cores')
+    q.add_argument('--threads', type=int, default=min(16, os.cpu_count() or 1))
+    q.set_defaults(action=tau4)
+    q = sub.add_parser('families', help='Generate and check the finite lower-construction scopes')
+    q.set_defaults(action=families)
+    q = sub.add_parser('upper', help='Rebuild all components of the codimension-three computer-assisted proof')
+    q.set_defaults(action=upper)
+    q = sub.add_parser('script', help='Run another research source in the generated workspace')
+    q.add_argument('source'); q.add_argument('arguments', nargs=argparse.REMAINDER); q.set_defaults(action=script)
+    args = p.parse_args()
+    if getattr(args, 'threads', 1) < 1 or getattr(args, 'threads', 1) > 64:
+        p.error('--threads must be 1..64')
+    try: args.action(args)
+    except (ValueError, RuntimeError, subprocess.CalledProcessError) as e:
+        p.exit(1, str(e)+'\n')
 
-if __name__=='__main__':
+
+if __name__ == '__main__':
     main()

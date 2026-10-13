@@ -1,6 +1,0 @@
-{
-  "method": "full-powerset inverse capacity with literal word evaluation",
-  "inverse_capacity_peak_checks": 18,
-  "max_n": 8,
-  "verified": true
-}
