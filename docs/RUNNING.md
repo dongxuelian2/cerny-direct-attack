@@ -40,6 +40,7 @@ python3 run.py script scripts/problem4/problem4_p3_shapes.py
 python3 run.py script scripts/problem4/problem4_p3_entry.cpp --threads 3
 python3 run.py script scripts/problem4/problem4_p3_entry.cpp --two-three --threads 4
 python3 run.py script scripts/problem4/problem4_p3_entry.cpp --overlap-two-two --threads 4
+python3 run.py script scripts/problem4/problem4_tau2_overlap.cpp --threads 4
 python3 run.py script scripts/direct_attack/check_native_policy.py
 python3 run.py script scripts/direct_attack/avoid_compress_all_gaps.py
 python3 run.py script scripts/direct_attack/check_avoid_compress_all_gaps.py
@@ -59,11 +60,23 @@ python3 run.py script scripts/direct_attack/check_avoid_compress_all_gaps.py
 核心选择。各选择可独立并行，默认同时运行逐输入赋值的独立生成器和完整距离
 笛卡尔积/BFS 核对，本机四线程计算约四秒，首次编译另计。此模式 `--core 1` 至 `--core 11`
 使用三点覆盖核心的原编号；旧模式的 `--core` 仍使用从零开始的局部编号。
-完整归约及仍开放的二点覆盖分支见[重叠二点入口](../PROOF.md#problem4-small-entrance-overlap)。
+完整三点覆盖归约见[重叠二点入口](../PROOF.md#problem4-small-entrance-overlap)。
 
-`scripts/problem4/experimental/tau2_third_pair_profiles.cpp --threads 4` 保存九个
+`problem4_tau2_overlap.cpp --threads 4` 完整检查重叠入口的九个二点覆盖核心：
+276 个第三入口域包括 74 个单点域；从全部合法代表自动产生最后 20 个第四入口域，
+并全部排除。默认比较逐输入与匹配核两种枚举的完整映射、签名、标记和箭头；
+有理秩由整数消元与精确的模素数计算交叉检查，距离与强连通各用两种算法核对。
+线程按不重叠的入口域分工；本机四线程完整检查约三秒，首次编译另计。
+该结论只关闭两个二点入口相交的分支，(13,9,1) 仍在 [11,12]。
+数学完备性与边界见[九核心排除](../PROOF.md#problem4-overlap-nine-cores)。
+
+加 `--disjoint` 则检查不交二点入口的九个无三角形二点覆盖核心；完整 202 个
+第三入口选择仍有 22 个放松向量，程序返回三。这不包含 T5、三点覆盖核心或
+第四入口，不能作为不交分支的完整排除。
+
+`scripts/problem4/experimental/tau2_third_pair_profiles.cpp --threads 4` 保留早期九个
 二点覆盖核心中“第三入口为核心边”的受限原型，默认独立核对两种映射生成器。
-它不覆盖单点第三入口；当前 202 个选择仍有 28 个放松方案幸存，因此程序返回三，
+它不覆盖单点第三入口；其 202 个选择有 28 个放松方案幸存，因此程序返回三，
 统一入口会报告该退出码。这是探索结果，不能作为九核心完整排除的结论。
 
 Individual sources share `build/work/manual/`, so a generator can be followed by
