@@ -38,6 +38,7 @@ with a clean local computation.
 ```sh
 python3 run.py script scripts/problem4/upper_bound/problem4_k4_controls.py
 python3 run.py script scripts/problem4/upper_bound/problem4_p3_shapes.py
+python3 run.py script scripts/problem4/upper_bound/problem4_p2_rank.cpp
 python3 run.py script scripts/problem4/upper_bound/problem4_p3_entry.cpp --threads 3
 python3 run.py script scripts/problem4/upper_bound/problem4_p3_entry.cpp --two-three --threads 4
 python3 run.py script scripts/problem4/upper_bound/problem4_p3_entry.cpp --overlap-two-two --threads 4
@@ -48,6 +49,9 @@ python3 run.py script scripts/direct_attack/check_avoid_compress_all_gaps.py
 ```
 
 `problem4_p3_shapes.py` 核对 P3 二点覆盖的十三种核心和三点覆盖的十二种核心。
+`problem4_p2_rank.cpp` 核对至多四条边、覆盖数为三的图的最大独立集行秩界，
+并以 C5 检查五条边的反例边界；它不枚举自动机。数学推导见
+[q=13 的第二层覆盖](../PROOF.md#problem4-q13-second-layer)。
 `problem4_p3_entry.cpp` 排除三点保护入口剩余的三个五点核心，默认同时运行两种
 字母枚举和两种距离算法。它不要求保存证书或安装求解器；完整数学归约见
 [三点入口定理](../PROOF.md#problem4-three-entrance-p3-reduction)。
@@ -109,6 +113,82 @@ A `COMPLETE` line confirms that the requested domain was actually exhausted.
 Retained relaxation vectors cause exit three and an error from the launcher;
 they are not DFA witnesses. Counts are printed to the terminal, generated
 intermediates stay under `build/`, and no saved inventory is read.
+
+## Fourteen-state q=13 equality calculation
+
+```sh
+python3 run.py script scripts/problem4/upper_bound/full_fiber_flags_q13.cpp --all-entrances --quotient --threads 8
+python3 run.py script scripts/problem4/upper_bound/full_fiber_flags_q13.cpp --all-entrances --tau3 --quotient --threads 8
+python3 run.py script scripts/problem4/check_protected_slack.py
+```
+
+The first two commands use fourteen states, ten-element safe subsets, and
+target length thirteen. They retain all entrance sizes and the same independent
+letter generators and short-word controls. Both full domains reject by flag
+levels ten and eleven, respectively. The represented eleven-level prefix would
+be insufficient if survivors remained; exit three means unresolved.
+See [the mathematical reduction and complete counts](../PROOF.md#problem4-q13-second-layer).
+
+The last command checks the general protected-set contraction on small
+constructed examples, including exact avoidance lengths, ranks, short pairs,
+dual-space growth, synchronization with one spare protected state, and
+stepwise reachability-preserving contraction and expansion. Its finite controls support
+[the general proof](../PROOF.md#problem4-protected-slack-collapse);
+they do not search all twelve-step candidates. The flag programs above handle
+equality at thirteen, not the remaining target twelve.
+
+For target twelve with two distinct first entrances:
+
+```sh
+python3 run.py script scripts/problem4/upper_bound/slack_one_initial_flags.cpp --threads 8
+python3 run.py script scripts/problem4/upper_bound/slack_one_initial_flags.cpp --pairs --threads 8
+python3 run.py script scripts/problem4/upper_bound/slack_one_initial_flags.cpp --pairs --delay-cut --ranks --threads 8
+python3 run.py script scripts/problem4/upper_bound/slack_one_initial_flags.cpp --pairs --delay-cut --ranks --arrival --threads 8
+python3 run.py script scripts/problem4/upper_bound/slack_one_initial_flags.cpp --pairs --delay-cut --ranks --arrival --fourth --threads 8
+python3 run.py script scripts/problem4/upper_bound/slack_one_initial_flags.cpp --pairs --delay-cut --ranks --arrival --depth 7 --threads 8
+```
+
+This completes the initial three-layer domain and single-letter cell-capacity
+relaxation, with integer/modular rank checks and exhaustive small-map controls.
+`--pairs` additionally checks a common P1/P2/P3 distance assignment and exact
+single-letter pair profiles. `--delay-cut` uses the proved exclusion of two
+singleton first entrances; `--ranks` adds four one-step safe-source rank tests.
+Both options require `--pairs`. Anonymous output permutations are retained
+through exact one-letter projections; these projections are not iterated as words.
+`--arrival` requires `--ranks` and additionally checks that each of the first
+three safe-source families covers every state, as forced by four-step arrival.
+`--fourth` (with `--arrival --delay-cut`) extends every surviving initial flag
+by an actual fourth-layer fiber, including its supply, one-step rank/coverage,
+and joint P6 cover constraints. It retains all fourth-layer one-count preimages,
+not just cliques of P3.
+`--depth 3..11` continues the same necessary-condition recursion. Depths four
+and above require `--arrival --delay-cut`; `--fourth` is equivalent to depth four.
+The seventh layer allows five-point fibers and does not impose P6's cover-three
+condition. A new state is required there only when the extra dimension growth
+has not yet occurred. Starting at layer eight, the program
+includes mixed fibers consisting of one protected point and external coordinates
+absent from the current family. `LAYER_COMPLETE` reports each completed layer.
+The complete default split-layer domain is empty at layer nine, excluding all
+two-first-entrance candidates without requiring mixed-word tests.
+`--split-layer 2` and `--split-layer 3` instead select a unique first entrance
+with the extra dimension growth at the indicated layer. Values `4..11` select
+later growth, `0` selects no extra growth through layer eleven, and `--all-late-splits` (or value `12`) jointly
+explores all later-growth and no-growth possibilities using shared prefixes.
+Here `12` is a mode selector, not an extra safe layer. Before a split the Boolean
+family may have either of two ranks; actual letter preimages must also lie in
+the chosen dual space. `TERMINAL_SPLIT layer=0` at a truncated depth means only
+that the split has not happened yet. These domains remain separate from the
+completed split-layer-one exclusion until their own full runs finish.
+Survival at any requested depth is not an automaton existence result.
+Use `--flags --threads 1` to print the retained initial masks directly.
+`--core ID` restricts to one of IDs 0–12 or 100–111; omit it for the complete domain.
+The [proof and counts](../PROOF.md#problem4-slack-one-initial-flags) explain
+the remaining obligations.
+
+`python3 run.py script scripts/problem4/upper_bound/graded_flags_control.cpp`
+compares the separate early-split and generic graded initial enumerators on
+core 106, checking both retained flags and common distance-vector counts.
+It checks enumeration consistency, not completion of the remaining domain.
 
 ## Earlier conditional sources
 

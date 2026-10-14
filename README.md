@@ -11,6 +11,10 @@
 - [下界构造](PROOF.md#constructions)与[低余维上界](PROOF.md#upper)：已有参数族和归约。
 - [余维四：短对图与入口排除](PROOF.md#frontier)：[完整布尔旗标](PROOF.md#problem4-eleven-audit)排除达到十二的全部入口组合，适用于任意有限字母表；与二字母下界十一匹配。
 - [保护块收缩与新边界](PROOF.md#problem4-protected-collapse-strip)：在不要求收缩后同步的条件下传递短对图与旗标约束，推广精确值十一至整条 `m=4,q=12` 参数边界；对 `q=13` 的等号候选给出十一层公共交集与首入口大小限制。
+- [q=13 的结构与完整旗标排除](PROOF.md#problem4-q13-second-layer)：十四状态两条必要条件路线均完整排除，得到所有 `r≥1` 的 `11≤F_bin(r+13,r+9,r)≤F(r+13,r+9,r)≤12`；十一与十二的选择仍开放。
+- [一般目标长度的保护集收缩](PROOF.md#problem4-protected-slack-collapse)：距原上界 `k` 的候选可缩到至多 `k+1` 个保护点，全部字母共享至多 `2^k` 个外部保护入口。
+- [保持同步与可达的收缩](PROOF.md#problem4-reachable-slack-collapse)：保留至多 `m+k+1` 个保护点可同时保持强连通、同步、初始集可达和精确目标长度；[只要求同步时](PROOF.md#problem4-synchronizing-slack-collapse)至多需要 `k+2` 个保护点。
+- [余量一的剩余候选](PROOF.md#problem4-slack-one-initial-flags)：共同短对距离、轨道秩和实际前像供应在第九层排除全部两入口类别，覆盖所有双出口候选；单入口的延后增长类别及一般参数仍开放。
 - [条件分支](PROOF.md#branches)：需要额外假设的局部论证。
 - [像扩张](PROOF.md#extension)、[秩与核](PROOF.md#rank)、[策略与预算](PROOF.md#policy)、[锚点与最优语言](PROOF.md#anchors)：其他数学方向。
 - [探索记录](PROOF.md#exploration)：受限观察、失败路线和待证明机制。
