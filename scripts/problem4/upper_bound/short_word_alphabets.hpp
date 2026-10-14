@@ -15,6 +15,7 @@ struct ShortWordCliqueResult {
   uint64_t nodes = 0, pair_checks = 0;
   std::vector<int> witness;
 };
+template<int n = 13>
 inline ShortWordCliqueResult
 short_word_clique(const std::vector<std::vector<int>> &letters,
                   const std::vector<unsigned> &supplies, unsigned required,
@@ -23,20 +24,23 @@ short_word_clique(const std::vector<std::vector<int>> &letters,
                   const std::vector<std::pair<int, int>> &edges,
                   const std::vector<int> &distances, bool fold = true) {
   using namespace std;
-  const int n = 13, raw_count = letters.size();
+  const int raw_count = letters.size();
+  static_assert(n >= 13 && n <= 14);
+  constexpr int masks = 1 << n;
+  for (const auto& row : letters) assert(row.size() == n);
   int count = raw_count;
   ShortWordCliqueResult result;
-  vector<array<uint16_t, 8192>> images(count);
+  vector<array<uint16_t, masks>> images(count);
   for (int i = 0; i < count; ++i) {
     images[i][0] = 0;
-    for (unsigned mask = 1; mask < 8192; ++mask) {
+    for (unsigned mask = 1; mask < masks; ++mask) {
       unsigned low = mask & -mask;
       int q = __builtin_ctz(low);
       images[i][mask] = images[i][mask ^ low] | (1U << letters[i][q]);
     }
   }
   auto safe = [&](unsigned mask, int left) {
-    if (__builtin_popcount(mask) != 9 || !(mask >> protected_point & 1))
+    if (__builtin_popcount(mask) != n - 4 || !(mask >> protected_point & 1))
       return false;
     for (size_t i = 0; i < edges.size(); ++i)
       if (distances[i] <= left) {
@@ -54,7 +58,7 @@ short_word_clique(const std::vector<std::vector<int>> &letters,
   int horizon = 0;
   for (auto seed : seeds)
     horizon = max(horizon, seed.second);
-  vector<array<bool, 8192>> active(horizon + 1);
+  vector<array<bool, masks>> active(horizon + 1);
   vector<pair<unsigned, int>> work;
   for (auto [mask, left] : seeds)
     if (!active[left][mask]) {
@@ -73,13 +77,13 @@ short_word_clique(const std::vector<std::vector<int>> &letters,
       }
     }
   }
-  vector<array<int, 8192>> classes(horizon + 1);
-  for (unsigned mask = 0; mask < 8192; ++mask)
+  vector<array<int, masks>> classes(horizon + 1);
+  for (unsigned mask = 0; mask < masks; ++mask)
     if (active[0][mask] && safe(mask, 0))
       classes[0][mask] = 1;
   for (int left = 1; left <= horizon; ++left) {
     map<vector<int>, int> labels;
-    for (unsigned mask = 0; mask < 8192; ++mask)
+    for (unsigned mask = 0; mask < masks; ++mask)
       if (active[left][mask] && safe(mask, left)) {
         vector<int> signature;
         signature.reserve(raw_count);
@@ -95,7 +99,7 @@ short_word_clique(const std::vector<std::vector<int>> &letters,
   for (int f = 0; f < raw_count; ++f) {
     vector<int> signature;
     for (int left = 1; left <= horizon; ++left)
-      for (unsigned mask = 0; mask < 8192; ++mask)
+      for (unsigned mask = 0; mask < masks; ++mask)
         if (active[left][mask] && safe(mask, left))
           signature.push_back(classes[left - 1][images[f][mask]]);
     if (!fold)
@@ -105,15 +109,15 @@ short_word_clique(const std::vector<std::vector<int>> &letters,
   vector<int> representative;
   vector<vector<int>> members;
   vector<unsigned> group_supplies;
-  vector<array<unsigned, 13>> group_graph;
+  vector<array<unsigned, n>> group_graph;
   for (const auto &entry : equivalent) {
     members.push_back(entry.second);
     representative.push_back(entry.second.front());
     unsigned flags = 0;
-    array<unsigned, 13> graph{};
+    array<unsigned, n> graph{};
     for (int f : entry.second) {
       flags |= supplies[f];
-      for (int q = 0; q < 13; ++q)
+      for (int q = 0; q < n; ++q)
         graph[q] |= 1U << letters[f][q];
     }
     group_supplies.push_back(flags);
@@ -127,7 +131,7 @@ short_word_clique(const std::vector<std::vector<int>> &letters,
     if (answer >= 0)
       return bool(answer);
     ++result.pair_checks;
-    array<int8_t, 8192> best;
+    array<int8_t, masks> best;
     best.fill(-1);
     vector<pair<unsigned, int>> todo;
     for (auto [mask, left] : seeds)
@@ -157,7 +161,7 @@ short_word_clique(const std::vector<std::vector<int>> &letters,
     return valid;
   };
   auto jointly_safe = [&](const vector<int> &chosen) {
-    array<int8_t, 8192> best;
+    array<int8_t, masks> best;
     best.fill(-1);
     vector<pair<unsigned, int>> todo;
     for (auto [mask, left] : seeds)
@@ -208,7 +212,7 @@ short_word_clique(const std::vector<std::vector<int>> &letters,
           next.push_back(i);
       choose(move(next));
     }
-    array<unsigned, 13> reach{};
+    array<unsigned, n> reach{};
     for (int q = 0; q < n; ++q)
       reach[q] = 1U << q;
     for (int i : selected)
@@ -219,7 +223,7 @@ short_word_clique(const std::vector<std::vector<int>> &letters,
         if (reach[q] >> k & 1)
           reach[q] |= reach[k];
     for (int q = 0; q < n; ++q)
-      if (reach[q] != 8191) {
+      if (reach[q] != masks - 1) {
         vector<int> next;
         unsigned from = reach[q];
         for (int i : pool) {
@@ -272,32 +276,35 @@ short_word_clique(const std::vector<std::vector<int>> &letters,
   result.possible = search(move(available), 0);
   return result;
 }
+template<int n = 13>
 inline void short_word_clique_controls() {
   using namespace std;
+  constexpr unsigned initial = (1U << (n - 4)) - 1;
+  constexpr unsigned full = (1U << n) - 1;
   for (int variant : {0, 1}) {
     vector<vector<int>> universe;
-    for (int shift : {0, 1, 12, 2, 11, 3, 10}) {
-      vector<int> f(13);
-      for (int q = 0; q < 13; ++q)
-        f[q] = (q + shift) % 13;
+    for (int shift : {0, 1, n - 1, 2, n - 2, 3, n - 3}) {
+      vector<int> f(n);
+      for (int q = 0; q < n; ++q)
+        f[q] = (q + shift) % n;
       universe.push_back(f);
     }
-    universe.push_back(vector<int>(13, 0));
+    universe.push_back(vector<int>(n, 0));
     if (variant == 1) {
-      for (int q = 0; q < 13; ++q)
-        universe[3][q] = (8 - q + 13) % 13;
+      for (int q = 0; q < n; ++q)
+        universe[3][q] = (n - 5 - q + n) % n;
       for (int i : {4, 5}) {
-        for (int q = 0; q < 13; ++q)
+        for (int q = 0; q < n; ++q)
           universe[i][q] = q;
-        swap(universe[i][i == 4 ? 1 : 4], universe[i][i == 4 ? 9 : 10]);
+        swap(universe[i][i == 4 ? 1 : 4], universe[i][i == 4 ? n - 4 : n - 3]);
       }
     }
     vector<pair<int, int>> core_edges =
         variant == 0 ? vector<pair<int, int>>{}
-                     : vector<pair<int, int>>{{9, 11}, {10, 12}};
+                     : vector<pair<int, int>>{{n - 4, n - 2}, {n - 3, n - 1}};
     vector<int> lengths = variant == 0 ? vector<int>{} : vector<int>{1, 2};
     auto literal_safe = [&](unsigned mask, int left) {
-      if (__builtin_popcount(mask) != 9 || !(mask & 8))
+      if (__builtin_popcount(mask) != n - 4 || !(mask & 8))
         return false;
       for (size_t i = 0; i < core_edges.size(); ++i) {
         auto [u, v] = core_edges[i];
@@ -306,10 +313,10 @@ inline void short_word_clique_controls() {
       }
       return true;
     };
-    constexpr unsigned start = 511, required = 7;
+    constexpr unsigned start = initial, required = 7;
     auto literal_image = [](unsigned mask, const vector<int> &f) {
       unsigned out = 0;
-      for (int q = 0; q < 13; ++q)
+      for (int q = 0; q < n; ++q)
         if (mask >> q & 1)
           out |= 1U << f[q];
       return out;
@@ -346,7 +353,7 @@ inline void short_word_clique_controls() {
       if (!clique || supply != required)
         continue;
       bool sc = true;
-      for (int start_state = 0; start_state < 13; ++start_state) {
+      for (int start_state = 0; start_state < n; ++start_state) {
         unsigned visited = 1U << start_state;
         vector<int> queue{start_state};
         for (size_t at = 0; at < queue.size(); ++at)
@@ -358,7 +365,7 @@ inline void short_word_clique_controls() {
                 queue.push_back(out);
               }
             }
-        sc &= visited == 8191;
+        sc &= visited == full;
       }
       vector<unsigned> frontier{start};
       bool safe = true;
@@ -390,7 +397,7 @@ inline void short_word_clique_controls() {
         }
       for (bool fold : {false, true}) {
         auto answer =
-            short_word_clique(letters, flags, required, 3, {{start, 3}},
+            short_word_clique<n>(letters, flags, required, 3, {{start, 3}},
                               core_edges, lengths, fold);
         assert(answer.possible == reference);
       }
@@ -401,26 +408,27 @@ inline void short_word_clique_controls() {
   // Three noncommuting permutations are pairwise safe, but their mixed word
   // abc omits the protected point. Their union is strongly connected and all
   // three supply bits are necessary, so pair tests alone would accept them.
-  vector<vector<int>> triple(3, vector<int>(13));
+  vector<vector<int>> triple(3, vector<int>(n));
   for (auto &f : triple)
-    for (int q = 0; q < 13; ++q)
+    for (int q = 0; q < n; ++q)
       f[q] = q;
-  swap(triple[0][0], triple[0][9]);
+  swap(triple[0][0], triple[0][n - 4]);
   swap(triple[1][0], triple[1][1]);
-  vector<int> cycle{2, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+  vector<int> cycle;
+  for (int q = 2; q < n; ++q) if (q != 3) cycle.push_back(q);
   for (size_t q = 0; q < cycle.size(); ++q)
     triple[1][cycle[q]] = cycle[(q + 1) % cycle.size()];
   swap(triple[2][1], triple[2][3]);
   for (int x = 0; x < 3; ++x)
     for (int y = 0; y < 3; ++y) {
-      vector<unsigned> frontier{511};
+      vector<unsigned> frontier{initial};
       for (int d = 0; d <= 3; ++d) {
         vector<unsigned> next;
         for (unsigned mask : frontier) {
           assert(mask & 8);
           for (int f : {x, y}) {
             unsigned out = 0;
-            for (int q = 0; q < 13; ++q)
+            for (int q = 0; q < n; ++q)
               if (mask >> q & 1)
                 out |= 1U << triple[f][q];
             next.push_back(out);
@@ -429,16 +437,16 @@ inline void short_word_clique_controls() {
         frontier = move(next);
       }
     }
-  unsigned bad = 511;
+  unsigned bad = initial;
   for (const auto &f : triple) {
     unsigned next = 0;
-    for (int q = 0; q < 13; ++q)
+    for (int q = 0; q < n; ++q)
       if (bad >> q & 1)
         next |= 1U << f[q];
     bad = next;
   }
   assert(!(bad & 8));
-  for (int start = 0; start < 13; ++start) {
+  for (int start = 0; start < n; ++start) {
     vector<int> queue{start};
     unsigned seen = 1U << start;
     for (size_t i = 0; i < queue.size(); ++i)
@@ -449,9 +457,9 @@ inline void short_word_clique_controls() {
           queue.push_back(v);
         }
       }
-    assert(seen == 8191);
+    assert(seen == full);
   }
   for (bool fold : {false, true})
-    assert(!short_word_clique(triple, {1, 2, 4}, 7, 3, {{511, 3}}, {}, {}, fold)
+    assert(!short_word_clique<n>(triple, {1, 2, 4}, 7, 3, {{initial, 3}}, {}, {}, fold)
                 .possible);
 }

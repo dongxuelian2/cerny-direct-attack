@@ -22,6 +22,15 @@
 #include <thread>
 #include <vector>
 using namespace std;
+#ifndef FIBER_FLAG_STATES
+#define FIBER_FLAG_STATES 13
+#endif
+constexpr int STATE_COUNT = FIBER_FLAG_STATES;
+constexpr int SAFE_SIZE = STATE_COUNT - 4;
+constexpr int SAFE_DEPTH = STATE_COUNT - 2;
+constexpr int MASK_COUNT = 1 << STATE_COUNT;
+static_assert(STATE_COUNT == 13 || STATE_COUNT == 14);
+
 struct Core {
   int id, n;
   string text;
@@ -69,7 +78,7 @@ vector<int> pair_bfs(int count, const vector<Action> &actions,
   return distance;
 }
 struct Mark {
-  array<unsigned, 14> arrows{};
+  array<unsigned, STATE_COUNT + 1> arrows{};
   unsigned flags = 0;
 };
 struct Case {
@@ -79,7 +88,7 @@ struct Case {
     return max(core.n + 1, 32 - __builtin_clz(unsigned(B | C | D | E | F | G |
                                                        H | I | J | K | L)));
   }
-  int qj() const { return min(fixed(), 12); }
+  int qj() const { return min(fixed(), STATE_COUNT - 1); }
   int depth() const {
     return L ? 11
              : (K ? 10
@@ -99,14 +108,14 @@ struct Case {
   vector<pair<int, int>> edges, long_pairs;
   vector<int> all_third;
   vector<int> fibers;
-  int index[14][14];
+  int index[STATE_COUNT + 1][STATE_COUNT + 1];
   vector<Action> actions;
   vector<Mark> marks;
   uint64_t domains = 0, signature_count = 0, joint = 0, sc = 0,
            kernel_domains = 0;
   vector<vector<int>> survivor_vectors;
   uint64_t invalid_p1 = 0;
-  mutable map<pair<int, int>, pair<vector<unsigned>, array<bool, 8192>>>
+  mutable map<pair<int, int>, pair<vector<unsigned>, array<bool, MASK_COUNT>>>
       family_cache;
 
   Case(Core h, int b, int c, int d, int e = 0, int f = 0, int g = 0, int hh = 0,
@@ -167,18 +176,18 @@ struct Case {
   bool prepare() {
     if (!cover_three(known_p6()))
       return false;
-    // V_(11-k) has dimension 12-k and annihilator H_k. The complete
+    // V_(SAFE_DEPTH-k) has dimension STATE_COUNT-1-k and annihilator H_k. The complete
     // literal family contains all these actual short images. Its row space
-    // is exactly V_(11-k) once its rank is 12-k, so a Boolean mask is a
+    // is exactly that trajectory space when the ranks agree, so a Boolean mask is a
     // one-count fiber in H_k iff it meets every member in exactly one point.
-    vector<int> identity(13);
+    vector<int> identity(STATE_COUNT);
     iota(identity.begin(), identity.end(), 0);
     for (int level = 3; level <= depth(); ++level) {
       vector<unsigned> family;
       unsigned covered = 0;
-      bool alone[13][13]{};
-      for (unsigned mask = 0; mask < (1U << 13); ++mask) {
-        if (__builtin_popcount(mask) != 9 || !(mask >> core.n & 1))
+      bool alone[STATE_COUNT][STATE_COUNT]{};
+      for (unsigned mask = 0; mask < (1U << STATE_COUNT); ++mask) {
+        if (__builtin_popcount(mask) != SAFE_SIZE || !(mask >> core.n & 1))
           continue;
         bool valid = true;
         for (int i = 1; i <= level; ++i)
@@ -191,23 +200,23 @@ struct Case {
           continue;
         family.push_back(mask);
         covered |= mask;
-        for (int u = 0; u < 13; ++u)
+        for (int u = 0; u < STATE_COUNT; ++u)
           if (mask >> u & 1)
-            for (int v = 0; v < 13; ++v)
+            for (int v = 0; v < STATE_COUNT; ++v)
               if (!(mask >> v & 1))
                 alone[u][v] = true;
       }
-      if (level <= 7 && covered != (1U << 13) - 1)
+      if (level <= 7 && covered != (1U << STATE_COUNT) - 1)
         return false;
-      int need = 12 - level;
+      int need = STATE_COUNT - 1 - level;
       for (int threshold : {need, need + 1}) {
-        bool rank = safe_rank(identity, 9, threshold, false, level);
-        assert(rank == safe_rank(identity, 9, threshold, true, level));
+        bool rank = safe_rank(identity, SAFE_SIZE, threshold, false, level);
+        assert(rank == safe_rank(identity, SAFE_SIZE, threshold, true, level));
         if (rank != (threshold == need))
           return false;
       }
       vector<int> &candidates = level == 3 ? all_third : closure(level);
-      for (unsigned mask = 1; mask < (1U << 13); ++mask) {
+      for (unsigned mask = 1; mask < (1U << STATE_COUNT); ++mask) {
         bool valid = true;
         for (unsigned set : family)
           if (__builtin_popcount(mask & set) != 1) {
@@ -220,8 +229,8 @@ struct Case {
       if (level == 3)
         for (int mask : candidates) {
           bool clique = true;
-          for (int u = 0; u < 13; ++u)
-            for (int v = u + 1; v < 13; ++v)
+          for (int u = 0; u < STATE_COUNT; ++u)
+            for (int v = u + 1; v < STATE_COUNT; ++v)
               if ((mask >> u & 1) && (mask >> v & 1) && index[u][v] < 0)
                 clique = false;
           if (clique)
@@ -231,8 +240,8 @@ struct Case {
       // an implication u in T => v in T certifies co-occurrence in an actual
       // short image; the relaxed family need not itself be reachable.
       if (level <= 7)
-        for (int u = 0; u < 13; ++u)
-          for (int v = u + 1; v < 13; ++v)
+        for (int u = 0; u < STATE_COUNT; ++u)
+          for (int v = u + 1; v < STATE_COUNT; ++v)
             if (!alone[u][v] || !alone[v][u])
               long_pairs.push_back({u, v});
       if (level <= 7)
@@ -270,9 +279,9 @@ struct Case {
     // subset families, so the omitted bijection can be the identity here.
     if (need <= 0)
       return true;
-    array<array<long long, 13>, 13> integer_basis{};
+    array<array<long long, STATE_COUNT>, STATE_COUNT> integer_basis{};
     constexpr int P = 65521;
-    array<array<int, 13>, 13> basis{};
+    array<array<int, STATE_COUNT>, STATE_COUNT> basis{};
     int rank = 0;
     auto power = [](int a, int b) {
       int z = 1;
@@ -288,7 +297,7 @@ struct Case {
       for (auto [u, v] : edges)
         if ((mask >> u & 1) && (mask >> v & 1))
           return false;
-      if (size == 9) {
+      if (size == SAFE_SIZE) {
         if (!(mask >> core.n & 1))
           return false;
         for (int i = 1; i <= level; ++i)
@@ -300,8 +309,8 @@ struct Case {
     auto key = make_pair(size, level);
     auto it = family_cache.find(key);
     if (it == family_cache.end()) {
-      pair<vector<unsigned>, array<bool, 8192>> entry{};
-      for (unsigned mask = 0; mask < (1U << 13); ++mask)
+      pair<vector<unsigned>, array<bool, MASK_COUNT>> entry{};
+      for (unsigned mask = 0; mask < (1U << STATE_COUNT); ++mask)
         if (__builtin_popcount(mask) == size && family(mask)) {
           entry.first.push_back(mask);
           entry.second[mask] = true;
@@ -310,16 +319,16 @@ struct Case {
     }
     for (unsigned mask : it->second.first) {
       unsigned out = 0;
-      for (int q = 0; q < 13; ++q)
+      for (int q = 0; q < STATE_COUNT; ++q)
         if (mask >> q & 1)
           out |= 1U << (q < int(f.size()) ? f[q] : q);
       if (!it->second.second[out])
         continue;
       if (exact) {
-        array<long long, 13> row{};
-        for (int q = 0; q < 13; ++q)
+        array<long long, STATE_COUNT> row{};
+        for (int q = 0; q < STATE_COUNT; ++q)
           row[q] = mask >> q & 1;
-        for (int q = 0; q < 13; ++q)
+        for (int q = 0; q < STATE_COUNT; ++q)
           if (row[q]) {
             if (!integer_basis[q][q]) {
               integer_basis[q] = row;
@@ -328,31 +337,31 @@ struct Case {
               break;
             }
             long long a = integer_basis[q][q], b = row[q], g = 0;
-            for (int j = q; j < 13; ++j) {
+            for (int j = q; j < STATE_COUNT; ++j) {
               row[j] = a * row[j] - b * integer_basis[q][j];
               g = gcd(g, abs(row[j]));
             }
             if (g)
-              for (int j = q; j < 13; ++j)
+              for (int j = q; j < STATE_COUNT; ++j)
                 row[j] /= g;
           }
         continue;
       }
-      array<int, 13> row{};
-      for (int q = 0; q < 13; ++q)
+      array<int, STATE_COUNT> row{};
+      for (int q = 0; q < STATE_COUNT; ++q)
         row[q] = mask >> q & 1;
-      for (int q = 0; q < 13; ++q)
+      for (int q = 0; q < STATE_COUNT; ++q)
         if (row[q]) {
           if (!basis[q][q]) {
             int inv = power(row[q], P - 2);
-            for (int j = q; j < 13; ++j)
+            for (int j = q; j < STATE_COUNT; ++j)
               basis[q][j] = int(1LL * row[j] * inv % P);
             if (++rank >= need)
               return true;
             break;
           }
           int t = row[q];
-          for (int j = q; j < 13; ++j)
+          for (int j = q; j < STATE_COUNT; ++j)
             row[j] = int((row[j] - 1LL * t * basis[q][j] % P + P) % P);
         }
     }
@@ -384,19 +393,19 @@ struct Case {
     // If the full literal family has exactly its required rank many rows,
     // every row must occur in the actual short orbit that spans this space.
     for (int level = 4; level <= depth(); ++level) {
-      const auto &family = family_cache.at({9, level}).first;
-      if (int(family.size()) != 12 - level)
+      const auto &family = family_cache.at({SAFE_SIZE, level}).first;
+      if (int(family.size()) != STATE_COUNT - 1 - level)
         continue;
       for (unsigned mask : family) {
-        for (int steps = 1; steps <= (fixed() >= 12 ? level : 1); ++steps) {
+        for (int steps = 1; steps <= (fixed() >= STATE_COUNT - 1 ? level : 1); ++steps) {
           unsigned out = 0;
-          for (int q = 0; q < 13; ++q)
+          for (int q = 0; q < STATE_COUNT; ++q)
             if (mask >> q & 1)
               out |= 1U << (q < int(f.size()) ? f[q] : q);
-          if (__builtin_popcount(out) != 9 || !(out >> core.n & 1))
+          if (__builtin_popcount(out) != SAFE_SIZE || !(out >> core.n & 1))
             return false;
           if (level - steps >= 3 &&
-              !family_cache.at({9, level - steps}).second[out])
+              !family_cache.at({SAFE_SIZE, level - steps}).second[out])
             return false;
           mask = out;
         }
@@ -492,16 +501,16 @@ struct Case {
     return true;
   }
   void power_edges(const vector<int> &f, Action &action) const {
-    if (fixed() < 12)
+    if (fixed() < STATE_COUNT - 1)
       return;
     for (int level = 4; level <= depth(); ++level) {
-      const auto &family = family_cache.at({9, level}).first;
-      if (int(family.size()) != 12 - level)
+      const auto &family = family_cache.at({SAFE_SIZE, level}).first;
+      if (int(family.size()) != STATE_COUNT - 1 - level)
         continue;
       for (unsigned mask : family)
         for (int step = 1; step < level; ++step) {
           unsigned out = 0;
-          for (int q = 0; q < 13; ++q)
+          for (int q = 0; q < STATE_COUNT; ++q)
             if (mask >> q & 1)
               out |= 1U << (q < int(f.size()) ? f[q] : q);
           mask = out;
@@ -524,7 +533,7 @@ struct Case {
     int n = core.n;
     map<Action, Mark> signatures;
     for (int k = 0; k <= min(fixed() - 1 - __builtin_popcount(unsigned(B | C)),
-                             13 - fixed());
+                             STATE_COUNT - fixed());
          ++k) {
       int N = fixed() + k;
       vector<int> f(N, -1);
@@ -556,10 +565,10 @@ struct Case {
                     assert(__builtin_popcount(outputs) >= N - 2);
                     if (!fourth_allowed(f))
                       return;
-                    if (!safe_rank(f, 10, 3) || !safe_rank(f, 9, 8))
+                    if (!safe_rank(f, STATE_COUNT - 3, 3) || !safe_rank(f, SAFE_SIZE, SAFE_DEPTH - 3))
                       return;
                     for (int level = 4; level <= depth(); ++level)
-                      if (!safe_rank(f, 9, 11 - level, false, level))
+                      if (!safe_rank(f, SAFE_SIZE, SAFE_DEPTH - level, false, level))
                         return;
                     ++domains;
                     raw_maps.push_back(canonical_map(f));
@@ -671,7 +680,7 @@ struct Case {
     for (int block = edges.size(); block < int(possible_blocks.size()); ++block)
       matchings.push_back({block});
     for (int k = 0; k <= min(fixed() - 1 - __builtin_popcount(unsigned(B | C)),
-                             13 - fixed());
+                             STATE_COUNT - fixed());
          ++k) {
       int N = fixed() + k;
       for (const auto &matching : matchings) {
@@ -738,10 +747,10 @@ struct Case {
                       return;
                   if (!fourth_allowed(f))
                     return;
-                  if (!safe_rank(f, 10, 3, true) || !safe_rank(f, 9, 8, true))
+                  if (!safe_rank(f, STATE_COUNT - 3, 3, true) || !safe_rank(f, SAFE_SIZE, SAFE_DEPTH - 3, true))
                     return;
                   for (int level = 4; level <= depth(); ++level)
-                    if (!safe_rank(f, 9, 11 - level, true, level))
+                    if (!safe_rank(f, SAFE_SIZE, SAFE_DEPTH - level, true, level))
                       return;
                   ++kernel_domains;
                   literal_maps.push_back(canonical_map(f));
@@ -888,7 +897,7 @@ struct Case {
     do {
       vector<int> pool;
       unsigned supplies = 0, flags = 0;
-      array<unsigned, 14> graph{};
+      array<unsigned, STATE_COUNT + 1> graph{};
       for (size_t j = 0; j < actions.size(); ++j) {
         const Action &a = actions[j];
         bool allowed = true;
@@ -1006,12 +1015,12 @@ struct Case {
            word_max_groups = 0;
   vector<vector<int>> word_witness;
   bool joint_words(const vector<int> &e) {
-    if (fixed() < 12)
+    if (fixed() < STATE_COUNT - 1)
       return true;
     vector<pair<unsigned, int>> seeds;
     for (int level = 4; level <= depth(); ++level) {
-      const auto &family = family_cache.at({9, level}).first;
-      if (int(family.size()) == 12 - level)
+      const auto &family = family_cache.at({SAFE_SIZE, level}).first;
+      if (int(family.size()) == STATE_COUNT - 1 - level)
         for (unsigned mask : family)
           seeds.push_back({mask, level});
     }
@@ -1022,12 +1031,12 @@ struct Case {
     for (size_t j = 0; j < raw_maps.size(); ++j)
       if (compatible(raw_profiles[j], e)) {
         auto f = raw_maps[j];
-        for (int q = f.size(); q < 13; ++q)
+        for (int q = f.size(); q < STATE_COUNT; ++q)
           f.push_back(q);
         unsigned flags = 0;
         for (int i = 0; i < depth(); ++i) {
           unsigned pre = 0;
-          for (int q = 0; q < 13; ++q)
+          for (int q = 0; q < STATE_COUNT; ++q)
             if (fiber_at(i) >> f[q] & 1)
               pre |= 1U << q;
           if (pre == unsigned(fiber_at(i + 1)))
@@ -1042,7 +1051,7 @@ struct Case {
         alphabet.push_back(move(f));
         supplies.push_back(flags);
       }
-    auto answer = short_word_clique(alphabet, supplies,
+    auto answer = short_word_clique<STATE_COUNT>(alphabet, supplies,
                                     (1U << (depth() + edges.size())) - 1,
                                     core.n, seeds, edges, e);
     word_max_groups = max(word_max_groups, uint64_t(answer.groups));
@@ -1056,26 +1065,26 @@ struct Case {
     return answer.possible;
   }
   void terminal_probe() const {
-    if (depth() != 11)
+    if (depth() != SAFE_DEPTH)
       return;
-    if (fixed() < 12) {
+    if (fixed() < STATE_COUNT - 1) {
       cout << "TERMINAL_UNRESOLVED fixed=" << fixed() << endl;
       return;
     }
     auto alphabet = word_witness;
     assert(!alphabet.empty());
-    const auto &initial = family_cache.at({9, 11}).first;
+    const auto &initial = family_cache.at({SAFE_SIZE, SAFE_DEPTH}).first;
     assert(initial.size() == 1);
     unsigned S = initial[0];
     auto image = [&](unsigned mask, const vector<int> &f) {
       unsigned out = 0;
-      for (int q = 0; q < 13; ++q)
+      for (int q = 0; q < STATE_COUNT; ++q)
         if (mask >> q & 1)
           out |= 1U << f[q];
       return out;
     };
     auto search = [&](unsigned start, int mode) {
-      vector<int> distance(8192, -1);
+      vector<int> distance(MASK_COUNT, -1);
       queue<unsigned> todo;
       todo.push(start);
       distance[start] = 0;
@@ -1083,7 +1092,7 @@ struct Case {
         unsigned mask = todo.front();
         todo.pop();
         bool goal =
-            mode == 0 ? (__builtin_popcount(mask) < 9 || !(mask >> core.n & 1))
+            mode == 0 ? (__builtin_popcount(mask) < SAFE_SIZE || !(mask >> core.n & 1))
                       : (mode == 1 ? mask == S : __builtin_popcount(mask) == 1);
         if (goal)
           return distance[mask];
@@ -1099,7 +1108,7 @@ struct Case {
     };
     cout << "TERMINAL T=" << core.id << " S=" << S
          << " letters=" << alphabet.size() << " ac=" << search(S, 0)
-         << " reach=" << search(8191, 1) << " reset=" << search(8191, 2)
+         << " reach=" << search(MASK_COUNT - 1, 1) << " reset=" << search(MASK_COUNT - 1, 2)
          << endl;
     for (const auto &f : alphabet) {
       cout << "CANDIDATE_LETTER";
@@ -1145,7 +1154,7 @@ struct Case {
             normalized |= 1 << (fixed() + outside);
             ++outside;
           }
-        assert(outside <= 13 - fixed());
+        assert(outside <= STATE_COUNT - fixed());
         extensions.insert(normalized);
       }
     // H_(k+1) strictly extends H_k, so at least one of these actual preimages
@@ -1186,7 +1195,7 @@ struct Case {
   }
 };
 void controls() {
-  short_word_clique_controls();
+  short_word_clique_controls<STATE_COUNT>();
   for (int divisor = 2; divisor * divisor <= 65521; ++divisor)
     assert(65521 % divisor);
   // A synthetic three-edge chain is accepted, while a missing final supplier
@@ -1200,14 +1209,14 @@ void controls() {
   assert(!Case::compatible(a[0], {1, 2, 3}));
   Case trial(cores[3], 3, 18, 9);
   assert(trial.prepare());
-  vector<int> identity(13);
+  vector<int> identity(STATE_COUNT);
   iota(identity.begin(), identity.end(), 0);
-  vector<int> collapse(13, 0);
+  vector<int> collapse(STATE_COUNT, 0);
   for (bool exact : {false, true}) {
-    assert(trial.safe_rank(identity, 9, 8, exact));
-    assert(trial.safe_rank(identity, 10, 3, exact));
-    assert(!trial.safe_rank(collapse, 9, 8, exact));
-    assert(!trial.safe_rank(collapse, 10, 3, exact));
+    assert(trial.safe_rank(identity, SAFE_SIZE, SAFE_DEPTH - 3, exact));
+    assert(trial.safe_rank(identity, STATE_COUNT - 3, 3, exact));
+    assert(!trial.safe_rank(collapse, SAFE_SIZE, SAFE_DEPTH - 3, exact));
+    assert(!trial.safe_rank(collapse, STATE_COUNT - 3, 3, exact));
   }
   // Exhaust every graph on six vertices: branch-on-an-uncovered-edge is
   // checked against literal three-subset covers. Also cover an eight-point
@@ -1283,7 +1292,7 @@ int main(int argc, char **argv) {
   if (!explicit_flag.empty() &&
       (only_core < 0 || any_of(
                             explicit_flag.begin(), explicit_flag.end(),
-                            [](int m) { return m < 0 || m >= 8192; })))
+                            [](int m) { return m < 0 || m >= MASK_COUNT; })))
     return 2;
   struct Job {
     Core core;
@@ -1410,6 +1419,8 @@ int main(int argc, char **argv) {
       }
     }
   }
+  cout << "PARAMETERS n=" << STATE_COUNT << " s=" << SAFE_SIZE
+       << " target=" << STATE_COUNT - 1 << " represented_depth=11" << endl;
   cout << "INITIAL choices=" << initial_choices
        << " symmetry_kept=" << canonical_choices
        << " family_reject=" << canonical_choices - int(jobs.size())
