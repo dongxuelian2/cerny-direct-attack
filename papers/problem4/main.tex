@@ -17,7 +17,7 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-Let $\ac(S,A)$ be the minimum word length omitting a state of $\varnothing\ne A\subsetneq S$ or compressing $S$. We prove sharpness of Szyku\l a's bound $n-|A|$ on the first two cardinality faces (proper $S$ on the second) and at every $n\ge2|S|-|A|-1$ for larger gaps. All witnesses are binary, strongly connected and synchronizing, with $S$ a reachable image. Put $m=n-|S|$ and $q=n-|A|$. Both binary and unrestricted maxima equal one for $m=0$, $\min\{q,3m\}$ for $1\le m\le3$, and $q$ for $m\ge4$, $q\le3m-1$. The codimension-three upper uses a computer-assisted structural proof and refutes $\min\{q,\binom{m+2}{2}\}$ at infinitely many parameters. Independently checked witnesses determine every parameter through $n=12$. We also determine the first codimension-four boundary point: both maxima at $(13,9,1)$ equal eleven, by a complete arbitrary-alphabet computer-assisted proof. The other remaining parameters are unresolved; this is a partial answer to Szyku\l a's 2026 Open Problem~4.
+Let $\ac(S,A)$ be the minimum word length omitting a state of $\varnothing\ne A\subsetneq S$ or compressing $S$. We prove sharpness of Szyku\l a's bound $n-|A|$ on the first two cardinality faces (proper $S$ on the second) and at every $n\ge2|S|-|A|-1$ for larger gaps. All witnesses are binary, strongly connected and synchronizing, with $S$ a reachable image. Put $m=n-|S|$ and $q=n-|A|$. Both binary and unrestricted maxima equal one for $m=0$, $\min\{q,3m\}$ for $1\le m\le3$, and $q$ for $m\ge4$, $q\le3m-1$. The codimension-three upper uses a computer-assisted structural proof and refutes $\min\{q,\binom{m+2}{2}\}$ at infinitely many parameters. Independently checked witnesses determine every parameter through $n=12$. We also determine the infinite codimension-four boundary $m=4,q=12$: both maxima equal eleven for every $r\ge1$, by a protected-block contraction and the complete thirteen-state arbitrary-alphabet computer-assisted proof. The other remaining parameters are unresolved; this is a partial answer to Szyku\l a's 2026 Open Problem~4.
 \end{abstract}
 
 \section{Statement and preliminaries}
@@ -864,13 +864,13 @@ Put $m=n-s$ and $q=n-r$. For all $1\le r<s\le n$,
  1&m=0,\\
  \min\{q,3m\}&1\le m\le3,\\
  q&m\ge4,\ q\le3m-1,\\
- 11&(n,s,r)=(13,9,1).
+ 11&m=4,\ q=12.
  \end{cases}
 \]
-Apart from $(13,9,1)$, the region $m\ge4$, $q\ge3m$ is not determined here.
+Apart from the new $m=4,q=12$ strip, the region $m\ge4$, $q\ge3m$ is not determined here.
 \end{theorem}
 \begin{proof}
-The additional point is Theorem~\ref{thm:eleven}. The case $m=0$ was proved above, and $m=3$ is Theorem~\ref{thm:binary}.
+The new strip follows from Theorem~\ref{thm:protected-strip} below; its first point is Theorem~\ref{thm:eleven}. The case $m=0$ was proved above, and $m=3$ is Theorem~\ref{thm:binary}.
 For $m\ge2$ and $q\le2m+1$, gaps one and two use the first two faces;
 larger gaps satisfy $n\ge2s-r-1$ and use Proposition~\ref{prop:gaps}.
 Together with the two-block band this gives $q$ throughout $m\ge3$, $q\le3m-1$.
@@ -914,6 +914,237 @@ The word $c=kafak$ sends $w,v,u,z$ to $w$ and fixes $T\setminus\{z\}$.
 Each $bc$ removes the predecessor of $z$ in the remaining cyclic interval,
 and $wbc=w$. Therefore $c(bc)^{L-1}$ resets $Q$.
 The cases $q\le5$ were covered above, completing the proof.
+\end{proof}
+
+
+\section{An infinite codimension-four boundary via protected-block contraction}
+\begin{theorem}[Computer-assisted transfer]\label{thm:protected-strip}
+For every integer $r\ge1$,
+\[
+ \Max_{\rm bin}(r+12,r+8,r)=\Max(r+12,r+8,r)=11.
+\]
+The upper bound applies even if $S$ is not required to be a reachable image.
+Its only computational input is the complete necessary-condition exclusion used
+in Theorem~\ref{thm:eleven}; the transfer below is a paper argument.
+\end{theorem}
+
+\begin{lemma}[Common protected fiber and contraction]\label{lem:protected-contraction}
+Let $\mathcal D$ be strongly connected and synchronizing. Suppose
+$A\subsetneq S\subseteq Q$ with $r=|A|\ge1$, $m=|Q\setminus S|$,
+$q=|Q\setminus A|$, $d=|S\setminus A|=q-m\ge3$, and
+$\ac(S,A)=q$. There is a strongly connected $(q+1)$-state
+automaton $\bar{\mathcal D}$ with a distinguished state $*$ and
+$\bar S$ of size $d+1$, such that
+\[
+ \ac_{\bar{\mathcal D}}(\bar S,\{*\})=q,\qquad
+ \operatorname{rank}f=\operatorname{rank}\bar f+r-1
+ \quad\text{for each original letter }f.
+\]
+For $h\le q-m-1$, the short-pair graph of $\bar{\mathcal D}$ is obtained
+from that of $\mathcal D$ by deleting $A$, retaining its graph on
+$Q\setminus A$, and adjoining the isolated vertex $*$.
+Neither synchronization nor image reachability of $\bar S$ is asserted.
+\end{lemma}
+\begin{proof}
+Put $U=Q\setminus A$. For $|w|\le q-1$, every $Sw$ has
+size $r+d$ and contains $A$, so it is $A\cup T_w$ with
+$T_w\subseteq U$, $|T_w|=d$. Every state can be reached
+from $S$ in at most $m$ steps: a shortest path after leaving
+$S$ visits no outside state twice. Hence any protected state and
+any different state are not mergeable within $q-m-1$ steps;
+otherwise an arrival prefix followed by the merging word would
+compress $S$ in at most $q-1$ steps. Every letter is therefore
+injective on $A$, and no input in $A$ may share its output with
+another input.
+
+The trajectory spaces $V_i=\langle\chi_SD_w:|w|\le i\rangle$
+strictly increase until they reach the full row space: a plateau
+is invariant under every letter, while synchronization followed
+by paths to each state supplies every coordinate row. On the
+other hand the safe rows through depth $q-1$ lie in the
+$q$-dimensional space where all $r$ protected coordinates are
+equal to the sum of the $q$ unprotected coordinates divided by $d$.
+Consequently
+\[
+ \dim V_i=i+1\quad(0\le i\le q-1).
+\]
+Deleting the protected coordinates is injective on this space, so
+the $\chi_{T_w}$ with $|w|\le q-2$ span dimension $q-1$
+inside $\mathbb R^U$.
+
+If a letter $f$ has a protected output $a_f$ not supplied by $A$,
+its full inverse fiber $B_f=f^{-1}(a_f)$ is a nonempty subset of $U$.
+For all $|w|\le q-2$, safety of $wf$ forces $|T_w\cap B_f|=1$.
+Thus $d\chi_{B_f}-\mathbf1_U$ lies in the common one-dimensional
+orthogonal complement of these $T_w$ rows. Every such $B_f$ is
+nonempty and proper. Two vectors taking the respective values
+$d-1$ and $-1$ on their sets and complements can be proportional
+only when their sets agree, unless $d=2$: negative proportionality
+between distinct sets would imply $(d-1)^2=1$. All the fibers
+$B_f$ therefore equal a single $B\subsetneq U$. Since a letter
+cannot have two distinct protected outputs with the same nonempty
+fiber, at most one protected output is missing from the $A$ inputs.
+
+Hence each letter either permutes $A$ and maps $U$ into $U$, or
+maps exactly one protected input to some $z_f\in U$, maps the
+remaining protected inputs bijectively to $A\setminus\{a_f\}$,
+maps $B$ to $a_f$, and maps $U\setminus B$ into $U$.
+Set $\bar Q=U\cup\{*\}$ and
+$\bar S=(S\setminus A)\cup\{*\}$. For the first kind,
+fix $*$ and retain all actions on $U$. For the second,
+send $*$ to $z_f$, send every point of $B$ to $*$, and
+retain all other actions on $U$.
+
+For an original safe set $A\cup T$ and its counterpart
+$\{*\}\cup T$, the two next images remain safe simultaneously:
+for the second kind both require $|B\cap T|=1$, injectivity
+on $T\setminus B$, and $z_f\notin (T\setminus B)f$.
+The first kind is immediate. Induction through the first
+failure gives equality of the avoid-or-compress lengths.
+The new letter graph is the graph obtained by identifying
+all states of $A$, with at most some loops removed, hence is
+strongly connected. Counting distinct letter outputs gives
+$\operatorname{rank}f=\operatorname{rank}\bar f+r-1$.
+
+Let $L=q-m-1$. All protected vertices are isolated in
+$P_L(\mathcal D)$, by the arrival argument above.
+The same argument, applied to $\bar S$ (whose complement
+still has $m$ states), shows that $*$ is isolated in
+$P_L(\bar{\mathcal D})$.
+For two points of $U$, a merging word of length at most $L$
+cannot enter the protected block before the final collision:
+an intermediate pair with one protected point could not
+merge within the remaining length. The same holds for $*$.
+The two trajectories thus use identical actions within $U$
+until the final letter. Their final collision is either at a
+common point of $U$ or at $a_f$ in the old automaton and $*$
+in the new one. This proves the short-pair graph identity.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:protected-strip}]
+Suppose for contradiction that a strongly connected synchronizing
+automaton with $n=r+12$, $s=r+8$ and $|A|=r$ has
+$\ac(S,A)=12$. Apply Lemma~\ref{lem:protected-contraction}.
+The resulting automaton has thirteen states, a nine-state initial
+set, a singleton protected state, and avoid-or-compress length twelve.
+It is strongly connected; it need not be synchronizing.
+
+We verify precisely the necessary conditions of the existing
+thirteen-state finite rejection without assuming synchronization
+of the contracted automaton. The original, synchronizing
+automaton has $c(S)\ge12$ and codimension four, so the uniform
+sixth-layer theorem and the short-pair graph arguments of
+Theorem~\ref{thm:eleven} give $\tau(P_6)=3$ and all stated
+$P_1$, $P_3$, and $P_6$ core restrictions. The graph identity
+in Lemma~\ref{lem:protected-contraction}, applied with $L=7$,
+transfers these restrictions, including every classified core,
+to the contracted automaton. In particular it has a
+$P_6$-independent ten-state set, and all letters have rank
+at least eleven, using the original rank restriction and
+the rank formula of the lemma.
+
+The old short safe rows have identical protected coordinates.
+Deleting $r-1$ repeated protected coordinates sends them
+linearly and injectively to the new safe rows, so for the
+contracted trajectory spaces,
+\[
+ \dim\bar V_i=i+1\qquad(0\le i\le11).
+\]
+The hyperplane $\bar V_{11}$ is $h^\perp$ with
+$h=9e_*-\mathbf1$. If $\bar V_{12}=\bar V_{11}$, it is
+invariant under every letter and $D_fh=\lambda_fh$.
+Both $8$ and $-1$ occur in $h$ and each coordinate of
+$D_fh$ is one of those values; hence $\lambda_f=1$.
+Then $f^{-1}(*)=\{*\}$ for every letter, contradicting
+strong connectivity. Thus $\bar V_{12}=\mathbb R^{13}$.
+
+Let $H_i=\langle D_wh:|w|\le i\rangle$.
+Eleven-step safety implies $H_i\subseteq\bar V_{11-i}^\perp$.
+If any $H_i$ plateaued, it would become letter-invariant,
+forcing $\chi_{\bar S}D_wh=0$ for every word, contrary to
+$\bar V_{12}=\mathbb R^{13}$.
+Comparison of dimensions now yields
+\[
+ H_i=\bar V_{11-i}^\perp,\qquad
+ \dim H_i=i+1\quad(0\le i\le11).
+\]
+These are the full Boolean-fiber flag and the nine-set
+rank conditions of the finite rejection.
+
+It remains to justify the auxiliary rank-three condition
+for the $P_3$-independent ten-set family, ordinarily deduced
+using synchronization. Take a ten-state $P_6$-independent
+set $R$, and let $W_i=\langle\chi_RD_w:|w|\le i\rangle$.
+All three-step images of $R$ have ten states and are
+$P_3$-independent. We claim $\dim W_2\ge3$.
+Otherwise strong connectivity forces $\dim W_1=2$ and
+$W_1=W_2$ is letter-invariant. Choose distinct ten-sets
+$R$ and $T=Rg$. Every ten-set characteristic row on the
+affine line through $\chi_R,\chi_T$ is one of these two rows.
+So each letter maps each of $R,T$ into $\{R,T\}$.
+The union $R\cup T$ is invariant, hence equals the full
+thirteen-state set; therefore $|R\cap T|=7$.
+A letter mapping both to the same ten-set would have rank
+at most ten, impossible. All letters instead permute
+$R,T$ and are injective on each, hence preserve the
+nonempty proper intersection $R\cap T$; this also
+contradicts strong connectivity.
+Therefore $\dim W_2\ge3$. For every letter $f$,
+the $P_3$-independent ten-sets mapped injectively back into
+that family include the three-dimensional span of
+$\{Rw:|w|\le2\}$, giving the needed rank-three test.
+
+All other finite-rejection filters are necessary one-letter
+actions, graph/short-pair distance constraints, actual-fiber
+suppliers, strong connectivity, or budgeted short-word
+safety. Each has just been transferred or follows from
+the constructed automaton itself. In particular the
+algorithm enumerates all first and second inverse fibers
+of sizes one through three, includes $K_4$ and all
+cover-number-two and -three cores, and imposes no alphabet
+size restriction. Its complete zero-survivor result
+therefore excludes this contracted candidate. This
+contradicts the assumed value twelve.
+
+The lower bound is the uniform binary two-block construction
+of Theorem~\ref{thm:two-block} with $t=3,p=r+5$:
+$n=r+12$, $s=r+8$ and
+$\ac(S,A)=\min\{12,3t+2\}=11$.
+Its alphabet is binary, it is strongly connected and
+synchronizing, and $S$ is a reachable image. Thus
+both maxima equal eleven.
+\end{proof}
+
+\begin{corollary}[Eleven-step intersection and the next boundary]
+\label{cor:protected-intersection}
+If a strongly connected synchronizing automaton has
+$|S|=n-4$, $c(S)\ge12$ and $n\ge13$, then
+\[
+ \left|\bigcap_{|w|\le11}Sw\right|\le n-13.
+\]
+In particular, if $n=r+13$, $|S|=r+9$, $|A|=r\ge1$,
+and $\ac(S,A)=13$, then this intersection is exactly $A$,
+and the common first nontrivial protected inverse fiber
+$B\subseteq Q\setminus A$ has $|B|\in\{2,3\}$.
+This is a necessary condition, not an upper bound of twelve
+for the $q=13$ boundary.
+\end{corollary}
+\begin{proof}
+If the intersection contained $n-12$ states,
+choosing these as a protected subset would make every word
+of length at most eleven safe, contradicting
+Theorem~\ref{thm:protected-strip}. In the second setting
+all those images contain $A$, whose size is $n-13$,
+so equality with $A$ follows. The one-dimensional
+orthogonal-complement argument from Lemma~\ref{lem:protected-contraction}
+provides the common nontrivial first inverse fiber
+$B\subseteq Q\setminus A$. If $B=\{b\}$, take a letter
+whose protected output has this entire inverse fiber.
+Every word $u$ with $|u|\le11$ must have $b\in Su$,
+since $uf$ has length at most twelve and is safe.
+This contradicts $b\notin A$ and the intersection equality.
+The original rank-at-least-$n-2$ restriction bounds the
+size of a nontrivial fiber by three.
 \end{proof}
 
 \paragraph{Reproducibility and scope.}
