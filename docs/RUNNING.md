@@ -43,10 +43,21 @@ python3 run.py script scripts/problem4/upper_bound/problem4_p3_entry.cpp --threa
 python3 run.py script scripts/problem4/upper_bound/problem4_p3_entry.cpp --two-three --threads 4
 python3 run.py script scripts/problem4/upper_bound/problem4_p3_entry.cpp --overlap-two-two --threads 4
 python3 run.py script scripts/problem4/upper_bound/full_fiber_flags.cpp --threads 4
+python3 run.py script scripts/problem4/upper_bound/odd_cycle_joint_distances.cpp --cycle 9 --threads 4
+python3 run.py script scripts/problem4/upper_bound/check_odd_cycle_joint.py --cycle 9 --threads 4
 python3 run.py script scripts/direct_attack/check_native_policy.py
 python3 run.py script scripts/direct_attack/avoid_compress_all_gaps.py
 python3 run.py script scripts/direct_attack/check_avoid_compress_all_gaps.py
 ```
+
+`odd_cycle_joint_distances.cpp` rebuilds the normalized one-letter domain and
+exhausts compatible subset/pair distances for the C9 branch. `--cycle 7`
+reproduces the earlier C7 exclusion; `--injections` selects the independent
+omitted-output/permutation traversal. The Python check compares both complete
+retained map sets, reconstructs their signatures, and reverses both distance
+search orders. It invokes C++17 for the large transformation enumeration and
+requires no solver. These commands test the branch specified in
+[the C9 reduction](../PROOF.md#problem4-c9-eighth-layer), not every m=5 graph.
 
 `problem4_p3_shapes.py` 核对 P3 二点覆盖的十三种核心和三点覆盖的十二种核心。
 `problem4_p2_rank.cpp` 核对至多四条边、覆盖数为三的图的最大独立集行秩界，
