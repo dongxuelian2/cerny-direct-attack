@@ -8,7 +8,7 @@ q=13 的整条边界现也确定为十一：$F_{\rm bin}(r+13,r+9,r)=F(r+13,r+9,
 十二步候选的全部早、晚分裂及不再增长域均已完整排除，见[计算辅助证明与覆盖](#problem4-q13-exact-eleven)。
 [一般余量收缩](#problem4-protected-slack-collapse)进一步控制任意参数的保护集与入口数；Problem 4 的完整精确界仍未解决。
 
-新增[全圈长纸面界](#problem4-odd-cycle-all-lengths-bound)、[m≥15 的全图形覆盖加强](#problem4-large-codimension-cover-improvement)和[无界加性改进](#problem4-unbounded-cover-deficit)。后者依赖已有有限基定理，一般阈值已有极粗的四层指数塔充分界。[余维四较早层](#problem4-four-cover-third-layer)与[余维五全部层](#problem4-five-cover-late-layers)则是计算辅助结果。它们均未解决剩余全参数精确值。
+新增[全圈长纸面界](#problem4-odd-cycle-all-lengths-bound)、[m≥15 的全图形覆盖加强](#problem4-large-codimension-cover-improvement)和[无界加性改进](#problem4-unbounded-cover-deficit)。后者依赖已有有限基定理，一般阈值已有极粗的三层指数塔充分界。[余维四较早层](#problem4-four-cover-third-layer)与[余维五全部层](#problem4-five-cover-late-layers)则是计算辅助结果。它们均未解决剩余全参数精确值。
 
 阅读顺序：先读第 1 章的问题与状态，再读第 2–4 章的构造、上界与完整排除；第 5 章是条件分支，第 6–9 章是其他研究方向，第 10 章保留探索过程。各节沿用局部符号；进入新节须重新核对假设。
 
@@ -48,7 +48,7 @@ q=13 的整条边界现也确定为十一：$F_{\rm bin}(r+13,r+9,r)=F(r+13,r+9,
 | 一般参数的近等号候选 | 目标 L≥m+3，k=q−L 时可缩到至多 k+1 个保护点；外部入口至多 2^k，双空间额外增长总数至多 k | [一般余量收缩](#problem4-protected-slack-collapse) |
 | 全部奇圈分支 | m≥4 时 P_h=C_(2m−1) 加孤点 ⇒ c(S)≤h+m+1；纸面证明 | [完整分支推导](#problem4-odd-cycle-all-lengths-bound) |
 | 大余维、全部图形的条件覆盖界 | n≥2m、m≥15 时 τ(P_h)≥m ⇒ c(S)≤h+2m−3；纸面证明 | [显式阈值](#problem4-large-codimension-cover-improvement) |
-| 覆盖界的定量渐近改进 | n≥2m，每个固定 a 在显式四层指数塔阈值后有上界 h+2m−a−1；无匹配下界 | [有限基与真实像族](#problem4-unbounded-cover-deficit) |
+| 覆盖界的定量渐近改进 | n≥2m，每个固定 a 在显式三层指数塔阈值后有上界 h+2m−a−1；无匹配下界 | [有限基与真实像族](#problem4-unbounded-cover-deficit) |
 | 余维四短对图 | 强连通同步、n≥8、h≥3 时 τ(P_h)≥4 ⇒ c(S)≤h+5；h=2 有实际反例 | [计算辅助证明及反例](#problem4-four-cover-third-layer) |
 | 余维五短对图 | 强连通同步、n≥10、全部 h≥1，τ(P_h)≥5 ⇒ c(S)≤h+7；计算辅助证明 | [全部二十七核心](#problem4-five-cover-late-layers) |
 | 剩余精确极值 | m=4,q≥14 仍开放；m=5,q=15 仍在 [14,15] | 以上条件覆盖界没有消去其余图形或提供匹配构造 |
@@ -19492,55 +19492,54 @@ K=K(a)，使第二步产生的所有基图 B 都能取至多 K 个顶点。定�
 遗漏 Q\E 的可能。至少一个高 L_v 指派类留在 Q\E 中，所以 |Q\E|≥2；
 但 (CIE) 在长度 T(|E|)≤T(e_i)=T_i 内就会迫使遗漏，矛盾。
 
-K 本身也可以给出完全显式但很大的上界。以下只是从已有有限基证明
-提取常数，**不是本文新证明了 α-critical 有限基定理**。采用
-Doignon–Fiorini–Joret [第 4 节 Theorem 6 及 Claims 2–4](https://arxiv.org/pdf/0809.3724)
-的证明：令 A_1=1、A_k=3A_(k−1)+1，即 A_k=(3^k−1)/2；其论证给出
-缺陷 δ 的连通 α-critical 图的度至少三顶点数小于 d_(A_(δ+1))。
-这里 d_k 是使任意该阶有向图或其补图包含 k 点传递锦标赛的充分阶数。
-对有序点对的四种箭头型作四染色，普通四色 Ramsey 界给出
-d_k≤4^(4k)：单色团中正向、反向或双向箭头都含所需锦标赛，空箭头型
-则在补图中包含它。所用粗 Ramsey 界也由逐点选取、每步保留一个最大
-颜色邻域的标准鸽巢递推直接得到。
-
-因此对 1≤δ≤a 可统一取
+K 本身也可以给出完全显式但很大的上界。这里使用已有的定量有限基结果，
+**不是本文新证明了 α-critical 有限基定理或其图论常数**。
+Lipták–Lovász 的
+[*Facets with Fixed Defect of the Stable Set Polytope*，作者稿第 15 页、Theorem 11 证明后的定量段落](https://www.researchgate.net/publication/225143346_Facets_with_fixed_defect_of_the_stable_set_polytope)
+明确给出：缺陷 δ≥1 的连通 α-critical 图，度至少三的顶点数至多
+2^(8δ²+1)。该段从 Lovász–Plummer, *Matching Theory*, 第 455 页的
+圈秩上界 2^(8δ²) 得到这个结论。因此对全部 1≤δ≤a，可统一取
 
 \[
- C=4^{4A_{a+1}}.
+ C=2^{8a^2+1}.
 \]
 
-同一论文 Theorem 6 前的归约说明，除 K3 外，关于奇细分极小的连通
-基图若有 r 个度至少三顶点，则至多有 binom(r,2) 个二度顶点：二度
-顶点不相邻，且不同二度顶点不能有相同邻点对。缺陷零的分量另取 K2。
+Doignon–Fiorini–Joret [第 4 节 Theorem 6 前的归约](https://arxiv.org/pdf/0809.3724)
+说明，除 K3 外，关于奇细分极小的连通基图若有 r 个度至少三顶点，
+则至多有 binom(r,2) 个二度顶点：二度顶点不相邻，且不同二度顶点
+不能有相同邻点对。缺陷零的分量另取 K2。
 结合第二步的至多 a 个分量，故可取
 
 \[
- \boxed{K(a)=a(C+1)^2,\qquad C=4^{\,2(3^{a+1}-1)}.}\tag{UCD-K}
+ \boxed{K(a)=a(C+1)^2,\qquad C=2^{8a^2+1}.}\tag{UCD-K}
 \]
 
 (UCD-K) 与 (UCD-M) 给出只含整数加乘和指数的全参数阈值，不需要
 先枚举有限基。递推中的每一步只作二次增长，但步数 K 本身极大；
-这个上界仍极其粗糙，远弱于 a=2 时的显式阈值
-15；它的作用是消除一般存在性结论中的非定量步骤，不是可运行的搜索
-规模，也没有推出固定比例的线性改进。
+这个上界仍极其粗糙，远弱于 a=2 时的显式阈值 15；它的作用是消除
+一般存在性结论中的非定量步骤，不是可运行的搜索规模。
 
-还可把递推压成固定高度的指数塔。记 E_1(x)=2^x、E_(j+1)(x)=2^(E_j(x))，
+还可把递推压成三层指数塔。记 E_1(x)=2^x、E_(j+1)(x)=2^(E_j(x))，
 则上述选择满足
 
 \[
- \boxed{M(a)\le E_4(2a+6)\qquad(a\ge1).}\tag{UCD-Q}
+ \boxed{M(a)\le E_3(21a^2+2)\qquad(a\ge1).}\tag{UCD-Q}
 \]
 
-确实，K=a(C+1)^2≤2^(27·3^a)≤E_2(2a+5)，且 K≥16、a≤K。
-令 B=2(a+K)^2+2a+5≤16K²≤2^K。递推给出
-1+R_(i+1)≤B(1+R_i)^2，因此 1+R_K≤B^(2^K−1)。由此
-M(a)≤a+K·B^(2^K−1)+2≤E_2(3K)。最后
-3K≤3E_2(2a+5)≤E_2(2a+6)，得到 (UCD-Q)。
+确实，log_2 K≤log_2 a+16a²+4≤21a²，所以 K≤2^(21a²)；
+并且 K≥16、a≤K。令 B=2(a+K)^2+2a+5≤16K²≤2^K。
+递推给出 1+R_(i+1)≤B(1+R_i)^2，因此 1+R_K≤B^(2^K−1)。由此
+M(a)≤a+K·B^(2^K−1)+2≤E_2(3K)。最后 3K≤2^(21a²+2)，
+即得到 (UCD-Q)。
 
-所以当 m≥E_4(8) 时，可以显式取
-a=⌊(log_2 log_2 log_2 log_2 m−6)/2⌋≥1，再代入 (UCD)。
-这是一个至少按四重对数增长的加性改进，常数和起始阈值都已写明；
-仍然远非 2m 的固定比例改进或 Problem 4 的精确上界。
+所以当 m≥E_3(23) 时，可以显式取
+
+\[
+ a=\left\lfloor\sqrt{\frac{\log_2\log_2\log_2 m-2}{21}}\right\rfloor\ge1,
+\]
+
+再代入 (UCD)。这是一个至少按三重对数平方根增长的加性改进，常数和
+起始阈值都已写明；仍然远非 2m 的固定比例改进或 Problem 4 的精确上界。
 
 **一般删点引理的有限控制。** 同一 C++ 源码的 `--general` 模式遍历全部
 二至五点、无孤点的简单基图，并对每个基图枚举总细分顶点对数零至二
