@@ -72,7 +72,7 @@ struct Generator {
  // completion. No such assertion is made for iterated words on a completion.
  Pool generate(const std::vector<unsigned>& preimages,
                const std::function<bool(const std::vector<int>&)>& invariant_filter={},
-               unsigned forbidden_forced=0) const {
+               unsigned forbidden_forced=0,bool require_noncore_outputs=false) const {
    assert(preimages.size()==outputs.size());
    Pool pool;std::array<int,15> input_cell{};
    for(int q=0;q<n;++q) {
@@ -80,7 +80,7 @@ struct Generator {
      input_cell[q]=output_id[key];if(input_cell[q]<0) return pool;
    }
    for(const auto& blocks:partitions) {
-     std::array<int,15> block_cell{},owner{},remaining{},capacity{};
+     std::array<int,15> block_cell{},owner{},remaining{},capacity{},mandatory{};
      bool valid=true;
      for(size_t i=0;i<blocks.size();++i) {
        block_cell[i]=input_cell[__builtin_ctz(blocks[i])];
@@ -91,6 +91,8 @@ struct Generator {
      }
      for(size_t j=0;j<capacity.size();++j) {
        capacity[j]=__builtin_popcount(output_cells[j]);if(remaining[j]>capacity[j]) valid=false;
+       mandatory[j]=__builtin_popcount(output_cells[j]&~((1U<<c)-1));
+       if(require_noncore_outputs&&remaining[j]<mandatory[j]) valid=false;
      }
      if(!valid) continue;
      std::vector<int> order=explicit_outputs;
@@ -99,6 +101,8 @@ struct Generator {
      std::array<int,15> inverse;inverse.fill(-1);
      std::function<void(int,unsigned)> assign=[&](int at,unsigned used) {
        if(at==int(order.size())) {
+         if(require_noncore_outputs) for(int cell=0;cell<cells;++cell)
+           assert(remaining[cell]==capacity[cell]); // anonymous outputs are all noncore
          std::vector<unsigned> known=edges;
          for(unsigned edge:edges) {
            unsigned pre=0;
@@ -142,16 +146,18 @@ struct Generator {
          return;
        }
        int q=order[at],cell=output_cell[q];--capacity[cell];
+       if(require_noncore_outputs&&q>=c) --mandatory[cell];
        // Leave this explicit output missing, if all remaining blocks still fit.
-       if(remaining[cell]<=capacity[cell]) assign(at+1,used);
+       if((!require_noncore_outputs||q<c)&&remaining[cell]<=capacity[cell]) assign(at+1,used);
        for(size_t b=0;b<blocks.size();++b) if(!(used>>b&1)&&block_cell[b]==cell) {
          --remaining[cell];
-         if(remaining[cell]<=capacity[cell]) {
+         if(remaining[cell]<=capacity[cell]&&(!require_noncore_outputs||remaining[cell]>=mandatory[cell])) {
            block_output[b]=q;inverse[q]=b;assign(at+1,used|(1U<<b));inverse[q]=-1;block_output[b]=-2;
          }
          ++remaining[cell];
        }
        ++capacity[cell];
+       if(require_noncore_outputs&&q>=c) ++mandatory[cell];
      };
      assign(0,0);
    }
@@ -234,11 +240,13 @@ inline void controls() {
      ++patterns;std::vector<unsigned> pre;
      for(size_t j=0;j<sets.size();++j) pre.push_back((item.first>>(n*j))&((1U<<n)-1));
      assert(generator.generate(pre,filter)==item.second);
+     if(variant>=9) assert(generator.generate(pre,filter,0,true)==item.second);
      unsigned forbidden=(1U<<edges.size())-1;
      auto restricted=item.second;
      for(auto it=restricted.begin();it!=restricted.end();)
        if(unsigned(it->first.back())&forbidden) it=restricted.erase(it);else ++it;
      assert(generator.generate(pre,filter,forbidden)==restricted);
+     if(variant>=9) assert(generator.generate(pre,filter,forbidden,true)==restricted);
    }
  }
  std::cout<<"CONTROLS pair projection versus "<<maps<<" literal maps and "<<patterns<<" realized preimage patterns PASS\n";

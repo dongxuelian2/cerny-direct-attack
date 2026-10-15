@@ -143,6 +143,20 @@ domains. The [quotient criterion](../PROOF.md#problem4-expanded-reachability-quo
 has at most 1578 states for a single-protected q=13, m=4 candidate expanded to
 five protected states; passing terminal safety alone does not imply reachability.
 
+For the separate six-cycle/eight-channel lower-bound family:
+
+```sh
+python3 run.py script scripts/problem4/probe_even_ring_channel.cpp 2
+python3 run.py script scripts/problem4/probe_even_ring_channel.cpp 2 --all-permutations
+```
+
+The first argument is the thread count. The default domain has 29 channel
+permutations; the second command allows all 40320. The permutation index assigns
+disjoint work to threads. A reachable target stops the search with `TARGET_FOUND`;
+`COMPLETE` confirms exhaustion of the selected restricted domain, never all DFAs.
+The [family definition and results](../PROOF.md#problem4-even-ring-channel-family)
+state the exact coverage and the required independent witness check.
+
 For target twelve with two distinct first entrances:
 
 ```sh

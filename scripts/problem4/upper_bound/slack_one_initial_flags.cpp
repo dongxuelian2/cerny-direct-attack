@@ -622,7 +622,8 @@ PairSummary graded_pair_pool(Core core,const vector<unsigned>& edges,const vecto
  }
  for(const auto& pattern:patterns) {
    current_flags=pattern.flags;
-   for(const auto& item:generator.generate(pattern.pre,rank_filter,known_two)) {
+   for(const auto& item:generator.generate(pattern.pre,rank_filter,known_two,
+                                           periodic_isolates&&protected_count==1)) {
      if(unsigned(item.first.back())&known_two) continue;
      auto& mark=alphabet[item.first];mark.flags|=pattern.flags;
      for(int q=0;q<n;++q) mark.arrows[q]|=item.second[q];
