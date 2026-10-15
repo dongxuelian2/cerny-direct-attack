@@ -161,6 +161,16 @@ Permutation indices assign disjoint work to threads. `TARGET_FOUND` stops on
 a reachable target; `COMPLETE` confirms exhaustion of the selected domain.
 None of these results is a bound for all DFAs. See the
 [family definition, proof, and complete counts](../PROOF.md#problem4-even-ring-channel-family).
+The screening mode also accepts ring size, channel size, and target length:
+
+```sh
+python3 run.py script scripts/problem4/probe_even_ring_channel.cpp 1 --screen-powers 7 9 14
+```
+
+It checks words shorter than the target. The current implementation requires
+ring size at least four, channel size at least ring size minus two, total size
+at most twenty, and target at least the ring size. See the
+[general family and codimension-five result](../PROOF.md#problem4-ring-channel-higher-defect).
 
 For target twelve with two distinct first entrances:
 
@@ -257,6 +267,10 @@ automorphisms fixing its initial flag. Outside and protected labels remain
 fixed. Layer counts are weighted by orbit size, so they are comparable to the
 unreduced run; `representatives` reports the number actually checked.
 See [the prefix-orbit proof](../PROOF.md#problem4-prefix-automorphisms).
+`--canonical-isolates` additionally sorts the ordered membership columns of
+noncore external states. Its weights account for the existing first-appearance
+normalization and combine with the core-orbit weights. It can also be used
+without `--canonical-prefix`; see the [column-orbit proof](../PROOF.md#problem4-isolated-prefix-orbits).
 `--periodic-isolates` rejects letters omitting any output outside the P3 core,
 including at prefixes with anonymous labels. This property is invariant under
 the allowed output-label permutations; no anonymous map is iterated.

@@ -1,4 +1,4 @@
-// Restricted q=13, m=4 binary construction family; never a global upper bound.
+// Ring/channel construction family; default q=13, m=4. Never a global upper bound.
 // Reuse the existing independent pair/subset search implementation.
 #define main previous_probe_main
 #include "probe_odd_core.cpp"
@@ -15,11 +15,14 @@ struct RingChannelSearch:Search {
  int reachable_best=0;unsigned witness_s=0;int witness_A=0;
  vector<int> witness_a,witness_b;
  vector<ScreenCase> screen_survivors;
- uint64_t long_safe=0;
- RingChannelSearch():Search(14,4,12) {
+ uint64_t long_safe=0;bool retain_screen_cases=false;
+ int channel_size,ring_size;unsigned channel_mask;
+ RingChannelSearch(int P=8,int U=6,int T=12):Search(P+U,U-2,T),
+     channel_size(P),ring_size(U),channel_mask((1U<<P)-1) {
+   assert(T>=U);
    starts.clear();
-   for(int x=8;x<14;++x) for(int y=x+1;y<14;++y)
-     starts.push_back(255|(1U<<x)|(1U<<y));
+   for(int x=channel_size;x<n;++x) for(int y=x+1;y<n;++y)
+     starts.push_back(channel_mask|(1U<<x)|(1U<<y));
  }
  bool reachable(unsigned target) {
    ++reachable_tests;
@@ -50,10 +53,10 @@ struct RingChannelSearch:Search {
    auto literal_image=[&](unsigned T,const vector<int>& f) {
      unsigned image=0;for(int q=0;q<n;++q) if(T>>q&1) image|=1U<<f[q];return image;
    };
-   vector<int> nontrivial_a=a;for(int q=0;q<8;++q) nontrivial_a[q]=(q+1)%8;
+   vector<int> nontrivial_a=a;for(int q=0;q<channel_size;++q) nontrivial_a[q]=(q+1)%channel_size;
    for(unsigned S:starts) {
      ++screen_cases;unsigned marks=S,rotated=S;
-     for(int i=0;i<6&&marks;++i) {
+     for(int i=0;i<ring_size&&marks;++i) {
        unsigned image=rotated;
        for(int j=0;i+j<target&&marks;++j) {
          if(__builtin_popcount(image)<n-m) {marks=0;break;}
@@ -63,7 +66,7 @@ struct RingChannelSearch:Search {
      }
      // Independent pointwise words, with a different channel permutation.
      unsigned direct_marks=S,direct_prefix=S;
-     for(int i=0;i<6&&direct_marks;++i) {
+     for(int i=0;i<ring_size&&direct_marks;++i) {
        unsigned direct=direct_prefix;
        for(int j=0;i+j<target&&direct_marks;++j) {
          if(__builtin_popcount(direct)<n-m) {direct_marks=0;break;}
@@ -74,15 +77,15 @@ struct RingChannelSearch:Search {
      assert(marks==direct_marks);
      if(marks) {
        survives=true;++screen_surviving_sets;screen_surviving_marks+=__builtin_popcount(marks);
-       // Every external marked point is omitted by one of the first six rotations.
-       assert((marks&~255U)==0);
-       screen_survivors.push_back({b,ib,S,marks});
+       // Every external marked point is omitted by one of the first ring_size rotations.
+       assert((marks&~channel_mask)==0);
+       if(retain_screen_cases) screen_survivors.push_back({b,ib,S,marks});
        // After the first b, retain only guaranteed external occupied states.
        // Their subsequent a-motion is independent of the channel permutation.
        int shortest=99,first_a=-1,second_a=-1;unsigned initial=S;
-       for(int i=0;i<6;++i) {
-         unsigned external=ib[initial]&~255U;
-         for(int j=0;j<6&&i+j+2<target;++j) {
+       for(int i=0;i<ring_size;++i) {
+         unsigned external=ib[initial]&~channel_mask;
+         for(int j=0;j<ring_size&&i+j+2<target;++j) {
            if(__builtin_popcount(ib[external])<__builtin_popcount(external)&&i+j+2<shortest)
              {shortest=i+j+2;first_a=i;second_a=j;}
            external=ia[external];
@@ -93,7 +96,7 @@ struct RingChannelSearch:Search {
          ++screen_two_b;screen_two_b_longest=max(screen_two_b_longest,shortest);
          for(int variant=0;variant<3;++variant) {
            vector<int> test_a=a;
-           for(int q=0;q<8;++q) test_a[q]=variant==0?q:(variant==1?(q+1)%8:7-q);
+           for(int q=0;q<channel_size;++q) test_a[q]=variant==0?q:(variant==1?(q+1)%channel_size:channel_size-1-q);
            unsigned T=S;
            for(int step=0;step<first_a;++step) T=literal_image(T,test_a);
            T=literal_image(T,b);
@@ -121,7 +124,7 @@ struct RingChannelSearch:Search {
  void run_screened_permutation(const vector<int>& channel,const vector<ScreenCase>& cases) {
    iota(a.begin(),a.end(),0);
    copy(channel.begin(),channel.end(),a.begin());
-   for(int x=8;x<14;++x) a[x]=x==13?8:x+1;
+   for(int x=channel_size;x<n;++x) a[x]=x==n-1?channel_size:x+1;
    table(a,ia);
    for(const auto& item:cases) {
      if(target_found) return;
@@ -137,20 +140,20 @@ struct RingChannelSearch:Search {
  }
  void run_permutation(const vector<int>& channel,bool screen_only=false) {
    iota(a.begin(),a.end(),0);
-   for(int x=8;x<14;++x) a[x]=x==13?8:x+1;
+   for(int x=channel_size;x<n;++x) a[x]=x==n-1?channel_size:x+1;
    copy(channel.begin(),channel.end(),a.begin());
    table(a,ia);
-   // Rotating the six-cycle normalizes the channel export to state 8.
-   for(int x=8;x<14;++x) for(int y=x+1;y<14;++y) for(int missing=9;missing<14;++missing) {
-     b[0]=8;for(int z=1;z<8;++z) b[z]=z-1;
-     b[x]=b[y]=7;
+   // Rotating the ring normalizes the channel export to its first state.
+   for(int x=channel_size;x<n;++x) for(int y=x+1;y<n;++y) for(int missing=channel_size+1;missing<n;++missing) {
+     b[0]=channel_size;for(int z=1;z<channel_size;++z) b[z]=z-1;
+     b[x]=b[y]=channel_size-1;
      vector<int> inputs,outputs;
-     for(int z=8;z<14;++z) if(z!=x&&z!=y) inputs.push_back(z);
-     for(int z=9;z<14;++z) if(z!=missing) outputs.push_back(z);
+     for(int z=channel_size;z<n;++z) if(z!=x&&z!=y) inputs.push_back(z);
+     for(int z=channel_size+1;z<n;++z) if(z!=missing) outputs.push_back(z);
      do {
        if(target_found) return;
-       for(int z=0;z<4;++z) b[inputs[z]]=outputs[z];
-       assert(set_rank(b)==13);
+       for(int z=0;z<ring_size-2;++z) b[inputs[z]]=outputs[z];
+       assert(set_rank(b)==n-1);
        if(screen_only) screen_powers();else examine_map();
      } while(next_permutation(outputs.begin(),outputs.end()));
    }
@@ -161,16 +164,16 @@ struct RingChannelSearch:Search {
 };
 
 int main(int argc,char**argv) {
- int threads=argc>=2?stoi(argv[1]):2;assert(argc<=3&&threads>=1&&threads<=8);
+ int threads=argc>=2?stoi(argv[1]):2;assert((argc<=3||argc==6)&&threads>=1&&threads<=8);
  bool all=argc==3&&string(argv[2])=="--all-permutations";
- bool screen=argc==3&&string(argv[2])=="--screen-powers";
+ bool screen=(argc==3||argc==6)&&string(argv[2])=="--screen-powers";
  bool screened=argc==3&&string(argv[2])=="--screened-permutations";
  assert(argc==2||argc==1||all||screen||screened);
  all|=screened;
  vector<int> channel(8);iota(channel.begin(),channel.end(),0);
  vector<ScreenCase> cases;
  if(screened) {
-   RingChannelSearch search;search.run_permutation(channel,true);
+   RingChannelSearch search;search.retain_screen_cases=true;search.run_permutation(channel,true);
    assert(search.maps==1800&&search.screen_cases==27000);
    cases=move(search.screen_survivors);
    cout<<"SCREEN b_maps=1800 initial_sets=27000 surviving_sets="<<cases.size()
@@ -181,8 +184,14 @@ int main(int argc,char**argv) {
    assert(search.short_words_safe(search.starts[0],1,search.ib));
  }
  if(screen) {
-   RingChannelSearch search;search.run_permutation(channel,true);
-   assert(search.maps==1800&&search.screen_cases==27000);
+   int U=argc==6?stoi(argv[3]):6,P=argc==6?stoi(argv[4]):8,T=argc==6?stoi(argv[5]):12;
+   assert(U>=4&&P>=U-2&&P+U<=20&&T>=U);
+   channel.resize(P);iota(channel.begin(),channel.end(),0);
+   RingChannelSearch search(P,U,T);search.run_permutation(channel,true);
+   auto factorial=[](int k) {uint64_t f=1;for(int i=2;i<=k;++i) f*=i;return f;};
+   uint64_t expected=factorial(U)*(U-1)/2;
+   assert(search.maps==expected&&search.screen_cases==expected*U*(U-1)/2);
+   cout<<"PARAMETERS ring="<<U<<" channel="<<P<<" n="<<P+U<<" m="<<U-2<<" target="<<T<<'\n';
    cout<<"SCREEN_COMPLETE b_maps="<<search.maps<<" initial_sets="<<search.screen_cases
        <<" surviving_b_maps="<<search.screen_surviving_maps
        <<" surviving_sets="<<search.screen_surviving_sets
@@ -190,8 +199,9 @@ int main(int argc,char**argv) {
    cout<<"UNIFORM_TWO_B covered="<<search.screen_two_b
        <<" remaining="<<search.screen_surviving_sets-search.screen_two_b
        <<" longest="<<search.screen_two_b_longest<<" literal_word_controls="<<search.screen_two_b_checks<<'\n';
-   cout<<"SCOPE words a^i b^j followed by uniform a^i b a^j b collision checks; all 40320 channel permutations; family_upper_bound="
-       <<(search.screen_two_b==search.screen_surviving_sets?"11":"unresolved")<<"; no global upper bound\n";
+   cout<<"SCOPE words a^i b^j followed by uniform a^i b a^j b collision checks; channel_permutations="
+       <<factorial(P)<<" family_upper_bound="
+       <<(search.screen_two_b==search.screen_surviving_sets?to_string(T-1):"unresolved")<<"; no global upper bound\n";
    return 0;
  }
  vector<vector<int>> permutations;

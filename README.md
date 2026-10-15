@@ -17,7 +17,7 @@
 - [大保护集区间的极值稳定性](PROOF.md#problem4-protected-size-stabilization)：`m≥4,q≥3m` 时，任意字母表极值在 `r≥q−2m` 后恒定；`m=4,q=13` 的阈值可降至四，共同值仍在 `[11,12]`。
 - [固定余维的参数单调性](PROOF.md#problem4-parameter-monotonicity)：任意字母表极值随 `q`、`r` 分别不减；这约束未解区域的形状，未确定其精确值。
 - [长安全区间的周期状态约束](PROOF.md#problem4-periodic-isolated-states)：`ac≥2m+2` 时，每个字母至多有 `m−1` 个非周期状态，全部落在同一个至多 `m(m+1)` 点的短对核心中。
-- [余量一的剩余候选](PROOF.md#problem4-slack-one-initial-flags)：共同短对距离、轨道秩和实际前像供应在第九层排除全部两入口类别，覆盖所有双出口候选；单入口的延后增长类别及一般参数仍开放。
+- [余量一的剩余候选](PROOF.md#problem4-slack-one-initial-flags)：共同短对距离、轨道秩和实际前像供应在第九层排除全部两入口类别，覆盖所有双出口候选；[全部早分裂也已排除](PROOF.md#problem4-q13-remaining-three-cores)，十二步候选只剩核心 10、12、106 的晚分裂域；一般参数仍开放。
 - [条件分支](PROOF.md#branches)：需要额外假设的局部论证。
 - [像扩张](PROOF.md#extension)、[秩与核](PROOF.md#rank)、[策略与预算](PROOF.md#policy)、[锚点与最优语言](PROOF.md#anchors)：其他数学方向。
 - [探索记录](PROOF.md#exploration)：受限观察、失败路线和待证明机制。

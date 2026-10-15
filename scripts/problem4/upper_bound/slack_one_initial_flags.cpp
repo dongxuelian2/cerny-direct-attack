@@ -277,9 +277,65 @@ bool terminal_reachable=false;
 bool terminal_example=false,example_printed=false;
 bool literal_prefix=false;
 bool canonical_prefix=false;
+bool canonical_isolates=false;
 bool periodic_isolates=false;
 bool cyclic_isolates=false;
 vector<unsigned> initial_flag;
+// Original enumeration already orders the batches of newly named isolates.
+// Within each such batch quotient by the full ordered membership columns.
+uint64_t isolate_prefix_weight(const vector<unsigned>& basis,int core_size,int external_end=13) {
+ assert(basis.size()<=13&&external_end<=13);
+ array<int,14> births{};uint64_t previous=0,denominator=1;int same=0;
+ auto factorial=[](int n) {uint64_t value=1;for(int j=2;j<=n;++j) value*=j;return value;};
+ for(int q=core_size;q<external_end;++q) {
+   uint64_t column=0;int first=basis.size();
+   for(size_t j=0;j<basis.size();++j) {
+     bool member=(basis[j]>>q)&1;column=(column<<1)|member;
+     if(member&&first==int(basis.size())) first=j;
+   }
+   if(q>core_size&&previous<column) return 0;
+   if(q==core_size||previous==column) ++same;
+   else {denominator*=factorial(same);same=1;}
+   previous=column;++births[first];
+ }
+ uint64_t numerator=1;denominator*=factorial(same);
+ for(int count:births) numerator*=factorial(count);
+ assert(numerator%denominator==0);return numerator/denominator;
+}
+void isolate_prefix_controls() {
+ map<vector<unsigned>,uint64_t> orbit_sizes;uint64_t normalized=0;
+ for(unsigned code=0;code<65536;++code) {
+   vector<unsigned> basis;unsigned rest=code,named=3;bool valid=true;
+   for(int row=0;row<4;++row) {
+     unsigned F=((rest&15)<<2)|(1U<<(row%2))|(row==3?64:0);rest>>=4;
+     unsigned fresh=F&60&~named,available=60&~named,canonical_fresh=0;
+     for(int j=0;j<__builtin_popcount(fresh);++j) {
+       unsigned bit=available&-available;canonical_fresh|=bit;available^=bit;
+     }
+     if(fresh!=canonical_fresh) valid=false;
+     named|=F;basis.push_back(F);
+   }
+   if(!valid) continue;++normalized;
+   auto canonical=basis;vector<int> p{2,3,4,5};
+   do {
+     auto mapped=basis;
+     for(auto& F:mapped) {
+       unsigned out=F&~60U;for(int q=2;q<6;++q) if(F>>q&1) out|=1U<<p[q-2];F=out;
+     }
+     canonical=min(canonical,mapped);
+   } while(next_permutation(p.begin(),p.end()));
+   ++orbit_sizes[canonical];
+   assert((isolate_prefix_weight(basis,2,6)>0)==(basis==canonical));
+ }
+ uint64_t weighted=0;
+ for(const auto& [basis,count]:orbit_sizes) {
+   auto weight=isolate_prefix_weight(basis,2,6);assert(weight==count);weighted+=weight;
+   auto parent=basis;parent.pop_back();assert(isolate_prefix_weight(parent,2,6)>0);
+ }
+ assert(weighted==normalized&&orbit_sizes.size()<normalized);
+ cout<<"CONTROLS isolated-column quotient: "<<normalized<<" normalized prefixes, "
+     <<orbit_sizes.size()<<" orbits PASS\n";
+}
 // Quotient only by automorphisms fixing the entire initial ordered flag.
 // Outside labels and the protected label are fixed pointwise.
 uint64_t prefix_orbit_weight(const vector<unsigned>& basis,size_t initial,
@@ -870,9 +926,10 @@ Result examine(Core core,const vector<unsigned>& all,bool print_flags,bool pairs
                for(int k=0;k<__builtin_popcount(fresh);++k) {unsigned bit=available&-available;normalized|=bit;available^=bit;}
                if(fresh!=normalized) continue;
                uint64_t weight=1;
-               if(canonical_prefix) {
+               if(canonical_prefix||canonical_isolates) {
                  vector<unsigned> prefix{B,C,D,E};prefix.insert(prefix.end(),tail.begin(),tail.end());prefix.push_back(F);
-                 weight=prefix_orbit_weight(prefix,4,automorphisms,core.n);
+                 if(canonical_prefix) weight=prefix_orbit_weight(prefix,4,automorphisms,core.n);
+                 if(canonical_isolates) weight*=isolate_prefix_weight(prefix,core.n);
                  if(!weight) continue;
                }
                auto known=edges;known.insert(known.end(),tail.begin(),tail.end());known.push_back(F);
@@ -968,6 +1025,7 @@ Result examine_late(Core core,const vector<unsigned>& all,bool print_flags,
          if(!initial_flag.empty()&&basis!=initial_flag) return;
        }
        uint64_t weight=canonical_prefix&&level>=4?prefix_orbit_weight(basis,3,automorphisms,core.n):1;
+       if(canonical_isolates&&level>=4) weight*=isolate_prefix_weight(basis,core.n);
        if(!weight) return;
        families.push_back(rows);
        if(level<3) {extend(level+1);families.pop_back();return;}
@@ -1039,6 +1097,7 @@ int main(int argc,char**argv) {
    else if(string(argv[i])=="--terminal-example") terminal_example=true;
    else if(string(argv[i])=="--literal-prefix") literal_prefix=true;
    else if(string(argv[i])=="--canonical-prefix") canonical_prefix=true;
+   else if(string(argv[i])=="--canonical-isolates") canonical_isolates=true;
    else if(string(argv[i])=="--periodic-isolates") periodic_isolates=true;
    else if(string(argv[i])=="--cyclic-isolates") cyclic_isolates=periodic_isolates=true;
    else if(string(argv[i])=="--initial-flag"&&i+1<argc) {
@@ -1111,6 +1170,7 @@ int main(int argc,char**argv) {
  }
  if(terminal_powers||literal_prefix||periodic_isolates) power_controls();
  if(canonical_prefix) prefix_orbit_controls();
+ if(canonical_isolates) isolate_prefix_controls();
  if(terminal_alphabets) {
    short_word_clique_controls<14>();
    cout<<"CONTROLS complete alphabet search versus 512 small pools and a triple-word obstruction PASS\n";
@@ -1185,6 +1245,7 @@ int main(int argc,char**argv) {
      <<" terminal_reachable="<<terminal_reachable
      <<" literal_prefix="<<literal_prefix
      <<" canonical_prefix="<<canonical_prefix
+     <<" canonical_isolates="<<canonical_isolates
      <<" periodic_isolates="<<periodic_isolates
      <<" cyclic_isolates="<<cyclic_isolates
      <<"; surviving flags do not establish original-class witnesses; no new upper bound\n";
