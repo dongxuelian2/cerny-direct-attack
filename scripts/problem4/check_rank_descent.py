@@ -97,6 +97,32 @@ def image_distances(rows):
     return distances
 
 
+def low_cover_rank_control():
+    checked = rows_checked = 0
+    for m in range(4, 7):
+        cycle = 2*m-3
+        for q in range(2*m-2, 2*m+1):
+            for r in (1, 2):
+                n, k = q+r, q-m
+                protected = frozenset(range(cycle, cycle+r))
+                outside = [v for v in range(n) if v not in protected]
+                families = []
+                for size in (k, k+1):
+                    family = []
+                    for points in combinations(outside, size):
+                        row = protected.union(points)
+                        if all(v not in row or (v+1) % cycle not in row
+                               for v in range(cycle)):
+                            family.append(row)
+                    families.append(family)
+                assert rational_rank(families[0], n) == q
+                assert rational_rank(families[1], n) == cycle < q
+                rows_checked += sum(map(len, families))
+                checked += 1
+    print(f'PASS low-cover static rank barrier: {checked} parameter choices, '
+          f'{rows_checked} independent rows; maximum-size controls have lower rank')
+
+
 def common_image_control(inputs):
     checked = 0
     for rows in inputs:
@@ -185,4 +211,5 @@ def main():
 
 if __name__ == '__main__':
     preserved_rank_control()
+    low_cover_rank_control()
     main()
