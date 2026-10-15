@@ -16,6 +16,7 @@
 #include <thread>
 #include <vector>
 #include "cell_pair_profiles.hpp"
+#include "short_word_alphabets.hpp"
 using namespace std;
 struct Core { int id, n; const char* edges; };
 const vector<Core> cores = {
@@ -269,11 +270,123 @@ vector<unsigned> one_count_closure(const vector<unsigned>& rows,int protected_co
  }
  return closure;
 }
+// Iterate only complete labeled maps. A terminal flag supplies at most two
+// possible initial rows; each must be tested separately across the whole pool.
+bool terminal_powers=false,terminal_mixed=false,terminal_alphabets=false;
+bool safe_powers(const vector<int>& f,unsigned source,unsigned protect,int length) {
+ unsigned image=source;int size=__builtin_popcount(source);
+ for(int step=1;step<=length;++step) {
+   unsigned next=0;for(int q=0;q<int(f.size());++q) if(image>>q&1) next|=1U<<f[q];
+   image=next;
+   if(__builtin_popcount(image)!=size||(image&protect)!=protect) return false;
+ }
+ return true;
+}
+bool safe_two_letters(const vector<int>& f,const vector<int>& g,unsigned source,unsigned protect,int length) {
+ vector<unsigned> frontier{source};vector<unsigned char> seen(1U<<f.size());seen[source]=1;
+ int size=__builtin_popcount(source);
+ for(int step=1;step<=length&&!frontier.empty();++step) {
+   vector<unsigned> next;
+   for(unsigned S:frontier) for(const auto* map:{&f,&g}) {
+     unsigned image=0;for(int q=0;q<int(f.size());++q) if(S>>q&1) image|=1U<<(*map)[q];
+     if(__builtin_popcount(image)!=size||(image&protect)!=protect) return false;
+     if(!seen[image]) {seen[image]=1;next.push_back(image);}
+   }
+   frontier=move(next);
+ }
+ return true;
+}
+// Every letter in a feasible alphabet must have a compatible supplier for
+// every obligation, possibly itself. Iterate this necessary condition only;
+// a nonempty fixed point need not contain a feasible alphabet.
+vector<unsigned char> supplier_fixed_point(const vector<unsigned>& obligations,
+                       const vector<vector<unsigned char>>& compatible,unsigned required) {
+ vector<unsigned char> active(obligations.size(),1);
+ bool changed=true;
+ while(changed) {
+   changed=false;
+   for(size_t i=0;i<active.size();++i) if(active[i]) {
+     unsigned covered=0;
+     for(size_t j=0;j<active.size();++j) if(active[j]&&compatible[i][j]) covered|=obligations[j];
+     if((covered&required)!=required) {active[i]=0;changed=true;}
+   }
+ }
+ return active;
+}
+void power_controls() {
+ uint64_t checks=0;
+ for(int n=2;n<=4;++n) {
+   int total=1;for(int q=0;q<n;++q) total*=n;
+   for(int code=0;code<total;++code) {
+     int rest=code;vector<int> f(n),power(n);iota(power.begin(),power.end(),0);
+     for(int q=0;q<n;++q) {f[q]=rest%n;rest/=n;}
+     vector<vector<int>> powers;
+     for(int step=0;step<5;++step) {for(int& q:power) q=f[q];powers.push_back(power);}
+     for(unsigned S=1;S<(1U<<n);++S) for(int a=0;a<n;++a) if(S>>a&1) {
+       bool literal=true;
+       for(const auto& map:powers) {
+         bool hit=false;
+         for(int u=0;u<n;++u) if(S>>u&1) {
+           hit|=map[u]==a;
+           for(int v=u+1;v<n;++v) if((S>>v&1)&&map[u]==map[v]) literal=false;
+         }
+         literal&=hit;
+       }
+       assert(safe_powers(f,S,1U<<a,5)==literal);++checks;
+     }
+   }
+ }
+ assert(safe_powers({0,1,2},3,1,5));
+ assert(!safe_powers({1,2,2},3,2,5)); // second power compresses
+ assert(!safe_powers({1,2,0},3,1,5)); // permutation avoids protection
+ cout<<"CONTROLS labeled powers versus pointwise composition "<<checks<<" cases PASS\n";
+ uint64_t pair_checks=0;
+ // Direct word enumeration is independent of the subset-BFS implementation.
+ vector<vector<int>> maps;
+ for(int code=0;code<27;++code) {int rest=code;vector<int> f(3);for(int& x:f) {x=rest%3;rest/=3;}maps.push_back(f);}
+ for(const auto& f:maps) for(const auto& g:maps) for(unsigned S=1;S<8;++S) for(int a=0;a<3;++a) if(S>>a&1) {
+   bool valid=true;
+   for(int length=1;length<=4;++length) for(int word=0;word<(1<<length);++word) {
+     unsigned image=0;
+     for(int q=0;q<3;++q) if(S>>q&1) {int x=q;for(int j=0;j<length;++j) x=((word>>j)&1)?g[x]:f[x];image|=1U<<x;}
+     if(__builtin_popcount(image)!=__builtin_popcount(S)||!(image>>a&1)) valid=false;
+   }
+   assert(safe_two_letters(f,g,S,1U<<a,4)==valid);++pair_checks;
+ }
+ uint64_t graph_checks=0;
+ for(int graph=0;graph<64;++graph) {
+   vector<vector<unsigned char>> compatible(4,vector<unsigned char>(4));int bit=0;
+   for(int i=0;i<4;++i) {compatible[i][i]=1;for(int j=0;j<i;++j) compatible[i][j]=compatible[j][i]=(graph>>(bit++))&1;}
+   for(int code=0;code<256;++code) {
+     vector<unsigned> labels(4);for(int i=0;i<4;++i) labels[i]=(code>>(2*i))&3;
+     auto active=supplier_fixed_point(labels,compatible,3);
+     for(int subset=1;subset<16;++subset) {
+       bool clique=true;unsigned covered=0;
+       for(int i=0;i<4;++i) if(subset>>i&1) {covered|=labels[i];for(int j=0;j<i;++j) if((subset>>j&1)&&!compatible[i][j]) clique=false;}
+       if(clique&&covered==3) for(int i=0;i<4;++i) if(subset>>i&1) assert(active[i]);
+     }
+     ++graph_checks;
+   }
+ }
+ cout<<"CONTROLS mixed-word BFS "<<pair_checks<<" cases; supplier pruning "<<graph_checks<<" labeled graphs PASS\n";
+}
 PairSummary graded_pair_pool(Core core,const vector<unsigned>& edges,const vector<unsigned>& cliques,
                      const vector<unsigned>& basis,const vector<int>& levels,
                      const vector<vector<unsigned>>& families,int protected_count,bool ranks,bool arrival,
-                     bool tight_radii,bool capacity_only=false) {
+                     bool tight_radii,bool capacity_only=false,unsigned terminal_source=0) {
  int n=13+protected_count,depth=int(families.size())-1;vector<unsigned> outputs;
+ if(terminal_powers&&depth==11&&!capacity_only&&!terminal_source) {
+   PairSummary sum;
+   unsigned protect=((1U<<n)-1)^8191;
+   assert(protected_count==1);
+   assert(families.back().size()<=2);
+   for(unsigned source:families.back()) {
+     auto answer=graded_pair_pool(core,edges,cliques,basis,levels,families,
+                                 protected_count,ranks,arrival,tight_radii,false,source|protect);
+     sum.actions+=answer.actions;sum.vectors+=answer.vectors;
+   }
+   return sum;
+ }
  assert(basis.size()==levels.size()&&depth>=3&&depth<=11);
  assert(is_sorted(levels.begin(),levels.end())&&levels.back()==depth);
  unsigned required=(1U<<basis.size())-1;
@@ -301,7 +414,9 @@ PairSummary graded_pair_pool(Core core,const vector<unsigned>& edges,const vecto
  // Every target-family fiber must be invariant under the anonymous output
  // permutations, including BOTH new third-layer fibers when split_layer=3.
  unsigned named_outputs=0;for(unsigned fiber:basis) named_outputs|=fiber;
- vector<int> extra; if(ranks) for(int q=core.n;q<13;++q) if(named_outputs>>q&1) extra.push_back(q);
+ vector<int> extra;
+ if(terminal_source) {for(int q=core.n;q<n;++q) extra.push_back(q);}
+ else if(ranks) for(int q=core.n;q<13;++q) if(named_outputs>>q&1) extra.push_back(q);
  cell_pairs::Generator generator(n,core.n,edges,outputs,extra);
  vector<SafeSources> safe;
  if(ranks) {
@@ -314,8 +429,11 @@ PairSummary graded_pair_pool(Core core,const vector<unsigned>& edges,const vecto
    }
    safe.emplace_back(n,n,3,0,auxiliary);
  }
+ struct LiteralLetter {vector<int> f;cell_pairs::Profile profile;unsigned flags;};
+ vector<LiteralLetter> literals;unsigned current_flags=0;
  function<bool(const vector<int>&)> rank_filter;
  if(ranks) rank_filter=[&](const vector<int>& f) {
+   if(terminal_source&&!safe_powers(f,terminal_source,((1U<<n)-1)^8191,11)) return false;
    if(depth>=4) {
      auto preimage=[&](unsigned mask) {
        unsigned pre=0;for(int q=0;q<n;++q) if(mask>>f[q]&1) pre|=1U<<q;return pre;
@@ -332,6 +450,7 @@ PairSummary graded_pair_pool(Core core,const vector<unsigned>& edges,const vecto
      }
    }
    for(const auto& family:safe) if(!family.accepts(f)) return false;
+   if(terminal_source&&terminal_mixed) literals.push_back({f,generator.literal_profile(f),current_flags});
    return true;
  };
  auto fibers=[&](const vector<unsigned>& family) {
@@ -418,10 +537,25 @@ PairSummary graded_pair_pool(Core core,const vector<unsigned>& edges,const vecto
    }
  }
  for(const auto& pattern:patterns) {
+   current_flags=pattern.flags;
    for(const auto& item:generator.generate(pattern.pre,rank_filter,known_two)) {
      if(unsigned(item.first.back())&known_two) continue;
      auto& mark=alphabet[item.first];mark.flags|=pattern.flags;
      for(int q=0;q<n;++q) mark.arrows[q]|=item.second[q];
+   }
+ }
+ if(terminal_source&&terminal_mixed) {
+   // Cross-check that recording complete maps loses no profile, supplier,
+   // or arrow from the independently aggregated single-letter pool.
+   map<cell_pairs::Profile,Mark> recorded;
+   for(const auto& letter:literals) {
+     auto& mark=recorded[letter.profile];mark.flags|=letter.flags;
+     for(int q=0;q<n;++q) mark.arrows[q]|=1U<<letter.f[q];
+   }
+   assert(recorded.size()==alphabet.size());
+   for(const auto& item:alphabet) {
+     auto it=recorded.find(item.first);assert(it!=recorded.end());
+     assert(it->second.flags==item.second.flags&&it->second.arrows==item.second.arrows);
    }
  }
  PairSummary result;result.actions=alphabet.size();
@@ -461,6 +595,44 @@ PairSummary graded_pair_pool(Core core,const vector<unsigned>& edges,const vecto
    for(int q=0;q<n;++q) arrows[q]|=1U<<q;
    for(int k=0;k<n;++k) for(int q=0;q<n;++q) if(arrows[q]>>k&1) arrows[q]|=arrows[k];
    for(int q=0;q<n;++q) if(arrows[q]!=(1U<<n)-1) valid=false;
+   if(valid&&terminal_source&&terminal_mixed) {
+     vector<const LiteralLetter*> allowed;vector<unsigned> obligations;
+     unsigned all_required=required|(((1U<<ne)-1)<<basis.size());
+     for(const auto& letter:literals) {
+       const auto& profile=letter.profile;bool ok=true;unsigned label=letter.flags;
+       for(int i=0;i<ne;++i) {
+         if((unsigned(profile.back())>>i&1)&&e[i]!=3) ok=false;
+         if(profile[i]==-1&&e[i]!=1) ok=false;
+         if(profile[i]>=0&&e[i]>e[profile[i]]+1) ok=false;
+         if((profile[i]==-1&&e[i]==1)||(profile[i]>=0&&e[i]==e[profile[i]]+1)) label|=1U<<(basis.size()+i);
+       }
+       if(ok) {allowed.push_back(&letter);obligations.push_back(label);}
+     }
+     vector<vector<unsigned char>> compatible(allowed.size(),vector<unsigned char>(allowed.size(),1));
+     for(size_t i=0;i<allowed.size();++i) for(size_t j=0;j<i;++j)
+       compatible[i][j]=compatible[j][i]=safe_two_letters(allowed[i]->f,allowed[j]->f,
+                                                         terminal_source,((1U<<n)-1)^8191,11);
+     auto active=supplier_fixed_point(obligations,compatible,all_required);
+     unsigned covered=0;cell_pairs::Arrows actual{};
+     for(size_t i=0;i<active.size();++i) if(active[i]) {
+       covered|=obligations[i];for(int q=0;q<n;++q) actual[q]|=1U<<allowed[i]->f[q];
+     }
+     valid=(covered&all_required)==all_required;
+     for(int q=0;q<n;++q) actual[q]|=1U<<q;
+     for(int k=0;k<n;++k) for(int q=0;q<n;++q) if(actual[q]>>k&1) actual[q]|=actual[k];
+     for(int q=0;q<n;++q) if(actual[q]!=(1U<<n)-1) valid=false;
+     if(valid&&terminal_alphabets) {
+       vector<vector<int>> maps;vector<unsigned> labels;
+       for(size_t i=0;i<active.size();++i) if(active[i]) {
+         maps.push_back(allowed[i]->f);labels.push_back(obligations[i]);
+       }
+       vector<pair<int,int>> core_edges;
+       for(unsigned edge:edges) core_edges.emplace_back(__builtin_ctz(edge),__builtin_ctz(edge&(edge-1)));
+       assert(n==14);
+       valid=short_word_clique<14>(maps,labels,all_required,13,
+                                   {{terminal_source,11}},core_edges,e).possible;
+     }
+   }
    if(valid) ++result.vectors;
  }
  return result;
@@ -746,9 +918,13 @@ Result examine_late(Core core,const vector<unsigned>& all,bool print_flags,
 }
 int main(int argc,char**argv) {
  cout<<unitbuf;
- int threads=4,only_core=-1,max_layer=3,split_layer=1; bool print_flags=false,pairs=false,delay_cut=false,ranks=false,arrival=false;
+ int threads=4,only_core=-1,max_layer=3,split_layer=1; bool print_flags=false,pairs=false,delay_cut=false,ranks=false,arrival=false,controls_only=false;
  for(int i=1;i<argc;++i) {
    if(string(argv[i])=="--threads"&&i+1<argc) threads=stoi(argv[++i]);
+   else if(string(argv[i])=="--terminal-powers") terminal_powers=true;
+   else if(string(argv[i])=="--terminal-mixed") terminal_powers=terminal_mixed=true;
+   else if(string(argv[i])=="--terminal-alphabets") terminal_powers=terminal_mixed=terminal_alphabets=true;
+   else if(string(argv[i])=="--controls-only") controls_only=true;
    else if(string(argv[i])=="--flags") print_flags=true;
    else if(string(argv[i])=="--pairs") pairs=true;
    else if(string(argv[i])=="--delay-cut") delay_cut=true;
@@ -762,6 +938,7 @@ int main(int argc,char**argv) {
    else return 2;
  }
  assert(threads>=1&&threads<=32&&(!print_flags||threads==1));
+ if(terminal_powers&&(!ranks||max_layer!=11||split_layer==1)) return 2;
  if((delay_cut||ranks)&&!pairs) return 2;
  if(arrival&&!ranks) return 2;
  if(split_layer<0||split_layer>12) return 2;
@@ -804,6 +981,12 @@ int main(int argc,char**argv) {
    assert(!SafeSources(3,3,2,0,{3,1},true).accepts({0,1,2}));
    assert(SafeSources(3,3,0,0,{3},false).accepts({0,0,0}));
  }
+ if(terminal_powers) power_controls();
+ if(terminal_alphabets) {
+   short_word_clique_controls<14>();
+   cout<<"CONTROLS complete alphabet search versus 512 small pools and a triple-word obstruction PASS\n";
+ }
+ if(controls_only) return 0;
  vector<Result> results(cores.size());atomic<int> next{0};vector<thread> workers;mutex output_mutex;
  for(int t=0;t<threads;++t) workers.emplace_back([&]{for(int j;(j=next.fetch_add(1))<int(cores.size());) {
    if(only_core>=0&&only_core!=cores[j].id) continue;
@@ -853,7 +1036,8 @@ int main(int argc,char**argv) {
  if(split_layer==0||split_layer>=4) for(int k=0;k<12;++k)
    cout<<"TERMINAL_SPLIT layer="<<k<<" flags="<<total.terminal_splits[k]<<'\n';
  cout<<"SCOPE initial flags; pair_mode="<<pairs<<" delay_cut="<<delay_cut<<" ranks="<<ranks<<" arrival="<<arrival
-     <<" split_layer="<<split_layer<<" core="<<only_core<<"; flags stop at layer "<<max_layer
-     <<"; no mixed-word compatibility, no new upper bound\n";
+     <<" split_layer="<<split_layer<<" core="<<only_core<<" terminal_powers="<<terminal_powers<<"; flags stop at layer "<<max_layer
+     <<"; terminal_mixed="<<terminal_mixed<<" terminal_alphabets="<<terminal_alphabets
+     <<"; surviving flags do not establish original-class witnesses; no new upper bound\n";
  return 0;
 }

@@ -190,6 +190,20 @@ compares the separate early-split and generic graded initial enumerators on
 core 106, checking both retained flags and common distance-vector counts.
 It checks enumeration consistency, not completion of the remaining domain.
 
+For complete labeled terminal checks, add `--terminal-powers` at depth eleven
+in a single-entrance domain, or `--terminal-mixed` to additionally check every
+pair of letters and iteratively remove letters without compatible suppliers
+for all required fibers and short-pair descents. Each possible initial subset
+is handled separately. All output labels are expanded before words are tested.
+These remain necessary conditions; a surviving pool is not an automaton.
+`--terminal-alphabets` also invokes the existing arbitrary-alphabet search to
+test all mixed words up to length eleven while requiring strong connectivity
+and every supplier. A surviving alphabet still needs synchronization and
+initial-set reachability checks before it could establish a lower bound.
+`--controls-only` runs the implementation controls and skips flag enumeration.
+See [the terminal compatibility proof](../PROOF.md#problem4-terminal-labeled-compatibility).
+
+
 ## Earlier conditional sources
 
 `scripts/problem4/experimental/tau2_third_pair_profiles.cpp --threads 4` 保留早期九个

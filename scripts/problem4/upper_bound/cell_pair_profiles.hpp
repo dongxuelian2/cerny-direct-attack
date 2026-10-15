@@ -171,8 +171,8 @@ struct Generator {
 };
 inline void controls() {
  uint64_t maps=0,patterns=0;
- for(int variant=0;variant<8;++variant) {
-   int n=variant==7?2:(variant==6?3:((variant==1||variant==5)?4:((variant==2||variant==4)?6:5)));
+ for(int variant=0;variant<9;++variant) {
+   int n=variant==8?4:(variant==7?2:(variant==6?3:((variant==1||variant==5)?4:((variant==2||variant==4)?6:5))));
    int c=(variant==1||variant>=4)?2:(variant==3?3:4);
    std::vector<unsigned> edges=(variant==1||variant>=4)?std::vector<unsigned>{3}:
        (variant==2?std::vector<unsigned>{3,12}:(variant==3?std::vector<unsigned>{3,5,6}:std::vector<unsigned>{3,6,12}));
@@ -181,8 +181,13 @@ inline void controls() {
    if(variant==5) sets={4,8,1,2,3,15};
    if(variant==6) sets={1,2,4,3,5,6,7,1,2};
    if(variant==7) sets={1,2,3,1,2,3,1,2,3,1,2,3,1};
-   Generator generator(n,c,edges,sets,variant==4?std::vector<int>{2}:std::vector<int>{});
+   if(variant==8) sets={8,3};
+   Generator generator(n,c,edges,sets,variant==8?std::vector<int>{0,1,2,3}:
+                       (variant==4?std::vector<int>{2}:std::vector<int>{}));
    auto filter=[&](const std::vector<int>& f) {
+     // This iterated condition is legal only with ALL outputs explicit.
+     if(variant==8) return f[f[0]]!=f[f[2]]&&
+                          (f[f[0]]==3||f[f[2]]==3);
      if(variant!=4) return true;
      int safe=0;
      for(int x:{0,1,3,4}) {
