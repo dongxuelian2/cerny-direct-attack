@@ -68,6 +68,19 @@ matching kernel and check every possible short-pair layer. This proves the
 [C7/C9 bounds](../PROOF.md#problem4-c7-c9-uniform-cycle-bound) without a separate
 letter-rank hypothesis. With `--cycle 5` those flags test the nonzero relaxation
 controls; the Python audit also checks the actual five-state Cerny counterexample.
+`--columns` uses the proved equality-case column construction and a complete
+partial-permutation traversal. With this option, `--cycle 11` and `--cycle 13`
+are also supported. `--canonical-isolates` preserves all signatures while
+quotienting independent auxiliary input/output labels; its row count is a
+representative count. The precise domain proof is in the
+[column reduction](../PROOF.md#problem4-odd-cycle-column-generation).
+`--reverse-search` reverses both distance assignment orders. The optional
+`--pair-closure` and `--pair-levels` apply the proved merging-reachability and
+nonempty-distance-layer conditions. `--all-layers` reuses the same complete
+subset candidate list with separate compatible pools at every pair cap.
+For C11/C13, the Python command with `--full-kernel --signatures-only` checks
+one literal representative per generated signature; it does not independently
+enumerate all transformations or rerun the distance search.
 
 `problem4_p3_shapes.py` 核对 P3 二点覆盖的十三种核心和三点覆盖的十二种核心。
 `problem4_p2_rank.cpp` 核对至多四条边、覆盖数为三的图的最大独立集行秩界，

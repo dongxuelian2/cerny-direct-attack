@@ -3,6 +3,8 @@
 Regenerate two complete map traversals, reconstruct each retained signature,
 and search distance layers in the opposite order from the native checker.
 All generated files live in the run.py research copy under build/.
+--signatures-only instead audits one column-generated witness per signature;
+completeness then comes from the column construction proof, not this audit.
 """
 import argparse
 from itertools import combinations
@@ -37,16 +39,23 @@ def cycle_five_control():
     print('PASS actual Cerny C5: P5=C5, c({0,2})=10; the h+4 extension is false', flush=True)
 
 
-def check(cycle, executable, threads, full_kernel=False, all_layers=False):
+def check(cycle, executable, threads, full_kernel=False, all_layers=False, signatures_only=False):
     k, cap, minimum = (cycle-1)//2, cycle-1, (cycle-1)//2+3
     commands = [str(executable), '--cycle', str(cycle), '--threads', str(threads)]
     if full_kernel:
         commands.append('--full-kernel')
-    first = subprocess.check_output(commands + ['--rows'], text=True)
-    second = subprocess.check_output(commands + ['--rows', '--injections'], text=True)
-    assert first == second, 'complete normalized literal map sets disagree'
+    if signatures_only:
+        commands += ['--columns', '--canonical-isolates']
+        first = subprocess.check_output(commands + ['--representatives'], text=True)
+        native_profiles = subprocess.check_output(commands + ['--profiles'], text=True)
+    else:
+        first = subprocess.check_output(commands + ['--rows'], text=True)
+        second = subprocess.check_output(commands + ['--rows', '--injections'], text=True)
+        assert first == second, 'complete normalized literal map sets disagree'
     rows = [tuple(map(int, line.split())) for line in first.splitlines()]
     expected_rows = ({5: 310, 7: 4424, 9: 84906} if full_kernel else {7: 1484, 9: 22698})
+    if signatures_only:
+        expected_rows = {5: 210, 7: 1190, 9: 4554, 11: 16478, 13: 52078}
     assert len(rows) == len(set(rows)) == expected_rows[cycle]
     edges = [frozenset((i, (i+1) % cycle)) for i in range(cycle)]
     family = [frozenset(c) for c in combinations(range(cycle), k)
@@ -66,6 +75,10 @@ def check(cycle, executable, threads, full_kernel=False, all_layers=False):
         assert size-cycle <= max(0, defect-1)
         assert all(f[x] < cycle for x in isolates)
         assert all(x in f for x in isolates)
+        if defect:
+            omitted = set(range(size))-set(f)
+            assert omitted in [{(start+2*j) % cycle for j in range(defect)}
+                               for start in range(cycle)]
         assert all(f[x] != f[y] or frozenset((x, y)) in edges
                    for x, y in combinations(range(size), 2))
         members = [s | isolates for s in family]
@@ -79,8 +92,20 @@ def check(cycle, executable, threads, full_kernel=False, all_layers=False):
                            if frozenset((x, y)) not in edges) - {-2}
         assert -1 not in forced
         actions.add((tuple(profile), pair, forced))
-    expected_signatures = ({5: 210, 7: 1190, 9: 4554} if full_kernel else {7: 896, 9: 3906})
+    expected_signatures = ({5: 210, 7: 1190, 9: 4554, 11: 16478, 13: 52078}
+                           if full_kernel else {7: 896, 9: 3906})
     assert len(actions) == expected_signatures[cycle]
+    if signatures_only:
+        claimed = set()
+        for line in native_profiles.splitlines():
+            subset, pair, forced = line.split('|')
+            mask = int(forced)
+            claimed.add((tuple(map(int, subset.split())), tuple(map(int, pair.split())),
+                         frozenset(i for i in range(cycle) if mask >> i & 1)))
+        assert actions == claimed
+        print(f'PASS C{cycle}: {len(actions)} signatures independently reconstructed '
+              'from one literal witness each; completeness uses the column proof', flush=True)
+        return
     print(f'PASS C{cycle}: two map traversals agree on {len(rows)} rows; '
           f'{len(actions)} independently reconstructed signatures', flush=True)
     d = [None]*cycle + [0]
@@ -207,17 +232,23 @@ def check(cycle, executable, threads, full_kernel=False, all_layers=False):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--cycle', type=int, choices=(5, 7, 9), default=9)
+    parser.add_argument('--cycle', type=int, choices=(5, 7, 9, 11, 13), default=9)
     parser.add_argument('--threads', type=int, default=4)
     parser.add_argument('--full-kernel', action='store_true')
     parser.add_argument('--all-layers', action='store_true')
+    parser.add_argument('--signatures-only', action='store_true',
+                        help='Audit column-generated signature witnesses; does not enumerate all maps')
     args = parser.parse_args()
     assert 1 <= args.threads <= 32
     assert args.cycle != 5 or args.full_kernel
+    assert args.cycle < 11 or (args.full_kernel and args.signatures_only)
+    assert not args.signatures_only or args.full_kernel
+    assert not (args.signatures_only and args.all_layers)
     executable = Path.cwd()/'odd_cycle_joint_check_bin'
     source = Path(__file__).with_name('odd_cycle_joint_distances.cpp')
     subprocess.run([os.environ.get('CXX', 'g++'), '-std=c++17', '-O3', '-pthread',
                     str(source), '-o', str(executable)], check=True)
-    check(args.cycle, executable.resolve(), args.threads, args.full_kernel, args.all_layers)
+    check(args.cycle, executable.resolve(), args.threads, args.full_kernel,
+          args.all_layers, args.signatures_only)
     if args.cycle == 5:
         cycle_five_control()
