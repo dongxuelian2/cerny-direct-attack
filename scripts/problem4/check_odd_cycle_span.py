@@ -52,6 +52,29 @@ def main():
     print(f'PASS odd-cycle ranks and {missing_sets} omitted-vertex sets; '
           f'{unit_maps} adjacent-unit sharpness controls')
 
+    crossing_examples = 0
+    for cycle in range(5, 18, 2):
+        k = (cycle-1)//2
+        for isolates in (1, 3):
+            n = cycle+isolates
+            members = [frozenset(q for q in range(cycle) if mask >> q & 1)
+                       | frozenset(range(cycle, n)) for mask in family(cycle)]
+            row = list(range(n))
+            row[1] = row[2] = cycle
+            row[3] = 4
+            row[cycle] = 2
+            assert len(set(row)) == n-2 and preserved(row, members) == k+2
+            power = list(range(n))
+            for _ in range(n):
+                power = [row[x] for x in power]
+            stable_pairs = {(x, y) for x in range(n) for y in range(x+1, n)
+                            if power[x] == power[y]}
+            assert stable_pairs == {(1, 2), (3, 4)}
+            assert row[cycle] < cycle and row[row[cycle]] == cycle
+            crossing_examples += 1
+    assert crossing_examples == 14
+    print(f'PASS {crossing_examples} rank-defect-two stable-kernel crossing examples')
+
     tested = 0
     for cycle, isolates in ((3, 0), (3, 1), (5, 0), (5, 1)):
         n, k = cycle+isolates, (cycle-1)//2
@@ -65,6 +88,11 @@ def main():
             singular += 1
             count = preserved(row, members)
             assert count <= k+2, (cycle, isolates, row, count)
+            if count == k+2:
+                assert all(row[x] != row[y] for x in range(n) for y in range(x+1, n)
+                           if x >= cycle or y >= cycle)
+                crossing = sum(row[x] < cycle for x in range(cycle, n))
+                assert crossing <= n-len(set(row))-1
             maximum = max(maximum, count)
         assert maximum == k+2
         print(f'PASS C{cycle}+{isolates} isolates: all {n**n} maps, '

@@ -23,7 +23,10 @@ void all_maps(int cycle,int threads) {
    if(independent) {family.push_back(mask|(1U<<cycle));member[family.back()]=1;}
  }
  assert(family.size()==size_t(cycle));
- struct Counts {uint64_t tested=0,singular=0;int maximum=0;};
+ struct Counts {
+   uint64_t tested=0,singular=0;int maximum=0;
+   array<uint64_t,8> sharp{},crossing{},cycle_kernel{},cycle_crossing{},stable_crossing{};
+ };
  vector<Counts> counts(threads);vector<thread> workers;
  uint64_t suffixes=1;for(int q=1;q<n;++q) suffixes*=n;
  for(int worker=0;worker<threads;++worker) workers.emplace_back([&,worker] {
@@ -42,16 +45,50 @@ void all_maps(int cycle,int threads) {
          preserved+=member[out];
        }
        assert(preserved<=k+2);counts[worker].maximum=max(counts[worker].maximum,preserved);
+       if(preserved==k+2) {
+         int defect=n-__builtin_popcount(image);++counts[worker].sharp[defect];
+         for(int x=0;x<cycle;++x) assert(f[x]!=f[cycle]);
+         if(defect==1) assert(f[cycle]==cycle);
+         if(f[cycle]!=cycle) ++counts[worker].crossing[defect];
+         bool local=true;
+         for(int x=0;x<n;++x) for(int y=x+1;y<n;++y) if(f[x]==f[y])
+           if(x==cycle||y==cycle||((y-x)!=1&&(y-x)!=cycle-1)) local=false;
+         if(local) {
+           ++counts[worker].cycle_kernel[defect];
+           if(f[cycle]!=cycle) ++counts[worker].cycle_crossing[defect];
+           array<int,8> power{};
+           for(int x=0;x<n;++x) {int y=x;for(int j=0;j<n;++j) y=f[y];power[x]=y;}
+           bool stable=true;
+           for(int x=0;x<n;++x) for(int y=x+1;y<n;++y) if(power[x]==power[y])
+             if(x==cycle||y==cycle||((y-x)!=1&&(y-x)!=cycle-1)) stable=false;
+           if(stable&&f[cycle]!=cycle) {
+             ++counts[worker].stable_crossing[defect];
+           }
+         }
+       }
      }
    }
  });
  for(auto& worker:workers) worker.join();
  Counts total;
- for(const auto& row:counts) {total.tested+=row.tested;total.singular+=row.singular;total.maximum=max(total.maximum,row.maximum);}
+ for(const auto& row:counts) {
+   total.tested+=row.tested;total.singular+=row.singular;total.maximum=max(total.maximum,row.maximum);
+   for(int c=1;c<n;++c) {
+     total.sharp[c]+=row.sharp[c];total.crossing[c]+=row.crossing[c];
+     total.cycle_kernel[c]+=row.cycle_kernel[c];total.cycle_crossing[c]+=row.cycle_crossing[c];
+     total.stable_crossing[c]+=row.stable_crossing[c];
+   }
+ }
  uint64_t permutations=1;for(int q=1;q<=n;++q) permutations*=q;
  assert(total.tested==suffixes*n&&total.singular==total.tested-permutations&&total.maximum==k+2);
+ assert(total.stable_crossing[2]>0);
  cout<<"PASS unrestricted C"<<cycle<<"+1: maps="<<total.tested<<" singular="<<total.singular
      <<" maximum_preserved="<<total.maximum<<" threads="<<threads<<'\n';
+ for(int c=1;c<n;++c) if(total.sharp[c])
+   cout<<"SHARP C"<<cycle<<" defect="<<c<<" maps="<<total.sharp[c]
+       <<" isolate_crossing="<<total.crossing[c]
+       <<" cycle_kernel="<<total.cycle_kernel[c]<<" cycle_kernel_crossing="<<total.cycle_crossing[c]
+       <<" stable_kernel_crossing="<<total.stable_crossing[c]<<'\n';
 }
 int main(int argc,char**argv){
  if(argc>=2&&string(argv[1])=="--all-maps") {

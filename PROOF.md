@@ -17242,6 +17242,67 @@ k≥2. The earlier N−1 formulation follows for k≥3, but is weaker for k≥4.
 C5 does admit singular maps preserving four members; preserving all five
 forces a permutation. The former restriction on kernel pairs is unnecessary.
 
+<a id="problem4-odd-cycle-equality-crossing"></a>
+#### Equality forces the kernel into the cycle and limits crossings
+
+Suppose a singular f preserves exactly k+2 members of F, and let its rank
+defect be c. Every inequality in the sharp-threshold proof is then an
+equality: the selected input span V has dimension k+2, its image has dimension
+k+2−c, and V contains the entire c-dimensional row kernel of the transformation
+matrix. In particular,
+
+\[
+ \boxed{\ker f\text{ has no pair touching }J,\qquad
+         |f(J)\cap C|\le c-1.}\tag{OC-E}
+\]
+
+Here the first statement concerns distinct-state kernel pairs. Indeed, all
+rows v in span F satisfy v_j=(Σ_(x∈C)v_x)/k for every j∈J. A fiber difference
+e_x−e_y involving an isolated vertex cannot satisfy these equations, so it
+cannot belong to V. Every such difference lies in the row kernel, proving
+the first assertion. Thus f is injective on J and its images do not collide
+with images of core inputs.
+
+The image family has exactly ell=k+2−c distinct members, because every
+subfamily of F is linearly independent. The intersection of ell distinct
+cycle maximum sets has size at most k+1−ell: in step-two cyclic order these
+are distinct intervals of length k. If their intersection is nonempty, cut
+at a common point; their distinct starts span at least ell−1 positions, so
+the intersection has at most k−ell+1 positions. If ell>k, each vertex belongs
+to only k members and the intersection is empty. Since every image contains
+f(J), this bounds |f(J)∩C| by c−1.
+
+A permutation preserving at least k+1 members also preserves J setwise.
+Otherwise its distinct output family members would all contain one cycle
+point in f(J), but only k maximum sets contain any specified cycle point.
+Therefore both a permutation and a rank-(n−1) map preserving k+2 members
+must preserve J. This uses the equality argument for the singular case;
+it does not follow merely from the number of preserved sets.
+
+**The defect-two crossing obstruction is real, uniformly in k.** For any
+k≥2 and nonempty J, choose j∈J and fix every state except
+
+\[
+ f(1)=f(2)=j,\qquad f(3)=4,\qquad f(j)=2.
+\]
+
+This map has rank n−2, exactly two nonperiodic states 1 and 3, and stable
+kernel pairs precisely {1,2} and {3,4}, both cycle edges. All of J is
+periodic, but j maps into the cycle. Nevertheless it preserves exactly
+k+2 members of F: all k members containing 2 are fixed, and the other two
+preserved core sets are {1,4,6,…,2k} and {1,3,6,8,…,2k}. Both map to
+{2,4,6,…,2k}, with J adjoined. The only maximum set containing neither 1 nor 2
+loses j; every remaining set containing 1 maps 3 to 4 while retaining 5,
+creating an adjacent pair. This proves the count and attains the crossing
+bound |f(J)∩C|=1=c−1.
+
+For C7 plus isolate 7, a concrete instance is
+f=(0,7,7,4,4,5,6,2). Thus one cannot conclude J-invariance for defect two
+by adding periodic-isolate or stable-kernel conditions to the sharp
+preservation count. This is a single-letter obstruction to that proposed
+argument, not a synchronizing Problem 4 witness or a counterexample to a
+stronger compression bound.
+
 <a id="problem4-odd-cycle-sharp-compression"></a>
 #### Consequences for a short-pair graph that is an odd cycle
 
@@ -17272,6 +17333,22 @@ any fixed a∈A∩C. Only k members of F contain a, whereas R_k has at least
 k+1 members. This is a contradiction. Thus in a longer safe instance the
 protected set must lie entirely among the isolated vertices.
 
+If J is nonempty, the automaton is strongly connected, and every letter
+has rank at least n−1, there is a further improvement:
+
+\[
+ \boxed{c(S)\le h+k+2=h+m+1.}\tag{OC3}
+\]
+
+Otherwise all images through depth k+2 belong to F, while R_(k+1) contains
+at least k+2 distinct members. Each permutation letter must preserve J by
+the preceding observation. Every singular letter has defect one; the sharp
+threshold forces exactly k+2 preserved members, and (OC-E) again forces
+J-invariance. The nonempty proper set J would then be invariant under all
+letters, contradicting strong connectivity. This proves (OC3). The rank
+hypothesis is part of this statement; (OC-E) and the defect-two example
+explain why this proof does not cover larger letter defects.
+
 For m≥5, (OC1) improves the earlier odd-cycle bound h+2m−2 by m−4.
 In particular, for m=5 and target ac≥15 it excludes P_7=C9 (plus isolated
 vertices), and also excludes that shape at earlier layers. It does not
@@ -17287,7 +17364,14 @@ transformations in the four domains C3, C3+1, C5, C5+1; the maxima for singular
 maps are respectively 3,3,4,4. The native unrestricted-map control independently
 checks all 46656 maps on C5+1 and all 16777216 maps on C7+1, including arbitrary
 kernels and arbitrary images of the isolate. The singular maxima are 4 and 5;
-there are respectively 45936 and 16736896 singular maps. No maps are omitted
+there are respectively 45936 and 16736896 singular maps. The equality cases also satisfy
+the kernel and crossing assertions (OC-E). Among maps with cycle-edge kernels
+and preservation count k+2, the stable-kernel-compatible crossing counts are
+60 at C5 with defect two, and 308/672 at C7 with defect two/three. These are
+complete finite counts, not a classification for arbitrary k. The explicit
+defect-two family is independently checked for C5 through C17 with one and
+three isolates, giving 14 positive controls of its preservation count, rank,
+stable kernel, and periodic crossing. No maps are omitted
 by a rank or kernel prefilter. Worker domains are disjoint first-output residue
 classes. These finite controls support the implementation; the uniform bounds
 and sharpness follow from the proofs above, not from extrapolation.
