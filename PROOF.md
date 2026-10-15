@@ -5848,6 +5848,15 @@ python3 run.py script scripts/problem4/upper_bound/slack_one_initial_flags.cpp -
 python3 run.py script scripts/problem4/upper_bound/slack_one_initial_flags.cpp --pairs --delay-cut --ranks --arrival --split-layer 2 --depth 11 --terminal-avoidance --terminal-example --core 10 --threads 1
 ```
 
+这项单核心完整计算现已结束，耗时 664.262 秒：初始通过秩等初筛的
+39 个旗标中，三层共同距离检查保留 11 个；第十层保留 72 个旗标。
+第十一层共有 16128 个初筛选择，生成 520 个通过幂检查的字母投影，
+但完整字母表与全状态避开联合检查后的旗标、距离向量均为零。
+因此 σ=2、核心 10 的整个必要域被排除。对照较弱的双字母检查仍有
+72 个末层旗标；没有另做逐条件消融，不能将归零单独归因于 (TC4)。
+σ=3、核心 10 的双字母检查也保留 72 个末层旗标，但这不证明两个域相同；
+它的完整字母表与全状态避开联合运行另行进行，尚未完成。
+
 <a id="problem4-expanded-reachability-quotient"></a>
 #### 用保护点个数商图检验候选能否成为原问题实例
 
