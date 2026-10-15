@@ -40,6 +40,29 @@ with a clean local computation.
 
 ## Individual research sources
 
+General rank-descent controls and the enlarged restricted odd-core family:
+
+The rank control also checks maximum-set/reset-row separation and the
+common-image core escape bound, with singleton and nonsynchronizing controls.
+
+```sh
+python3 run.py script scripts/problem4/check_rank_descent.py
+python3 run.py script scripts/problem4/check_odd_core_target.py
+python3 run.py script scripts/problem4/odd_core_target.cpp 15 4 12 --all-partitions --threads 4
+python3 run.py script scripts/problem4/odd_core_target.cpp 16 5 15 --all-partitions --threads 12
+```
+
+`odd_core_target.cpp` permits every local rank-one-defect map, rather than only
+redirected involutions. It still covers only the explicitly defined odd-core
+family in [the proof](../PROOF.md#problem4-arbitrary-odd-core-threshold).
+`--all-partitions` covers every external permutation cycle type; without it,
+only one long external cycle and a fixed point are used. `--emit` prints every
+qualifying transition/subset/marker set. `--max-tasks N` restricts the prefix
+domain and prints `PARTIAL`; only an unrestricted `COMPLETE` run exhausts the
+chosen family. No negative result from this program is a general upper bound.
+The independent Python check compares all small positive and negative instances
+using literal subset BFS and a different transformation generator.
+
 ```sh
 python3 run.py script scripts/problem4/upper_bound/problem4_k4_controls.py
 python3 run.py script scripts/problem4/upper_bound/problem4_p3_shapes.py
@@ -360,6 +383,67 @@ The Python control uses small complete domains and exact rational ranks. The
 C++ mode exhausts all maps on C5 plus one isolate and C7 plus one isolate,
 including kernels outside the cycle. It partitions by the first output value
 and prints results without requiring or writing report inventories.
+
+## Uniform graph and rank controls
+
+The all-length proofs and their scope are in
+[PROOF.md](../PROOF.md#problem4-odd-cycle-all-lengths-bound). These programs
+check finite domains and identities; they do not establish the unbounded
+parameter claims by extrapolation.
+
+```sh
+python3 run.py script scripts/problem4/odd_cycle_geometry.cpp 7 4 --literal
+python3 run.py script scripts/problem4/odd_cycle_geometry.cpp 9 4
+python3 run.py script scripts/problem4/odd_cycle_path_distances.cpp 6 --compare-old
+python3 run.py script scripts/problem4/odd_cycle_path_distances.cpp 2 0 0 --compare-legacy
+python3 run.py script scripts/problem4/odd_cycle_path_distances.cpp 14 0 0
+python3 run.py script scripts/problem4/check_odd_subdivision_deletion.cpp 10 4
+python3 run.py script scripts/problem4/check_odd_subdivision_deletion.cpp --general 4
+python3 run.py script scripts/problem4/check_short_pair_core_bounds.py
+```
+
+`odd_cycle_geometry.cpp N threads` accepts N=5,7,9,11,13; `--literal` adds
+full state-map controls for N=5,7. The path solver uses k=(N−1)/2, then a
+common-domain parameter t and a pair-distance cap h; zero means all relevant
+values. It supports k=2,…,14. `--compare-old` accepts k=2,…,6 and compares
+complete singular signature sets. `--compare-legacy` compares the distance
+solvers on the requested small domain. C5 has positive survivors, as required
+by its actual counterexample.
+
+The subdivision checker exhausts all six-edge subdivision vectors for
+m=4,…,10. Its separate `--general` mode uses all base graphs on two to five
+vertices without isolates, with total subdivision budget at most two. The
+Python checker uses ordinary pair/subset BFS to verify the Černý distance
+formula and the eight-state h=2 counterexample, including actual reaching
+and reset words.
+
+Rebuild the complete near-maximal-rank core and action domains with:
+
+```sh
+python3 run.py script scripts/problem4/near_max_rank_cores.cpp 4 9 4 --literal
+python3 run.py script scripts/problem4/near_max_rank_cores.cpp 5 13 4
+python3 run.py script scripts/problem4/near_max_rank_actions.cpp -1 4 --all-caps
+python3 run.py script scripts/problem4/near_max_rank_actions.cpp -1 4 --all-caps --m4
+python3 run.py script scripts/problem4/near_max_rank_actions.cpp -1 4 --literal 1
+python3 run.py script scripts/problem4/near_max_rank_actions.cpp -1 4 --literal 1 --m4
+python3 run.py script scripts/problem4/near_max_rank_actions.cpp -1 4 --compare-defects
+```
+
+Action arguments start with core ID (`-1` for all), then threads. The default
+is m=5 (27 cores); `--m4` selects 8 cores. `--all-caps` covers h=1,…,13 or
+h=1,…,9, respectively; `--cap H` selects one layer. Every distance run compares
+integer-domain propagation with a separate reverse-order edge assignment.
+`--literal 1` compares complete one-isolate maps with the full normalized
+auxiliary-state domain, including the unions of core-state arrows.
+`--compare-defects` independently widens m=5 from defect at most two to four;
+`--full-defect` can also widen the domain for a distance run.
+
+`connected_vectors` only counts pools with no closed nonempty core subset;
+it is not a count of strongly connected automata. In m=4 only h=2 has such
+pools; the explicit actual counterexample is checked separately. In m=5 all
+joint pools are empty. Mathematical coverage and limits are in
+[the m=4 proof](../PROOF.md#problem4-four-cover-third-layer) and
+[the m=5 proof](../PROOF.md#problem4-five-cover-late-layers).
 
 ## Earlier conditional sources
 
