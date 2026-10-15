@@ -152,7 +152,7 @@ def tau4(args):
     with ThreadPoolExecutor(max_workers=min(args.threads, 9)) as pool:
         for core, signatures in pool.map(compare, range(9)):
             print(f'Core {core}: all {signatures} signatures and arrow unions agree', flush=True)
-    invoke([primary, '--threads', args.threads], work, env)
+    invoke([primary, '--threads', args.threads, '--pair-cap', getattr(args, 'pair_cap', 6)], work, env)
 
 
 def upper(args):
@@ -212,8 +212,9 @@ def main():
     q.add_argument('--threads', type=int, default=min(16, os.cpu_count() or 1))
     q.add_argument('--independent', action='store_true', help='Also run the small independent Python check')
     q.set_defaults(action=c7)
-    q = sub.add_parser('tau4', help='Reconstruct and exclude all nine cover-four P6 cores')
+    q = sub.add_parser('tau4', help='Reconstruct the nine cover-four cores and check a short-pair layer')
     q.add_argument('--threads', type=int, default=min(16, os.cpu_count() or 1))
+    q.add_argument('--pair-cap', type=int, choices=range(6, 10), default=6)
     q.set_defaults(action=tau4)
     q = sub.add_parser('families', help='Generate and check the finite lower-construction scopes')
     q.set_defaults(action=families)

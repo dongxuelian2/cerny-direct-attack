@@ -1,4 +1,6 @@
-// Single-letter and exact-distance relaxation for the nine tau(P6)=4 cores.
+// Single-letter and exact-distance relaxation for the nine cover-four cores.
+// Pair cap 6 is the original P6 calculation; caps 7..9 use the same complete
+// graph/action classification under c(S)>=h+6 and codimension four.
 // Independent input/output isolated labels are identified only for ONE letter.
 // Never iterate these representative transformations as actual DFA letters.
 #include <algorithm>
@@ -41,6 +43,8 @@ const vector<Core> cores = {
 };
 struct Search {
   int n, nf, ne;
+  int pair_cap=6;
+  bool reverse_pairs=false;
   vector<pair<int,int>> edges;
   int index[8][8];
   vector<int> family;
@@ -119,7 +123,7 @@ struct Search {
   }
   bool pair_allowed(const Action& a) const {
     for(int u=0;u<ne;++u) {
-      if(e[u] && (a.forced>>u&1) && e[u]!=6) return false;
+      if(e[u] && (a.forced>>u&1) && e[u]!=pair_cap) return false;
       int v=a.pair[u];
       if(v==-1 && e[u] && e[u]!=1) return false;
       if(v>=0 && e[u] && e[v] && e[u]>1+e[v]) return false;
@@ -132,7 +136,7 @@ struct Search {
     if(v<0 || v==u) return false;
     if(e[u] && e[v]) return e[u]==1+e[v];
     if(e[u]) return e[u]>=2;
-    if(e[v]) return e[v]<=5;
+    if(e[v]) return e[v]<pair_cap;
     return true;
   }
   void pairs(int at,const vector<int>& pool) {
@@ -161,8 +165,9 @@ struct Search {
       if(sample_d.empty()) {sample_d=d;sample_e=e;}
       return;
     }
-    for(int value=1;value<=6;++value) {e[at]=value;pairs(at+1,next);}
-    e[at]=0;
+    int coordinate=reverse_pairs?ne-at-1:at;
+    for(int value=1;value<=pair_cap;++value) {e[coordinate]=value;pairs(at+1,next);}
+    e[coordinate]=0;
   }
   void layers(int level,unsigned remain,const vector<int>& pool) {
     ++subset_nodes;
@@ -198,7 +203,8 @@ struct Search {
     vector<int> pool(actions.size());iota(pool.begin(),pool.end(),0);
     layers(1,(1U<<nf)-1,pool);
     ostringstream out;
-    out<<"core="<<id<<" n="<<n<<" family="<<nf<<" maps="<<maps
+    out<<"core="<<id<<" pair_cap="<<pair_cap<<" pair_order="<<(reverse_pairs?"reverse":"forward")
+       <<" n="<<n<<" family="<<nf<<" maps="<<maps
        <<" retained="<<retained<<" signatures="<<actions.size()
        <<" subset_nodes="<<subset_nodes<<" subset_vectors="<<subset_vectors
        <<" pair_nodes="<<pair_nodes<<" joint_vectors="<<joint_vectors
@@ -230,15 +236,20 @@ void controls() {
   assert(negative.subset_vectors==0 && negative.joint_vectors==0);
 }
 int main(int argc,char** argv) {
-  int threads=1,only=-1,profiles=-1;
+  int threads=1,only=-1,profiles=-1,pair_cap=6;bool reverse_pairs=false;
   try {
     for(int i=1;i<argc;i+=2) {
       if(i+1==argc) return 2;
       string flag=argv[i],value=argv[i+1];size_t pos=0;
+      if(flag=="--pair-order") {
+        if(value!="forward"&&value!="reverse") return 2;
+        reverse_pairs=value=="reverse";continue;
+      }
       int v=stoi(value,&pos);if(pos!=value.size()) return 2;
       if(flag=="--threads" && v>=1 && v<=64) threads=v;
       else if(flag=="--core" && v>=0 && v<int(cores.size())) only=v;
       else if(flag=="--profiles" && v>=0 && v<int(cores.size())) profiles=v;
+      else if(flag=="--pair-cap" && v>=6 && v<=9) pair_cap=v;
       else return 2;
     }
   } catch(...) {return 2;}
@@ -260,7 +271,7 @@ int main(int argc,char** argv) {
   for(int t=0;t<threads;++t) workers.emplace_back([&] {
     for(int id;(id=next.fetch_add(1))<int(cores.size());)
       if(only<0 || only==id) {
-        Search s(cores[id]);output[id]=s.run(id);
+        Search s(cores[id]);s.pair_cap=pair_cap;s.reverse_pairs=reverse_pairs;output[id]=s.run(id);
         if(s.connected_vectors) survivor.store(true);
       }
   });

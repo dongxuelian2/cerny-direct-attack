@@ -16,6 +16,7 @@
 #include <thread>
 #include <vector>
 #include "cell_pair_profiles.hpp"
+#include "short_word_alphabets.hpp"
 using namespace std;
 struct Core { int id, n; const char* edges; };
 const vector<Core> cores = {
@@ -269,11 +270,248 @@ vector<unsigned> one_count_closure(const vector<unsigned>& rows,int protected_co
  }
  return closure;
 }
+// Iterate only complete labeled maps. A terminal flag supplies at most two
+// possible initial rows; each must be tested separately across the whole pool.
+bool terminal_powers=false,terminal_mixed=false,terminal_alphabets=false,terminal_avoidance=false;
+bool terminal_reachable=false;
+bool terminal_example=false,example_printed=false;
+bool literal_prefix=false;
+bool canonical_prefix=false;
+bool canonical_isolates=false;
+bool periodic_isolates=false;
+bool cyclic_isolates=false;
+bool stable_kernel=false;
+bool stable_partitions=false;
+vector<unsigned> initial_flag;
+// Original enumeration already orders the batches of newly named isolates.
+// Within each such batch quotient by the full ordered membership columns.
+uint64_t isolate_prefix_weight(const vector<unsigned>& basis,int core_size,int external_end=13) {
+ assert(basis.size()<=13&&external_end<=13);
+ array<int,14> births{};uint64_t previous=0,denominator=1;int same=0;
+ auto factorial=[](int n) {uint64_t value=1;for(int j=2;j<=n;++j) value*=j;return value;};
+ for(int q=core_size;q<external_end;++q) {
+   uint64_t column=0;int first=basis.size();
+   for(size_t j=0;j<basis.size();++j) {
+     bool member=(basis[j]>>q)&1;column=(column<<1)|member;
+     if(member&&first==int(basis.size())) first=j;
+   }
+   if(q>core_size&&previous<column) return 0;
+   if(q==core_size||previous==column) ++same;
+   else {denominator*=factorial(same);same=1;}
+   previous=column;++births[first];
+ }
+ uint64_t numerator=1;denominator*=factorial(same);
+ for(int count:births) numerator*=factorial(count);
+ assert(numerator%denominator==0);return numerator/denominator;
+}
+void isolate_prefix_controls() {
+ map<vector<unsigned>,uint64_t> orbit_sizes;uint64_t normalized=0;
+ for(unsigned code=0;code<65536;++code) {
+   vector<unsigned> basis;unsigned rest=code,named=3;bool valid=true;
+   for(int row=0;row<4;++row) {
+     unsigned F=((rest&15)<<2)|(1U<<(row%2))|(row==3?64:0);rest>>=4;
+     unsigned fresh=F&60&~named,available=60&~named,canonical_fresh=0;
+     for(int j=0;j<__builtin_popcount(fresh);++j) {
+       unsigned bit=available&-available;canonical_fresh|=bit;available^=bit;
+     }
+     if(fresh!=canonical_fresh) valid=false;
+     named|=F;basis.push_back(F);
+   }
+   if(!valid) continue;++normalized;
+   auto canonical=basis;vector<int> p{2,3,4,5};
+   do {
+     auto mapped=basis;
+     for(auto& F:mapped) {
+       unsigned out=F&~60U;for(int q=2;q<6;++q) if(F>>q&1) out|=1U<<p[q-2];F=out;
+     }
+     canonical=min(canonical,mapped);
+   } while(next_permutation(p.begin(),p.end()));
+   ++orbit_sizes[canonical];
+   assert((isolate_prefix_weight(basis,2,6)>0)==(basis==canonical));
+ }
+ uint64_t weighted=0;
+ for(const auto& [basis,count]:orbit_sizes) {
+   auto weight=isolate_prefix_weight(basis,2,6);assert(weight==count);weighted+=weight;
+   auto parent=basis;parent.pop_back();assert(isolate_prefix_weight(parent,2,6)>0);
+ }
+ assert(weighted==normalized&&orbit_sizes.size()<normalized);
+ cout<<"CONTROLS isolated-column quotient: "<<normalized<<" normalized prefixes, "
+     <<orbit_sizes.size()<<" orbits PASS\n";
+}
+// Quotient only by automorphisms fixing the entire initial ordered flag.
+// Outside labels and the protected label are fixed pointwise.
+uint64_t prefix_orbit_weight(const vector<unsigned>& basis,size_t initial,
+                            const vector<vector<int>>& automorphisms,int core_size) {
+ uint64_t group=0,stabilizer=0;
+ for(const auto& p:automorphisms) {
+   vector<unsigned> mapped;
+   for(unsigned F:basis) {
+     unsigned G=F&~((1U<<core_size)-1);
+     for(int x=0;x<core_size;++x) if(F>>x&1) G|=1U<<p[x];
+     mapped.push_back(G);
+   }
+   if(!equal(basis.begin(),basis.begin()+initial,mapped.begin())) continue;
+   ++group;
+   if(mapped<basis) return 0;
+   stabilizer+=mapped==basis;
+ }
+ assert(stabilizer&&group%stabilizer==0);
+ return group/stabilizer;
+}
+void prefix_orbit_controls() {
+ vector<vector<int>> group;vector<int> p{0,1,2,3,4,5};
+ const vector<unsigned> edges{33,18,12};
+ do {
+   bool valid=true;
+   for(unsigned edge:edges) {
+     unsigned mapped=0;for(int x=0;x<6;++x) if(edge>>x&1) mapped|=1U<<p[x];
+     valid&=find(edges.begin(),edges.end(),mapped)!=edges.end();
+   }
+   if(valid) group.push_back(p);
+ } while(next_permutation(p.begin(),p.end()));
+ assert(group.size()==48);
+ assert(prefix_orbit_weight({64,128,256,1},3,group,6)==6);
+ assert(prefix_orbit_weight({64,128,256,12},3,group,6)==3);
+ assert(prefix_orbit_weight({64,128,256,3},3,group,6)==12);
+ assert(prefix_orbit_weight({64,128,256,1,32},3,group,6)==6);
+ assert(prefix_orbit_weight({64,128,256,1,2},3,group,6)==24);
+ assert(prefix_orbit_weight({12,18,33,1},3,group,6)==2);
+ assert(prefix_orbit_weight({64,128,256,32},3,group,6)==0);
+ cout<<"CONTROLS prefix orbits: matching automorphisms and initial-flag stabilizers PASS\n";
+}
+int cyclic_rank(const vector<int>& f) {
+ return __builtin_popcount(cell_pairs::cyclic_states(f));
+}
+bool safe_powers(const vector<int>& f,unsigned source,unsigned protect,int length) {
+ unsigned image=source;int size=__builtin_popcount(source);
+ for(int step=1;step<=length;++step) {
+   unsigned next=0;for(int q=0;q<int(f.size());++q) if(image>>q&1) next|=1U<<f[q];
+   image=next;
+   if(__builtin_popcount(image)!=size||(image&protect)!=protect) return false;
+ }
+ return true;
+}
+bool safe_two_letters(const vector<int>& f,const vector<int>& g,unsigned source,unsigned protect,int length) {
+ vector<unsigned> frontier{source};vector<unsigned char> seen(1U<<f.size());seen[source]=1;
+ int size=__builtin_popcount(source);
+ for(int step=1;step<=length&&!frontier.empty();++step) {
+   vector<unsigned> next;
+   for(unsigned S:frontier) for(const auto* map:{&f,&g}) {
+     unsigned image=0;for(int q=0;q<int(f.size());++q) if(S>>q&1) image|=1U<<(*map)[q];
+     if(__builtin_popcount(image)!=size||(image&protect)!=protect) return false;
+     if(!seen[image]) {seen[image]=1;next.push_back(image);}
+   }
+   frontier=move(next);
+ }
+ return true;
+}
+// Every letter in a feasible alphabet must have a compatible supplier for
+// every obligation, possibly itself. Iterate this necessary condition only;
+// a nonempty fixed point need not contain a feasible alphabet.
+vector<unsigned char> supplier_fixed_point(const vector<unsigned>& obligations,
+                       const vector<vector<unsigned char>>& compatible,unsigned required) {
+ vector<unsigned char> active(obligations.size(),1);
+ bool changed=true;
+ while(changed) {
+   changed=false;
+   for(size_t i=0;i<active.size();++i) if(active[i]) {
+     unsigned covered=0;
+     for(size_t j=0;j<active.size();++j) if(active[j]&&compatible[i][j]) covered|=obligations[j];
+     if((covered&required)!=required) {active[i]=0;changed=true;}
+   }
+ }
+ return active;
+}
+void power_controls() {
+ uint64_t checks=0;
+ for(int n=2;n<=4;++n) {
+   int total=1;for(int q=0;q<n;++q) total*=n;
+   for(int code=0;code<total;++code) {
+     int rest=code;vector<int> f(n),power(n);iota(power.begin(),power.end(),0);
+     for(int q=0;q<n;++q) {f[q]=rest%n;rest/=n;}
+     vector<vector<int>> powers;
+     for(int step=0;step<5;++step) {for(int& q:power) q=f[q];powers.push_back(power);}
+     unsigned eventual_image=0;for(int x:power) eventual_image|=1U<<x;
+     assert(cyclic_rank(f)==__builtin_popcount(eventual_image));
+     int transient=n-__builtin_popcount(eventual_image);
+     unsigned support=0,one_image=0;
+     for(int x:f) one_image|=1U<<x;
+     if(transient) for(int x=0;x<n;++x) for(int y=x+1;y<n;++y)
+       if(powers[transient-1][x]==powers[transient-1][y]) support|=(1U<<x)|(1U<<y);
+     assert((((1U<<n)-1)^eventual_image)==(support&(((1U<<n)-1)^eventual_image)));
+     assert(((((1U<<n)-1)^one_image)&~support)==0);
+     for(unsigned S=1;S<(1U<<n);++S) for(int a=0;a<n;++a) if(S>>a&1) {
+       bool literal=true;
+       for(const auto& map:powers) {
+         bool hit=false;
+         for(int u=0;u<n;++u) if(S>>u&1) {
+           hit|=map[u]==a;
+           for(int v=u+1;v<n;++v) if((S>>v&1)&&map[u]==map[v]) literal=false;
+         }
+         literal&=hit;
+       }
+       assert(safe_powers(f,S,1U<<a,5)==literal);++checks;
+     }
+   }
+ }
+ assert(safe_powers({0,1,2},3,1,5));
+ assert(!safe_powers({1,2,2},3,2,5)); // second power compresses
+ assert(!safe_powers({1,2,0},3,1,5)); // permutation avoids protection
+ vector<int> three_tail(14);iota(three_tail.begin(),three_tail.end(),0);
+ three_tail[0]=1;three_tail[1]=2;three_tail[2]=3;
+ assert(cyclic_rank(three_tail)==11);
+ auto four_tail=three_tail;four_tail[3]=4;
+ assert(cyclic_rank(four_tail)==10);
+ assert(safe_powers(four_tail,16368,8192,11)); // Q-avoidability is essential
+ cout<<"CONTROLS labeled powers versus pointwise composition "<<checks<<" cases PASS\n";
+ cout<<"CONTROLS transient states lie in the corresponding short-pair support: 287 transformations PASS\n";
+ uint64_t pair_checks=0;
+ // Direct word enumeration is independent of the subset-BFS implementation.
+ vector<vector<int>> maps;
+ for(int code=0;code<27;++code) {int rest=code;vector<int> f(3);for(int& x:f) {x=rest%3;rest/=3;}maps.push_back(f);}
+ for(const auto& f:maps) for(const auto& g:maps) for(unsigned S=1;S<8;++S) for(int a=0;a<3;++a) if(S>>a&1) {
+   bool valid=true;
+   for(int length=1;length<=4;++length) for(int word=0;word<(1<<length);++word) {
+     unsigned image=0;
+     for(int q=0;q<3;++q) if(S>>q&1) {int x=q;for(int j=0;j<length;++j) x=((word>>j)&1)?g[x]:f[x];image|=1U<<x;}
+     if(__builtin_popcount(image)!=__builtin_popcount(S)||!(image>>a&1)) valid=false;
+   }
+   assert(safe_two_letters(f,g,S,1U<<a,4)==valid);++pair_checks;
+ }
+ uint64_t graph_checks=0;
+ for(int graph=0;graph<64;++graph) {
+   vector<vector<unsigned char>> compatible(4,vector<unsigned char>(4));int bit=0;
+   for(int i=0;i<4;++i) {compatible[i][i]=1;for(int j=0;j<i;++j) compatible[i][j]=compatible[j][i]=(graph>>(bit++))&1;}
+   for(int code=0;code<256;++code) {
+     vector<unsigned> labels(4);for(int i=0;i<4;++i) labels[i]=(code>>(2*i))&3;
+     auto active=supplier_fixed_point(labels,compatible,3);
+     for(int subset=1;subset<16;++subset) {
+       bool clique=true;unsigned covered=0;
+       for(int i=0;i<4;++i) if(subset>>i&1) {covered|=labels[i];for(int j=0;j<i;++j) if((subset>>j&1)&&!compatible[i][j]) clique=false;}
+       if(clique&&covered==3) for(int i=0;i<4;++i) if(subset>>i&1) assert(active[i]);
+     }
+     ++graph_checks;
+   }
+ }
+ cout<<"CONTROLS mixed-word BFS "<<pair_checks<<" cases; supplier pruning "<<graph_checks<<" labeled graphs PASS\n";
+}
 PairSummary graded_pair_pool(Core core,const vector<unsigned>& edges,const vector<unsigned>& cliques,
                      const vector<unsigned>& basis,const vector<int>& levels,
                      const vector<vector<unsigned>>& families,int protected_count,bool ranks,bool arrival,
-                     bool tight_radii,bool capacity_only=false) {
+                     bool tight_radii,bool capacity_only=false,unsigned terminal_source=0) {
  int n=13+protected_count,depth=int(families.size())-1;vector<unsigned> outputs;
+ if(terminal_powers&&depth==11&&!capacity_only&&!terminal_source) {
+   PairSummary sum;
+   unsigned protect=((1U<<n)-1)^8191;
+   assert(protected_count==1);
+   assert(families.back().size()<=2);
+   for(unsigned source:families.back()) {
+     auto answer=graded_pair_pool(core,edges,cliques,basis,levels,families,
+                                 protected_count,ranks,arrival,tight_radii,false,source|protect);
+     sum.actions+=answer.actions;sum.vectors+=answer.vectors;
+   }
+   return sum;
+ }
  assert(basis.size()==levels.size()&&depth>=3&&depth<=11);
  assert(is_sorted(levels.begin(),levels.end())&&levels.back()==depth);
  unsigned required=(1U<<basis.size())-1;
@@ -301,8 +539,15 @@ PairSummary graded_pair_pool(Core core,const vector<unsigned>& edges,const vecto
  // Every target-family fiber must be invariant under the anonymous output
  // permutations, including BOTH new third-layer fibers when split_layer=3.
  unsigned named_outputs=0;for(unsigned fiber:basis) named_outputs|=fiber;
- vector<int> extra; if(ranks) for(int q=core.n;q<13;++q) if(named_outputs>>q&1) extra.push_back(q);
+ unsigned fixed_outputs=named_outputs|((1U<<core.n)-1)|(((1U<<n)-1)^8191);
+ bool exact_prefix=literal_prefix&&protected_count==1&&n-__builtin_popcount(fixed_outputs)<=2;
+ vector<int> extra;
+ if(terminal_source||exact_prefix) {for(int q=core.n;q<n;++q) extra.push_back(q);}
+ else if(ranks) for(int q=core.n;q<13;++q) if(named_outputs>>q&1) extra.push_back(q);
  cell_pairs::Generator generator(n,core.n,edges,outputs,extra);
+ array<unsigned,15> stable_allowed{};
+ for(unsigned e:edges) {int x=__builtin_ctz(e),y=__builtin_ctz(e&(e-1));stable_allowed[x]|=1U<<y;stable_allowed[y]|=1U<<x;}
+ int transient_bound=stable_kernel?min(3,cell_pairs::vertex_cover_number(core.n,edges)):3;
  vector<SafeSources> safe;
  if(ranks) {
    unsigned protect=((1U<<n)-1)^8191;
@@ -314,8 +559,28 @@ PairSummary graded_pair_pool(Core core,const vector<unsigned>& edges,const vecto
    }
    safe.emplace_back(n,n,3,0,auxiliary);
  }
+ struct LiteralLetter {vector<int> f;cell_pairs::Profile profile;unsigned flags;};
+ vector<LiteralLetter> literals;unsigned current_flags=0;
+ vector<pair<unsigned,int>> forced_seeds;
+ if(exact_prefix) for(int j=1;j<=depth;++j) if(families[j].size()==size_t(12-j))
+   for(unsigned row:families[j]) forced_seeds.emplace_back(row|8192,j);
  function<bool(const vector<int>&)> rank_filter;
  if(ranks) rank_filter=[&](const vector<int>& f) {
+   if(periodic_isolates&&protected_count==1) {
+     unsigned image=0;for(int x:f) image|=1U<<x;
+     unsigned outside_core=((1U<<n)-1)^((1U<<core.n)-1);
+     if((image&outside_core)!=outside_core) return false;
+     if(cyclic_isolates) {
+       unsigned cyclic=cell_pairs::cyclic_states(f);
+       if((cyclic&outside_core)!=outside_core||__builtin_popcount(cyclic)<n-transient_bound) return false;
+     }
+     if(stable_kernel&&!cell_pairs::stable_kernel_in(f,stable_allowed)) return false;
+   }
+   if(exact_prefix) {
+     if(cyclic_rank(f)<n-3) return false;
+     for(auto [source,length]:forced_seeds) if(!safe_powers(f,source,8192,length)) return false;
+   }
+   if(terminal_source&&!safe_powers(f,terminal_source,((1U<<n)-1)^8191,11)) return false;
    if(depth>=4) {
      auto preimage=[&](unsigned mask) {
        unsigned pre=0;for(int q=0;q<n;++q) if(mask>>f[q]&1) pre|=1U<<q;return pre;
@@ -332,6 +597,7 @@ PairSummary graded_pair_pool(Core core,const vector<unsigned>& edges,const vecto
      }
    }
    for(const auto& family:safe) if(!family.accepts(f)) return false;
+   if(terminal_source&&terminal_mixed) literals.push_back({f,generator.literal_profile(f),current_flags});
    return true;
  };
  auto fibers=[&](const vector<unsigned>& family) {
@@ -418,10 +684,28 @@ PairSummary graded_pair_pool(Core core,const vector<unsigned>& edges,const vecto
    }
  }
  for(const auto& pattern:patterns) {
-   for(const auto& item:generator.generate(pattern.pre,rank_filter,known_two)) {
+   current_flags=pattern.flags;
+   for(const auto& item:generator.generate(pattern.pre,rank_filter,known_two,
+                                           periodic_isolates&&protected_count==1,
+                                           cyclic_isolates&&protected_count==1?transient_bound:-1,
+                                           stable_partitions&&protected_count==1)) {
      if(unsigned(item.first.back())&known_two) continue;
      auto& mark=alphabet[item.first];mark.flags|=pattern.flags;
      for(int q=0;q<n;++q) mark.arrows[q]|=item.second[q];
+   }
+ }
+ if(terminal_source&&terminal_mixed) {
+   // Cross-check that recording complete maps loses no profile, supplier,
+   // or arrow from the independently aggregated single-letter pool.
+   map<cell_pairs::Profile,Mark> recorded;
+   for(const auto& letter:literals) {
+     auto& mark=recorded[letter.profile];mark.flags|=letter.flags;
+     for(int q=0;q<n;++q) mark.arrows[q]|=1U<<letter.f[q];
+   }
+   assert(recorded.size()==alphabet.size());
+   for(const auto& item:alphabet) {
+     auto it=recorded.find(item.first);assert(it!=recorded.end());
+     assert(it->second.flags==item.second.flags&&it->second.arrows==item.second.arrows);
    }
  }
  PairSummary result;result.actions=alphabet.size();
@@ -461,6 +745,57 @@ PairSummary graded_pair_pool(Core core,const vector<unsigned>& edges,const vecto
    for(int q=0;q<n;++q) arrows[q]|=1U<<q;
    for(int k=0;k<n;++k) for(int q=0;q<n;++q) if(arrows[q]>>k&1) arrows[q]|=arrows[k];
    for(int q=0;q<n;++q) if(arrows[q]!=(1U<<n)-1) valid=false;
+   if(valid&&terminal_source&&terminal_mixed) {
+     vector<const LiteralLetter*> allowed;vector<unsigned> obligations;
+     unsigned all_required=required|(((1U<<ne)-1)<<basis.size());
+     for(const auto& letter:literals) {
+       const auto& profile=letter.profile;bool ok=true;unsigned label=letter.flags;
+       for(int i=0;i<ne;++i) {
+         if((unsigned(profile.back())>>i&1)&&e[i]!=3) ok=false;
+         if(profile[i]==-1&&e[i]!=1) ok=false;
+         if(profile[i]>=0&&e[i]>e[profile[i]]+1) ok=false;
+         if((profile[i]==-1&&e[i]==1)||(profile[i]>=0&&e[i]==e[profile[i]]+1)) label|=1U<<(basis.size()+i);
+       }
+       if(ok) {allowed.push_back(&letter);obligations.push_back(label);}
+     }
+     vector<vector<unsigned char>> compatible(allowed.size(),vector<unsigned char>(allowed.size(),1));
+     for(size_t i=0;i<allowed.size();++i) for(size_t j=0;j<i;++j)
+       compatible[i][j]=compatible[j][i]=safe_two_letters(allowed[i]->f,allowed[j]->f,
+                                                         terminal_source,((1U<<n)-1)^8191,11);
+     auto active=supplier_fixed_point(obligations,compatible,all_required);
+     unsigned covered=0;cell_pairs::Arrows actual{};
+     for(size_t i=0;i<active.size();++i) if(active[i]) {
+       covered|=obligations[i];for(int q=0;q<n;++q) actual[q]|=1U<<allowed[i]->f[q];
+     }
+     valid=(covered&all_required)==all_required;
+     for(int q=0;q<n;++q) actual[q]|=1U<<q;
+     for(int k=0;k<n;++k) for(int q=0;q<n;++q) if(actual[q]>>k&1) actual[q]|=actual[k];
+     for(int q=0;q<n;++q) if(actual[q]!=(1U<<n)-1) valid=false;
+     if(valid&&terminal_alphabets) {
+       vector<vector<int>> maps;vector<unsigned> labels;
+       for(size_t i=0;i<active.size();++i) if(active[i]) {
+         maps.push_back(allowed[i]->f);labels.push_back(obligations[i]);
+       }
+       vector<pair<int,int>> core_edges;
+       for(unsigned edge:edges) core_edges.emplace_back(__builtin_ctz(edge),__builtin_ctz(edge&(edge-1)));
+       assert(n==14);
+       auto answer=short_word_clique<14>(maps,labels,all_required,13,
+                                         {{terminal_source,11}},core_edges,e,true,terminal_avoidance,
+                                         terminal_reachable?terminal_source:0);
+       valid=answer.possible;
+       if(valid&&terminal_example&&!example_printed) {
+         example_printed=true;
+         cout<<"TERMINAL_EXAMPLE core="<<core.id<<" source="<<terminal_source<<" protect=8192";
+         for(size_t j=0;j<basis.size();++j) cout<<" fiber="<<basis[j]<<':'<<levels[j];
+         cout<<" letters="<<answer.witness.size()<<'\n';
+         for(int index:answer.witness) {
+           cout<<"LETTER";for(int out:maps[index]) cout<<' '<<out;cout<<'\n';
+         }
+         cout<<"EXAMPLE_SCOPE short-word safety, strong connectivity, and suppliers verified; base-model synchronization and reachability not yet checked\n";
+         if(terminal_reachable) cout<<"EXPANSION_SCOPE four-protected-state expansion reaches the target; independent original-class witness audit still required\n";
+       }
+     }
+   }
    if(valid) ++result.vectors;
  }
  return result;
@@ -480,7 +815,7 @@ struct Result {
  uint64_t raw=0,canonical=0,first=0,second=0,third=0,two_export=0,cells_one=0,cells_two=0,cross=0,cross_kept=0;
  uint64_t pair_one=0,pair_two=0,actions=0,vectors=0;
  uint64_t delay_one=0,delay_two=0;
- struct Layer {uint64_t admitted=0,one=0,two=0,vectors=0,actions=0;};
+ struct Layer {uint64_t admitted=0,one=0,two=0,vectors=0,actions=0,representatives=0;};
  array<Layer,12> layers{};
  array<uint64_t,12> terminal_splits{};
  array<uint64_t,4> two_types{},kept_types{},pair_types{};
@@ -555,6 +890,7 @@ Result examine(Core core,const vector<unsigned>& all,bool print_flags,bool pairs
            if(f<flag) {canonical=false;break;}
          }
          if(!canonical) continue; ++result.canonical;
+         if(!initial_flag.empty()&&vector<unsigned>(flag.begin(),flag.end())!=initial_flag) continue;
          auto three=family(two,E,true);
          if(rank_checked(three)!=9||!covers_all(three)) continue;
          if(rank_checked({16383,8192,B,C,D,E},14)!=6) continue;
@@ -596,17 +932,24 @@ Result examine(Core core,const vector<unsigned>& all,bool print_flags,bool pairs
                unsigned fresh=F&8191&~named,normalized=0,available=8191&~named;
                for(int k=0;k<__builtin_popcount(fresh);++k) {unsigned bit=available&-available;normalized|=bit;available^=bit;}
                if(fresh!=normalized) continue;
+               uint64_t weight=1;
+               if(canonical_prefix||canonical_isolates) {
+                 vector<unsigned> prefix{B,C,D,E};prefix.insert(prefix.end(),tail.begin(),tail.end());prefix.push_back(F);
+                 if(canonical_prefix) weight=prefix_orbit_weight(prefix,4,automorphisms,core.n);
+                 if(canonical_isolates) weight*=isolate_prefix_weight(prefix,core.n);
+                 if(!weight) continue;
+               }
                auto known=edges;known.insert(known.end(),tail.begin(),tail.end());known.push_back(F);
                if(level<=7&&(!bounded_short_edges(known,level+3)||(level<=6&&!cell_pairs::cover_three(known)))) continue;
                auto rows=family(source,F,false);
                if(rank_checked(rows)!=12-level||(level<=7&&!covers_all(rows))) continue;
-               ++result.layers[level].admitted;
+               result.layers[level].admitted+=weight;++result.layers[level].representatives;
                tail.push_back(F);later.push_back(move(rows));
                PairSummary left,right;
                if(one_active&&!(F>>14)) left=pair_pool(core,edges,cliques,B,C,D,E,actual_one,actual_two,three,1,ranks,arrival,tail,later,split_layer);
                if(two_active) right=pair_pool(core,edges,cliques,B,C,D,E,actual_one,actual_two,three,2,ranks,arrival,tail,later,split_layer);
-               auto& r=result.layers[level];r.one+=left.vectors>0;r.two+=right.vectors>0;
-               r.vectors+=left.vectors+right.vectors;r.actions+=left.actions+right.actions;
+               auto& r=result.layers[level];r.one+=weight*(left.vectors>0);r.two+=weight*(right.vectors>0);
+               r.vectors+=weight*(left.vectors+right.vectors);r.actions+=weight*(left.actions+right.actions);
                if(print_flags) {
                  cout<<"LAYER_FLAG level="<<level<<" core="<<core.id<<" B="<<B<<" C="<<C<<" D="<<D<<" E="<<E;
                  for(unsigned fiber:tail) cout<<" next="<<fiber;
@@ -686,13 +1029,17 @@ Result examine_late(Core core,const vector<unsigned>& all,bool print_flags,
            if(mapped<basis) {canonical=false;break;}
          }
          if(!canonical) return;++result.canonical;
+         if(!initial_flag.empty()&&basis!=initial_flag) return;
        }
+       uint64_t weight=canonical_prefix&&level>=4?prefix_orbit_weight(basis,3,automorphisms,core.n):1;
+       if(canonical_isolates&&level>=4) weight*=isolate_prefix_weight(basis,core.n);
+       if(!weight) return;
        families.push_back(rows);
        if(level<3) {extend(level+1);families.pop_back();return;}
-       auto& layer=result.layers[level];++layer.admitted;
+       auto& layer=result.layers[level];layer.admitted+=weight;++layer.representatives;
        auto answer=graded_pair_pool(core,edges,cliques,basis,levels,families,1,true,true,true);
-       layer.actions+=answer.actions;layer.vectors+=answer.vectors;layer.one+=answer.vectors>0;
-       if(level==max_layer&&answer.vectors) ++result.terminal_splits[current_split];
+       layer.actions+=weight*answer.actions;layer.vectors+=weight*answer.vectors;layer.one+=weight*(answer.vectors>0);
+       if(level==max_layer&&answer.vectors) result.terminal_splits[current_split]+=weight;
        if(level==3) {++result.third;result.pair_one+=answer.vectors>0;result.actions+=answer.actions;result.vectors+=answer.vectors;}
        if(print_flags) {
          cout<<"LATE_FLAG core="<<core.id<<" layer="<<level<<" split="<<current_split;
@@ -746,9 +1093,29 @@ Result examine_late(Core core,const vector<unsigned>& all,bool print_flags,
 }
 int main(int argc,char**argv) {
  cout<<unitbuf;
- int threads=4,only_core=-1,max_layer=3,split_layer=1; bool print_flags=false,pairs=false,delay_cut=false,ranks=false,arrival=false;
+ int threads=4,only_core=-1,max_layer=3,split_layer=1; bool print_flags=false,pairs=false,delay_cut=false,ranks=false,arrival=false,controls_only=false;
  for(int i=1;i<argc;++i) {
    if(string(argv[i])=="--threads"&&i+1<argc) threads=stoi(argv[++i]);
+   else if(string(argv[i])=="--terminal-powers") terminal_powers=true;
+   else if(string(argv[i])=="--terminal-mixed") terminal_powers=terminal_mixed=true;
+   else if(string(argv[i])=="--terminal-alphabets") terminal_powers=terminal_mixed=terminal_alphabets=true;
+   else if(string(argv[i])=="--terminal-avoidance") terminal_powers=terminal_mixed=terminal_alphabets=terminal_avoidance=true;
+   else if(string(argv[i])=="--terminal-reachable") terminal_powers=terminal_mixed=terminal_alphabets=terminal_avoidance=terminal_reachable=true;
+   else if(string(argv[i])=="--terminal-example") terminal_example=true;
+   else if(string(argv[i])=="--literal-prefix") literal_prefix=true;
+   else if(string(argv[i])=="--canonical-prefix") canonical_prefix=true;
+   else if(string(argv[i])=="--canonical-isolates") canonical_isolates=true;
+   else if(string(argv[i])=="--periodic-isolates") periodic_isolates=true;
+   else if(string(argv[i])=="--cyclic-isolates") cyclic_isolates=periodic_isolates=true;
+   else if(string(argv[i])=="--stable-kernel") stable_kernel=cyclic_isolates=periodic_isolates=true;
+   else if(string(argv[i])=="--stable-partitions") stable_partitions=stable_kernel=cyclic_isolates=periodic_isolates=true;
+   else if(string(argv[i])=="--initial-flag"&&i+1<argc) {
+     string masks=argv[++i];replace(masks.begin(),masks.end(),',',' ');
+     istringstream input(masks);unsigned value;
+     while(input>>value) initial_flag.push_back(value);
+     if(!input.eof()||initial_flag.empty()) return 2;
+   }
+   else if(string(argv[i])=="--controls-only") controls_only=true;
    else if(string(argv[i])=="--flags") print_flags=true;
    else if(string(argv[i])=="--pairs") pairs=true;
    else if(string(argv[i])=="--delay-cut") delay_cut=true;
@@ -762,6 +1129,12 @@ int main(int argc,char**argv) {
    else return 2;
  }
  assert(threads>=1&&threads<=32&&(!print_flags||threads==1));
+ if(terminal_example&&(!terminal_alphabets||threads!=1)) return 2;
+ if(literal_prefix&&(!pairs||!ranks||!arrival||split_layer==1)) return 2;
+ if(periodic_isolates&&(!pairs||!ranks||!arrival||split_layer==1)) return 2;
+ if(!initial_flag.empty()&&(only_core<0||initial_flag.size()!=size_t(split_layer>=1&&split_layer<=3?4:3)||
+    any_of(initial_flag.begin(),initial_flag.end(),[](unsigned mask){return !mask||mask>=8192;}))) return 2;
+ if(terminal_powers&&(!ranks||max_layer!=11||split_layer==1)) return 2;
  if((delay_cut||ranks)&&!pairs) return 2;
  if(arrival&&!ranks) return 2;
  if(split_layer<0||split_layer>12) return 2;
@@ -804,6 +1177,22 @@ int main(int argc,char**argv) {
    assert(!SafeSources(3,3,2,0,{3,1},true).accepts({0,1,2}));
    assert(SafeSources(3,3,0,0,{3},false).accepts({0,0,0}));
  }
+ if(terminal_powers||literal_prefix||periodic_isolates) power_controls();
+ if(canonical_prefix) prefix_orbit_controls();
+ if(canonical_isolates) isolate_prefix_controls();
+ if(terminal_alphabets) {
+   short_word_clique_controls<14>();
+   cout<<"CONTROLS complete alphabet search versus 512 small pools and a triple-word obstruction PASS\n";
+ }
+ if(terminal_avoidance) {
+   short_word_avoidance_controls<14>();
+   cout<<"CONTROLS full-state avoidance cuts: 2187 small instances and 64 complete alphabet pools PASS\n";
+ }
+ if(terminal_reachable) {
+   expanded_reachability_controls<14>();
+   cout<<"CONTROLS expanded reachability: 64 literal seventeen/eighteen-state comparisons and 64 complete alphabet pools PASS\n";
+ }
+ if(controls_only) return 0;
  vector<Result> results(cores.size());atomic<int> next{0};vector<thread> workers;mutex output_mutex;
  for(int t=0;t<threads;++t) workers.emplace_back([&]{for(int j;(j=next.fetch_add(1))<int(cores.size());) {
    if(only_core>=0&&only_core!=cores[j].id) continue;
@@ -832,8 +1221,10 @@ int main(int argc,char**argv) {
    for(int level=4;level<=max_layer;++level) {
      const auto& x=r.layers[level];auto& y=total.layers[level];
      y.admitted+=x.admitted;y.one+=x.one;y.two+=x.two;y.vectors+=x.vectors;y.actions+=x.actions;
+     y.representatives+=x.representatives;
      cout<<"LAYER_CORE level="<<level<<" core="<<cores[j].id<<" admitted="<<x.admitted<<" one="<<x.one
-         <<" two="<<x.two<<" actions="<<x.actions<<" vectors="<<x.vectors<<'\n';
+         <<" two="<<x.two<<" actions="<<x.actions<<" vectors="<<x.vectors
+         <<" representatives="<<x.representatives<<'\n';
    }
    for(int k=0;k<4;++k) {total.two_types[k]+=r.two_types[k];total.kept_types[k]+=r.kept_types[k];total.pair_types[k]+=r.pair_types[k];}
  }
@@ -848,12 +1239,26 @@ int main(int argc,char**argv) {
  for(int level=4;level<=max_layer;++level) {
    const auto& r=total.layers[level];
    cout<<"LAYER_COMPLETE level="<<level<<" admitted="<<r.admitted<<" one="<<r.one
-       <<" two="<<r.two<<" actions="<<r.actions<<" vectors="<<r.vectors<<'\n';
+       <<" two="<<r.two<<" actions="<<r.actions<<" vectors="<<r.vectors
+       <<" representatives="<<r.representatives<<'\n';
  }
  if(split_layer==0||split_layer>=4) for(int k=0;k<12;++k)
    cout<<"TERMINAL_SPLIT layer="<<k<<" flags="<<total.terminal_splits[k]<<'\n';
+ if(!initial_flag.empty()) {
+   cout<<"INITIAL_FLAG";for(unsigned mask:initial_flag) cout<<' '<<mask;cout<<'\n';
+ }
  cout<<"SCOPE initial flags; pair_mode="<<pairs<<" delay_cut="<<delay_cut<<" ranks="<<ranks<<" arrival="<<arrival
-     <<" split_layer="<<split_layer<<" core="<<only_core<<"; flags stop at layer "<<max_layer
-     <<"; no mixed-word compatibility, no new upper bound\n";
+     <<" split_layer="<<split_layer<<" core="<<only_core<<" terminal_powers="<<terminal_powers<<"; flags stop at layer "<<max_layer
+     <<"; terminal_mixed="<<terminal_mixed<<" terminal_alphabets="<<terminal_alphabets
+     <<" terminal_avoidance="<<terminal_avoidance
+     <<" terminal_reachable="<<terminal_reachable
+     <<" literal_prefix="<<literal_prefix
+     <<" canonical_prefix="<<canonical_prefix
+     <<" canonical_isolates="<<canonical_isolates
+     <<" periodic_isolates="<<periodic_isolates
+     <<" cyclic_isolates="<<cyclic_isolates
+     <<" stable_kernel="<<stable_kernel
+     <<" stable_partitions="<<stable_partitions
+     <<"; surviving flags do not establish original-class witnesses; no new upper bound\n";
  return 0;
 }

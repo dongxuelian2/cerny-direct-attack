@@ -24,6 +24,11 @@ these tasks.
 
 `tau4` proves the necessary condition `tau(P6)=3` under codimension-four
 compression length at least twelve. It does not settle `(13,9,1)`.
+`tau4 --pair-cap 7` (also 8 or 9) rebuilds the same complete graph and action
+classification and checks the corresponding later layer. See the precise
+[compression hypotheses](../PROOF.md#problem4-four-cover-late-layers).
+For the distance calculation alone, run `problem4_core_distances.cpp` through
+`run.py script` with `--pair-cap 7 --pair-order reverse`; `forward` is the default.
 The optional `scripts/problem4/upper_bound/problem4_core_distances_check.py` needs
 `z3-solver` and checks the same finite distance/strong-connectivity relaxation
 using a different algorithm; the main `tau4` command has no solver dependency.
@@ -43,10 +48,39 @@ python3 run.py script scripts/problem4/upper_bound/problem4_p3_entry.cpp --threa
 python3 run.py script scripts/problem4/upper_bound/problem4_p3_entry.cpp --two-three --threads 4
 python3 run.py script scripts/problem4/upper_bound/problem4_p3_entry.cpp --overlap-two-two --threads 4
 python3 run.py script scripts/problem4/upper_bound/full_fiber_flags.cpp --threads 4
+python3 run.py script scripts/problem4/upper_bound/odd_cycle_joint_distances.cpp --cycle 9 --threads 4
+python3 run.py script scripts/problem4/upper_bound/check_odd_cycle_joint.py --cycle 9 --threads 4
 python3 run.py script scripts/direct_attack/check_native_policy.py
 python3 run.py script scripts/direct_attack/avoid_compress_all_gaps.py
 python3 run.py script scripts/direct_attack/check_avoid_compress_all_gaps.py
 ```
+
+`odd_cycle_joint_distances.cpp` rebuilds the normalized one-letter domain and
+exhausts compatible subset/pair distances for the C9 branch. `--cycle 7`
+reproduces the earlier C7 exclusion; `--injections` selects the independent
+omitted-output/permutation traversal. The Python check compares both complete
+retained map sets, reconstructs their signatures, and reverses both distance
+search orders. It invokes C++17 for the large transformation enumeration and
+requires no solver. These commands test the branch specified in
+[the C9 reduction](../PROOF.md#problem4-c9-eighth-layer), not every m=5 graph.
+Add `--full-kernel --all-layers` to either program to include every cycle-edge
+matching kernel and check every possible short-pair layer. This proves the
+[C7/C9 bounds](../PROOF.md#problem4-c7-c9-uniform-cycle-bound) without a separate
+letter-rank hypothesis. With `--cycle 5` those flags test the nonzero relaxation
+controls; the Python audit also checks the actual five-state Cerny counterexample.
+`--columns` uses the proved equality-case column construction and a complete
+partial-permutation traversal. With this option, `--cycle 11` and `--cycle 13`
+are also supported. `--canonical-isolates` preserves all signatures while
+quotienting independent auxiliary input/output labels; its row count is a
+representative count. The precise domain proof is in the
+[column reduction](../PROOF.md#problem4-odd-cycle-column-generation).
+`--reverse-search` reverses both distance assignment orders. The optional
+`--pair-closure` and `--pair-levels` apply the proved merging-reachability and
+nonempty-distance-layer conditions. `--all-layers` reuses the same complete
+subset candidate list with separate compatible pools at every pair cap.
+For C11/C13, the Python command with `--full-kernel --signatures-only` checks
+one literal representative per generated signature; it does not independently
+enumerate all transformations or rerun the distance search.
 
 `problem4_p3_shapes.py` 核对 P3 二点覆盖的十三种核心和三点覆盖的十二种核心。
 `problem4_p2_rank.cpp` 核对至多四条边、覆盖数为三的图的最大独立集行秩界，
@@ -137,6 +171,41 @@ stepwise reachability-preserving contraction and expansion. Its finite controls 
 they do not search all twelve-step candidates. The flag programs above handle
 equality at thirteen, not the remaining target twelve.
 
+The same Python control script also compares the protected-count quotient for
+expanded-model reachability with every literal reachable subset in 300 small
+domains. The [quotient criterion](../PROOF.md#problem4-expanded-reachability-quotient)
+has at most 1578 states for a single-protected q=13, m=4 candidate expanded to
+five protected states; passing terminal safety alone does not imply reachability.
+
+For the separate six-cycle/eight-channel lower-bound family:
+
+```sh
+python3 run.py script scripts/problem4/probe_even_ring_channel.cpp 1 --screen-powers
+python3 run.py script scripts/problem4/probe_even_ring_channel.cpp 2 --screened-permutations
+python3 run.py script scripts/problem4/probe_even_ring_channel.cpp 2 --all-permutations
+```
+
+The first argument is the thread count. The first command reconstructs the
+short-word proof over 1800 second letters and 15 initial sets: 104 cases survive
+the first word family, and uniform two-b collision words reject all 104.
+The second independently checks all 40320 channel permutations on those
+104 cases. The third directly enumerates all 72576000 transition pairs.
+Without a mode flag, only 29 channel permutations are used.
+Permutation indices assign disjoint work to threads. `TARGET_FOUND` stops on
+a reachable target; `COMPLETE` confirms exhaustion of the selected domain.
+None of these results is a bound for all DFAs. See the
+[family definition, proof, and complete counts](../PROOF.md#problem4-even-ring-channel-family).
+The screening mode also accepts ring size, channel size, and target length:
+
+```sh
+python3 run.py script scripts/problem4/probe_even_ring_channel.cpp 1 --screen-powers 7 9 14
+```
+
+It checks words shorter than the target. The current implementation requires
+ring size at least four, channel size at least ring size minus two, total size
+at most twenty, and target at least the ring size. See the
+[general family and codimension-five result](../PROOF.md#problem4-ring-channel-higher-defect).
+
 For target twelve with two distinct first entrances:
 
 ```sh
@@ -189,6 +258,108 @@ the remaining obligations.
 compares the separate early-split and generic graded initial enumerators on
 core 106, checking both retained flags and common distance-vector counts.
 It checks enumeration consistency, not completion of the remaining domain.
+
+For complete labeled terminal checks, add `--terminal-powers` at depth eleven
+in a single-entrance domain, or `--terminal-mixed` to additionally check every
+pair of letters and iteratively remove letters without compatible suppliers
+for all required fibers and short-pair descents. Each possible initial subset
+is handled separately. All output labels are expanded before words are tested.
+These remain necessary conditions; a surviving pool is not an automaton.
+`--terminal-alphabets` also invokes the existing arbitrary-alphabet search to
+test all mixed words up to length eleven while requiring strong connectivity
+and every supplier. A surviving alphabet still needs synchronization and
+initial-set reachability checks before it could establish a lower bound.
+`--terminal-avoidance` additionally requires that the selected alphabet can
+avoid the protected state from the full state set. It computes the entire
+backward subset closure, with no word-length cutoff, and branches on letters
+that leave a non-avoiding closure. This option includes the other terminal
+checks. Its [proof and independent controls](../PROOF.md#problem4-full-state-avoidance-cut)
+explain why it is necessary even when the contracted model is not synchronizing.
+With `--threads 1`, `--terminal-example` prints the first alphabet accepted by
+the enabled complete terminal search, together with its initial set and basis.
+It does not stop enumeration or certify synchronization or reachability.
+`--terminal-reachable` adds reachability in the four-protected-state expansion
+to the alphabet search. It computes the complete protected-count quotient and
+branches on letters leaving a closed set that does not contain the target.
+The [original-class equivalence](../PROOF.md#problem4-terminal-original-class-equivalence)
+states why this stronger acceptance condition exactly matches the q=13 target
+over the complete necessary flag domain. Its controls use independent ordinary
+subset searches in seventeen-state expanded automata and compare reachability
+with the previous eighteen-state expansion. The smaller quotient only removes
+permutation self-loops at full external occupancy and four missing protected states.
+`--literal-prefix` expands all output labels when at most two remain unnamed,
+then tests the necessary cyclic-rank bound and powers from families whose row
+counts prove that every member is an actual short image. It skips this stronger
+test when more labels remain; no anonymous profile is composed as a word.
+`--initial-flag B,C,D` with `--core ID` restricts a late-split run to one
+canonical initial flag. Early-split runs use four masks instead. This permits
+disjoint prefix jobs; a completed restricted job is not a complete core result.
+The [core-106 partition](../PROOF.md#problem4-literal-prefix-constraints) lists
+all four surviving late-split prefixes and the required coverage boundary.
+All four prefix jobs have now completed with zero terminal flags, as have the
+other 24 cores and both early split layers. The combined proof gives
+`F_bin(r+13,r+9,r)=F(r+13,r+9,r)=11` for every `r>=1`; see the
+[complete coverage and scope](../PROOF.md#problem4-q13-exact-eleven).
+The final prefix can be reproduced with:
+
+```sh
+python3 run.py script scripts/problem4/upper_bound/slack_one_initial_flags.cpp --pairs --delay-cut --ranks --arrival --all-late-splits --depth 11 --terminal-reachable --literal-prefix --canonical-prefix --initial-flag 64,128,256 --core 106 --threads 1
+```
+
+Its completed layer eleven has 37561536 weighted choices, 783532 actual orbit
+representatives, and zero surviving flags or distance vectors. This command
+alone covers one prefix; the theorem uses all the domains listed in the proof.
+The baseline does not enable periodic-state, stable-kernel, or isolated-column
+pruning. Adding `--cyclic-isolates` gives the completed strengthened comparison.
+
+`--canonical-prefix` also quotients every later ordered prefix by core
+automorphisms fixing its initial flag. Outside and protected labels remain
+fixed. Layer counts are weighted by orbit size, so they are comparable to the
+unreduced run; `representatives` reports the number actually checked.
+See [the prefix-orbit proof](../PROOF.md#problem4-prefix-automorphisms).
+`--canonical-isolates` additionally sorts the ordered membership columns of
+noncore external states. Its weights account for the existing first-appearance
+normalization and combine with the core-orbit weights. It can also be used
+without `--canonical-prefix`; see the [column-orbit proof](../PROOF.md#problem4-isolated-prefix-orbits).
+`--periodic-isolates` rejects letters omitting any output outside the P3 core,
+including at prefixes with anonymous labels. This property is invariant under
+the allowed output-label permutations; no anonymous map is iterated.
+The [general periodic-state lemma](../PROOF.md#problem4-periodic-isolated-states)
+gives the long-safe-word hypothesis and its parameter scope.
+`--cyclic-isolates` strengthens this to actual periodicity of every noncore
+state and cyclic rank at least n−3. The conjunction is invariant even for
+anonymous completions, by the [output-relabeling lemma](../PROOF.md#problem4-cyclic-core-relabeling).
+It implies `--periodic-isolates`; the older flag retains its weaker meaning
+for reproducing earlier counts.
+`--stable-kernel` additionally requires every pair eventually merged by a
+letter to belong to the P3 core. It implies `--cyclic-isolates` and replaces
+its transient-state cap by min(3, the core vertex-cover number), which is two
+for cores 10 and 12. The [stable-kernel proof](../PROOF.md#problem4-stable-kernel-core)
+justifies applying this condition to anonymous completions; it does not justify
+arbitrary iterated-word checks on those completions.
+`--stable-partitions` implies `--stable-kernel` and also enforces the equivalent
+clique-partition condition during output assignment. Its [proof](../PROOF.md#problem4-stable-kernel-partitions)
+explains why partial block permutations and the final anonymous completion are exact.
+
+
+`--controls-only` runs the implementation controls and skips flag enumeration.
+See [the terminal compatibility proof](../PROOF.md#problem4-terminal-labeled-compatibility).
+
+
+## Odd-cycle preservation controls
+
+The [sharp threshold and compression consequences](../PROOF.md#problem4-odd-cycle-sharp-compression)
+are proved symbolically. Rebuild their finite controls with:
+
+```sh
+python3 run.py script scripts/problem4/check_odd_cycle_span.py
+python3 run.py script scripts/problem4/audit_cycle_seven_six_images.cpp --all-maps 4
+```
+
+The Python control uses small complete domains and exact rational ranks. The
+C++ mode exhausts all maps on C5 plus one isolate and C7 plus one isolate,
+including kernels outside the cycle. It partitions by the first output value
+and prints results without requiring or writing report inventories.
 
 ## Earlier conditional sources
 
