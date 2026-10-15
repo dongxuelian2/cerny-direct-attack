@@ -233,6 +233,16 @@ canonical initial flag. Early-split runs use four masks instead. This permits
 disjoint prefix jobs; a completed restricted job is not a complete core result.
 The [core-106 partition](../PROOF.md#problem4-literal-prefix-constraints) lists
 all four surviving late-split prefixes and the required coverage boundary.
+`--canonical-prefix` also quotients every later ordered prefix by core
+automorphisms fixing its initial flag. Outside and protected labels remain
+fixed. Layer counts are weighted by orbit size, so they are comparable to the
+unreduced run; `representatives` reports the number actually checked.
+See [the prefix-orbit proof](../PROOF.md#problem4-prefix-automorphisms).
+`--periodic-isolates` rejects letters omitting any output outside the P3 core,
+including at prefixes with anonymous labels. This property is invariant under
+the allowed output-label permutations; no anonymous map is iterated.
+The [general periodic-state lemma](../PROOF.md#problem4-periodic-isolated-states)
+gives the long-safe-word hypothesis and its parameter scope.
 
 `--controls-only` runs the implementation controls and skips flag enumeration.
 See [the terminal compatibility proof](../PROOF.md#problem4-terminal-labeled-compatibility).

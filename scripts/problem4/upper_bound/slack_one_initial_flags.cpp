@@ -276,7 +276,50 @@ bool terminal_powers=false,terminal_mixed=false,terminal_alphabets=false,termina
 bool terminal_reachable=false;
 bool terminal_example=false,example_printed=false;
 bool literal_prefix=false;
+bool canonical_prefix=false;
+bool periodic_isolates=false;
 vector<unsigned> initial_flag;
+// Quotient only by automorphisms fixing the entire initial ordered flag.
+// Outside labels and the protected label are fixed pointwise.
+uint64_t prefix_orbit_weight(const vector<unsigned>& basis,size_t initial,
+                            const vector<vector<int>>& automorphisms,int core_size) {
+ uint64_t group=0,stabilizer=0;
+ for(const auto& p:automorphisms) {
+   vector<unsigned> mapped;
+   for(unsigned F:basis) {
+     unsigned G=F&~((1U<<core_size)-1);
+     for(int x=0;x<core_size;++x) if(F>>x&1) G|=1U<<p[x];
+     mapped.push_back(G);
+   }
+   if(!equal(basis.begin(),basis.begin()+initial,mapped.begin())) continue;
+   ++group;
+   if(mapped<basis) return 0;
+   stabilizer+=mapped==basis;
+ }
+ assert(stabilizer&&group%stabilizer==0);
+ return group/stabilizer;
+}
+void prefix_orbit_controls() {
+ vector<vector<int>> group;vector<int> p{0,1,2,3,4,5};
+ const vector<unsigned> edges{33,18,12};
+ do {
+   bool valid=true;
+   for(unsigned edge:edges) {
+     unsigned mapped=0;for(int x=0;x<6;++x) if(edge>>x&1) mapped|=1U<<p[x];
+     valid&=find(edges.begin(),edges.end(),mapped)!=edges.end();
+   }
+   if(valid) group.push_back(p);
+ } while(next_permutation(p.begin(),p.end()));
+ assert(group.size()==48);
+ assert(prefix_orbit_weight({64,128,256,1},3,group,6)==6);
+ assert(prefix_orbit_weight({64,128,256,12},3,group,6)==3);
+ assert(prefix_orbit_weight({64,128,256,3},3,group,6)==12);
+ assert(prefix_orbit_weight({64,128,256,1,32},3,group,6)==6);
+ assert(prefix_orbit_weight({64,128,256,1,2},3,group,6)==24);
+ assert(prefix_orbit_weight({12,18,33,1},3,group,6)==2);
+ assert(prefix_orbit_weight({64,128,256,32},3,group,6)==0);
+ cout<<"CONTROLS prefix orbits: matching automorphisms and initial-flag stabilizers PASS\n";
+}
 int cyclic_rank(const vector<int>& f) {
  vector<int> degree(f.size()),todo;
  for(int x:f) ++degree[x];
@@ -335,6 +378,13 @@ void power_controls() {
      for(int step=0;step<5;++step) {for(int& q:power) q=f[q];powers.push_back(power);}
      unsigned eventual_image=0;for(int x:power) eventual_image|=1U<<x;
      assert(cyclic_rank(f)==__builtin_popcount(eventual_image));
+     int transient=n-__builtin_popcount(eventual_image);
+     unsigned support=0,one_image=0;
+     for(int x:f) one_image|=1U<<x;
+     if(transient) for(int x=0;x<n;++x) for(int y=x+1;y<n;++y)
+       if(powers[transient-1][x]==powers[transient-1][y]) support|=(1U<<x)|(1U<<y);
+     assert((((1U<<n)-1)^eventual_image)==(support&(((1U<<n)-1)^eventual_image)));
+     assert(((((1U<<n)-1)^one_image)&~support)==0);
      for(unsigned S=1;S<(1U<<n);++S) for(int a=0;a<n;++a) if(S>>a&1) {
        bool literal=true;
        for(const auto& map:powers) {
@@ -359,6 +409,7 @@ void power_controls() {
  assert(cyclic_rank(four_tail)==10);
  assert(safe_powers(four_tail,16368,8192,11)); // Q-avoidability is essential
  cout<<"CONTROLS labeled powers versus pointwise composition "<<checks<<" cases PASS\n";
+ cout<<"CONTROLS transient states lie in the corresponding short-pair support: 287 transformations PASS\n";
  uint64_t pair_checks=0;
  // Direct word enumeration is independent of the subset-BFS implementation.
  vector<vector<int>> maps;
@@ -457,6 +508,11 @@ PairSummary graded_pair_pool(Core core,const vector<unsigned>& edges,const vecto
    for(unsigned row:families[j]) forced_seeds.emplace_back(row|8192,j);
  function<bool(const vector<int>&)> rank_filter;
  if(ranks) rank_filter=[&](const vector<int>& f) {
+   if(periodic_isolates&&protected_count==1) {
+     unsigned image=0;for(int x:f) image|=1U<<x;
+     unsigned outside_core=((1U<<n)-1)^((1U<<core.n)-1);
+     if((image&outside_core)!=outside_core) return false;
+   }
    if(exact_prefix) {
      if(cyclic_rank(f)<n-3) return false;
      for(auto [source,length]:forced_seeds) if(!safe_powers(f,source,8192,length)) return false;
@@ -693,7 +749,7 @@ struct Result {
  uint64_t raw=0,canonical=0,first=0,second=0,third=0,two_export=0,cells_one=0,cells_two=0,cross=0,cross_kept=0;
  uint64_t pair_one=0,pair_two=0,actions=0,vectors=0;
  uint64_t delay_one=0,delay_two=0;
- struct Layer {uint64_t admitted=0,one=0,two=0,vectors=0,actions=0;};
+ struct Layer {uint64_t admitted=0,one=0,two=0,vectors=0,actions=0,representatives=0;};
  array<Layer,12> layers{};
  array<uint64_t,12> terminal_splits{};
  array<uint64_t,4> two_types{},kept_types{},pair_types{};
@@ -810,17 +866,23 @@ Result examine(Core core,const vector<unsigned>& all,bool print_flags,bool pairs
                unsigned fresh=F&8191&~named,normalized=0,available=8191&~named;
                for(int k=0;k<__builtin_popcount(fresh);++k) {unsigned bit=available&-available;normalized|=bit;available^=bit;}
                if(fresh!=normalized) continue;
+               uint64_t weight=1;
+               if(canonical_prefix) {
+                 vector<unsigned> prefix{B,C,D,E};prefix.insert(prefix.end(),tail.begin(),tail.end());prefix.push_back(F);
+                 weight=prefix_orbit_weight(prefix,4,automorphisms,core.n);
+                 if(!weight) continue;
+               }
                auto known=edges;known.insert(known.end(),tail.begin(),tail.end());known.push_back(F);
                if(level<=7&&(!bounded_short_edges(known,level+3)||(level<=6&&!cell_pairs::cover_three(known)))) continue;
                auto rows=family(source,F,false);
                if(rank_checked(rows)!=12-level||(level<=7&&!covers_all(rows))) continue;
-               ++result.layers[level].admitted;
+               result.layers[level].admitted+=weight;++result.layers[level].representatives;
                tail.push_back(F);later.push_back(move(rows));
                PairSummary left,right;
                if(one_active&&!(F>>14)) left=pair_pool(core,edges,cliques,B,C,D,E,actual_one,actual_two,three,1,ranks,arrival,tail,later,split_layer);
                if(two_active) right=pair_pool(core,edges,cliques,B,C,D,E,actual_one,actual_two,three,2,ranks,arrival,tail,later,split_layer);
-               auto& r=result.layers[level];r.one+=left.vectors>0;r.two+=right.vectors>0;
-               r.vectors+=left.vectors+right.vectors;r.actions+=left.actions+right.actions;
+               auto& r=result.layers[level];r.one+=weight*(left.vectors>0);r.two+=weight*(right.vectors>0);
+               r.vectors+=weight*(left.vectors+right.vectors);r.actions+=weight*(left.actions+right.actions);
                if(print_flags) {
                  cout<<"LAYER_FLAG level="<<level<<" core="<<core.id<<" B="<<B<<" C="<<C<<" D="<<D<<" E="<<E;
                  for(unsigned fiber:tail) cout<<" next="<<fiber;
@@ -902,12 +964,14 @@ Result examine_late(Core core,const vector<unsigned>& all,bool print_flags,
          if(!canonical) return;++result.canonical;
          if(!initial_flag.empty()&&basis!=initial_flag) return;
        }
+       uint64_t weight=canonical_prefix&&level>=4?prefix_orbit_weight(basis,3,automorphisms,core.n):1;
+       if(!weight) return;
        families.push_back(rows);
        if(level<3) {extend(level+1);families.pop_back();return;}
-       auto& layer=result.layers[level];++layer.admitted;
+       auto& layer=result.layers[level];layer.admitted+=weight;++layer.representatives;
        auto answer=graded_pair_pool(core,edges,cliques,basis,levels,families,1,true,true,true);
-       layer.actions+=answer.actions;layer.vectors+=answer.vectors;layer.one+=answer.vectors>0;
-       if(level==max_layer&&answer.vectors) ++result.terminal_splits[current_split];
+       layer.actions+=weight*answer.actions;layer.vectors+=weight*answer.vectors;layer.one+=weight*(answer.vectors>0);
+       if(level==max_layer&&answer.vectors) result.terminal_splits[current_split]+=weight;
        if(level==3) {++result.third;result.pair_one+=answer.vectors>0;result.actions+=answer.actions;result.vectors+=answer.vectors;}
        if(print_flags) {
          cout<<"LATE_FLAG core="<<core.id<<" layer="<<level<<" split="<<current_split;
@@ -971,6 +1035,8 @@ int main(int argc,char**argv) {
    else if(string(argv[i])=="--terminal-reachable") terminal_powers=terminal_mixed=terminal_alphabets=terminal_avoidance=terminal_reachable=true;
    else if(string(argv[i])=="--terminal-example") terminal_example=true;
    else if(string(argv[i])=="--literal-prefix") literal_prefix=true;
+   else if(string(argv[i])=="--canonical-prefix") canonical_prefix=true;
+   else if(string(argv[i])=="--periodic-isolates") periodic_isolates=true;
    else if(string(argv[i])=="--initial-flag"&&i+1<argc) {
      string masks=argv[++i];replace(masks.begin(),masks.end(),',',' ');
      istringstream input(masks);unsigned value;
@@ -993,6 +1059,7 @@ int main(int argc,char**argv) {
  assert(threads>=1&&threads<=32&&(!print_flags||threads==1));
  if(terminal_example&&(!terminal_alphabets||threads!=1)) return 2;
  if(literal_prefix&&(!pairs||!ranks||!arrival||split_layer==1)) return 2;
+ if(periodic_isolates&&(!pairs||!ranks||!arrival||split_layer==1)) return 2;
  if(!initial_flag.empty()&&(only_core<0||initial_flag.size()!=size_t(split_layer>=1&&split_layer<=3?4:3)||
     any_of(initial_flag.begin(),initial_flag.end(),[](unsigned mask){return !mask||mask>=8192;}))) return 2;
  if(terminal_powers&&(!ranks||max_layer!=11||split_layer==1)) return 2;
@@ -1038,7 +1105,8 @@ int main(int argc,char**argv) {
    assert(!SafeSources(3,3,2,0,{3,1},true).accepts({0,1,2}));
    assert(SafeSources(3,3,0,0,{3},false).accepts({0,0,0}));
  }
- if(terminal_powers||literal_prefix) power_controls();
+ if(terminal_powers||literal_prefix||periodic_isolates) power_controls();
+ if(canonical_prefix) prefix_orbit_controls();
  if(terminal_alphabets) {
    short_word_clique_controls<14>();
    cout<<"CONTROLS complete alphabet search versus 512 small pools and a triple-word obstruction PASS\n";
@@ -1080,8 +1148,10 @@ int main(int argc,char**argv) {
    for(int level=4;level<=max_layer;++level) {
      const auto& x=r.layers[level];auto& y=total.layers[level];
      y.admitted+=x.admitted;y.one+=x.one;y.two+=x.two;y.vectors+=x.vectors;y.actions+=x.actions;
+     y.representatives+=x.representatives;
      cout<<"LAYER_CORE level="<<level<<" core="<<cores[j].id<<" admitted="<<x.admitted<<" one="<<x.one
-         <<" two="<<x.two<<" actions="<<x.actions<<" vectors="<<x.vectors<<'\n';
+         <<" two="<<x.two<<" actions="<<x.actions<<" vectors="<<x.vectors
+         <<" representatives="<<x.representatives<<'\n';
    }
    for(int k=0;k<4;++k) {total.two_types[k]+=r.two_types[k];total.kept_types[k]+=r.kept_types[k];total.pair_types[k]+=r.pair_types[k];}
  }
@@ -1096,7 +1166,8 @@ int main(int argc,char**argv) {
  for(int level=4;level<=max_layer;++level) {
    const auto& r=total.layers[level];
    cout<<"LAYER_COMPLETE level="<<level<<" admitted="<<r.admitted<<" one="<<r.one
-       <<" two="<<r.two<<" actions="<<r.actions<<" vectors="<<r.vectors<<'\n';
+       <<" two="<<r.two<<" actions="<<r.actions<<" vectors="<<r.vectors
+       <<" representatives="<<r.representatives<<'\n';
  }
  if(split_layer==0||split_layer>=4) for(int k=0;k<12;++k)
    cout<<"TERMINAL_SPLIT layer="<<k<<" flags="<<total.terminal_splits[k]<<'\n';
@@ -1109,6 +1180,8 @@ int main(int argc,char**argv) {
      <<" terminal_avoidance="<<terminal_avoidance
      <<" terminal_reachable="<<terminal_reachable
      <<" literal_prefix="<<literal_prefix
+     <<" canonical_prefix="<<canonical_prefix
+     <<" periodic_isolates="<<periodic_isolates
      <<"; surviving flags do not establish original-class witnesses; no new upper bound\n";
  return 0;
 }
