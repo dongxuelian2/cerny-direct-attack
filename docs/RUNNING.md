@@ -296,6 +296,21 @@ explains why partial block permutations and the final anonymous completion are e
 See [the terminal compatibility proof](../PROOF.md#problem4-terminal-labeled-compatibility).
 
 
+## Odd-cycle preservation controls
+
+The [sharp threshold and compression consequences](../PROOF.md#problem4-odd-cycle-sharp-compression)
+are proved symbolically. Rebuild their finite controls with:
+
+```sh
+python3 run.py script scripts/problem4/check_odd_cycle_span.py
+python3 run.py script scripts/problem4/audit_cycle_seven_six_images.cpp --all-maps 4
+```
+
+The Python control uses small complete domains and exact rational ranks. The
+C++ mode exhausts all maps on C5 plus one isolate and C7 plus one isolate,
+including kernels outside the cycle. It partitions by the first output value
+and prints results without requiring or writing report inventories.
+
 ## Earlier conditional sources
 
 `scripts/problem4/experimental/tau2_third_pair_profiles.cpp --threads 4` 保留早期九个

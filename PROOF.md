@@ -5,7 +5,7 @@
 **一般 Černý 猜想尚未解决。新研究在既有十三状态计算辅助排除的基础上，将精确值十一推广到整个余维四 q=12 边界：$F_{\rm bin}(r+12,r+8,r)=F(r+12,r+8,r)=11$（$r\ge1$）。详见[保护块收缩](#problem4-protected-collapse-strip)。**
 
 q=13 的整条边界现已收紧为 [11,12]，见[十四状态完整排除](#problem4-q13-second-layer)。
-十二步候选现已排除全部早分裂，只剩核心 12 和核心 106 中的晚分裂域，见[完整覆盖](#problem4-q13-remaining-three-cores)。
+十二步候选现已排除全部早分裂，只剩核心 106 的一个晚分裂初始前缀，见[完整覆盖](#problem4-q13-remaining-three-cores)。
 [一般余量收缩](#problem4-protected-slack-collapse)进一步控制任意参数的保护集与入口数；Problem 4 的完整精确界仍未解决。
 
 阅读顺序：先读第 1 章的问题与状态，再读第 2–4 章的构造、上界与完整排除；第 5 章是条件分支，第 6–9 章是其他研究方向，第 10 章保留探索过程。各节沿用局部符号；进入新节须重新核对假设。
@@ -6322,16 +6322,15 @@ python3 run.py script scripts/problem4/upper_bound/slack_one_initial_flags.cpp -
 
 <a id="problem4-q13-remaining-three-cores"></a>
 <a id="problem4-q13-remaining-cores"></a>
-#### 全部早分裂排除与晚分裂的两个剩余核心
+#### 全部早分裂排除与最后一个晚分裂初始前缀
 
 **完整有限域结论。** 对 m=4、q=13、目标 ac≥12，结合首层两入口排除，
 额外双空间增长不可能首次发生于 σ=1、2、3。
 全部候选只剩 σ=4,…,11 或十一层安全范围内不再额外增长；在这些晚分裂域中，
-P3 只可能属于下面两个核心（另有孤点）：
+P3 只可能是核心 106（另有孤点），且只剩以下初始前缀：
 
 | 核心 | 顶点数 | 边集 | 当前剩余范围 |
 |---|---:|---|---|
-| 12 | 6 | 01、02、34、35 | 全部晚分裂及不分裂域尚待完成 |
 | 106 | 6 | 05、14、23 | 仅前三层前缀 (64,128,256)，即三个依次命名的核心外单点 |
 
 这一结论并未排除全部十二步候选，也未确定极值十一或十二。
@@ -6399,11 +6398,30 @@ P3 只可能属于下面两个核心（另有孤点）：
 第四至九层依次为 2445、4695、6625、11230、94549、111314，第十、十一层
 投影与上表相同。这是条件加强后的完整交叉核对，不是新增核心域。
 
+**核心 12 的完整晚分裂排除。** 未启用周期点、稳定核或核心外列归约的
+完整终端可达性运行也已完成。初始 73 个选择中有 13 个规范代表，保留
+8 个旗标、48 个距离向量、1002 个投影。后续完整加权计数为：
+
+| 层 | 初筛选择 | 存活旗标 | 投影 | 距离向量 | 实际轨道代表 |
+|---|---:|---:|---:|---:|---:|
+| 4 | 4218 | 69 | 7310 | 263 | 2718 |
+| 5 | 11168 | 217 | 16581 | 627 | 5030 |
+| 6 | 22388 | 494 | 32652 | 1062 | 7141 |
+| 7 | 41611 | 710 | 74413 | 1056 | 9935 |
+| 8 | 713069 | 775 | 324348 | 946 | 155162 |
+| 9 | 1110762 | 286 | 357547 | 310 | 216921 |
+| 10 | 1654020 | 194 | 513272 | 194 | 291852 |
+| 11 | 2970012 | 0 | 753564 | 0 | 486438 |
+
+耗时 6081.259 秒，所有分裂层的终端计数均为零。由此晚分裂的二十五个
+核心已有二十四个完整排除；唯一未决域是核心 106 的 (64,128,256) 前缀。
+该结论不依赖尚在运行的核心 12 稳定核加强对照。
 
 ```sh
 python3 run.py script scripts/problem4/upper_bound/slack_one_initial_flags.cpp --pairs --delay-cut --ranks --arrival --split-layer 2 --depth 11 --terminal-reachable --literal-prefix --canonical-prefix --terminal-example --core 106 --threads 1
 python3 run.py script scripts/problem4/upper_bound/slack_one_initial_flags.cpp --pairs --delay-cut --ranks --arrival --split-layer 3 --depth 11 --terminal-reachable --literal-prefix --canonical-prefix --terminal-example --core 106 --threads 1
 python3 run.py script scripts/problem4/upper_bound/slack_one_initial_flags.cpp --pairs --delay-cut --ranks --arrival --all-late-splits --depth 11 --terminal-reachable --literal-prefix --canonical-prefix --terminal-example --core 10 --threads 1
+python3 run.py script scripts/problem4/upper_bound/slack_one_initial_flags.cpp --pairs --delay-cut --ranks --arrival --all-late-splits --depth 11 --terminal-reachable --literal-prefix --canonical-prefix --terminal-example --core 12 --threads 1
 ```
 
 <a id="problem4-prefix-automorphisms"></a>
@@ -6455,7 +6473,7 @@ python3 run.py script scripts/problem4/upper_bound/slack_one_initial_flags.cpp -
 
 第一条命令去掉 `--canonical-prefix` 给出未归约四层对照；第二条给出已完成的
 深层对照。核心 106 的两种早分裂域已用此归约完整排除；其剩余晚分裂
-前缀及核心 12 的晚分裂域仍在检查；核心 10 已完整排除，计数见前节。
+前缀仍在检查；核心 10 和 12 的晚分裂全域均已完整排除，计数见前节。
 
 <a id="problem4-isolated-prefix-orbits"></a>
 #### 核心外同批新状态的有序列归约
@@ -6566,7 +6584,7 @@ n−m 的像必同时含一个邻点，再用至多 m−1 步合并就产生过�
 这与较弱筛选的完整计数一致，不是新的分支排除或测得的加速。
 这与其三点覆盖结构相容：所有大小 n−3 的 P3 独立集都包含全部孤点，
 已有辅助独立集像条件已会拒绝遗漏孤点的字母。本次新增筛选的潜在增益
-在二点覆盖核心；核心 12 的联合终端运行仍在检验这一点。核心 10 的
+在二点覆盖核心；核心 12 的较弱完整运行已经归零，加强运行保留作对照。核心 10 的
 原域及加强域已分别完整归零，计数见[完整覆盖](#problem4-q13-remaining-cores)。
 
 <a id="problem4-cyclic-core-relabeling"></a>
@@ -6633,9 +6651,11 @@ f=[0,0,3,1,4]、K={0,1,2} 的两个核心外输出 3、4 都出现，但
 仍有候选，不作为该核心的完整十二步排除。
 随后改用 (PI4) 在生成阶段提前筛选，完整重跑同一域得到逐项相同计数，
 耗时 42.113 秒；这里核对数学域与实现一致，不宣称测得加速。
-核心 10 的晚分裂全域及核心 106 的剩余前缀 (64,128,256) 已启用该条件
-继续做十一层联合终端检查；这些加强运行尚未完成。核心 10 的排除已由
-前述较弱完整运行得到，不需要等待其加强对照。
+核心 10 的 (PI4) 加强十一层全域现已完成并归零，耗时 3566.611 秒。
+各层初筛、旗标、距离向量及代表数均与前述完整对照相同；第三至十一层
+投影依次为 465、2441、4693、6625、11230、94525、111150、157172、254992。
+这是既已排除核心的独立加强核对。核心 106 的剩余前缀 (64,128,256)
+仍在进行同条件的十一层检查，尚未完成。
 
 ```sh
 python3 run.py script scripts/problem4/upper_bound/slack_one_initial_flags.cpp --pairs --delay-cut --ranks --arrival --all-late-splits --depth 11 --terminal-reachable --literal-prefix --canonical-prefix --cyclic-isolates --controls-only
@@ -6690,8 +6710,8 @@ K 的输出置换 π，fπ 的稳定核与 f 完全相同；反向同理。因�
 73 个选择、13 个规范代表，耗时分别 149.764、97.602 秒；这些时间仅为
 当次完整运行，不据此声称普遍性能提升。核心 106 的剩余初始前缀
 (64,128,256) 使用稳定核后保留 1 个旗标、6 个距离向量、84 个投影，
-完整三层耗时 68.070 秒。核心 12 的加强十一层运行已启动，未完成部分
-不计作排除。
+完整三层耗时 68.070 秒。核心 12 已由较弱完整域排除；其稳定核加强
+十一层运行保留作交叉核对，未完成部分不计作另一个完成结果。
 
 <a id="problem4-stable-kernel-partitions"></a>
 #### 稳定核的团分块刻画与原生赋值剪枝
@@ -17176,52 +17196,106 @@ matching_cube_audit.json and matching_distance_audit.json contain the counts.
 <a id="problem4-odd-cycle-span-refinement--eliminating-the-maximal-independent-set-rank-case"></a>
 ### Eliminating the maximal independent-set rank case
 
-8 October 2026. Auxiliary uniform compression reduction for Problem 4.
-This changes no manuscript extremum. Arbitrary finite alphabets are allowed;
+Auxiliary uniform compression reduction for Problem 4, with the sharp
+odd-cycle preservation threshold proved below. Arbitrary finite alphabets are allowed;
 the initial subset need not be a reachable image.
 
 <a id="problem4-odd-cycle-span-refinement--odd-cycle-transformation-lemma-self-contained"></a>
-#### Odd-cycle transformation lemma (self-contained)
+#### Odd-cycle transformation lemma (self-contained, sharp threshold)
 
-Let C be a cycle of length N=2k+1 with k>=3, and J a disjoint set of
-isolated vertices. Let F consist of J together with each maximum independent
-k-set of C. If a transformation has its kernel pairs contained in the
-edges of C and maps N-1 distinct members of F into F, it is a permutation.
+Let C be a cycle of length N=2k+1, k≥1, and J a disjoint set of isolated
+vertices. Let F consist of J together with each maximum independent k-set
+of C. **Any singular transformation of C∪J maps at most k+2 distinct members
+of F back into F.** No assumption on its kernel graph is required. The
+bound is attained by the unit 0→1 fixing every other vertex.
 
-There are exactly N maximum independent sets: their selected-vertex cyclic
-gaps are k-1 gaps of length two and one gap of length three. Each such set
-leaves exactly one cycle edge uncovered, and each edge determines one set.
-Let M be their N-by-N incidence matrix and E the vertex-edge incidence
-matrix of the cycle. Index rows by the uncovered edge. Then M E=J_N-I_N,
-where J_N is the all-one matrix, not the isolated vertex set J. The matrix
-on the right has eigenvalues N-1 and minus one and is invertible, so M has
-rank N. Any N-1 selected rows are therefore independent. Appending the
-fixed isolated coordinates leaves their rank N-1 unchanged.
+There are exactly N maximum independent sets: their cyclic selected-vertex
+gaps consist of k−1 gaps of length two and one gap of length three. Index
+them by the unique uncovered edge. If M is their vertex-incidence matrix
+and E the vertex-edge incidence matrix, ME=J_N−I_N. This matrix is invertible,
+so all N input rows are independent, as is any selected subfamily. Appending
+the fixed isolated coordinates does not change that rank.
 
-A fiber is a clique in the kernel graph, so every nonsingleton fiber is
-one cycle edge and these edges form a matching. Let c be the matching
-size; 0<=c<=k. The transformation matrix has nullity c. The N-1 input
-rows thus have image rank at least N-1-c=2k-c. No kernel pair has both
-endpoints in an input set, so all these images are characteristic rows; the
-assumed membership in F also ensures this directly.
+Suppose f preserves p>0 family members and has rank defect c≥1. Every
+preserved image contains J, so all c omitted outputs lie on C. Also rank f
+is at least the common family size |J|+k, giving c≤k+1. The transformation
+matrix has nullity c; consequently the p independent input rows have image
+rank at least p−c. These images are characteristic rows: membership in F
+ensures their cardinality is unchanged.
 
-If c>0, there are c output states with empty preimage. All lie in C,
-since every output member of F contains all of J. Call them Z. The
-output family uses only maximum independent sets avoiding these c vertices.
-There are at most k+2-c such sets. To prove this bound, index maximum
-sets by cyclic rotation. For each vertex its k containing sets form a
-length-k cyclic interval in the order with step two; different vertices
-give different intervals. The union of c distinct length-k intervals on
-a cycle has at least min(N,k+c-1) points. If the union is proper, cut at
-an uncovered point: its path components of lengths l_i contain at most
-sum max(0,l_i-k+1)<=|union|-k+1 such intervals. If the union is full the
-bound is immediate. Therefore at least k+c-1 of the N maximum sets meet
-Z, giving at most N-(k+c-1)=k+2-c that avoid it.
+For c distinct omitted cycle vertices, at most k+2−c members of F avoid all
+of them. To see this, index maximum independent sets cyclically in step-two
+order. The k sets containing each vertex form a cyclic interval of length k,
+and distinct vertices give distinct intervals. A union of c such intervals
+has at least min(N,k+c−1) points. If the union is proper, cut at an uncovered
+point: components of lengths l_i contain at most Σ max(0,l_i−k+1) ≤ |union|−k+1
+such intervals. If the union is full there are no avoiding sets. Thus the
+image rank is at most k+2−c, and p−c≤k+2−c proves p≤k+2.
 
-The image rank is consequently at most k+2-c, whereas it is at least
-2k-c. This forces k<=2, a contradiction. Thus c=0 and the transformation
-is a permutation. The range k>=3 is essential: C5 with isolated vertices
-does admit singular maps preserving four of its five maximum sets.
+For sharpness, the unit 0→1 preserves all k+1 maximum sets avoiding 0, and
+also the unique maximum set containing 0 but not 2, namely
+{0,3,5,…,2k−1} (for k=1 use {0}). Every other maximum set containing 0 also
+contains 2, so its image is not independent. Exactly k+2 members are preserved.
+
+In particular, preserving k+3 distinct members forces a permutation whenever
+k≥2. The earlier N−1 formulation follows for k≥3, but is weaker for k≥4.
+C5 does admit singular maps preserving four members; preserving all five
+forces a permutation. The former restriction on kernel pairs is unnecessary.
+
+<a id="problem4-odd-cycle-sharp-compression"></a>
+#### Consequences for a short-pair graph that is an odd cycle
+
+Let k≥2, m=k+1, and suppose a synchronizing automaton has
+P_h=C_(2k+1) plus isolated vertices J. Every (n−m)-subset S satisfies
+
+\[
+ \boxed{c(S)\le h+k+3=h+m+2.}\tag{OC1}
+\]
+
+If c(S)>h+k+3, all images through depth k+3 are uncompressed and
+P_h-independent, so belong to F. Before compression the image families
+R_i grow strictly: a plateau would be an invariant family of sets of size
+at least two, impossible in a synchronizing automaton. Thus R_(k+2) has at
+least k+3 distinct members. Every letter maps them back into F, so the sharp
+threshold makes every letter a permutation, again impossible. If S is not
+initially independent, compression already takes at most h. This proves
+(OC1) without strong connectivity or initial-image reachability assumptions.
+
+If a nonempty protected A⊆S meets the cycle, the stronger local bound is
+
+\[
+ \boxed{\operatorname{ac}(S,A)\le h+k=h+m-1.}\tag{OC2}
+\]
+
+Indeed, if ac>h+k, all images through depth k are independent and contain
+any fixed a∈A∩C. Only k members of F contain a, whereas R_k has at least
+k+1 members. This is a contradiction. Thus in a longer safe instance the
+protected set must lie entirely among the isolated vertices.
+
+For m≥5, (OC1) improves the earlier odd-cycle bound h+2m−2 by m−4.
+In particular, for m=5 and target ac≥15 it excludes P_7=C9 (plus isolated
+vertices), and also excludes that shape at earlier layers. It does not
+exclude other graphs with cover number five or prove F=14 at q=15.
+The general cover-number bound below remains valid; its non-cycle
+rank-(2m−2) case is not removed by this improvement.
+
+**Independent controls.** `check_odd_cycle_span.py` rebuilds the cycle families
+for C3 through C17, verifies their rational row ranks, checks all 120469
+omitted-vertex sets of sizes 1,…,k+1, and verifies 480 adjacent-unit equality
+examples with zero, one, or three isolates. It also enumerates all 50064
+transformations in the four domains C3, C3+1, C5, C5+1; the maxima for singular
+maps are respectively 3,3,4,4. The native unrestricted-map control independently
+checks all 46656 maps on C5+1 and all 16777216 maps on C7+1, including arbitrary
+kernels and arbitrary images of the isolate. The singular maxima are 4 and 5;
+there are respectively 45936 and 16736896 singular maps. No maps are omitted
+by a rank or kernel prefilter. Worker domains are disjoint first-output residue
+classes. These finite controls support the implementation; the uniform bounds
+and sharpness follow from the proofs above, not from extrapolation.
+
+```sh
+python3 run.py script scripts/problem4/check_odd_cycle_span.py
+python3 run.py script scripts/problem4/audit_cycle_seven_six_images.cpp --all-maps 4
+```
 
 <a id="problem4-odd-cycle-span-refinement--a-graph-classification-used-in-the-general-reduction"></a>
 #### A graph classification used in the general reduction
