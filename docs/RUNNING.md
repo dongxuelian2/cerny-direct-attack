@@ -146,16 +146,21 @@ five protected states; passing terminal safety alone does not imply reachability
 For the separate six-cycle/eight-channel lower-bound family:
 
 ```sh
-python3 run.py script scripts/problem4/probe_even_ring_channel.cpp 2
+python3 run.py script scripts/problem4/probe_even_ring_channel.cpp 1 --screen-powers
+python3 run.py script scripts/problem4/probe_even_ring_channel.cpp 2 --screened-permutations
 python3 run.py script scripts/problem4/probe_even_ring_channel.cpp 2 --all-permutations
 ```
 
-The first argument is the thread count. The default domain has 29 channel
-permutations; the second command allows all 40320. The permutation index assigns
-disjoint work to threads. A reachable target stops the search with `TARGET_FOUND`;
-`COMPLETE` confirms exhaustion of the selected restricted domain, never all DFAs.
-The [family definition and results](../PROOF.md#problem4-even-ring-channel-family)
-state the exact coverage and the required independent witness check.
+The first argument is the thread count. The first command reconstructs the
+short-word proof over 1800 second letters and 15 initial sets: 104 cases survive
+the first word family, and uniform two-b collision words reject all 104.
+The second independently checks all 40320 channel permutations on those
+104 cases. The third directly enumerates all 72576000 transition pairs.
+Without a mode flag, only 29 channel permutations are used.
+Permutation indices assign disjoint work to threads. `TARGET_FOUND` stops on
+a reachable target; `COMPLETE` confirms exhaustion of the selected domain.
+None of these results is a bound for all DFAs. See the
+[family definition, proof, and complete counts](../PROOF.md#problem4-even-ring-channel-family).
 
 For target twelve with two distinct first entrances:
 
