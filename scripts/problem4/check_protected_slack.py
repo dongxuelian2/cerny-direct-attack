@@ -3,7 +3,7 @@
 These finite checks supplement the general proof, not a global DFA search.
 """
 from collections import deque
-from itertools import combinations, permutations
+from itertools import combinations, permutations, product
 from math import gcd
 
 from two_block_family import construct
@@ -94,6 +94,88 @@ def lift_reaching_word(rows, protected, retain, word):
         assert len(protected - old_set) == len(new_A - new_set)
         steps += 1
     return new_set, steps
+
+
+def single_protected_expansion_states(rows, retain, defect):
+    """Exact reachable subsets modulo protected permutations, above target rank."""
+    q = len(rows[0]) - 1
+    assert retain >= 1 and 0 <= defect < q
+    for f in rows:
+        assert len(f) == q + 1 and all(0 <= x <= q for x in f)
+        assert f[q] not in f[:q] and q in f
+    start = ((1 << q) - 1, 0)
+    seen, todo = {start}, deque([start])
+    while todo:
+        mask, absent = todo.popleft()
+        for f in rows:
+            export = int(f[q] != q)
+            outside, hits = 0, 0
+            for x in range(q):
+                if mask >> x & 1:
+                    if f[x] == q:
+                        hits = 1
+                    else:
+                        outside |= 1 << f[x]
+            for occupied_export in range(export + 1):
+                if occupied_export > retain - absent or export - occupied_export > absent:
+                    continue
+                new_mask = outside | ((1 << f[q]) if occupied_export else 0)
+                new_absent = absent + occupied_export - hits
+                assert 0 <= new_absent <= retain
+                if new_absent + q - new_mask.bit_count() > defect:
+                    continue
+                state = (new_mask, new_absent)
+                if state not in seen:
+                    seen.add(state)
+                    todo.append(state)
+    return seen
+
+
+def expansion_quotient_controls():
+    # Exhaust all two-letter inputs on two external states. Independent literal
+    # expansion includes every protected-input/output rewiring and permutation.
+    q, defect = 2, 1
+    universe = [f for f in product(range(3), repeat=3)
+                if f[2] not in f[:2] and 2 in f]
+    assert len(universe) == 10
+    comparisons = positives = negatives = 0
+    for retain in (1, 2, 3):
+        n = q + retain
+        relabels = [tuple(range(q)) + tuple(q + x for x in perm)
+                    for perm in permutations(range(retain))]
+        variants = {}
+        for f in universe:
+            base = list(f[:q]) + list(range(q, n))
+            if f[q] != q:
+                base[q] = f[q]
+            variants[f] = {tuple(after[base[before[x]]] for x in range(n))
+                           for before in relabels for after in relabels}
+        for f in universe:
+            for g in universe:
+                letters = variants[f] | variants[g] | set(relabels)
+                start = frozenset(range(n))
+                todo, literal = deque([start]), {start}
+                while todo:
+                    source = todo.popleft()
+                    for h in letters:
+                        image = frozenset(h[x] for x in source)
+                        if len(image) >= n - defect and image not in literal:
+                            literal.add(image)
+                            todo.append(image)
+                projected = {(sum(1 << x for x in image if x < q),
+                              retain - len([x for x in image if x >= q]))
+                             for image in literal}
+                quotient = single_protected_expansion_states([f, g], retain, defect)
+                assert quotient == projected
+                for target in (1, 2):
+                    if (target, 0) in quotient:
+                        positives += 1
+                    else:
+                        negatives += 1
+                comparisons += 1
+    assert comparisons == 300 and positives and negatives
+    print(f'PASS protected-expansion reachability quotient: {comparisons} complete small domains; '
+          f'{positives} reachable and {negatives} unreachable target controls')
 
 
 def pair_distances(rows):
@@ -383,6 +465,7 @@ def main():
           'avoidance on 12 constructions, a repaired periodic model, and '
           'negative controls for both essential hypotheses')
     delay_controls()
+    expansion_quotient_controls()
 
 
 if __name__ == '__main__':

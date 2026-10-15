@@ -137,6 +137,12 @@ stepwise reachability-preserving contraction and expansion. Its finite controls 
 they do not search all twelve-step candidates. The flag programs above handle
 equality at thirteen, not the remaining target twelve.
 
+The same Python control script also compares the protected-count quotient for
+expanded-model reachability with every literal reachable subset in 300 small
+domains. The [quotient criterion](../PROOF.md#problem4-expanded-reachability-quotient)
+has at most 1578 states for a single-protected q=13, m=4 candidate expanded to
+five protected states; passing terminal safety alone does not imply reachability.
+
 For target twelve with two distinct first entrances:
 
 ```sh
@@ -200,6 +206,16 @@ These remain necessary conditions; a surviving pool is not an automaton.
 test all mixed words up to length eleven while requiring strong connectivity
 and every supplier. A surviving alphabet still needs synchronization and
 initial-set reachability checks before it could establish a lower bound.
+`--terminal-avoidance` additionally requires that the selected alphabet can
+avoid the protected state from the full state set. It computes the entire
+backward subset closure, with no word-length cutoff, and branches on letters
+that leave a non-avoiding closure. This option includes the other terminal
+checks. Its [proof and independent controls](../PROOF.md#problem4-full-state-avoidance-cut)
+explain why it is necessary even when the contracted model is not synchronizing.
+With `--threads 1`, `--terminal-example` prints the first alphabet accepted by
+the enabled complete terminal search, together with its initial set and basis.
+It does not stop enumeration or certify synchronization or reachability.
+
 `--controls-only` runs the implementation controls and skips flag enumeration.
 See [the terminal compatibility proof](../PROOF.md#problem4-terminal-labeled-compatibility).
 

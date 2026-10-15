@@ -272,7 +272,8 @@ vector<unsigned> one_count_closure(const vector<unsigned>& rows,int protected_co
 }
 // Iterate only complete labeled maps. A terminal flag supplies at most two
 // possible initial rows; each must be tested separately across the whole pool.
-bool terminal_powers=false,terminal_mixed=false,terminal_alphabets=false;
+bool terminal_powers=false,terminal_mixed=false,terminal_alphabets=false,terminal_avoidance=false;
+bool terminal_example=false,example_printed=false;
 bool safe_powers(const vector<int>& f,unsigned source,unsigned protect,int length) {
  unsigned image=source;int size=__builtin_popcount(source);
  for(int step=1;step<=length;++step) {
@@ -629,8 +630,19 @@ PairSummary graded_pair_pool(Core core,const vector<unsigned>& edges,const vecto
        vector<pair<int,int>> core_edges;
        for(unsigned edge:edges) core_edges.emplace_back(__builtin_ctz(edge),__builtin_ctz(edge&(edge-1)));
        assert(n==14);
-       valid=short_word_clique<14>(maps,labels,all_required,13,
-                                   {{terminal_source,11}},core_edges,e).possible;
+       auto answer=short_word_clique<14>(maps,labels,all_required,13,
+                                         {{terminal_source,11}},core_edges,e,true,terminal_avoidance);
+       valid=answer.possible;
+       if(valid&&terminal_example&&!example_printed) {
+         example_printed=true;
+         cout<<"TERMINAL_EXAMPLE core="<<core.id<<" source="<<terminal_source<<" protect=8192";
+         for(size_t j=0;j<basis.size();++j) cout<<" fiber="<<basis[j]<<':'<<levels[j];
+         cout<<" letters="<<answer.witness.size()<<'\n';
+         for(int index:answer.witness) {
+           cout<<"LETTER";for(int out:maps[index]) cout<<' '<<out;cout<<'\n';
+         }
+         cout<<"EXAMPLE_SCOPE short-word safety, strong connectivity, and suppliers verified; synchronization and reachability not yet checked\n";
+       }
      }
    }
    if(valid) ++result.vectors;
@@ -924,6 +936,8 @@ int main(int argc,char**argv) {
    else if(string(argv[i])=="--terminal-powers") terminal_powers=true;
    else if(string(argv[i])=="--terminal-mixed") terminal_powers=terminal_mixed=true;
    else if(string(argv[i])=="--terminal-alphabets") terminal_powers=terminal_mixed=terminal_alphabets=true;
+   else if(string(argv[i])=="--terminal-avoidance") terminal_powers=terminal_mixed=terminal_alphabets=terminal_avoidance=true;
+   else if(string(argv[i])=="--terminal-example") terminal_example=true;
    else if(string(argv[i])=="--controls-only") controls_only=true;
    else if(string(argv[i])=="--flags") print_flags=true;
    else if(string(argv[i])=="--pairs") pairs=true;
@@ -938,6 +952,7 @@ int main(int argc,char**argv) {
    else return 2;
  }
  assert(threads>=1&&threads<=32&&(!print_flags||threads==1));
+ if(terminal_example&&(!terminal_alphabets||threads!=1)) return 2;
  if(terminal_powers&&(!ranks||max_layer!=11||split_layer==1)) return 2;
  if((delay_cut||ranks)&&!pairs) return 2;
  if(arrival&&!ranks) return 2;
@@ -985,6 +1000,10 @@ int main(int argc,char**argv) {
  if(terminal_alphabets) {
    short_word_clique_controls<14>();
    cout<<"CONTROLS complete alphabet search versus 512 small pools and a triple-word obstruction PASS\n";
+ }
+ if(terminal_avoidance) {
+   short_word_avoidance_controls<14>();
+   cout<<"CONTROLS full-state avoidance cuts: 2187 small instances and 64 complete alphabet pools PASS\n";
  }
  if(controls_only) return 0;
  vector<Result> results(cores.size());atomic<int> next{0};vector<thread> workers;mutex output_mutex;
@@ -1038,6 +1057,7 @@ int main(int argc,char**argv) {
  cout<<"SCOPE initial flags; pair_mode="<<pairs<<" delay_cut="<<delay_cut<<" ranks="<<ranks<<" arrival="<<arrival
      <<" split_layer="<<split_layer<<" core="<<only_core<<" terminal_powers="<<terminal_powers<<"; flags stop at layer "<<max_layer
      <<"; terminal_mixed="<<terminal_mixed<<" terminal_alphabets="<<terminal_alphabets
+     <<" terminal_avoidance="<<terminal_avoidance
      <<"; surviving flags do not establish original-class witnesses; no new upper bound\n";
  return 0;
 }

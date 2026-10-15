@@ -15,6 +15,34 @@ struct ShortWordCliqueResult {
   uint64_t nodes = 0, pair_checks = 0;
   std::vector<int> witness;
 };
+struct AvoidanceClosure {
+  bool avoids = false;
+  std::vector<unsigned> sets;
+  std::vector<unsigned char> seen;
+};
+inline unsigned literal_preimage(unsigned set, const std::vector<int>& f) {
+  unsigned pre = 0;
+  for (int q = 0; q < int(f.size()); ++q)
+    if (set >> f[q] & 1) pre |= 1U << q;
+  return pre;
+}
+inline AvoidanceClosure full_avoidance_closure(
+    int n, int protected_point, const std::vector<std::vector<int>>& letters,
+    const std::vector<int>& selected) {
+  AvoidanceClosure answer;
+  answer.seen.resize(1U << n);
+  answer.sets.push_back(1U << protected_point);
+  answer.seen[answer.sets.front()] = 1;
+  for (size_t at = 0; at < answer.sets.size(); ++at)
+    for (int i : selected) {
+      unsigned pre = literal_preimage(answer.sets[at], letters[i]);
+      if (!pre) {answer.avoids = true;return answer;}
+      if (!answer.seen[pre]) {
+        answer.seen[pre] = 1;answer.sets.push_back(pre);
+      }
+    }
+  return answer;
+}
 template<int n = 13>
 inline ShortWordCliqueResult
 short_word_clique(const std::vector<std::vector<int>> &letters,
@@ -22,7 +50,8 @@ short_word_clique(const std::vector<std::vector<int>> &letters,
                   int protected_point,
                   const std::vector<std::pair<unsigned, int>> &seeds,
                   const std::vector<std::pair<int, int>> &edges,
-                  const std::vector<int> &distances, bool fold = true) {
+                  const std::vector<int> &distances, bool fold = true,
+                  bool require_full_avoidance = false) {
   using namespace std;
   const int raw_count = letters.size();
   static_assert(n >= 13 && n <= 14);
@@ -238,6 +267,25 @@ short_word_clique(const std::vector<std::vector<int>> &letters,
           return false;
         choose(move(next));
       }
+    if (!need && require_full_avoidance) {
+      vector<int> chosen_letters;
+      for (int g : selected)
+        chosen_letters.insert(chosen_letters.end(), members[g].begin(), members[g].end());
+      auto closure = full_avoidance_closure(n, protected_point, letters, chosen_letters);
+      if (!closure.avoids) {
+        vector<int> next;
+        for (int g : pool) {
+          bool leaves = false;
+          for (int f : members[g]) for (unsigned set : closure.sets)
+            if (!closure.seen[literal_preimage(set, letters[f])]) {leaves = true;break;}
+          if (leaves) next.push_back(g);
+        }
+        // If every remaining letter preserves this nonempty preimage family,
+        // no extension can avoid the protected state from the full state set.
+        if (next.empty()) return false;
+        choose(move(next));
+      }
+    }
     if (!need) {
       result.witness.clear();
       for (int g : selected)
@@ -462,4 +510,99 @@ inline void short_word_clique_controls() {
   for (bool fold : {false, true})
     assert(!short_word_clique<n>(triple, {1, 2, 4}, 7, 3, {{initial, 3}}, {}, {}, fold)
                 .possible);
+}
+
+// Independent forward-image controls for the full-state avoidance extension.
+template<int n = 14>
+inline void short_word_avoidance_controls() {
+  using namespace std;
+  auto forward_avoids = [](int width, int a, const vector<vector<int>>& maps,
+                           const vector<int>& alphabet) {
+    vector<unsigned char> seen(1U << width);
+    vector<unsigned> todo{(1U << width)-1};seen[todo.front()]=1;
+    for(size_t at=0;at<todo.size();++at) for(int f:alphabet) {
+      unsigned image=0;
+      for(int q=0;q<width;++q) if(todo[at]>>q&1) image|=1U<<maps[f][q];
+      if(!(image>>a&1)) return true;
+      if(!seen[image]) {seen[image]=1;todo.push_back(image);}
+    }
+    return false;
+  };
+  vector<vector<int>> small;
+  for(int code=0;code<27;++code) {
+    int rest=code;vector<int> f(3);
+    for(int& q:f) {q=rest%3;rest/=3;}small.push_back(f);
+  }
+  int cut_checks=0;
+  for(int f=0;f<27;++f) for(int g=0;g<27;++g) for(int a=0;a<3;++a) {
+    auto closure=full_avoidance_closure(3,a,small,{f});
+    auto both=full_avoidance_closure(3,a,small,{f,g});
+    assert(closure.avoids==forward_avoids(3,a,small,{f}));
+    assert(both.avoids==forward_avoids(3,a,small,{f,g}));
+    if(!closure.avoids) {
+      bool leaves=false;
+      for(unsigned set:closure.sets) leaves|=!closure.seen[literal_preimage(set,small[g])];
+      if(both.avoids) assert(leaves);
+      if(!leaves) assert(!both.avoids);
+    }
+    ++cut_checks;
+  }
+  vector<vector<int>> universe(6,vector<int>(n));
+  for(int q=0;q<n;++q) {
+    universe[0][q]=(q+1)%n;
+    universe[1][q]=q==n-1?0:q;
+    universe[2][q]=q;
+    universe[3][q]=(q+n-1)%n;
+    universe[4][q]=q==0?n-1:(q==n-1?0:q);
+    universe[5][q]=0;
+  }
+  constexpr unsigned initial=(1U<<(n-4))-1,full=(1U<<n)-1;
+  array<bool,64> valid{};int positives=0,negatives=0;
+  for(unsigned subset=1;subset<64;++subset) {
+    vector<int> alphabet;unsigned flags=0;
+    for(int f=0;f<6;++f) if(subset>>f&1) {alphabet.push_back(f);flags|=1U<<(f%2);}
+    if(flags!=3) continue;
+    bool sc=true;
+    for(int start=0;start<n;++start) {
+      unsigned visited=1U<<start;vector<int> todo{start};
+      for(size_t at=0;at<todo.size();++at) for(int f:alphabet) {
+        int out=universe[f][todo[at]];
+        if(!(visited>>out&1)) {visited|=1U<<out;todo.push_back(out);}
+      }
+      sc&=visited==full;
+    }
+    if(!sc) continue;
+    vector<unsigned> frontier{initial};bool safe=true;
+    for(int length=1;length<=3&&safe;++length) {
+      vector<unsigned> next;
+      for(unsigned mask:frontier) for(int f:alphabet) {
+        unsigned image=0;for(int q=0;q<n;++q) if(mask>>q&1) image|=1U<<universe[f][q];
+        if(__builtin_popcount(image)!=n-4||!(image&8)) safe=false;
+        next.push_back(image);
+      }
+      frontier=move(next);
+    }
+    valid[subset]=safe&&forward_avoids(n,3,universe,alphabet);
+  }
+  assert(valid[3]); // cycle plus the unit merge is a positive control
+  assert(!valid[9]); // strongly connected permutations cannot avoid from Q
+  for(unsigned pool=0;pool<64;++pool) {
+    bool expected=false;
+    for(unsigned subset=pool;subset;subset=(subset-1)&pool) expected|=valid[subset];
+    vector<vector<int>> letters;vector<unsigned> flags;
+    for(int f=0;f<6;++f) if(pool>>f&1) {letters.push_back(universe[f]);flags.push_back(1U<<(f%2));}
+    for(bool fold:{false,true}) {
+      auto answer=short_word_clique<n>(letters,flags,3,3,{{initial,3}},{},{},fold,true);
+      assert(answer.possible==expected);
+      if(answer.possible) assert(forward_avoids(n,3,letters,answer.witness));
+    }
+    expected?++positives:++negatives;
+  }
+  assert(positives&&negatives&&cut_checks==2187);
+  // These letters are indistinguishable within the three-step safe horizon,
+  // but only the nonrepresentative merge permits eventual avoidance from Q.
+  vector<vector<int>> folded{universe[0],universe[2],universe[1]};
+  auto answer=short_word_clique<n>(folded,{1,2,2},3,3,{{initial,3}},{},{},true,true);
+  assert(answer.possible&&answer.groups==1);
+  assert(forward_avoids(n,3,folded,answer.witness));
 }
