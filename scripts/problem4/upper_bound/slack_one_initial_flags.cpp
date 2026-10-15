@@ -278,6 +278,7 @@ bool terminal_example=false,example_printed=false;
 bool literal_prefix=false;
 bool canonical_prefix=false;
 bool periodic_isolates=false;
+bool cyclic_isolates=false;
 vector<unsigned> initial_flag;
 // Quotient only by automorphisms fixing the entire initial ordered flag.
 // Outside labels and the protected label are fixed pointwise.
@@ -321,11 +322,7 @@ void prefix_orbit_controls() {
  cout<<"CONTROLS prefix orbits: matching automorphisms and initial-flag stabilizers PASS\n";
 }
 int cyclic_rank(const vector<int>& f) {
- vector<int> degree(f.size()),todo;
- for(int x:f) ++degree[x];
- for(int x=0;x<int(f.size());++x) if(!degree[x]) todo.push_back(x);
- for(size_t at=0;at<todo.size();++at) if(!--degree[f[todo[at]]]) todo.push_back(f[todo[at]]);
- return int(f.size()-todo.size());
+ return __builtin_popcount(cell_pairs::cyclic_states(f));
 }
 bool safe_powers(const vector<int>& f,unsigned source,unsigned protect,int length) {
  unsigned image=source;int size=__builtin_popcount(source);
@@ -512,6 +509,10 @@ PairSummary graded_pair_pool(Core core,const vector<unsigned>& edges,const vecto
      unsigned image=0;for(int x:f) image|=1U<<x;
      unsigned outside_core=((1U<<n)-1)^((1U<<core.n)-1);
      if((image&outside_core)!=outside_core) return false;
+     if(cyclic_isolates) {
+       unsigned cyclic=cell_pairs::cyclic_states(f);
+       if((cyclic&outside_core)!=outside_core||__builtin_popcount(cyclic)<n-3) return false;
+     }
    }
    if(exact_prefix) {
      if(cyclic_rank(f)<n-3) return false;
@@ -623,7 +624,8 @@ PairSummary graded_pair_pool(Core core,const vector<unsigned>& edges,const vecto
  for(const auto& pattern:patterns) {
    current_flags=pattern.flags;
    for(const auto& item:generator.generate(pattern.pre,rank_filter,known_two,
-                                           periodic_isolates&&protected_count==1)) {
+                                           periodic_isolates&&protected_count==1,
+                                           cyclic_isolates&&protected_count==1?3:-1)) {
      if(unsigned(item.first.back())&known_two) continue;
      auto& mark=alphabet[item.first];mark.flags|=pattern.flags;
      for(int q=0;q<n;++q) mark.arrows[q]|=item.second[q];
@@ -1038,6 +1040,7 @@ int main(int argc,char**argv) {
    else if(string(argv[i])=="--literal-prefix") literal_prefix=true;
    else if(string(argv[i])=="--canonical-prefix") canonical_prefix=true;
    else if(string(argv[i])=="--periodic-isolates") periodic_isolates=true;
+   else if(string(argv[i])=="--cyclic-isolates") cyclic_isolates=periodic_isolates=true;
    else if(string(argv[i])=="--initial-flag"&&i+1<argc) {
      string masks=argv[++i];replace(masks.begin(),masks.end(),',',' ');
      istringstream input(masks);unsigned value;
@@ -1183,6 +1186,7 @@ int main(int argc,char**argv) {
      <<" literal_prefix="<<literal_prefix
      <<" canonical_prefix="<<canonical_prefix
      <<" periodic_isolates="<<periodic_isolates
+     <<" cyclic_isolates="<<cyclic_isolates
      <<"; surviving flags do not establish original-class witnesses; no new upper bound\n";
  return 0;
 }

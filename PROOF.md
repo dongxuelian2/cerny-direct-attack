@@ -5896,7 +5896,13 @@ python3 run.py script scripts/problem4/upper_bound/slack_one_initial_flags.cpp -
 python3 run.py script scripts/problem4/upper_bound/slack_one_initial_flags.cpp --pairs --delay-cut --ranks --arrival --all-late-splits --depth 11 --terminal-alphabets --threads 4
 ```
 
-后三项正在各自完整域上运行，未完成时不能据其宣称分支排除。
+后三项的全核心运行尚未全部完成，不能据其宣称所有分支排除。
+其中完整字母表运行已独立完成核心 102（五点图，边 03、12、14、24、34）
+的整个晚分裂及不再额外增长域，十一层终端旗标数为零。
+这里覆盖 σ=4,…,11 以及无额外增长，不含 σ=2、3；该核心结果来自
+`DONE_CORE id=102 split=12 depth=11 terminal_one=0 terminal_two=0`，
+只在该核心全部处理后打印，不是途中某个前缀的零值。
+其他核心尚未结束，不能将这个完成项扩大为 q=13 上界十一。
 已完成的幂检查试算取 σ=2、核心 5，覆盖该核心全部初始选择，
 耗时 177.678 秒。第九层四个存活旗标延伸到第十层后剩两个；
 第十一层共有 512 个初筛选择，真实字母幂及共同供应检查后全部归零，
@@ -6339,6 +6345,79 @@ n−m 的像必同时含一个邻点，再用至多 m−1 步合并就产生过�
 这与其三点覆盖结构相容：所有大小 n−3 的 P3 独立集都包含全部孤点，
 已有辅助独立集像条件已会拒绝遗漏孤点的字母。本次新增筛选的潜在增益
 在二点覆盖核心；核心 10、12 的联合终端运行正在检验这一点。
+
+<a id="problem4-cyclic-core-relabeling"></a>
+#### 核心外输出重排保留周期状态集合
+
+**一般有限变换的纸面引理。** 设 f:Q→Q，K⊆Q，C(f) 为 f 的全部
+周期状态。若 Q\K⊆C(f)，则对任何逐点固定 K 的置换 π，后复合
+fπ（即先 f 后 π）满足
+
+\[
+\boxed{C(f\pi)=C(f).}\tag{PI3}
+\]
+
+证明：记 T=Q\C(f)⊆K。因为 π 逐点固定 T，且 C(f) 包含 K 外全部点，
+π 保持 C(f)。f 在 C(f) 上为置换，所以 fπ 也在该集合上为置换。
+从任意 t∈T 出发，只要 f 的轨迹仍在 T 内，fπ 的轨迹与之完全相同；
+第一次进入 C(f) 时，π 只把落点变成该集合的另一个点。
+因此 t 在 fπ 下也恰于同一步进入 C(f)，不可能成为新的周期点，证毕。
+反向应用 π⁻¹ 可知，“所有 K 外状态周期且周期秩至少 n−m+1”这个
+合取条件在全部此类输出重排下不变，即使代表本身不满足该条件也能判定。
+
+取 K=P_(m−1) 的支持，前节长安全区间假设迫使上述合取条件成立。
+这比只要求 K 外每个输出有前像更强。例如
+f=[0,0,3,1,4]、K={0,1,2} 的两个核心外输出 3、4 都出现，但
+3→1→0，故 3 不周期。该例说明已有单步输出条件不能替代 (PI3) 的检查。
+
+单字母投影生成器逐点固定所有核心输出；其未命名输出只能在各自成员格
+内重排，这些重排均固定 K。因此 `--cyclic-isolates` 可以对一个匿名完成
+计算周期状态掩码，要求全部核心外点周期且周期秩至少 n−3（当前 m=4），
+并精确保留通过条件的整个输出重排类及其箭头并。此选项包含原
+`--periodic-isolates` 的必要输出筛选；后者仍可用于重现较弱筛选的旧计数。
+这不允许在匿名代表上检查一般的字母幂安全性或混合词安全性。
+
+还可以在分配输出之前精确实施这个条件。对任意有限变换，
+
+\[
+ Q\setminus K\subseteq C(f),\quad |Q\setminus C(f)|\le d
+ \quad\Longleftrightarrow\quad
+ \exists T\subseteq K,\ |T|\le d:\ f|_{Q\setminus T}
+ \text{ 是 }Q\setminus T\text{ 上的置换}.\tag{PI4}
+\]
+
+正向取 T 为全部非周期点；反向中 Q\T 都已周期，所以非周期点至多 |T|。
+对固定核分划，每个核块在 Q\T 中必须至多保留一个输入。每个成员格内
+保留的核块数必须等于该格中 Q\T 的输出数。随后把块 B 分配给输出 y 时，
+必须满足 |B\T|=1−1_T(y)；未使用的显式输出必须属于 T。
+这些条件保证所余匿名输出与保留输入一一匹配，正好等价于 (PI4)。
+实现把所有 |T|≤3 的核心子集存为至多 64 位的候选集合，并在每次分配后
+删除不满足条件的 T；集合为空就立即回溯。这里不限制合法映射的循环长度，
+也没有选择一个固定的 T 来替代全部可能的非周期集合。
+
+独立控制对全部 3125 个五状态变换，逐一后复合固定前两点的六个置换，
+共检查 18750 次；周期掩码由逐点五次迭代独立计算。
+2412 次满足核心外周期条件并保持完整周期掩码，16338 次保持不满足。
+另在两个五状态、三点核心的域中比较完整逐映射枚举与匿名投影的距离
+签名及箭头并，分别含两个匿名标签和一个额外显式标签；同时检查原生
+必需输出剪枝与禁止距离签名的组合。上述测试核对实现，(PI3) 的全部
+参数结论来自纸面证明，尚未由此声称新的完整参数上界。
+核块分配中的 (PI4) 筛选也分别在保留、移除完成映射后的周期检查两种
+模式下与逐映射枚举比较，确认该提前筛选本身既不多留也不遗漏投影。
+
+核心 10 的完整前三层使用 (PI3) 后，19 个初筛旗标中保留 7 个，
+共有 13 个距离向量和 465 个投影，耗时 42.081 秒。这是三层必要条件域，
+仍有候选，不作为该核心的完整十二步排除。
+随后改用 (PI4) 在生成阶段提前筛选，完整重跑同一域得到逐项相同计数，
+耗时 42.113 秒；这里核对数学域与实现一致，不宣称测得加速。
+核心 10 的晚分裂全域及核心 106 的剩余前缀 (64,128,256) 已启用该条件
+继续做十一层联合终端检查，尚未完成，不产生新的否定结论。
+
+```sh
+python3 run.py script scripts/problem4/upper_bound/slack_one_initial_flags.cpp --pairs --delay-cut --ranks --arrival --all-late-splits --depth 11 --terminal-reachable --literal-prefix --canonical-prefix --cyclic-isolates --controls-only
+python3 run.py script scripts/problem4/upper_bound/slack_one_initial_flags.cpp --pairs --delay-cut --ranks --arrival --all-late-splits --depth 3 --cyclic-isolates --core 10 --threads 1
+python3 run.py script scripts/problem4/upper_bound/slack_one_initial_flags.cpp --pairs --delay-cut --ranks --arrival --all-late-splits --depth 11 --terminal-reachable --literal-prefix --canonical-prefix --cyclic-isolates --terminal-example --initial-flag 64,128,256 --core 106 --threads 1
+```
 
 <a id="branches"></a>
 ## 5　余维四的历史条件分支与替代路线

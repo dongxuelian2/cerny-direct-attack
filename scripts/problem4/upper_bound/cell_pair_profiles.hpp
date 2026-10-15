@@ -17,6 +17,14 @@ namespace cell_pairs {
 using Arrows=std::array<unsigned,15>;
 using Profile=std::vector<int>; // edge images (-1 merged, -2 outside), then forced-3 mask
 using Pool=std::map<Profile,Arrows>;
+inline unsigned cyclic_states(const std::vector<int>& f) {
+ std::vector<int> degree(f.size()),todo;
+ for(int x:f) ++degree[x];
+ for(int x=0;x<int(f.size());++x) if(!degree[x]) todo.push_back(x);
+ for(size_t at=0;at<todo.size();++at) if(!--degree[f[todo[at]]]) todo.push_back(f[todo[at]]);
+ unsigned mask=0;for(int x=0;x<int(f.size());++x) if(degree[x]) mask|=1U<<x;
+ return mask;
+}
 inline bool cover_three(const std::vector<unsigned>& cliques) {
  auto visit=[&](auto&& self,unsigned chosen,int left)->bool {
    for(unsigned clique:cliques) {
@@ -72,8 +80,16 @@ struct Generator {
  // completion. No such assertion is made for iterated words on a completion.
  Pool generate(const std::vector<unsigned>& preimages,
                const std::function<bool(const std::vector<int>&)>& invariant_filter={},
-               unsigned forbidden_forced=0,bool require_noncore_outputs=false) const {
+               unsigned forbidden_forced=0,bool require_noncore_outputs=false,
+               int max_core_transients=-1) const {
    assert(preimages.size()==outputs.size());
+   if(max_core_transients>=0) require_noncore_outputs=true;
+   // A completion has all noncore states cyclic and at most d transients iff
+   // it restricts to a permutation of Q\T for some T in the core, |T|<=d.
+   std::array<uint64_t,15> removed_output{};
+   if(max_core_transients>=0) for(unsigned T=0;T<(1U<<c);++T)
+     if(__builtin_popcount(T)<=max_core_transients)
+       for(int q=0;q<c;++q) if(T>>q&1) removed_output[q]|=uint64_t(1)<<T;
    Pool pool;std::array<int,15> input_cell{};
    for(int q=0;q<n;++q) {
      unsigned key=0;for(size_t j=0;j<outputs.size();++j) key|=((preimages[j]>>q)&1)<<j;
@@ -95,11 +111,29 @@ struct Generator {
        if(require_noncore_outputs&&remaining[j]<mandatory[j]) valid=false;
      }
      if(!valid) continue;
+     uint64_t possible_removed=0;
+     std::array<uint64_t,15> removed_block{};
+     if(max_core_transients>=0) {
+       for(unsigned T=0;T<(1U<<c);++T) if(__builtin_popcount(T)<=max_core_transients) {
+         std::array<int,15> retained{};bool possible=true;
+         for(size_t i=0;i<blocks.size();++i) {
+           int count=__builtin_popcount(blocks[i]&~T);
+           if(count>1) {possible=false;break;}
+           retained[block_cell[i]]+=count;
+         }
+         for(int cell=0;cell<cells;++cell)
+           if(retained[cell]!=__builtin_popcount(output_cells[cell]&~T)) possible=false;
+         if(!possible) continue;
+         uint64_t bit=uint64_t(1)<<T;possible_removed|=bit;
+         for(size_t i=0;i<blocks.size();++i) if(!(blocks[i]&~T)) removed_block[i]|=bit;
+       }
+       if(!possible_removed) continue;
+     }
      std::vector<int> order=explicit_outputs;
      std::stable_sort(order.begin(),order.end(),[&](int a,int b){return remaining[output_cell[a]]<remaining[output_cell[b]];});
      std::array<int,15> block_output;block_output.fill(-2);
      std::array<int,15> inverse;inverse.fill(-1);
-     std::function<void(int,unsigned)> assign=[&](int at,unsigned used) {
+     std::function<void(int,unsigned,uint64_t)> assign=[&](int at,unsigned used,uint64_t possible) {
        if(at==int(order.size())) {
          if(require_noncore_outputs) for(int cell=0;cell<cells;++cell)
            assert(remaining[cell]==capacity[cell]); // anonymous outputs are all noncore
@@ -148,18 +182,22 @@ struct Generator {
        int q=order[at],cell=output_cell[q];--capacity[cell];
        if(require_noncore_outputs&&q>=c) --mandatory[cell];
        // Leave this explicit output missing, if all remaining blocks still fit.
-       if((!require_noncore_outputs||q<c)&&remaining[cell]<=capacity[cell]) assign(at+1,used);
+       uint64_t missing_possible=possible&removed_output[q];
+       if((!require_noncore_outputs||q<c)&&remaining[cell]<=capacity[cell]&&
+          (max_core_transients<0||missing_possible)) assign(at+1,used,missing_possible);
        for(size_t b=0;b<blocks.size();++b) if(!(used>>b&1)&&block_cell[b]==cell) {
          --remaining[cell];
-         if(remaining[cell]<=capacity[cell]&&(!require_noncore_outputs||remaining[cell]>=mandatory[cell])) {
-           block_output[b]=q;inverse[q]=b;assign(at+1,used|(1U<<b));inverse[q]=-1;block_output[b]=-2;
+         uint64_t next_possible=possible&~(removed_block[b]^removed_output[q]);
+         if(remaining[cell]<=capacity[cell]&&(!require_noncore_outputs||remaining[cell]>=mandatory[cell])&&
+            (max_core_transients<0||next_possible)) {
+           block_output[b]=q;inverse[q]=b;assign(at+1,used|(1U<<b),next_possible);inverse[q]=-1;block_output[b]=-2;
          }
          ++remaining[cell];
        }
        ++capacity[cell];
        if(require_noncore_outputs&&q>=c) ++mandatory[cell];
      };
-     assign(0,0);
+     assign(0,0,possible_removed);
    }
    return pool;
  }
@@ -177,11 +215,12 @@ struct Generator {
 };
 inline void controls() {
  uint64_t maps=0,patterns=0;
- for(int variant=0;variant<11;++variant) {
+ for(int variant=0;variant<13;++variant) {
    int n=variant==8?4:(variant==7?2:(variant==6?3:((variant==1||variant==5)?4:((variant==2||variant==4)?6:5))));
    int c=(variant==1||variant>=4)?2:(variant==3?3:4);
    std::vector<unsigned> edges=(variant==1||variant>=4)?std::vector<unsigned>{3}:
        (variant==2?std::vector<unsigned>{3,12}:(variant==3?std::vector<unsigned>{3,5,6}:std::vector<unsigned>{3,6,12}));
+   if(variant>=11) {c=3;edges={3,5,6};}
    std::vector<unsigned> sets=variant==4?std::vector<unsigned>{32,3,1,2}:(variant==1?std::vector<unsigned>{4,8,1,2,3}:
        (variant==2?std::vector<unsigned>{16,32,3,12,5}:std::vector<unsigned>{16,3,6,9}));
    if(variant==5) sets={4,8,1,2,3,15};
@@ -190,12 +229,19 @@ inline void controls() {
    if(variant==8) sets={8,3};
    if(variant==9) sets={3};
    if(variant==10) sets={3,16};
+   if(variant==11) sets={7};
+   if(variant==12) sets={7,16};
    Generator generator(n,c,edges,sets,variant==8?std::vector<int>{0,1,2,3}:
-                       ((variant==4||variant==10)?std::vector<int>{2}:std::vector<int>{}));
+                       (variant==12?std::vector<int>{3}:
+                        ((variant==4||variant==10)?std::vector<int>{2}:std::vector<int>{})));
    auto filter=[&](const std::vector<int>& f) {
      if(variant>=9) {
        unsigned image=0;for(int x:f) image|=1U<<x;
        unsigned outside_core=((1U<<n)-1)^((1U<<c)-1);
+       if(variant>=11) {
+         unsigned cyclic=cyclic_states(f);
+         return (cyclic&outside_core)==outside_core&&__builtin_popcount(cyclic)>=n-2;
+       }
        return (image&outside_core)==outside_core;
      }
      // This iterated condition is legal only with ALL outputs explicit.
@@ -241,14 +287,49 @@ inline void controls() {
      for(size_t j=0;j<sets.size();++j) pre.push_back((item.first>>(n*j))&((1U<<n)-1));
      assert(generator.generate(pre,filter)==item.second);
      if(variant>=9) assert(generator.generate(pre,filter,0,true)==item.second);
+     if(variant>=11) {
+       assert(generator.generate(pre,filter,0,true,2)==item.second);
+       assert(generator.generate(pre,{},0,true,2)==item.second);
+     }
      unsigned forbidden=(1U<<edges.size())-1;
      auto restricted=item.second;
      for(auto it=restricted.begin();it!=restricted.end();)
        if(unsigned(it->first.back())&forbidden) it=restricted.erase(it);else ++it;
      assert(generator.generate(pre,filter,forbidden)==restricted);
      if(variant>=9) assert(generator.generate(pre,filter,forbidden,true)==restricted);
+     if(variant>=11) {
+       assert(generator.generate(pre,filter,forbidden,true,2)==restricted);
+       assert(generator.generate(pre,{},forbidden,true,2)==restricted);
+     }
    }
  }
  std::cout<<"CONTROLS pair projection versus "<<maps<<" literal maps and "<<patterns<<" realized preimage patterns PASS\n";
+ // Independent power images verify the mask. Check every output permutation
+ // fixing a two-point core, including transformations rejected by the property.
+ uint64_t relabels=0,accepted=0,rejected=0;
+ for(int code=0;code<3125;++code) {
+   int rest=code;std::vector<int> f(5);for(int& x:f) {x=rest%5;rest/=5;}
+   auto power_mask=[](const std::vector<int>& g) {
+     unsigned mask=0;
+     for(int x=0;x<5;++x) {int y=x;for(int j=0;j<5;++j) y=g[y];mask|=1U<<y;}
+     return mask;
+   };
+   unsigned cyclic=power_mask(f);assert(cyclic_states(f)==cyclic);
+   bool valid=(cyclic&28)==28;
+   std::vector<int> permutation{0,1,2,3,4};
+   do {
+     std::vector<int> g(5);for(int x=0;x<5;++x) g[x]=permutation[f[x]];
+     unsigned other=power_mask(g);assert(cyclic_states(g)==other);
+     assert(((other&28)==28)==valid);
+     if(valid) {assert(cyclic==other);++accepted;}else ++rejected;
+     ++relabels;
+   } while(std::next_permutation(permutation.begin()+2,permutation.end()));
+ }
+ assert(accepted&&rejected);
+ std::vector<int> transient_outside{0,0,3,1,4};
+ unsigned image=0;for(int x:transient_outside) image|=1U<<x;
+ assert((image&24)==24&&(cyclic_states(transient_outside)&24)!=24);
+ std::cout<<"CONTROLS cyclic-core output relabeling: "<<relabels<<" comparisons ("
+          <<accepted<<" accepted, "<<rejected<<" rejected) PASS\n";
 }
 } // namespace cell_pairs

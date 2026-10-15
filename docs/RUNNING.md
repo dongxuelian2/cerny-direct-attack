@@ -257,6 +257,11 @@ including at prefixes with anonymous labels. This property is invariant under
 the allowed output-label permutations; no anonymous map is iterated.
 The [general periodic-state lemma](../PROOF.md#problem4-periodic-isolated-states)
 gives the long-safe-word hypothesis and its parameter scope.
+`--cyclic-isolates` strengthens this to actual periodicity of every noncore
+state and cyclic rank at least n−3. The conjunction is invariant even for
+anonymous completions, by the [output-relabeling lemma](../PROOF.md#problem4-cyclic-core-relabeling).
+It implies `--periodic-isolates`; the older flag retains its weaker meaning
+for reproducing earlier counts.
 
 `--controls-only` runs the implementation controls and skips flag enumeration.
 See [the terminal compatibility proof](../PROOF.md#problem4-terminal-labeled-compatibility).
