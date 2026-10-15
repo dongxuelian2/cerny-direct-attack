@@ -281,6 +281,16 @@ state and cyclic rank at least n−3. The conjunction is invariant even for
 anonymous completions, by the [output-relabeling lemma](../PROOF.md#problem4-cyclic-core-relabeling).
 It implies `--periodic-isolates`; the older flag retains its weaker meaning
 for reproducing earlier counts.
+`--stable-kernel` additionally requires every pair eventually merged by a
+letter to belong to the P3 core. It implies `--cyclic-isolates` and replaces
+its transient-state cap by min(3, the core vertex-cover number), which is two
+for cores 10 and 12. The [stable-kernel proof](../PROOF.md#problem4-stable-kernel-core)
+justifies applying this condition to anonymous completions; it does not justify
+arbitrary iterated-word checks on those completions.
+`--stable-partitions` implies `--stable-kernel` and also enforces the equivalent
+clique-partition condition during output assignment. Its [proof](../PROOF.md#problem4-stable-kernel-partitions)
+explains why partial block permutations and the final anonymous completion are exact.
+
 
 `--controls-only` runs the implementation controls and skips flag enumeration.
 See [the terminal compatibility proof](../PROOF.md#problem4-terminal-labeled-compatibility).

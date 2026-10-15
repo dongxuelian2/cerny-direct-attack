@@ -280,6 +280,8 @@ bool canonical_prefix=false;
 bool canonical_isolates=false;
 bool periodic_isolates=false;
 bool cyclic_isolates=false;
+bool stable_kernel=false;
+bool stable_partitions=false;
 vector<unsigned> initial_flag;
 // Original enumeration already orders the batches of newly named isolates.
 // Within each such batch quotient by the full ordered membership columns.
@@ -543,6 +545,9 @@ PairSummary graded_pair_pool(Core core,const vector<unsigned>& edges,const vecto
  if(terminal_source||exact_prefix) {for(int q=core.n;q<n;++q) extra.push_back(q);}
  else if(ranks) for(int q=core.n;q<13;++q) if(named_outputs>>q&1) extra.push_back(q);
  cell_pairs::Generator generator(n,core.n,edges,outputs,extra);
+ array<unsigned,15> stable_allowed{};
+ for(unsigned e:edges) {int x=__builtin_ctz(e),y=__builtin_ctz(e&(e-1));stable_allowed[x]|=1U<<y;stable_allowed[y]|=1U<<x;}
+ int transient_bound=stable_kernel?min(3,cell_pairs::vertex_cover_number(core.n,edges)):3;
  vector<SafeSources> safe;
  if(ranks) {
    unsigned protect=((1U<<n)-1)^8191;
@@ -567,8 +572,9 @@ PairSummary graded_pair_pool(Core core,const vector<unsigned>& edges,const vecto
      if((image&outside_core)!=outside_core) return false;
      if(cyclic_isolates) {
        unsigned cyclic=cell_pairs::cyclic_states(f);
-       if((cyclic&outside_core)!=outside_core||__builtin_popcount(cyclic)<n-3) return false;
+       if((cyclic&outside_core)!=outside_core||__builtin_popcount(cyclic)<n-transient_bound) return false;
      }
+     if(stable_kernel&&!cell_pairs::stable_kernel_in(f,stable_allowed)) return false;
    }
    if(exact_prefix) {
      if(cyclic_rank(f)<n-3) return false;
@@ -681,7 +687,8 @@ PairSummary graded_pair_pool(Core core,const vector<unsigned>& edges,const vecto
    current_flags=pattern.flags;
    for(const auto& item:generator.generate(pattern.pre,rank_filter,known_two,
                                            periodic_isolates&&protected_count==1,
-                                           cyclic_isolates&&protected_count==1?3:-1)) {
+                                           cyclic_isolates&&protected_count==1?transient_bound:-1,
+                                           stable_partitions&&protected_count==1)) {
      if(unsigned(item.first.back())&known_two) continue;
      auto& mark=alphabet[item.first];mark.flags|=pattern.flags;
      for(int q=0;q<n;++q) mark.arrows[q]|=item.second[q];
@@ -1100,6 +1107,8 @@ int main(int argc,char**argv) {
    else if(string(argv[i])=="--canonical-isolates") canonical_isolates=true;
    else if(string(argv[i])=="--periodic-isolates") periodic_isolates=true;
    else if(string(argv[i])=="--cyclic-isolates") cyclic_isolates=periodic_isolates=true;
+   else if(string(argv[i])=="--stable-kernel") stable_kernel=cyclic_isolates=periodic_isolates=true;
+   else if(string(argv[i])=="--stable-partitions") stable_partitions=stable_kernel=cyclic_isolates=periodic_isolates=true;
    else if(string(argv[i])=="--initial-flag"&&i+1<argc) {
      string masks=argv[++i];replace(masks.begin(),masks.end(),',',' ');
      istringstream input(masks);unsigned value;
@@ -1248,6 +1257,8 @@ int main(int argc,char**argv) {
      <<" canonical_isolates="<<canonical_isolates
      <<" periodic_isolates="<<periodic_isolates
      <<" cyclic_isolates="<<cyclic_isolates
+     <<" stable_kernel="<<stable_kernel
+     <<" stable_partitions="<<stable_partitions
      <<"; surviving flags do not establish original-class witnesses; no new upper bound\n";
  return 0;
 }
