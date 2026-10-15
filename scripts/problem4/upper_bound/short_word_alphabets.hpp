@@ -49,8 +49,9 @@ struct ExpandedReachabilityClosure {
   std::vector<unsigned char> seen;
 };
 // State = external mask | (number of missing protected states << q).
-// The retained block has defect+1 points, so an occupied export is always
-// available in every state whose total defect is at most defect.
+// The retained block has defect points (defect>=2). Relative to defect+1,
+// the only lost legal transitions are permutation self-loops at full external
+// occupancy and defect missing protected states; reachability is unchanged.
 inline std::vector<unsigned> expanded_successors(
     int q, int defect, unsigned state, const std::vector<int>& f) {
   unsigned mask=state&((1U<<q)-1),outside=0;
@@ -60,7 +61,7 @@ inline std::vector<unsigned> expanded_successors(
   }
   std::vector<unsigned> next;
   for(int occupied=0;occupied<=exported;++occupied) {
-    if(exported-occupied>absent) continue;
+    if(occupied>defect-absent||exported-occupied>absent) continue;
     unsigned image=outside|(occupied?(1U<<f[q]):0);
     int missing=absent+occupied-hits;
     assert(missing>=0);
@@ -73,7 +74,7 @@ inline ExpandedReachabilityClosure expanded_reachability_closure(
     int q, unsigned target, const std::vector<std::vector<int>>& letters,
     const std::vector<int>& selected) {
   int defect=q-__builtin_popcount(target);
-  assert(target&&target<(1U<<q)&&defect>=1);
+  assert(target&&target<(1U<<q)&&defect>=2);
   ExpandedReachabilityClosure answer;
   answer.seen.resize((defect+1)*(1U<<q));
   answer.states.push_back((1U<<q)-1);answer.seen[answer.states.front()]=1;
@@ -682,9 +683,8 @@ inline void short_word_avoidance_controls() {
 template<int n = 14>
 inline void expanded_reachability_controls() {
   using namespace std;
-  constexpr int q=n-1,retained=5,width=q+retained;
+  constexpr int q=n-1;
   constexpr unsigned source=((1U<<n)-1)^15,external=(1U<<q)-1;
-  constexpr unsigned target=(source&external)|(((1U<<retained)-1)<<q);
   vector<vector<int>> universe(6,vector<int>(n));
   for(int x=0;x<n;++x) {
     universe[0][x]=(x+1)%n;
@@ -697,7 +697,9 @@ inline void expanded_reachability_controls() {
   auto image=[](unsigned mask,const vector<int>& f) {
     unsigned out=0;for(int x=0;x<int(f.size());++x) if(mask>>x&1) out|=1U<<f[x];return out;
   };
-  auto expanded_literal=[&](const vector<int>& alphabet) {
+  auto expanded_literal=[&](const vector<int>& alphabet,int retained=4) {
+    int width=q+retained;
+    unsigned target=(source&external)|(((1U<<retained)-1)<<q);
     vector<vector<int>> expanded;
     for(int i:alphabet) {
       vector<int> f(width);for(int x=0;x<width;++x) f[x]=x;
@@ -731,6 +733,7 @@ inline void expanded_reachability_controls() {
     vector<int> alphabet;unsigned supplies=0;
     for(int f=0;f<6;++f) if(subset>>f&1) {alphabet.push_back(f);supplies|=1U<<(f%2);}
     bool reaches=expanded_literal(alphabet);
+    assert(reaches==expanded_literal(alphabet,5));
     assert(expanded_reachability_closure(q,source&external,universe,alphabet).reached==reaches);
     bool sc=true;
     for(int start=0;start<n;++start) {

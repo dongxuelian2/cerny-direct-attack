@@ -14,7 +14,8 @@
 - [q=13 的结构与完整旗标排除](PROOF.md#problem4-q13-second-layer)：十四状态两条必要条件路线均完整排除，得到所有 `r≥1` 的 `11≤F_bin(r+13,r+9,r)≤F(r+13,r+9,r)≤12`；十一与十二的选择仍开放。
 - [一般目标长度的保护集收缩](PROOF.md#problem4-protected-slack-collapse)：距原上界 `k` 的候选可缩到至多 `k+1` 个保护点，全部字母共享至多 `2^k` 个外部保护入口。
 - [保持同步与可达的收缩](PROOF.md#problem4-reachable-slack-collapse)：保留至多 `m+k+1` 个保护点可同时保持强连通、同步、初始集可达和精确目标长度；[只要求同步时](PROOF.md#problem4-synchronizing-slack-collapse)至多需要 `k+2` 个保护点。
-- [大保护集区间的极值稳定性](PROOF.md#problem4-protected-size-stabilization)：`m≥4,q≥3m` 时，任意字母表极值在 `r≥q−2m+1` 后恒定；`m=4,q=13` 的阈值可降至五，共同值仍在 `[11,12]`。
+- [大保护集区间的极值稳定性](PROOF.md#problem4-protected-size-stabilization)：`m≥4,q≥3m` 时，任意字母表极值在 `r≥q−2m` 后恒定；`m=4,q=13` 的阈值可降至四，共同值仍在 `[11,12]`。
+- [固定余维的参数单调性](PROOF.md#problem4-parameter-monotonicity)：任意字母表极值随 `q`、`r` 分别不减；这约束未解区域的形状，未确定其精确值。
 - [余量一的剩余候选](PROOF.md#problem4-slack-one-initial-flags)：共同短对距离、轨道秩和实际前像供应在第九层排除全部两入口类别，覆盖所有双出口候选；单入口的延后增长类别及一般参数仍开放。
 - [条件分支](PROOF.md#branches)：需要额外假设的局部论证。
 - [像扩张](PROOF.md#extension)、[秩与核](PROOF.md#rank)、[策略与预算](PROOF.md#policy)、[锚点与最优语言](PROOF.md#anchors)：其他数学方向。

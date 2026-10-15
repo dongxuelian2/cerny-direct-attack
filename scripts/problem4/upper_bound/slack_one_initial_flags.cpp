@@ -670,7 +670,7 @@ PairSummary graded_pair_pool(Core core,const vector<unsigned>& edges,const vecto
            cout<<"LETTER";for(int out:maps[index]) cout<<' '<<out;cout<<'\n';
          }
          cout<<"EXAMPLE_SCOPE short-word safety, strong connectivity, and suppliers verified; base-model synchronization and reachability not yet checked\n";
-         if(terminal_reachable) cout<<"EXPANSION_SCOPE five-protected-state expansion reaches the target; independent original-class witness audit still required\n";
+         if(terminal_reachable) cout<<"EXPANSION_SCOPE four-protected-state expansion reaches the target; independent original-class witness audit still required\n";
        }
      }
    }
@@ -1049,7 +1049,7 @@ int main(int argc,char**argv) {
  }
  if(terminal_reachable) {
    expanded_reachability_controls<14>();
-   cout<<"CONTROLS expanded reachability: 64 literal eighteen-state domains and 64 complete alphabet pools PASS\n";
+   cout<<"CONTROLS expanded reachability: 64 literal seventeen/eighteen-state comparisons and 64 complete alphabet pools PASS\n";
  }
  if(controls_only) return 0;
  vector<Result> results(cores.size());atomic<int> next{0};vector<thread> workers;mutex output_mutex;

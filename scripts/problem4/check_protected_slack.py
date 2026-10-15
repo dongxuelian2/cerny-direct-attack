@@ -43,11 +43,12 @@ def collapse(rows, protected, retain):
     return sorted(result), outside, correspondence
 
 
-def synchronizing_collapse(rows, protected):
+def synchronizing_collapse(rows, protected, retain=None):
     """All independent protected-input/output rewirings and protected permutations."""
     protected = set(protected)
     exports = max(len({f[a] for a in protected} - protected) for f in rows)
-    retain = min(len(protected), exports + 1)
+    if retain is None:
+        retain = min(len(protected), exports + 1)
     base, outside, _ = collapse(rows, protected, retain)
     q, n = len(outside), len(outside) + retain
     relabels = [list(range(q)) + [q + i for i in p]
@@ -69,10 +70,28 @@ def lift_reaching_word(rows, protected, retain, word):
     q = len(outside)
     new_A = set(range(q, q + retain))
     old_set, new_set = set(range(n)), set(range(q + retain))
-    steps = 0
+    target = set(range(n))
+    for letter in word:
+        target = {rows[ord(letter) - ord('a')][x] for x in target}
+    defect = n - len(target)
+    max_exports = max(len({f[a] for a in protected} - protected) for f in rows)
+    steps = neutral = 0
     for letter in word:
         f = rows[ord(letter) - ord('a')]
         departing = sorted(a for a in protected if f[a] not in protected)
+        occupied_exports = sum(a in old_set for a in departing)
+        if occupied_exports > len(new_A & new_set):
+            # At the sharpened threshold, the only shortage is a permutation
+            # self-loop on (all external states, defect missing protected states).
+            assert defect >= 2 and retain == defect + max_exports - 1
+            assert len(protected - old_set) == defect
+            assert occupied_exports == len(departing) == max_exports
+            assert set(outside) <= old_set and len(set(f)) == n
+            old_set = {f[x] for x in old_set}
+            assert set(outside) <= old_set and len(protected - old_set) == defect
+            neutral += 1
+            steps += 1
+            continue  # use the identity letter in the expanded alphabet
         missing_outputs = sorted(protected - {f[a] for a in protected})
         sinks = {a: q + i for i, a in enumerate(missing_outputs)}
         lifted = [sinks[f[x]] if f[x] in protected else index[f[x]]
@@ -93,7 +112,43 @@ def lift_reaching_word(rows, protected, retain, word):
         assert new_set - new_A == {index[x] for x in old_set - protected}
         assert len(protected - old_set) == len(new_A - new_set)
         steps += 1
-    return new_set, steps
+    return new_set, steps, neutral
+
+
+def neutral_lift_controls():
+    # Both examples force the shortage case; they test reachability lifting,
+    # without asserting that these particular input automata synchronize.
+    for rows, protected, retain, word in (
+        ([[1,1,3,3,4,5,6], [4,1,2,3,0,5,6],
+          [0,1,5,3,4,2,6], [0,6,2,3,4,5,1]], {4,5,6}, 2, 'abcdcb'),
+        ([[1,1,3,3,4,5,6,7], [4,1,5,3,0,2,6,7],
+          [0,6,2,7,4,5,1,3]], {4,5,6,7}, 3, 'abcb'),
+    ):
+        reached, steps, neutral = lift_reaching_word(rows, protected, retain, word)
+        assert reached == {1,3} | set(range(4,4+retain))
+        assert steps == len(word) and neutral == 1
+    print('PASS sharpened reachability lift: forced neutral replacements with one and two exports')
+
+
+def expansion_monotonicity_controls():
+    cases = 0
+    for t in (2,3):
+        for r in (1,2):
+            data = construct(r+t+1,t,r)
+            rows, S, A = data['rows'], set(data['S']), set(data['A'])
+            length = ac(rows,S,A)
+            expanded, outside, retained = synchronizing_collapse(rows,A,retain=r+1)
+            new_A = set(range(len(outside),len(outside)+retained))
+            new_S = new_A | {i for i,x in enumerate(outside) if x in S}
+            assert strong(expanded)
+            assert len(pair_distances(expanded)) == len(expanded[0])*(len(expanded[0])-1)//2
+            reached, _, _ = lift_reaching_word(rows,A,retained,data['reaching'])
+            assert reached == new_S
+            for marked in combinations(sorted(new_A),r):
+                assert ac(expanded,new_S,marked) == length
+                cases += 1
+            assert ac(expanded,new_S,new_A) == length
+    print(f'PASS parameter monotonicity: 4 literal expansions and {cases} smaller marked subsets')
 
 
 def single_protected_expansion_states(rows, retain, defect):
@@ -347,8 +402,9 @@ def main():
                 assert old_avoid is not None
                 assert avoidance(new, new_S, new_A) == old_avoid
                 max_exports = max(len({f[a] for a in A} - set(A)) for f in rows)
-                for reaching_r in (min(r, m + max_exports), m + slack + 1):
-                    reached, steps = lift_reaching_word(rows, A, reaching_r, data['reaching'])
+                for reaching_r in sorted({min(r, m + max_exports - 1), m + slack,
+                                          min(r, m + max_exports), m + slack + 1}):
+                    reached, steps, _ = lift_reaching_word(rows, A, reaching_r, data['reaching'])
                     reaching_steps += steps
                     expected = set(range(q, q + reaching_r)) | {i for i, x in enumerate(outside) if x in S}
                     assert reached == expected
@@ -466,6 +522,8 @@ def main():
           'negative controls for both essential hypotheses')
     delay_controls()
     expansion_quotient_controls()
+    neutral_lift_controls()
+    expansion_monotonicity_controls()
 
 
 if __name__ == '__main__':

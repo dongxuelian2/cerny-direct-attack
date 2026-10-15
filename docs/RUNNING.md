@@ -215,13 +215,15 @@ explain why it is necessary even when the contracted model is not synchronizing.
 With `--threads 1`, `--terminal-example` prints the first alphabet accepted by
 the enabled complete terminal search, together with its initial set and basis.
 It does not stop enumeration or certify synchronization or reachability.
-`--terminal-reachable` adds reachability in the five-protected-state expansion
+`--terminal-reachable` adds reachability in the four-protected-state expansion
 to the alphabet search. It computes the complete protected-count quotient and
 branches on letters leaving a closed set that does not contain the target.
 The [original-class equivalence](../PROOF.md#problem4-terminal-original-class-equivalence)
 states why this stronger acceptance condition exactly matches the q=13 target
 over the complete necessary flag domain. Its controls use independent ordinary
-subset searches in eighteen-state expanded automata.
+subset searches in seventeen-state expanded automata and compare reachability
+with the previous eighteen-state expansion. The smaller quotient only removes
+permutation self-loops at full external occupancy and four missing protected states.
 `--literal-prefix` expands all output labels when at most two remain unnamed,
 then tests the necessary cyclic-rank bound and powers from families whose row
 counts prove that every member is an actual short image. It skips this stronger
