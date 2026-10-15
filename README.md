@@ -2,6 +2,7 @@
 
 本项目研究同步自动机的重置字、像扩张，以及 avoid-or-compress 问题。
 **一般 Černý 猜想尚未解决；现有计算辅助十三状态结论经保护块收缩推广，得到对所有 `r≥1` 的 `F_bin(r+12,r+8,r) = F(r+12,r+8,r) = 11`。**
+整条 `m=4,q=13` 边界也已通过完整有限域排除确定为 `F_bin(r+13,r+9,r) = F(r+13,r+9,r) = 11`。完整 Problem 4 仍未解决。
 
 ## 从哪里读
 
@@ -11,16 +12,16 @@
 - [下界构造](PROOF.md#constructions)与[低余维上界](PROOF.md#upper)：已有参数族和归约。
 - [余维四：短对图与入口排除](PROOF.md#frontier)：[完整布尔旗标](PROOF.md#problem4-eleven-audit)排除达到十二的全部入口组合，适用于任意有限字母表；与二字母下界十一匹配。
 - [保护块收缩与新边界](PROOF.md#problem4-protected-collapse-strip)：在不要求收缩后同步的条件下传递短对图与旗标约束，推广精确值十一至整条 `m=4,q=12` 参数边界；对 `q=13` 的等号候选给出十一层公共交集与首入口大小限制。
-- [q=13 的结构与完整旗标排除](PROOF.md#problem4-q13-second-layer)：十四状态两条必要条件路线均完整排除，得到所有 `r≥1` 的 `11≤F_bin(r+13,r+9,r)≤F(r+13,r+9,r)≤12`；十一与十二的选择仍开放。
+- [q=13 的精确值十一](PROOF.md#problem4-q13-exact-eleven)：全部二十五核心、早晚分裂及不再增长域均已完整排除；结合保护收缩与二字母构造，对所有 `r≥1` 得到精确值十一。
 - [一般目标长度的保护集收缩](PROOF.md#problem4-protected-slack-collapse)：距原上界 `k` 的候选可缩到至多 `k+1` 个保护点，全部字母共享至多 `2^k` 个外部保护入口。
 - [保持同步与可达的收缩](PROOF.md#problem4-reachable-slack-collapse)：保留至多 `m+k+1` 个保护点可同时保持强连通、同步、初始集可达和精确目标长度；[只要求同步时](PROOF.md#problem4-synchronizing-slack-collapse)至多需要 `k+2` 个保护点。
-- [大保护集区间的极值稳定性](PROOF.md#problem4-protected-size-stabilization)：`m≥4,q≥3m` 时，任意字母表极值在 `r≥q−2m` 后恒定；`m=4,q=13` 的阈值可降至四，共同值仍在 `[11,12]`。
+- [大保护集区间的极值稳定性](PROOF.md#problem4-protected-size-stabilization)：`m≥4,q≥3m` 时，任意字母表极值在 `r≥q−2m` 后恒定；`m=4,q=13` 的进一步完整排除现已确定所有 `r≥1` 的值为十一。
 - [固定余维的参数单调性](PROOF.md#problem4-parameter-monotonicity)：任意字母表极值随 `q`、`r` 分别不减；这约束未解区域的形状，未确定其精确值。
 - [奇圈分支的一般压缩界](PROOF.md#problem4-odd-cycle-sharp-compression)：`P_h=C_(2m−1)` 加孤点时得到 `c(S)≤h+m+2`，对 `m≥5` 加强既有分支上界；其他图形仍需处理。
 - [C7 至 C13 的所有层数加强](PROOF.md#problem4-c11-c13-uniform-cycle-bound)：`m=4,…,7`、`P_h=C_(2m−1)` 加任意孤点时统一有 `c(S)≤h+m+1`，不附加字母秩条件；其他图形与一般余维仍开放。C5 的对应加强有实际反例。
 - [余维四后续层的三点覆盖](PROOF.md#problem4-four-cover-late-layers)：`n≥8` 时，`c(S)≥L`、`L=12,…,15` 统一迫使 `τ(P_(L−6))=3`；九类四点覆盖核心在相应层已完整排除。
 - [长安全区间的周期状态约束](PROOF.md#problem4-periodic-isolated-states)：`ac≥2m+2` 时，每个字母至多有 `m−1` 个非周期状态，全部落在同一个至多 `m(m+1)` 点的短对核心中。
-- [余量一的剩余候选](PROOF.md#problem4-slack-one-initial-flags)：共同短对距离、轨道秩和实际前像供应在第九层排除全部两入口类别，覆盖所有双出口候选；[全部早分裂也已排除](PROOF.md#problem4-q13-remaining-three-cores)，核心 10、12 的晚分裂全域也已排除，十二步候选只剩核心 106 的前缀 `(64,128,256)`；一般参数仍开放。
+- [余量一的旗标归约](PROOF.md#problem4-slack-one-initial-flags)：共同短对距离、轨道秩、实际前像供应及完整终端字母表检查覆盖十二步候选；最后的核心 106 前缀 `(64,128,256)` 现也完整归零，计数见[完整覆盖](PROOF.md#problem4-q13-exact-eleven)。
 - [条件分支](PROOF.md#branches)：需要额外假设的局部论证。
 - [像扩张](PROOF.md#extension)、[秩与核](PROOF.md#rank)、[策略与预算](PROOF.md#policy)、[锚点与最优语言](PROOF.md#anchors)：其他数学方向。
 - [探索记录](PROOF.md#exploration)：受限观察、失败路线和待证明机制。

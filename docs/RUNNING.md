@@ -296,6 +296,22 @@ canonical initial flag. Early-split runs use four masks instead. This permits
 disjoint prefix jobs; a completed restricted job is not a complete core result.
 The [core-106 partition](../PROOF.md#problem4-literal-prefix-constraints) lists
 all four surviving late-split prefixes and the required coverage boundary.
+All four prefix jobs have now completed with zero terminal flags, as have the
+other 24 cores and both early split layers. The combined proof gives
+`F_bin(r+13,r+9,r)=F(r+13,r+9,r)=11` for every `r>=1`; see the
+[complete coverage and scope](../PROOF.md#problem4-q13-exact-eleven).
+The final prefix can be reproduced with:
+
+```sh
+python3 run.py script scripts/problem4/upper_bound/slack_one_initial_flags.cpp --pairs --delay-cut --ranks --arrival --all-late-splits --depth 11 --terminal-reachable --literal-prefix --canonical-prefix --initial-flag 64,128,256 --core 106 --threads 1
+```
+
+Its completed layer eleven has 37561536 weighted choices, 783532 actual orbit
+representatives, and zero surviving flags or distance vectors. This command
+alone covers one prefix; the theorem uses all the domains listed in the proof.
+The baseline does not enable periodic-state, stable-kernel, or isolated-column
+pruning. Adding `--cyclic-isolates` gives the completed strengthened comparison.
+
 `--canonical-prefix` also quotients every later ordered prefix by core
 automorphisms fixing its initial flag. Outside and protected labels remain
 fixed. Layer counts are weighted by orbit size, so they are comparable to the

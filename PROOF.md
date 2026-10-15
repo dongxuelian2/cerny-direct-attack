@@ -4,8 +4,8 @@
 
 **一般 Černý 猜想尚未解决。新研究在既有十三状态计算辅助排除的基础上，将精确值十一推广到整个余维四 q=12 边界：$F_{\rm bin}(r+12,r+8,r)=F(r+12,r+8,r)=11$（$r\ge1$）。详见[保护块收缩](#problem4-protected-collapse-strip)。**
 
-q=13 的整条边界现已收紧为 [11,12]，见[十四状态完整排除](#problem4-q13-second-layer)。
-十二步候选现已排除全部早分裂，只剩核心 106 的一个晚分裂初始前缀，见[完整覆盖](#problem4-q13-remaining-three-cores)。
+q=13 的整条边界现也确定为十一：$F_{\rm bin}(r+13,r+9,r)=F(r+13,r+9,r)=11$（$r\ge1$）。
+十二步候选的全部早、晚分裂及不再增长域均已完整排除，见[计算辅助证明与覆盖](#problem4-q13-exact-eleven)。
 [一般余量收缩](#problem4-protected-slack-collapse)进一步控制任意参数的保护集与入口数；Problem 4 的完整精确界仍未解决。
 
 阅读顺序：先读第 1 章的问题与状态，再读第 2–4 章的构造、上界与完整排除；第 5 章是条件分支，第 6–9 章是其他研究方向，第 10 章保留探索过程。各节沿用局部符号；进入新节须重新核对假设。
@@ -42,7 +42,7 @@ q=13 的整条边界现已收紧为 [11,12]，见[十四状态完整排除](#pro
 | 一般 Černý 猜想 | 未解决 | 第 6–9 章的方法和受限族 |
 | Avoid-or-compress 已处理区域 | 稿件给出 m≤3，以及 m≥4、q≤3m−1 的部分答案；余维三否定原二项式公式 | 第 2–3 章、[论文稿](papers/problem4/main.tex) |
 | 整条 m=4,q=12 参数边界 | 对任意 r≥1，二字母和任意有限字母表极值均为 11 | [十三状态计算](#problem4-eleven-audit)、[统一收缩证明](#problem4-protected-collapse-strip) |
-| 下一条 m=4,q=13 边界 | 对任意 r≥1，极值在 [11,12]；全部十三步等号候选已由十四状态计算排除，十二步候选尚未排除 | [结构与完整排除](#problem4-q13-second-layer) |
+| 整条 m=4,q=13 参数边界 | 对任意 r≥1，二字母和任意有限字母表极值均为 11；计算辅助证明 | [完整覆盖与精确值](#problem4-q13-exact-eleven) |
 | 一般参数的近等号候选 | 目标 L≥m+3，k=q−L 时可缩到至多 k+1 个保护点；外部入口至多 2^k，双空间额外增长总数至多 k | [一般余量收缩](#problem4-protected-slack-collapse) |
 | 余维四短对图 | c(S)≥12 必有 τ(P6)=3；P3 两支核心均至多六点 | 第 4 章 |
 | (13,9,1) 的保护入口 | 最新全域排除包含全部一至三点第一、第二入口，包括相交情况 | [完整布尔旗标](#problem4-eleven-audit) |
@@ -4392,7 +4392,7 @@ d\chi_{B_f}-\mathbf1_U
 \tag{PC6}
 \]
 作为 q=13 等号候选的必要条件。
-**目前仍没有确定这条边界的精确值；现有统一二块下界为十一。**
+本节结构条件本身只给出下界十一与上界十二；后续[完整覆盖](#problem4-q13-exact-eleven)现已确定精确值十一。
 下节将第一入口进一步收紧为恰好二点。
 
 小规模核对：对原统一二块构造的 \(m=3,q=8\)、
@@ -5812,7 +5812,7 @@ python3 run.py script scripts/problem4/upper_bound/slack_one_initial_flags.cpp -
 不存在两个不同的外部首入口。因而整个双出口 J=2 类别被排除；
 剩余候选均有 J=1，且只有一个外部首入口，可按 (PSC6) 收缩为十四状态、
 一个保护点的必要模型。其额外双空间增长若发生，首次时刻 σ≥2。
-此结论尚未排除这些延后增长类别，q=13 的极值仍在 [11,12]。
+此结论本身尚未排除这些延后增长类别；后续[完整覆盖](#problem4-q13-exact-eleven)已将它们排除，得到精确值十一。
 
 <a id="problem4-slack-one-delayed-split"></a>
 #### 单首入口：第二、第三层首次分裂的完整表示
@@ -6372,7 +6372,7 @@ python3 run.py script scripts/problem4/upper_bound/slack_one_initial_flags.cpp -
 指定第一个前缀的深度三运行独立返回一个旗标、一个距离向量及 39 个投影，
 核对了参数筛选确实保留该分支。前两个前缀的完整延伸已分别在 26.520 秒、
 48.956 秒完成，均在第九层归零。第三个前缀随后在 532.140 秒完成，
-也在第九层归零；最后一个前缀仍未完成。
+也在第九层归零；最后一个前缀随后在第十一层归零，完整计数见下一节。
 
 | 前缀 | 第四至第九层存活旗标数 | 第九层初筛选择 | 第九层投影数 |
 |---|---|---:|---:|
@@ -6381,36 +6381,51 @@ python3 run.py script scripts/problem4/upper_bound/slack_one_initial_flags.cpp -
 | (64,128,12) | 6, 10, 144, 302, 2, 0 | 33328 | 336 |
 
 三次运行的第十、十一层均为空，排除了各自前缀下全部晚分裂及不分裂域。
-由于归零早于终端层，这三项排除不依赖终端可达性筛选；它们仍不足以排除
-整个核心 106。
+由于归零早于终端层，这三项排除不依赖终端可达性筛选；加上下一节的
+最后一个前缀，才覆盖整个核心 106。
 
 ```sh
 python3 run.py script scripts/problem4/upper_bound/slack_one_initial_flags.cpp --pairs --delay-cut --ranks --arrival --all-late-splits --depth 3 --literal-prefix --flags --core 106 --threads 1
 python3 run.py script scripts/problem4/upper_bound/slack_one_initial_flags.cpp --pairs --delay-cut --ranks --arrival --all-late-splits --depth 11 --terminal-reachable --literal-prefix --terminal-example --initial-flag 12,18,33 --core 106 --threads 1
 ```
 
-完整划分还须以另外三个表中掩码分别替换 `--initial-flag`，全部完成后才能
-合并为整个核心的晚分裂结论；没有把单个分支的完成或超时当作整个域完成。
+完整划分须以另外三个表中掩码分别替换 `--initial-flag`；四项现已全部完成，
+可以合并为整个核心的晚分裂结论，没有把单个分支的完成或超时当作整个域完成。
 旧的未分区长计算保持运行作为较弱条件的对照。核心 106 的两种早分裂
 加强运行现已完成，结合其他核心排除后，σ=2、3 均已整类关闭；
-准确覆盖和剩余范围如下。
+准确覆盖和精确值证明如下。
 
 <a id="problem4-q13-remaining-three-cores"></a>
 <a id="problem4-q13-remaining-cores"></a>
-#### 全部早分裂排除与最后一个晚分裂初始前缀
+<a id="problem4-q13-exact-eleven"></a>
+#### 全部分裂域的完整排除与 q=13 的精确值十一
 
-**完整有限域结论。** 对 m=4、q=13、目标 ac≥12，结合首层两入口排除，
-额外双空间增长不可能首次发生于 σ=1、2、3。
-全部候选只剩 σ=4,…,11 或十一层安全范围内不再额外增长；在这些晚分裂域中，
-P3 只可能是核心 106（另有孤点），且只剩以下初始前缀：
+**计算辅助定理。** 对每个整数 r≥1，
 
-| 核心 | 顶点数 | 边集 | 当前剩余范围 |
-|---|---:|---|---|
-| 106 | 6 | 05、14、23 | 仅前三层前缀 (64,128,256)，即三个依次命名的核心外单点 |
+\[
+\boxed{F_{\rm bin}(r+13,r+9,r)=F(r+13,r+9,r)=11.}\tag{Q13.11}
+\]
 
-这一结论并未排除全部十二步候选，也未确定极值十一或十二。
-它适用于保护收缩后的完整必要域，所以排除对任意原保护大小 r 都有效，
-并非只排除某个固定字母表或十四状态二字母族。
+**完整依赖链。** [十四状态等号排除](#problem4-q13-second-layer)已给出
+任意 r 的上界十二。若存在取十二的原问题实例，(S1.2) 迫使全部字母共享
+唯一外部首入口；保护收缩及[终端存在性等价](#problem4-terminal-original-class-equivalence)
+的反向证明把它送入这里枚举的十四状态必要旗标域。该归约保留原实例所需
+的全状态避开与四保护点扩大模型的目标可达性，不假定收缩模型本身同步。
+额外双空间增长的全部可能是 σ=1,…,11 或十一层内不再增长。
+首层两入口域已排除；σ=2、3 的二十五核心域全部归零；σ=4,…,11 及
+不再增长域也全部归零，包括核心 106 的全部四个初始前缀。具体覆盖和
+最终完成计数如下，故任意有限字母表的十二步实例不存在，得到 F≤11。
+
+下界取[统一二块构造的规范前缀形式](#problem4-two-block-proof--equivalent-canonical-prefix-form-used-by-the-paper-and-release)，
+令 t=3、p'=r+6。其 n=p'+7=r+13、s=p'+3=r+9，保护集大小为 r，
+且 p'≥r+3。已有纸面证明给出二字母、强连通、同步及 S 的可达性，
+并给出 ac(S,A)=min(n−r,3t+2)=min(13,11)=11。
+因此 11≤F_bin≤F≤11。这里没有借用任意字母表的参数单调性来断言
+二字母单调性，也没有用有限个 r 的试算代替任意 r 的构造证明。
+
+该定理依赖已完成的有限域排除与纸面归约，是计算辅助证明，未作 Lean
+形式化。它关闭的是整条 m=4,q=13 边界；m=4,q≥14、m=5,q=15 等
+其余未解区域和完整 Problem 4 均未由此解决。
 
 **覆盖核对。** 两种早分裂各有完整的二十五核心分类域。
 核心 0–9、11–12、100–105、107–111 共二十三个核心，其十一层双字母
@@ -6444,8 +6459,8 @@ P3 只可能是核心 106（另有孤点），且只剩以下初始前缀：
 晚分裂方面，除 10、12、106 外的二十二个核心也都已有完整零结果。
 其中 5、7、102、104 的较弱末层曾分别剩 136、204、16、32 个旗标，
 完整共同字母表检查才将它们排除；不能将这些存活数说成原先就为零。
-其余十八个核心在较弱完整必要域中已归零。核心 106 的三个已关闭前缀
-与剩余一个前缀的完整划分见前节，故没有遗漏其晚分裂初始类型。
+其余十八个核心在较弱完整必要域中已归零。核心 106 的全部四个前缀
+的完整划分见前节，故没有遗漏其晚分裂初始类型。
 
 核心 10 的独立晚分裂全域现也完成并归零，故晚分裂已排除二十三个完整
 核心。该运行使用完整终端字母表、全状态避开、扩大目标可达性、真实前缀
@@ -6488,15 +6503,48 @@ P3 只可能是核心 106（另有孤点），且只剩以下初始前缀：
 | 10 | 1654020 | 194 | 513272 | 194 | 291852 |
 | 11 | 2970012 | 0 | 753564 | 0 | 486438 |
 
-耗时 6081.259 秒，所有分裂层的终端计数均为零。由此晚分裂的二十五个
-核心已有二十四个完整排除；唯一未决域是核心 106 的 (64,128,256) 前缀。
-该结论不依赖尚在运行的核心 12 稳定核加强对照。
+耗时 6081.259 秒，所有分裂层的终端计数均为零。结合此前二十三个核心，
+这完成二十四个核心的晚分裂排除。该结论不依赖后加的稳定核筛选。
+
+核心 12 的稳定核及核心外有序列加强对照随后也完整归零，耗时
+4417.948 秒。初始投影为 745，第四至十一层投影依次为 6251、14485、
+29196、68879、315352、349203、502432、733868；旗标和距离向量计数
+与基线逐层相同。这是既已排除域的加强对照，不新增覆盖域。
+
+**核心 106 的最后一个前缀。** (64,128,256) 对应三个依次命名的核心外
+单点。完整基线运行使用终端字母表、全状态避开、扩大目标可达性、
+真实前缀和核心前缀自同构归约；没有启用后来加入的周期点、稳定核或
+核心外列筛选。初始 34 个选择有 8 个规范代表，指定前缀保留 1 个旗标、
+6 个距离向量、114 个投影。全部后续层计数为：
+
+| 层 | 初筛选择 | 存活旗标 | 投影 | 距离向量 | 实际轨道代表 |
+|---|---:|---:|---:|---:|---:|
+| 4 | 1451 | 11 | 1281 | 30 | 73 |
+| 5 | 6467 | 45 | 3642 | 72 | 268 |
+| 6 | 15714 | 97 | 7068 | 132 | 581 |
+| 7 | 23684 | 610 | 49986 | 618 | 889 |
+| 8 | 468812 | 2127 | 684330 | 2130 | 17380 |
+| 9 | 1325160 | 6558 | 1917768 | 6558 | 50313 |
+| 10 | 5366400 | 23172 | 4394364 | 23172 | 178448 |
+| 11 | 37561536 | 0 | 15967536 | 0 | 783532 |
+
+运行在 12494.510 秒正常完成，全部分裂层的终端计数为零。
+这里的 37561536 是轨道加权选择数，实际检查 783532 个代表；二者
+不是不同的自动机数量。加上前三个前缀的第九层排除，核心 106 的晚分裂
+及十一层内不再增长域全部关闭，从而二十五个核心均完成。
+
+另一次启用周期核心条件的同域运行在 9906.110 秒正常完成并归零。
+所有层的初筛、旗标、距离向量和代表数与基线逐项相同；第七、九、十、
+十一层投影分别降为 49938、1917552、4389444、15957360，其他层相同。
+两次运行共享主体实现，因此是加强条件交叉核对，不是两份独立程序证明。
+基线零结果已足够用于上述定理，不依赖这些后来增加的剪枝条件。
 
 ```sh
 python3 run.py script scripts/problem4/upper_bound/slack_one_initial_flags.cpp --pairs --delay-cut --ranks --arrival --split-layer 2 --depth 11 --terminal-reachable --literal-prefix --canonical-prefix --terminal-example --core 106 --threads 1
 python3 run.py script scripts/problem4/upper_bound/slack_one_initial_flags.cpp --pairs --delay-cut --ranks --arrival --split-layer 3 --depth 11 --terminal-reachable --literal-prefix --canonical-prefix --terminal-example --core 106 --threads 1
 python3 run.py script scripts/problem4/upper_bound/slack_one_initial_flags.cpp --pairs --delay-cut --ranks --arrival --all-late-splits --depth 11 --terminal-reachable --literal-prefix --canonical-prefix --terminal-example --core 10 --threads 1
 python3 run.py script scripts/problem4/upper_bound/slack_one_initial_flags.cpp --pairs --delay-cut --ranks --arrival --all-late-splits --depth 11 --terminal-reachable --literal-prefix --canonical-prefix --terminal-example --core 12 --threads 1
+python3 run.py script scripts/problem4/upper_bound/slack_one_initial_flags.cpp --pairs --delay-cut --ranks --arrival --all-late-splits --depth 11 --terminal-reachable --literal-prefix --canonical-prefix --initial-flag 64,128,256 --core 106 --threads 1
 ```
 
 <a id="problem4-prefix-automorphisms"></a>
@@ -6547,8 +6595,8 @@ python3 run.py script scripts/problem4/upper_bound/slack_one_initial_flags.cpp -
 ```
 
 第一条命令去掉 `--canonical-prefix` 给出未归约四层对照；第二条给出已完成的
-深层对照。核心 106 的两种早分裂域已用此归约完整排除；其剩余晚分裂
-前缀仍在检查；核心 10 和 12 的晚分裂全域均已完整排除，计数见前节。
+深层对照。核心 106 的两种早分裂域和全部晚分裂前缀均已完整排除；
+核心 10 和 12 的晚分裂全域也已完整排除，计数见前节。
 
 <a id="problem4-isolated-prefix-orbits"></a>
 #### 核心外同批新状态的有序列归约
@@ -6729,8 +6777,8 @@ f=[0,0,3,1,4]、K={0,1,2} 的两个核心外输出 3、4 都出现，但
 核心 10 的 (PI4) 加强十一层全域现已完成并归零，耗时 3566.611 秒。
 各层初筛、旗标、距离向量及代表数均与前述完整对照相同；第三至十一层
 投影依次为 465、2441、4693、6625、11230、94525、111150、157172、254992。
-这是既已排除核心的独立加强核对。核心 106 的剩余前缀 (64,128,256)
-仍在进行同条件的十一层检查，尚未完成。
+这是既已排除核心的加强核对。核心 106 的最后一个前缀 (64,128,256)
+也已完成同条件的十一层检查并归零，计数见[完整覆盖](#problem4-q13-exact-eleven)。
 
 ```sh
 python3 run.py script scripts/problem4/upper_bound/slack_one_initial_flags.cpp --pairs --delay-cut --ranks --arrival --all-late-splits --depth 11 --terminal-reachable --literal-prefix --canonical-prefix --cyclic-isolates --controls-only
@@ -6783,10 +6831,10 @@ K 的输出置换 π，fπ 的稳定核与 f 完全相同；反向同理。因�
 核心 12 的完整三层对照中，原周期筛选保留 8 个旗标、48 个距离向量、
 964 个投影；稳定核筛选仍保留前两项，但投影降为 745 个。两次初筛均为
 73 个选择、13 个规范代表，耗时分别 149.764、97.602 秒；这些时间仅为
-当次完整运行，不据此声称普遍性能提升。核心 106 的剩余初始前缀
+当次完整运行，不据此声称普遍性能提升。核心 106 的最后一个初始前缀
 (64,128,256) 使用稳定核后保留 1 个旗标、6 个距离向量、84 个投影，
 完整三层耗时 68.070 秒。核心 12 已由较弱完整域排除；其稳定核加强
-十一层运行保留作交叉核对，未完成部分不计作另一个完成结果。
+十一层运行随后也完整归零，计数见[完整覆盖](#problem4-q13-exact-eleven)，仅作交叉核对。
 
 <a id="problem4-stable-kernel-partitions"></a>
 #### 稳定核的团分块刻画与原生赋值剪枝
@@ -6836,7 +6884,7 @@ f=(1,2,0,0,3,4)，防止误用一步秩界截断稳定团分块。
 向量、745 个投影；核心 106 的前缀 (64,128,256) 仍为 1、6、84。
 原生运行分别耗时 141.424、70.038 秒；前者慢于只在完成映射后检查的
 97.602 秒，因此没有据此宣称加速或重复启动同域的原生十一层搜索。
-该实现保留为同一条件的独立核对；在运行的核心 12 加强全域仍使用终检版本。
+该实现保留为同一条件的独立核对；已完成的核心 12 加强全域使用终检版本。
 
 ```sh
 python3 run.py script scripts/problem4/upper_bound/slack_one_initial_flags.cpp --pairs --delay-cut --ranks --arrival --all-late-splits --depth 11 --terminal-reachable --literal-prefix --canonical-prefix --canonical-isolates --stable-partitions --controls-only
