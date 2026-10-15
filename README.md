@@ -17,7 +17,8 @@
 - [大保护集区间的极值稳定性](PROOF.md#problem4-protected-size-stabilization)：`m≥4,q≥3m` 时，任意字母表极值在 `r≥q−2m` 后恒定；`m=4,q=13` 的阈值可降至四，共同值仍在 `[11,12]`。
 - [固定余维的参数单调性](PROOF.md#problem4-parameter-monotonicity)：任意字母表极值随 `q`、`r` 分别不减；这约束未解区域的形状，未确定其精确值。
 - [奇圈分支的一般压缩界](PROOF.md#problem4-odd-cycle-sharp-compression)：`P_h=C_(2m−1)` 加孤点时得到 `c(S)≤h+m+2`，对 `m≥5` 加强既有分支上界；其他图形仍需处理。
-- [余维五的第八层奇圈排除](PROOF.md#problem4-c9-eighth-layer)：完整共同距离检查排除 `c(S)≥15` 时的 `P8=C9` 加孤点；余维五的整体 `[14,15]` 边界仍未确定。
+- [C7、C9 的所有层数加强](PROOF.md#problem4-c7-c9-uniform-cycle-bound)：对任意孤点数分别有 `c(S)≤h+5`、`c(S)≤h+6`，不附加字母秩条件；包含[余维五第八层排除](PROOF.md#problem4-c9-eighth-layer)，但整体 `[14,15]` 边界仍未确定。C5 的对应加强有实际反例。
+- [余维四后续层的三点覆盖](PROOF.md#problem4-four-cover-late-layers)：`n≥8` 时，`c(S)≥L`、`L=12,…,15` 统一迫使 `τ(P_(L−6))=3`；九类四点覆盖核心在相应层已完整排除。
 - [长安全区间的周期状态约束](PROOF.md#problem4-periodic-isolated-states)：`ac≥2m+2` 时，每个字母至多有 `m−1` 个非周期状态，全部落在同一个至多 `m(m+1)` 点的短对核心中。
 - [余量一的剩余候选](PROOF.md#problem4-slack-one-initial-flags)：共同短对距离、轨道秩和实际前像供应在第九层排除全部两入口类别，覆盖所有双出口候选；[全部早分裂也已排除](PROOF.md#problem4-q13-remaining-three-cores)，核心 10、12 的晚分裂全域也已排除，十二步候选只剩核心 106 的前缀 `(64,128,256)`；一般参数仍开放。
 - [条件分支](PROOF.md#branches)：需要额外假设的局部论证。

@@ -2,6 +2,8 @@
 // Representatives are used for ONE letter only; never compose their maps.
 // --cycle 7 reproduces the existing C7 action/distance exclusion.
 // --cycle 9 tests P8=C9 under compression length >=15 (not all m=5 graphs).
+// --full-kernel --all-layers removes the letter-rank restriction and checks
+// every possible cycle short-pair layer. C5 retains genuine relaxation controls.
 #include <algorithm>
 #include <atomic>
 #include <cassert>
@@ -24,14 +26,15 @@ struct Action {
   }
 };
 struct Search {
-  int n,k,cap,minimum;
+  int n,k,cap,minimum,max_defect;
   vector<unsigned> family;
   vector<Action> actions;
   vector<vector<int>> rows;
   vector<int> d,e;
   bool announce=true;
   uint64_t maps=0,retained=0,subset_nodes=0,subset_vectors=0,pair_nodes=0,joint=0;
-  Search(int cycle):n(cycle),k((n-1)/2),cap(n-1),minimum(k+3),d(n+1),e(n) {
+  Search(int cycle,bool full_kernel=false):n(cycle),k((n-1)/2),cap(n-1),minimum(k+3),
+      max_defect(full_kernel?k:k-1),d(n+1),e(n) {
     for(unsigned mask=0;mask<(1U<<n);++mask) if(__builtin_popcount(mask)==k) {
       bool independent=true;
       for(int i=0;i<n;++i) if((mask>>i&1)&&(mask>>((i+1)%n)&1)) independent=false;
@@ -49,7 +52,7 @@ struct Search {
   void generate(int threads,bool injections=false,bool save_rows=false) {
     vector<unsigned> matchings;
     for(unsigned mask=0;mask<(1U<<n);++mask) {
-      if(__builtin_popcount(mask)>k-1) continue;
+      if(__builtin_popcount(mask)>max_defect) continue;
       unsigned used=0;bool ok=true;
       for(int i=0;i<n;++i) if(mask>>i&1) {
         unsigned ends=(1U<<i)|(1U<<((i+1)%n));
@@ -133,8 +136,11 @@ struct Search {
       rows.insert(rows.end(),saved[i].begin(),saved[i].end());
     }
     actions.assign(combined.begin(),combined.end());
-    if(n==7) assert(maps==252000&&retained==1484&&actions.size()==896);
-    if(n==9) assert(maps==109952640&&retained==22698&&actions.size()==3906);
+    if(n==7&&max_defect==k-1) assert(maps==252000&&retained==1484&&actions.size()==896);
+    if(n==9&&max_defect==k-1) assert(maps==109952640&&retained==22698&&actions.size()==3906);
+    if(n==5&&max_defect==k) assert(maps==1920&&retained==310&&actions.size()==210);
+    if(n==7&&max_defect==k) assert(maps==351960&&retained==4424&&actions.size()==1190);
+    if(n==9&&max_defect==k) assert(maps==121655520&&retained==84906&&actions.size()==4554);
     if(save_rows) {
       sort(rows.begin(),rows.end());assert(rows.size()==retained);
       assert(adjacent_find(rows.begin(),rows.end())==rows.end());
@@ -214,7 +220,8 @@ struct Search {
   }
 };
 void controls(int n) {
-  Search positive(n);positive.announce=false;Action a;
+  Search positive(n);positive.announce=false;
+  positive.cap=max(positive.cap,positive.minimum);Action a;
   for(int i=0;i<n;++i) {
     a.subset.push_back(i<positive.minimum-1?i+1:n);
     a.pair.push_back(i<positive.minimum-1?i+1:-1);
@@ -226,19 +233,21 @@ void controls(int n) {
   negative.actions={a};negative.run();assert(negative.subset_vectors==0&&negative.joint==0);
 }
 int main(int argc,char** argv) {
-  int n=7,threads=1;bool profiles=false,injections=false,rows=false;
+  int n=7,threads=1;bool profiles=false,injections=false,rows=false,full_kernel=false,all_layers=false;
   for(int i=1;i<argc;++i) {
     string flag=argv[i];
     if(flag=="--profiles") profiles=true;
     else if(flag=="--injections") injections=true;
     else if(flag=="--rows") rows=true;
+    else if(flag=="--full-kernel") full_kernel=true;
+    else if(flag=="--all-layers") all_layers=true;
     else if((flag=="--cycle"||flag=="--threads")&&i+1<argc) {
       int v=stoi(argv[++i]);if(flag=="--cycle") n=v;else threads=v;
     } else return 2;
   }
-  if((n!=7&&n!=9)||threads<1||threads>32) return 2;
+  if((n!=5&&n!=7&&n!=9)||(n==5&&!full_kernel)||threads<1||threads>32) return 2;
   if(profiles&&rows) return 2;
-  Search s(n);s.generate(threads,injections,rows);
+  Search s(n,full_kernel);s.generate(threads,injections,rows);
   if(rows) {
     for(const auto& f:s.rows) {
       for(size_t i=0;i<f.size();++i) cout<<(i?" ":"")<<f[i];
@@ -256,7 +265,19 @@ int main(int argc,char** argv) {
     return 0;
   }
   cout<<"C"<<n<<" normalized_maps="<<s.maps<<" retained="<<s.retained<<" signatures="<<s.actions.size()<<endl;
-  controls(n);cout<<"PASS artificial positive and negative controls"<<endl;s.run();
+  controls(n);cout<<"PASS artificial positive and negative controls"<<endl;
+  if(all_layers) {
+    for(int h=1;h<=n;++h) {
+      Search layer(n,full_kernel);layer.actions=s.actions;layer.cap=h;layer.run();
+      cout<<"C"<<n<<" layer="<<h<<" subset_nodes="<<layer.subset_nodes
+          <<" subset_vectors="<<layer.subset_vectors<<" pair_nodes="<<layer.pair_nodes
+          <<" joint_vectors="<<layer.joint<<endl;
+      if(n>=7) assert(layer.joint==0);
+      if(n==5) assert(layer.joint==(h==1?0:2));
+    }
+    return 0;
+  }
+  s.run();
   cout<<"C"<<n<<" subset_nodes="<<s.subset_nodes<<" subset_vectors="<<s.subset_vectors
       <<" pair_nodes="<<s.pair_nodes<<" joint_vectors="<<s.joint<<endl;
   if(n==7) assert(s.subset_vectors==14&&s.joint==0);

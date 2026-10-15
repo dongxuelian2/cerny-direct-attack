@@ -24,6 +24,11 @@ these tasks.
 
 `tau4` proves the necessary condition `tau(P6)=3` under codimension-four
 compression length at least twelve. It does not settle `(13,9,1)`.
+`tau4 --pair-cap 7` (also 8 or 9) rebuilds the same complete graph and action
+classification and checks the corresponding later layer. See the precise
+[compression hypotheses](../PROOF.md#problem4-four-cover-late-layers).
+For the distance calculation alone, run `problem4_core_distances.cpp` through
+`run.py script` with `--pair-cap 7 --pair-order reverse`; `forward` is the default.
 The optional `scripts/problem4/upper_bound/problem4_core_distances_check.py` needs
 `z3-solver` and checks the same finite distance/strong-connectivity relaxation
 using a different algorithm; the main `tau4` command has no solver dependency.
@@ -58,6 +63,11 @@ retained map sets, reconstructs their signatures, and reverses both distance
 search orders. It invokes C++17 for the large transformation enumeration and
 requires no solver. These commands test the branch specified in
 [the C9 reduction](../PROOF.md#problem4-c9-eighth-layer), not every m=5 graph.
+Add `--full-kernel --all-layers` to either program to include every cycle-edge
+matching kernel and check every possible short-pair layer. This proves the
+[C7/C9 bounds](../PROOF.md#problem4-c7-c9-uniform-cycle-bound) without a separate
+letter-rank hypothesis. With `--cycle 5` those flags test the nonzero relaxation
+controls; the Python audit also checks the actual five-state Cerny counterexample.
 
 `problem4_p3_shapes.py` 核对 P3 二点覆盖的十三种核心和三点覆盖的十二种核心。
 `problem4_p2_rank.cpp` 核对至多四条边、覆盖数为三的图的最大独立集行秩界，

@@ -2469,6 +2469,81 @@ $2\le\tau(P_3)\le3$。若 $\tau(P_3)=3$，已有十二形状分类的额外覆�
 假设全部满足；但表中的历史排除仍须逐项证明。$\tau(P_3)=2$ 也仍需处理。
 本定理不自动排除这两条路线，两个极值的区间仍是 $[11,12]$。
 
+<a id="problem4-four-cover-late-layers"></a>
+### 余维四：四点覆盖的后续层统一加强
+
+**计算辅助证明；n≥8、强连通同步、任意有限字母表。** 若 |S|=n−4，
+h≥6 且 τ(P_h)≥4，则
+
+\[
+ \boxed{c(S)\le h+5.}\tag{TC-h}
+\]
+
+这将既有一般界 h+6 在这些层统一缩短一步。等价地，对
+L∈{12,13,14,15}，
+
+\[
+ c(S)\ge L\quad\Longrightarrow\quad\tau(P_{L-6})=3.
+\]
+
+上式下界三来自余维二的 Frankl–Pin 上界六：若 h≥6 而 τ(P_h)≤2，
+就有一个 (n−2)-独立集至少七步不压缩，矛盾。这里没有改变 Problem 4
+的初始像或保护点条件，也没有据此断言某个新参数的精确极值。
+
+**为什么仍是完整九核心域。** h≥10 时，余维四的一般压缩上界十五
+已经不超过 h+5。只须考虑 h=6,7,8,9，反设 c(S)≥h+6。
+τ(P_h)>4 时 S 不独立，直接在 h 步内压缩，所以只需 τ(P_h)=4。
+全部深度至多五的像都是最大独立 (n−4)-集，轨道行秩至少六；强连通性
+还使深度四的这些像覆盖全部状态。上一节的紧交换与匹配等号论证因此
+仍给出恰为六或七点的非孤立核心，独立数为核心点数减四，最大独立集
+行秩至少六，且每个核心点属于某个最大独立集。
+
+从 S 到每个状态至多四步，故最大度仍至多四。取 L0=h+6，短对边数
+定理的 b=15+h−L0=9，且 h≤L0−4−1，9≤3·4−2；所以边数仍至多九。
+这些恰是上一节完整图分类使用的全部条件，故仍只有同一张表的九个核心，
+并未只抽取后层可能核心中的一部分。
+
+因为 c(S)≥h+6≥12，每个字母仍有秩至少 n−2；核心内点对属于至多两个
+最大独立集。因此跨入核心的孤点输入至多一个，独立输入/输出孤点标签的
+单步表示、全部字母生成域及状态箭头并均与上一节相同。n≥8 保证六、七点
+核心之外实际有孤点，故后面的核心闭集确实是非空真闭集。
+
+**后续层的完整共同距离检查。** 子集距离仍满足 max d_i≥6；核心边距离
+改为 e_j∈{1,…,h}。若非核心边输入对映到核心边 j，就由其合并距离至少
+h+1 得到 e_j=h。其余单步不等式、所有距离下降供应及强连通性检查不变。
+程序的 `--pair-cap h` 同时替换这两个 h，以及未赋距离的供应上限；
+没有只改循环上界而遗留原第六层强制值。
+
+| h | 核心 0 的共同距离向量 | 核心 1 的共同距离向量 | 其余七核心 | 强连通候选 |
+|---:|---:|---:|---:|---:|
+| 6 | 72 | 6 | 均为零 | 全部为零 |
+| 7 | 20 | 12 | 均为零 | 全部为零 |
+| 8 | 4 | 4 | 均为零 | 全部为零 |
+| 9 | 0 | 2 | 均为零 | 全部为零 |
+
+所有非零共同距离池的字母箭头并都保持整个六点核心，闭集掩码仍为 63。
+因此它们违反强连通性，不能把这些非零数当成实际自动机见证。
+第七至九层分别用正序、逆序的边距离赋值完整计算，所有子集向量、共同
+距离向量和强连通候选数逐项一致；没有对不同核心或不同层混用字母池。
+
+本次还从源码重新枚举六、七点的全部标号图，得到原来的 540、13212 个
+合格图及九个同构类；独立逐转移行生成器与核分划生成器的全部签名和
+逐状态箭头并再次逐项一致。默认 h=6 的 72、6、零强连通结果也复现。
+改变边距离赋值顺序是搜索实现的交叉控制，不声称是另一套图分类证明。
+这里未重新运行依赖可选 SMT 求解器的旧检查；结论来自已完成的整数穷尽。
+
+由每个 h 的完整排除及 h≥10 的纸面上界，得到 (TC-h)。
+
+```sh
+python3 run.py tau4 --threads 4 --pair-cap 7
+python3 run.py script scripts/problem4/upper_bound/problem4_core_distances.cpp --threads 4 --pair-cap 8 --pair-order forward
+python3 run.py script scripts/problem4/upper_bound/problem4_core_distances.cpp --threads 4 --pair-cap 8 --pair-order reverse
+```
+
+分别将后两条命令中的 8 换为 7、9 可复算相应层；省略 `--pair-cap`
+仍使用第六层，`--pair-order` 默认 `forward`。短对图的层界不能替代
+仍未完成的保护集/轨道联合排除。
+
 <a id="problem4-integral-equality-flag"></a>
 ### 任意域上的等号旗标与饱和整数格
 
@@ -17272,6 +17347,26 @@ the intersection has at most k−ell+1 positions. If ell>k, each vertex belongs
 to only k members and the intersection is empty. Since every image contains
 f(J), this bounds |f(J)∩C| by c−1.
 
+**Consecutive omitted outputs, for k≥2.** Equality also forces the omitted
+cycle vertices to be
+
+\[
+ Z=\{z,z+2,\ldots,z+2(c-1)\}\pmod{2k+1}.\tag{OC-E2}
+\]
+
+Indeed, the c length-k incidence intervals of the omitted vertices have
+union size exactly k+c−1. This is smaller than 2k+1 because c≤k+1.
+Cut at a point outside the union. If its t components have lengths l_i,
+they can contain at most Σ(l_i−k+1)=k+c−1−t(k−1) distinct length-k
+intervals. Containing c of them forces t=1. A single interval of length
+k+c−1 contains exactly c length-k subintervals, so all their consecutive
+starting positions must occur. In the step-two indexing of the family,
+this says precisely that the omitted vertices are consecutive in step-two
+order. The output family is the entire k+2−c-member family avoiding Z,
+since it has that cardinality and is contained in it. These conclusions
+do not require a cycle-edge kernel. The unrestricted C5/C7 controls below
+also check (OC-E2) on every equality case.
+
 A permutation preserving at least k+1 members also preserves J setwise.
 Otherwise its distinct output family members would all contain one cycle
 point in f(J), but only k maximum sets contain any specified cycle point.
@@ -17482,6 +17577,95 @@ e_j 是第 j 条圈边的最短合并长度。同步性使所有这些距离有�
 python3 run.py script scripts/problem4/upper_bound/odd_cycle_joint_distances.cpp --cycle 9 --threads 4
 python3 run.py script scripts/problem4/upper_bound/check_odd_cycle_joint.py --cycle 9 --threads 4
 python3 run.py script scripts/problem4/upper_bound/check_odd_cycle_joint.py --cycle 7 --threads 4
+```
+
+<a id="problem4-odd-cycle-exit-rigidity"></a>
+#### 最长退出距离的单链形状
+
+**一般 k≥2 的纸面必要条件。** 对同步自动机和上述 F，令 d_i 为各成员
+首次离开 F 的最短长度。因为所有 F 成员大小至少二，同步性保证这些距离
+有限。若某个 d_i≥k+3，则
+
+\[
+ \max_i d_i=k+3,\qquad
+ \{d_i:i=1,\ldots,2k+1\}_{\rm multiset}
+ =\{\underbrace{1,\ldots,1}_{k-1},2,3,\ldots,k+3\}.\tag{OC-D}
+\]
+
+证明：同步字母表至少含一个奇异字母 f。每个 d_i≥2 的成员必被 f
+映回 F，而奇圈锐界限制这样的成员数至多 k+2。一条最长的最短退出路径
+必须逐步经过距离 max d_i,…,2,1，所以距离至少二的成员至少有
+max d_i−1 个。因此 max d_i≤k+3。达到该界时，距离 2,…,k+3
+各自恰有一个成员，其他 k−1 个全为距离一。
+
+于是每个奇异字母的保持域都恰好相同：它就是这 k+2 个距离至少二的
+成员。该推导适用于任意 k，不是从 C7、C9 的有限检查外推；它尚未证明
+这些距离层在所有 k≥3 都不可能。下面只对两个完整圈长关闭该等号情形。
+
+<a id="problem4-c7-c9-uniform-cycle-bound"></a>
+#### C7 与 C9 的所有层数：去掉字母秩假设的加强界
+
+**计算辅助证明；所有 n、h，任意有限字母表。** 在同步自动机中，若
+P_h=C_(2k+1) 加任意孤点，k∈{3,4}，则每个大小 n−k−1 的集合 S 满足
+
+\[
+ \boxed{c(S)\le h+k+2.}\tag{OC4}
+\]
+
+即 C7 时 c(S)≤h+5，C9 时 c(S)≤h+6。这里无需强连通、初始像可达、
+保护点或字母秩下界；相对于 (OC1)，对这两个圈长统一再缩短一步。
+
+**层数域是完整的。** 对同步自动机，短对图在成为完全图之前不能平台：
+若 P_i=P_(i+1)，短对前像递推使以后每层都相同，与所有点对最终可合并
+矛盾。因此 P_h 只含 N=2k+1 条边时必有 1≤h≤N。该圈在 N≥5 时是
+真非完全图，故没有遗漏 h>N 的可能实例。
+
+反设 c(S)≥h+k+3。所有深度至多 k+2 的像都在 F 内，否则接一个至多
+h 步的合并词会在 h+k+2 步内压缩。深度 k+1 至少有 k+2 个不同像，
+所以每个字母至少保持 k+2 个 F 成员。现在只使用其一步核属于 P1⊆C_N：
+核必为圈边匹配，亏秩范围是完整的 0≤c≤k，不再截断为 c≤k−1。
+由 (OC-E)，跨入核心的孤点数仍至多 c−1；置换不跨入。
+上一节的独立输入/输出标签归约因此覆盖全部实际字母，新增的最大匹配
+情形也必须完整枚举。
+
+共同距离检查与上一节相同，只把圈边距离上界及被迫达到的外部前像距离
+都改成当前 h，分别遍历 h=1,…,N。规范生成总数仍由上一节公式求和，
+但 c 的上限改为 k。完整域为：
+
+| 圈 | 规范变换总数 | 保留变换 | 签名 | 子集距离候选 | 全部层数的联合候选 |
+|---|---:|---:|---:|---:|---:|
+| C7 | 351960 | 4424 | 1190 | 14 | h=1,…,7 均为零 |
+| C9 | 121655520 | 84906 | 4554 | 28 | h=1,…,9 均为零 |
+
+主、独立输出遍历得到完全相同的保留转移数组，独立程序重新构造全部签名。
+主检查从低到高赋子集距离、正序赋圈边距离；独立检查从高到低赋子集距离、
+逆序赋圈边距离，并用反向 BFS 确认退出向量。两者在每个 h 上分别完整归零。
+C7 独立子集递归有 628 个节点，C9 有 8271 个节点；最大层 h=N 的主/独立
+圈边递归节点分别为 C7 的 8596/16226、C9 的 149743/331687。
+子集距离松弛也可能保留仅有置换字母的池；(OC-D) 使用实际同步字母表
+至少含一个奇异字母，不能直接断言于所有松弛向量。独立检查确认不满足
+该层形状的松弛池没有奇异字母，它们仍被完整合并距离检查排除。
+这些节点数只是实现核对；
+全部 h 和全部实际字母的覆盖来自上述数学归约。
+
+**C5 的反控制与真实边界。** 完全相同的方法用于 k=2 时，1920 个规范
+变换保留 310 个数组、210 个签名及 12 个子集距离向量。h=1 无联合候选，
+h=2,3,4,5 各保留两个；主、独立程序一致。因此检查器不会机械地拒绝
+所有圈长。更强的是，五状态 Černý 自动机
+a=(1,2,3,4,0)、b=(0,1,2,3,0) 满足 P5=C5，而 S={0,2} 的压缩长度为十；
+独立集合 BFS 核对全部十个点对的距离，a⁴ba⁴b 达到该长度。
+所以将 (OC4) 扩成 k=2 会错误给出 c(S)≤5+4=9。
+h=2,3,4 的两个数仅为必要条件的幸存数，没有声称它们均由自动机实现。
+
+这证明 (OC4)，并作为上一节第八层 C9 排除的更一般替代证明。
+k≥5 的对应加强仍未解决；完整 Problem 4 和其他短对图形状均不能由此
+宣布完成。
+
+```sh
+python3 run.py script scripts/problem4/upper_bound/odd_cycle_joint_distances.cpp --cycle 9 --threads 4 --full-kernel --all-layers
+python3 run.py script scripts/problem4/upper_bound/check_odd_cycle_joint.py --cycle 9 --threads 4 --full-kernel --all-layers
+python3 run.py script scripts/problem4/upper_bound/check_odd_cycle_joint.py --cycle 7 --threads 4 --full-kernel --all-layers
+python3 run.py script scripts/problem4/upper_bound/check_odd_cycle_joint.py --cycle 5 --threads 4 --full-kernel --all-layers
 ```
 
 <a id="problem4-odd-cycle-span-refinement--a-graph-classification-used-in-the-general-reduction"></a>

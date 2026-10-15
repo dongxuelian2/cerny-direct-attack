@@ -93,6 +93,9 @@ def main():
                            if x >= cycle or y >= cycle)
                 crossing = sum(row[x] < cycle for x in range(cycle, n))
                 assert crossing <= n-len(set(row))-1
+                omitted = set(range(n))-set(row)
+                assert omitted in [{(start+2*j) % cycle for j in range(len(omitted))}
+                                   for start in range(cycle)]
             maximum = max(maximum, count)
         assert maximum == k+2
         print(f'PASS C{cycle}+{isolates} isolates: all {n**n} maps, '

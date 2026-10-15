@@ -9,16 +9,45 @@ from itertools import combinations
 import os
 from pathlib import Path
 import subprocess
+from collections import deque
 
 
-def check(cycle, executable, threads):
+def cycle_five_control():
+    rows = ((1, 2, 3, 4, 0), (0, 1, 2, 3, 0))
+
+    def compression(source):
+        queue = deque([(frozenset(source), 0)])
+        seen = {frozenset(source)}
+        while queue:
+            current, length = queue.popleft()
+            if len(current) < len(source):
+                return length
+            for row in rows:
+                image = frozenset(row[x] for x in current)
+                if image not in seen:
+                    seen.add(image)
+                    queue.append((image, length+1))
+        raise AssertionError('subset not compressible')
+
+    distances = {frozenset(pair): compression(pair) for pair in combinations(range(5), 2)}
+    assert {p for p, d in distances.items() if d <= 5} == {
+        frozenset((i, (i+1) % 5)) for i in range(5)}
+    assert distances[frozenset((0, 2))] == 10
+    # Finite distances for every pair imply synchronization; a is a full cycle.
+    print('PASS actual Cerny C5: P5=C5, c({0,2})=10; the h+4 extension is false', flush=True)
+
+
+def check(cycle, executable, threads, full_kernel=False, all_layers=False):
     k, cap, minimum = (cycle-1)//2, cycle-1, (cycle-1)//2+3
     commands = [str(executable), '--cycle', str(cycle), '--threads', str(threads)]
+    if full_kernel:
+        commands.append('--full-kernel')
     first = subprocess.check_output(commands + ['--rows'], text=True)
     second = subprocess.check_output(commands + ['--rows', '--injections'], text=True)
     assert first == second, 'complete normalized literal map sets disagree'
     rows = [tuple(map(int, line.split())) for line in first.splitlines()]
-    assert len(rows) == len(set(rows)) == {7: 1484, 9: 22698}[cycle]
+    expected_rows = ({5: 310, 7: 4424, 9: 84906} if full_kernel else {7: 1484, 9: 22698})
+    assert len(rows) == len(set(rows)) == expected_rows[cycle]
     edges = [frozenset((i, (i+1) % cycle)) for i in range(cycle)]
     family = [frozenset(c) for c in combinations(range(cycle), k)
               if all(not e.issubset(c) for e in edges)]
@@ -33,7 +62,7 @@ def check(cycle, executable, threads):
         size = len(f)
         defect = size-len(set(f))
         isolates = frozenset(range(cycle, size))
-        assert 0 <= defect <= k-1
+        assert 0 <= defect <= (k if full_kernel else k-1)
         assert size-cycle <= max(0, defect-1)
         assert all(f[x] < cycle for x in isolates)
         assert all(x in f for x in isolates)
@@ -50,7 +79,8 @@ def check(cycle, executable, threads):
                            if frozenset((x, y)) not in edges) - {-2}
         assert -1 not in forced
         actions.add((tuple(profile), pair, forced))
-    assert len(actions) == {7: 896, 9: 3906}[cycle]
+    expected_signatures = ({5: 210, 7: 1190, 9: 4554} if full_kernel else {7: 896, 9: 3906})
+    assert len(actions) == expected_signatures[cycle]
     print(f'PASS C{cycle}: two map traversals agree on {len(rows)} rows; '
           f'{len(actions)} independently reconstructed signatures', flush=True)
     d = [None]*cycle + [0]
@@ -99,7 +129,19 @@ def check(cycle, executable, threads):
 
     for maximum in range(minimum, cycle+1):
         layers(maximum, (1 << cycle)-1, list(actions))
-    assert len(vectors) == {7: 14, 9: 28}[cycle]
+    assert len(vectors) == {5: 12, 7: 14, 9: 28}[cycle]
+    rigid = 0
+    for vector in vectors:
+        if sorted(vector[:-1]) == [1]*(k-1)+list(range(2, k+4)):
+            rigid += 1
+        else:
+            # OC-D uses an actual singular letter. The subset-only relaxation
+            # may retain pools consisting entirely of permutations instead.
+            pool = [a for a in actions if all(vector[i] <= 1+vector[t]
+                                            for i, t in enumerate(a[0]))]
+            assert all(-1 not in a[1] for a in pool)
+    print(f'C{cycle}: {rigid}/{len(vectors)} exit vectors have the singular-alphabet '
+          'rigid layer shape; remaining pools contain only permutations', flush=True)
     pair_nodes = 0
 
     def check_pairs(vector, pool):
@@ -145,15 +187,17 @@ def check(cycle, executable, threads):
         visit(0, pool)
         return found
 
-    total = 0
-    for vector in sorted(vectors):
-        pool = [a for a in actions if all(vector[i] <= 1+vector[t]
-                                        for i, t in enumerate(a[0]))]
-        total += check_pairs(vector, pool)
-    assert total == 0
-    print(f'PASS C{cycle}: reverse layer search {subset_nodes} nodes, '
-          f'{len(vectors)} exit vectors; reverse pair search {pair_nodes} nodes, '
-          'zero joint vectors', flush=True)
+    for cap in range(1, cycle+1) if all_layers else (cycle-1,):
+        total = pair_nodes = 0
+        for vector in sorted(vectors):
+            pool = [a for a in actions if all(vector[i] <= 1+vector[t]
+                                            for i, t in enumerate(a[0]))]
+            total += check_pairs(vector, pool)
+        assert total == (2 if cycle == 5 and cap > 1 else 0)
+        print(f'PASS C{cycle} layer {cap}: reverse layer search {subset_nodes} nodes, '
+              f'{len(vectors)} exit vectors; reverse pair search {pair_nodes} nodes, '
+              f'{total} joint vectors', flush=True)
+    cap = max(minimum, cycle-1)
     artificial = (tuple(i+1 if i < minimum-1 else cycle for i in range(cycle)),
                   tuple(i+1 if i < minimum-1 else -1 for i in range(cycle)), frozenset())
     control_d = tuple(max(1, minimum-i) for i in range(cycle)) + (0,)
@@ -163,12 +207,17 @@ def check(cycle, executable, threads):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--cycle', type=int, choices=(7, 9), default=9)
+    parser.add_argument('--cycle', type=int, choices=(5, 7, 9), default=9)
     parser.add_argument('--threads', type=int, default=4)
+    parser.add_argument('--full-kernel', action='store_true')
+    parser.add_argument('--all-layers', action='store_true')
     args = parser.parse_args()
     assert 1 <= args.threads <= 32
+    assert args.cycle != 5 or args.full_kernel
     executable = Path.cwd()/'odd_cycle_joint_check_bin'
     source = Path(__file__).with_name('odd_cycle_joint_distances.cpp')
     subprocess.run([os.environ.get('CXX', 'g++'), '-std=c++17', '-O3', '-pthread',
                     str(source), '-o', str(executable)], check=True)
-    check(args.cycle, executable.resolve(), args.threads)
+    check(args.cycle, executable.resolve(), args.threads, args.full_kernel, args.all_layers)
+    if args.cycle == 5:
+        cycle_five_control()

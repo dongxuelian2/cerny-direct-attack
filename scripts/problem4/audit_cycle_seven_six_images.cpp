@@ -47,6 +47,13 @@ void all_maps(int cycle,int threads) {
        assert(preserved<=k+2);counts[worker].maximum=max(counts[worker].maximum,preserved);
        if(preserved==k+2) {
          int defect=n-__builtin_popcount(image);++counts[worker].sharp[defect];
+         unsigned omitted=((1U<<n)-1)^image;bool interval=false;
+         for(int start=0;start<cycle;++start) {
+           unsigned candidate=0;
+           for(int j=0;j<defect;++j) candidate|=1U<<((start+2*j)%cycle);
+           interval|=candidate==omitted;
+         }
+         assert(interval);
          for(int x=0;x<cycle;++x) assert(f[x]!=f[cycle]);
          if(defect==1) assert(f[cycle]==cycle);
          if(f[cycle]!=cycle) ++counts[worker].crossing[defect];
