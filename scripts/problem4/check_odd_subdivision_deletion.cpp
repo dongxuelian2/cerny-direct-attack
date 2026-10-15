@@ -26,7 +26,7 @@ int rank_rows(const vector<unsigned>&rows,int n){
         }
     }return rank;
 }
-struct Counts{uint64_t graphs=0,rows=0,deletions=0,equalities=0,identities=0;};
+struct Counts{uint64_t graphs=0,rows=0,deletions=0,equalities=0,identities=0,triples=0;};
 struct Job {int base;vector<pair<int,int>>edges;vector<int>parts;bool full_rank;};
 void check(const Job&job,Counts&count){
     const auto&parts=job.parts;int base=job.base;
@@ -77,6 +77,14 @@ void check(const Job&job,Counts&count){
         }
         int observed=rank_rows(avoiding,n),upper=n-1-weight[v];assert(observed<=upper);
         ++count.deletions;count.equalities+=observed==upper;
+        if(job.full_rank&&weight[v]<=1){
+            for(int y=0;y<n;++y)if(y!=x)for(int z=y+1;z<n;++z)if(z!=x){
+                vector<unsigned>remaining;unsigned omitted=(1u<<y)|(1u<<z);
+                for(unsigned row:avoiding)if(!(row&omitted))remaining.push_back(row);
+                assert(rank_rows(remaining,n)<=alpha); // m-2 for this K4 subdivision.
+                ++count.triples;
+            }
+        }
     }
     ++count.graphs;count.rows+=rows.size();
 }
@@ -104,9 +112,9 @@ int main(int argc,char**argv){
     atomic<size_t>next{0};vector<Counts>counts(threads);vector<thread>workers;
     for(int t=0;t<threads;++t)workers.emplace_back([&,t]{for(size_t j;(j=next.fetch_add(1))<jobs.size();)check(jobs[j],counts[t]);});
     for(auto&w:workers)w.join();Counts sum;
-    for(auto c:counts){sum.graphs+=c.graphs;sum.rows+=c.rows;sum.deletions+=c.deletions;sum.equalities+=c.equalities;sum.identities+=c.identities;}
+    for(auto c:counts){sum.graphs+=c.graphs;sum.rows+=c.rows;sum.deletions+=c.deletions;sum.equalities+=c.equalities;sum.identities+=c.identities;sum.triples+=c.triples;}
     assert(sum.graphs==jobs.size());
     cout<<"PASS "<<(general?"all bases on 2..5 vertices without isolates, subdivision budget 0..2":"labelled odd-K4 subdivisions m=4.."+to_string(maximum))<<" graphs="<<sum.graphs
         <<" maximum_rows="<<sum.rows<<" vertex_deletions="<<sum.deletions<<" rank_equalities="<<sum.equalities
-        <<" tight_pair_checks="<<sum.identities<<'\n';
+        <<" tight_pair_checks="<<sum.identities<<" low-owner_triple_deletions="<<sum.triples<<'\n';
 }
