@@ -43,6 +43,47 @@ inline AvoidanceClosure full_avoidance_closure(
     }
   return answer;
 }
+struct ExpandedReachabilityClosure {
+  bool reached = false;
+  std::vector<unsigned> states;
+  std::vector<unsigned char> seen;
+};
+// State = external mask | (number of missing protected states << q).
+// The retained block has defect+1 points, so an occupied export is always
+// available in every state whose total defect is at most defect.
+inline std::vector<unsigned> expanded_successors(
+    int q, int defect, unsigned state, const std::vector<int>& f) {
+  unsigned mask=state&((1U<<q)-1),outside=0;
+  int absent=state>>q,hits=0,exported=f[q]!=q;
+  for(int x=0;x<q;++x) if(mask>>x&1) {
+    if(f[x]==q) hits=1;else outside|=1U<<f[x];
+  }
+  std::vector<unsigned> next;
+  for(int occupied=0;occupied<=exported;++occupied) {
+    if(exported-occupied>absent) continue;
+    unsigned image=outside|(occupied?(1U<<f[q]):0);
+    int missing=absent+occupied-hits;
+    assert(missing>=0);
+    if(missing+q-__builtin_popcount(image)<=defect)
+      next.push_back(image|(unsigned(missing)<<q));
+  }
+  return next;
+}
+inline ExpandedReachabilityClosure expanded_reachability_closure(
+    int q, unsigned target, const std::vector<std::vector<int>>& letters,
+    const std::vector<int>& selected) {
+  int defect=q-__builtin_popcount(target);
+  assert(target&&target<(1U<<q)&&defect>=1);
+  ExpandedReachabilityClosure answer;
+  answer.seen.resize((defect+1)*(1U<<q));
+  answer.states.push_back((1U<<q)-1);answer.seen[answer.states.front()]=1;
+  for(size_t at=0;at<answer.states.size();++at) for(int f:selected)
+    for(unsigned next:expanded_successors(q,defect,answer.states[at],letters[f])) {
+      if(next==target) {answer.reached=true;return answer;}
+      if(!answer.seen[next]) {answer.seen[next]=1;answer.states.push_back(next);}
+    }
+  return answer;
+}
 template<int n = 13>
 inline ShortWordCliqueResult
 short_word_clique(const std::vector<std::vector<int>> &letters,
@@ -51,12 +92,21 @@ short_word_clique(const std::vector<std::vector<int>> &letters,
                   const std::vector<std::pair<unsigned, int>> &seeds,
                   const std::vector<std::pair<int, int>> &edges,
                   const std::vector<int> &distances, bool fold = true,
-                  bool require_full_avoidance = false) {
+                  bool require_full_avoidance = false,
+                  unsigned expanded_target = 0) {
   using namespace std;
   const int raw_count = letters.size();
   static_assert(n >= 13 && n <= 14);
   constexpr int masks = 1 << n;
   for (const auto& row : letters) assert(row.size() == n);
+  if(expanded_target) {
+    assert(protected_point==n-1&&(expanded_target>>(n-1)&1));
+    assert(__builtin_popcount(expanded_target)==n-4&&require_full_avoidance);
+    for(const auto& f:letters) {
+      assert(find(f.begin(),f.end(),n-1)!=f.end());
+      for(int x=0;x<n-1;++x) assert(f[x]!=f[n-1]);
+    }
+  }
   int count = raw_count;
   ShortWordCliqueResult result;
   vector<array<uint16_t, masks>> images(count);
@@ -283,6 +333,26 @@ short_word_clique(const std::vector<std::vector<int>> &letters,
         // If every remaining letter preserves this nonempty preimage family,
         // no extension can avoid the protected state from the full state set.
         if (next.empty()) return false;
+        choose(move(next));
+      }
+    }
+    if(!need&&expanded_target) {
+      vector<int> chosen_letters;
+      for(int g:selected)
+        chosen_letters.insert(chosen_letters.end(),members[g].begin(),members[g].end());
+      unsigned target=expanded_target&((1U<<(n-1))-1);
+      auto closure=expanded_reachability_closure(n-1,target,letters,chosen_letters);
+      if(!closure.reached) {
+        vector<int> next;
+        int defect=n-1-__builtin_popcount(target);
+        for(int g:pool) {
+          bool leaves=false;
+          for(int f:members[g]) for(unsigned state:closure.states)
+            for(unsigned image:expanded_successors(n-1,defect,state,letters[f]))
+              if(!closure.seen[image]) leaves=true;
+          if(leaves) next.push_back(g);
+        }
+        if(next.empty()) return false;
         choose(move(next));
       }
     }
@@ -605,4 +675,114 @@ inline void short_word_avoidance_controls() {
   auto answer=short_word_clique<n>(folded,{1,2,2},3,3,{{initial,3}},{},{},true,true);
   assert(answer.possible&&answer.groups==1);
   assert(forward_avoids(n,3,folded,answer.witness));
+}
+
+// Full-subset searches in the expanded automata independently check both the
+// quotient transitions and the alphabet-search reachability clauses.
+template<int n = 14>
+inline void expanded_reachability_controls() {
+  using namespace std;
+  constexpr int q=n-1,retained=5,width=q+retained;
+  constexpr unsigned source=((1U<<n)-1)^15,external=(1U<<q)-1;
+  constexpr unsigned target=(source&external)|(((1U<<retained)-1)<<q);
+  vector<vector<int>> universe(6,vector<int>(n));
+  for(int x=0;x<n;++x) {
+    universe[0][x]=(x+1)%n;
+    universe[1][x]=x==1?2:x;
+    universe[2][x]=x;
+    universe[3][x]=(x+n-1)%n;
+    universe[4][x]=x==1?q:(x==q?1:x);
+    universe[5][x]=x==2?1:x;
+  }
+  auto image=[](unsigned mask,const vector<int>& f) {
+    unsigned out=0;for(int x=0;x<int(f.size());++x) if(mask>>x&1) out|=1U<<f[x];return out;
+  };
+  auto expanded_literal=[&](const vector<int>& alphabet) {
+    vector<vector<int>> expanded;
+    for(int i:alphabet) {
+      vector<int> f(width);for(int x=0;x<width;++x) f[x]=x;
+      for(int x=0;x<q;++x) f[x]=universe[i][x];f[q]=universe[i][q];
+      expanded.push_back(move(f));
+    }
+    // Adjacent protected transpositions generate every independent rewiring
+    // through composition before and after each canonical expanded letter.
+    for(int i=q;i<width-1;++i) {
+      vector<int> f(width);for(int x=0;x<width;++x) f[x]=x;swap(f[i],f[i+1]);expanded.push_back(move(f));
+    }
+    vector<unsigned char> seen(1U<<width);vector<unsigned> todo{(1U<<width)-1};seen[todo[0]]=1;
+    for(size_t at=0;at<todo.size();++at) for(const auto& f:expanded) {
+      unsigned out=image(todo[at],f);
+      if(out==target) return true;
+      if(__builtin_popcount(out)>=width-4&&!seen[out]) {seen[out]=1;todo.push_back(out);}
+    }
+    return false;
+  };
+  auto full_avoids=[&](const vector<int>& alphabet) {
+    vector<unsigned char> seen(1U<<n);vector<unsigned> todo{(1U<<n)-1};seen[todo[0]]=1;
+    for(size_t at=0;at<todo.size();++at) for(int i:alphabet) {
+      unsigned out=image(todo[at],universe[i]);
+      if(!(out>>q&1)) return true;
+      if(!seen[out]) {seen[out]=1;todo.push_back(out);}
+    }
+    return false;
+  };
+  array<bool,64> valid{};
+  for(unsigned subset=0;subset<64;++subset) {
+    vector<int> alphabet;unsigned supplies=0;
+    for(int f=0;f<6;++f) if(subset>>f&1) {alphabet.push_back(f);supplies|=1U<<(f%2);}
+    bool reaches=expanded_literal(alphabet);
+    assert(expanded_reachability_closure(q,source&external,universe,alphabet).reached==reaches);
+    bool sc=true;
+    for(int start=0;start<n;++start) {
+      unsigned visited=1U<<start;vector<int> todo{start};
+      for(size_t at=0;at<todo.size();++at) for(int f:alphabet) {
+        int out=universe[f][todo[at]];
+        if(!(visited>>out&1)) {visited|=1U<<out;todo.push_back(out);}
+      }
+      sc&=visited==(1U<<n)-1;
+    }
+    bool safe=true;vector<unsigned> frontier{source};
+    for(int length=1;length<=3&&safe;++length) {
+      vector<unsigned> next;
+      for(unsigned mask:frontier) for(int f:alphabet) {
+        unsigned out=image(mask,universe[f]);
+        if(__builtin_popcount(out)!=n-4||!(out>>q&1)) safe=false;
+        next.push_back(out);
+      }
+      frontier=move(next);
+    }
+    valid[subset]=supplies==3&&sc&&safe&&reaches&&full_avoids(alphabet);
+  }
+  assert(valid[3]);
+  int positives=0,negatives=0;
+  for(unsigned pool=0;pool<64;++pool) {
+    bool expected=false;
+    for(unsigned subset=pool;subset;subset=(subset-1)&pool) expected|=valid[subset];
+    vector<vector<int>> maps;vector<unsigned> flags;
+    for(int i=0;i<6;++i) if(pool>>i&1) {maps.push_back(universe[i]);flags.push_back(1U<<(i%2));}
+    for(bool fold:{false,true}) {
+      auto answer=short_word_clique<n>(maps,flags,3,q,{{source,3}},{},{},fold,true,source);
+      assert(answer.possible==expected);
+      if(answer.possible) {
+        vector<int> alphabet;
+        for(int local:answer.witness) {
+          int i=find(universe.begin(),universe.end(),maps[local])-universe.begin();
+          assert(i<6);alphabet.push_back(i);
+        }
+        assert(expanded_literal(alphabet)&&full_avoids(alphabet));
+      }
+    }
+    expected?++positives:++negatives;
+  }
+  assert(positives&&negatives);
+  for(int f=0;f<6;++f) for(int g=0;g<6;++g) {
+    auto one=expanded_reachability_closure(q,source&external,universe,{f});
+    auto both=expanded_reachability_closure(q,source&external,universe,{f,g});
+    if(!one.reached&&both.reached) {
+      bool leaves=false;
+      for(unsigned state:one.states) for(unsigned out:expanded_successors(q,4,state,universe[g]))
+        leaves|=!one.seen[out];
+      assert(leaves);
+    }
+  }
 }

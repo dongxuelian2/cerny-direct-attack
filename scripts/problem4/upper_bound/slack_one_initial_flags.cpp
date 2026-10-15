@@ -273,7 +273,17 @@ vector<unsigned> one_count_closure(const vector<unsigned>& rows,int protected_co
 // Iterate only complete labeled maps. A terminal flag supplies at most two
 // possible initial rows; each must be tested separately across the whole pool.
 bool terminal_powers=false,terminal_mixed=false,terminal_alphabets=false,terminal_avoidance=false;
+bool terminal_reachable=false;
 bool terminal_example=false,example_printed=false;
+bool literal_prefix=false;
+vector<unsigned> initial_flag;
+int cyclic_rank(const vector<int>& f) {
+ vector<int> degree(f.size()),todo;
+ for(int x:f) ++degree[x];
+ for(int x=0;x<int(f.size());++x) if(!degree[x]) todo.push_back(x);
+ for(size_t at=0;at<todo.size();++at) if(!--degree[f[todo[at]]]) todo.push_back(f[todo[at]]);
+ return int(f.size()-todo.size());
+}
 bool safe_powers(const vector<int>& f,unsigned source,unsigned protect,int length) {
  unsigned image=source;int size=__builtin_popcount(source);
  for(int step=1;step<=length;++step) {
@@ -323,6 +333,8 @@ void power_controls() {
      for(int q=0;q<n;++q) {f[q]=rest%n;rest/=n;}
      vector<vector<int>> powers;
      for(int step=0;step<5;++step) {for(int& q:power) q=f[q];powers.push_back(power);}
+     unsigned eventual_image=0;for(int x:power) eventual_image|=1U<<x;
+     assert(cyclic_rank(f)==__builtin_popcount(eventual_image));
      for(unsigned S=1;S<(1U<<n);++S) for(int a=0;a<n;++a) if(S>>a&1) {
        bool literal=true;
        for(const auto& map:powers) {
@@ -340,6 +352,12 @@ void power_controls() {
  assert(safe_powers({0,1,2},3,1,5));
  assert(!safe_powers({1,2,2},3,2,5)); // second power compresses
  assert(!safe_powers({1,2,0},3,1,5)); // permutation avoids protection
+ vector<int> three_tail(14);iota(three_tail.begin(),three_tail.end(),0);
+ three_tail[0]=1;three_tail[1]=2;three_tail[2]=3;
+ assert(cyclic_rank(three_tail)==11);
+ auto four_tail=three_tail;four_tail[3]=4;
+ assert(cyclic_rank(four_tail)==10);
+ assert(safe_powers(four_tail,16368,8192,11)); // Q-avoidability is essential
  cout<<"CONTROLS labeled powers versus pointwise composition "<<checks<<" cases PASS\n";
  uint64_t pair_checks=0;
  // Direct word enumeration is independent of the subset-BFS implementation.
@@ -415,8 +433,10 @@ PairSummary graded_pair_pool(Core core,const vector<unsigned>& edges,const vecto
  // Every target-family fiber must be invariant under the anonymous output
  // permutations, including BOTH new third-layer fibers when split_layer=3.
  unsigned named_outputs=0;for(unsigned fiber:basis) named_outputs|=fiber;
+ unsigned fixed_outputs=named_outputs|((1U<<core.n)-1)|(((1U<<n)-1)^8191);
+ bool exact_prefix=literal_prefix&&protected_count==1&&n-__builtin_popcount(fixed_outputs)<=2;
  vector<int> extra;
- if(terminal_source) {for(int q=core.n;q<n;++q) extra.push_back(q);}
+ if(terminal_source||exact_prefix) {for(int q=core.n;q<n;++q) extra.push_back(q);}
  else if(ranks) for(int q=core.n;q<13;++q) if(named_outputs>>q&1) extra.push_back(q);
  cell_pairs::Generator generator(n,core.n,edges,outputs,extra);
  vector<SafeSources> safe;
@@ -432,8 +452,15 @@ PairSummary graded_pair_pool(Core core,const vector<unsigned>& edges,const vecto
  }
  struct LiteralLetter {vector<int> f;cell_pairs::Profile profile;unsigned flags;};
  vector<LiteralLetter> literals;unsigned current_flags=0;
+ vector<pair<unsigned,int>> forced_seeds;
+ if(exact_prefix) for(int j=1;j<=depth;++j) if(families[j].size()==size_t(12-j))
+   for(unsigned row:families[j]) forced_seeds.emplace_back(row|8192,j);
  function<bool(const vector<int>&)> rank_filter;
  if(ranks) rank_filter=[&](const vector<int>& f) {
+   if(exact_prefix) {
+     if(cyclic_rank(f)<n-3) return false;
+     for(auto [source,length]:forced_seeds) if(!safe_powers(f,source,8192,length)) return false;
+   }
    if(terminal_source&&!safe_powers(f,terminal_source,((1U<<n)-1)^8191,11)) return false;
    if(depth>=4) {
      auto preimage=[&](unsigned mask) {
@@ -631,7 +658,8 @@ PairSummary graded_pair_pool(Core core,const vector<unsigned>& edges,const vecto
        for(unsigned edge:edges) core_edges.emplace_back(__builtin_ctz(edge),__builtin_ctz(edge&(edge-1)));
        assert(n==14);
        auto answer=short_word_clique<14>(maps,labels,all_required,13,
-                                         {{terminal_source,11}},core_edges,e,true,terminal_avoidance);
+                                         {{terminal_source,11}},core_edges,e,true,terminal_avoidance,
+                                         terminal_reachable?terminal_source:0);
        valid=answer.possible;
        if(valid&&terminal_example&&!example_printed) {
          example_printed=true;
@@ -641,7 +669,8 @@ PairSummary graded_pair_pool(Core core,const vector<unsigned>& edges,const vecto
          for(int index:answer.witness) {
            cout<<"LETTER";for(int out:maps[index]) cout<<' '<<out;cout<<'\n';
          }
-         cout<<"EXAMPLE_SCOPE short-word safety, strong connectivity, and suppliers verified; synchronization and reachability not yet checked\n";
+         cout<<"EXAMPLE_SCOPE short-word safety, strong connectivity, and suppliers verified; base-model synchronization and reachability not yet checked\n";
+         if(terminal_reachable) cout<<"EXPANSION_SCOPE five-protected-state expansion reaches the target; independent original-class witness audit still required\n";
        }
      }
    }
@@ -739,6 +768,7 @@ Result examine(Core core,const vector<unsigned>& all,bool print_flags,bool pairs
            if(f<flag) {canonical=false;break;}
          }
          if(!canonical) continue; ++result.canonical;
+         if(!initial_flag.empty()&&vector<unsigned>(flag.begin(),flag.end())!=initial_flag) continue;
          auto three=family(two,E,true);
          if(rank_checked(three)!=9||!covers_all(three)) continue;
          if(rank_checked({16383,8192,B,C,D,E},14)!=6) continue;
@@ -870,6 +900,7 @@ Result examine_late(Core core,const vector<unsigned>& all,bool print_flags,
            if(mapped<basis) {canonical=false;break;}
          }
          if(!canonical) return;++result.canonical;
+         if(!initial_flag.empty()&&basis!=initial_flag) return;
        }
        families.push_back(rows);
        if(level<3) {extend(level+1);families.pop_back();return;}
@@ -937,7 +968,15 @@ int main(int argc,char**argv) {
    else if(string(argv[i])=="--terminal-mixed") terminal_powers=terminal_mixed=true;
    else if(string(argv[i])=="--terminal-alphabets") terminal_powers=terminal_mixed=terminal_alphabets=true;
    else if(string(argv[i])=="--terminal-avoidance") terminal_powers=terminal_mixed=terminal_alphabets=terminal_avoidance=true;
+   else if(string(argv[i])=="--terminal-reachable") terminal_powers=terminal_mixed=terminal_alphabets=terminal_avoidance=terminal_reachable=true;
    else if(string(argv[i])=="--terminal-example") terminal_example=true;
+   else if(string(argv[i])=="--literal-prefix") literal_prefix=true;
+   else if(string(argv[i])=="--initial-flag"&&i+1<argc) {
+     string masks=argv[++i];replace(masks.begin(),masks.end(),',',' ');
+     istringstream input(masks);unsigned value;
+     while(input>>value) initial_flag.push_back(value);
+     if(!input.eof()||initial_flag.empty()) return 2;
+   }
    else if(string(argv[i])=="--controls-only") controls_only=true;
    else if(string(argv[i])=="--flags") print_flags=true;
    else if(string(argv[i])=="--pairs") pairs=true;
@@ -953,6 +992,9 @@ int main(int argc,char**argv) {
  }
  assert(threads>=1&&threads<=32&&(!print_flags||threads==1));
  if(terminal_example&&(!terminal_alphabets||threads!=1)) return 2;
+ if(literal_prefix&&(!pairs||!ranks||!arrival||split_layer==1)) return 2;
+ if(!initial_flag.empty()&&(only_core<0||initial_flag.size()!=size_t(split_layer>=1&&split_layer<=3?4:3)||
+    any_of(initial_flag.begin(),initial_flag.end(),[](unsigned mask){return !mask||mask>=8192;}))) return 2;
  if(terminal_powers&&(!ranks||max_layer!=11||split_layer==1)) return 2;
  if((delay_cut||ranks)&&!pairs) return 2;
  if(arrival&&!ranks) return 2;
@@ -996,7 +1038,7 @@ int main(int argc,char**argv) {
    assert(!SafeSources(3,3,2,0,{3,1},true).accepts({0,1,2}));
    assert(SafeSources(3,3,0,0,{3},false).accepts({0,0,0}));
  }
- if(terminal_powers) power_controls();
+ if(terminal_powers||literal_prefix) power_controls();
  if(terminal_alphabets) {
    short_word_clique_controls<14>();
    cout<<"CONTROLS complete alphabet search versus 512 small pools and a triple-word obstruction PASS\n";
@@ -1004,6 +1046,10 @@ int main(int argc,char**argv) {
  if(terminal_avoidance) {
    short_word_avoidance_controls<14>();
    cout<<"CONTROLS full-state avoidance cuts: 2187 small instances and 64 complete alphabet pools PASS\n";
+ }
+ if(terminal_reachable) {
+   expanded_reachability_controls<14>();
+   cout<<"CONTROLS expanded reachability: 64 literal eighteen-state domains and 64 complete alphabet pools PASS\n";
  }
  if(controls_only) return 0;
  vector<Result> results(cores.size());atomic<int> next{0};vector<thread> workers;mutex output_mutex;
@@ -1054,10 +1100,15 @@ int main(int argc,char**argv) {
  }
  if(split_layer==0||split_layer>=4) for(int k=0;k<12;++k)
    cout<<"TERMINAL_SPLIT layer="<<k<<" flags="<<total.terminal_splits[k]<<'\n';
+ if(!initial_flag.empty()) {
+   cout<<"INITIAL_FLAG";for(unsigned mask:initial_flag) cout<<' '<<mask;cout<<'\n';
+ }
  cout<<"SCOPE initial flags; pair_mode="<<pairs<<" delay_cut="<<delay_cut<<" ranks="<<ranks<<" arrival="<<arrival
      <<" split_layer="<<split_layer<<" core="<<only_core<<" terminal_powers="<<terminal_powers<<"; flags stop at layer "<<max_layer
      <<"; terminal_mixed="<<terminal_mixed<<" terminal_alphabets="<<terminal_alphabets
      <<" terminal_avoidance="<<terminal_avoidance
+     <<" terminal_reachable="<<terminal_reachable
+     <<" literal_prefix="<<literal_prefix
      <<"; surviving flags do not establish original-class witnesses; no new upper bound\n";
  return 0;
 }

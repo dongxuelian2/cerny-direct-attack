@@ -215,6 +215,22 @@ explain why it is necessary even when the contracted model is not synchronizing.
 With `--threads 1`, `--terminal-example` prints the first alphabet accepted by
 the enabled complete terminal search, together with its initial set and basis.
 It does not stop enumeration or certify synchronization or reachability.
+`--terminal-reachable` adds reachability in the five-protected-state expansion
+to the alphabet search. It computes the complete protected-count quotient and
+branches on letters leaving a closed set that does not contain the target.
+The [original-class equivalence](../PROOF.md#problem4-terminal-original-class-equivalence)
+states why this stronger acceptance condition exactly matches the q=13 target
+over the complete necessary flag domain. Its controls use independent ordinary
+subset searches in eighteen-state expanded automata.
+`--literal-prefix` expands all output labels when at most two remain unnamed,
+then tests the necessary cyclic-rank bound and powers from families whose row
+counts prove that every member is an actual short image. It skips this stronger
+test when more labels remain; no anonymous profile is composed as a word.
+`--initial-flag B,C,D` with `--core ID` restricts a late-split run to one
+canonical initial flag. Early-split runs use four masks instead. This permits
+disjoint prefix jobs; a completed restricted job is not a complete core result.
+The [core-106 partition](../PROOF.md#problem4-literal-prefix-constraints) lists
+all four surviving late-split prefixes and the required coverage boundary.
 
 `--controls-only` runs the implementation controls and skips flag enumeration.
 See [the terminal compatibility proof](../PROOF.md#problem4-terminal-labeled-compatibility).
