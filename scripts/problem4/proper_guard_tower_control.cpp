@@ -34,6 +34,13 @@ int main(){
         for(int depth=1;depth<=min(k,8);++depth){vector<vector<int>>next;
             for(const auto&w:words)for(const auto&a:letters){vector<int>f(n);
                 for(int x=0;x<n;++x)f[x]=a[w[x]];
+                unsigned permutation=0;
+                for(int i=0;i<k;++i){assert(f[i]<size);int target=f[i]%k;permutation|=1u<<target;
+                    // Safe representatives compute the common block action.
+                    assert(target==a[w[i]%k]%k);
+                    for(int x:{i,i+k})if(x<size-depth)assert(f[x]<size&&f[x]%k==target);
+                }
+                assert(permutation==(1u<<k)-1);
                 for(int i=0;i<k;++i){int x=f[i]<size?f[i]%k:k,y=f[i+k]<size?f[i+k]%k:k;if(x!=y)active|=1u<<i;}
                 next.push_back(move(f));++word_maps;
             }
