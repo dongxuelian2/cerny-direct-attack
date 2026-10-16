@@ -61,13 +61,14 @@ def spectrum_control(rows, distances):
                 assert len(word) == value
         spectrum[holes] = max(values)
         persistent_hole_control(rows, distances, holes, max(values))
+        short_word_hole_control(rows, distances, holes, max(values))
         for h in (max(values)-1, max(values)):
             edges = [set(pair) for pair, value in distances.items() if value <= h]
             has_cover = any(all(set(cover) & edge for edge in edges)
                             for cover in combinations(range(n), holes))
             assert has_cover == (h < max(values))
     if n >= 8:
-        assert spectrum[4] <= 13
+        assert spectrum[4] <= 12
         bound = 8 if spectrum[3] == 2 else spectrum[3]+5
         assert spectrum[4] <= bound
     return spectrum, checked
@@ -103,6 +104,39 @@ def persistent_hole_control(rows, distances, holes, threshold):
     print(f'PASS persistent holes: n={n}, t={holes}, h={h}, '
           f'maxima={len(maxima)}, maximal_small={len(maximal_small)}, '
           f'common_safe={len(safe)}, missing_isolates={len(missing)}')
+
+
+def short_word_hole_control(rows, distances, holes, threshold):
+    """Use earlier h and the actual C_t, without a one-letter escape assumption."""
+    n = len(rows[0])
+    if n-holes < 3:
+        return
+    all_sets = [frozenset(subset) for size in range(n+1)
+                for subset in combinations(range(n), size)]
+    def independent(source, h):
+        return not any(value <= h and set(pair) <= source for pair, value in distances.items())
+    later = [source for source in all_sets if len(source) == n-holes-1 and independent(source, threshold)]
+    checked = 0
+    for h in range(1, threshold-1):
+        earlier = [source for source in all_sets if independent(source, h)]
+        alpha = max(map(len, earlier))
+        if alpha != n-holes:
+            continue
+        maxima = [source for source in earlier if len(source) == alpha]
+        small = [source for source in earlier if len(source) == alpha-1]
+        maximal_small = [source for source in small if not any(source < maximum for maximum in maxima)]
+        assert len(later) <= len(maximal_small)+2*len(maxima)
+        for maximum in maxima:
+            assert sum(source < maximum for source in later) <= 2
+            word = shortest(rows, maximum, lambda target: len(target) < len(maximum))
+            assert h < len(word) <= threshold
+            prefix = word[:-h]
+            target = maximum
+            for letter in prefix:
+                target = image(target, rows[ord(letter)-ord('a')])
+            assert len(target) == alpha and not independent(target, h)
+        checked += 1
+    print(f'PASS multi-step persistent holes: n={n}, t={holes}, H={threshold}, earlier_layers={checked}')
 
 
 def even_cycle_spectrum_controls():

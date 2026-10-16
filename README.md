@@ -2,7 +2,7 @@
 
 本项目研究同步自动机的重置字、像扩张，以及 avoid-or-compress 问题。
 **一般 Černý 猜想尚未解决；现有计算辅助十三状态结论经保护块收缩推广，得到对所有 `r≥1` 的 `F_bin(r+12,r+8,r) = F(r+12,r+8,r) = 11`。**
-整条 `m=4,q=13` 边界也已通过完整有限域排除确定为 `F_bin(r+13,r+9,r) = F(r+13,r+9,r) = 11`。余维四全参数上界现为 `min(q,13)`，`q≥14` 仍在 `[11,13]`；余维五上界为 `min(q,20)`，其中 `q=15` 仍在 `[14,15]`。完整 Problem 4 尚未解决。
+整条 `m=4,q=13` 边界也已通过完整有限域排除确定为 `F_bin(r+13,r+9,r) = F(r+13,r+9,r) = 11`。余维四全参数上界现为 `min(q,12)`，`q≥14` 仍在 `[11,12]`；余维五上界为 `min(q,19)`，其中 `q=15` 仍在 `[14,15]`。完整 Problem 4 尚未解决。
 
 新的纸面推导处理全部奇圈长度，并将大余维、全部短对图形状的条件覆盖界推进一层；有限基论证还给出随余维无界增长的加性改进。它们没有给出全参数的匹配下界。
 
@@ -25,8 +25,8 @@
 - [大余维的统一覆盖加强](PROOF.md#problem4-large-codimension-cover-improvement)：同步、`n≥2m,m≥13` 时，`τ(P_h)≥m` 迫使 `c(S)≤h+2m−3`；覆盖全部图形，且已证明不必要求强连通。
 - [覆盖界的无界加性改进](PROOF.md#problem4-unbounded-cover-deficit)：任意固定 `a`，充分大的 `m` 都满足上述条件界 `c(S)≤h+2m−a−1`；依赖已有 α-critical 有限基定理，[共同像核心退出界](PROOF.md#problem4-common-image-core-escape)将一般阈值定量为极粗的三层指数塔。
 - [余维四的较早覆盖层](PROOF.md#problem4-four-cover-third-layer)：强连通同步、`n≥8,h≥3` 时，`τ(P_h)≥4` 迫使 `c(S)≤h+5`；计算辅助证明。`h=2` 的延伸被一个八状态强连通同步实例否定。
-- [余维四全域十三步上界](PROOF.md#problem4-four-global-thirteen)：先由相邻余维传递得到十四，再完整排除 45 个必要核心；`n≥8` 时任意余维四子集都在十三步内压缩，并推出余维五二十步上界。两者均为计算辅助结果，未取得匹配下界。
-- [十三步的剩余结构](PROOF.md#problem4-thirteen-low-cover-reduction)：完整排除 P8 四点覆盖的 74 类核心；一般支持界及私人叶子的四集合归约再排除九点等号分支。因此十三步候选必须有 `τ(P8)=3`、至多八点非孤立核心及 `C3=9`。支持界引用 Gitler–Valencia；[持续遗漏孤点界](PROOF.md#problem4-low-cover-persistent-holes)控制实际短像中的孤点标签。剩余核心未排除，上界仍为十三。
+- [余维四全域十二步上界](PROOF.md#problem4-four-global-twelve)：十三步候选先缩到 P8 覆盖数三、至多八点核心，再以共同安全族和持续遗漏孤点界归约成 1988 个有限域；全部实际字母与共同距离检查排除这些域，并推出余维五十九步上界。两者均为计算辅助结果，尚无匹配下界。
+- [短词的持续遗漏孤点界](PROOF.md#problem4-short-word-persistent-holes)：纸面证明适用于相邻压缩谱相差多层的情形。所用支持不等式引用 Gitler–Valencia，未作为新图论定理。
 - [余维五的全部覆盖层](PROOF.md#problem4-five-cover-late-layers)：强连通同步、`n≥10,h≥1` 时，`τ(P_h)≥5` 迫使 `c(S)≤h+7`；[四类核心归约](PROOF.md#problem4-next-to-maximal-rank-cores)加全部二十七核心检查。`m=5,q=15` 仍为 `[14,15]`。
 - [长安全区间的周期状态约束](PROOF.md#problem4-periodic-isolated-states)：`ac≥2m+2` 时，每个字母至多有 `m−1` 个非周期状态，全部落在同一个至多 `m(m+1)` 点的短对核心中。
 - [余量一的旗标归约](PROOF.md#problem4-slack-one-initial-flags)：共同短对距离、轨道秩、实际前像供应及完整终端字母表检查覆盖十二步候选；最后的核心 106 前缀 `(64,128,256)` 现也完整归零，计数见[完整覆盖](PROOF.md#problem4-q13-exact-eleven)。

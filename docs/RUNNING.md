@@ -83,6 +83,28 @@ domains. `check_short_pair_core_bounds.py` also checks the persistent-isolate
 bound on literal automata and subset families. These controls support paper
 proofs; they are not automaton exclusions at arbitrary parameters.
 
+The final thirteen-step exclusion reconstructs 73 low-cover cores and 1988
+common safe domains. It gives the current codimension-four bound twelve and,
+by cover transfer, the codimension-five bound nineteen. The first command
+compares two complete domain generators. The action command also compares two
+complete single-letter generators and checks shared subset/pair distances.
+
+```sh
+python3 run.py script scripts/problem4/low_cover_core_domains.cpp --domains --control
+python3 run.py script scripts/problem4/low_cover_actions.cpp --positive
+python3 run.py script scripts/problem4/low_cover_actions.cpp 0 1988 4 --control --actions
+```
+
+The three numeric action arguments are the starting domain, number of domains,
+and threads. Shorter intervals print `PARTIAL`; a full exclusion needs their
+disjoint union to cover all 1988 domains. Without `--actions`, only the letter
+domains are constructed. `--positive` reconstructs a real eight-state Černý
+example and retains its actual letter signatures and compatible distances.
+Common isolates are represented only for single-step constraints, with a
+possibly omitted auxiliary output; they are never iterated as anonymous states.
+When there are no common isolates, the program does not apply a proper-core
+escape test to the whole state set. See the [full proof](../PROOF.md#problem4-four-global-twelve).
+
 ```sh
 python3 run.py script scripts/problem4/check_rank_descent.py
 python3 run.py script scripts/problem4/check_odd_core_target.py
