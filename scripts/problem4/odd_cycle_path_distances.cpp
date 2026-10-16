@@ -103,6 +103,8 @@ struct PairDomains {
     uint64_t nodes=0,survivors=0;
     bool trace=false;
     function<void(const vector<unsigned>&,const vector<int>&)> on_solution;
+    function<bool(const vector<int>&)> pool_allowed;
+    uint64_t rejected_pools=0;
     PairDomains(int count,int cap,const vector<Action>& a,const vector<int>& d):
         n(count),h(cap),nrows(d.size()-1),actions(a),row_supply(a.size()) {
         for(int j=0;j<int(a.size());++j)for(int i=0;i<nrows;++i)
@@ -173,6 +175,7 @@ struct PairDomains {
                 }
             }
             changed|=next.size()!=pool.size();pool=move(next);
+            if(pool_allowed&&!pool_allowed(pool)){++rejected_pools;return;}
             if(trace&&nodes==1){cout<<"ROOT_PROP pool="<<pool.size()<<" row_edge_masks=";
                 for(int j=0;j<n;++j)cout<<' '<<domains[(2*j+n-1)%n];cout<<'\n';}
         }

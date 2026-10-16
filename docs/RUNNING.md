@@ -175,6 +175,55 @@ Smaller `START COUNT THREADS` intervals are explicitly partial. The power
 filter tracks missing named states only while the whole common-isolate set is
 retained; it does not compose independently renamed individual-subset images.
 
+For the seventeen-step candidate domain, generate orders 6 through 10 and use
+`5 6 11` instead. It contains 1994 static cores; its full dynamic exclusion is
+not established. The ten-vertex cases additionally check the paper's unique
+matching and shattering bounds. Run the small exhaustive matching control with:
+
+```sh
+python3 run.py script scripts/problem4/rank_core_graph6.cpp --matching-control
+python3 run.py script scripts/problem4/matching_guard_control.cpp
+python3 run.py script scripts/problem4/transversal_guard_control.cpp
+python3 run.py script scripts/problem4/exit_rank_control.cpp
+```
+
+For `5 6 11 --actions START COUNT THREADS`, the program uses the weaker power
+constraints appropriate to target seventeen and a proved crossing bound of
+`N-6`. It reports whole-pool closure exclusions separately from distance counts.
+It also applies the paper's descending safe-row-space bound to each row-distance
+tail. The two additional controls above enumerate small transformations and
+small binary automata respectively; neither establishes a global extremum.
+For a ten-vertex interval, `--guard MASK PARITY` instead restricts every letter
+to one common matching-transversal guard (or the whole cube). The five matching
+pairs are returned in the deterministic order of the unique-matching routine.
+`MASK` selects one or two of those coordinates, and `PARITY` is 0 or 1. All
+thirty choices are required for a complete common-guard exclusion; one choice
+is a partial domain. The filter is applied to actual maps before signatures
+and arrows are merged.
+
+The difficult fifteen-edge pair-distance controls can optionally use
+[CaDiCaL](https://github.com/arminbiere/cadical) through IPASIR. Download a tagged
+source release into `build/tools/` and build it there with `./configure -shared`
+and `make -j8` (checked release: `rel-3.0.1`). Then set the shared-library path:
+
+```sh
+export CERNY_PAIR_SAT_LIBRARY="$PWD/build/tools/cadical-3.0.1/build/libcadical.so"
+python3 run.py script scripts/problem4/check_pair_sat.cpp
+CERNY_PAIR_SAT_MIN_EDGES=0 python3 run.py script scripts/problem4/low_cover_actions.cpp --positive-quotient
+```
+
+The main interval-propagation search still runs, and its count must equal the
+SAT projection count. Without this variable, the original scalar control runs.
+The optional `CERNY_PAIR_SAT_MIN_EDGES` defaults to 15; zero forces SAT for every
+row profile, useful for controls. This is a Linux shared-library option using
+`dlopen`; no downloaded solver source or binary belongs in Git. SAT blocks only
+distance vectors, validates every model against the original predicates, and
+requires a final unsatisfiable result to finish a profile.
+`--stop-on-survivor` stops at a necessary relaxation survivor, not a witnessed
+automaton. Compile once before launching parallel runs of the same source to
+avoid concurrent writes to its executable; an observed compilation failure is
+not a mathematical result.
+
 The bounded-word reverse-frame control independently compares literal forward
 images with shared-identity predecessor data. It checks the alphabet-selection
 lemma, pair and row distances, quotient connectivity, and both positive and

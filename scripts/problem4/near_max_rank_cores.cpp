@@ -27,7 +27,9 @@ struct Graph {
     }
 };
 int rank_rows(vector<unsigned>rows,int n){
-    // Hadamard: every relevant minor is <=4^(9/2)=512 < prime 1009.
+    // Current domains: row weight <=4 on at most nine vertices, so
+    // Hadamard <=4^(9/2)=512. On ten-vertex matching domains rank<=6,
+    // hence every relevant zero-one minor is <=6^3=216. Both <1009.
     const int prime=1009;vector<vector<int>>a(rows.size(),vector<int>(n));
     for(int i=0;i<int(rows.size());++i)for(int j=0;j<n;++j)a[i][j]=rows[i]>>j&1;
     int rank=0;

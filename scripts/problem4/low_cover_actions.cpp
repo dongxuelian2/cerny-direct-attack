@@ -384,6 +384,9 @@ void positive_quotient_control() {
         for(int x:incoming)assert(arrows[n]>>inverse[letter[x]]&1);
     }
     solver.solve(h);assert(solver.connected_vectors>0);
+    auto unpruned_connected=solver.connected_vectors;
+    solver.prune_closed_row_pools=true;solver.descending_rank_bound=true;
+    solver.solve(h);assert(solver.connected_vectors==unpruned_connected);
     Graph negative{4};negative.add(0,1);CoreActions counter(negative,2,{12u},1,1);
     vector<int>bad={1,3,0,2},identity={0,1,2,3};
     assert(!square_compatible(counter,bad) && !literal_square_control(counter,bad));

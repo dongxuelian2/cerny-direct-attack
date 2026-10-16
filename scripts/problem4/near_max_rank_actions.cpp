@@ -4,6 +4,7 @@
 #include "near_max_rank_cores.cpp"
 #define ODD_CYCLE_PATH_LIBRARY
 #include "odd_cycle_path_distances.cpp"
+#include "pair_sat_control.hpp"
 #include <chrono>
 
 struct CoreActions {
@@ -16,7 +17,10 @@ struct CoreActions {
     vector<Action> actions;
     vector<vector<unsigned>> state_arrows;
     uint64_t connected_vectors=0;
-    bool quotient_connectivity=false,ordered_pair_control=false;
+    bool quotient_connectivity=false,ordered_pair_control=false,prune_closed_row_pools=false;
+    bool descending_rank_bound=false;
+    uint64_t closed_row_pools=0,closed_pair_pools=0;
+    mutable uint64_t pair_sat_calls=0;
     function<bool(const vector<int>&)> map_filter;
     uint64_t nodes=0,maps=0,retained=0;
     uint64_t layer_nodes=0,row_vectors=0,pair_nodes=0,joint_vectors=0;
@@ -234,6 +238,7 @@ struct CoreActions {
             <<" signatures="<<reference.size()<<endl;
     }
     uint64_t independent_pairs(const vector<int>& initial_pool)const{
+        if(pair_sat_enabled(ne)){++pair_sat_calls;return sat_pair_count(actions,distance,initial_pool,ne,pair_cap,state_arrows,n,prune_closed_row_pools);}
         vector<int>e(ne),order(ne);iota(order.rbegin(),order.rend(),0);uint64_t survivors=0;
         if(ordered_pair_control){vector<uint64_t>weight(ne);
             for(int id:initial_pool)for(int x=0;x<ne;++x)weight[x]+=bool(actions[id].forced>>x&1)+(actions[id].pair[x]==-1);
@@ -255,6 +260,7 @@ struct CoreActions {
                 }
             }
             if(row_supply!=(1u<<nf)-1||pair_supply!=(1u<<ne)-1)return;
+            if(prune_closed_row_pools&&!pool_can_escape(next))return;
             if(!left){unsigned levels=0;for(int value:e)levels|=1u<<(value-1);
                 if(levels==(1u<<pair_cap)-1)++survivors;return;}
             int variable=order[ne-left];
@@ -338,11 +344,22 @@ struct CoreActions {
         cout<<"PASS four_row_actions jobs="<<jobs.size()<<" maps_with_domain_multiplicity="
             <<accumulate(counts.begin(),counts.end(),uint64_t(0))<<" signatures="<<reference.size()<<endl;
     }
+    bool pool_can_escape(const vector<int>&pool)const{
+        vector<unsigned>reach(n+1);for(int x=0;x<=n;++x)reach[x]=1u<<x;
+        for(int id:pool)for(int x=0;x<n;++x)reach[x]|=state_arrows[id][x];
+        for(int via=0;via<n;++via)for(int x=0;x<n;++x)if(reach[x]>>via&1)reach[x]|=reach[via];
+        for(int x=0;x<n;++x)if(!(reach[x]>>n&1))return false;return true;
+    }
     void layers(int level,unsigned remain,const vector<int>& pool){
         ++layer_nodes;
         if(level+__builtin_popcount(remain)-1<exit_target)return;
         for(unsigned chosen=remain;chosen;chosen=(chosen-1)&remain){
             unsigned future=remain^chosen;
+            // In an SC synchronizing automaton, surviving j steps in a proper
+            // row space of rank r leaves rank at most r-j. See the paper's
+            // descending safe-row-space lemma. Enable only with full rank<n
+            // in the actual automaton (including its common states).
+            if(descending_rank_bound&&future&&ranks[future]>int(ranks.back())-level)continue;
             if(level<exit_target&&ranks[future]<exit_target-level)continue;
             for(unsigned bits=chosen;bits;bits&=bits-1)distance[__builtin_ctz(bits)]=level;
             vector<int>next;unsigned supplied=0;
@@ -355,10 +372,12 @@ struct CoreActions {
                     (a.subset[i]==nf||distance[a.subset[i]]))supplied|=1u<<i;
             }
             if(supplied==(((1u<<nf)-1)^future)){
-                if(future)layers(level+1,future,next);
+                if(prune_closed_row_pools&&!pool_can_escape(next)){++closed_row_pools;}
+                else if(future)layers(level+1,future,next);
                 else{
                     ++row_vectors;
                     PairDomains pairs(ne,pair_cap,actions,distance);
+                    if(prune_closed_row_pools)pairs.pool_allowed=[&](const vector<int>&pool){return pool_can_escape(pool);};
                     pairs.on_solution=[&](const vector<unsigned>&,const vector<int>&pool){
                         vector<unsigned> reach(n+1);for(int x=0;x<=n;++x)reach[x]=1u<<x;
                         int count=n+int(quotient_connectivity);
@@ -372,6 +391,7 @@ struct CoreActions {
                     };
                     pairs.search(vector<unsigned>(ne,(1u<<pair_cap)-1),next);
                     pair_nodes+=pairs.nodes;joint_vectors+=pairs.survivors;
+                    closed_pair_pools+=pairs.rejected_pools;
                     assert(independent_pairs(next)==pairs.survivors);
                 }
             }
@@ -379,7 +399,7 @@ struct CoreActions {
         }
     }
     void solve(int cap=7){
-        pair_cap=cap;layer_nodes=row_vectors=pair_nodes=joint_vectors=connected_vectors=0;
+        pair_cap=cap;layer_nodes=row_vectors=pair_nodes=joint_vectors=connected_vectors=closed_row_pools=closed_pair_pools=pair_sat_calls=0;
         ranks.resize(1u<<nf);
         for(unsigned mask=0;mask<(1u<<nf);++mask){vector<unsigned>selected;
             for(unsigned bits=mask;bits;bits&=bits-1)selected.push_back(family[__builtin_ctz(bits)]);
@@ -388,7 +408,7 @@ struct CoreActions {
         distance.resize(nf+1);vector<int>pool(actions.size());iota(pool.begin(),pool.end(),0);
         layers(1,(1u<<nf)-1,pool);
         cout<<"COMPLETE distances cap="<<pair_cap<<" layer_nodes="<<layer_nodes<<" row_vectors="<<row_vectors
-            <<" pair_nodes="<<pair_nodes<<" joint_vectors="<<joint_vectors<<" connected_vectors="<<connected_vectors<<endl;
+            <<" pair_nodes="<<pair_nodes<<" joint_vectors="<<joint_vectors<<" connected_vectors="<<connected_vectors<<" closed_row_pools="<<closed_row_pools<<" closed_pair_pools="<<closed_pair_pools<<" early_core_exit="<<prune_closed_row_pools<<" pair_sat_calls="<<pair_sat_calls<<endl;
     }
 
 };
