@@ -48,6 +48,21 @@ It checks all maps on four through six states for the four-cycle preimage
 closure used in the sparse-pair entrance theorem, including a six-edge
 negative control. The theorem for arbitrary state counts is proved on paper.
 
+The global codimension-four compression bound thirteen uses a separate complete
+P9 core domain. This reconstructs all 45 cores, checks two full action generators,
+and tests the shared subset/pair distances; the eight-state positive control is
+included. The codimension-five bound twenty follows by the cover-transfer lemma.
+
+```sh
+python3 run.py script scripts/problem4/compression_fourteen_cores.cpp 4 --actions --control
+python3 run.py script scripts/problem4/check_short_pair_core_bounds.py
+```
+
+Without `--actions`, the first program only classifies graph cores; `--control`
+additionally compares the complete generators. `--emit` prints the graph edges.
+The name refers to the excluded compression length fourteen. A nonzero joint
+distance vector is a necessary relaxation, not a constructed automaton.
+
 ```sh
 python3 run.py script scripts/problem4/check_rank_descent.py
 python3 run.py script scripts/problem4/check_odd_core_target.py

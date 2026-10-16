@@ -20,8 +20,10 @@ struct CoreActions {
     uint64_t layer_nodes=0,row_vectors=0,pair_nodes=0,joint_vectors=0;
     vector<int> distance;
     vector<unsigned char> ranks;
-    explicit CoreActions(Graph g,int holes=5):graph(g),n(g.n),m(holes),required_rank(2*m-3),exit_target(2*m-2),edge_id(n,vector<int>(n,-2)){
-        assert(qualifies(g,m,4*m-7,&family));nf=family.size();assert(nf<=14);
+    explicit CoreActions(Graph g,int holes=5,vector<unsigned> supplied_family={},int required=0,int exit=0):graph(g),n(g.n),m(holes),required_rank(required?required:2*m-3),exit_target(exit?exit:2*m-2),edge_id(n,vector<int>(n,-2)){
+        if(supplied_family.empty()){assert(qualifies(g,m,4*m-7,&family));}
+        else family=move(supplied_family);
+        nf=family.size();assert(nf<=14);
         for(int x=0;x<n;++x){edge_id[x][x]=-1;
             for(int y=x+1;y<n;++y)if(g.edge(x,y)){
                 edge_id[x][y]=edge_id[y][x]=edges.size();edges.push_back({x,y});}}
@@ -187,6 +189,8 @@ struct CoreActions {
     uint64_t independent_pairs(const vector<int>& initial_pool)const{
         vector<int>e(ne);uint64_t survivors=0;
         function<void(int,const vector<int>&)>visit=[&](int left,const vector<int>&pool){
+            unsigned present=0;for(int value:e)if(value)present|=1u<<(value-1);
+            if(pair_cap-__builtin_popcount(present)>left)return;
             vector<int>next;unsigned row_supply=0,pair_supply=0;
             for(int id:pool){const auto&a=actions[id];bool allowed=true;
                 for(int x=0;x<ne;++x){int y=a.pair[x];
@@ -205,6 +209,83 @@ struct CoreActions {
                 if(levels==(1u<<pair_cap)-1)++survivors;return;}
             for(int value=pair_cap;value>=1;--value){e[left-1]=value;visit(left-1,next);}e[left-1]=0;
         };visit(ne,initial_pool);return survivors;
+    }
+    // Independent complete generator for the rank-four domains used by the
+    // fourteen-step investigation: choose four independent source rows and
+    // their target rows, then assign individual inputs by four-bit columns.
+    void four_row_control(int threads,int crossing_cap){
+        assert(required_rank==4 && nf<=7);
+        struct Job{unsigned sources;int targets;};vector<Job>jobs;
+        int codes=nf*nf*nf*nf;
+        for(unsigned mask=0;mask<(1u<<nf);++mask)
+            if(__builtin_popcount(mask)==4 && large_rank[mask])
+                for(int code=0;code<codes;++code)jobs.push_back({mask,code});
+        atomic<size_t>next{0};vector<map<Action,vector<unsigned>>>found(threads);
+        vector<uint64_t>counts(threads);vector<thread>workers;
+        for(int worker=0;worker<threads;++worker)workers.emplace_back([&,worker]{
+            for(size_t ji;(ji=next.fetch_add(1))<jobs.size();){
+                auto job=jobs[ji];vector<unsigned>src(n),dst(n);int bit=0,code=job.targets;
+                for(unsigned rows=job.sources;rows;rows&=rows-1,++bit){
+                    unsigned source=family[__builtin_ctz(rows)],target=family[code%nf];code/=nf;
+                    for(int x=0;x<n;++x){if(source>>x&1)src[x]|=1u<<bit;
+                        if(target>>x&1)dst[x]|=1u<<bit;}
+                }
+                unsigned common=0;for(int x=0;x<n;++x)if(dst[x]==15)common|=1u<<x;
+                for(unsigned incoming=common;;incoming=(incoming-1)&common){
+                    int crossing=__builtin_popcount(incoming);
+                    if(crossing<=crossing_cap){
+                        vector<int>f(n+crossing,-1);vector<unsigned>filled(n+crossing),target=dst;
+                        target.resize(n+crossing,15);int auxiliary=0;
+                        for(unsigned bits=incoming;bits;bits&=bits-1){int x=__builtin_ctz(bits);
+                            f[n+auxiliary++]=x;filled[x]=15;}
+                        function<void(int,unsigned,int,int)>assign=[&](int x,unsigned used,int named,int defect){
+                            if(x==n){
+                                if(filled!=target || named!=crossing)return;
+                                ++counts[worker];Action action;unsigned domain=0;
+                                unsigned outside=((1u<<crossing)-1)<<n;
+                                for(unsigned row:family){unsigned image=0;
+                                    for(unsigned bits=row|outside;bits;bits&=bits-1)
+                                        image|=1u<<f[__builtin_ctz(bits)];
+                                    int to=nf;
+                                    if((image&outside)==outside)
+                                        to=find(family.begin(),family.end(),image&((1u<<n)-1))-family.begin();
+                                    if(to<nf)domain|=1u<<action.subset.size();action.subset.push_back(to);
+                                }
+                                assert(large_rank[domain]);
+                                for(auto[a,b]:edges)action.pair.push_back(pair_target(f[a],f[b]));
+                                for(int a=0;a<n+crossing;++a)for(int b=a+1;b<n+crossing;++b)
+                                    if(pair_target(a,b)==-2){int to=pair_target(f[a],f[b]);assert(to!=-1);
+                                        if(to>=0)action.forced|=1u<<to;}
+                                auto&arrows=found[worker][action];arrows.resize(n);
+                                for(int a=0;a<n;++a)arrows[a]|=1u<<min(n,f[a]);return;
+                            }
+                            for(int y=0;y<n+crossing;++y){
+                                if(y<n && (incoming>>y&1))continue;
+                                if(y>=n && y>n+named)continue;
+                                if((src[x]&~target[y]) || (src[x]&filled[y]))continue;
+                                bool repeated=used>>y&1;
+                                if(defect+repeated>defect_cap)continue;
+                                bool clique=true;
+                                for(int a=0;a<x;++a)if(f[a]==y && !graph.edge(a,x))clique=false;
+                                if(!clique)continue;
+                                unsigned old=filled[y];filled[y]|=src[x];f[x]=y;
+                                assign(x+1,used|(1u<<y),named+(y==n+named),defect+repeated);
+                                f[x]=-1;filled[y]=old;
+                            }
+                        };assign(0,incoming,0,0);
+                    }
+                    if(!incoming)break;
+                }
+            }
+        });for(auto&w:workers)w.join();
+        map<Action,vector<unsigned>>reference;
+        for(auto&part:found)for(auto&[action,arrows]:part){auto&total=reference[action];total.resize(n);
+            for(int x=0;x<n;++x)total[x]|=arrows[x];}
+        assert(reference.size()==actions.size());int index=0;
+        for(auto&[action,arrows]:reference){assert(!(action<actions[index])&&!(actions[index]<action));
+            assert(arrows==state_arrows[index]);++index;}
+        cout<<"PASS four_row_actions jobs="<<jobs.size()<<" maps_with_domain_multiplicity="
+            <<accumulate(counts.begin(),counts.end(),uint64_t(0))<<" signatures="<<reference.size()<<endl;
     }
     void layers(int level,unsigned remain,const vector<int>& pool){
         ++layer_nodes;
@@ -237,7 +318,6 @@ struct CoreActions {
                     pairs.search(vector<unsigned>(ne,(1u<<pair_cap)-1),next);
                     pair_nodes+=pairs.nodes;joint_vectors+=pairs.survivors;
                     assert(independent_pairs(next)==pairs.survivors);
-
                 }
             }
             for(unsigned bits=chosen;bits;bits&=bits-1)distance[__builtin_ctz(bits)]=0;

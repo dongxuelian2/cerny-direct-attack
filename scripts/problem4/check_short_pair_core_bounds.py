@@ -43,6 +43,50 @@ def shortest(rows, source, predicate):
     return None
 
 
+def spectrum_control(rows, distances):
+    """All subsets at codimensions 3 and 4, with literal BFS at n<=8."""
+    n = len(rows[0])
+    spectrum = {}
+    checked = 0
+    for holes in (3, 4):
+        if n-holes < 2:
+            continue
+        values = []
+        for subset in combinations(range(n), n-holes):
+            value = min(distances[pair] for pair in combinations(subset, 2))
+            values.append(value)
+            checked += 1
+            if n <= 8:
+                word = shortest(rows, subset, lambda target: len(target) < len(subset))
+                assert len(word) == value
+        spectrum[holes] = max(values)
+        for h in (max(values)-1, max(values)):
+            edges = [set(pair) for pair, value in distances.items() if value <= h]
+            has_cover = any(all(set(cover) & edge for edge in edges)
+                            for cover in combinations(range(n), holes))
+            assert has_cover == (h < max(values))
+    if n >= 8:
+        assert spectrum[4] <= 14
+        bound = 8 if spectrum[3] == 2 else spectrum[3]+5
+        assert spectrum[4] <= bound
+    return spectrum, checked
+
+
+def even_cycle_spectrum_controls():
+    checked = 0
+    for n in (6, 8, 10):
+        rows = [tuple((x+1) % n for x in range(n)), tuple(range(n-1))+(0,)]
+        distances = {pair: pair_distance(rows, pair)[0]
+                     for pair in combinations(range(n), 2)}
+        spectrum, count = spectrum_control(rows, distances)
+        checked += count
+        if n == 6:
+            assert distances[0, 3] == spectrum[4] == 15
+        print(f'PASS compression spectrum: Cerny n={n}, {spectrum}')
+    print(f'PASS {checked} subsets and both sides of each cover threshold; '
+          'n=6 negative control for unrestricted compression bound 14')
+
+
 def cerny_controls():
     pairs_checked = families_checked = 0
     for n in range(5, 16, 2):
@@ -128,6 +172,9 @@ def early_layer_counterexample():
     reset = shortest(rows, range(n), lambda target: len(target) == 1)
     assert len(compression) == 8 and reset is not None
     assert min(distances[pair] for pair in combinations(sorted(subset), 2)) == 8
+    spectrum, checked = spectrum_control(rows, distances)
+    assert spectrum == {3: 2, 4: 8}
+    print(f'PASS adjacent-codimension exception: C3=2, C4=8; {checked} subsets')
     print(f'PASS h=2 counterexample: n=8, m=4, tau(P2)=4, c(S)=8; reaching=aaa; compression={compression}; reset={reset}')
     for x in range(n):
         print('distance row', x, [distances[x, y] for y in range(x + 1, n)])
@@ -138,4 +185,5 @@ def early_layer_counterexample():
 
 if __name__ == '__main__':
     cerny_controls()
+    even_cycle_spectrum_controls()
     early_layer_counterexample()
