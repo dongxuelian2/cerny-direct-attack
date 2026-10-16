@@ -59,6 +59,26 @@ vector<unsigned> domain_key(const vector<unsigned>&rows,int n,int z,int common,c
 }
 
 struct DomainCounts {uint64_t candidates=0,closed=0,orbits=0;int max_rows=0,max_labels=0;};
+bool literal_common_closure(const Graph&g,const LowFamily&family,const vector<unsigned>&rows,int z,int copies) {
+    int base=g.n+z,total=base+copies;assert(copies>=1 && total<24);
+    unsigned common=((1u<<copies)-1)<<base,isolates=((1u<<z)-1)<<g.n;
+    vector<unsigned>lift=rows;for(unsigned&row:lift)row|=common;
+    vector<unsigned>forbidden;
+    for(int x=0;x<total;++x)for(int y=x+1;y<total;++y) {
+        unsigned pair=(1u<<x)|(1u<<y);bool occurs=false;
+        for(unsigned row:lift)if((row&pair)==pair)occurs=true;
+        if(!occurs)forbidden.push_back(pair);
+    }
+    auto independent=[&](unsigned row){for(unsigned pair:forbidden)if((row&pair)==pair)return false;return true;};
+    for(unsigned maximum:family.maximum)if(independent(maximum|isolates|common))return false;
+    vector<unsigned>targets;
+    for(unsigned row:family.maximal_small)targets.push_back(row|isolates|common);
+    for(unsigned row:family.extendable)targets.push_back(row|isolates|common);
+    for(unsigned maximum:family.maximum)for(int hole=g.n;hole<total;++hole)
+        targets.push_back(maximum|((isolates|common)^(1u<<hole)));
+    for(unsigned row:targets)if(independent(row) && find(lift.begin(),lift.end(),row)==lift.end())return false;
+    return true;
+}
 void literal_domain_control(const Graph&g,const LowFamily&family,const vector<vector<int>>&autos,
                             const set<vector<unsigned>>&expected) {
     set<vector<unsigned>>found;uint64_t choices=0;
@@ -164,6 +184,8 @@ DomainCounts domains(const Graph&g,const LowFamily&family,bool control,vector<ve
                     for(unsigned maximum:family.maximum)for(int hole=g.n;hole<total;++hole)
                         test.push_back(maximum|((isolates|extra)^(1u<<hole)));
                     for(unsigned row:test)if(possible(row) && find(lift.begin(),lift.end(),row)==lift.end())closed=false;
+                    if(control && common)for(int copies=1;copies<=3;++copies)
+                        assert(closed==literal_common_closure(g,family,rows,z,copies));
                     if(!closed)continue;
                     ++result.closed;result.max_rows=max(result.max_rows,size);result.max_labels=max(result.max_labels,z);
                     unique.insert(domain_key(rows,g.n,z,common,autos));
@@ -204,11 +226,15 @@ DomainCounts later_domains(const Graph&g,const LowFamily&family,bool control,vec
                 if((row&~(1u<<x))&~cooccur[x])return false;}
             return true;
         };
-        for(unsigned maximum:family.maximum)if(possible(maximum|iso|extra))return;
+        bool closed=true;
+        for(unsigned maximum:family.maximum)if(possible(maximum|iso|extra))closed=false;
         vector<unsigned>test;for(unsigned core:regular)test.push_back(core|iso|extra);
         for(unsigned maximum:family.maximum)for(int hole=g.n;hole<=base;++hole)
             test.push_back(maximum|((iso|extra)^(1u<<hole)));
-        for(unsigned row:test)if(possible(row) && find(lift.begin(),lift.end(),row)==lift.end())return;
+        for(unsigned row:test)if(possible(row) && find(lift.begin(),lift.end(),row)==lift.end())closed=false;
+        if(control)for(int copies=1;copies<=3;++copies)
+            assert(closed==literal_common_closure(g,family,rows,z,copies));
+        if(!closed)return;
         if(count){++result.closed;result.max_rows=max(result.max_rows,int(rows.size()));result.max_labels=max(result.max_labels,z);}
         out.insert(domain_key(rows,g.n,z,1,autos));
     };
