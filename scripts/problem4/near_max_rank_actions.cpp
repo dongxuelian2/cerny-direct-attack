@@ -16,7 +16,8 @@ struct CoreActions {
     vector<Action> actions;
     vector<vector<unsigned>> state_arrows;
     uint64_t connected_vectors=0;
-    bool quotient_connectivity=false;
+    bool quotient_connectivity=false,ordered_pair_control=false;
+    function<bool(const vector<int>&)> map_filter;
     uint64_t nodes=0,maps=0,retained=0;
     uint64_t layer_nodes=0,row_vectors=0,pair_nodes=0,joint_vectors=0;
     vector<int> distance;
@@ -78,6 +79,7 @@ struct CoreActions {
                     ++node_counts[worker];
                     if(at==int(kernel.size())){
                         if(named_aux!=crossing)return;++map_counts[worker];
+                        if(map_filter && !map_filter(f))return;
                         Action action;unsigned domain=0,isolates=((1u<<crossing)-1)<<n;
                         for(int i=0;i<nf;++i){
                             unsigned image=0,source=family[i]|isolates;
@@ -91,7 +93,7 @@ struct CoreActions {
                             assert(candidates[i]==(target<nf?(1u<<target):0));
                         }
                         assert(large_rank[domain]);++kept_counts[worker];
-                        if(m==5){
+                        if(m==5 && required_rank>=7){
                             int defect=n-int(kernel.size());assert(defect<=2);
                             if(defect==2){unsigned used_core=0;for(int y:f)if(y<n)used_core|=1u<<y;
                                 int cycle_vertices=0;
@@ -137,6 +139,50 @@ struct CoreActions {
         cout<<"COMPLETE actions n="<<n<<" family="<<nf<<" partitions="<<partitions.size()
             <<" jobs="<<jobs.size()<<" nodes="<<nodes<<" retained_maps="<<retained
             <<" signatures="<<actions.size()<<endl;
+    }
+
+    // Independent input-by-input generation: no kernel partition enumeration.
+    // Each preserved source row accumulates its actual partial image. A future
+    // input may still share a core output, so absent memberships are not fixed
+    // until completion. Shared rank and map filters are separately justified.
+    void direct_input_control(int threads,int crossing_cap){
+        vector<unsigned>jobs;for(unsigned in=0;in<(1u<<n);++in)if(__builtin_popcount(in)<=crossing_cap)jobs.push_back(in);
+        vector<unsigned>containing(n);for(int x=0;x<n;++x)for(int i=0;i<nf;++i)if(family[i]>>x&1)containing[x]|=1u<<i;
+        vector<int>order(n);iota(order.begin(),order.end(),0);stable_sort(order.begin(),order.end(),[&](int x,int y){int a=__builtin_popcount(containing[x]),b=__builtin_popcount(containing[y]);return min(a,nf-a)>min(b,nf-b);});
+        vector<map<Action,vector<unsigned>>>found(threads);vector<uint64_t>counts(threads),visited(threads);atomic<size_t>next{0};vector<thread>workers;
+        for(int worker=0;worker<threads;++worker)workers.emplace_back([&,worker]{
+            for(size_t ji;(ji=next.fetch_add(1))<jobs.size();){unsigned incoming=jobs[ji];int k=__builtin_popcount(incoming),total=n+k;
+                unsigned aux=((1u<<k)-1)<<n,allowed=(1u<<nf)-1;
+                for(unsigned bits=incoming;bits;bits&=bits-1)allowed&=containing[__builtin_ctz(bits)];if(!allowed)continue;
+                vector<int>f(total,-1);int ai=0;for(unsigned bits=incoming;bits;bits&=bits-1)f[n+ai++]=__builtin_ctz(bits);
+                function<void(int,unsigned,int,int,const vector<unsigned>&,const vector<unsigned>&)>assign;
+                assign=[&](int at,unsigned used,int named,int defect,const vector<unsigned>&images,const vector<unsigned>&candidates){
+                    ++visited[worker];if(n-at<k-named)return;
+                    if(at==n){if(named!=k || (map_filter&&!map_filter(f)))return;++counts[worker];
+                        Action action;unsigned domain=0;
+                        for(int i=0;i<nf;++i){unsigned actual=0;for(unsigned bits=family[i]|aux;bits;bits&=bits-1)actual|=1u<<f[__builtin_ctz(bits)];
+                            int target=nf;if((actual&aux)==aux)target=find(family.begin(),family.end(),actual&((1u<<n)-1))-family.begin();
+                            assert(candidates[i]==(target<nf?1u<<target:0));action.subset.push_back(target);if(target<nf)domain|=1u<<i;}
+                        assert(large_rank[domain]);for(auto[x,y]:edges)action.pair.push_back(pair_target(f[x],f[y]));
+                        for(int x=0;x<total;++x)for(int y=x+1;y<total;++y)if(pair_target(x,y)==-2){int target=pair_target(f[x],f[y]);assert(target!=-1);if(target>=0)action.forced|=1u<<target;}
+                        auto&arrows=found[worker][action];arrows.resize(n);for(int x=0;x<n;++x)arrows[x]|=1u<<min(n,f[x]);return;
+                    }
+                    int x=order[at];for(int y=0;y<total;++y){if((incoming>>y&1) || (y>=n && y>n+named))continue;
+                        bool repeated=used>>y&1;if(defect+repeated>defect_cap)continue;bool clique=true;
+                        for(int before=0;before<at;++before){int z=order[before];if(f[z]==y&&!graph.edge(x,z))clique=false;}if(!clique)continue;
+                        vector<unsigned>next_images=images,next_candidates=candidates;unsigned domain=0;
+                        for(int i=0;i<nf;++i){if(family[i]>>x&1){if(images[i]>>y&1)next_candidates[i]=0;
+                                next_images[i]|=1u<<y;if(y<n)next_candidates[i]&=containing[y];}
+                            if(next_candidates[i])domain|=1u<<i;}
+                        if(!large_rank[domain])continue;f[x]=y;
+                        assign(at+1,used|(1u<<y),named+(y==n+named),defect+repeated,next_images,next_candidates);f[x]=-1;
+                    }
+                };assign(0,incoming,0,0,vector<unsigned>(nf,incoming),vector<unsigned>(nf,allowed));
+            }
+        });for(auto&w:workers)w.join();
+        map<Action,vector<unsigned>>reference;for(auto&part:found)for(auto&[action,arrows]:part){auto&dest=reference[action];dest.resize(n);for(int x=0;x<n;++x)dest[x]|=arrows[x];}
+        assert(reference.size()==actions.size());int index=0;for(auto&[action,arrows]:reference){assert(!(action<actions[index])&&!(actions[index]<action));assert(arrows==state_arrows[index]);++index;}
+        cout<<"PASS direct_input_actions crossing_cap="<<crossing_cap<<" nodes="<<accumulate(visited.begin(),visited.end(),uint64_t(0))<<" maps="<<accumulate(counts.begin(),counts.end(),uint64_t(0))<<" signatures="<<reference.size()<<endl;
     }
 
     // Independent forward-map cover: no column domains or incremental row-rank pruning.
@@ -188,7 +234,10 @@ struct CoreActions {
             <<" signatures="<<reference.size()<<endl;
     }
     uint64_t independent_pairs(const vector<int>& initial_pool)const{
-        vector<int>e(ne);uint64_t survivors=0;
+        vector<int>e(ne),order(ne);iota(order.rbegin(),order.rend(),0);uint64_t survivors=0;
+        if(ordered_pair_control){vector<uint64_t>weight(ne);
+            for(int id:initial_pool)for(int x=0;x<ne;++x)weight[x]+=bool(actions[id].forced>>x&1)+(actions[id].pair[x]==-1);
+            stable_sort(order.begin(),order.end(),[&](int x,int y){return weight[x]>weight[y];});}
         function<void(int,const vector<int>&)>visit=[&](int left,const vector<int>&pool){
             unsigned present=0;for(int value:e)if(value)present|=1u<<(value-1);
             if(pair_cap-__builtin_popcount(present)>left)return;
@@ -208,7 +257,8 @@ struct CoreActions {
             if(row_supply!=(1u<<nf)-1||pair_supply!=(1u<<ne)-1)return;
             if(!left){unsigned levels=0;for(int value:e)levels|=1u<<(value-1);
                 if(levels==(1u<<pair_cap)-1)++survivors;return;}
-            for(int value=pair_cap;value>=1;--value){e[left-1]=value;visit(left-1,next);}e[left-1]=0;
+            int variable=order[ne-left];
+            for(int value=pair_cap;value>=1;--value){e[variable]=value;visit(left-1,next);}e[variable]=0;
         };visit(ne,initial_pool);return survivors;
     }
     // Independent complete generator for the rank-four domains used by the

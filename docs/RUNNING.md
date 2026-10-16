@@ -147,6 +147,34 @@ isolates and keeps both actual letters and six compatible distance vectors.
 The accompanying square countercontrol is rejected. See
 [the identity and quotient proofs](../PROOF.md#problem4-twelve-actual-two-step).
 
+For the codimension-five eighteen-step candidate classification,
+`rank_core_graph6.cpp` consumes a graph6 stream. Use a separately built
+[nauty/Traces geng](https://users.cecs.anu.edu.au/~bdm/nauty/) (the checked version
+was 2.9.3); keep downloaded sources and binaries under ignored `build/`.
+Set `NAUTY_GENG` to its executable path. No graph inventory is required.
+
+```sh
+set -o pipefail
+for n in 7 8 9; do "$NAUTY_GENG" -q -d1 -D5 "$n" || exit; done |
+  python3 run.py script scripts/problem4/rank_core_graph6.cpp 5 7 11
+for n in 6 7; do "$NAUTY_GENG" -q -d1 -D4 "$n" || exit; done |
+  python3 run.py script scripts/problem4/rank_core_graph6.cpp 4 6 0 --control-m4
+```
+
+The first command classifies 257 cores, without assuming an upper edge count.
+The second compares the smaller full stream with the existing nine-core
+classification. Append `--actions 0 257 4` after `5 7 11` to check every core's
+joint distances. Append `--letter-control` after those interval arguments for
+the independent complete input-by-input letter/arrow comparison; append
+`--power-control` instead for literal output-identity controls on every map
+with at most two crossing isolates. Both control modes skip distances, and the
+terminal summary distinguishes the checked components. These three runs, the
+complete graph stream, and the paper reduction establish the
+[codimension-five bound seventeen](../PROOF.md#problem4-five-global-seventeen).
+Smaller `START COUNT THREADS` intervals are explicitly partial. The power
+filter tracks missing named states only while the whole common-isolate set is
+retained; it does not compose independently renamed individual-subset images.
+
 The bounded-word reverse-frame control independently compares literal forward
 images with shared-identity predecessor data. It checks the alphabet-selection
 lemma, pair and row distances, quotient connectivity, and both positive and
