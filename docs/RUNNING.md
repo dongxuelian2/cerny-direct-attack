@@ -231,6 +231,31 @@ automaton. Compile once before launching parallel runs of the same source to
 avoid concurrent writes to its executable; an observed compilation failure is
 not a mathematical result.
 
+The single-exit construction family permits arbitrary within-block collisions,
+but fixes both cycles and almost all common-state actions. It is a restricted
+lower-bound search, not an automaton upper bound:
+
+```sh
+python3 run.py script scripts/problem4/check_proper_transversal_constructions.py
+python3 run.py script scripts/problem4/proper_transversal_constructions.cpp 4 7 15 4
+```
+
+Arguments are matching-pair count, common-cycle length, target, and threads.
+Printed compression maxima include all declared initial transversals; only
+threshold survivors undergo the additional marked-subset reachability check.
+
+The cover-four branch at layer ten has a separate complete **static** generator:
+
+```sh
+python3 run.py script scripts/problem4/low_cover_five_cores.cpp --control
+python3 run.py script scripts/problem4/low_cover_five_cores.cpp 5 11 4
+```
+
+It enumerates nonempty neighborhood multisets on a fixed four-vertex cover,
+then canonicalizes accepted graphs. The paper excludes twelve-vertex support
+before this run. Its 4224 classes and the bounds on later maximum families do
+not establish a dynamic exclusion or a fifteen-step global upper bound.
+
 The bounded-word reverse-frame control independently compares literal forward
 images with shared-identity predecessor data. It checks the alphabet-selection
 lemma, pair and row distances, quotient connectivity, and both positive and
