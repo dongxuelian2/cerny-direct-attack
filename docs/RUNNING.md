@@ -111,7 +111,8 @@ cover-three cores. The first command completely excludes the former for
 branch, comparing two complete family generators. Its closure predicate is
 shared by those generators. The action command checks a safe single-step
 relaxation of the actual two-step requirements; a surviving vector is not an
-automaton. The full low-cover exclusion has not yet been established.
+automaton. The full domain has now been excluded using quotient connectivity
+and same-letter squares where needed; see the [exact codimension-four theorem](../PROOF.md#problem4-four-exact-eleven).
 
 ```sh
 python3 run.py script scripts/problem4/compression_fourteen_cores.cpp 4 --layer 7 --actions --control
@@ -122,7 +123,7 @@ python3 run.py script scripts/problem4/low_cover_actions.cpp 0 10142 4 --layer 7
 The low-cover programs default to layer eight. `--stop-on-survivor` can be
 added to the action command to stop at the first compatible vector and print
 `PARTIAL`; it never constitutes a complete negative result. The layer-seven
-domains assume `n>=12` and a nonempty common-isolate set, as justified in
+domains assume `n>=11` and a nonempty common-isolate set, as justified in
 [the reduction](../PROOF.md#problem4-twelve-finite-domains).
 
 `--quotient` also records arrows from common isolates into named states and

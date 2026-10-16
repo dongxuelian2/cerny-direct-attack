@@ -1,8 +1,7 @@
 # Černý 猜想与同步自动机研究
 
 本项目研究同步自动机的重置字、像扩张，以及 avoid-or-compress 问题。
-**一般 Černý 猜想尚未解决；现有计算辅助十三状态结论经保护块收缩推广，得到对所有 `r≥1` 的 `F_bin(r+12,r+8,r) = F(r+12,r+8,r) = 11`。**
-整条 `m=4,q=13` 边界也已通过完整有限域排除确定为 `F_bin(r+13,r+9,r) = F(r+13,r+9,r) = 11`。余维四全参数上界现为 `min(q,12)`，`q≥14` 仍在 `[11,12]`；余维五上界为 `min(q,19)`，其中 `q=15` 仍在 `[14,15]`。完整 Problem 4 尚未解决。
+**一般 Černý 猜想与完整 Problem 4 尚未解决。余维四全部参数现已确定：`F_bin(n,n−4,r) = F(n,n−4,r) = min(n−r,11)`。** 上界为纸面归约加完整有限域排除的计算辅助证明，下界为统一二字母构造的纸面证明。余维五全参数上界进一步降为 `min(n−r,18)`；`m=5,q=15` 仍在 `[14,15]`。
 
 新的纸面推导处理全部奇圈长度，并将大余维、全部短对图形状的条件覆盖界推进一层；有限基论证还给出随余维无界增长的加性改进。它们没有给出全参数的匹配下界。
 
@@ -25,8 +24,8 @@
 - [大余维的统一覆盖加强](PROOF.md#problem4-large-codimension-cover-improvement)：同步、`n≥2m,m≥13` 时，`τ(P_h)≥m` 迫使 `c(S)≤h+2m−3`；覆盖全部图形，且已证明不必要求强连通。
 - [覆盖界的无界加性改进](PROOF.md#problem4-unbounded-cover-deficit)：任意固定 `a`，充分大的 `m` 都满足上述条件界 `c(S)≤h+2m−a−1`；依赖已有 α-critical 有限基定理，[共同像核心退出界](PROOF.md#problem4-common-image-core-escape)将一般阈值定量为极粗的三层指数塔。
 - [余维四的较早覆盖层](PROOF.md#problem4-four-cover-third-layer)：强连通同步、`n≥8,h≥3` 时，`τ(P_h)≥4` 迫使 `c(S)≤h+5`；计算辅助证明。`h=2` 的延伸被一个八状态强连通同步实例否定。
-- [余维四全域十二步上界](PROOF.md#problem4-four-global-twelve)：十三步候选先缩到 P8 覆盖数三、至多八点核心，再以共同安全族和持续遗漏孤点界归约成 1988 个有限域；全部实际字母与共同距离检查排除这些域，并推出余维五十九步上界。两者均为计算辅助结果，尚无匹配下界。
-- [十二步候选的进一步归约](PROOF.md#problem4-twelve-finite-domains)：四点覆盖的 91 类图已排除；三点覆盖的 117 类图缩为 10142 个命名域，双向商图及保留身份的两步检查仍在推进，尚未得到全域十一。
+- [余维四全参数精确值](PROOF.md#problem4-four-exact-eleven)：七层四点覆盖的 91 类核心及三点覆盖的 10142 个命名域全部排除；`n≥11` 的任意余维四集合均在十一字母内压缩。结合二字母下界得到全参数精确式，并推出余维五十八步上界。
+- [实际短词的有限归约](PROOF.md#problem4-twelve-finite-domains)与[动态必要条件](PROOF.md#problem4-twelve-actual-two-step)：保留持续遗漏孤点的身份，使用双向商图及同字母平方；一般多步共同实现仍待解决。
 - [任意余维的多缺口归约](PROOF.md#problem4-multiple-hole-finite-reduction)：利用经典最大独立集交并不等式，将后层全部遗漏状态限制在至多 2m 个；结合前层支持界得到与 n 无关的必要单步域。实际短词的共同实现仍待解决。
 - [短词的持续遗漏孤点界](PROOF.md#problem4-short-word-persistent-holes)：纸面证明适用于相邻压缩谱相差多层的情形。所用支持不等式引用 Gitler–Valencia，未作为新图论定理。
 - [余维五的全部覆盖层](PROOF.md#problem4-five-cover-late-layers)：强连通同步、`n≥10,h≥1` 时，`τ(P_h)≥5` 迫使 `c(S)≤h+7`；[四类核心归约](PROOF.md#problem4-next-to-maximal-rank-cores)加全部二十七核心检查。`m=5,q=15` 仍为 `[14,15]`。

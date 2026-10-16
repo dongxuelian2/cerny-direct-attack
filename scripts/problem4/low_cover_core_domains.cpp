@@ -198,7 +198,7 @@ DomainCounts domains(const Graph&g,const LowFamily&family,bool control,vector<ve
 }
 
 // For c(S)>=12 use P7 as the base graph and the P9 maximum-set family.
-// The actual n is at least 12; common isolates are nonempty since N+|Z|<=11.
+// The actual n is at least 11; retained domains have N+|Z|<=10.
 DomainCounts later_domains(const Graph&g,const LowFamily&family,bool control,vector<vector<unsigned>>*saved=nullptr) {
     int m=family.maximum.size(),cap=family.maximal_small.size()+2*m;
     assert(m<=3 && cap<=7);auto autos=automorphisms(g);
@@ -235,6 +235,7 @@ DomainCounts later_domains(const Graph&g,const LowFamily&family,bool control,vec
         if(control)for(int copies=1;copies<=3;++copies)
             assert(closed==literal_common_closure(g,family,rows,z,copies));
         if(!closed)return;
+        assert(base<=10);
         if(count){++result.closed;result.max_rows=max(result.max_rows,int(rows.size()));result.max_labels=max(result.max_labels,z);}
         out.insert(domain_key(rows,g.n,z,1,autos));
     };
