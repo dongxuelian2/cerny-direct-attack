@@ -190,8 +190,33 @@ void generate_low(CoreActions& solver,int core_n,const LowFamily& family,bool co
                 vector<unsigned>choices;for(uint64_t bits=allowed;bits;bits&=bits-1)
                     choices.push_back(targets[__builtin_ctzll(bits)]);
                 vector<unsigned>selected(nf);
+                vector<vector<int>>prefix_need(nf+1,vector<int>(1u<<nf));
+                for(unsigned block:kernel) {
+                    unsigned pattern=0;
+                    for(int row=0;row<nf;++row) {
+                        if(solver.family[row]&block)pattern|=1u<<row;
+                        ++prefix_need[row+1][pattern];
+                    }
+                }
+                vector<unsigned>partial_pattern(total);
                 function<void(int)>choose=[&](int row){
-                    if(row<nf){for(unsigned target:choices){selected[row]=target;choose(row+1);}return;}
+                    if(row<nf) {
+                        for(unsigned target:choices) {
+                            selected[row]=target;
+                            for(unsigned bits=target;bits;bits&=bits-1)partial_pattern[__builtin_ctz(bits)]|=1u<<row;
+                            vector<int>available(1u<<(row+1));
+                            for(int y=0;y<total;++y)if(!(job.incoming>>y&1))++available[partial_pattern[y]];
+                            bool possible=true;
+                            for(int p=0;p<int(available.size());++p)
+                                if(prefix_need[row+1][p]>available[p] || (p && prefix_need[row+1][p]!=available[p]))possible=false;
+                            // Every nonzero partial membership column needs
+                            // exactly one distinct kernel block per output.
+                            // Zero columns may leave some outputs unused.
+                            if(possible)choose(row+1);
+                            for(unsigned bits=target;bits;bits&=bits-1)partial_pattern[__builtin_ctz(bits)]^=1u<<row;
+                        }
+                        return;
+                    }
                     vector<unsigned>destinations(kernel.size());
                     vector<int>need(1u<<nf),available(1u<<nf);
                     vector<int>out_pattern(total);
