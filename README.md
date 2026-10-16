@@ -27,6 +27,7 @@
 - [余维四全参数精确值](PROOF.md#problem4-four-exact-eleven)：七层四点覆盖的 91 类核心及三点覆盖的 10142 个命名域全部排除；`n≥11` 的任意余维四集合均在十一字母内压缩。结合二字母下界得到全参数精确式，并推出余维五十八步上界。
 - [实际短词的有限归约](PROOF.md#problem4-twelve-finite-domains)与[动态必要条件](PROOF.md#problem4-twelve-actual-two-step)：保留持续遗漏孤点的身份，使用双向商图及同字母平方；一般多步共同实现仍待解决。
 - [任意余维的多缺口归约](PROOF.md#problem4-multiple-hole-finite-reduction)：利用经典最大独立集交并不等式，将后层全部遗漏状态限制在至多 2m 个；结合前层支持界得到与 n 无关的必要单步域。实际短词的共同实现仍待解决。
+- [有限字母与共享身份短词域](PROOF.md#problem4-bounded-word-backward-frame)：选取有界字母子表，并保留短词进入核心的反向邻域，可精确检查有限长度混合词的安全性；是任意余维的必要动态归约，尚未排除余维五候选。
 - [短词的持续遗漏孤点界](PROOF.md#problem4-short-word-persistent-holes)：纸面证明适用于相邻压缩谱相差多层的情形。所用支持不等式引用 Gitler–Valencia，未作为新图论定理。
 - [余维五的全部覆盖层](PROOF.md#problem4-five-cover-late-layers)：强连通同步、`n≥10,h≥1` 时，`τ(P_h)≥5` 迫使 `c(S)≤h+7`；[四类核心归约](PROOF.md#problem4-next-to-maximal-rank-cores)加全部二十七核心检查。`m=5,q=15` 仍为 `[14,15]`。
 - [长安全区间的周期状态约束](PROOF.md#problem4-periodic-isolated-states)：`ac≥2m+2` 时，每个字母至多有 `m−1` 个非周期状态，全部落在同一个至多 `m(m+1)` 点的短对核心中。

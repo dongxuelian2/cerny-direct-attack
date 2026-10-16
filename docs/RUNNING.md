@@ -147,6 +147,16 @@ isolates and keeps both actual letters and six compatible distance vectors.
 The accompanying square countercontrol is rejected. See
 [the identity and quotient proofs](../PROOF.md#problem4-twelve-actual-two-step).
 
+The bounded-word reverse-frame control independently compares literal forward
+images with shared-identity predecessor data. It checks the alphabet-selection
+lemma, pair and row distances, quotient connectivity, and both positive and
+negative safety outcomes. This is a small implementation control for a paper
+reduction, not an enumeration of the unresolved codimension-five domain.
+
+```sh
+python3 run.py script scripts/problem4/check_backward_word_frame.cpp
+```
+
 ```sh
 python3 run.py script scripts/problem4/check_rank_descent.py
 python3 run.py script scripts/problem4/check_odd_core_target.py
