@@ -105,6 +105,47 @@ possibly omitted auxiliary output; they are never iterated as anonymous states.
 When there are no common isolates, the program does not apply a proper-core
 escape test to the whole state set. See the [full proof](../PROOF.md#problem4-four-global-twelve).
 
+For twelve-step candidates, layer seven has 91 cover-four cores and 117
+cover-three cores. The first command completely excludes the former for
+`n>=9`. The second reconstructs 10142 later maximum-set domains in the latter
+branch, comparing two complete family generators. Its closure predicate is
+shared by those generators. The action command checks a safe single-step
+relaxation of the actual two-step requirements; a surviving vector is not an
+automaton. The full low-cover exclusion has not yet been established.
+
+```sh
+python3 run.py script scripts/problem4/compression_fourteen_cores.cpp 4 --layer 7 --actions --control
+python3 run.py script scripts/problem4/low_cover_core_domains.cpp --layer 7 --domains --control
+python3 run.py script scripts/problem4/low_cover_actions.cpp 0 10142 4 --layer 7 --control --actions
+```
+
+The low-cover programs default to layer eight. `--stop-on-survivor` can be
+added to the action command to stop at the first compatible vector and print
+`PARTIAL`; it never constitutes a complete negative result. The layer-seven
+domains assume `n>=12` and a nonempty common-isolate set, as justified in
+[the reduction](../PROOF.md#problem4-twelve-finite-domains).
+
+`--quotient` also records arrows from common isolates into named states and
+requires the resulting quotient graph to be strongly connected. `--squares`
+adds the same-letter two-step condition by matching auxiliary output identities
+to inputs; it does not directly compose independently renamed representatives.
+`--square-control` additionally compares literal identity alignments on all maps
+with at most three crossing isolates, reporting their count. These two-step
+options require layer seven. `--two-step` enumerates all candidate named
+intermediate families, retaining the necessary constraints for different
+letters; it can multiply the work and still omits some auxiliary-hole
+compatibility conditions.
+
+```sh
+python3 run.py script scripts/problem4/low_cover_actions.cpp --positive-quotient
+python3 run.py script scripts/problem4/low_cover_actions.cpp 0 10142 4 --layer 7 --control --actions --quotient --squares
+```
+
+The positive control uses the real ten-state Černý automaton with two common
+isolates and keeps both actual letters and six compatible distance vectors.
+The accompanying square countercontrol is rejected. See
+[the identity and quotient proofs](../PROOF.md#problem4-twelve-actual-two-step).
+
 ```sh
 python3 run.py script scripts/problem4/check_rank_descent.py
 python3 run.py script scripts/problem4/check_odd_core_target.py

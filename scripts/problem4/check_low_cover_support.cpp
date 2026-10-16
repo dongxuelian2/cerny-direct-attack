@@ -28,6 +28,15 @@ Data inspect(const vector<unsigned>& adj) {
     for(unsigned neighbors:adj)result.support+=neighbors!=0;
     int t=n-result.alpha,d=result.alpha-result.common;
     assert(result.support<=t*(d+2));
+    unsigned intersection=(1u<<n)-1,united=0;
+    for(unsigned mask=0;mask<(1u<<n);++mask)
+        if(result.independent[mask] && __builtin_popcount(mask)==result.alpha) {
+            intersection&=mask;united|=mask;
+        }
+    // Hajnal's maximum-set inequality, including vertices absent from every
+    // maximum set. This bounds all later-layer omissions, not just one hole.
+    int omitted=n-__builtin_popcount(intersection),absent=n-__builtin_popcount(united);
+    assert(omitted<=2*t-absent);
     // Check the positive-deficit equality classification independently by
     // searching all maximum sets for disjoint (d+1)-leaf neighborhoods.
     if(d>0) {
@@ -65,7 +74,8 @@ int main() {
         }
     }
     cout<<"PASS all_labelled_graphs n=1..6 graphs="<<graphs
-        <<" positive_deficit_equalities="<<equality<<'\n';
+        <<" positive_deficit_equalities="<<equality
+        <<"; support, equality, and maximum-family omission bounds"<<'\n';
     int sharp=0;
     for(int t=1;t<=3;++t)for(int d=0;d<=2;++d)for(int isolates=0;isolates<=2;++isolates) {
         int n=t*(d+2)+isolates;vector<unsigned>adj(n);

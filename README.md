@@ -26,6 +26,8 @@
 - [覆盖界的无界加性改进](PROOF.md#problem4-unbounded-cover-deficit)：任意固定 `a`，充分大的 `m` 都满足上述条件界 `c(S)≤h+2m−a−1`；依赖已有 α-critical 有限基定理，[共同像核心退出界](PROOF.md#problem4-common-image-core-escape)将一般阈值定量为极粗的三层指数塔。
 - [余维四的较早覆盖层](PROOF.md#problem4-four-cover-third-layer)：强连通同步、`n≥8,h≥3` 时，`τ(P_h)≥4` 迫使 `c(S)≤h+5`；计算辅助证明。`h=2` 的延伸被一个八状态强连通同步实例否定。
 - [余维四全域十二步上界](PROOF.md#problem4-four-global-twelve)：十三步候选先缩到 P8 覆盖数三、至多八点核心，再以共同安全族和持续遗漏孤点界归约成 1988 个有限域；全部实际字母与共同距离检查排除这些域，并推出余维五十九步上界。两者均为计算辅助结果，尚无匹配下界。
+- [十二步候选的进一步归约](PROOF.md#problem4-twelve-finite-domains)：四点覆盖的 91 类图已排除；三点覆盖的 117 类图缩为 10142 个命名域，双向商图及保留身份的两步检查仍在推进，尚未得到全域十一。
+- [任意余维的多缺口归约](PROOF.md#problem4-multiple-hole-finite-reduction)：利用经典最大独立集交并不等式，将后层全部遗漏状态限制在至多 2m 个；结合前层支持界得到与 n 无关的必要单步域。实际短词的共同实现仍待解决。
 - [短词的持续遗漏孤点界](PROOF.md#problem4-short-word-persistent-holes)：纸面证明适用于相邻压缩谱相差多层的情形。所用支持不等式引用 Gitler–Valencia，未作为新图论定理。
 - [余维五的全部覆盖层](PROOF.md#problem4-five-cover-late-layers)：强连通同步、`n≥10,h≥1` 时，`τ(P_h)≥5` 迫使 `c(S)≤h+7`；[四类核心归约](PROOF.md#problem4-next-to-maximal-rank-cores)加全部二十七核心检查。`m=5,q=15` 仍为 `[14,15]`。
 - [长安全区间的周期状态约束](PROOF.md#problem4-periodic-isolated-states)：`ac≥2m+2` 时，每个字母至多有 `m−1` 个非周期状态，全部落在同一个至多 `m(m+1)` 点的短对核心中。

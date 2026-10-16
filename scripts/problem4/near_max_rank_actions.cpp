@@ -16,6 +16,7 @@ struct CoreActions {
     vector<Action> actions;
     vector<vector<unsigned>> state_arrows;
     uint64_t connected_vectors=0;
+    bool quotient_connectivity=false;
     uint64_t nodes=0,maps=0,retained=0;
     uint64_t layer_nodes=0,row_vectors=0,pair_nodes=0,joint_vectors=0;
     vector<int> distance;
@@ -211,10 +212,10 @@ struct CoreActions {
         };visit(ne,initial_pool);return survivors;
     }
     // Independent complete generator for the rank-four domains used by the
-    // fourteen-step investigation: choose four independent source rows and
+    // late-layer investigations: choose four independent source rows and
     // their target rows, then assign individual inputs by four-bit columns.
     void four_row_control(int threads,int crossing_cap){
-        assert(required_rank==4 && nf<=7);
+        assert(required_rank==4 && nf<=9);
         struct Job{unsigned sources;int targets;};vector<Job>jobs;
         int codes=nf*nf*nf*nf;
         for(unsigned mask=0;mask<(1u<<nf);++mask)
@@ -310,9 +311,13 @@ struct CoreActions {
                     PairDomains pairs(ne,pair_cap,actions,distance);
                     pairs.on_solution=[&](const vector<unsigned>&,const vector<int>&pool){
                         vector<unsigned> reach(n+1);for(int x=0;x<=n;++x)reach[x]=1u<<x;
-                        for(int id:pool)for(int x=0;x<n;++x)reach[x]|=state_arrows[id][x];
-                        for(int via=0;via<n;++via)for(int x=0;x<n;++x)if(reach[x]>>via&1)reach[x]|=reach[via];
-                        for(int x=0;x<n;++x)if(!(reach[x]>>n&1))return;
+                        int count=n+int(quotient_connectivity);
+                        for(int id:pool){assert(int(state_arrows[id].size())>=count);
+                            for(int x=0;x<count;++x)reach[x]|=state_arrows[id][x];}
+                        for(int via=0;via<count;++via)for(int x=0;x<count;++x)if(reach[x]>>via&1)reach[x]|=reach[via];
+                        if(quotient_connectivity) {
+                            for(int x=0;x<=n;++x)if(reach[x]!=((1u<<(n+1))-1))return;
+                        }else for(int x=0;x<n;++x)if(!(reach[x]>>n&1))return;
                         ++connected_vectors;
                     };
                     pairs.search(vector<unsigned>(ne,(1u<<pair_cap)-1),next);

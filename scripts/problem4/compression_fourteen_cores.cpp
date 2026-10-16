@@ -1,5 +1,5 @@
-// Necessary Ph cores for codimension-four compression length h+5 (h=8 or 9).
-// Requires cover number four; automatic at h=9, an extra condition at h=8.
+// Necessary Ph cores for codimension-four compression length h+5 (h=7,8,9).
+// Requires cover number four; automatic at h=9, an extra condition below it.
 // Enumerates graphs, not automata. The proof gives support <=8, h..10 edges,
 // maximum degree <=4, cover number 4, every vertex in a maximum set, row rank >=5.
 #define NEAR_MAX_ACTION_LIBRARY
@@ -53,7 +53,7 @@ int main(int argc,char**argv) {
         else if(string(argv[i])=="--layer"&&i+1<argc)layer=stoi(argv[++i]);
         else return 2;
     }
-    if(threads<1 || threads>24 || (layer!=8&&layer!=9)) return 2;
+    if(threads<1 || threads>24 || layer<7 || layer>9) return 2;
     if(control){
         Graph positive{6};
         for(auto[x,y]:vector<pair<int,int>>{{0,1},{0,5},{1,4},{2,3},{2,4},{2,5},{3,4},{3,5}})positive.add(x,y);
