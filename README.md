@@ -26,6 +26,7 @@
 - [覆盖界的无界加性改进](PROOF.md#problem4-unbounded-cover-deficit)：任意固定 `a`，充分大的 `m` 都满足上述条件界 `c(S)≤h+2m−a−1`；依赖已有 α-critical 有限基定理，[共同像核心退出界](PROOF.md#problem4-common-image-core-escape)将一般阈值定量为极粗的三层指数塔。
 - [余维四的较早覆盖层](PROOF.md#problem4-four-cover-third-layer)：强连通同步、`n≥8,h≥3` 时，`τ(P_h)≥4` 迫使 `c(S)≤h+5`；计算辅助证明。`h=2` 的延伸被一个八状态强连通同步实例否定。
 - [余维四全域十三步上界](PROOF.md#problem4-four-global-thirteen)：先由相邻余维传递得到十四，再完整排除 45 个必要核心；`n≥8` 时任意余维四子集都在十三步内压缩，并推出余维五二十步上界。两者均为计算辅助结果，未取得匹配下界。
+- [十三步的剩余结构](PROOF.md#problem4-thirteen-low-cover-reduction)：完整排除 P8 四点覆盖的 74 类核心；一般支持界及私人叶子的四集合归约再排除九点等号分支。因此十三步候选必须有 `τ(P8)=3`、至多八点非孤立核心及 `C3=9`。支持界引用 Gitler–Valencia；[持续遗漏孤点界](PROOF.md#problem4-low-cover-persistent-holes)控制实际短像中的孤点标签。剩余核心未排除，上界仍为十三。
 - [余维五的全部覆盖层](PROOF.md#problem4-five-cover-late-layers)：强连通同步、`n≥10,h≥1` 时，`τ(P_h)≥5` 迫使 `c(S)≤h+7`；[四类核心归约](PROOF.md#problem4-next-to-maximal-rank-cores)加全部二十七核心检查。`m=5,q=15` 仍为 `[14,15]`。
 - [长安全区间的周期状态约束](PROOF.md#problem4-periodic-isolated-states)：`ac≥2m+2` 时，每个字母至多有 `m−1` 个非周期状态，全部落在同一个至多 `m(m+1)` 点的短对核心中。
 - [余量一的旗标归约](PROOF.md#problem4-slack-one-initial-flags)：共同短对距离、轨道秩、实际前像供应及完整终端字母表检查覆盖十二步候选；最后的核心 106 前缀 `(64,128,256)` 现也完整归零，计数见[完整覆盖](PROOF.md#problem4-q13-exact-eleven)。

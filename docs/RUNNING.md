@@ -63,6 +63,26 @@ additionally compares the complete generators. `--emit` prints the graph edges.
 The name refers to the excluded compression length fourteen. A nonzero joint
 distance vector is a necessary relaxation, not a constructed automaton.
 
+For compression length thirteen, `--layer 8` adds the eight-edge graphs and
+checks all 74 cover-four cores. The remaining cover-three branch has support at
+most nine by the paper support bound. Its nine-point equality cases reduce to
+three four-row domains; `star_nine_domain.cpp` rebuilds every single-letter map
+with zero through six crossing isolates and compares an independent generator
+which chooses target rows first. Neither calculation excludes the remaining
+cover-three cores on at most eight vertices.
+
+```sh
+python3 run.py script scripts/problem4/compression_fourteen_cores.cpp 4 --layer 8 --actions --control
+python3 run.py script scripts/problem4/star_nine_domain.cpp 4 --control
+python3 run.py script scripts/problem4/check_low_cover_support.cpp
+```
+
+The last command independently checks the support inequality, its equality
+graphs, and the four-row preservation lemma on all maps in the stated small
+domains. `check_short_pair_core_bounds.py` also checks the persistent-isolate
+bound on literal automata and subset families. These controls support paper
+proofs; they are not automaton exclusions at arbitrary parameters.
+
 ```sh
 python3 run.py script scripts/problem4/check_rank_descent.py
 python3 run.py script scripts/problem4/check_odd_core_target.py

@@ -60,16 +60,49 @@ def spectrum_control(rows, distances):
                 word = shortest(rows, subset, lambda target: len(target) < len(subset))
                 assert len(word) == value
         spectrum[holes] = max(values)
+        persistent_hole_control(rows, distances, holes, max(values))
         for h in (max(values)-1, max(values)):
             edges = [set(pair) for pair, value in distances.items() if value <= h]
             has_cover = any(all(set(cover) & edge for edge in edges)
                             for cover in combinations(range(n), holes))
             assert has_cover == (h < max(values))
     if n >= 8:
-        assert spectrum[4] <= 14
+        assert spectrum[4] <= 13
         bound = 8 if spectrum[3] == 2 else spectrum[3]+5
         assert spectrum[4] <= bound
     return spectrum, checked
+
+
+def persistent_hole_control(rows, distances, holes, threshold):
+    """Literal full families for the paper bound at C_t=h+1, tau(P_h)=t."""
+    n = len(rows[0])
+    h = threshold - 1
+    if h < 1 or n-holes < 3:
+        return
+    edges = [set(pair) for pair, value in distances.items() if value <= h]
+    independent = []
+    for size in range(n+1):
+        for subset in combinations(range(n), size):
+            source = frozenset(subset)
+            if not any(edge <= source for edge in edges):
+                independent.append(source)
+    alpha = max(map(len, independent))
+    if alpha != n-holes:
+        return  # This cover number is a hypothesis, not an automatic identity.
+    maxima = [source for source in independent if len(source) == alpha]
+    family = {source for source in independent if len(source) == alpha-1}
+    safe = {source for source in family if all(image(source, row) in family for row in rows)}
+    maximal_small = [source for source in family if not any(source < maximum for maximum in maxima)]
+    isolates = frozenset(range(n)).difference(set().union(*edges))
+    missing = set().union(*(isolates-source for source in safe))
+    assert len(safe) <= len(maximal_small)+2*len(maxima)
+    assert len(missing) <= 2*len(maxima)
+    for maximum in maxima:
+        assert sum(source < maximum for source in safe) <= 2
+        assert any(image(maximum, row) not in maxima for row in rows)
+    print(f'PASS persistent holes: n={n}, t={holes}, h={h}, '
+          f'maxima={len(maxima)}, maximal_small={len(maximal_small)}, '
+          f'common_safe={len(safe)}, missing_isolates={len(missing)}')
 
 
 def even_cycle_spectrum_controls():

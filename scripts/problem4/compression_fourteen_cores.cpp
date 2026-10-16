@@ -1,5 +1,6 @@
-// Necessary P9 cores for a hypothetical codimension-four compression length 14.
-// Enumerates graphs, not automata. The proof gives support <=8, 9..10 edges,
+// Necessary Ph cores for codimension-four compression length h+5 (h=8 or 9).
+// Requires cover number four; automatic at h=9, an extra condition at h=8.
+// Enumerates graphs, not automata. The proof gives support <=8, h..10 edges,
 // maximum degree <=4, cover number 4, every vertex in a maximum set, row rank >=5.
 #define NEAR_MAX_ACTION_LIBRARY
 #include "near_max_rank_actions.cpp"
@@ -22,7 +23,7 @@ bool fourteen_core(const Graph& g, vector<unsigned>& rows) {
     return any==(1u<<g.n)-1 && rows.size()>=5 && rank_rows(rows,g.n)>=5;
 }
 
-void cover_control(int n,const set<uint64_t>& expected,int threads){
+void cover_control(int n,const set<uint64_t>& expected,int threads,int layer){
     // Every candidate has a four-point cover. Fix that cover to {0,1,2,3}
     // and independently traverse all graphs with no edge in its complement.
     vector<pair<int,int>>positions;
@@ -32,7 +33,7 @@ void cover_control(int n,const set<uint64_t>& expected,int threads){
     for(int worker=0;worker<threads;++worker)workers.emplace_back([&,worker]{
         vector<unsigned>rows;
         for(uint64_t mask=end*worker/threads;mask<end*(worker+1)/threads;++mask){
-            int count=__builtin_popcountll(mask);if(count!=9&&count!=10)continue;
+            int count=__builtin_popcountll(mask);if(count<layer||count>10)continue;
             Graph g{n};for(uint64_t bits=mask;bits;bits&=bits-1){auto[x,y]=positions[__builtin_ctzll(bits)];g.add(x,y);}
             if(fourteen_core(g,rows))found[worker].insert(canonical(g));
         }
@@ -43,14 +44,16 @@ void cover_control(int n,const set<uint64_t>& expected,int threads){
 
 int main(int argc,char**argv) {
     int threads=argc>1?stoi(argv[1]):4;
+    int layer=9;
     bool emit=false, actions=false, control=false;
     for(int i=2;i<argc;++i) {
         if(string(argv[i])=="--emit")emit=true;
         else if(string(argv[i])=="--actions")actions=true;
         else if(string(argv[i])=="--control")control=true;
+        else if(string(argv[i])=="--layer"&&i+1<argc)layer=stoi(argv[++i]);
         else return 2;
     }
-    if(threads<1 || threads>24) return 2;
+    if(threads<1 || threads>24 || (layer!=8&&layer!=9)) return 2;
     if(control){
         Graph positive{6};
         for(auto[x,y]:vector<pair<int,int>>{{0,1},{0,5},{1,4},{2,3},{2,4},{2,5},{3,4},{3,5}})positive.add(x,y);
@@ -65,7 +68,7 @@ int main(int argc,char**argv) {
         vector<pair<int,int>> edges;
         for(int x=0;x<n;++x)for(int y=x+1;y<n;++y)edges.push_back({x,y});
         struct Job {int count,first,second;}; vector<Job> jobs;
-        for(int count:{9,10})
+        for(int count=layer;count<=10;++count)
             for(int first=0;first<int(edges.size());++first)
                 for(int second=first+1;second<=int(edges.size())-(count-1);++second)
                     jobs.push_back({count,first,second});
@@ -98,7 +101,7 @@ int main(int argc,char**argv) {
         });
         for(auto&w:workers)w.join();set<uint64_t> cores;
         for(auto&part:found)cores.insert(part.begin(),part.end());
-        if(control)cover_control(n,cores,threads);
+        if(control)cover_control(n,cores,threads,layer);
         auto checked=accumulate(visited.begin(),visited.end(),uint64_t(0));
         auto kept=accumulate(accepted.begin(),accepted.end(),uint64_t(0));
         total+=checked;retained+=kept;classes+=cores.size();
@@ -113,7 +116,7 @@ int main(int argc,char**argv) {
                 // Two distinct maximum rows share at most alpha-1=N-5 points.
                 solver.generate(threads,n-5);
                 if(control)solver.four_row_control(threads,n-5);
-                if(actions)solver.solve(9);
+                if(actions)solver.solve(layer);
                 joint+=solver.joint_vectors;connected+=solver.connected_vectors;
             }
             if(emit) {
@@ -128,7 +131,7 @@ int main(int argc,char**argv) {
         for(auto[key,count]:profile)
             cout<<"PROFILE rank="<<key.first<<" maximum_sets="<<key.second<<" classes="<<count<<'\n';
     }
-    cout<<"COMPLETE necessary_P9_graph_domain graphs="<<total
+    cout<<"COMPLETE necessary_graph_domain layer="<<layer<<" graphs="<<total
         <<" retained_labelled="<<retained<<" classes="<<classes
         <<"; not an automaton exclusion\n";
     if(actions)cout<<"COMPLETE necessary_action_domain joint="<<joint
