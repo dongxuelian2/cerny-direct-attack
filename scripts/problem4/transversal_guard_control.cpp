@@ -25,11 +25,11 @@ int main(){
             blocks.push_back(1u<<x);partition(x+1);blocks.pop_back();
         };partition(0);
     }
-    atomic<size_t>next{0};vector<array<array<uint64_t,15>,3>>counts(4);vector<thread>workers;
+    atomic<size_t>next{0};vector<array<array<uint64_t,18>,3>>counts(4);vector<thread>workers;
     for(int worker=0;worker<4;++worker)workers.emplace_back([&,worker]{
         for(size_t index;(index=next.fetch_add(1))<jobs.size();){const auto&job=jobs[index];int n=job.n,s=job.blocks.size(),m=n-s,maps=1,outputs=n+job.outside;for(int x=0;x<n;++x)maps*=outputs;
             auto&count=counts[worker][job.outside];auto group=[&](int x){return x<n?job.group[x]:s;};
-            struct Type {unsigned safe,active;vector<vector<int>>basis;};map<vector<int>,Type>types;
+            struct Type {unsigned safe,active,escaping;vector<vector<int>>basis;};map<vector<int>,Type>types;
             vector<pair<int,int>>coordinates;vector<int>coordinate_blocks;
             for(int b=0;b<s;++b){int first=__builtin_ctz(job.blocks[b]);
                 for(unsigned bits=job.blocks[b]&~(1u<<first);bits;bits&=bits-1){coordinates.push_back({__builtin_ctz(bits),first});coordinate_blocks.push_back(b);}}
@@ -43,7 +43,11 @@ int main(){
                         if(group(f[x])!=group(f[first]))activity|=1u<<coordinate_blocks[c];}
                     for(int i=0;i<int(job.family.size());++i)if(find(safe.begin(),safe.end(),job.family[i])!=safe.end())safe_mask|=1u<<i;
                     auto basis=constraint_basis(matrix,m);vector<int>key{int(safe_mask)};for(const auto&row:basis)key.insert(key.end(),row.begin(),row.end());
-                    auto[found,fresh]=types.emplace(key,Type{safe_mask,activity,basis});assert(fresh||found->second.active==activity);
+                    unsigned escaping=0;for(int x=0;x<n;++x)if(f[x]>=n)escaping|=1u<<x;
+                    auto[found,fresh]=types.emplace(key,Type{safe_mask,activity,escaping,basis});assert(fresh||found->second.active==activity);
+                    found->second.escaping|=escaping;
+                    int codimension=m+1-rank_rows(safe,n);
+                    assert(__builtin_popcount(activity)<=2*codimension-__builtin_popcount(escaping));
                 }
                 if(rank_rows(safe,n)<m)continue;++count[1];vector<int>active;unsigned output_groups=0;
                 for(int i=0;i<s;++i){unsigned groups=0;for(unsigned bits=job.blocks[i];bits;bits&=bits-1)groups|=1u<<group(f[__builtin_ctz(bits)]);
@@ -87,12 +91,16 @@ int main(){
             for(const auto&[key,a]:types)for(const auto&[other,b]:types)if(a.safe&b.safe){
                 auto joined=a.basis;joined.insert(joined.end(),b.basis.begin(),b.basis.end());int rank=constraint_basis(joined,m).size();
                 int active=__builtin_popcount(a.active|b.active);assert(active<=2*rank);++count[13];count[14]+=rank>0&&active==2*rank;
+                vector<unsigned>safe;for(unsigned bits=a.safe&b.safe;bits;bits&=bits-1)safe.push_back(job.family[__builtin_ctz(bits)]);
+                int codimension=m+1-rank_rows(safe,n),escaped=__builtin_popcount(a.escaping|b.escaping);
+                assert(active<=2*codimension-escaped);++count[15];count[16]+=escaped>0&&active==2*codimension-escaped;count[17]+=escaped>0;
             }
         }
     });for(auto&w:workers)w.join();
-    for(int outside=0;outside<=2;++outside){array<uint64_t,15>sum{};for(auto row:counts)for(int i=0;i<15;++i)sum[i]+=row[outside][i];
+    for(int outside=0;outside<=2;++outside){array<uint64_t,18>sum{};for(auto row:counts)for(int i=0;i<18;++i)sum[i]+=row[outside][i];
         assert(sum[2]&&sum[3]&&sum[4]);if(outside)assert(sum[5]);
         cout<<"PASS arbitrary_block_guard outside="<<outside<<" partitions="<<jobs.size()/3<<" maps="<<sum[0]<<" high_rank="<<sum[1]<<" whole="<<sum[2]<<" forbidden_vertex="<<sum[3]<<" two_blocks="<<sum[4]<<" maps_with_external_image="<<sum[5]<<" outside_rows="<<sum[6]<<" common_neighbor_pairs="<<sum[7]<<" deficit_checks="<<sum[8]<<" sharp_deficit_increase="<<sum[9]<<" nonempty_safe_maps="<<sum[10]<<" constraint_types="<<sum[11]<<" restricted_rank_checks="<<sum[12]<<" joint_types="<<sum[13]<<" sharp_joint_types="<<sum[14]<<"; complete maps from partitioned U of size 2..5, 2<=blocks<|U|\n";
+        cout<<"PASS forbidden_state_activity outside="<<outside<<" joint_types="<<sum[15]<<" with_external_forbidden_states="<<sum[17]<<" sharp_positive_forbidden="<<sum[16]<<'\n';
     }
     vector<vector<int>> letters{{3,2,1,2},{1,0,2,2}};
     auto image=[&](unsigned row,int a){unsigned result=0;for(unsigned bits=row;bits;bits&=bits-1)result|=1u<<letters[a][__builtin_ctz(bits)];return result;};

@@ -1,7 +1,9 @@
 // Complete static cover-four domain for a codimension-five sixteen-step
 // candidate at P_10. This does not enumerate automata or prove C_5 <= 15.
+#ifndef LOW_COVER_REUSE_GRAPH
 #define NEAR_MAX_CORE_LIBRARY
 #include "near_max_rank_cores.cpp"
+#endif
 
 struct CoverJob { int n; vector<unsigned> neighbors; };
 

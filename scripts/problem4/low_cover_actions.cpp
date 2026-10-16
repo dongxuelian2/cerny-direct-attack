@@ -82,13 +82,14 @@ bool literal_square_control(const CoreActions& solver,const vector<int>& f) {
 }
 
 void generate_low(CoreActions& solver,int core_n,const LowFamily& family,bool common,int threads,bool independent,
-                  bool squares=false,bool square_control=false,const vector<unsigned>& intermediate={}) {
-    const int n=solver.n,nf=solver.nf;assert(nf>=3 && nf<=7);
+                  bool squares=false,bool square_control=false,const vector<unsigned>& intermediate={},int entrance_layer=0) {
+    const int n=solver.n,nf=solver.nf;assert(nf>=3 && nf<=14);
+    const int kernel_defect_cap=solver.m==5?solver.defect_cap:2;
     vector<vector<unsigned>>partitions;vector<unsigned>blocks;
     function<void(int)> partition=[&](int x){
-        if(x==n){if(n-int(blocks.size())<=2)partitions.push_back(blocks);return;}
+        if(x==n){if(n-int(blocks.size())<=kernel_defect_cap)partitions.push_back(blocks);return;}
         for(int b=0;b<int(blocks.size());++b){
-            if(x+1-int(blocks.size())>2)continue;bool clique=true;
+            if(x+1-int(blocks.size())>kernel_defect_cap)continue;bool clique=true;
             for(unsigned bits=blocks[b];bits;bits&=bits-1)
                 if(!solver.graph.edge(x,__builtin_ctz(bits)))clique=false;
             if(clique){blocks[b]|=1u<<x;partition(x+1);blocks[b]^=1u<<x;}
@@ -96,8 +97,16 @@ void generate_low(CoreActions& solver,int core_n,const LowFamily& family,bool co
         blocks.push_back(1u<<x);partition(x+1);blocks.pop_back();
     };partition(0);
     struct Job{int kernel;unsigned incoming;};vector<Job>jobs;
-    for(int k=0;k<int(partitions.size());++k)for(unsigned in=0;in<(1u<<n);++in)
-        if(__builtin_popcount(in)<=(common?n-3:0))jobs.push_back({k,in});
+    vector<unsigned>incoming_sets;auto adjacency=solver.graph.adjacency();
+    for(unsigned in=0;in<(1u<<n);++in)if(__builtin_popcount(in)<=(common?n-solver.m+1:0)){
+        if(entrance_layer){assert(entrance_layer>=2);unsigned neighborhood=0;int internal=0;
+            for(unsigned bits=in;bits;bits&=bits-1){int x=__builtin_ctz(bits);neighborhood|=adjacency[x];internal+=__builtin_popcount(adjacency[x]&in);}
+            assert(internal%2==0);
+            if(internal/2+__builtin_popcount(neighborhood&~in)>solver.ne-entrance_layer+2)continue;
+        }
+        incoming_sets.push_back(in);
+    }
+    for(int k=0;k<int(partitions.size());++k)for(unsigned in:incoming_sets)jobs.push_back({k,in});
     atomic<size_t>next{0};vector<Signatures>local(threads);
     vector<uint64_t>nodes(threads),maps(threads),square_rejected(threads),square_checked(threads),two_step_rejected(threads);vector<thread>workers;
     for(int worker=0;worker<threads;++worker)workers.emplace_back([&,worker]{
@@ -262,6 +271,7 @@ void generate_low(CoreActions& solver,int core_n,const LowFamily& family,bool co
         <<" square_rejected="<<accumulate(square_rejected.begin(),square_rejected.end(),uint64_t(0))
         <<" literal_square_checks="<<accumulate(square_checked.begin(),square_checked.end(),uint64_t(0))
         <<" two_step_rejected="<<accumulate(two_step_rejected.begin(),two_step_rejected.end(),uint64_t(0))
+        <<" entrance_layer="<<entrance_layer
         <<" signatures="<<merged.size()<<endl;
 }
 
@@ -394,6 +404,7 @@ void positive_quotient_control() {
     cout<<"PASS actual_Cerny_ten_quotient_and_two_step_control; two common isolates, actual letters retained, square countercontrol rejected"<<endl;
 }
 
+#ifndef LOW_COVER_ACTION_LIBRARY
 int main(int argc,char**argv) {
     if(argc==2 && string(argv[1])=="--positive"){positive_control();return 0;}
     if(argc==2 && string(argv[1])=="--positive-quotient"){positive_quotient_control();return 0;}
@@ -481,3 +492,4 @@ int main(int argc,char**argv) {
         <<" joint="<<joint<<" after_proper_core_filter="<<escape
         <<"; positive vectors are necessary relaxations, not automata"<<endl;
 }
+#endif

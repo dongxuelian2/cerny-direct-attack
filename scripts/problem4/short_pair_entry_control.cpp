@@ -26,7 +26,7 @@ int main(){
     assert(entering&&disjoint&&tight);
     cout<<"PASS literal_clique_entry maps="<<examined<<" entering_without_nonedge_kernel="<<entering
         <<" disjoint_first_last="<<disjoint<<" tight_entry_sum="<<tight<<"; v=2..6, j=1..2, v+j<=7\n";
-    uint64_t graph_maps=0,graph_entries=0;
+    uint64_t graph_maps=0,graph_entries=0,joint_entries=0,joint_tight=0;
     for(int v=2;v<=4;++v)for(int j=1;j<=2;++j){int n=v+j,ne=v*(v-1)/2;uint64_t maps=1;
         for(int x=0;x<n;++x)maps*=n;vector<vector<int>>edge(v,vector<int>(v,-1));int at=0;
         for(int x=0;x<v;++x)for(int y=x+1;y<v;++y)edge[x][y]=edge[y][x]=at++;
@@ -41,6 +41,12 @@ int main(){
                     for(int y=x+1;y<n;++y){if(f[x]==f[y]){if(!isedge(x,y))valid=false;else ++merged;}
                         else if(!isedge(x,y)&&isedge(f[x],f[y]))forced|=1u<<edge[f[x]][f[y]];}}
                 if(!valid)continue;int defect=n-__builtin_popcount(used);
+                if(incoming){unsigned neighborhood=0;int internal=0;
+                    for(unsigned bits=incoming;bits;bits&=bits-1){int x=__builtin_ctz(bits);neighborhood|=adj[x];
+                        internal+=__builtin_popcount(adj[x]&incoming);}
+                    assert(internal%2==0);int cost=internal/2+__builtin_popcount(neighborhood&~incoming);
+                    assert(cost<=defect+__builtin_popcount(forced));++joint_entries;joint_tight+=cost==defect+__builtin_popcount(forced);
+                }
                 for(unsigned bits=incoming;bits;bits&=bits-1){int x=__builtin_ctz(bits);++graph_entries;
                     assert(__builtin_popcount(adj[x])<=defect+__builtin_popcount(forced));
                     assert(defect<=merged);}
@@ -50,6 +56,7 @@ int main(){
     assert(graph_entries);
     cout<<"PASS arbitrary_graph_entry graph_maps="<<graph_maps<<" valid_entry_targets="<<graph_entries
         <<"; all nonisolated labelled cores of size 2..4 with 1..2 isolated inputs\n";
+    cout<<"PASS joint_entry_neighborhood valid_incoming_sets="<<joint_entries<<" tight="<<joint_tight<<'\n';
     // Genuine SC synchronizing positive control: P3 is K3 plus one isolate.
     vector<vector<int>>a{{3,3,2,0},{2,0,1,3}};int n=4;
     vector<vector<int>>d(n,vector<int>(n,1000));for(int x=0;x<n;++x)d[x][x]=0;

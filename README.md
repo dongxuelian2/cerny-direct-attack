@@ -26,6 +26,8 @@
 - [余维四的较早覆盖层](PROOF.md#problem4-four-cover-third-layer)：强连通同步、`n≥8,h≥3` 时，`τ(P_h)≥4` 迫使 `c(S)≤h+5`；计算辅助证明。`h=2` 的延伸被一个八状态强连通同步实例否定。
 - [余维四全参数精确值](PROOF.md#problem4-four-exact-eleven)：七层四点覆盖的 91 类核心及三点覆盖的 10142 个命名域全部排除；`n≥11` 的任意余维四集合均在十一字母内压缩。结合二字母下界得到全参数精确式，并推出余维五十八步上界。
 - [余维五十六步上界](PROOF.md#problem4-five-global-sixteen)：完整生成六至十点的 1994 类核心，完整单字母对照与共同距离排除通过；17 类由整个字母池的封闭性排除，其余完成距离检查。已知下界十四，尚未匹配。
+- [任意块的共同活动界](PROOF.md#problem4-transversal-all-slack-activity)与[真支持的全部安全层](PROOF.md#problem4-proper-support-guard-tower)：对全部长度≤j 的混合词给出 `2(k−R)+j` 的活动块界；饱和时准确确定禁用状态链，并有每个 k 的真实强连通同步等号构造。这是结构界的等号，尚非原极值的匹配下界。
+- [饱和可达并与出口前像](PROOF.md#problem4-saturated-exit-preimages)：不依赖横截分割的出口必要条件；[余维五双共同邻点分支](PROOF.md#problem4-five-double-neighbor-exclusion)的 747 个剩余域已完整排除。十点候选因此只剩具有匹配变化部分的情形；全部参数和其余动态域仍开放。
 - [实际短词的有限归约](PROOF.md#problem4-twelve-finite-domains)与[动态必要条件](PROOF.md#problem4-twelve-actual-two-step)：保留持续遗漏孤点的身份，使用双向商图及同字母平方；一般多步共同实现仍待解决。
 - [任意余维的多缺口归约](PROOF.md#problem4-multiple-hole-finite-reduction)：利用经典最大独立集交并不等式，将后层全部遗漏状态限制在至多 2m 个；结合前层支持界得到与 n 无关的必要单步域。实际短词的共同实现仍待解决。
 - [有限字母与共享身份短词域](PROOF.md#problem4-bounded-word-backward-frame)：选取有界字母子表，并保留短词进入核心的反向邻域，可精确检查有限长度混合词的安全性；是任意余维的必要动态归约，尚未排除余维五候选。

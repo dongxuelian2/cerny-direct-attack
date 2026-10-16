@@ -184,6 +184,9 @@ matching and shattering bounds. Run the small exhaustive matching control with:
 python3 run.py script scripts/problem4/rank_core_graph6.cpp --matching-control
 python3 run.py script scripts/problem4/matching_guard_control.cpp
 python3 run.py script scripts/problem4/transversal_guard_control.cpp
+python3 run.py script scripts/problem4/proper_guard_tower_control.cpp
+python3 run.py script scripts/problem4/saturated_exit_control.cpp
+python3 run.py script scripts/problem4/maximum_set_exchange_probe.cpp --control
 python3 run.py script scripts/problem4/short_pair_entry_control.cpp
 python3 run.py script scripts/problem4/exit_rank_control.cpp
 ```
@@ -256,6 +259,23 @@ python3 run.py script scripts/problem4/low_cover_five_cores.cpp 5 11 4
 python3 run.py script scripts/problem4/low_cover_five_domains.cpp --control
 python3 run.py script scripts/problem4/low_cover_five_domains.cpp 0 4143
 ```
+
+The latter command also checks saturated reachable unions, exit-preimage
+cliques and transversal partitions. These are necessary conditions, not a
+complete dynamic exclusion. For the remaining double-common-neighbor branch:
+
+```sh
+python3 run.py script scripts/problem4/five_low_cover_positive.cpp
+CERNY_PAIR_SAT_LIBRARY="$PWD/build/tools/cadical-3.0.1/build/libcadical.so" \
+  python3 run.py script scripts/problem4/five_double_neighbor_actions.cpp 0 747 8 --control --distances
+```
+
+The shared library path is local and optional; without it the existing pair
+interval solver and its scalar cross-check are used. The full interval
+`0 747` covers this conditional branch only. Both letter generation orders
+share kernel partitions and target sets. No square-safety filter is applied:
+the early and late pair layers differ by one. See the exact scope in
+[the double-neighbor exclusion](../PROOF.md#problem4-five-double-neighbor-exclusion).
 
 It enumerates nonempty neighborhood multisets on a fixed four-vertex cover,
 then canonicalizes accepted graphs. The paper excludes twelve-vertex support
