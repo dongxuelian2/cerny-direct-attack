@@ -19,6 +19,7 @@ struct CoreActions {
     uint64_t connected_vectors=0;
     bool quotient_connectivity=false,ordered_pair_control=false,prune_closed_row_pools=false;
     bool descending_rank_bound=false;
+    bool sat_distance_only=false;
     uint64_t closed_row_pools=0,closed_pair_pools=0;
     mutable uint64_t pair_sat_calls=0;
     function<bool(const vector<int>&)> map_filter;
@@ -376,6 +377,12 @@ struct CoreActions {
                 else if(future)layers(level+1,future,next);
                 else{
                     ++row_vectors;
+                    if(sat_distance_only){
+                        assert(prune_closed_row_pools&&!quotient_connectivity);
+                        ++pair_sat_calls;
+                        auto count=sat_pair_count(actions,distance,next,ne,pair_cap,state_arrows,n,true);
+                        joint_vectors+=count;connected_vectors+=count;
+                    }else{
                     PairDomains pairs(ne,pair_cap,actions,distance);
                     if(prune_closed_row_pools)pairs.pool_allowed=[&](const vector<int>&pool){return pool_can_escape(pool);};
                     pairs.on_solution=[&](const vector<unsigned>&,const vector<int>&pool){
@@ -393,6 +400,7 @@ struct CoreActions {
                     pair_nodes+=pairs.nodes;joint_vectors+=pairs.survivors;
                     closed_pair_pools+=pairs.rejected_pools;
                     assert(independent_pairs(next)==pairs.survivors);
+                    }
                 }
             }
             for(unsigned bits=chosen;bits;bits&=bits-1)distance[__builtin_ctz(bits)]=0;
@@ -408,7 +416,7 @@ struct CoreActions {
         distance.resize(nf+1);vector<int>pool(actions.size());iota(pool.begin(),pool.end(),0);
         layers(1,(1u<<nf)-1,pool);
         cout<<"COMPLETE distances cap="<<pair_cap<<" layer_nodes="<<layer_nodes<<" row_vectors="<<row_vectors
-            <<" pair_nodes="<<pair_nodes<<" joint_vectors="<<joint_vectors<<" connected_vectors="<<connected_vectors<<" closed_row_pools="<<closed_row_pools<<" closed_pair_pools="<<closed_pair_pools<<" early_core_exit="<<prune_closed_row_pools<<" pair_sat_calls="<<pair_sat_calls<<endl;
+            <<" pair_nodes="<<pair_nodes<<" joint_vectors="<<joint_vectors<<" connected_vectors="<<connected_vectors<<" closed_row_pools="<<closed_row_pools<<" closed_pair_pools="<<closed_pair_pools<<" early_core_exit="<<prune_closed_row_pools<<" pair_sat_calls="<<pair_sat_calls<<" sat_distance_only="<<sat_distance_only<<endl;
     }
 
 };

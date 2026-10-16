@@ -28,10 +28,10 @@ Data inspect(const vector<unsigned>& adj) {
     for(unsigned neighbors:adj)result.support+=neighbors!=0;
     int t=n-result.alpha,d=result.alpha-result.common;
     assert(result.support<=t*(d+2));
-    unsigned intersection=(1u<<n)-1,united=0;
+    unsigned intersection=(1u<<n)-1,united=0;int maximum_count=0;
     for(unsigned mask=0;mask<(1u<<n);++mask)
         if(result.independent[mask] && __builtin_popcount(mask)==result.alpha) {
-            intersection&=mask;united|=mask;
+            intersection&=mask;united|=mask;++maximum_count;
         }
     // Hajnal's maximum-set inequality, including vertices absent from every
     // maximum set. This bounds all later-layer omissions, not just one hole.
@@ -40,9 +40,19 @@ Data inspect(const vector<unsigned>& adj) {
     // Check the positive-deficit equality classification independently by
     // searching all maximum sets for disjoint (d+1)-leaf neighborhoods.
     if(d>0) {
+        int deficit=t*(d+2)-result.support;
+        assert(maximum_count<=(1u<<min(t,deficit/d)));
         bool stars=false;
         for(unsigned mask=1;mask<(1u<<n);++mask) {
             if(!result.independent[mask] || __builtin_popcount(mask)!=result.alpha)continue;
+            assert(d*__builtin_popcount(united&~mask)<=deficit);
+            unsigned cover=((1u<<n)-1)^mask;
+            for(unsigned subset=cover;;subset=(subset-1)&cover){
+                unsigned neighbors=0;for(unsigned bits=subset;bits;bits&=bits-1)neighbors|=adj[__builtin_ctz(bits)]&mask;
+                assert(__builtin_popcount(neighbors)>=(d+1)*__builtin_popcount(subset)-deficit);
+                if(!subset)break;
+            }
+
             unsigned used=0;bool valid=true;
             for(int x=0;x<n;++x)if(!(mask>>x&1)) {
                 unsigned leaves=adj[x]&mask;
@@ -75,7 +85,23 @@ int main() {
     }
     cout<<"PASS all_labelled_graphs n=1..6 graphs="<<graphs
         <<" positive_deficit_equalities="<<equality
-        <<"; support, equality, and maximum-family omission bounds"<<'\n';
+        <<"; support, equality, maximum-family omission, deficit-count and neighborhood-stability bounds"<<'\n';
+    uint64_t nested_graphs=0;
+    for(int n=1;n<=5;++n){vector<pair<int,int>>edges;for(int x=0;x<n;++x)for(int y=x+1;y<n;++y)edges.push_back({x,y});
+        for(unsigned h=0;h<(1u<<edges.size());++h){vector<unsigned>adj(n);
+            for(unsigned bits=h;bits;bits&=bits-1){auto[x,y]=edges[__builtin_ctz(bits)];adj[x]|=1u<<y;adj[y]|=1u<<x;}
+            auto data=inspect(adj);unsigned common=(1u<<n)-1,united=0;
+            for(unsigned row=0;row<(1u<<n);++row)if(data.independent[row]&&__builtin_popcount(row)==data.alpha){common&=row;united|=row;}
+            int m=n-data.alpha,a=n-__builtin_popcount(united);unsigned absent=((1u<<n)-1)^united;
+            for(unsigned g=h;;g=(g-1)&h){vector<unsigned>early(n);unsigned support=0,neighbors_absent=0;int degree=0;
+                for(unsigned bits=g;bits;bits&=bits-1){auto[x,y]=edges[__builtin_ctz(bits)];early[x]|=1u<<y;early[y]|=1u<<x;support|=(1u<<x)|(1u<<y);}
+                for(int x=0;x<n;++x){degree=max(degree,__builtin_popcount(early[x]));if(absent>>x&1)neighbors_absent|=early[x];}
+                assert(!(support&common&~neighbors_absent));unsigned named=support|(((1u<<n)-1)^common);
+                assert(__builtin_popcount(named)<=2*m-a+a*degree);++nested_graphs;if(!g)break;
+            }
+        }
+    }
+    cout<<"PASS all_nested_graph_pairs n=1..5 pairs="<<nested_graphs<<"; named support from omitted vertices and their neighbors\n";
     int sharp=0;
     for(int t=1;t<=3;++t)for(int d=0;d<=2;++d)for(int isolates=0;isolates<=2;++isolates) {
         int n=t*(d+2)+isolates;vector<unsigned>adj(n);

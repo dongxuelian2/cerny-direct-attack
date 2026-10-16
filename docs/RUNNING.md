@@ -176,8 +176,8 @@ filter tracks missing named states only while the whole common-isolate set is
 retained; it does not compose independently renamed individual-subset images.
 
 For the seventeen-step candidate domain, generate orders 6 through 10 and use
-`5 6 11` instead. It contains 1994 static cores; its full dynamic exclusion is
-not established. The ten-vertex cases additionally check the paper's unique
+`5 6 11` instead. It contains 1994 static cores; its complete dynamic exclusion proves the
+[codimension-five bound sixteen](../PROOF.md#problem4-five-global-sixteen). The ten-vertex cases additionally check the paper's unique
 matching and shattering bounds. Run the small exhaustive matching control with:
 
 ```sh
@@ -219,6 +219,13 @@ row profile, useful for controls. This is a Linux shared-library option using
 `dlopen`; no downloaded solver source or binary belongs in Git. SAT blocks only
 distance vectors, validates every model against the original predicates, and
 requires a final unsatisfiable result to finish a profile.
+For `5 6 11 --actions START COUNT THREADS --sat-distances`, SAT instead performs
+all pair-distance searches, without the main interval or scalar search. Output
+marks this mode explicitly. The same source also accepts `5 6 10` for the
+**conditional** sixteen-step domain with vertex cover five at layer ten; it
+does not include the layer-ten cover-four branch. Its safe power depth remains
+five, although its pair-distance cap drops to ten. Neither a partial interval
+nor this one cover branch establishes a global fifteen-step bound.
 `--stop-on-survivor` stops at a necessary relaxation survivor, not a witnessed
 automaton. Compile once before launching parallel runs of the same source to
 avoid concurrent writes to its executable; an observed compilation failure is
