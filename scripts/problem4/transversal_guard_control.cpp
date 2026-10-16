@@ -13,7 +13,7 @@ int main(){
             blocks.push_back(1u<<x);partition(x+1);blocks.pop_back();
         };partition(0);
     }
-    atomic<size_t>next{0};vector<array<array<uint64_t,6>,2>>counts(4);vector<thread>workers;
+    atomic<size_t>next{0};vector<array<array<uint64_t,8>,2>>counts(4);vector<thread>workers;
     for(int worker=0;worker<4;++worker)workers.emplace_back([&,worker]{
         for(size_t index;(index=next.fetch_add(1))<jobs.size();){const auto&job=jobs[index];int n=job.n,s=job.blocks.size(),m=n-s,maps=1,outputs=n+job.outside;for(int x=0;x<n;++x)maps*=outputs;
             auto&count=counts[worker][job.outside];auto group=[&](int x){return x<n?job.group[x]:s;};
@@ -33,13 +33,21 @@ int main(){
                         for(int i:active)selected+=group(f[__builtin_ctz(row&job.blocks[i])])==first;predicted=selected==1;}
                     assert(predicted==(find(safe.begin(),safe.end(),row)!=safe.end()));}
                 unsigned escaping=0;for(int x=0;x<n;++x)if(f[x]>=n)escaping|=1u<<x;
-                if(escaping){++count[5];assert(active.size()==1&&escaping==forbidden);}
+                if(escaping){++count[5];assert(active.size()==1&&escaping==forbidden);
+                    unsigned common=0;for(unsigned block:job.blocks)if(__builtin_popcount(block)==1)common|=block;
+                    for(unsigned row:job.family)if(row&escaping){unsigned out=0;
+                        for(unsigned bits=row;bits;bits&=bits-1)out|=1u<<f[__builtin_ctz(bits)];
+                        assert(__builtin_popcount(common&~out)<=1);++count[6];
+                        for(unsigned pair=common;pair;pair=(pair-1)&common)if(__builtin_popcount(pair)==2){
+                            assert(out&pair);assert(out&(1u<<n));++count[7];}
+                    }
+                }
             }
         }
     });for(auto&w:workers)w.join();
-    for(int outside=0;outside<=1;++outside){array<uint64_t,6>sum{};for(auto row:counts)for(int i=0;i<6;++i)sum[i]+=row[outside][i];
+    for(int outside=0;outside<=1;++outside){array<uint64_t,8>sum{};for(auto row:counts)for(int i=0;i<8;++i)sum[i]+=row[outside][i];
         assert(sum[2]&&sum[3]&&sum[4]);if(outside)assert(sum[5]);
-        cout<<"PASS arbitrary_block_guard outside="<<outside<<" partitions="<<jobs.size()/2<<" maps="<<sum[0]<<" high_rank="<<sum[1]<<" whole="<<sum[2]<<" forbidden_vertex="<<sum[3]<<" two_blocks="<<sum[4]<<" maps_with_external_image="<<sum[5]<<"; complete maps from partitioned U of size 2..5, 2<=blocks<|U|\n";
+        cout<<"PASS arbitrary_block_guard outside="<<outside<<" partitions="<<jobs.size()/2<<" maps="<<sum[0]<<" high_rank="<<sum[1]<<" whole="<<sum[2]<<" forbidden_vertex="<<sum[3]<<" two_blocks="<<sum[4]<<" maps_with_external_image="<<sum[5]<<" outside_rows="<<sum[6]<<" common_neighbor_pairs="<<sum[7]<<"; complete maps from partitioned U of size 2..5, 2<=blocks<|U|\n";
     }
     vector<vector<int>> letters{{3,2,1,2},{1,0,2,2}};
     auto image=[&](unsigned row,int a){unsigned result=0;for(unsigned bits=row;bits;bits&=bits-1)result|=1u<<letters[a][__builtin_ctz(bits)];return result;};

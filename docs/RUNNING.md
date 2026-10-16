@@ -238,6 +238,7 @@ lower-bound search, not an automaton upper bound:
 ```sh
 python3 run.py script scripts/problem4/check_proper_transversal_constructions.py
 python3 run.py script scripts/problem4/proper_transversal_constructions.cpp 4 7 15 4
+python3 run.py script scripts/problem4/proper_transversal_constructions.cpp 4 7 15 4 --all-pair-permutations
 ```
 
 Arguments are matching-pair count, common-cycle length, target, and threads.

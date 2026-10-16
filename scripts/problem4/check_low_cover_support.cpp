@@ -28,6 +28,11 @@ Data inspect(const vector<unsigned>& adj) {
     for(unsigned neighbors:adj)result.support+=neighbors!=0;
     int t=n-result.alpha,d=result.alpha-result.common;
     assert(result.support<=t*(d+2));
+    unsigned supported=0;for(int x=0;x<n;++x)if(adj[x])supported|=1u<<x;
+    for(unsigned row=0;row<(1u<<n);++row)if(result.independent[row]&&!(row&~supported)){
+        unsigned neighbors=0;for(unsigned bits=row;bits;bits&=bits-1)neighbors|=adj[__builtin_ctz(bits)];
+        assert(__builtin_popcount(row)<=(d+1)*__builtin_popcount(neighbors));
+    }
     unsigned intersection=(1u<<n)-1,united=0;int maximum_count=0;
     for(unsigned mask=0;mask<(1u<<n);++mask)
         if(result.independent[mask] && __builtin_popcount(mask)==result.alpha) {
@@ -85,8 +90,8 @@ int main() {
     }
     cout<<"PASS all_labelled_graphs n=1..6 graphs="<<graphs
         <<" positive_deficit_equalities="<<equality
-        <<"; support, equality, maximum-family omission, deficit-count and neighborhood-stability bounds"<<'\n';
-    uint64_t nested_graphs=0;
+        <<"; support, equality, maximum-family omission, deficit-count, neighborhood stability and independent-neighborhood ratio bounds"<<'\n';
+    uint64_t nested_graphs=0,defect_neighbor_cases=0;
     for(int n=1;n<=5;++n){vector<pair<int,int>>edges;for(int x=0;x<n;++x)for(int y=x+1;y<n;++y)edges.push_back({x,y});
         for(unsigned h=0;h<(1u<<edges.size());++h){vector<unsigned>adj(n);
             for(unsigned bits=h;bits;bits&=bits-1){auto[x,y]=edges[__builtin_ctz(bits)];adj[x]|=1u<<y;adj[y]|=1u<<x;}
@@ -97,11 +102,34 @@ int main() {
                 for(unsigned bits=g;bits;bits&=bits-1){auto[x,y]=edges[__builtin_ctz(bits)];early[x]|=1u<<y;early[y]|=1u<<x;support|=(1u<<x)|(1u<<y);}
                 for(int x=0;x<n;++x){degree=max(degree,__builtin_popcount(early[x]));if(absent>>x&1)neighbors_absent|=early[x];}
                 assert(!(support&common&~neighbors_absent));unsigned named=support|(((1u<<n)-1)^common);
-                assert(__builtin_popcount(named)<=2*m-a+a*degree);++nested_graphs;if(!g)break;
+                assert(__builtin_popcount(named)<=2*m-a+a*degree);
+                auto early_data=inspect(early);
+                if(early_data.common>=data.alpha){int d=early_data.alpha-data.alpha;
+                    assert(__builtin_popcount(support&common)<=a*(d+1));
+                    assert(__builtin_popcount(named)<=2*m+a*d);++defect_neighbor_cases;
+                }
+                ++nested_graphs;if(!g)break;
             }
         }
     }
     cout<<"PASS all_nested_graph_pairs n=1..5 pairs="<<nested_graphs<<"; named support from omitted vertices and their neighbors\n";
+    cout<<"PASS near_maximum_neighbor_bound applicable_nested_pairs="<<defect_neighbor_cases<<"; includes all absent-set sizes in this graph domain\n";
+    int sharp_named=0;
+    for(int d=1;d<=2;++d)for(int a=1;a<=4;++a)for(int pairs=0;pairs<=1;++pairs)for(int isolates=0;isolates<=1;++isolates){
+        int n=a*(d+2)+2*d+2*pairs+isolates;if(n>19)continue;vector<unsigned>g(n);
+        auto edge=[&](vector<unsigned>&adj,int x,int y){adj[x]|=1u<<y;adj[y]|=1u<<x;};
+        int next=a;for(int center=0;center<a;++center)for(int j=0;j<=d;++j)edge(g,center,next++);
+        int new_pairs=next;next+=2*d;for(int j=0;j<pairs;++j){edge(g,next,next+1);next+=2;}assert(next+isolates==n);
+        auto h=g;for(int j=0;j<d;++j)edge(h,new_pairs+2*j,new_pairs+2*j+1);
+        auto early=inspect(g),late=inspect(h);assert(early.alpha-late.alpha==d&&early.common==late.alpha);
+        unsigned common=(1u<<n)-1,united=0,support=0;
+        for(int x=0;x<n;++x)if(g[x])support|=1u<<x;
+        for(unsigned row=0;row<(1u<<n);++row)if(late.independent[row]&&__builtin_popcount(row)==late.alpha){common&=row;united|=row;}
+        int m=n-late.alpha;assert(n-__builtin_popcount(united)==a);
+        assert(__builtin_popcount(support&common)==a*(d+1));
+        assert(__builtin_popcount(support|(((1u<<n)-1)^common))==2*m-a+a*(d+1));++sharp_named;
+    }
+    cout<<"PASS sharp_named_support_graph_constructions choices="<<sharp_named<<"; static sharpness only, not automata\n";
     int sharp=0;
     for(int t=1;t<=3;++t)for(int d=0;d<=2;++d)for(int isolates=0;isolates<=2;++isolates) {
         int n=t*(d+2)+isolates;vector<unsigned>adj(n);
