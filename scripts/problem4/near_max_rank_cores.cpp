@@ -27,9 +27,10 @@ struct Graph {
     }
 };
 int rank_rows(vector<unsigned>rows,int n){
-    // Current domains: row weight <=4 on at most nine vertices, so
-    // Hadamard <=4^(9/2)=512. On ten-vertex matching domains rank<=6,
-    // hence every relevant zero-one minor is <=6^3=216. Both <1009.
+    // For every zero-one k-minor with k<=10, the bordered +/-1
+    // Hadamard bound (k+1)^((k+1)/2)/2^k is <522<1009.
+    // Larger named domains require their own rank/minor justification;
+    // this routine must not silently be treated as rational rank there.
     const int prime=1009;vector<vector<int>>a(rows.size(),vector<int>(n));
     for(int i=0;i<int(rows.size());++i)for(int j=0;j<n;++j)a[i][j]=rows[i]>>j&1;
     int rank=0;

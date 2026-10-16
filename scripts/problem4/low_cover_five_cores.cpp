@@ -75,6 +75,7 @@ set<pair<int,uint64_t>> generate_cover_four(int first,int last,int threads) {
         <<" isomorphism_classes="<<answer.size()<<endl;return answer;
 }
 
+#ifndef LOW_COVER_FIVE_CORE_LIBRARY
 int main(int argc,char**argv){
     bool control=argc==2&&string(argv[1])=="--control";
     int first=control?5:(argc>1?stoi(argv[1]):5),last=control?6:(argc>2?stoi(argv[2]):11);
@@ -86,8 +87,10 @@ int main(int argc,char**argv){
             ++inputs;Graph g{n,mask};if(literal_candidate(g))expected.insert({n,canonical(g)});}
         assert(cores==expected);cout<<"PASS independent_all_labelled_graphs inputs="<<inputs<<" classes="<<cores.size()<<endl;
     }
-    map<int,int>counts,max_maximum,max_nonextendable;
+    map<int,int>counts,max_maximum,max_nonextendable,entry_obstructed;
     for(auto[n,mask]:cores){Graph g{n,mask};assert(literal_candidate(g));auto adj=g.adjacency();
+        int minimum_degree=g.n;for(unsigned neighbors:adj)minimum_degree=min(minimum_degree,__builtin_popcount(neighbors));
+        entry_obstructed[n]+=minimum_degree>__builtin_popcountll(g.mask)-8;
         vector<unsigned>maximum,small;
         for(unsigned row=0;row<(1u<<n);++row){bool good=true;
             for(unsigned bits=row;bits;bits&=bits-1)if(adj[__builtin_ctz(bits)]&row)good=false;
@@ -98,6 +101,8 @@ int main(int argc,char**argv){
         ++counts[n];max_maximum[n]=max(max_maximum[n],int(maximum.size()));max_nonextendable[n]=max(max_nonextendable[n],nonextendable);
     }
     for(auto[n,count]:counts)cout<<"PROFILE n="<<n<<" classes="<<count<<" maximum_sets_at_most="<<max_maximum[n]
-        <<" nonextendable_near_maximum_at_most="<<max_nonextendable[n]<<'\n';
+        <<" nonextendable_near_maximum_at_most="<<max_nonextendable[n]<<" excluded_by_entry_degree="<<entry_obstructed[n]<<'\n';
     cout<<"COMPLETE static_graph_domain; no later-layer family or dynamic exclusion is claimed"<<endl;
 }
+
+#endif

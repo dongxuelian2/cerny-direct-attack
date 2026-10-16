@@ -184,6 +184,7 @@ matching and shattering bounds. Run the small exhaustive matching control with:
 python3 run.py script scripts/problem4/rank_core_graph6.cpp --matching-control
 python3 run.py script scripts/problem4/matching_guard_control.cpp
 python3 run.py script scripts/problem4/transversal_guard_control.cpp
+python3 run.py script scripts/problem4/short_pair_entry_control.cpp
 python3 run.py script scripts/problem4/exit_rank_control.cpp
 ```
 
@@ -232,7 +233,9 @@ avoid concurrent writes to its executable; an observed compilation failure is
 not a mathematical result.
 
 The single-exit construction family permits arbitrary within-block collisions,
-but fixes both cycles and almost all common-state actions. It is a restricted
+but fixes the common cycle and almost all common-state actions. The optional
+`--all-pair-permutations` expands the other letter from one core cycle to all
+signed matching-pair permutations. It is a restricted
 lower-bound search, not an automaton upper bound:
 
 ```sh
@@ -250,12 +253,22 @@ The cover-four branch at layer ten has a separate complete **static** generator:
 ```sh
 python3 run.py script scripts/problem4/low_cover_five_cores.cpp --control
 python3 run.py script scripts/problem4/low_cover_five_cores.cpp 5 11 4
+python3 run.py script scripts/problem4/low_cover_five_domains.cpp --control
+python3 run.py script scripts/problem4/low_cover_five_domains.cpp 0 4143
 ```
 
 It enumerates nonempty neighborhood multisets on a fixed four-vertex cover,
 then canonicalizes accepted graphs. The paper excludes twelve-vertex support
-before this run. Its 4224 classes and the bounds on later maximum families do
+before this run; the later paper argument also excludes all 81 eleven-vertex
+classes and bounds total named support by ten. Its 4224 static classes and the
+bounds on later maximum families do
 not establish a dynamic exclusion or a fifteen-step global upper bound.
+The last command completely expands the remaining ten-named-state closed
+later families, including the K5 control domain. Its first two positional
+arguments select a non-overlapping interval of early graph IDs. It prints
+counts only; the resulting 1048490 static domains are not automata.
+The control compares ordinary subset selection, both canonicalization schemes,
+and literal maximum families with two and three common isolated states.
 
 The bounded-word reverse-frame control independently compares literal forward
 images with shared-identity predecessor data. It checks the alphabet-selection
