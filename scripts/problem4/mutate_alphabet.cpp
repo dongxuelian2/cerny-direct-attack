@@ -7,6 +7,7 @@
 #include <numeric>
 #include <random>
 #include <vector>
+constexpr int mutation_max_states=20;
 using Row=std::vector<int>;
 using Rows=std::vector<Row>;
 struct Score { int value=0; long long merit=0; int S=0,A=0; };
@@ -19,10 +20,10 @@ struct Evaluate {
    for(int x=1;x<N;++x)size[x]=__builtin_popcount((unsigned)x);
  }
  Score run(const Rows& rows){
-  unsigned reach[17];for(int q=0;q<n;++q){reach[q]=1u<<q;for(auto& row:rows)reach[q]|=1u<<row[q];}
+  unsigned reach[mutation_max_states];for(int q=0;q<n;++q){reach[q]=1u<<q;for(auto& row:rows)reach[q]|=1u<<row[q];}
   for(int t=0;t<n;++t)for(int q=0;q<n;++q)if(reach[q]&(1u<<t))reach[q]|=reach[t];
   for(int q=0;q<n;++q)if(reach[q]!=(unsigned)full)return {};
-  int index[17][17];std::vector<std::pair<int,int>> pairs;
+  int index[mutation_max_states][mutation_max_states];std::vector<std::pair<int,int>> pairs;
   for(int x=0;x<n;++x)for(int y=x+1;y<n;++y){index[x][y]=index[y][x]=pairs.size();pairs.push_back({x,y});}
   std::vector<std::vector<int>> reverse(pairs.size());std::vector<int>d(pairs.size(),-1),todo;
   for(unsigned i=0;i<pairs.size();++i){auto [x,y]=pairs[i];for(auto& row:rows){
@@ -55,7 +56,7 @@ struct Evaluate {
     int limit=std::min(bound,compression);
     if(limit<result.value)continue;
     std::vector<int> distances(N,-1),queue{S};distances[S]=0;
-    int avoid[17];std::fill(avoid,avoid+n,limit);
+    int avoid[mutation_max_states];std::fill(avoid,avoid+n,limit);
     for(unsigned t=0;t<queue.size();++t){int T=queue[t],depth=distances[T];if(depth>=limit-1)break;
       for(int i=0;i<k;++i){int U=images[i][T],nd=depth+1;
         if(size[U]<s){std::cerr<<"pair/subset disagreement\n";std::abort();}
@@ -79,15 +80,15 @@ void write_rows(std::ostream& out,const Rows& rows){
  out<<'[';for(unsigned i=0;i<rows.size();++i){if(i)out<<',';out<<'[';
  for(unsigned q=0;q<rows[i].size();++q){if(q)out<<',';out<<rows[i][q];}out<<']';}out<<']';
 }
+#ifndef MUTATE_ALPHABET_LIBRARY
 int main(int argc,char**argv){
  if(argc!=9)return 2;
  int n=std::stoi(argv[1]),s=std::stoi(argv[2]),r=std::stoi(argv[3]),k=std::stoi(argv[4]),iterations=std::stoi(argv[5]);
  unsigned random_seed=std::stoul(argv[6]);
- if(n<2||n>16||s<2||s>n||r<1||r>=s||k<2||k>4)return 3;
- std::ifstream in(argv[7]);int count;in>>count;
+ if(n<2||n>mutation_max_states||s<2||s>n||r<1||r>=s||k<2||k>4)return 3;
+ std::ifstream in(argv[7]);int count=0;if(!(in>>count)||count<1)return 4;
  std::vector<Rows> seeds(count,Rows(k,Row(n)));
- for(auto& rows:seeds)for(auto& row:rows)for(int& q:row)in>>q;
- if(!in||count<1)return 4;
+ for(auto& rows:seeds)for(auto& row:rows)for(int& q:row)if(!(in>>q)||q<0||q>=n)return 4;
  Evaluate evaluate(n,s,r,k,random_seed);Rows current,best_rows;Score score,best;
  auto begin=std::chrono::steady_clock::now();int stale=0,executed=0;
  for(int step=0;step<iterations;++step){
@@ -119,3 +120,4 @@ int main(int argc,char**argv){
  out<<",\"seconds\":"<<std::chrono::duration<double>(std::chrono::steady_clock::now()-begin).count()
     <<",\"scope\":\"Bounded stochastic lower-bound search; no negative claim.\"}\n";
 }
+#endif

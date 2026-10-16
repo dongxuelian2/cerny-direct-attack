@@ -7,7 +7,7 @@
 #include <vector>
 using namespace std;
 int main(){
-    uint64_t guard_checks=0,word_maps=0;int structural_cases=0;
+    uint64_t guard_checks=0,word_maps=0,nonsync_guard_checks=0;int structural_cases=0;
     for(int k=2;k<=20;++k){int size=2*k,n=size+1,z=size-1,v=size;
         vector<vector<int>>letters(2,vector<int>(n));
         for(int x=0;x<n;++x){letters[0][x]=x<size?(x+1)%size:v;letters[1][x]=x;}
@@ -57,8 +57,28 @@ int main(){
                 for(unsigned code=0;code<rows.size();++code){assert((distance[code]>j)==!(rows[code]&forbidden));++guard_checks;}}
         }
         ++structural_cases;
+        // A single full cycle is SC but not synchronizing. It has the same
+        // saturated proper-support guards; no reset hypothesis is needed.
+        unsigned cycle_active=0;uint64_t cycle_forbidden=0;
+        for(int depth=1;depth<=k;++depth){
+            cycle_forbidden|=uint64_t(1)<<(z-depth+1);
+            for(int i=0;i<k;++i){int x=(i+depth)%n,y=(i+k+depth)%n;
+                if((x<size?x%k:k)!=(y<size?y%k:k))cycle_active|=1u<<i;}
+            assert(__builtin_popcount(cycle_active)==depth);
+            uint64_t moved_start=0;for(int x=0;x<k;++x)moved_start|=uint64_t(1)<<((x+depth)%n);
+            assert(transverse(moved_start));
+        }
+        if(k<=12)for(unsigned code=0;code<(1u<<k);++code){
+            uint64_t row=0;for(int i=0;i<k;++i)row|=uint64_t(1)<<(i+((code>>i&1)?k:0));
+            bool safe=true;cycle_forbidden=0;
+            for(int depth=1;depth<=k;++depth){uint64_t out=0;
+                for(uint64_t bits=row;bits;bits&=bits-1)out|=uint64_t(1)<<((__builtin_ctzll(bits)+depth)%n);
+                safe&=transverse(out);cycle_forbidden|=uint64_t(1)<<(z-depth+1);
+                assert(safe==!(row&cycle_forbidden));++nonsync_guard_checks;
+            }
+        }
     }
     cout<<"PASS proper_guard_tower k=2..20 cases="<<structural_cases<<" actual_word_maps="<<word_maps
-        <<" all_transversal_guard_checks="<<guard_checks
+        <<" all_transversal_guard_checks="<<guard_checks<<" nonsynchronizing_cycle_guard_checks="<<nonsync_guard_checks
         <<"; SC, reaching/reset words, exit=k+1, compression=k+2, joint_activity=j\n";
 }

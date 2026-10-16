@@ -251,6 +251,42 @@ Arguments are matching-pair count, common-cycle length, target, and threads.
 Printed compression maxima include all declared initial transversals; only
 threshold survivors undergo the additional marked-subset reachability check.
 
+For stochastic lower-bound exploration, `mutate_compression.cpp` computes the
+exact maximum pure compression of each visited automaton by bounded vertex
+cover, before attempting the more expensive reachability/avoidance audit.
+Generate a seed from the existing construction in the research copy:
+
+```sh
+python3 - <<'PY'
+import sys
+from pathlib import Path
+from run import workspace
+work, _ = workspace('manual')
+sys.path.insert(0, str(work / 'scripts/problem4'))
+from two_block_family import construct
+z = construct(7, 4, 1)
+seeds = [z['rows']]
+# For a three-letter run, replace the preceding line by:
+# seeds = [z['rows'] + [extra] for extra in
+#          [list(range(z['n'])), *z['rows']]]
+Path('build/mutation_seed.txt').write_text(str(len(seeds)) + '\n' +
+    '\n'.join(' '.join(str(q) for row in rows for q in row)
+              for rows in seeds) + '\n')
+PY
+python3 run.py script scripts/problem4/mutate_compression.cpp --control
+python3 run.py script scripts/problem4/mutate_compression.cpp \
+  16 5 1 2 5000000 8 738 "$PWD/build/mutation_seed.txt" 15
+```
+
+Arguments are `n m r alphabet_size proposals_per_thread threads first_seed
+seed_file target`. Worker `i` uses `first_seed+i`; use `p=n-2*m+1,t=m-1`
+in the construction for the other runs listed in
+[the lower-bound exploration](../PROOF.md#problem4-proper-transversal-lower-search).
+The count includes repeated and rejected proposals. No failed stochastic run
+proves an upper bound. With zero avoidance audits, `maximum_audited_ac=0`
+means unexamined. An avoidance candidate still requires an independent full
+witness check; the scorer considers at most forty reachable subsets.
+
 The cover-four branch at layer ten has a separate complete **static** generator:
 
 ```sh
@@ -276,6 +312,9 @@ interval solver and its scalar cross-check are used. The full interval
 share kernel partitions and target sets. No square-safety filter is applied:
 the early and late pair layers differ by one. See the exact scope in
 [the double-neighbor exclusion](../PROOF.md#problem4-five-double-neighbor-exclusion).
+Append `--entry-filter` to prune incoming-state sets with the proved
+[joint entrance budget](../PROOF.md#problem4-joint-short-word-entry). Omitting
+it reproduces the complete exclusion without this additional condition.
 
 It enumerates nonempty neighborhood multisets on a fixed four-vertex cover,
 then canonicalizes accepted graphs. The paper excludes twelve-vertex support
