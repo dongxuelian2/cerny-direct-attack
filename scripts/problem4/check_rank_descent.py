@@ -123,6 +123,38 @@ def low_cover_rank_control():
           f'{rows_checked} independent rows; maximum-size controls have lower rank')
 
 
+def four_cycle_preimage_control():
+    cycle = {frozenset((i, (i+1) % 4)) for i in range(4)}
+    assert rational_rank(cycle, 4) == 3
+    assert rational_rank([{0, 1}, {1, 2}, {2, 0}], 3) == 3
+    checked = admitted = empty = 0
+    for n in range(4, 7):
+        pairs = list(combinations(range(n), 2))
+        for f in product(range(n), repeat=n):
+            checked += 1
+            present = set(f).intersection(range(4))
+            # Consequence of the actual safe images and their union being Q.
+            if not present or any((i in present) != ((i+2) % 4 in present)
+                                  for i in range(4)):
+                continue
+            preimage = {frozenset((x, y)) for x, y in pairs
+                        if frozenset((f[x], f[y])) in cycle}
+            if len(cycle | preimage) > 5:
+                continue
+            admitted += 1
+            empty += not preimage
+            assert preimage <= cycle, (n, f, preimage)
+    # At six edges, a permutation exchanging a circle point with an isolate
+    # already defeats the closure conclusion; it has no missing circle output.
+    f = (0, 1, 2, 4, 3)
+    preimage = {frozenset((x, y)) for x, y in combinations(range(5), 2)
+                if frozenset((f[x], f[y])) in cycle}
+    assert len(cycle | preimage) == 6 and not preimage <= cycle
+    assert 0 < empty < admitted
+    print(f'PASS four-cycle preimage closure: {checked} maps on 4..6 states, '
+          f'{admitted} admitted ({empty} empty preimages); six-edge negative control')
+
+
 def common_image_control(inputs):
     checked = 0
     for rows in inputs:
@@ -212,4 +244,5 @@ def main():
 if __name__ == '__main__':
     preserved_rank_control()
     low_cover_rank_control()
+    four_cycle_preimage_control()
     main()

@@ -44,6 +44,9 @@ General rank-descent controls and the enlarged restricted odd-core family:
 
 The rank control also checks maximum-set/reset-row separation and the
 common-image core escape bound, with singleton and nonsynchronizing controls.
+It checks all maps on four through six states for the four-cycle preimage
+closure used in the sparse-pair entrance theorem, including a six-edge
+negative control. The theorem for arbitrary state counts is proved on paper.
 
 ```sh
 python3 run.py script scripts/problem4/check_rank_descent.py

@@ -16,6 +16,7 @@
 - [保护块收缩与新边界](PROOF.md#problem4-protected-collapse-strip)：在不要求收缩后同步的条件下传递短对图与旗标约束，推广精确值十一至整条 `m=4,q=12` 参数边界；对 `q=13` 的等号候选给出十一层公共交集与首入口大小限制。
 - [q=13 的精确值十一](PROOF.md#problem4-q13-exact-eleven)：全部二十五核心、早晚分裂及不再增长域均已完整排除；结合保护收缩与二字母构造，对所有 `r≥1` 得到精确值十一。
 - [一般目标长度的保护集收缩](PROOF.md#problem4-protected-slack-collapse)：距原上界 `k` 的候选可缩到至多 `k+1` 个保护点，全部字母共享至多 `2^k` 个外部保护入口。
+- [稀疏短对图的入口独立性](PROOF.md#problem4-sparse-pair-entrance-independence)：`|P₁|≤4,|P₂|≤5` 时，实际字母排除唯一可能的四圈依赖，将首层入口数量界降为 `k+1`；适用于 `m=4,L≥12`，未解决剩余入口的后续演化。
 - [保持同步与可达的收缩](PROOF.md#problem4-reachable-slack-collapse)：保留至多 `m+k+1` 个保护点可同时保持强连通、同步、初始集可达和精确目标长度；[只要求同步时](PROOF.md#problem4-synchronizing-slack-collapse)至多需要 `k+2` 个保护点。
 - [大保护集区间的极值稳定性](PROOF.md#problem4-protected-size-stabilization)：`m≥4,q≥3m` 时，任意字母表极值在 `r≥q−2m` 后恒定；`m=4,q=13` 的进一步完整排除现已确定所有 `r≥1` 的值为十一。
 - [固定余维的参数单调性](PROOF.md#problem4-parameter-monotonicity)：任意字母表极值随 `q`、`r` 分别不减；这约束未解区域的形状，未确定其精确值。
