@@ -76,6 +76,7 @@ def thin_and_check(n, alphabet, family, edges, protected=()):
 
     basis = []
     words = []
+    energies = []
     layer = 0
     while True:
         old_words = tuple(words)
@@ -86,8 +87,10 @@ def thin_and_check(n, alphabet, family, edges, protected=()):
             for suffix in old_words
         ]
         for word in candidates:
-            if add_basis(basis, word_energy(word)):
+            energy = word_energy(word)
+            if add_basis(basis, energy):
                 words.append(word)
+                energies.append(energy)
         if len(words) == len(old_words):
             break
         layer += 1
@@ -100,6 +103,18 @@ def thin_and_check(n, alphabet, family, edges, protected=()):
     original = [exit_distance(T, alphabet, family_set) for T in family]
     reduced = [exit_distance(T, small_alphabet, family_set) for T in family]
     assert original == reduced, (n, alphabet, family, words, original, reduced)
+    # The same basis supplies a shortest actual word for each finite exit,
+    # while all-zero observations certify an infinite exit distance.
+    for i, T in enumerate(family):
+        successful = [word for word, energy in zip(words, energies) if energy[i]]
+        witness = min(successful, key=len) if successful else None
+        assert (len(witness) if witness is not None else None) == original[i]
+        if witness is not None:
+            current = T
+            for step, letter in enumerate(witness, 1):
+                current = frozenset(alphabet[letter][x] for x in current)
+                assert (current in family_set) == (step < len(witness))
+            assert len(witness) <= len(words)
 
     rho = exact_rank([
         [int(i in T and j in T) for i in range(n) for j in range(i, n)]
@@ -177,6 +192,38 @@ def check_odd_cycle_quadratic_ranks():
         })
 
 
+def check_larger_family_and_sync_loss():
+    """Exercise a genuine rho < |D| domain and the synchronization caveat."""
+    n = 18
+    local_sets = [{i, (i + 2) % 5} for i in range(5)]
+    family = [frozenset({15, 16, 17}.union(*(
+        {5 * block + q for q in local_sets[choice]}
+        for block, choice in enumerate(choices))))
+        for choices in product(range(5), repeat=3)]
+    edges = [(5 * block + q, 5 * block + (q + 1) % 5)
+             for block in range(3) for q in range(5)]
+    rotations = [tuple(5 * block + (q + 1) % 5 if q // 5 == block else q
+                       for q in range(n)) for block in range(3)]
+    collapse = tuple(2 if q == 0 else q for q in range(n))
+    alphabet = [*rotations, collapse, tuple(range(n)), collapse]
+    size, rho, delay, infinite = thin_and_check(n, alphabet, family, edges)
+    assert rho == 61 < len(family) == 125
+    assert delay > 1 and infinite == 0
+    print({"larger_dynamic_family": len(family), "quadratic_rank": rho,
+           "retained_letters": size, "maximum_exit": delay,
+           "all_shortest_witnesses": "pass"})
+
+    family = [frozenset((0, 2)), frozenset((1, 2))]
+    cycles = [(1, 2, 0), (2, 0, 1)]
+    original = cycles + [(0, 0, 0)]
+    assert [exit_distance(T, original, set(family)) for T in family] == [1, 1]
+    assert [exit_distance(T, cycles, set(family)) for T in family] == [1, 1]
+    assert all(len(set(letter)) == 3 for letter in cycles)
+    assert len(set(original[-1])) == 1
+    thin_and_check(3, original, family, [(0, 1)])
+    print("PASS synchronization-loss control: exact exits survive with permutations only")
+
+
 def protected_families_on_three_states():
     """All nonempty fixed-size independent families with nonempty proper A.
 
@@ -248,3 +295,4 @@ if __name__ == "__main__":
     check_all_small_automata()
     check_protected_fixed_size_families()
     check_odd_cycle_quadratic_ranks()
+    check_larger_family_and_sync_loss()

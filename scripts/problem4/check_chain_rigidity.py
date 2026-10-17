@@ -85,8 +85,45 @@ def proof_word(t, p, order, signs, a, b):
     return None, "canonical"
 
 
+def avoid_or_compress(start, protected, letters):
+    queue, seen = deque([(start, 0)]), {start}
+    while queue:
+        current, depth = queue.popleft()
+        for letter in letters:
+            target = frozenset(letter[q] for q in current)
+            if len(target) < len(start) or not protected <= target:
+                return depth + 1
+            if target not in seen:
+                seen.add(target)
+                queue.append((target, depth + 1))
+    return None
+
+
+def check_protected_padding(t, p, order, signs, a, b, kind):
+    start = frozenset(range(p + t))
+    cases = 0
+    for protected in (frozenset([0]), frozenset([0, 1])):
+        original = avoid_or_compress(start, protected, (a, b))
+        for count in (1, 2):
+            n = len(a)
+            padding = frozenset(range(n, n + count))
+            padded_a = list(a) + list(range(n, n + count))
+            padded_b = list(b) + list(range(n + 1, n + count)) + [b[0]]
+            padded_b[0] = n
+            actual = avoid_or_compress(start | padding, protected | padding,
+                                      (padded_a, padded_b))
+            assert actual == original, (t, p, order, signs, count, actual, original)
+            if kind != "canonical":
+                assert actual <= 3 * t + 1
+                if signs == 1 << (t - 1):
+                    assert actual <= 2 * t
+            cases += 1
+    return cases
+
+
 def main():
     totals = Counter()
+    padding_cases = 0
     for t in range(2, 6):
         local = Counter()
         noncanonical_max = 0
@@ -98,6 +135,8 @@ def main():
                     distance = actual_compression_distance(a, b, s)
                     word, kind = proof_word(t, p, order, signs, a, b)
                     local[kind] += 1
+                    if t <= 3:
+                        padding_cases += check_protected_padding(t, p, order, signs, a, b, kind)
                     if kind == "canonical":
                         assert distance == 3 * t + 2
                         # A control against accidentally dropping the exception.
@@ -119,6 +158,8 @@ def main():
         print(t, "cases", sum(local.values()), "branch_counts", dict(local),
               "noncanonical_max", noncanonical_max, flush=True)
     print("total", sum(totals.values()), "branch_counts", dict(totals), flush=True)
+    assert padding_cases == 896
+    print("PASS protected_padding: exact_ac_comparisons", padding_cases, flush=True)
 
 
 if __name__ == "__main__":

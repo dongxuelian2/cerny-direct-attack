@@ -4,7 +4,7 @@ Only Python's standard library is used. This checks the explicit small
 parameter domain; the unbounded theorem is PROOF.md#problem4-full-cycle-exact.
 """
 from collections import Counter, deque
-from itertools import combinations
+from itertools import combinations, product
 from math import gcd
 
 
@@ -27,6 +27,10 @@ def apply(states, word, letters):
 def subset_bfs_ac(n, m, r, letters):
     start = frozenset(range(m, n))
     protected = frozenset(range(n - r, n))
+    return exact_ac(start, protected, letters)
+
+
+def exact_ac(start, protected, letters):
     distance = {start: 0}
     queue = deque([start])
     while queue:
@@ -81,6 +85,41 @@ def pair_bfs_and_reset(n, letters):
         assert len(current) < before
     assert len(apply(frozenset(range(n)), reset, letters)) == 1
     return True, len(reset)
+
+
+def check_upper_bound():
+    """All small binary cycle DFAs and all dense S,A, plus antipodal kernels."""
+    automata = cases = 0
+    for n in (3, 4):
+        cycle = tuple((i + 1) % n for i in range(n))
+        for letter in product(range(n), repeat=n):
+            alphabet = (cycle, letter)
+            synchronized, _ = pair_bfs_and_reset(n, alphabet)
+            if not synchronized:
+                continue
+            automata += 1
+            for size in range(n // 2 + 1, n):
+                for states in combinations(range(n), size):
+                    start = frozenset(states)
+                    for r in range(1, size):
+                        for protected in combinations(states, r):
+                            actual, _ = exact_ac(start, frozenset(protected), alphabet)
+                            assert actual <= min(size - r + 1, 2 * (n - size) + 1)
+                            cases += 1
+    antipodal = 0
+    for n in (4, 6, 8):
+        cycle = tuple((i + 1) % n for i in range(n))
+        collapse = tuple(n // 2 if q == 0 else q for q in range(n))
+        for m in range(1, n // 2):
+            for holes in combinations(range(n), m):
+                start = frozenset(range(n)) - frozenset(holes)
+                # A=empty makes this an independent pure-compression BFS.
+                actual, _ = exact_ac(start, frozenset(), (cycle, collapse))
+                assert actual <= m + 1
+                antipodal += 1
+    print("PASS full_cycle_upper: synchronizing_binary_automata", automata,
+          "all_dense_set_protection_cases", cases, "antipodal_compression_cases", antipodal,
+          flush=True)
 
 
 def original_conjugations_and_reachability(n, m, letters):
@@ -158,6 +197,7 @@ def main():
     print("n_equals_3m_plus_1_cases", dict(boundary_counts), flush=True)
     print("safe_subsets_visited", dict(safe_subsets), flush=True)
     print("maximum_constructed_reset_length", maximum_reset, flush=True)
+    check_upper_bound()
 
 
 if __name__ == "__main__":
