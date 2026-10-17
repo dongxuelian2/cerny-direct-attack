@@ -38,6 +38,43 @@ Intermediate JSON needed by existing producer/checker pairs is created in that
 copy, never committed. Binaries are under `build/bin/`. Delete `build/` to start
 with a clean local computation.
 
+## Small controls for the uniform paper proofs
+
+These use only the Python standard library and explicit small domains.
+They check the constructions and finite boundary cases; the proofs for
+arbitrary parameters are in the linked PROOF.md sections.
+
+~~~sh
+python3 run.py script scripts/problem4/check_quadratic_exit_sparsification.py
+python3 run.py script scripts/problem4/check_chain_rigidity.py
+python3 run.py script scripts/problem4/check_full_cycle_extrema.py
+python3 run.py script scripts/problem4/check_uniform_static_barrier.py
+python3 run.py script scripts/problem4/check_protected_cover_saturation.py
+~~~
+
+The quadratic control checks exact exit distances (including infinity), the
+selected original alphabet, and the actual shortest witness words from the
+observable basis. It includes protected and nonmaximum families, a 125-member
+family of quadratic rank 61, and a synchronization-loss negative control.
+The chain control checks all explicit compression words in its stated small
+domain and compares avoid-or-compress distances after protected subdivision.
+The full-cycle control checks the sharp constructions, actual reaching/reset
+words, all dense S,A in the complete three/four-state binary cycle domain,
+and the antipodal-kernel case of the upper bound.
+The static-barrier control compares literal short-word safety with the graph
+family at nine parameter choices, computes exact rational ranks, applies actual
+reaching words, and checks the single-protected-column obstruction.
+The protected-cover control checks all ordered binary DFAs on two/three states
+and the restricted four-state cycle-plus-map family. It includes synchronizing
+automata that are not strongly connected and effective codimensions 0, 1, 2.
+No inventory or output file is needed. These commands each complete in seconds;
+run them sequentially because `run.py script` refreshes the shared manual copy.
+See the [quadratic theorem](../PROOF.md#problem4-quadratic-exit-sparsification),
+[chain rigidity](../PROOF.md#problem4-signed-chain-rigidity),
+[full-cycle formula](../PROOF.md#problem4-full-cycle-exact),
+[rank obstruction](../PROOF.md#problem4-real-safe-family-rank-barrier), and
+[protected-cover saturation](../PROOF.md#problem4-protected-cover-saturation).
+
 ## Individual research sources
 
 General rank-descent controls and the enlarged restricted odd-core family:

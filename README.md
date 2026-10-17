@@ -35,6 +35,9 @@
 - [余维五的全部覆盖层](PROOF.md#problem4-five-cover-late-layers)：强连通同步、`n≥10,h≥1` 时，`τ(P_h)≥5` 迫使 `c(S)≤h+7`；[四类核心归约](PROOF.md#problem4-next-to-maximal-rank-cores)加全部二十七核心检查。`m=5,q=15` 仍为 `[14,15]`。
 - [长安全区间的周期状态约束](PROOF.md#problem4-periodic-isolated-states)：`ac≥2m+2` 时，每个字母至多有 `m−1` 个非周期状态，全部落在同一个至多 `m(m+1)` 点的短对核心中。
 - [余量一的旗标归约](PROOF.md#problem4-slack-one-initial-flags)：共同短对距离、轨道秩、实际前像供应及完整终端字母表检查覆盖十二步候选；最后的核心 106 前缀 `(64,128,256)` 现也完整归零，计数见[完整覆盖](PROOF.md#problem4-q13-exact-eleven)。
+- [全状态循环类的精确极值](PROOF.md#problem4-full-cycle-exact)：n>2m 时全部参数为 min(s−r+1,2m+1)，三字母全参数达界、gcd(n,m)=1 时二字母达界；[双链刚性](PROOF.md#problem4-signed-chain-rigidity)排除已有下界族的全部非原型颜色重排与换轨选择。
+- [二次提升与全部词长的共同退出](PROOF.md#problem4-quadratic-exit-sparsification)：用 O(m²) 个原字母同时保持后层全部最大集的精确退出长度，并构造各起点的最短退出词、判定永久安全；不声称保留全自动机同步性或获得新的全局数值上界。
+- [保护覆盖饱和的有效余维](PROOF.md#problem4-protected-cover-saturation)：保护条件饱和时用剩余覆盖数控制退出；[真实安全族秩障碍](PROOF.md#problem4-real-safe-family-rank-barrier)说明加入全部实际短词与可达性后，全族行秩仍可随 n 无界，不能代替同一个 S 的轨道。
 - [条件分支](PROOF.md#branches)：需要额外假设的局部论证。
 - [像扩张](PROOF.md#extension)、[秩与核](PROOF.md#rank)、[策略与预算](PROOF.md#policy)、[锚点与最优语言](PROOF.md#anchors)：其他数学方向。
 - [探索记录](PROOF.md#exploration)：受限观察、失败路线和待证明机制。
