@@ -38,6 +38,31 @@ Intermediate JSON needed by existing producer/checker pairs is created in that
 copy, never committed. Binaries are under `build/bin/`. Delete `build/` to start
 with a clean local computation.
 
+## Small controls for the uniform paper proofs
+
+These use only the Python standard library and explicit small domains.
+They check the constructions and finite boundary cases; the proofs for
+arbitrary parameters are in the linked PROOF.md sections.
+
+~~~sh
+python3 run.py script scripts/problem4/check_quadratic_exit_sparsification.py
+python3 run.py script scripts/problem4/check_chain_rigidity.py
+python3 run.py script scripts/problem4/check_full_cycle_extrema.py
+python3 run.py script scripts/problem4/check_uniform_static_barrier.py
+~~~
+
+The first checks exact exit distances, including infinite distances, before
+and after alphabet selection, as well as protected and nonmaximum families.
+The second verifies the explicit compression words throughout the specified
+small signed-chain domain. The third checks all protected sizes in its stated
+small full-cycle parameter range, including actual reaching and reset words.
+The last compares literal short-word safety with the claimed graph family
+and computes its exact rational row rank. No inventory or output file is needed.
+See the [quadratic theorem](../PROOF.md#problem4-quadratic-exit-sparsification),
+[chain rigidity](../PROOF.md#problem4-signed-chain-rigidity),
+[full-cycle formula](../PROOF.md#problem4-full-cycle-exact), and
+[rank obstruction](../PROOF.md#problem4-real-safe-family-rank-barrier).
+
 ## Individual research sources
 
 General rank-descent controls and the enlarged restricted odd-core family:
