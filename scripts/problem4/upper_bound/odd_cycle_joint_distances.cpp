@@ -42,11 +42,15 @@ struct Search {
   uint64_t permutation_nodes=0,rigid_vectors=0;
   Search(int cycle,bool full_kernel=false):n(cycle),k((n-1)/2),cap(n-1),minimum(k+3),
       max_defect(full_kernel?k:k-1),d(n+1),e(n) {
-    for(unsigned mask=0;mask<(1U<<n);++mask) if(__builtin_popcount(mask)==k) {
-      bool independent=true;
-      for(int i=0;i<n;++i) if((mask>>i&1)&&(mask>>((i+1)%n)&1)) independent=false;
-      if(independent) family.push_back(mask);
+    assert(n>=5&&n%2==1&&n<32);
+    // Every maximum independent set of an odd cycle has exactly one gap of
+    // length three; rotate that gap instead of visiting all 2^n subsets.
+    for(int shift=0;shift<n;++shift) {
+      unsigned mask=0;
+      for(int j=0;j<k;++j) mask|=1U<<((2*j+shift)%n);
+      family.push_back(mask);
     }
+    sort(family.begin(),family.end());
     assert(int(family.size())==n);
   }
   int edge(int x,int y) const {

@@ -40,6 +40,323 @@ with a clean local computation.
 
 ## Individual research sources
 
+General rank-descent controls and the enlarged restricted odd-core family:
+
+The rank control also checks maximum-set/reset-row separation and the
+common-image core escape bound, with singleton and nonsynchronizing controls.
+It checks all maps on four through six states for the four-cycle preimage
+closure used in the sparse-pair entrance theorem, including a six-edge
+negative control. The theorem for arbitrary state counts is proved on paper.
+
+The global codimension-four compression bound thirteen uses a separate complete
+P9 core domain. This reconstructs all 45 cores, checks two full action generators,
+and tests the shared subset/pair distances; the eight-state positive control is
+included. The codimension-five bound twenty follows by the cover-transfer lemma.
+
+```sh
+python3 run.py script scripts/problem4/compression_fourteen_cores.cpp 4 --actions --control
+python3 run.py script scripts/problem4/check_short_pair_core_bounds.py
+```
+
+Without `--actions`, the first program only classifies graph cores; `--control`
+additionally compares the complete generators. `--emit` prints the graph edges.
+The name refers to the excluded compression length fourteen. A nonzero joint
+distance vector is a necessary relaxation, not a constructed automaton.
+
+For compression length thirteen, `--layer 8` adds the eight-edge graphs and
+checks all 74 cover-four cores. The remaining cover-three branch has support at
+most nine by the paper support bound. Its nine-point equality cases reduce to
+three four-row domains; `star_nine_domain.cpp` rebuilds every single-letter map
+with zero through six crossing isolates and compares an independent generator
+which chooses target rows first. Neither calculation excludes the remaining
+cover-three cores on at most eight vertices.
+
+```sh
+python3 run.py script scripts/problem4/compression_fourteen_cores.cpp 4 --layer 8 --actions --control
+python3 run.py script scripts/problem4/star_nine_domain.cpp 4 --control
+python3 run.py script scripts/problem4/check_low_cover_support.cpp
+```
+
+The last command independently checks the support inequality, its equality
+graphs, and the four-row preservation lemma on all maps in the stated small
+domains. `check_short_pair_core_bounds.py` also checks the persistent-isolate
+bound on literal automata and subset families. These controls support paper
+proofs; they are not automaton exclusions at arbitrary parameters.
+
+The final thirteen-step exclusion reconstructs 73 low-cover cores and 1988
+common safe domains. It gives the current codimension-four bound twelve and,
+by cover transfer, the codimension-five bound nineteen. The first command
+compares two complete domain generators. The action command also compares two
+complete single-letter generators and checks shared subset/pair distances.
+
+```sh
+python3 run.py script scripts/problem4/low_cover_core_domains.cpp --domains --control
+python3 run.py script scripts/problem4/low_cover_actions.cpp --positive
+python3 run.py script scripts/problem4/low_cover_actions.cpp 0 1988 4 --control --actions
+```
+
+The three numeric action arguments are the starting domain, number of domains,
+and threads. Shorter intervals print `PARTIAL`; a full exclusion needs their
+disjoint union to cover all 1988 domains. Without `--actions`, only the letter
+domains are constructed. `--positive` reconstructs a real eight-state Černý
+example and retains its actual letter signatures and compatible distances.
+Common isolates are represented only for single-step constraints, with a
+possibly omitted auxiliary output; they are never iterated as anonymous states.
+When there are no common isolates, the program does not apply a proper-core
+escape test to the whole state set. See the [full proof](../PROOF.md#problem4-four-global-twelve).
+
+For twelve-step candidates, layer seven has 91 cover-four cores and 117
+cover-three cores. The first command completely excludes the former for
+`n>=9`. The second reconstructs 10142 later maximum-set domains in the latter
+branch, comparing two complete family generators. Its closure predicate is
+shared by those generators. The action command checks a safe single-step
+relaxation of the actual two-step requirements; a surviving vector is not an
+automaton. The full domain has now been excluded using quotient connectivity
+and same-letter squares where needed; see the [exact codimension-four theorem](../PROOF.md#problem4-four-exact-eleven).
+
+```sh
+python3 run.py script scripts/problem4/compression_fourteen_cores.cpp 4 --layer 7 --actions --control
+python3 run.py script scripts/problem4/low_cover_core_domains.cpp --layer 7 --domains --control
+python3 run.py script scripts/problem4/low_cover_actions.cpp 0 10142 4 --layer 7 --control --actions
+```
+
+The low-cover programs default to layer eight. `--stop-on-survivor` can be
+added to the action command to stop at the first compatible vector and print
+`PARTIAL`; it never constitutes a complete negative result. The layer-seven
+domains assume `n>=11` and a nonempty common-isolate set, as justified in
+[the reduction](../PROOF.md#problem4-twelve-finite-domains).
+
+`--quotient` also records arrows from common isolates into named states and
+requires the resulting quotient graph to be strongly connected. `--squares`
+adds the same-letter two-step condition by matching auxiliary output identities
+to inputs; it does not directly compose independently renamed representatives.
+`--square-control` additionally compares literal identity alignments on all maps
+with at most three crossing isolates, reporting their count. These two-step
+options require layer seven. `--two-step` enumerates all candidate named
+intermediate families, retaining the necessary constraints for different
+letters; it can multiply the work and still omits some auxiliary-hole
+compatibility conditions.
+
+```sh
+python3 run.py script scripts/problem4/low_cover_actions.cpp --positive-quotient
+python3 run.py script scripts/problem4/low_cover_actions.cpp 0 10142 4 --layer 7 --control --actions --quotient --squares
+```
+
+The positive control uses the real ten-state Černý automaton with two common
+isolates and keeps both actual letters and six compatible distance vectors.
+The accompanying square countercontrol is rejected. See
+[the identity and quotient proofs](../PROOF.md#problem4-twelve-actual-two-step).
+
+For the codimension-five eighteen-step candidate classification,
+`rank_core_graph6.cpp` consumes a graph6 stream. Use a separately built
+[nauty/Traces geng](https://users.cecs.anu.edu.au/~bdm/nauty/) (the checked version
+was 2.9.3); keep downloaded sources and binaries under ignored `build/`.
+Set `NAUTY_GENG` to its executable path. No graph inventory is required.
+
+```sh
+set -o pipefail
+for n in 7 8 9; do "$NAUTY_GENG" -q -d1 -D5 "$n" || exit; done |
+  python3 run.py script scripts/problem4/rank_core_graph6.cpp 5 7 11
+for n in 6 7; do "$NAUTY_GENG" -q -d1 -D4 "$n" || exit; done |
+  python3 run.py script scripts/problem4/rank_core_graph6.cpp 4 6 0 --control-m4
+```
+
+The first command classifies 257 cores, without assuming an upper edge count.
+The second compares the smaller full stream with the existing nine-core
+classification. Append `--actions 0 257 4` after `5 7 11` to check every core's
+joint distances. Append `--letter-control` after those interval arguments for
+the independent complete input-by-input letter/arrow comparison; append
+`--power-control` instead for literal output-identity controls on every map
+with at most two crossing isolates. Both control modes skip distances, and the
+terminal summary distinguishes the checked components. These three runs, the
+complete graph stream, and the paper reduction establish the
+[codimension-five bound seventeen](../PROOF.md#problem4-five-global-seventeen).
+Smaller `START COUNT THREADS` intervals are explicitly partial. The power
+filter tracks missing named states only while the whole common-isolate set is
+retained; it does not compose independently renamed individual-subset images.
+
+For the seventeen-step candidate domain, generate orders 6 through 10 and use
+`5 6 11` instead. It contains 1994 static cores; its complete dynamic exclusion proves the
+[codimension-five bound sixteen](../PROOF.md#problem4-five-global-sixteen). The ten-vertex cases additionally check the paper's unique
+matching and shattering bounds. Run the small exhaustive matching control with:
+
+```sh
+python3 run.py script scripts/problem4/rank_core_graph6.cpp --matching-control
+python3 run.py script scripts/problem4/matching_guard_control.cpp
+python3 run.py script scripts/problem4/transversal_guard_control.cpp
+python3 run.py script scripts/problem4/proper_guard_tower_control.cpp
+python3 run.py script scripts/problem4/saturated_exit_control.cpp
+python3 run.py script scripts/problem4/maximum_set_exchange_probe.cpp --control
+python3 run.py script scripts/problem4/short_pair_entry_control.cpp
+python3 run.py script scripts/problem4/exit_rank_control.cpp
+```
+
+For `5 6 11 --actions START COUNT THREADS`, the program uses the weaker power
+constraints appropriate to target seventeen and a proved crossing bound of
+`N-6`. It reports whole-pool closure exclusions separately from distance counts.
+It also applies the paper's descending safe-row-space bound to each row-distance
+tail. The two additional controls above enumerate small transformations and
+small binary automata respectively; neither establishes a global extremum.
+For a ten-vertex interval, `--guard MASK PARITY` instead restricts every letter
+to one common matching-transversal guard (or the whole cube). The five matching
+pairs are returned in the deterministic order of the unique-matching routine.
+`MASK` selects one or two of those coordinates, and `PARITY` is 0 or 1. All
+thirty choices are required for a complete common-guard exclusion; one choice
+is a partial domain. The filter is applied to actual maps before signatures
+and arrows are merged.
+
+The difficult fifteen-edge pair-distance controls can optionally use
+[CaDiCaL](https://github.com/arminbiere/cadical) through IPASIR. Download a tagged
+source release into `build/tools/` and build it there with `./configure -shared`
+and `make -j8` (checked release: `rel-3.0.1`). Then set the shared-library path:
+
+```sh
+export CERNY_PAIR_SAT_LIBRARY="$PWD/build/tools/cadical-3.0.1/build/libcadical.so"
+python3 run.py script scripts/problem4/check_pair_sat.cpp
+CERNY_PAIR_SAT_MIN_EDGES=0 python3 run.py script scripts/problem4/low_cover_actions.cpp --positive-quotient
+```
+
+The main interval-propagation search still runs, and its count must equal the
+SAT projection count. Without this variable, the original scalar control runs.
+The optional `CERNY_PAIR_SAT_MIN_EDGES` defaults to 15; zero forces SAT for every
+row profile, useful for controls. This is a Linux shared-library option using
+`dlopen`; no downloaded solver source or binary belongs in Git. SAT blocks only
+distance vectors, validates every model against the original predicates, and
+requires a final unsatisfiable result to finish a profile.
+For `5 6 11 --actions START COUNT THREADS --sat-distances`, SAT instead performs
+all pair-distance searches, without the main interval or scalar search. Output
+marks this mode explicitly. The same source also accepts `5 6 10` for the
+**conditional** sixteen-step domain with vertex cover five at layer ten; it
+does not include the layer-ten cover-four branch. Its safe power depth remains
+five, although its pair-distance cap drops to ten. Neither a partial interval
+nor this one cover branch establishes a global fifteen-step bound.
+`--stop-on-survivor` stops at a necessary relaxation survivor, not a witnessed
+automaton. Compile once before launching parallel runs of the same source to
+avoid concurrent writes to its executable; an observed compilation failure is
+not a mathematical result.
+
+The single-exit construction family permits arbitrary within-block collisions,
+but fixes the common cycle and almost all common-state actions. The optional
+`--all-pair-permutations` expands the other letter from one core cycle to all
+signed matching-pair permutations. It is a restricted
+lower-bound search, not an automaton upper bound:
+
+```sh
+python3 run.py script scripts/problem4/check_proper_transversal_constructions.py
+python3 run.py script scripts/problem4/proper_transversal_constructions.cpp 4 7 15 4
+python3 run.py script scripts/problem4/proper_transversal_constructions.cpp 4 7 15 4 --all-pair-permutations
+```
+
+Arguments are matching-pair count, common-cycle length, target, and threads.
+Printed compression maxima include all declared initial transversals; only
+threshold survivors undergo the additional marked-subset reachability check.
+
+For stochastic lower-bound exploration, `mutate_compression.cpp` computes the
+exact maximum pure compression of each visited automaton by bounded vertex
+cover, before attempting the more expensive reachability/avoidance audit.
+Generate a seed from the existing construction in the research copy:
+
+```sh
+python3 - <<'PY'
+import sys
+from pathlib import Path
+from run import workspace
+work, _ = workspace('manual')
+sys.path.insert(0, str(work / 'scripts/problem4'))
+from two_block_family import construct
+z = construct(7, 4, 1)
+seeds = [z['rows']]
+# For a three-letter run, replace the preceding line by:
+# seeds = [z['rows'] + [extra] for extra in
+#          [list(range(z['n'])), *z['rows']]]
+Path('build/mutation_seed.txt').write_text(str(len(seeds)) + '\n' +
+    '\n'.join(' '.join(str(q) for row in rows for q in row)
+              for rows in seeds) + '\n')
+PY
+python3 run.py script scripts/problem4/mutate_compression.cpp --control
+python3 run.py script scripts/problem4/mutate_compression.cpp \
+  16 5 1 2 5000000 8 738 "$PWD/build/mutation_seed.txt" 15
+```
+
+Arguments are `n m r alphabet_size proposals_per_thread threads first_seed
+seed_file target`. Worker `i` uses `first_seed+i`; use `p=n-2*m+1,t=m-1`
+in the construction for the other runs listed in
+[the lower-bound exploration](../PROOF.md#problem4-proper-transversal-lower-search).
+The count includes repeated and rejected proposals. No failed stochastic run
+proves an upper bound. With zero avoidance audits, `maximum_audited_ac=0`
+means unexamined. An avoidance candidate still requires an independent full
+witness check; the scorer considers at most forty reachable subsets.
+
+The cover-four branch at layer ten has a separate complete **static** generator:
+
+```sh
+python3 run.py script scripts/problem4/low_cover_five_cores.cpp --control
+python3 run.py script scripts/problem4/low_cover_five_cores.cpp 5 11 4
+python3 run.py script scripts/problem4/low_cover_five_domains.cpp --control
+python3 run.py script scripts/problem4/low_cover_five_domains.cpp 0 4143
+```
+
+The latter command also checks saturated reachable unions, exit-preimage
+cliques and transversal partitions. These are necessary conditions, not a
+complete dynamic exclusion. For the remaining double-common-neighbor branch:
+
+```sh
+python3 run.py script scripts/problem4/five_low_cover_positive.cpp
+CERNY_PAIR_SAT_LIBRARY="$PWD/build/tools/cadical-3.0.1/build/libcadical.so" \
+  python3 run.py script scripts/problem4/five_double_neighbor_actions.cpp 0 747 8 --control --distances
+```
+
+The shared library path is local and optional; without it the existing pair
+interval solver and its scalar cross-check are used. The full interval
+`0 747` covers this conditional branch only. Both letter generation orders
+share kernel partitions and target sets. No square-safety filter is applied:
+the early and late pair layers differ by one. See the exact scope in
+[the double-neighbor exclusion](../PROOF.md#problem4-five-double-neighbor-exclusion).
+Append `--entry-filter` to prune incoming-state sets with the proved
+[joint entrance budget](../PROOF.md#problem4-joint-short-word-entry). Omitting
+it reproduces the complete exclusion without this additional condition.
+
+It enumerates nonempty neighborhood multisets on a fixed four-vertex cover,
+then canonicalizes accepted graphs. The paper excludes twelve-vertex support
+before this run; the later paper argument also excludes all 81 eleven-vertex
+classes and bounds total named support by ten. Its 4224 static classes and the
+bounds on later maximum families do
+not establish a dynamic exclusion or a fifteen-step global upper bound.
+The last command completely expands the remaining ten-named-state closed
+later families, including the K5 control domain. Its first two positional
+arguments select a non-overlapping interval of early graph IDs. It prints
+counts only; the resulting 1048490 static domains are not automata.
+The control compares ordinary subset selection, both canonicalization schemes,
+and literal maximum families with two and three common isolated states.
+
+The bounded-word reverse-frame control independently compares literal forward
+images with shared-identity predecessor data. It checks the alphabet-selection
+lemma, pair and row distances, quotient connectivity, and both positive and
+negative safety outcomes. This is a small implementation control for a paper
+reduction, not an enumeration of the unresolved codimension-five domain.
+
+```sh
+python3 run.py script scripts/problem4/check_backward_word_frame.cpp
+```
+
+```sh
+python3 run.py script scripts/problem4/check_rank_descent.py
+python3 run.py script scripts/problem4/check_odd_core_target.py
+python3 run.py script scripts/problem4/odd_core_target.cpp 15 4 12 --all-partitions --threads 4
+python3 run.py script scripts/problem4/odd_core_target.cpp 16 5 15 --all-partitions --threads 12
+```
+
+`odd_core_target.cpp` permits every local rank-one-defect map, rather than only
+redirected involutions. It still covers only the explicitly defined odd-core
+family in [the proof](../PROOF.md#problem4-arbitrary-odd-core-threshold).
+`--all-partitions` covers every external permutation cycle type; without it,
+only one long external cycle and a fixed point are used. `--emit` prints every
+qualifying transition/subset/marker set. `--max-tasks N` restricts the prefix
+domain and prints `PARTIAL`; only an unrestricted `COMPLETE` run exhausts the
+chosen family. No negative result from this program is a general upper bound.
+The independent Python check compares all small positive and negative instances
+using literal subset BFS and a different transformation generator.
+
 ```sh
 python3 run.py script scripts/problem4/upper_bound/problem4_k4_controls.py
 python3 run.py script scripts/problem4/upper_bound/problem4_p3_shapes.py
@@ -360,6 +677,67 @@ The Python control uses small complete domains and exact rational ranks. The
 C++ mode exhausts all maps on C5 plus one isolate and C7 plus one isolate,
 including kernels outside the cycle. It partitions by the first output value
 and prints results without requiring or writing report inventories.
+
+## Uniform graph and rank controls
+
+The all-length proofs and their scope are in
+[PROOF.md](../PROOF.md#problem4-odd-cycle-all-lengths-bound). These programs
+check finite domains and identities; they do not establish the unbounded
+parameter claims by extrapolation.
+
+```sh
+python3 run.py script scripts/problem4/odd_cycle_geometry.cpp 7 4 --literal
+python3 run.py script scripts/problem4/odd_cycle_geometry.cpp 9 4
+python3 run.py script scripts/problem4/odd_cycle_path_distances.cpp 6 --compare-old
+python3 run.py script scripts/problem4/odd_cycle_path_distances.cpp 2 0 0 --compare-legacy
+python3 run.py script scripts/problem4/odd_cycle_path_distances.cpp 14 0 0
+python3 run.py script scripts/problem4/check_odd_subdivision_deletion.cpp 10 4
+python3 run.py script scripts/problem4/check_odd_subdivision_deletion.cpp --general 4
+python3 run.py script scripts/problem4/check_short_pair_core_bounds.py
+```
+
+`odd_cycle_geometry.cpp N threads` accepts N=5,7,9,11,13; `--literal` adds
+full state-map controls for N=5,7. The path solver uses k=(N−1)/2, then a
+common-domain parameter t and a pair-distance cap h; zero means all relevant
+values. It supports k=2,…,14. `--compare-old` accepts k=2,…,6 and compares
+complete singular signature sets. `--compare-legacy` compares the distance
+solvers on the requested small domain. C5 has positive survivors, as required
+by its actual counterexample.
+
+The subdivision checker exhausts all six-edge subdivision vectors for
+m=4,…,10. Its separate `--general` mode uses all base graphs on two to five
+vertices without isolates, with total subdivision budget at most two. The
+Python checker uses ordinary pair/subset BFS to verify the Černý distance
+formula and the eight-state h=2 counterexample, including actual reaching
+and reset words.
+
+Rebuild the complete near-maximal-rank core and action domains with:
+
+```sh
+python3 run.py script scripts/problem4/near_max_rank_cores.cpp 4 9 4 --literal
+python3 run.py script scripts/problem4/near_max_rank_cores.cpp 5 13 4
+python3 run.py script scripts/problem4/near_max_rank_actions.cpp -1 4 --all-caps
+python3 run.py script scripts/problem4/near_max_rank_actions.cpp -1 4 --all-caps --m4
+python3 run.py script scripts/problem4/near_max_rank_actions.cpp -1 4 --literal 1
+python3 run.py script scripts/problem4/near_max_rank_actions.cpp -1 4 --literal 1 --m4
+python3 run.py script scripts/problem4/near_max_rank_actions.cpp -1 4 --compare-defects
+```
+
+Action arguments start with core ID (`-1` for all), then threads. The default
+is m=5 (27 cores); `--m4` selects 8 cores. `--all-caps` covers h=1,…,13 or
+h=1,…,9, respectively; `--cap H` selects one layer. Every distance run compares
+integer-domain propagation with a separate reverse-order edge assignment.
+`--literal 1` compares complete one-isolate maps with the full normalized
+auxiliary-state domain, including the unions of core-state arrows.
+`--compare-defects` independently widens m=5 from defect at most two to four;
+`--full-defect` can also widen the domain for a distance run.
+
+`connected_vectors` only counts pools with no closed nonempty core subset;
+it is not a count of strongly connected automata. In m=4 only h=2 has such
+pools; the explicit actual counterexample is checked separately. In m=5 all
+joint pools are empty. Mathematical coverage and limits are in
+[the m=4 proof](../PROOF.md#problem4-four-cover-third-layer) and
+[the m=5 proof](../PROOF.md#problem4-five-cover-late-layers).
 
 ## Earlier conditional sources
 
