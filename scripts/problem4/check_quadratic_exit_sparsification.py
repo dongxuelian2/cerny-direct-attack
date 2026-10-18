@@ -57,7 +57,12 @@ def exit_distance(initial, alphabet, family):
 
 
 def thin_and_check(n, alphabet, family, edges, protected=()):
-    """Build the suffix-closed observable basis and check all exact exits."""
+    """Check exact exits for the full fixed-size independent/protected family.
+
+    A selected subfamily need not equal the energy's zero set and is outside
+    this control's theorem hypotheses; check_complete_family_requirement
+    demonstrates the distinction from the original avoid-or-compress event.
+    """
     def word_energy(word):
         transformation = list(range(n))
         for letter in word:
@@ -291,8 +296,42 @@ def check_protected_fixed_size_families():
         })
 
 
+def check_complete_family_requirement():
+    """A selected safe subfamily cannot replace the energy's full zero set."""
+    alphabet = [(0, 2, 1), (0, 1, 0), (1, 0, 2)]
+    start = frozenset((0, 1))
+    family = [start, frozenset((0, 2))]
+    # This complete family is precisely the 2-sets containing protected 0
+    # for an empty graph. BFS therefore measures the original ac distance.
+    distances = [exit_distance(T, alphabet, set(family)) for T in family]
+    assert distances == [2, 1]
+    assert all(exit_distance(start, [letter], set(family)) is None
+               for letter in alphabet)
+    assert [exit_distance(T, alphabet[:2], set(family)) for T in family] == distances
+    indicators = [[int(i in T) for i in range(3)] for T in family]
+    lifts = [[int(i in T and j in T) for i in range(3) for j in range(i, 3)]
+             for T in family]
+    assert exact_rank(indicators) == exact_rank(lifts) == 2
+    assert exact_rank(indicators[:1]) == exact_rank(lifts[:1]) == 1
+    # Leaving {start} is a DIFFERENT event: a is safe for the original
+    # problem, yet exits this arbitrarily selected singleton immediately.
+    assert exit_distance(start, alphabet, {start}) == 1
+    image = frozenset(alphabet[0][x] for x in start)
+    assert image == family[1]
+    assert exact_rank(lifts[:1] + [lifts[1]]) == 2
+    current = frozenset(range(3))
+    for index in (1, 0, 1):
+        current = frozenset(alphabet[index][x] for x in current)
+    assert current == frozenset((0,))  # bab resets the full automaton.
+    assert frozenset(alphabet[1]) == start  # Qb=S.
+    thin_and_check(3, alphabet, family, [], (0,))
+    print("PASS complete-family control: original exits [2, 1], unary exits infinite; "
+          "selected-singleton exit 1 is a different distance")
+
+
 if __name__ == "__main__":
     check_all_small_automata()
     check_protected_fixed_size_families()
+    check_complete_family_requirement()
     check_odd_cycle_quadratic_ranks()
     check_larger_family_and_sync_loss()
