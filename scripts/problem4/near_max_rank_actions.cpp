@@ -9,8 +9,9 @@
 
 struct CoreActions {
     Graph graph;
-    int n,nf,ne,m,required_rank,exit_target,pair_cap=7,defect_cap=3;
+    int n,nf,ne,m,required_rank,exit_target,pair_cap=7,defect_cap=3,incoming_cap=-1;
     vector<unsigned> family;
+    vector<unsigned> additional_sources;
     vector<pair<int,int>> edges;
     vector<vector<int>> edge_id;
     vector<unsigned char> large_rank;
@@ -19,10 +20,16 @@ struct CoreActions {
     uint64_t connected_vectors=0;
     bool quotient_connectivity=false,ordered_pair_control=false,prune_closed_row_pools=false;
     bool descending_rank_bound=false;
-    bool sat_distance_only=false;
+    bool sat_distance_only=false,sat_joint_only=false;
+    bool require_pair_entrance=false;
+    bool quiet=false;
+    bool prune_union_growth=false,prune_quotient_sc=false;
+    uint64_t union_growth_rejected=0;
     uint64_t closed_row_pools=0,closed_pair_pools=0;
     mutable uint64_t pair_sat_calls=0;
     function<bool(const vector<int>&)> map_filter;
+    function<bool(const vector<unsigned>&)> kernel_filter;
+    function<bool(unsigned,unsigned,unsigned)> target_filter;
     uint64_t nodes=0,maps=0,retained=0;
     uint64_t layer_nodes=0,row_vectors=0,pair_nodes=0,joint_vectors=0;
     vector<int> distance;
@@ -30,7 +37,7 @@ struct CoreActions {
     explicit CoreActions(Graph g,int holes=5,vector<unsigned> supplied_family={},int required=0,int exit=0):graph(g),n(g.n),m(holes),required_rank(required?required:2*m-3),exit_target(exit?exit:2*m-2),edge_id(n,vector<int>(n,-2)){
         if(supplied_family.empty()){assert(qualifies(g,m,4*m-7,&family));}
         else family=move(supplied_family);
-        nf=family.size();assert(nf<=14);
+        nf=family.size();assert(nf<=17);
         for(int x=0;x<n;++x){edge_id[x][x]=-1;
             for(int y=x+1;y<n;++y)if(g.edge(x,y)){
                 edge_id[x][y]=edge_id[y][x]=edges.size();edges.push_back({x,y});}}
@@ -239,7 +246,7 @@ struct CoreActions {
             <<" signatures="<<reference.size()<<endl;
     }
     uint64_t independent_pairs(const vector<int>& initial_pool)const{
-        if(pair_sat_enabled(ne)){++pair_sat_calls;return sat_pair_count(actions,distance,initial_pool,ne,pair_cap,state_arrows,n,prune_closed_row_pools);}
+        if(pair_sat_enabled(ne)){++pair_sat_calls;return sat_pair_count(actions,distance,initial_pool,ne,pair_cap,state_arrows,n,prune_closed_row_pools,prune_quotient_sc);}
         vector<int>e(ne),order(ne);iota(order.rbegin(),order.rend(),0);uint64_t survivors=0;
         if(ordered_pair_control){vector<uint64_t>weight(ne);
             for(int id:initial_pool)for(int x=0;x<ne;++x)weight[x]+=bool(actions[id].forced>>x&1)+(actions[id].pair[x]==-1);
@@ -346,10 +353,33 @@ struct CoreActions {
             <<accumulate(counts.begin(),counts.end(),uint64_t(0))<<" signatures="<<reference.size()<<endl;
     }
     bool pool_can_escape(const vector<int>&pool)const{
-        vector<unsigned>reach(n+1);for(int x=0;x<=n;++x)reach[x]=1u<<x;
-        for(int id:pool)for(int x=0;x<n;++x)reach[x]|=state_arrows[id][x];
-        for(int via=0;via<n;++via)for(int x=0;x<n;++x)if(reach[x]>>via&1)reach[x]|=reach[via];
-        for(int x=0;x<n;++x)if(!(reach[x]>>n&1))return false;return true;
+        int sources=n+int(prune_quotient_sc);vector<unsigned>reach(n+1);
+        for(int x=0;x<=n;++x)reach[x]=1u<<x;
+        for(int id:pool)for(int x=0;x<sources;++x){assert(int(state_arrows[id].size())>=sources);reach[x]|=state_arrows[id][x];}
+        for(int via=0;via<sources;++via)for(int x=0;x<sources;++x)if(reach[x]>>via&1)reach[x]|=reach[via];
+        for(int x=0;x<sources;++x)if(prune_quotient_sc?reach[x]!=((1u<<(n+1))-1):!(reach[x]>>n&1))return false;
+        return true;
+    }
+
+    bool pool_has_growing_start(const vector<int>&pool) const {
+        // Common unnamed members occur in every row, so they cancel from
+        // |union of short images| >= |S|+j. Row signatures retain exact images.
+        vector<unsigned>successors(nf);
+        for(int id:pool)for(int i=0;i<nf;++i)successors[i]|=1u<<actions[id].subset[i];
+        int size=__builtin_popcount(family.front());
+        for(int start=0;start<nf;++start)if(distance[start]>=exit_target){
+            unsigned reached=1u<<start;bool good=true;
+            for(int step=1;step<exit_target;++step){unsigned next=reached;
+                for(unsigned bits=reached;bits;bits&=bits-1)next|=successors[__builtin_ctz(bits)];
+                // Only complete distance profiles call this routine; a slow
+                // starting row cannot exit before its assigned distance.
+                assert(!(next>>nf&1));reached=next;unsigned united=0;
+                for(unsigned bits=reached;bits;bits&=bits-1)united|=family[__builtin_ctz(bits)];
+                if(__builtin_popcount(united)<size+min(step,m)){good=false;break;}
+            }
+            if(good)return true;
+        }
+        return false;
     }
     void layers(int level,unsigned remain,const vector<int>& pool){
         ++layer_nodes;
@@ -377,10 +407,15 @@ struct CoreActions {
                 else if(future)layers(level+1,future,next);
                 else{
                     ++row_vectors;
+                    if(prune_union_growth&&!pool_has_growing_start(next)){
+                        ++union_growth_rejected;
+                        for(unsigned bits=chosen;bits;bits&=bits-1)distance[__builtin_ctz(bits)]=0;
+                        continue;
+                    }
                     if(sat_distance_only){
                         assert(prune_closed_row_pools&&!quotient_connectivity);
                         ++pair_sat_calls;
-                        auto count=sat_pair_count(actions,distance,next,ne,pair_cap,state_arrows,n,true);
+                        auto count=sat_pair_count(actions,distance,next,ne,pair_cap,state_arrows,n,true,prune_quotient_sc);
                         joint_vectors+=count;connected_vectors+=count;
                     }else{
                     PairDomains pairs(ne,pair_cap,actions,distance);
@@ -407,16 +442,36 @@ struct CoreActions {
         }
     }
     void solve(int cap=7){
-        pair_cap=cap;layer_nodes=row_vectors=pair_nodes=joint_vectors=connected_vectors=closed_row_pools=closed_pair_pools=pair_sat_calls=0;
+        pair_cap=cap;layer_nodes=row_vectors=pair_nodes=joint_vectors=connected_vectors=closed_row_pools=closed_pair_pools=pair_sat_calls=union_growth_rejected=0;
+        vector<int>joint_pool;
+        if(sat_joint_only){assert(prune_closed_row_pools&&!quotient_connectivity);
+            joint_pool.resize(actions.size());iota(joint_pool.begin(),joint_pool.end(),0);
+            if(require_pair_entrance&&none_of(actions.begin(),actions.end(),[](const Action&a){return a.forced!=0;})){
+                if(!quiet)cout<<"COMPLETE joint_sat_existence cap="<<cap<<" result=UNSAT; no nonedge enters the complete proper pair layer"<<endl;
+                return;
+            }
+            if(!pool_can_escape(joint_pool)){++closed_row_pools;
+                if(!quiet)cout<<"COMPLETE joint_sat_existence cap="<<cap<<" result=UNSAT; full letter pool cannot escape"<<endl;
+                return;
+            }
+        }
         ranks.resize(1u<<nf);
         for(unsigned mask=0;mask<(1u<<nf);++mask){vector<unsigned>selected;
             for(unsigned bits=mask;bits;bits&=bits-1)selected.push_back(family[__builtin_ctz(bits)]);
             ranks[mask]=rank_rows(selected,n);
         }
+        if(sat_joint_only){
+            assert(prune_closed_row_pools&&!quotient_connectivity);
+            function<bool(const vector<int>&,const vector<int>&)>accept;
+            if(prune_union_growth)accept=[&](const vector<int>&rd,const vector<int>&compatible){distance=rd;return pool_has_growing_start(compatible);};
+            joint_vectors=connected_vectors=sat_joint_exists(actions,ranks,ne,pair_cap,state_arrows,n,exit_target,descending_rank_bound,true,prune_quotient_sc,accept,require_pair_entrance);
+            if(!quiet)cout<<"COMPLETE joint_sat_existence cap="<<cap<<" result="<<(joint_vectors?"SAT":"UNSAT")<<"; SAT is a necessary relaxation only"<<endl;
+            return;
+        }
         distance.resize(nf+1);vector<int>pool(actions.size());iota(pool.begin(),pool.end(),0);
         layers(1,(1u<<nf)-1,pool);
-        cout<<"COMPLETE distances cap="<<pair_cap<<" layer_nodes="<<layer_nodes<<" row_vectors="<<row_vectors
-            <<" pair_nodes="<<pair_nodes<<" joint_vectors="<<joint_vectors<<" connected_vectors="<<connected_vectors<<" closed_row_pools="<<closed_row_pools<<" closed_pair_pools="<<closed_pair_pools<<" early_core_exit="<<prune_closed_row_pools<<" pair_sat_calls="<<pair_sat_calls<<" sat_distance_only="<<sat_distance_only<<endl;
+        if(!quiet)cout<<"COMPLETE distances cap="<<pair_cap<<" layer_nodes="<<layer_nodes<<" row_vectors="<<row_vectors
+            <<" pair_nodes="<<pair_nodes<<" joint_vectors="<<joint_vectors<<" connected_vectors="<<connected_vectors<<" closed_row_pools="<<closed_row_pools<<" closed_pair_pools="<<closed_pair_pools<<" early_core_exit="<<prune_closed_row_pools<<" pair_sat_calls="<<pair_sat_calls<<" union_growth_rejected="<<union_growth_rejected<<" sat_distance_only="<<sat_distance_only<<endl;
     }
 
 };

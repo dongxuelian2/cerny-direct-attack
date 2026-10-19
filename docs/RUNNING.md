@@ -50,6 +50,7 @@ python3 run.py script scripts/problem4/check_chain_rigidity.py
 python3 run.py script scripts/problem4/check_full_cycle_extrema.py
 python3 run.py script scripts/problem4/check_uniform_static_barrier.py
 python3 run.py script scripts/problem4/check_protected_cover_saturation.py
+python3 run.py script scripts/problem4/check_component_ranks.py
 ~~~
 
 The quadratic control checks exact exit distances (including infinity), the
@@ -58,15 +59,28 @@ observable basis. It includes protected and nonmaximum families, a 125-member
 family of quadratic rank 61, and a synchronization-loss negative control.
 The chain control checks all explicit compression words in its stated small
 domain and compares avoid-or-compress distances after protected subdivision.
-The full-cycle control checks the sharp constructions, actual reaching/reset
-words, all dense S,A in the complete three/four-state binary cycle domain,
-and the antipodal-kernel case of the upper bound.
+The full-cycle control checks the original ternary construction, the new
+all-parameter binary construction, actual reaching/reset words, and explicit
+residue-class pair routing in the noncoprime cases. It checks all S,A in the
+complete three/four-state binary cycle domain and the antipodal-kernel bound.
 The static-barrier control compares literal short-word safety with the graph
 family at nine parameter choices, computes exact rational ranks, applies actual
 reaching words, and checks the single-protected-column obstruction.
 The protected-cover control checks all ordered binary DFAs on two/three states
 and the restricted four-state cycle-plus-map family. It includes synchronizing
 automata that are not strongly connected and effective codimensions 0, 1, 2.
+It also checks the matching-saturated residual-graph refinement.
+The component-rank control uses exact rational elimination on every labelled
+graph through order five. For all 1252 nonisomorphic graphs through order seven,
+install/build the official [nauty geng](https://pallini.di.uniroma1.it/) under
+ignored `build/tools/`, then pass its absolute executable path:
+
+~~~sh
+python3 run.py script scripts/problem4/check_component_ranks.py --geng "$PWD/build/tools/nauty2_9_3/geng"
+~~~
+
+This checks the [component formulas and matching bounds](../PROOF.md#problem4-component-ranks-and-matching);
+it is a complete small-graph control, not an exhaustive automaton search.
 No inventory or output file is needed. These commands each complete in seconds;
 run them sequentially because `run.py script` refreshes the shared manual copy.
 See the [quadratic theorem](../PROOF.md#problem4-quadratic-exit-sparsification),
@@ -76,6 +90,38 @@ See the [quadratic theorem](../PROOF.md#problem4-quadratic-exit-sparsification),
 [protected-cover saturation](../PROOF.md#problem4-protected-cover-saturation).
 
 ## Individual research sources
+
+The arbitrary-core-cycle rigidity proof has a C++17 word-level control and
+a complete restricted construction scanner. The initial set and chain letter
+are fixed as in [the theorem](../PROOF.md#problem4-arbitrary-core-cycle-rigidity).
+
+```sh
+python3 run.py script scripts/problem4/two_block_cycle_orders.cpp --control
+python3 run.py script scripts/problem4/two_block_cycle_orders.cpp --control-all-u
+python3 run.py script scripts/problem4/two_block_cycle_orders.cpp 7 4 15 16 --all-p-permutations --verify-words
+python3 run.py script scripts/problem4/two_block_cycle_orders.cpp 8 5 18 16 --verify-words
+```
+
+Arguments are P size, chain size t, compression threshold, and thread count.
+By default a swaps the last two P states and has any single cycle on U.
+`--all-p-permutations` covers every P permutation. `--verify-words` directly
+applies the paper's compressing word to every table. `--all-u-permutations`
+instead covers all U permutations, including multiple cycles, and cannot be
+combined with `--verify-words`: the uniform theorem does not cover that domain.
+High compression candidates still need separate reachability and avoidance
+audits. Counts and results are printed to the terminal; no inventory is saved.
+
+The larger complete multiple-cycle domains used in the construction investigation:
+
+```sh
+python3 run.py script scripts/problem4/two_block_cycle_orders.cpp 7 4 15 16 --all-u-permutations --all-p-permutations
+python3 run.py script scripts/problem4/two_block_cycle_orders.cpp 8 5 18 16 --all-u-permutations
+python3 run.py script scripts/problem4/two_block_cycle_orders.cpp 9 6 21 20 --all-u-permutations
+```
+
+These contain 1,828,915,200, 39,916,800, and 6,227,020,800 named tables,
+respectively. The last command took about four minutes on this machine.
+Only the first also varies the P permutation; all keep the same b and initial S.
 
 General rank-descent controls and the enlarged restricted odd-core family:
 
@@ -352,6 +398,61 @@ the early and late pair layers differ by one. See the exact scope in
 Append `--entry-filter` to prune incoming-state sets with the proved
 [joint entrance budget](../PROOF.md#problem4-joint-short-word-entry). Omitting
 it reproduces the complete exclusion without this additional condition.
+
+The one-point-petal theorem has a literal small-automaton control and an
+all-parameter binary equality construction:
+
+```sh
+python3 run.py script scripts/problem4/check_sunflower_exit.cpp
+python3 run.py script scripts/problem4/check_full_common_displacement.cpp
+python3 run.py script scripts/problem4/five_low_support_actions.cpp 10 8 --remaining-sunflowers
+CERNY_PAIR_SAT_LIBRARY="$PWD/build/tools/cadical-3.0.1/build/libcadical.so" \
+  python3 run.py script scripts/problem4/five_low_support_actions.cpp 6 8 --control --distances
+```
+
+The first command also checks the exact first-cardinality-face construction
+under simultaneous bounds on original-letter kernel fibers and rank defects.
+It verifies the actual retraction, reaching and reset words, as well as every
+short safe image and an attaining avoidance word. Its finite parameter domain
+is printed explicitly; the all-parameter claim uses the
+[paper proof](../PROOF.md#problem4-bounded-kernel-first-face).
+
+The support driver's arguments are maximum named support and worker count.
+Without `--distances` it only counts static domains and checks the paper's
+fourteen-edge bound for sunflower domains. It rebuilds the 1000088 domains
+remaining before the new paper filter, reports all 121 sunflower exclusions,
+and reports 999967 domains outside that paper filter. All 1000088 domains have now been dynamically excluded in the disjoint early-core intervals 5–6, 7, and 8–10. `--remaining-sunflowers` selects only
+the 42 sunflower domains with more than six named points. The final command
+completely checks all 79 six-point domains with both letter-generation orders;
+it does not run the larger domains. See the
+[general theorem and precise scope](../PROOF.md#problem4-sunflower-kernel-exit).
+
+For complete intervals of early nonisolated core size, while retaining all
+later named supports through ten:
+
+```sh
+CERNY_PAIR_SAT_LIBRARY="$PWD/build/tools/cadical-3.0.1/build/libcadical.so" \
+  python3 run.py script scripts/problem4/five_low_support_actions.cpp 10 8 --core-bound 6 --distances --control --parallel-domains
+```
+
+`--core-min N --core-bound M` selects the inclusive early-core interval;
+the first positional argument independently bounds the later named support.
+`--parallel-domains` partitions domains between workers, using one letter
+generation worker per domain, and prints progress instead of each domain's
+internal counters. It retains both full generation orders with `--control`.
+The completed runs cover 4231, 180339, and 815518 domains respectively, all with zero joint vectors; together with the other cover branch they prove the [global fifteen bound](../PROOF.md#problem4-five-global-fifteen).
+The early-layer filter includes the kernel-pair budget, the joint entrance
+condition, and their combined first/last-layer budget with the kernel-pair
+excess over rank defect. Executables already running when a refinement is
+added retain their earlier filters; they are not counted as runs of the
+stronger version. Scope and completed coverage are in
+[the proof](../PROOF.md#problem4-short-pair-kernel-budget).
+
+`check_full_common_displacement.cpp` checks the separate sharp family for
+multiple unprotected points, under the full common-displacement hypothesis.
+It applies every conjugate as an original word, verifies the constructive
+reset, and expands all short safe images. Its parameter domain is printed;
+it does not enumerate all automata or remove the hypothesis from the theorem.
 
 It enumerates nonempty neighborhood multisets on a fixed four-vertex cover,
 then canonicalizes accepted graphs. The paper excludes twelve-vertex support
@@ -824,3 +925,255 @@ blocks of the literal distance-assignment domain without dropping assignments.
 The Python engine in `scripts/automata/` remains useful as a small independent reference.
 `python3 -m unittest discover -s scripts/tests -v` checks implementation behavior locally;
 there is no CI or Lean verification requirement.
+
+
+The next, fifteen-step candidate uses **P9/P11**, not P10/P11. Its cover-five
+branch is `rank_core_graph6.cpp 5 6 9 --actions START COUNT THREADS --sat-distances`
+on the same complete geng stream of orders 6 through 10. There are 2294 cores.
+Use `--letter-control` for the separate full generation comparison. This branch
+alone cannot establish the upper bound fourteen.
+
+For the cover-four branch, the generalized closed-family generator retains
+rank at least four, at most two absent states, and named support up to eleven.
+It uses 128 bits for the 66 pair/coexistence positions; the previous 64-bit
+representation is insufficient at eleven named states. Run:
+
+```sh
+python3 run.py script scripts/problem4/fifteen_low_cover_domains.cpp --control
+python3 run.py script scripts/problem4/fifteen_low_cover_domains.cpp 5 11 8
+CERNY_PAIR_SAT_LIBRARY="$PWD/build/tools/cadical-3.0.1/build/libcadical.so" \
+  python3 run.py script scripts/problem4/fifteen_low_cover_domains.cpp 11 11 8 --distances --letter-control
+```
+
+The first two positional arguments select an inclusive early-core size interval;
+the third is worker count. The static full run yields 4658 cores, two excluded
+by the necessary entrance bound, and 3248981 closed domains. Dynamic runs also
+apply the proved square-identity matching test, because P11 rows must remain
+P9-independent after every two-letter word. Squares alone do not check mixed
+words. Survivors print their exact row masks and are necessary relaxations,
+not realized automata. Only a completed interval is counted as checked.
+
+
+The saturated-union filter now accepts any nonempty omitted set, but callers
+must prove that safe depth is at least union size minus row size. In the
+fifteen-step domain this is justified for exactly two omitted states. The
+[small-surplus maximum-family theorem](../PROOF.md#problem4-small-surplus-maximum-family-exit)
+also bounds the two common-neighbor counts by 1 and 2 after sorting. The full
+static union exclusion is 39281 domains, leaving 3209700; overlapping filters
+must not be added as disjoint counts. Controls:
+
+```sh
+python3 run.py script scripts/problem4/saturated_exit_control.cpp
+python3 run.py script scripts/problem4/check_low_cover_support.cpp
+python3 run.py script scripts/problem4/fifteen_low_cover_domains.cpp --matching-control
+```
+
+For only the saturated half-density branch (two omitted points and six varying
+points), append `--matching-branch` after `--distances --letter-control`.
+Every potential common exit is a separate guard. Both generation orders check
+the same whole-cube safe-domain condition; different guards are never merged.
+Early kernel/row-target pruning only anticipates this explicit map condition.
+The output reports selected dynamic domains separately from the full static
+count. A partial guard run is not a complete eleven-point exclusion.
+
+`CERNY_UNION_GROWTH=1` enables the additional reachable-union test for complete
+row-distance profiles in `rank_core_graph6.cpp`. It requires at least one slow
+starting row whose short images grow by one state per step until full support.
+The fifteen-step low-cover driver enables this condition directly. Existing
+running binaries retain their original filters; completed older intervals do
+not require reruns merely because this necessary pruning was added.
+
+
+The cover-five branch of the fifteen-step candidate is now completely excluded:
+72 disjoint intervals cover all 2294 cores, all child exit codes are zero, and
+all joint counts are zero. The remaining branch has cover four at P9.
+
+For the low-cover dynamic driver, `--parallel-domains` stages the complete
+selected domain and distributes individual domains, rather than whole cores,
+across workers. `STAGED_CORE` lines are classification progress, not dynamic
+completion. Only the subsequent completed count and terminal summary establish
+the selected dynamic coverage. `--quotient-sc` checks both directions of the
+necessary common-state quotient. `--joint-sat` solves row and pair distances
+jointly and returns an existence indicator, not a model count:
+
+```sh
+python3 run.py script scripts/problem4/fifteen_low_cover_domains.cpp --capacity-control
+CERNY_PAIR_SAT_LIBRARY="$PWD/build/tools/cadical-3.0.1/build/libcadical.so" \
+  python3 run.py script scripts/problem4/check_joint_sat.cpp
+CERNY_PAIR_SAT_LIBRARY="$PWD/build/tools/cadical-3.0.1/build/libcadical.so" \
+  python3 run.py script scripts/problem4/fifteen_low_cover_domains.cpp 5 10 14 --distances --letter-control --parallel-domains --quotient-sc --joint-sat
+```
+
+For eleven-point EARLY cores, the [plateau proof](../PROOF.md#problem4-five-fifteen-eleven-plateau)
+justifies `--plateau`: every letter must preserve the same auxiliary maximum
+source into the two early maximum targets. `--single-omission` selects only
+one absent point. Two absent points and six varying points were independently
+excluded in the completed matching-branch run. The inclusive early-core range
+11..11 contains 90 cores and 3595 static domains; after the current necessary
+filters it has 2712 domains, including 1530 single-omission domains.
+`--core-index N --domain-index M` can select an explicitly restricted diagnostic;
+indices refer to canonical early-core order and that core's complete later
+family order, not the parallel completion order.
+
+`SURVIVOR ... joint=1` reports existence in a necessary relaxation, not an
+automaton or a count of all models. In particular, core 447/domain 0 in the
+5..10 range (K4,4, rows 7,11,112,176) is excluded by the
+[multipartite overlap proof](../PROOF.md#problem4-multipartite-overlap-exclusion).
+The current `--joint-sat` path also requires at least one compatible letter
+with a nonedge entering the complete proper early pair layer; see the
+[pair entrance condition](../PROOF.md#problem4-proper-pair-layer-entrance).
+This strengthens the old relaxation. Already running binaries retain the old
+condition set; their negative results remain valid and need no rerun for this
+reason. The completed full run had exactly one surviving domain, this K4,4
+case; the paper exclusion closes the final exception. Other SAT survivors,
+if encountered in a different selected domain, still require analysis.
+
+```sh
+CERNY_PAIR_SAT_LIBRARY="$PWD/build/tools/cadical-3.0.1/build/libcadical.so" \
+  python3 run.py script scripts/problem4/check_joint_sat.cpp --pair-entrance
+CERNY_PAIR_SAT_LIBRARY="$PWD/build/tools/cadical-3.0.1/build/libcadical.so" \
+  python3 run.py script scripts/problem4/fifteen_low_cover_domains.cpp 5 10 1 --distances --letter-control --quotient-sc --joint-sat --core-index 447 --domain-index 0
+```
+
+```sh
+CERNY_PAIR_SAT_LIBRARY="$PWD/build/tools/cadical-3.0.1/build/libcadical.so" \
+  python3 run.py script scripts/problem4/fifteen_low_cover_domains.cpp 11 11 8 --distances --letter-control --parallel-domains --quotient-sc --plateau --joint-sat --single-omission
+python3 run.py script scripts/problem4/five_low_cover_positive.cpp --plateau
+```
+
+The native runs optionally use a CXX compiler wrapper adding `-march=native
+-mtune=native` to the ordinary C++17/O3 build; assertions remain enabled.
+Single-thread letter generation runs inline inside an outer domain worker.
+The inverse table modulo 1009 verifies every nonzero inverse once; it replaces
+the previous per-pivot trial loop without changing the field or rank semantics.
+Interrupted development runs remain partial and are not added to coverage as
+if they had reached their terminal summaries.
+
+
+The eleven-point EARLY-core branch is now completely excluded by disjoint
+components, as detailed in the [coverage proof](../PROOF.md#problem4-five-fifteen-eleven-excluded).
+The older task completed 89 core components and was then interrupted; it is
+not labelled a single normally completed 90-core run. The final core's two-
+omission cases were already covered by the complete matching run; its 26
+single-omission domains have now completed both auxiliary-maximum branches,
+52 UNSAT decisions, with exit code zero. The exact last-core command is:
+
+```sh
+CERNY_PAIR_SAT_LIBRARY="$PWD/build/tools/cadical-3.0.1/build/libcadical.so" \
+  python3 run.py script scripts/problem4/fifteen_low_cover_domains.cpp 11 11 8 --distances --letter-control --parallel-domains --quotient-sc --plateau --joint-sat --single-omission --core-index 82
+```
+
+Core and domain indices always refer to the complete static order for the
+selected early-size range. Completed independent components may be combined
+only after checking their exact input union; unfinished components are excluded.
+The five-to-ten-point run has 3206988 selected necessary domains. An earlier
+run was interrupted at 285952 with no joint survivor; it remains incomplete
+and is not used to fill the final coverage. The optimized run started over and
+completed all 3206988 domains. The user's terminal output reports
+`completed=3206988/3206988 cumulative_joint=1`, the unrestricted `COMPLETE`
+summary, and `Completed in 22923.697s` (dynamic phase 22922.9 seconds).
+It used paired full letter generation, 24 workers, quotient strong connectivity,
+and joint SAT, with no sampling, row-count, core, domain, or omission restriction.
+Its unique surviving domain is core 447/domain 0, excluded by the paper theorem.
+Together with the completed cover-five and eleven-point components this proves
+the [codimension-five exact value](../PROOF.md#problem4-five-exact-fourteen).
+This publication check rebuilds the static domain and reruns small independent
+controls and the single exception; it does not repeat the six-hour full run.
+
+The completed full run used the older relaxation without the new pair-entrance
+condition. Current source enables that necessary condition in `--joint-sat`;
+the old negative decisions plus the paper exception exclusion suffice. For a
+full rerun from source with the current stronger condition:
+
+```sh
+LD_PRELOAD=/usr/lib/libmimalloc.so \
+CERNY_PAIR_SAT_LIBRARY="$PWD/build/tools/cadical-3.0.1/build/libcadical.so" \
+CXX="$PWD/build/native-cxx" \
+  python3 run.py script scripts/problem4/fifteen_low_cover_domains.cpp 5 10 24 --distances --letter-control --parallel-domains --quotient-sc --joint-sat
+```
+
+`LD_PRELOAD` and the compiler wrapper are optional local performance settings;
+omit them if unavailable. Parallel completion order is not canonical domain
+order, so skipping a count of canonical domains does not resume an interrupted
+run. Samples and unfinished prefixes do not contribute complete coverage.
+
+For a bounded performance investigation, select evenly spaced domains after
+sorting by canonical core and domain indices:
+
+```sh
+CERNY_PAIR_SAT_LIBRARY="$PWD/build/tools/cadical-3.0.1/build/libcadical.so" \
+  python3 run.py script scripts/problem4/fifteen_low_cover_domains.cpp 5 10 14 --distances --letter-control --parallel-domains --quotient-sc --joint-sat --sample-domains 256 --profile-time
+```
+
+`--sample-domains N` selects at most N domains and prints `SAMPLE_COMPLETE`,
+never a full-domain completion claim. `selected_dynamic` is the eligible count
+before sampling; `TIMING domains` is the actual number checked. The selection
+does not depend on worker scheduling. `wall_seconds` measures only the dynamic
+phase, excluding graph classification and staging. The setup, generation,
+independent-control and solve times sum elapsed time across workers and can
+exceed wall time. Progress now also shows elapsed time and prints on a domain
+completion after ten seconds without a scheduled progress update.
+
+`--letter-control` pairs the two complete enumerations within each kernel and
+incoming-set job. For that fixed job, each map is exactly an injection of the
+ordered kernel blocks into the n outputs not reserved for auxiliary inputs.
+Its mixed-radix permutation rank is a bijective identifier, accumulated during
+assignment. The primary order produces strictly increasing ranks; the complete
+target-first order is sorted and compared with it, including duplicate checks.
+This compares exact full maps, not fingerprints. The shared deterministic square/signature/arrow
+processing runs once. It was already the same code in the two separate passes;
+equality of its full input sets implies equality of all its outputs.
+`--separate-letter-control` retains two separate complete passes, including
+repeated postprocessing, for a slower comparison. In paired mode the dynamic
+`generate_seconds` includes both enumerations, and `control_seconds` is zero.
+
+The optimized generator caches targets by incoming set and membership counts
+by kernel, sorts each kernel once, and reuses action and recursion buffers.
+The independent target-first generator retains its complete domain: adding a
+source row splits each old membership column into bit-zero and bit-one parts.
+Matching the bit-one counts determines the bit-zero counts for every old
+nonzero column. For the old zero column, only the new bit-one part needs
+equality; its remaining zero-column inequality follows from at most n kernel
+blocks and exactly n available outputs. Point masks and population counts
+implement these comparisons without scanning all 2^rows patterns per target.
+These are exact enumeration changes, not additional mathematical exclusions.
+
+The [partial-map budget proof](../PROOF.md#problem4-partial-map-joint-budget)
+moves the existing first/last-layer test into both assignment searches.
+Merged edges are fixed by the kernel; forced edges only accumulate. Cached
+output-neighborhood masks update the latter without rescanning all input pairs.
+The [partial-square cover test](../PROOF.md#problem4-partial-square-cover)
+also removes impossible first-image targets as soon as their partial second
+images violate independence or lose every possible incoming repair point.
+The full cross-row identity matching still runs at complete maps. Auxiliary
+maximum sources are subject only to their stated one-step condition.
+`maps` now counts leaves reached after partial pruning; the budget-rejection
+counter counts rejected partial extensions, not rejected complete maps. Earlier
+raw map counts therefore need not match, while signatures and arrow unions must.
+
+Use `--late-budget-control` instead of `--letter-control` for the slower oracle:
+the primary generator prunes partial assignments, while the complete independent
+target-first generator computes forced edges literally and applies the budget
+only at complete maps. It also keeps square filtering at complete maps. It
+compares every resulting signature and arrow union.
+For rare large families, `--min-rows N` restricts the selected dynamic domain;
+it never changes the full static-domain count. For example:
+
+```sh
+CERNY_PAIR_SAT_LIBRARY="$PWD/build/tools/cadical-3.0.1/build/libcadical.so" \
+  python3 run.py script scripts/problem4/fifteen_low_cover_domains.cpp 5 10 14 --distances --late-budget-control --parallel-domains --quotient-sc --joint-sat --min-rows 13 --profile-time
+python3 run.py script scripts/problem4/low_cover_actions.cpp --column-control
+```
+
+The thirteen-row restriction has 37 eligible domains, not 3206988. The column
+refinement control independently compares against dense histograms on 1726001
+cases, including every zero-column surplus in its stated finite range. SAT
+conjunction sharing reuses only identical Boolean expressions; it leaves the
+encoding relation unchanged. The existing 100686-case independent joint SAT
+control also runs with this sharing enabled.
+
+GCC profile-guided optimization was also compared using 256 training domains
+and a different 1021-domain selection (only the first domain overlaps). Its
+additional benefit was not reliable enough to make it a required build step.
+The recommended build remains C++17/O3 with assertions; a local compiler
+wrapper may add `-march=native -mtune=native`.

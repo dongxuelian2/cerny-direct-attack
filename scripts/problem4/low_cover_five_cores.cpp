@@ -7,10 +7,10 @@
 
 struct CoverJob { int n; vector<unsigned> neighbors; };
 
-bool cover_four_candidate(const Graph&g) {
+bool cover_four_candidate(const Graph&g,int minimum_edges=10) {
     auto adj=g.adjacency();
     for(unsigned row:adj)if(!row||__builtin_popcount(row)>5)return false;
-    if(__builtin_popcountll(g.mask)<10)return false;
+    if(__builtin_popcountll(g.mask)<minimum_edges)return false;
     // The last n-4 vertices form a maximum independent set I. Test all
     // exchanges into its four-point complement, without subset enumeration.
     unsigned inside=((1u<<g.n)-1)^15u,covered=0;
@@ -30,9 +30,9 @@ bool cover_four_candidate(const Graph&g) {
     return true;
 }
 
-bool literal_candidate(const Graph&g) {
+bool literal_candidate(const Graph&g,int minimum_edges=10) {
     auto adj=g.adjacency();for(unsigned row:adj)if(!row||__builtin_popcount(row)>5)return false;
-    if(__builtin_popcountll(g.mask)<10)return false;
+    if(__builtin_popcountll(g.mask)<minimum_edges)return false;
     int alpha=0;unsigned covered=0;vector<unsigned> independent;
     for(unsigned row=0;row<(1u<<g.n);++row){bool good=true;
         for(unsigned bits=row;bits;bits&=bits-1)if(adj[__builtin_ctz(bits)]&row)good=false;
@@ -42,7 +42,7 @@ bool literal_candidate(const Graph&g) {
     return covered==(1u<<g.n)-1;
 }
 
-set<pair<int,uint64_t>> generate_cover_four(int first,int last,int threads) {
+set<pair<int,uint64_t>> generate_cover_four(int first,int last,int threads,int minimum_edges=10) {
     vector<CoverJob>jobs;
     for(int n=first;n<=last;++n){vector<unsigned>neighbors;array<int,4>degree{};
         function<void(unsigned)>visit=[&](unsigned next){
@@ -65,7 +65,7 @@ set<pair<int,uint64_t>> generate_cover_four(int first,int last,int threads) {
             for(unsigned center=0;center<64;++center){Graph g=base;int bit=0;
                 for(int x=0;x<4;++x)for(int y=x+1;y<4;++y,++bit)if(center>>bit&1)g.add(x,y);
                 ++examined[worker];
-                if(!cover_four_candidate(g))continue;
+                if(!cover_four_candidate(g,minimum_edges))continue;
                 ++accepted[worker];local[worker].insert({g.n,canonical(g)});
             }
         }
@@ -74,7 +74,7 @@ set<pair<int,uint64_t>> generate_cover_four(int first,int last,int threads) {
     cout<<"COMPLETE cover_four_generation orders="<<first<<".."<<last<<" neighborhood_multisets="<<jobs.size()
         <<" center_choices="<<accumulate(examined.begin(),examined.end(),uint64_t(0))
         <<" accepted_presentations="<<accumulate(accepted.begin(),accepted.end(),uint64_t(0))
-        <<" isomorphism_classes="<<answer.size()<<endl;return answer;
+        <<" minimum_edges="<<minimum_edges<<" isomorphism_classes="<<answer.size()<<endl;return answer;
 }
 
 #ifndef LOW_COVER_FIVE_CORE_LIBRARY

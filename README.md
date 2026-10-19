@@ -1,7 +1,7 @@
 # Černý 猜想与同步自动机研究
 
 本项目研究同步自动机的重置字、像扩张，以及 avoid-or-compress 问题。
-**一般 Černý 猜想与完整 Problem 4 尚未解决。余维四全部参数现已确定：`F_bin(n,n−4,r) = F(n,n−4,r) = min(n−r,11)`。** 上界为纸面归约加完整有限域排除的计算辅助证明，下界为统一二字母构造的纸面证明。余维五全参数上界经全部十七步候选排除进一步降为 `min(n−r,16)`；`m=5,q=15` 仍在 `[14,15]`。
+**一般 Černý 猜想与完整 Problem 4 尚未解决。余维四、五全部参数现已确定：`F_bin(n,n−4,r) = F(n,n−4,r) = min(n−r,11)`，`F_bin(n,n−5,r) = F(n,n−5,r) = min(n−r,14)`。** 上界为纸面归约加完整有限域排除的计算辅助证明，下界为二字母可达构造的纸面证明。余维五最后唯一的松弛幸存者由完全多部图结构定理排除；剩余未解区域为 `m≥6,q≥3m`。
 
 新的纸面推导处理全部奇圈长度，并将大余维、全部短对图形状的条件覆盖界推进一层；有限基论证还给出随余维无界增长的加性改进。它们没有给出全参数的匹配下界。
 
@@ -25,17 +25,25 @@
 - [覆盖界的无界加性改进](PROOF.md#problem4-unbounded-cover-deficit)：任意固定 `a`，充分大的 `m` 都满足上述条件界 `c(S)≤h+2m−a−1`；依赖已有 α-critical 有限基定理，[共同像核心退出界](PROOF.md#problem4-common-image-core-escape)将一般阈值定量为极粗的三层指数塔。
 - [余维四的较早覆盖层](PROOF.md#problem4-four-cover-third-layer)：强连通同步、`n≥8,h≥3` 时，`τ(P_h)≥4` 迫使 `c(S)≤h+5`；计算辅助证明。`h=2` 的延伸被一个八状态强连通同步实例否定。
 - [余维四全参数精确值](PROOF.md#problem4-four-exact-eleven)：七层四点覆盖的 91 类核心及三点覆盖的 10142 个命名域全部排除；`n≥11` 的任意余维四集合均在十一字母内压缩。结合二字母下界得到全参数精确式，并推出余维五十八步上界。
-- [余维五十六步上界](PROOF.md#problem4-five-global-sixteen)：完整生成六至十点的 1994 类核心，完整单字母对照与共同距离排除通过；17 类由整个字母池的封闭性排除，其余完成距离检查。已知下界十四，尚未匹配。
+- [余维五全参数精确值十四](PROOF.md#problem4-five-exact-fourteen)：覆盖数五全部 2,294 类核心、覆盖数四全部十一点核心及余下 3,206,988 个必要域完整处理；唯一松弛幸存域由[完全多部图相交覆盖定理](PROOF.md#problem4-multipartite-overlap-exclusion)纸面排除，与二字母下界匹配。`n≥16` 的任意余维五集合均在十四字母内压缩，小状态用避开界补齐。
+- [较早的余维五十六步上界](PROOF.md#problem4-five-global-sixteen)：完整生成六至十点的 1994 类核心，完整单字母对照与共同距离排除通过；17 类由整个字母池的封闭性排除，其余完成距离检查。这是最终十四步定理之前的中间界。
 - [任意块的共同活动界](PROOF.md#problem4-transversal-all-slack-activity)与[真支持的全部安全层](PROOF.md#problem4-proper-support-guard-tower)：对全部长度≤j 的混合词给出 `2(k−R)+j` 的活动块界；饱和时准确确定禁用状态链，并有每个 k 的真实强连通同步等号构造。这是结构界的等号，尚非原极值的匹配下界。
-- [饱和可达并与出口前像](PROOF.md#problem4-saturated-exit-preimages)：不依赖横截分割的出口必要条件；[余维五双共同邻点分支](PROOF.md#problem4-five-double-neighbor-exclusion)的 747 个剩余域已完整排除。十点候选因此只剩具有匹配变化部分的情形；全部参数和其余动态域仍开放。
+- [饱和可达并与出口前像](PROOF.md#problem4-saturated-exit-preimages)：不依赖横截分割的出口必要条件；[余维五双共同邻点分支](PROOF.md#problem4-five-double-neighbor-exclusion)的 747 个剩余域已完整排除。这一步只排除一个结构分支，余维五其余分支由后续完整排除处理。
 - [实际短词的有限归约](PROOF.md#problem4-twelve-finite-domains)与[动态必要条件](PROOF.md#problem4-twelve-actual-two-step)：保留持续遗漏孤点的身份，使用双向商图及同字母平方；一般多步共同实现仍待解决。
 - [任意余维的多缺口归约](PROOF.md#problem4-multiple-hole-finite-reduction)：利用经典最大独立集交并不等式，将后层全部遗漏状态限制在至多 2m 个；结合前层支持界得到与 n 无关的必要单步域。实际短词的共同实现仍待解决。
-- [有限字母与共享身份短词域](PROOF.md#problem4-bounded-word-backward-frame)：选取有界字母子表，并保留短词进入核心的反向邻域，可精确检查有限长度混合词的安全性；是任意余维的必要动态归约，尚未排除余维五候选。
+- [有限字母与共享身份短词域](PROOF.md#problem4-bounded-word-backward-frame)：选取有界字母子表，并保留短词进入核心的反向邻域，可精确检查有限长度混合词的安全性；是任意余维的必要动态归约，本节没有执行这个较大域的全域排除。
 - [短词的持续遗漏孤点界](PROOF.md#problem4-short-word-persistent-holes)：纸面证明适用于相邻压缩谱相差多层的情形。所用支持不等式引用 Gitler–Valencia，未作为新图论定理。
-- [余维五的全部覆盖层](PROOF.md#problem4-five-cover-late-layers)：强连通同步、`n≥10,h≥1` 时，`τ(P_h)≥5` 迫使 `c(S)≤h+7`；[四类核心归约](PROOF.md#problem4-next-to-maximal-rank-cores)加全部二十七核心检查。`m=5,q=15` 仍为 `[14,15]`。
+- [余维五的全部覆盖层](PROOF.md#problem4-five-cover-late-layers)：强连通同步、`n≥10,h≥1` 时，`τ(P_h)≥5` 迫使 `c(S)≤h+7`；[四类核心归约](PROOF.md#problem4-next-to-maximal-rank-cores)加全部二十七核心检查，是最终排除的一个组成部分。
 - [长安全区间的周期状态约束](PROOF.md#problem4-periodic-isolated-states)：`ac≥2m+2` 时，每个字母至多有 `m−1` 个非周期状态，全部落在同一个至多 `m(m+1)` 点的短对核心中。
 - [余量一的旗标归约](PROOF.md#problem4-slack-one-initial-flags)：共同短对距离、轨道秩、实际前像供应及完整终端字母表检查覆盖十二步候选；最后的核心 106 前缀 `(64,128,256)` 现也完整归零，计数见[完整覆盖](PROOF.md#problem4-q13-exact-eleven)。
-- [全状态循环类的精确极值](PROOF.md#problem4-full-cycle-exact)：n>2m 时全部参数为 min(s−r+1,2m+1)，三字母全参数达界、gcd(n,m)=1 时二字母达界；[双链刚性](PROOF.md#problem4-signed-chain-rigidity)排除已有下界族的全部非原型颜色重排与换轨选择。
+- [全状态循环类的精确极值](PROOF.md#problem4-full-cycle-exact)：全部合法参数的二字母与任意字母表极值均为 min(s−r+1,2m+1)，含非互素及非稠密情形，纸面证明和统一二字母达界；[双链刚性](PROOF.md#problem4-signed-chain-rigidity)排除已有下界族的全部非原型颜色重排与换轨选择。
+- [任意活动圈的刚性](PROOF.md#problem4-arbitrary-core-cycle-rigidity)：固定双链合并字母时，允许保护部分任意置换和活动部分任意单圈，纯压缩极值仍为 3m−1；非原型圈至多 3m−2。一般余维的纸面证明及匹配构造，多圈情形另作受限有限搜索。
+- [单点花瓣族的退出界](PROOF.md#problem4-sunflower-kernel-exit)：退出长度至多为最大字母核大小加一，并有任意核大小的可达二字母等号例；一般余维的短对层推论纸面排除余维五十六步候选的整个后层单点花瓣分支。
+- [第一基数面的字母约束精确值](PROOF.md#problem4-bounded-kernel-first-face)：`s=r+1`、原字母核大小至多 K、亏秩至多 δ 时，二字母与任意字母表极值均为 `min(n−r,K+1,δ+2)`；全部合法参数有可达、强连通、同步的纸面匹配构造。
+- [完整共同移出的多点界](PROOF.md#problem4-full-common-displacement)：在明确的原字母移出假设下，`ac≤g(κ−1)+2`，任意 g、κ 都有二字母等号族；未覆盖只移出部分共同状态的分支。
+- [较早的余维五全域十五步上界](PROOF.md#problem4-five-global-fifteen)：完整排除 1,000,088 个必要域，得到上界 min(n−r,15)；后续十五步候选排除将它进一步降为十四并匹配下界。
+- [安全支持只多出至多三点的外部距离定理](PROOF.md#problem4-small-surplus-maximum-family-exit)：一般参数纸面证明覆盖完整最大独立集族，单独处理非横截五圈；用于余维五整个双遗漏点分支。最高十一点支持只剩两种匹配变化形状；该结构结论用于后续完整候选排除。
+- [十五步候选九层分叉与十一点核心全排除](PROOF.md#problem4-five-fifteen-eleven-excluded)：覆盖数五的全部 2,294 类核心、覆盖数四的全部 90 类十一点核心均已完整排除，将余下全域运行归约为 P₉ 非孤立核心至多十点的 3,206,988 个必要域。
 - [二次提升与全部词长的共同退出](PROOF.md#problem4-quadratic-exit-sparsification)：用 O(m²) 个原字母同时保持后层全部最大集的精确退出长度，并构造各起点的最短退出词、判定永久安全；不声称保留全自动机同步性或获得新的全局数值上界。
 - [保护覆盖饱和的有效余维](PROOF.md#problem4-protected-cover-saturation)：保护条件饱和时用剩余覆盖数控制退出；[真实安全族秩障碍](PROOF.md#problem4-real-safe-family-rank-barrier)说明加入全部实际短词与可达性后，全族行秩仍可随 n 无界，不能代替同一个 S 的轨道。
 - [条件分支](PROOF.md#branches)：需要额外假设的局部论证。

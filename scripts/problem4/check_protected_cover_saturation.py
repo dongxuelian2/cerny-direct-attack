@@ -10,6 +10,7 @@ from collections import Counter, deque
 from itertools import combinations, product
 
 from check_quadratic_exit_sparsification import exact_rank
+from check_component_ranks import matching
 
 
 def image(states, letter):
@@ -80,6 +81,10 @@ def inspect(n, alphabet, totals, ranks):
             mu = residual_tau
             bound = 1 if mu == 0 else 2 if mu == 1 else 2 * mu - 1
             assert rank <= bound
+            ke = matching(n, [tuple(e) for e in residual_edges]) == mu
+            if ke:
+                assert rank <= mu + 1
+                totals["matching_saturated_families"] += 1
             totals[f"mu_{mu}_families"] += 1
             totals["protected_saturation_below_global_cover"] += tau < tau_a
             totals["mu_one_rank_two"] += mu == 1 and rank == 2
@@ -87,6 +92,9 @@ def inspect(n, alphabet, totals, ranks):
                 actual = distance_to(start, alphabet,
                                      lambda T: len(T) < size or not protected <= T)
                 assert actual is not None and actual <= h + rank <= h + bound
+                if ke:
+                    assert actual <= h + mu + 1
+                    totals["matching_saturated_ac_checks"] += 1
                 totals["exact_ac_checks"] += 1
                 totals["sharp_bound_checks"] += actual == h + bound
 

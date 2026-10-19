@@ -17,6 +17,19 @@ def rows(n, m):
     return a, b, c
 
 
+def binary_rows(n, m):
+    """Full-parameter extremizers; dense branch uses the composite b*c."""
+    a = [(i + 1) % n for i in range(n)]
+    if n > 2 * m and m:
+        _, b, c = rows(n, m)
+        d = [c[b[x]] for x in range(n)]
+        assert [d[d[x]] for x in range(n)] == b
+        return a, d
+    b = list(range(n))
+    b[n - 1] = 0
+    return a, b
+
+
 def apply(states, word, letters):
     for letter in word:
         f = letters[letter]
@@ -98,7 +111,7 @@ def check_upper_bound():
             if not synchronized:
                 continue
             automata += 1
-            for size in range(n // 2 + 1, n):
+            for size in range(2, n + 1):
                 for states in combinations(range(n), size):
                     start = frozenset(states)
                     for r in range(1, size):
@@ -118,7 +131,7 @@ def check_upper_bound():
                 assert actual <= m + 1
                 antipodal += 1
     print("PASS full_cycle_upper: synchronizing_binary_automata", automata,
-          "all_dense_set_protection_cases", cases, "antipodal_compression_cases", antipodal,
+          "all_set_protection_cases", cases, "antipodal_compression_cases", antipodal,
           flush=True)
 
 
@@ -137,6 +150,90 @@ def original_conjugations_and_reachability(n, m, letters):
     if gcd(n, m) == 1:
         reset = sum((words[(j * m) % n] for j in range(n - 1)), [])
         assert len(apply(source, reset, letters)) == 1
+
+
+def check_binary_all_parameters():
+    counts = Counter()
+    for n in range(2, 37):
+        for m in range(n - 1):
+            if m > 8 and n > 2 * m:
+                continue
+            letters = binary_rows(n, m)
+            dense = m > 0 and n > 2 * m
+            kind = 'dense' if dense else 'full' if m == 0 else 'sparse'
+            synchronized, _ = pair_bfs_and_reset(n, letters)
+            assert synchronized, (n, m)
+            counts[kind + '_automata'] += 1
+            if dense:
+                start = frozenset(range(m, n))
+                words = []
+                for i in range(n):
+                    rotation = (m - 1 - i) % n
+                    word = [0] * rotation + [1, 1] + [0] * (n - rotation)
+                    words.append(word)
+                    for x in range(n):
+                        expected = (i + m) % n if x == i else x
+                        assert apply(frozenset([x]), word, letters) == frozenset([expected])
+                assert apply(frozenset(range(n)), sum(words[:m], []), letters) == start
+                counts['noncoprime_dense_automata'] += gcd(n, m) > 1
+                if gcd(n, m) > 1 and n <= 18:
+                    counts['explicit_class_routing_pairs'] += check_class_routing(n, m, letters, words)
+            else:
+                size = n - m
+                start = frozenset(range(size))
+                # Each actual conjugate deletes i towards i+1; delete the
+                # complement in increasing order, with the last step into 0.
+                word = []
+                for i in range(size, n):
+                    rotation = n - 1 - i
+                    word += [0] * rotation + [1] + [0] * (n - rotation)
+                assert apply(frozenset(range(n)), word, letters) == start
+            for r in range(1, n - m):
+                protected = (frozenset(range(n - r, n)) if dense
+                             else frozenset(range(n - m - r, n - m)))
+                actual, visited = exact_ac(start, protected, letters)
+                expected = min(n - m - r + 1, 2 * m + 1)
+                assert actual == expected, (n, m, r, actual, expected)
+                counts[kind + '_parameters'] += 1
+                counts['visited_safe_subsets'] += visited
+    assert counts['noncoprime_dense_automata'] > 0
+    print('PASS binary_full_parameter_construction', dict(counts), flush=True)
+
+
+def check_class_routing(n, m, letters, units):
+    """Construct and apply the paper's actual merge word for each pair."""
+    g = gcd(n, m)
+    assert g > 1 and n >= 2 * m + 2
+
+    def retract(representatives):
+        return sum((units[(representative + j * m) % n]
+                    for representative in representatives for j in range(1, n // g)), [])
+
+    total = 0
+    for first, second in combinations(range(n), 2):
+        current = [first, second]
+        word = []
+
+        def step(part):
+            word.extend(part)
+            for label in part:
+                current[:] = [letters[label][x] for x in current]
+
+        difference = (second - first) % g
+        while difference:
+            step([0] * ((g - 2 - current[0]) % g))
+            representatives = list(range(g))
+            representatives[g - 2] = n - 2
+            step(retract(representatives))
+            assert current[0] == n - 2 and current[1] != n - 1
+            step([1])
+            assert (current[1] - current[0]) % g == difference - 1
+            difference -= 1
+        step(retract(list(range(g))))
+        assert current[0] == current[1]
+        assert len(apply(frozenset((first, second)), word, letters)) == 1
+        total += 1
+    return total
 
 
 def main():
@@ -198,6 +295,7 @@ def main():
     print("safe_subsets_visited", dict(safe_subsets), flush=True)
     print("maximum_constructed_reset_length", maximum_reset, flush=True)
     check_upper_bound()
+    check_binary_all_parameters()
 
 
 if __name__ == "__main__":

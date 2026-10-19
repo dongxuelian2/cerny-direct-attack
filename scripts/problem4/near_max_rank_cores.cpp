@@ -31,13 +31,19 @@ int rank_rows(vector<unsigned>rows,int n){
     // Hadamard bound (k+1)^((k+1)/2)/2^k is <522<1009.
     // Larger named domains require their own rank/minor justification;
     // this routine must not silently be treated as rational rank there.
-    const int prime=1009;vector<vector<int>>a(rows.size(),vector<int>(n));
+    const int prime=1009;
+    static const array<int,prime>inverses=[](){array<int,prime>table{};table[1]=1;
+        for(int x=2;x<prime;++x)table[x]=prime-(prime/x)*table[prime%x]%prime;
+        for(int x=1;x<prime;++x)assert(x*table[x]%prime==1);
+        return table;
+    }();
+    vector<vector<int>>a(rows.size(),vector<int>(n));
     for(int i=0;i<int(rows.size());++i)for(int j=0;j<n;++j)a[i][j]=rows[i]>>j&1;
     int rank=0;
     for(int col=0;col<n&&rank<int(a.size());++col){
         int pivot=rank;while(pivot<int(a.size())&&!a[pivot][col])++pivot;
         if(pivot==int(a.size()))continue;swap(a[pivot],a[rank]);
-        int inverse=1;while(inverse*a[rank][col]%prime!=1)++inverse;
+        int inverse=inverses[a[rank][col]];
         for(int j=col;j<n;++j)a[rank][j]=a[rank][j]*inverse%prime;
         for(int i=rank+1;i<int(a.size());++i){int scale=a[i][col];
             for(int j=col;j<n;++j)a[i][j]=(a[i][j]-scale*a[rank][j]%prime+prime)%prime;}

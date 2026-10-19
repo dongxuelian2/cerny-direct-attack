@@ -33,7 +33,11 @@ vector<unsigned> five_domain_key(const vector<unsigned>&rows,int n,int z,
     return best;
 }
 
-vector<FiveDomain> five_domains(const Graph&g,bool control,FiveCounts&counts){
+vector<FiveDomain> five_domains(const Graph&g,bool control,FiveCounts&counts,int target_length=16){
+    assert(target_length==15||target_length==16);
+    const int required_rank=target_length-11, missing_cap=17-target_length;
+    const int named_cap=26-target_length;
+    using PairBits=__uint128_t;
     auto adj=g.adjacency();LowFamily family;vector<unsigned>regular;
     for(unsigned row=0;row<(1u<<g.n);++row){bool independent=true;
         for(unsigned bits=row;bits;bits&=bits-1)if(adj[__builtin_ctz(bits)]&row)independent=false;
@@ -43,36 +47,36 @@ vector<FiveDomain> five_domains(const Graph&g,bool control,FiveCounts&counts){
     }
     int nonextendable=0;for(unsigned row:regular){bool extends=false;
         for(unsigned large:family.maximum)extends|=(row&large)==row;nonextendable+=!extends;}
-    int cap=2*family.maximum.size()+nonextendable;assert(cap<=19);
+    int cap=2*family.maximum.size()+nonextendable;if(target_length==16)assert(cap<=19);
     auto autos=automorphisms(g);set<vector<unsigned>>unique;
     map<vector<unsigned>,vector<unsigned>>old_to_new,new_to_old;
     // J has at least two common vertices in the original q>=16 problem.
     // Diagonal bits encode coexistence with J. Omitting one J vertex still
     // leaves another, so no extra singleton-representative constraint is added.
-    for(int z=0;z<=min(10-g.n,control?2:10);++z){int base=g.n+z;unsigned iso=((1u<<z)-1)<<g.n;
-        auto pair_bits=[&](unsigned row){uint64_t out=0;int at=0;
+    for(int z=0;z<=min(named_cap-g.n,control?2:named_cap);++z){int base=g.n+z;unsigned iso=((1u<<z)-1)<<g.n;
+        auto pair_bits=[&](unsigned row){PairBits out=0;int at=0;
             for(int x=0;x<base;++x)for(int y=x;y<base;++y,++at)
-                if((row>>x&1)&&(row>>y&1))out|=uint64_t(1)<<at;
+                if((row>>x&1)&&(row>>y&1))out|=PairBits(1)<<at;
             return out;};
         vector<unsigned>candidate;for(unsigned row:regular)candidate.push_back(row|iso);
         for(unsigned large:family.maximum)for(int hole=0;hole<z;++hole)
             candidate.push_back(large|(iso^(1u<<(g.n+hole))));
         sort(candidate.begin(),candidate.end());candidate.erase(std::unique(candidate.begin(),candidate.end()),candidate.end());
-        assert(candidate.size()<64);vector<uint64_t>pairs,forbidden;
+        assert(candidate.size()<64);vector<PairBits>pairs,forbidden;
         for(unsigned row:candidate)pairs.push_back(pair_bits(row));
         for(unsigned large:family.maximum)forbidden.push_back(pair_bits(large|iso));
-        auto close=[&](uint64_t supplied,uint64_t&result){
-            for(uint64_t blocked:forbidden)if((blocked&supplied)==blocked)return false;
+        auto close=[&](PairBits supplied,uint64_t&result){
+            for(PairBits blocked:forbidden)if((blocked&supplied)==blocked)return false;
             result=0;for(int i=0;i<int(pairs.size());++i)if((pairs[i]&supplied)==pairs[i])result|=uint64_t(1)<<i;
             return __builtin_popcountll(result)<=cap;};
         auto eligible=[&](uint64_t selection,vector<unsigned>*out){
-            if(__builtin_popcountll(selection)<5)return false;
+            if(__builtin_popcountll(selection)<required_rank)return false;
             unsigned united=0,common=(1u<<base)-1;vector<unsigned>rows;
             for(uint64_t bits=selection;bits;bits&=bits-1){unsigned row=candidate[__builtin_ctzll(bits)];rows.push_back(row);united|=row;common&=row;}
-            if((common&iso)||__builtin_popcount(united)<base-1||rank_rows(rows,base)<5)return false;
+            if((common&iso)||__builtin_popcount(united)<base-missing_cap||rank_rows(rows,base)<required_rank)return false;
             if(out)*out=move(rows);return true;};
         set<uint64_t>labelled;
-        function<void(uint64_t,uint64_t,int)>visit=[&](uint64_t selection,uint64_t supplied,int start){
+        function<void(uint64_t,PairBits,int)>visit=[&](uint64_t selection,PairBits supplied,int start){
             ++counts.nodes;++counts.closed;
             vector<unsigned>rows;if(eligible(selection,&rows)){
                 ++counts.eligible;counts.max_rows=max(counts.max_rows,int(rows.size()));counts.max_isolates=max(counts.max_isolates,z);
@@ -83,7 +87,7 @@ vector<FiveDomain> five_domains(const Graph&g,bool control,FiveCounts&counts){
                 unique.insert(move(key));
             }
             for(int i=start;i<int(candidate.size());++i)if(!(selection>>i&1)){
-                uint64_t enlarged=supplied|pairs[i],closed;
+                PairBits enlarged=supplied|pairs[i];uint64_t closed;
                 if(!close(enlarged,closed))continue;
                 uint64_t earlier=(uint64_t(1)<<i)-1;
                 if((closed&earlier)!=(selection&earlier))continue;
@@ -93,11 +97,11 @@ vector<FiveDomain> five_domains(const Graph&g,bool control,FiveCounts&counts){
         uint64_t initial;if(close(0,initial))visit(initial,0,0);
         if(control){assert(candidate.size()<24);set<uint64_t>literal;uint64_t inputs=uint64_t(1)<<candidate.size();
             for(uint64_t selection=0;selection<inputs;++selection){
-                if(__builtin_popcountll(selection)<5||__builtin_popcountll(selection)>cap)continue;
+                if(__builtin_popcountll(selection)<required_rank||__builtin_popcountll(selection)>cap)continue;
                 vector<unsigned>rows;unsigned united=0,common=(1u<<base)-1;vector<unsigned>cooccur(base);
                 for(uint64_t bits=selection;bits;bits&=bits-1){unsigned row=candidate[__builtin_ctzll(bits)];rows.push_back(row);united|=row;common&=row;
                     for(unsigned rs=row;rs;rs&=rs-1)cooccur[__builtin_ctz(rs)]|=row;}
-                if((common&iso)||__builtin_popcount(united)<base-1||rank_rows(rows,base)<5)continue;
+                if((common&iso)||__builtin_popcount(united)<base-missing_cap||rank_rows(rows,base)<required_rank)continue;
                 auto possible=[&](unsigned row){for(unsigned bits=row;bits;bits&=bits-1)if(row&~cooccur[__builtin_ctz(bits)])return false;return true;};
                 bool good=true;for(unsigned large:family.maximum)if(possible(large|iso))good=false;
                 for(int i=0;i<int(candidate.size());++i)if(possible(candidate[i])!=bool(selection>>i&1))good=false;

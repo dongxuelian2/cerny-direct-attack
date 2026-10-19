@@ -7,6 +7,8 @@
 #include <vector>
 using namespace std;
 
+uint64_t local_equality_checks=0;
+
 struct Data {
     int alpha=0, common=0, support=0;
     vector<unsigned char> independent;
@@ -32,6 +34,12 @@ Data inspect(const vector<unsigned>& adj) {
     for(unsigned row=0;row<(1u<<n);++row)if(result.independent[row]&&!(row&~supported)){
         unsigned neighbors=0;for(unsigned bits=row;bits;bits&=bits-1)neighbors|=adj[__builtin_ctz(bits)];
         assert(__builtin_popcount(row)<=(d+1)*__builtin_popcount(neighbors));
+        if(d>0&&row&&__builtin_popcount(row)==(d+1)*__builtin_popcount(neighbors)){
+            unsigned used=0;
+            for(unsigned bits=neighbors;bits;bits&=bits-1){unsigned leaves=adj[__builtin_ctz(bits)]&row;
+                assert(__builtin_popcount(leaves)==d+1&&!(used&leaves));used|=leaves;}
+            assert(used==row);++local_equality_checks;
+        }
     }
     unsigned intersection=(1u<<n)-1,united=0;int maximum_count=0;
     for(unsigned mask=0;mask<(1u<<n);++mask)
@@ -89,7 +97,7 @@ int main() {
         }
     }
     cout<<"PASS all_labelled_graphs n=1..6 graphs="<<graphs
-        <<" positive_deficit_equalities="<<equality
+        <<" positive_deficit_equalities="<<equality<<" independent_neighborhood_equalities="<<local_equality_checks
         <<"; support, equality, maximum-family omission, deficit-count, neighborhood stability and independent-neighborhood ratio bounds"<<'\n';
     uint64_t nested_graphs=0,defect_neighbor_cases=0;
     for(int n=1;n<=5;++n){vector<pair<int,int>>edges;for(int x=0;x<n;++x)for(int y=x+1;y<n;++y)edges.push_back({x,y});
