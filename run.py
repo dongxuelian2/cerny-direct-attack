@@ -105,7 +105,7 @@ def open_point(args):
     end = apply(z['S'], word, z['rows'])
     assert length == 11 and (len(end) < 9 or not set(z['A']) <= end)
     print(f'(13,9,1): binary construction attains {length}; visited {visited} subsets; word={word}')
-    print('This verifies the lower bound 11. The matching computational upper bound is in PROOF.md#problem4-full-fiber-flag.')
+    print('This verifies the lower bound 11. The matching computational upper bound is in archive/legacy/PROOF.md#problem4-full-fiber-flag.')
 
 
 def c7(args):

@@ -25,7 +25,7 @@ Careful: the **m=3** optimum is 9 in the large-q region, **not** 3m−1=8. The c
 
 ## Where did the large notebook go?
 
-The former ~2.85 MB root PROOF.md has been moved *without changing its content* to [archive/legacy/PROOF.md](../../archive/legacy/PROOF.md). It remains the primary evidentiary mathematical record, but **is no longer the intended reading order**. Previous fragment links are handled by the root [PROOF.md legacy redirect/index](../../PROOF.md).
+The former ~2.85 MB root PROOF.md has been moved, with only its six relative Markdown link targets normalized, to [archive/legacy/PROOF.md](../../archive/legacy/PROOF.md). Its byte-identical original is preserved in [merged PR #14](https://github.com/dongxuelian2/cerny-direct-attack/tree/cc94b58aa9b557f0ee516b3a3774de3ad8e41de1). It remains the primary evidentiary mathematical record, but **is no longer the intended reading order**. Previous fragment links are handled by the root [PROOF.md legacy redirect/index](../../PROOF.md).
 
 Similarly, the former large RUNNING.md and the earlier (pre-m=5) manuscript are in [archive/legacy](../../archive/legacy). All code paths remain unchanged.
 

@@ -1,8 +1,8 @@
 # Archived research notebook — compatibility index
 
-**New Open Problem 4 reading route:** [research/problem4/PROOF_ROUTE.md](research/problem4/PROOF_ROUTE.md). The 2.85 MB complete old notebook moved **without alteration** to [archive/legacy/PROOF.md](archive/legacy/PROOF.md); other Černý subjects remain there.
+**New Open Problem 4 reading route:** [research/problem4/PROOF_ROUTE.md](research/problem4/PROOF_ROUTE.md). The complete historical notebook was moved to [archive/legacy/PROOF.md](archive/legacy/PROOF.md); other Černý subjects remain there.
 
-This file preserves all 1760 explicitly named old fragment IDs as a collapsed link index, so bookmarks to `PROOF.md#...` still land on the corresponding link to the preserved source. There is **one intentional extra click**; GitHub Markdown cannot transparently redirect fragment identifiers to another file.
+This file preserves all 1760 explicitly named old fragment IDs as an expanded compatibility index, so bookmarks to `PROOF.md#...` still land on the corresponding link to the preserved source. There is **one intentional extra click**; GitHub Markdown cannot transparently redirect fragment identifiers to another file. Archived mathematical text is unchanged; only six relative Markdown links in its historical copy were normalized after relocation. The exact original Git blob remains reachable through the parent merged-PR #14 commit.
 
 | Most-used proof | Archive |
 |---|---|
@@ -13,7 +13,7 @@ This file preserves all 1760 explicitly named old fragment IDs as a collapsed li
 | [m=3 exception](archive/legacy/PROOF.md#problem4-codimension-three-proof) | 9-step lower |
 | [full-cycle exact](archive/legacy/PROOF.md#problem4-full-cycle-exact) | Independent restricted-class theorem |
 
-<details><summary>Show the full archived anchor compatibility map (1760 entries)</summary>
+<details open><summary>Full archived anchor compatibility map (1760 entries; open to support direct fragment links)</summary>
 
 <a id="problem"></a> [problem](archive/legacy/PROOF.md#problem)
 

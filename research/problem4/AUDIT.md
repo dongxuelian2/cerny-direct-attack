@@ -5,7 +5,7 @@
 ## Actions completed by this editorial refactor
 
 - Separated the Open Problem 4 reading path into [research/problem4](README.md), rather than presenting a 2.85 MB mixed notebook as a linear proof.
-- Archived **byte-identical Git blobs** of the former root PROOF.md, long RUNNING.md and pre-m=5 manuscript under [archive/legacy](../../archive/legacy). There is no evidence deletion: git history and archive are retained.
+- Moved the former root PROOF.md, long RUNNING.md and pre-m=5 manuscript under [archive/legacy](../../archive/legacy). The original byte-identical Git blobs remain in merged PR #14 history; the two moved Markdown copies have only 6 + 60 relative hyperlink corrections. The old LaTeX manuscript remains byte-identical. No proof content has been deleted.
 - Made the new paper lead with the actual m=4 and m=5 end results; removed the superseded m=5 [14,15] claim from the main story.
 - Isolated *necessary finite-domain reductions* from *actual automaton witnesses*. A SAT survivor is never labelled an automaton.
 - Distinguished general F (arbitrary finite alphabet) from F_bin, and pure compression c(S) from ac(S,A).
@@ -41,7 +41,7 @@ These fixes improve mathematical presentation and reproducibility links; they do
 ## Release gates
 
 - [x] Main theorem and dependency map separated from exploration.
-- [x] Archived earlier manuscript and large notebook without losing blobs.
+- [x] Archived earlier manuscript and large notebook without losing mathematical content; original Git blobs remain pinned in history.
 - [x] Sourced finite-domain totals and survivor ID from the merged PR #14.
 - [x] Explicit conjecture and small-m exception.
 - [ ] Independent end-to-end rerun of the multi-million-domain exclusion.
