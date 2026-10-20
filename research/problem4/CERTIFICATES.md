@@ -6,8 +6,11 @@ The following are **records and commands**, not claims that this refactor re-ran
 
 | Claim | Code or record | Verification obligation |
 |---|---|---|
-| m=4 lower | `scripts/problem4/two_block_family.py`, `check_eleven_lower.py` | original-letter words, actual reachable S, synchronization |
-| m=4 upper | `scripts/problem4/upper_bound/` and [original argument](../../archive/legacy/PROOF.md#problem4-four-exact-eleven) | complete P₇ core split, 91 + 10,142 domains, actual-to-relaxation inclusion |
+| m=4,5 lower; q≥2m+2 | `scripts/problem4/two_block_family.py`, `check_two_block.py`, `check_eleven_lower.py` | original-letter two-block words, actual reachable S, synchronization |
+| m=4,5 lower; q=m+1,m+2 | `scripts/problem4/generator.py`, `check_boundary.py`, `check_defect_two.py`; [first and second faces](../../archive/legacy/PROOF.md#direct-attack-avoid-compress-sharp-faces) | binary witnesses at both cardinality faces |
+| m=4,5 lower; m+3≤q≤2m+1 | `scripts/problem4/cofinal_family.py`, `check_cofinal.py`, `check_boundary.py` | cofinal witnesses including equality boundary |
+| m=4 upper: 91 cores | `scripts/problem4/compression_fourteen_cores.cpp --layer 7`; [original argument](../../archive/legacy/PROOF.md#problem4-four-exact-eleven) | complete P₇, τ≥4 branch, 91 early graph cores |
+| m=4 upper: 117 graph classes / 10,142 domains | `scripts/problem4/low_cover_core_domains.cpp --layer 7 --domains`; `scripts/problem4/low_cover_actions.cpp --layer 7 --actions --quotient --squares` | all low-cover domains, necessary same-letter constraints and dynamic joint exclusion |
 | m=5 upper: cover-five | `scripts/problem4/rank_core_graph6.cpp` | all 2,294 cores, zero compatible joint profiles |
 | m=5 upper: eleven-point | `scripts/problem4/fifteen_low_cover_domains.cpp` | 90 cores, 3,595 domains, disjoint coverage and auxiliary-source lemma |
 | m=5 upper: remaining | same C++ driver + joint SAT and quotient checks | all 3,206,988 necessary domains in completed non-sampled pass |

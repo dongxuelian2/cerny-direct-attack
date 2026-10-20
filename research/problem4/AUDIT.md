@@ -22,6 +22,14 @@
 6. **Literature and novelty:** formal priority analysis and external review of the general auxiliary lemmas remain outstanding.
 7. **Recompiled paper:** source and logical structure are updated; any current PDF should be built from the new source, not an older attached short note.
 
+## Independent model review follow-up (20 October 2026)
+
+A separate model reviewed PR #15 and reported it independently rebuilt the static generators and reproduced the defect-four counts (91 cores, 117 graph classes, 10,142 domains) and defect-five counts (4,568 + 90 cores, 3,245,386 + 3,595 domains, 38,398 static rejections, 3,206,988 dynamic domains). It reported passing smaller dynamic controls and binary-witness tests. **The audit did not run the full defect-five joint SAT cover, the cover-five SAT exclusions, or all defect-four dynamic domains.**
+
+That audit identified ten editorial/provenance issues. The present follow-up restores the omitted q=m+1, m+2 and cofinal proof dependencies (including defect-five q=7), defines the quadratic-rank symbols and h≥1 hypothesis, corrects the LaTeX instructions/width and m=4 program mapping, repairs incorrect source anchors and archived Markdown links, and distinguishes original PR #14 evidence from PR #15 editorial navigation.
+
+These fixes improve mathematical presentation and reproducibility links; they do not independently certify the multi-million-domain computation.
+
 ## Basic mathematical sanity checks
 
 - m=3 has **nine**, so extrapolation 3m−1 must begin at m≥4.

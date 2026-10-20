@@ -19,7 +19,7 @@ The original avoid-or-compress bound is \(\operatorname{ac}(S,A)\le q\).
 
 ## 1. General sharpness and the universal lower construction (paper)
 
-The first two cardinality faces and a cofinal family attain q. For m≥3 a single **original-binary** two-block construction supplies, in the appropriate q-range,
+The first two cardinality faces (q=m+1 and q=m+2) and a cofinal family (m+3≤q≤2m+1) attain q; the two-block construction covers q≥2m+2. For m≥3 a single **original-binary** two-block construction supplies, in the appropriate q-range,
 \[
 F_{\rm bin}(n,n-m,r)\ge\min(q,3m-1).
 \]
@@ -27,13 +27,13 @@ Choose t=m−1≥2, p'≥r+3; let P={p₀,…,p_{p'−1}}, X={x₁,…,x_t}, Y={
 
 Two matching actual words are \(a^{2t}ba^tb\), which compresses in 3t+2 steps, and \(a^{2t}bab^{p'-r-1}\), which avoids A in n−r steps. The **lower** proof requires a pair-potential inequality for every original letter and a signed cell-incidence invariant for every short word, plus explicit synchronization, strong connectivity and reachability witnesses. Merely giving attaining words does not establish a lower bound.
 
-Read: [uniform two-block proof](../../archive/legacy/PROOF.md#problem4-two-block-proof), [first faces](../../archive/legacy/PROOF.md#problem4-defect-two-proof), and [cofinal witnesses](../../archive/legacy/PROOF.md#problem4-cofinal-proof). The manuscript includes a diagram of the t=3,p'=7,r=1 instance.
+Read: [uniform two-block proof](../../archive/legacy/PROOF.md#problem4-two-block-proof), [first two cardinality faces](../../archive/legacy/PROOF.md#direct-attack-avoid-compress-sharp-faces), and [cofinal witnesses](../../archive/legacy/PROOF.md#problem4-cofinal-proof). The manuscript includes a diagram of the t=3,p'=7,r=1 instance.
 
 ## 2. The small-codimension exception m=3
 
 For m=1,2,3 the established extrema are min(q,3m), not one uniform min(q,3m−1). In particular m=3 has value min(q,9). This is a **genuine obstruction** to stating the conjecture for m≥3. Its binary 9-step lower example is separate from the m≥4 two-block family.
 
-Read: [codimension-three upper](../../archive/legacy/PROOF.md#problem4-codimension-three-upper-proof) and [binary lower](../../archive/legacy/PROOF.md#problem4-codimension-three-proof).
+For independent codimension-one and -two proofs see [these smaller-defect cases](../../archive/legacy/PROOF.md#problem4-defect-two-proof). Read: [codimension-three upper](../../archive/legacy/PROOF.md#problem4-codimension-three-upper-proof) and [binary lower](../../archive/legacy/PROOF.md#problem4-codimension-three-proof).
 
 ## 3. Codimension four: exact 11 (computer-assisted upper)
 

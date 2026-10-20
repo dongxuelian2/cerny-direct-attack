@@ -8,7 +8,7 @@ Let F(n,s,r) and F_bin be the unrestricted- and binary-alphabet extrema for reac
 > F_{\rm bin}(n,n-m,r)=F(n,n-m,r)=\min\{q,3m-1\}.
 > \]
 
-**Known lower bound:** the original-letter binary two-block family attains min(q,3m−1) in the relevant q-region; for q≤3m−1, the cofinal sharpness family covers the remaining face. The conjecture is solely a universal upper-bound assertion in the yet open range **m≥6, q≥3m**.
+**Known lower bound:** the original-letter binary two-block family attains min(q,3m−1) for q≥2m+2; the first two cardinality faces handle q=m+1 and q=m+2, and the cofinal sharpness family covers m+3≤q≤2m+1. Together these provide the lower bound in all legal q-regions. The conjecture is solely a universal upper-bound assertion in the yet open range **m≥6, q≥3m**.
 
 **Do not start at m=3.** The known extremum there is min(q,9), while 3m−1=8. This is a real exception, not rounding.
 
