@@ -48,6 +48,24 @@ The proofs of the two \emph{unrestricted} upper bounds rely on complete finite n
 
 For orientation, the established defect-three formula is $\Max_{\rm bin}=\Max=\min(q,9)$, not $\min(q,8)$. In particular our closing conjecture begins at defect four.
 
+\begin{proposition}[Binary sharpness below the two-block threshold]\label{prop:smallq}
+Let $m\ge4$, $r\ge1$, $q=n-r$, and $s=n-m$. If $m+1\le q\le2m+1$, there is a binary strongly connected synchronizing $n$-state automaton with a reachable $s$-image $S$ and $A\subsetneq S$, $|A|=r$, such that
+\[
+\ac(S,A)=q.
+\]
+\end{proposition}
+\begin{proof}
+The explicit original-letter constructions, their short-word safety checks, reachability proofs and reset words are given in the \href{https://github.com/dongxuelian2/cerny-direct-attack/blob/cc94b58aa9b557f0ee516b3a3774de3ad8e41de1/papers/problem4/main.tex}{earlier construction manuscript}, Sections 2--3, also preserved in the research archive. Their three disjoint parameter regimes cover the stated range:
+\begin{center}\small
+\begin{tabular}{@{}ll@{}}
+$q=m+1$ ($s=r+1$) & first cardinality face (one moving state);\\
+$q=m+2$ ($s=r+2$) & second cardinality face (two moving states);\\
+$m+3\le q\le2m+1$ & cofinal construction, $g=s-r-1=q-m-1\ge2$.
+\end{tabular}
+\end{center}
+In the last regime the cofinal family uses $M=q-1\ge2g$, equivalent to $q\le2m+1$, and produces $\ac(S,A)=M+1=q$; its boundary $M=2g$ is included. The first and second faces are supplied by their separate binary timer constructions. All three constructions give \emph{actual reachable images} and original-letter reset words. Szyku{\l}a's upper bound $\ac(S,A)\le q$ completes the statement.
+\end{proof}
+
 \section{A diagram of the witness}\label{sec:diagram}
 Figure~\ref{fig:witness} instantiates the lower-bound family at $t=3$, $p=7$, $r=1$ ($n=14$, $s=10$, $m=4$). The blue states are $S=P\cup X$, and $p_0$ is protected. The drawing records both transformations, including the sole nontrivial kernel of $b$.
 
@@ -213,7 +231,7 @@ Let $P_h$ join two distinct states if an original-letter word of length at most 
 \begin{equation}\label{eq:cover}
 \exists T,\ |T|=n-m,\ c(T)>h\quad\Longleftrightarrow\quad \tau(P_h)\le m.
 \end{equation}
-The graph keeps the \emph{global} automaton state identity. It is not permitted to replace different unnamed states separately for each input letter. This is the starting point of both computer-assisted upper bounds.
+The graph keeps the \emph{global} automaton state identity. We use the Frankl--Pin compression framework and its short-pair refinement~\cite{kisielewicz2016}. It is not permitted to replace different unnamed states separately for each input letter. This is the starting point of both computer-assisted upper bounds.
 
 The reductions first bound the nonisolated support of an early short-pair layer, then enumerate its graph isomorphism classes and later maximal independent-set families. Every original input letter yields a row of a finite \emph{necessary relaxation}; joint row- and pair-merging distances, common-state quotient connectivity and same-letter square constraints yield further necessary restrictions. These necessary constraints may admit spurious finite models. They are used in only one direction:
 \[
@@ -228,12 +246,12 @@ Suppose $n\ge11$, $|S|=n-4$, and $c(S)\ge12$. The complete short-pair reduction 
 \item $\tau(P_7)\ge4$: all remaining candidates lie in 91 graph cores; the finite letter/distance search excludes each.
 \item $\tau(P_7)=3$: the paper reduction yields $\tau(P_9)=4$ and 117 graph classes with 10,142 named necessary domains. The complete compatible-letter and joint-distance checks exclude them all.
 \end{enumerate}
-The enumeration is independent of a bound on $|\Sigma|$; it enumerates the full admissible original-letter pools and requires common realizability as a \emph{necessary} condition. This establishes $c(S)\le11$. At $n\le10$, the universal avoid-or-compress bound $q\le9$ suffices. Binary witnesses from Theorem~\ref{thm:two-block} ($q\ge10$) and the independently specified small-$q$ faces ($q=5,\ldots,9$) complete the equality. The case reductions and program identifiers are listed in the reproducibility index~\cite{repo}.
+The enumeration is independent of a bound on $|\Sigma|$; it enumerates the full admissible original-letter pools and requires common realizability as a \emph{necessary} condition. This establishes $c(S)\le11$. At $n\le10$, the universal avoid-or-compress bound $q\le9$ suffices. Binary witnesses from Theorem~\ref{thm:two-block} ($q\ge10$) and Proposition~\ref{prop:smallq} ($q=5,\ldots,9$) complete the equality. The complete case reductions appear in the fixed original record~\cite{repo}; current program locations and verification obligations are collected in the companion \href{https://github.com/dongxuelian2/cerny-direct-attack/blob/docs/problem4-linearization-audit/research/problem4/CERTIFICATES.md}{certificate map}.
 
 \subsection{Defect five: excluding fifteen steps}\label{sec:m5}
 Suppose $n\ge16$, $|S|=n-5$, and $c(S)\ge15$. The relevant split is $\tau(P_9)=5$ or $4$.
 \begin{center}\small
-\begin{tabular}{p{.33\linewidth}rp{.38\linewidth}}
+\begin{tabular}{@{}p{.30\linewidth}r p{.35\linewidth}@{}}
 \toprule
 Necessary branch & Domains/cores & End state of exclusion\\\midrule
 Cover five & 2,294 cores & all rejected by joint necessary checks\\
@@ -250,14 +268,14 @@ The final large run did \emph{not} return zero survivors. It reported 3,206,987 
 The following paper lemma rules out this remaining possibility.
 
 \begin{lemma}[Multipartite overlap exclusion]\label{lem:multipartite}
-Suppose a noncomplete $P_h$ in a synchronizing automaton is a complete multipartite graph on $V=V_1\sqcup\cdots\sqcup V_t$ and has isolated remaining states $J$. Assume each $V_i$ admits a family $\mathcal R_i$ of nonempty subsets whose union is $V_i$, whose intersection graph is connected, and for which every $R\cup J$ with $R\in\mathcal R_i$ is independent in $P_{h+1}$. Then this configuration is impossible.
+Let $h\ge1$ and $t\ge2$. Suppose a noncomplete $P_h$ in a synchronizing automaton is a complete multipartite graph on $V=V_1\sqcup\cdots\sqcup V_t$ and has isolated remaining states $J$. Assume each $V_i$ admits a family $\mathcal R_i$ of nonempty subsets whose union is $V_i$, whose intersection graph is connected, and for which every $R\cup J$ with $R\in\mathcal R_i$ is independent in $P_{h+1}$. Then this configuration is impossible.
 \end{lemma}
 \begin{proof}
 A $P_h$ nonedge cannot be merged in one letter. Fix a letter $f$. It is therefore injective on each part and on $J$, and $Jf$ is disjoint from $Vf$. Since every $(R\cup J)f$ is $P_h$-independent, if $Jf\subseteq J$, then $Jf=J$ and $Rf$ is contained in some single part. Intersecting $R,R'$ have intersecting images, so the connected intersection graph forces all of $V_if$ into one part. Every original nonedge remains a nonedge.
 
 Otherwise $Jf$ meets some part $V_j$. Independence of $(R\cup J)f$ forces $Rf\subseteq V_j\cup J$ for every $R$, hence $Vf\subseteq V_j\cup J$ and $Jf\subseteq V_j\cup J$. Again every original nonedge remains a nonedge. This holds for every letter. But a synchronizing automaton with noncomplete $P_h$ must have some letter sending a nonedge to an edge of $P_h$: follow the shortest merging word for a pair at distance greater than $h$ until the distance first drops from $h+1$ to $h$. Contradiction.
 \end{proof}
-The two pairs of intersecting triples above separately cover the two parts of $K_{4,4}$, and their rows (with common isolates adjoined) are independent in $P_{11}$, hence in $P_{10}$. Lemma~\ref{lem:multipartite} with $h=9$ excludes the only relaxation survivor. Thus the combined complete finite exclusions establish $c(S)\le14$. For $n\le15$, the original bound $q\le14$ suffices. Matching binary witnesses are given by the two-block construction for $q\ge12$ and by first-face/cofinal examples for $q=6,\ldots,11$.
+The two pairs of intersecting triples above separately cover the two parts of $K_{4,4}$, and their rows (with common isolates adjoined) are independent in $P_{11}$, hence in $P_{10}$. Lemma~\ref{lem:multipartite} with $h=9$ excludes the only relaxation survivor. Thus the combined complete finite exclusions establish $c(S)\le14$. For $n\le15$, the original bound $q\le14$ suffices. Matching binary witnesses are given by Theorem~\ref{thm:two-block} for $q\ge12$ and Proposition~\ref{prop:smallq}: the first and second cardinality faces cover $q=6,7$, and the cofinal construction covers $q=8,\ldots,11$.
 
 \section{Auxiliary results and remaining question}\label{sec:conj}
 The same research establishes a restricted-class result for automata with an original full-state cycle letter:
@@ -265,7 +283,7 @@ The same research establishes a restricted-class result for automata with an ori
 \Max_{\mathrm{cyc,bin}}(n,s,r)=\Max_{\mathrm{cyc}}(n,s,r)
 =\min\{s-r+1,\,2(n-s)+1\}.
 \]
-This has a paper binary construction for all legal parameters; it is not an unrestricted upper bound. A quadratic lifting argument additionally selects at most $\rho\le\min(|\mathcal D|,d(d+1)/2)$ original letters preserving all exact shortest exits of a \emph{complete} safe-set family $\mathcal D$. Neither auxiliary theorem is a hidden dependency for the exact defect-five exclusion.
+This has a paper binary construction for all legal parameters; it is not an unrestricted upper bound. A quadratic lifting argument additionally selects at most $\rho\le\min(|\mathcal D|,d_{\mathcal D}(d_{\mathcal D}+1)/2)$ original letters preserving all exact shortest exits of a \emph{complete} safe-set family $\mathcal D$. Here $d_{\mathcal D}=\dim_{\mathbb Q}\operatorname{span}\{\chi_T:T\in\mathcal D\}$ is its characteristic-row rank and $\rho=\dim_{\mathbb Q}\operatorname{span}\{\chi_T^{\mathsf T}\chi_T:T\in\mathcal D\}$ is its quadratic-lift rank. Neither auxiliary theorem is a hidden dependency for the exact defect-five exclusion.
 
 The binary construction gives the lower bound $3m-1$ for every $m\ge4$ when $q$ is large. At $m=4,5$ we have matching upper bounds. Restricted families at $m=6,7$ attain the values 17 and 20; local and random counterexample probes have found no larger instances, but these finite results are \emph{not} general upper bounds.
 \begin{conjecture}[Linear defect bound; unproved]\label{conj:linear}
@@ -277,7 +295,7 @@ For every $m\ge4$ and all admissible $n,r$,
 The restriction $m\ge4$ is essential: at $m=3$ the known optimum is $\min(q,9)$, whereas $3m-1=8$. A \emph{stronger and distinct} possible bound would assert $c(S)\le3m-1$ for every $(n-m)$-subset when $n\ge3m+1$; we do not assert equivalence with Conjecture~\ref{conj:linear}. The unknown exact-extremum range starts at $m\ge6$, $q\ge3m$.
 
 \section{Proof provenance and audit status}\label{sec:audit}
-The paper establishes a linear dependency chain and describes the finite exclusion logic, but the detailed family classification and software specifications are in the permanent Git research record~\cite{repo}. The formerly mixed 2.85 MB working notebook is preserved unchanged in the archival folder, while a dedicated \href{https://github.com/dongxuelian2/cerny-direct-attack/tree/main/research/problem4}{Open Problem 4 reader index} records proof dependencies, source paths and an audit checklist. The largest defect-five run, a 3,206,988-domain computation of about 22,924 seconds, was reported complete from an owner's terminal summary but its comprehensive raw log or a portable per-domain proof certificate is not committed. Its two generator orders share tests, so they do not constitute independent formal proof systems. The present research manuscript should therefore be read as a \emph{computer-assisted proof with documented verification gaps}, pending an external audit. No extension of the unrestricted result to all $m$ or of the \v{C}ern\'y conjecture is claimed.
+The paper establishes a linear dependency chain and describes the finite exclusion logic, but the detailed family classification and software specifications are in the permanent Git research record~\cite{repo}. The formerly mixed 2.85 MB working notebook is preserved unchanged in the archival folder, while a dedicated \href{https://github.com/dongxuelian2/cerny-direct-attack/tree/docs/problem4-linearization-audit/research/problem4}{Open Problem 4 reader index (PR \#15)} records proof dependencies, source paths and an audit checklist. The largest defect-five run, a 3,206,988-domain computation of about 22,924 seconds, was reported complete from an owner's terminal summary but its comprehensive raw log or a portable per-domain proof certificate is not committed. Its two generator orders share tests, so they do not constitute independent formal proof systems. The present research manuscript should therefore be read as a \emph{computer-assisted proof with documented verification gaps}, pending an external audit. No extension of the unrestricted result to all $m$ or of the \v{C}ern\'y conjecture is claimed.
 
 \paragraph{Contributions and assistance.} The work reflects research by Qichao Wang and Daoyu Dong, with computational and AI-assisted proof exploration and drafting. Mathematical responsibility and claims of priority remain subject to author review.
 
@@ -294,8 +312,8 @@ EPTCS 451 (2026), 33--47.
 \emph{Experiments with Synchronizing Automata},
 CIAA 2016, LNCS 9705.
 \bibitem{repo} Q. Wang and D. Dong,
-\emph{Research record and audit for dense-subset avoid-or-compress},
-\href{https://github.com/dongxuelian2/cerny-direct-attack/tree/cc94b58aa9b557f0ee516b3a3774de3ad8e41de1}{repository at merged PR \#14 commit},
+\emph{Original research record for dense-subset avoid-or-compress},
+\href{https://github.com/dongxuelian2/cerny-direct-attack/tree/cc94b58aa9b557f0ee516b3a3774de3ad8e41de1}{fixed record at merged PR \#14}; the later \href{https://github.com/dongxuelian2/cerny-direct-attack/pull/15}{PR \#15} contains the editorial audit,
 20 October 2026.
 \end{thebibliography}
 \end{document}

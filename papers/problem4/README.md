@@ -1,6 +1,6 @@
 # Open Problem 4 — updated manuscript
 
-**Source:** [main.tex](main.tex). **Bibliography:** [references.bib](references.bib).
+**Source:** [main.tex](main.tex). **References:** embedded `thebibliography` in `main.tex`; [references.bib](references.bib) is auxiliary metadata, not read by the present manuscript.
 
 The paper now uses a linear order:
 1. Definitions and exact extrema m≤5.
@@ -12,11 +12,11 @@ The paper now uses a linear order:
 Compilation from this folder:
 
 ```sh
-pdflatex -interaction=nonstopmode main.tex
-bibtex main
-pdflatex -interaction=nonstopmode main.tex
-pdflatex -interaction=nonstopmode main.tex
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
 ```
+
+Do **not** run `bibtex main` for this manuscript: it uses embedded references and intentionally has no `\\bibdata` or `\\bibstyle`.
 
 This is a **research draft**. The 3.2-million-domain output is documented in the [audit](../../research/problem4/AUDIT.md), but its complete raw logs are not committed. Until separately audited, refer to these claims as *computer-assisted*.
 
