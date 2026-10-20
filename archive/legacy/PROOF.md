@@ -20,7 +20,7 @@ F(n,n−5,r)≤min(n−r,18)；[全部十八步候选排除](#problem4-five-glob
 
 阅读顺序：先读第 1 章的问题与状态，再读第 2–4 章的构造、上界与完整排除；第 5 章是条件分支，第 6–9 章是其他研究方向，第 10 章保留探索过程。各节沿用局部符号；进入新节须重新核对假设。
 
-既有章节保留原数学论证；本轮精确值复核采用明确的完整依赖链，不把未经重建的历史探索当作证明前提。正文中的“证明”“有限穷尽”“受限搜索”“猜想/失效”有不同含义；历史运行记录不能替代证明，历史排除不得绕过后来的撤回或限制。程序怎样运行见 [运行说明](docs/RUNNING.md)。
+既有章节保留原数学论证；本轮精确值复核采用明确的完整依赖链，不把未经重建的历史探索当作证明前提。正文中的“证明”“有限穷尽”“受限搜索”“猜想/失效”有不同含义；历史运行记录不能替代证明，历史排除不得绕过后来的撤回或限制。程序怎样运行见 [运行说明](RUNNING.md)。
 
 ## 目录
 
@@ -8812,7 +8812,7 @@ $$
 
 这是该固定参数点的**计算辅助证明**，不是 Lean 形式化证明，也不解决一般
 Černý 猜想。源码、完整域生成和控制均从仓库重建，运行方式见
-[运行说明](docs/RUNNING.md)。
+[运行说明](RUNNING.md)。
 
 <a id="problem4-eleven-audit"></a>
 ### 精确值十一：扩大域复核与完整证明链
@@ -8968,7 +8968,7 @@ $3$ 出发，任意两字母的三层词都安全，三字母状态图强连通�
 中间数据和二进制留在忽略的 `build/`，不依赖已存证书、枚举库存或外部求解器。
 论文 `papers/problem4/main.tex` 已纳入这条证明链与同样的精确计数；其二块
 构造只在主稿保留一份，删除未被引用的重复片段。较早条件分支的研究状态在
-第 5 章明确保留为历史状态。运行说明见 [docs/RUNNING.md](docs/RUNNING.md)。
+第 5 章明确保留为历史状态。运行说明见 [docs/RUNNING.md](RUNNING.md)。
 
 <a id="problem4-problem4-continuation-audit"></a>
 <a id="problem4-problem4-continuation-audit--problem-4-continuation-verified-results-and-remaining-scope"></a>
@@ -9111,7 +9111,7 @@ Both distance checks accept the artificial positive control.
 关键是将原问题候选收缩到**强连通但未必同步**的十三状态模型，
 并严格传递既有完整枚举使用的每一个必要条件。
 详细的引理与证明现已加入论文源码
-[papers/problem4/main.tex](papers/problem4/main.tex)，
+[papers/problem4/main.tex](problem4-paper-before-m5.tex)，
 本节给出独立可读的归约链与仍开放的边界。
 本轮未重新执行完整十三状态枚举，故定理的计算辅助性质保留。
 
@@ -48241,7 +48241,7 @@ and full language theorem are not yet Lean-formalized.
 <a id="anchors-sprint-reproduction--reproduction-and-status-map-for-the-all-parameter-sprint"></a>
 ### Reproduction and status map for the all-parameter sprint
 
-本节集中锚点路线的结论与失败机制。运行入口见 [运行说明](docs/RUNNING.md)；早期封存与构建流程已移除。
+本节集中锚点路线的结论与失败机制。运行入口见 [运行说明](RUNNING.md)；早期封存与构建流程已移除。
 
 <a id="anchors-sprint-reproduction--paper-results"></a>
 #### Paper results
@@ -48256,7 +48256,7 @@ and full language theorem are not yet Lean-formalized.
 | **PROVED** all boundary formulas, single-anchor placements, exact linear endpoint layout, three asymptotic orders at the same fixed hidden count | [Information increments, boundary regimes, and anchor placement](#anchors-layout-and-information-theorems) |
 | Novelty **OPEN** beyond bounded negative search evidence | [Prior work and novelty audit (2026-09-28)](#anchors-novelty-audit) |
 
-论文源码见 [锚点论文稿](papers/anchors/main.tex)。
+论文源码见 [锚点论文稿](../../papers/anchors/main.tex)。
 
 <a id="anchors-sprint-reproduction--main-reproduction-python-standard-library-only"></a>
 #### Main reproduction (Python standard library only)

@@ -26,7 +26,7 @@ these tasks.
 compression length at least twelve. It does not settle `(13,9,1)`.
 `tau4 --pair-cap 7` (also 8 or 9) rebuilds the same complete graph and action
 classification and checks the corresponding later layer. See the precise
-[compression hypotheses](../PROOF.md#problem4-four-cover-late-layers).
+[compression hypotheses](PROOF.md#problem4-four-cover-late-layers).
 For the distance calculation alone, run `problem4_core_distances.cpp` through
 `run.py script` with `--pair-cap 7 --pair-order reverse`; `forward` is the default.
 The optional `scripts/problem4/upper_bound/problem4_core_distances_check.py` needs
@@ -79,21 +79,21 @@ ignored `build/tools/`, then pass its absolute executable path:
 python3 run.py script scripts/problem4/check_component_ranks.py --geng "$PWD/build/tools/nauty2_9_3/geng"
 ~~~
 
-This checks the [component formulas and matching bounds](../PROOF.md#problem4-component-ranks-and-matching);
+This checks the [component formulas and matching bounds](PROOF.md#problem4-component-ranks-and-matching);
 it is a complete small-graph control, not an exhaustive automaton search.
 No inventory or output file is needed. These commands each complete in seconds;
 run them sequentially because `run.py script` refreshes the shared manual copy.
-See the [quadratic theorem](../PROOF.md#problem4-quadratic-exit-sparsification),
-[chain rigidity](../PROOF.md#problem4-signed-chain-rigidity),
-[full-cycle formula](../PROOF.md#problem4-full-cycle-exact),
-[rank obstruction](../PROOF.md#problem4-real-safe-family-rank-barrier), and
-[protected-cover saturation](../PROOF.md#problem4-protected-cover-saturation).
+See the [quadratic theorem](PROOF.md#problem4-quadratic-exit-sparsification),
+[chain rigidity](PROOF.md#problem4-signed-chain-rigidity),
+[full-cycle formula](PROOF.md#problem4-full-cycle-exact),
+[rank obstruction](PROOF.md#problem4-real-safe-family-rank-barrier), and
+[protected-cover saturation](PROOF.md#problem4-protected-cover-saturation).
 
 ## Individual research sources
 
 The arbitrary-core-cycle rigidity proof has a C++17 word-level control and
 a complete restricted construction scanner. The initial set and chain letter
-are fixed as in [the theorem](../PROOF.md#problem4-arbitrary-core-cycle-rigidity).
+are fixed as in [the theorem](PROOF.md#problem4-arbitrary-core-cycle-rigidity).
 
 ```sh
 python3 run.py script scripts/problem4/two_block_cycle_orders.cpp --control
@@ -186,7 +186,7 @@ example and retains its actual letter signatures and compatible distances.
 Common isolates are represented only for single-step constraints, with a
 possibly omitted auxiliary output; they are never iterated as anonymous states.
 When there are no common isolates, the program does not apply a proper-core
-escape test to the whole state set. See the [full proof](../PROOF.md#problem4-four-global-twelve).
+escape test to the whole state set. See the [full proof](PROOF.md#problem4-four-global-twelve).
 
 For twelve-step candidates, layer seven has 91 cover-four cores and 117
 cover-three cores. The first command completely excludes the former for
@@ -195,7 +195,7 @@ branch, comparing two complete family generators. Its closure predicate is
 shared by those generators. The action command checks a safe single-step
 relaxation of the actual two-step requirements; a surviving vector is not an
 automaton. The full domain has now been excluded using quotient connectivity
-and same-letter squares where needed; see the [exact codimension-four theorem](../PROOF.md#problem4-four-exact-eleven).
+and same-letter squares where needed; see the [exact codimension-four theorem](PROOF.md#problem4-four-exact-eleven).
 
 ```sh
 python3 run.py script scripts/problem4/compression_fourteen_cores.cpp 4 --layer 7 --actions --control
@@ -207,7 +207,7 @@ The low-cover programs default to layer eight. `--stop-on-survivor` can be
 added to the action command to stop at the first compatible vector and print
 `PARTIAL`; it never constitutes a complete negative result. The layer-seven
 domains assume `n>=11` and a nonempty common-isolate set, as justified in
-[the reduction](../PROOF.md#problem4-twelve-finite-domains).
+[the reduction](PROOF.md#problem4-twelve-finite-domains).
 
 `--quotient` also records arrows from common isolates into named states and
 requires the resulting quotient graph to be strongly connected. `--squares`
@@ -228,7 +228,7 @@ python3 run.py script scripts/problem4/low_cover_actions.cpp 0 10142 4 --layer 7
 The positive control uses the real ten-state Černý automaton with two common
 isolates and keeps both actual letters and six compatible distance vectors.
 The accompanying square countercontrol is rejected. See
-[the identity and quotient proofs](../PROOF.md#problem4-twelve-actual-two-step).
+[the identity and quotient proofs](PROOF.md#problem4-twelve-actual-two-step).
 
 For the codimension-five eighteen-step candidate classification,
 `rank_core_graph6.cpp` consumes a graph6 stream. Use a separately built
@@ -253,14 +253,14 @@ the independent complete input-by-input letter/arrow comparison; append
 with at most two crossing isolates. Both control modes skip distances, and the
 terminal summary distinguishes the checked components. These three runs, the
 complete graph stream, and the paper reduction establish the
-[codimension-five bound seventeen](../PROOF.md#problem4-five-global-seventeen).
+[codimension-five bound seventeen](PROOF.md#problem4-five-global-seventeen).
 Smaller `START COUNT THREADS` intervals are explicitly partial. The power
 filter tracks missing named states only while the whole common-isolate set is
 retained; it does not compose independently renamed individual-subset images.
 
 For the seventeen-step candidate domain, generate orders 6 through 10 and use
 `5 6 11` instead. It contains 1994 static cores; its complete dynamic exclusion proves the
-[codimension-five bound sixteen](../PROOF.md#problem4-five-global-sixteen). The ten-vertex cases additionally check the paper's unique
+[codimension-five bound sixteen](PROOF.md#problem4-five-global-sixteen). The ten-vertex cases additionally check the paper's unique
 matching and shattering bounds. Run the small exhaustive matching control with:
 
 ```sh
@@ -364,7 +364,7 @@ python3 run.py script scripts/problem4/mutate_compression.cpp \
 Arguments are `n m r alphabet_size proposals_per_thread threads first_seed
 seed_file target`. Worker `i` uses `first_seed+i`; use `p=n-2*m+1,t=m-1`
 in the construction for the other runs listed in
-[the lower-bound exploration](../PROOF.md#problem4-proper-transversal-lower-search).
+[the lower-bound exploration](PROOF.md#problem4-proper-transversal-lower-search).
 The count includes repeated and rejected proposals. No failed stochastic run
 proves an upper bound. With zero avoidance audits, `maximum_audited_ac=0`
 means unexamined. An avoidance candidate still requires an independent full
@@ -394,9 +394,9 @@ interval solver and its scalar cross-check are used. The full interval
 `0 747` covers this conditional branch only. Both letter generation orders
 share kernel partitions and target sets. No square-safety filter is applied:
 the early and late pair layers differ by one. See the exact scope in
-[the double-neighbor exclusion](../PROOF.md#problem4-five-double-neighbor-exclusion).
+[the double-neighbor exclusion](PROOF.md#problem4-five-double-neighbor-exclusion).
 Append `--entry-filter` to prune incoming-state sets with the proved
-[joint entrance budget](../PROOF.md#problem4-joint-short-word-entry). Omitting
+[joint entrance budget](PROOF.md#problem4-joint-short-word-entry). Omitting
 it reproduces the complete exclusion without this additional condition.
 
 The one-point-petal theorem has a literal small-automaton control and an
@@ -415,7 +415,7 @@ under simultaneous bounds on original-letter kernel fibers and rank defects.
 It verifies the actual retraction, reaching and reset words, as well as every
 short safe image and an attaining avoidance word. Its finite parameter domain
 is printed explicitly; the all-parameter claim uses the
-[paper proof](../PROOF.md#problem4-bounded-kernel-first-face).
+[paper proof](PROOF.md#problem4-bounded-kernel-first-face).
 
 The support driver's arguments are maximum named support and worker count.
 Without `--distances` it only counts static domains and checks the paper's
@@ -425,7 +425,7 @@ and reports 999967 domains outside that paper filter. All 1000088 domains have n
 the 42 sunflower domains with more than six named points. The final command
 completely checks all 79 six-point domains with both letter-generation orders;
 it does not run the larger domains. See the
-[general theorem and precise scope](../PROOF.md#problem4-sunflower-kernel-exit).
+[general theorem and precise scope](PROOF.md#problem4-sunflower-kernel-exit).
 
 For complete intervals of early nonisolated core size, while retaining all
 later named supports through ten:
@@ -440,13 +440,13 @@ the first positional argument independently bounds the later named support.
 `--parallel-domains` partitions domains between workers, using one letter
 generation worker per domain, and prints progress instead of each domain's
 internal counters. It retains both full generation orders with `--control`.
-The completed runs cover 4231, 180339, and 815518 domains respectively, all with zero joint vectors; together with the other cover branch they prove the [global fifteen bound](../PROOF.md#problem4-five-global-fifteen).
+The completed runs cover 4231, 180339, and 815518 domains respectively, all with zero joint vectors; together with the other cover branch they prove the [global fifteen bound](PROOF.md#problem4-five-global-fifteen).
 The early-layer filter includes the kernel-pair budget, the joint entrance
 condition, and their combined first/last-layer budget with the kernel-pair
 excess over rank defect. Executables already running when a refinement is
 added retain their earlier filters; they are not counted as runs of the
 stronger version. Scope and completed coverage are in
-[the proof](../PROOF.md#problem4-short-pair-kernel-budget).
+[the proof](PROOF.md#problem4-short-pair-kernel-budget).
 
 `check_full_common_displacement.cpp` checks the separate sharp family for
 multiple unprotected points, under the full common-displacement hypothesis.
@@ -486,7 +486,7 @@ python3 run.py script scripts/problem4/odd_core_target.cpp 16 5 15 --all-partiti
 
 `odd_core_target.cpp` permits every local rank-one-defect map, rather than only
 redirected involutions. It still covers only the explicitly defined odd-core
-family in [the proof](../PROOF.md#problem4-arbitrary-odd-core-threshold).
+family in [the proof](PROOF.md#problem4-arbitrary-odd-core-threshold).
 `--all-partitions` covers every external permutation cycle type; without it,
 only one long external cycle and a fixed point are used. `--emit` prints every
 qualifying transition/subset/marker set. `--max-tasks N` restricts the prefix
@@ -517,10 +517,10 @@ omitted-output/permutation traversal. The Python check compares both complete
 retained map sets, reconstructs their signatures, and reverses both distance
 search orders. It invokes C++17 for the large transformation enumeration and
 requires no solver. These commands test the branch specified in
-[the C9 reduction](../PROOF.md#problem4-c9-eighth-layer), not every m=5 graph.
+[the C9 reduction](PROOF.md#problem4-c9-eighth-layer), not every m=5 graph.
 Add `--full-kernel --all-layers` to either program to include every cycle-edge
 matching kernel and check every possible short-pair layer. This proves the
-[C7/C9 bounds](../PROOF.md#problem4-c7-c9-uniform-cycle-bound) without a separate
+[C7/C9 bounds](PROOF.md#problem4-c7-c9-uniform-cycle-bound) without a separate
 letter-rank hypothesis. With `--cycle 5` those flags test the nonzero relaxation
 controls; the Python audit also checks the actual five-state Cerny counterexample.
 `--columns` uses the proved equality-case column construction and a complete
@@ -528,7 +528,7 @@ partial-permutation traversal. With this option, `--cycle 11` and `--cycle 13`
 are also supported. `--canonical-isolates` preserves all signatures while
 quotienting independent auxiliary input/output labels; its row count is a
 representative count. The precise domain proof is in the
-[column reduction](../PROOF.md#problem4-odd-cycle-column-generation).
+[column reduction](PROOF.md#problem4-odd-cycle-column-generation).
 `--reverse-search` reverses both distance assignment orders. The optional
 `--pair-closure` and `--pair-levels` apply the proved merging-reachability and
 nonempty-distance-layer conditions. `--all-layers` reuses the same complete
@@ -540,21 +540,21 @@ enumerate all transformations or rerun the distance search.
 `problem4_p3_shapes.py` 核对 P3 二点覆盖的十三种核心和三点覆盖的十二种核心。
 `problem4_p2_rank.cpp` 核对至多四条边、覆盖数为三的图的最大独立集行秩界，
 并以 C5 检查五条边的反例边界；它不枚举自动机。数学推导见
-[q=13 的第二层覆盖](../PROOF.md#problem4-q13-second-layer)。
+[q=13 的第二层覆盖](PROOF.md#problem4-q13-second-layer)。
 `problem4_p3_entry.cpp` 排除三点保护入口剩余的三个五点核心，默认同时运行两种
 字母枚举和两种距离算法。它不要求保存证书或安装求解器；完整数学归约见
-[三点入口定理](../PROOF.md#problem4-three-entrance-p3-reduction)。
+[三点入口定理](PROOF.md#problem4-three-entrance-p3-reduction)。
 加 `--two-three` 检查“二点第一入口、三点第二入口”的三点覆盖分支：先重建四个
 完整核心，再对唯一粗域幸存组合保留共同保护点的身份并排除。该模式同样默认
 独立核对完整映射域及距离，最多按四个互不重叠的映射域并行；本机完整运行约七秒。
-二点覆盖分支由[三点第二入口定理](../PROOF.md#problem4-second-entrance-three-reduction)
+二点覆盖分支由[三点第二入口定理](PROOF.md#problem4-second-entrance-three-reduction)
 中的纸面证明排除。
 
 加 `--overlap-two-two` 检查两个二点入口相交的三点覆盖分支，完整遍历 86 个有序
 核心选择。各选择可独立并行，默认同时运行逐输入赋值的独立生成器和完整距离
 笛卡尔积/BFS 核对，本机四线程计算约四秒，首次编译另计。此模式 `--core 1` 至 `--core 11`
 使用三点覆盖核心的原编号；旧模式的 `--core` 仍使用从零开始的局部编号。
-完整三点覆盖归约见[重叠二点入口](../PROOF.md#problem4-small-entrance-overlap)。
+完整三点覆盖归约见[重叠二点入口](PROOF.md#problem4-small-entrance-overlap)。
 
 ## Complete thirteen-state calculation
 
@@ -580,7 +580,7 @@ singleton. The two-cover domain includes all thirteen cores; the three-cover
 domain includes all twelve, including K4 (ID 100). Later fibers have no size
 cutoff. `--quotient` acts on the whole ordered flag under core automorphisms.
 The mathematical reduction and actual full counts are in
-[the exact-value verification](../PROOF.md#problem4-eleven-audit).
+[the exact-value verification](PROOF.md#problem4-eleven-audit).
 
 Every letter domain is regenerated with two distinct enumerators. Exact integer
 and modular ranks, reverse pair distances and two connectivity checks agree.
@@ -616,19 +616,19 @@ target length thirteen. They retain all entrance sizes and the same independent
 letter generators and short-word controls. Both full domains reject by flag
 levels ten and eleven, respectively. The represented eleven-level prefix would
 be insufficient if survivors remained; exit three means unresolved.
-See [the mathematical reduction and complete counts](../PROOF.md#problem4-q13-second-layer).
+See [the mathematical reduction and complete counts](PROOF.md#problem4-q13-second-layer).
 
 The last command checks the general protected-set contraction on small
 constructed examples, including exact avoidance lengths, ranks, short pairs,
 dual-space growth, synchronization with one spare protected state, and
 stepwise reachability-preserving contraction and expansion. Its finite controls support
-[the general proof](../PROOF.md#problem4-protected-slack-collapse);
+[the general proof](PROOF.md#problem4-protected-slack-collapse);
 they do not search all twelve-step candidates. The flag programs above handle
 equality at thirteen, not the remaining target twelve.
 
 The same Python control script also compares the protected-count quotient for
 expanded-model reachability with every literal reachable subset in 300 small
-domains. The [quotient criterion](../PROOF.md#problem4-expanded-reachability-quotient)
+domains. The [quotient criterion](PROOF.md#problem4-expanded-reachability-quotient)
 has at most 1578 states for a single-protected q=13, m=4 candidate expanded to
 five protected states; passing terminal safety alone does not imply reachability.
 
@@ -649,7 +649,7 @@ Without a mode flag, only 29 channel permutations are used.
 Permutation indices assign disjoint work to threads. `TARGET_FOUND` stops on
 a reachable target; `COMPLETE` confirms exhaustion of the selected domain.
 None of these results is a bound for all DFAs. See the
-[family definition, proof, and complete counts](../PROOF.md#problem4-even-ring-channel-family).
+[family definition, proof, and complete counts](PROOF.md#problem4-even-ring-channel-family).
 The screening mode also accepts ring size, channel size, and target length:
 
 ```sh
@@ -659,7 +659,7 @@ python3 run.py script scripts/problem4/probe_even_ring_channel.cpp 1 --screen-po
 It checks words shorter than the target. The current implementation requires
 ring size at least four, channel size at least ring size minus two, total size
 at most twenty, and target at least the ring size. See the
-[general family and codimension-five result](../PROOF.md#problem4-ring-channel-higher-defect).
+[general family and codimension-five result](PROOF.md#problem4-ring-channel-higher-defect).
 
 For target twelve with two distinct first entrances:
 
@@ -706,7 +706,7 @@ completed split-layer-one exclusion until their own full runs finish.
 Survival at any requested depth is not an automaton existence result.
 Use `--flags --threads 1` to print the retained initial masks directly.
 `--core ID` restricts to one of IDs 0–12 or 100–111; omit it for the complete domain.
-The [proof and counts](../PROOF.md#problem4-slack-one-initial-flags) explain
+The [proof and counts](PROOF.md#problem4-slack-one-initial-flags) explain
 the remaining obligations.
 
 `python3 run.py script scripts/problem4/upper_bound/graded_flags_control.cpp`
@@ -728,7 +728,7 @@ initial-set reachability checks before it could establish a lower bound.
 avoid the protected state from the full state set. It computes the entire
 backward subset closure, with no word-length cutoff, and branches on letters
 that leave a non-avoiding closure. This option includes the other terminal
-checks. Its [proof and independent controls](../PROOF.md#problem4-full-state-avoidance-cut)
+checks. Its [proof and independent controls](PROOF.md#problem4-full-state-avoidance-cut)
 explain why it is necessary even when the contracted model is not synchronizing.
 With `--threads 1`, `--terminal-example` prints the first alphabet accepted by
 the enabled complete terminal search, together with its initial set and basis.
@@ -736,7 +736,7 @@ It does not stop enumeration or certify synchronization or reachability.
 `--terminal-reachable` adds reachability in the four-protected-state expansion
 to the alphabet search. It computes the complete protected-count quotient and
 branches on letters leaving a closed set that does not contain the target.
-The [original-class equivalence](../PROOF.md#problem4-terminal-original-class-equivalence)
+The [original-class equivalence](PROOF.md#problem4-terminal-original-class-equivalence)
 states why this stronger acceptance condition exactly matches the q=13 target
 over the complete necessary flag domain. Its controls use independent ordinary
 subset searches in seventeen-state expanded automata and compare reachability
@@ -749,12 +749,12 @@ test when more labels remain; no anonymous profile is composed as a word.
 `--initial-flag B,C,D` with `--core ID` restricts a late-split run to one
 canonical initial flag. Early-split runs use four masks instead. This permits
 disjoint prefix jobs; a completed restricted job is not a complete core result.
-The [core-106 partition](../PROOF.md#problem4-literal-prefix-constraints) lists
+The [core-106 partition](PROOF.md#problem4-literal-prefix-constraints) lists
 all four surviving late-split prefixes and the required coverage boundary.
 All four prefix jobs have now completed with zero terminal flags, as have the
 other 24 cores and both early split layers. The combined proof gives
 `F_bin(r+13,r+9,r)=F(r+13,r+9,r)=11` for every `r>=1`; see the
-[complete coverage and scope](../PROOF.md#problem4-q13-exact-eleven).
+[complete coverage and scope](PROOF.md#problem4-q13-exact-eleven).
 The final prefix can be reproduced with:
 
 ```sh
@@ -771,39 +771,39 @@ pruning. Adding `--cyclic-isolates` gives the completed strengthened comparison.
 automorphisms fixing its initial flag. Outside and protected labels remain
 fixed. Layer counts are weighted by orbit size, so they are comparable to the
 unreduced run; `representatives` reports the number actually checked.
-See [the prefix-orbit proof](../PROOF.md#problem4-prefix-automorphisms).
+See [the prefix-orbit proof](PROOF.md#problem4-prefix-automorphisms).
 `--canonical-isolates` additionally sorts the ordered membership columns of
 noncore external states. Its weights account for the existing first-appearance
 normalization and combine with the core-orbit weights. It can also be used
-without `--canonical-prefix`; see the [column-orbit proof](../PROOF.md#problem4-isolated-prefix-orbits).
+without `--canonical-prefix`; see the [column-orbit proof](PROOF.md#problem4-isolated-prefix-orbits).
 `--periodic-isolates` rejects letters omitting any output outside the P3 core,
 including at prefixes with anonymous labels. This property is invariant under
 the allowed output-label permutations; no anonymous map is iterated.
-The [general periodic-state lemma](../PROOF.md#problem4-periodic-isolated-states)
+The [general periodic-state lemma](PROOF.md#problem4-periodic-isolated-states)
 gives the long-safe-word hypothesis and its parameter scope.
 `--cyclic-isolates` strengthens this to actual periodicity of every noncore
 state and cyclic rank at least n−3. The conjunction is invariant even for
-anonymous completions, by the [output-relabeling lemma](../PROOF.md#problem4-cyclic-core-relabeling).
+anonymous completions, by the [output-relabeling lemma](PROOF.md#problem4-cyclic-core-relabeling).
 It implies `--periodic-isolates`; the older flag retains its weaker meaning
 for reproducing earlier counts.
 `--stable-kernel` additionally requires every pair eventually merged by a
 letter to belong to the P3 core. It implies `--cyclic-isolates` and replaces
 its transient-state cap by min(3, the core vertex-cover number), which is two
-for cores 10 and 12. The [stable-kernel proof](../PROOF.md#problem4-stable-kernel-core)
+for cores 10 and 12. The [stable-kernel proof](PROOF.md#problem4-stable-kernel-core)
 justifies applying this condition to anonymous completions; it does not justify
 arbitrary iterated-word checks on those completions.
 `--stable-partitions` implies `--stable-kernel` and also enforces the equivalent
-clique-partition condition during output assignment. Its [proof](../PROOF.md#problem4-stable-kernel-partitions)
+clique-partition condition during output assignment. Its [proof](PROOF.md#problem4-stable-kernel-partitions)
 explains why partial block permutations and the final anonymous completion are exact.
 
 
 `--controls-only` runs the implementation controls and skips flag enumeration.
-See [the terminal compatibility proof](../PROOF.md#problem4-terminal-labeled-compatibility).
+See [the terminal compatibility proof](PROOF.md#problem4-terminal-labeled-compatibility).
 
 
 ## Odd-cycle preservation controls
 
-The [sharp threshold and compression consequences](../PROOF.md#problem4-odd-cycle-sharp-compression)
+The [sharp threshold and compression consequences](PROOF.md#problem4-odd-cycle-sharp-compression)
 are proved symbolically. Rebuild their finite controls with:
 
 ```sh
@@ -819,7 +819,7 @@ and prints results without requiring or writing report inventories.
 ## Uniform graph and rank controls
 
 The all-length proofs and their scope are in
-[PROOF.md](../PROOF.md#problem4-odd-cycle-all-lengths-bound). These programs
+[PROOF.md](PROOF.md#problem4-odd-cycle-all-lengths-bound). These programs
 check finite domains and identities; they do not establish the unbounded
 parameter claims by extrapolation.
 
@@ -874,8 +874,8 @@ auxiliary-state domain, including the unions of core-state arrows.
 it is not a count of strongly connected automata. In m=4 only h=2 has such
 pools; the explicit actual counterexample is checked separately. In m=5 all
 joint pools are empty. Mathematical coverage and limits are in
-[the m=4 proof](../PROOF.md#problem4-four-cover-third-layer) and
-[the m=5 proof](../PROOF.md#problem4-five-cover-late-layers).
+[the m=4 proof](PROOF.md#problem4-four-cover-third-layer) and
+[the m=5 proof](PROOF.md#problem4-five-cover-late-layers).
 
 ## Earlier conditional sources
 
@@ -886,7 +886,7 @@ joint pools are empty. Mathematical coverage and limits are in
 
 Individual sources share `build/work/manual/`, so a generator can be followed by
 its checker. Some older exploratory programs depend on outputs from other
-programs: read their imports, CLI and the corresponding section of [PROOF.md](../PROOF.md), and run the
+programs: read their imports, CLI and the corresponding section of [PROOF.md](PROOF.md), and run the
 producer first. Historical run inventories and package-based replay tools have
 been removed; the launcher does not recreate old logs or replay a sealed snapshot.
 
@@ -957,7 +957,7 @@ not realized automata. Only a completed interval is counted as checked.
 The saturated-union filter now accepts any nonempty omitted set, but callers
 must prove that safe depth is at least union size minus row size. In the
 fifteen-step domain this is justified for exactly two omitted states. The
-[small-surplus maximum-family theorem](../PROOF.md#problem4-small-surplus-maximum-family-exit)
+[small-surplus maximum-family theorem](PROOF.md#problem4-small-surplus-maximum-family-exit)
 also bounds the two common-neighbor counts by 1 and 2 after sorting. The full
 static union exclusion is 39281 domains, leaving 3209700; overlapping filters
 must not be added as disjoint counts. Controls:
@@ -1004,7 +1004,7 @@ CERNY_PAIR_SAT_LIBRARY="$PWD/build/tools/cadical-3.0.1/build/libcadical.so" \
   python3 run.py script scripts/problem4/fifteen_low_cover_domains.cpp 5 10 14 --distances --letter-control --parallel-domains --quotient-sc --joint-sat
 ```
 
-For eleven-point EARLY cores, the [plateau proof](../PROOF.md#problem4-five-fifteen-eleven-plateau)
+For eleven-point EARLY cores, the [plateau proof](PROOF.md#problem4-five-fifteen-eleven-plateau)
 justifies `--plateau`: every letter must preserve the same auxiliary maximum
 source into the two early maximum targets. `--single-omission` selects only
 one absent point. Two absent points and six varying points were independently
@@ -1018,10 +1018,10 @@ family order, not the parallel completion order.
 `SURVIVOR ... joint=1` reports existence in a necessary relaxation, not an
 automaton or a count of all models. In particular, core 447/domain 0 in the
 5..10 range (K4,4, rows 7,11,112,176) is excluded by the
-[multipartite overlap proof](../PROOF.md#problem4-multipartite-overlap-exclusion).
+[multipartite overlap proof](PROOF.md#problem4-multipartite-overlap-exclusion).
 The current `--joint-sat` path also requires at least one compatible letter
 with a nonedge entering the complete proper early pair layer; see the
-[pair entrance condition](../PROOF.md#problem4-proper-pair-layer-entrance).
+[pair entrance condition](PROOF.md#problem4-proper-pair-layer-entrance).
 This strengthens the old relaxation. Already running binaries retain the old
 condition set; their negative results remain valid and need no rerun for this
 reason. The completed full run had exactly one surviving domain, this K4,4
@@ -1051,7 +1051,7 @@ if they had reached their terminal summaries.
 
 
 The eleven-point EARLY-core branch is now completely excluded by disjoint
-components, as detailed in the [coverage proof](../PROOF.md#problem4-five-fifteen-eleven-excluded).
+components, as detailed in the [coverage proof](PROOF.md#problem4-five-fifteen-eleven-excluded).
 The older task completed 89 core components and was then interrupted; it is
 not labelled a single normally completed 90-core run. The final core's two-
 omission cases were already covered by the complete matching run; its 26
@@ -1076,7 +1076,7 @@ It used paired full letter generation, 24 workers, quotient strong connectivity,
 and joint SAT, with no sampling, row-count, core, domain, or omission restriction.
 Its unique surviving domain is core 447/domain 0, excluded by the paper theorem.
 Together with the completed cover-five and eleven-point components this proves
-the [codimension-five exact value](../PROOF.md#problem4-five-exact-fourteen).
+the [codimension-five exact value](PROOF.md#problem4-five-exact-fourteen).
 This publication check rebuilds the static domain and reruns small independent
 controls and the single exception; it does not repeat the six-hour full run.
 
@@ -1138,11 +1138,11 @@ blocks and exactly n available outputs. Point masks and population counts
 implement these comparisons without scanning all 2^rows patterns per target.
 These are exact enumeration changes, not additional mathematical exclusions.
 
-The [partial-map budget proof](../PROOF.md#problem4-partial-map-joint-budget)
+The [partial-map budget proof](PROOF.md#problem4-partial-map-joint-budget)
 moves the existing first/last-layer test into both assignment searches.
 Merged edges are fixed by the kernel; forced edges only accumulate. Cached
 output-neighborhood masks update the latter without rescanning all input pairs.
-The [partial-square cover test](../PROOF.md#problem4-partial-square-cover)
+The [partial-square cover test](PROOF.md#problem4-partial-square-cover)
 also removes impossible first-image targets as soon as their partial second
 images violate independence or lose every possible incoming repair point.
 The full cross-row identity matching still runs at complete maps. Auxiliary
