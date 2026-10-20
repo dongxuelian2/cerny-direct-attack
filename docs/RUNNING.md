@@ -1,6 +1,6 @@
 # Core reproduction guide (Open Problem 4)
 
-Read [research/problem4/CERTIFICATES.md](../research/problem4/CERTIFICATES.md) for claim-to-code mapping and evidence caveats. The original long-form catalog of all research commands is preserved **verbatim** at [archive/legacy/RUNNING.md](../archive/legacy/RUNNING.md).
+Read [research/problem4/CERTIFICATES.md](../research/problem4/CERTIFICATES.md) for claim-to-code mapping and evidence caveats. The original long-form catalog of all research commands is preserved at [archive/legacy/RUNNING.md](../archive/legacy/RUNNING.md), with relative links adjusted for its archived location.
 
 ## Safe first checks
 
