@@ -1,96 +1,35 @@
-# Černý 猜想与同步自动机研究
+# Černý automata and avoid-or-compress
 
-本项目研究同步自动机的重置字、像扩张，以及 avoid-or-compress 问题。
-**一般 Černý 猜想与完整 Problem 4 尚未解决。余维四、五全部参数现已确定：`F_bin(n,n−4,r) = F(n,n−4,r) = min(n−r,11)`，`F_bin(n,n−5,r) = F(n,n−5,r) = min(n−r,14)`。** 上界为纸面归约加完整有限域排除的计算辅助证明，下界为二字母可达构造的纸面证明。余维五最后唯一的松弛幸存者由完全多部图结构定理排除；剩余未解区域为 `m≥6,q≥3m`。
+The repository studies synchronizing automata, with a dedicated, reader-first track for **Szykuła's Open Problem 4**.
 
-新的纸面推导处理全部奇圈长度，并将大余维、全部短对图形状的条件覆盖界推进一层；有限基论证还给出随余维无界增长的加性改进。它们没有给出全参数的匹配下界。
+**Start here:** [Open Problem 4 — research overview](research/problem4/README.md) → [linear proof roadmap](research/problem4/PROOF_ROUTE.md) → [audit and limitations](research/problem4/AUDIT.md) → [paper source](papers/problem4/main.tex).
 
-## 从哪里读
+## Current research claims
 
-[PROOF.md](PROOF.md) 是唯一的数学研究正文，集中维护问题、定义、推导、反例和未解边界。
+For strongly connected synchronizing automata, reachable images S, and nonempty proper A ⊂ S, set m=n−|S| and q=n−|A|. The manuscript and companion computational research claim
 
-- [问题与当前结论](PROOF.md#problem)：先了解正在研究什么、哪些结论仍未完成。
-- [下界构造](PROOF.md#constructions)与[低余维上界](PROOF.md#upper)：已有参数族和归约。
-- [余维四：短对图与入口排除](PROOF.md#frontier)：[完整布尔旗标](PROOF.md#problem4-eleven-audit)排除达到十二的全部入口组合，适用于任意有限字母表；与二字母下界十一匹配。
-- [保护块收缩与新边界](PROOF.md#problem4-protected-collapse-strip)：在不要求收缩后同步的条件下传递短对图与旗标约束，推广精确值十一至整条 `m=4,q=12` 参数边界；对 `q=13` 的等号候选给出十一层公共交集与首入口大小限制。
-- [q=13 的精确值十一](PROOF.md#problem4-q13-exact-eleven)：全部二十五核心、早晚分裂及不再增长域均已完整排除；结合保护收缩与二字母构造，对所有 `r≥1` 得到精确值十一。
-- [一般目标长度的保护集收缩](PROOF.md#problem4-protected-slack-collapse)：距原上界 `k` 的候选可缩到至多 `k+1` 个保护点，全部字母共享至多 `2^k` 个外部保护入口。
-- [稀疏短对图的前像独立性](PROOF.md#problem4-sparse-pair-entrance-independence)：`h≤L−m−2,|P_h|≤4,|P_(h+1)|≤5` 时，实际短保护前像线性独立、数量至多 `k+h`；首层结论适用于 `m=4,L≥12`，未解决剩余前像的后续演化。
-- [保持同步与可达的收缩](PROOF.md#problem4-reachable-slack-collapse)：保留至多 `m+k+1` 个保护点可同时保持强连通、同步、初始集可达和精确目标长度；[只要求同步时](PROOF.md#problem4-synchronizing-slack-collapse)至多需要 `k+2` 个保护点。
-- [大保护集区间的极值稳定性](PROOF.md#problem4-protected-size-stabilization)：`m≥4,q≥3m` 时，任意字母表极值在 `r≥q−2m` 后恒定；`m=4,q=13` 的进一步完整排除现已确定所有 `r≥1` 的值为十一。
-- [固定余维的参数单调性](PROOF.md#problem4-parameter-monotonicity)：任意字母表极值随 `q`、`r` 分别不减；这约束未解区域的形状，未确定其精确值。
-- [全部奇圈长度的纸面压缩界](PROOF.md#problem4-odd-cycle-all-lengths-bound)：`m≥4`、`P_h=C_(2m−1)` 加任意孤点时，`c(S)≤h+m+1`；不要求强连通或字母秩限制。C7 取到等号，C5 有真实反例。
-- [保持行秩与实际词秩亏](PROOF.md#problem4-preserved-rank-defect-tradeoff)：全参数秩约束及[嵌套奇圈像障碍](PROOF.md#problem4-odd-image-obstruction)，不将非封闭像当作子自动机。
-- [大余维的统一覆盖加强](PROOF.md#problem4-large-codimension-cover-improvement)：同步、`n≥2m,m≥13` 时，`τ(P_h)≥m` 迫使 `c(S)≤h+2m−3`；覆盖全部图形，且已证明不必要求强连通。
-- [覆盖界的无界加性改进](PROOF.md#problem4-unbounded-cover-deficit)：任意固定 `a`，充分大的 `m` 都满足上述条件界 `c(S)≤h+2m−a−1`；依赖已有 α-critical 有限基定理，[共同像核心退出界](PROOF.md#problem4-common-image-core-escape)将一般阈值定量为极粗的三层指数塔。
-- [余维四的较早覆盖层](PROOF.md#problem4-four-cover-third-layer)：强连通同步、`n≥8,h≥3` 时，`τ(P_h)≥4` 迫使 `c(S)≤h+5`；计算辅助证明。`h=2` 的延伸被一个八状态强连通同步实例否定。
-- [余维四全参数精确值](PROOF.md#problem4-four-exact-eleven)：七层四点覆盖的 91 类核心及三点覆盖的 10142 个命名域全部排除；`n≥11` 的任意余维四集合均在十一字母内压缩。结合二字母下界得到全参数精确式，并推出余维五十八步上界。
-- [余维五全参数精确值十四](PROOF.md#problem4-five-exact-fourteen)：覆盖数五全部 2,294 类核心、覆盖数四全部十一点核心及余下 3,206,988 个必要域完整处理；唯一松弛幸存域由[完全多部图相交覆盖定理](PROOF.md#problem4-multipartite-overlap-exclusion)纸面排除，与二字母下界匹配。`n≥16` 的任意余维五集合均在十四字母内压缩，小状态用避开界补齐。
-- [较早的余维五十六步上界](PROOF.md#problem4-five-global-sixteen)：完整生成六至十点的 1994 类核心，完整单字母对照与共同距离排除通过；17 类由整个字母池的封闭性排除，其余完成距离检查。这是最终十四步定理之前的中间界。
-- [任意块的共同活动界](PROOF.md#problem4-transversal-all-slack-activity)与[真支持的全部安全层](PROOF.md#problem4-proper-support-guard-tower)：对全部长度≤j 的混合词给出 `2(k−R)+j` 的活动块界；饱和时准确确定禁用状态链，并有每个 k 的真实强连通同步等号构造。这是结构界的等号，尚非原极值的匹配下界。
-- [饱和可达并与出口前像](PROOF.md#problem4-saturated-exit-preimages)：不依赖横截分割的出口必要条件；[余维五双共同邻点分支](PROOF.md#problem4-five-double-neighbor-exclusion)的 747 个剩余域已完整排除。这一步只排除一个结构分支，余维五其余分支由后续完整排除处理。
-- [实际短词的有限归约](PROOF.md#problem4-twelve-finite-domains)与[动态必要条件](PROOF.md#problem4-twelve-actual-two-step)：保留持续遗漏孤点的身份，使用双向商图及同字母平方；一般多步共同实现仍待解决。
-- [任意余维的多缺口归约](PROOF.md#problem4-multiple-hole-finite-reduction)：利用经典最大独立集交并不等式，将后层全部遗漏状态限制在至多 2m 个；结合前层支持界得到与 n 无关的必要单步域。实际短词的共同实现仍待解决。
-- [有限字母与共享身份短词域](PROOF.md#problem4-bounded-word-backward-frame)：选取有界字母子表，并保留短词进入核心的反向邻域，可精确检查有限长度混合词的安全性；是任意余维的必要动态归约，本节没有执行这个较大域的全域排除。
-- [短词的持续遗漏孤点界](PROOF.md#problem4-short-word-persistent-holes)：纸面证明适用于相邻压缩谱相差多层的情形。所用支持不等式引用 Gitler–Valencia，未作为新图论定理。
-- [余维五的全部覆盖层](PROOF.md#problem4-five-cover-late-layers)：强连通同步、`n≥10,h≥1` 时，`τ(P_h)≥5` 迫使 `c(S)≤h+7`；[四类核心归约](PROOF.md#problem4-next-to-maximal-rank-cores)加全部二十七核心检查，是最终排除的一个组成部分。
-- [长安全区间的周期状态约束](PROOF.md#problem4-periodic-isolated-states)：`ac≥2m+2` 时，每个字母至多有 `m−1` 个非周期状态，全部落在同一个至多 `m(m+1)` 点的短对核心中。
-- [余量一的旗标归约](PROOF.md#problem4-slack-one-initial-flags)：共同短对距离、轨道秩、实际前像供应及完整终端字母表检查覆盖十二步候选；最后的核心 106 前缀 `(64,128,256)` 现也完整归零，计数见[完整覆盖](PROOF.md#problem4-q13-exact-eleven)。
-- [全状态循环类的精确极值](PROOF.md#problem4-full-cycle-exact)：全部合法参数的二字母与任意字母表极值均为 min(s−r+1,2m+1)，含非互素及非稠密情形，纸面证明和统一二字母达界；[双链刚性](PROOF.md#problem4-signed-chain-rigidity)排除已有下界族的全部非原型颜色重排与换轨选择。
-- [任意活动圈的刚性](PROOF.md#problem4-arbitrary-core-cycle-rigidity)：固定双链合并字母时，允许保护部分任意置换和活动部分任意单圈，纯压缩极值仍为 3m−1；非原型圈至多 3m−2。一般余维的纸面证明及匹配构造，多圈情形另作受限有限搜索。
-- [单点花瓣族的退出界](PROOF.md#problem4-sunflower-kernel-exit)：退出长度至多为最大字母核大小加一，并有任意核大小的可达二字母等号例；一般余维的短对层推论纸面排除余维五十六步候选的整个后层单点花瓣分支。
-- [第一基数面的字母约束精确值](PROOF.md#problem4-bounded-kernel-first-face)：`s=r+1`、原字母核大小至多 K、亏秩至多 δ 时，二字母与任意字母表极值均为 `min(n−r,K+1,δ+2)`；全部合法参数有可达、强连通、同步的纸面匹配构造。
-- [完整共同移出的多点界](PROOF.md#problem4-full-common-displacement)：在明确的原字母移出假设下，`ac≤g(κ−1)+2`，任意 g、κ 都有二字母等号族；未覆盖只移出部分共同状态的分支。
-- [较早的余维五全域十五步上界](PROOF.md#problem4-five-global-fifteen)：完整排除 1,000,088 个必要域，得到上界 min(n−r,15)；后续十五步候选排除将它进一步降为十四并匹配下界。
-- [安全支持只多出至多三点的外部距离定理](PROOF.md#problem4-small-surplus-maximum-family-exit)：一般参数纸面证明覆盖完整最大独立集族，单独处理非横截五圈；用于余维五整个双遗漏点分支。最高十一点支持只剩两种匹配变化形状；该结构结论用于后续完整候选排除。
-- [十五步候选九层分叉与十一点核心全排除](PROOF.md#problem4-five-fifteen-eleven-excluded)：覆盖数五的全部 2,294 类核心、覆盖数四的全部 90 类十一点核心均已完整排除，将余下全域运行归约为 P₉ 非孤立核心至多十点的 3,206,988 个必要域。
-- [二次提升与全部词长的共同退出](PROOF.md#problem4-quadratic-exit-sparsification)：用 O(m²) 个原字母同时保持后层全部最大集的精确退出长度，并构造各起点的最短退出词、判定永久安全；不声称保留全自动机同步性或获得新的全局数值上界。
-- [保护覆盖饱和的有效余维](PROOF.md#problem4-protected-cover-saturation)：保护条件饱和时用剩余覆盖数控制退出；[真实安全族秩障碍](PROOF.md#problem4-real-safe-family-rank-barrier)说明加入全部实际短词与可达性后，全族行秩仍可随 n 无界，不能代替同一个 S 的轨道。
-- [条件分支](PROOF.md#branches)：需要额外假设的局部论证。
-- [像扩张](PROOF.md#extension)、[秩与核](PROOF.md#rank)、[策略与预算](PROOF.md#policy)、[锚点与最优语言](PROOF.md#anchors)：其他数学方向。
-- [探索记录](PROOF.md#exploration)：受限观察、失败路线和待证明机制。
+- **m=4**: F_bin(n,n−4,r)=F(n,n−4,r)=min(q,11);
+- **m=5**: F_bin(n,n−5,r)=F(n,n−5,r)=min(q,14);
+- **m≤3**: F_bin=F=min(q,3m) for 1≤m≤3 (and F(n,n,r)=1).
 
-引用结论时链接到 `PROOF.md#章节锚点`。各节的适用范围不可省略；有限搜索不等于一般定理。
-论文源码见 [papers/problem4/main.tex](papers/problem4/main.tex)；最新参数点结论以研究正文为准。
+Upper bounds at m=3,4,5 have **computer-assisted** components; these are not Lean-verified or externally certified. Lower bounds have explicit original-letter constructions. The unrestricted Open Problem 4 and Černý conjecture remain open.
 
-## 怎样计算
+**Conjecture, not theorem:** for m≥4, F_bin=F=min(q,3m−1). The first open range is m≥6, q≥3m. See [precise statement and negative tests](research/problem4/CONJECTURE.md).
 
-需要 Python 3.10+ 和支持线程的 C++17 编译器（默认 `g++`，可用 `CXX` 指定）。
+## Navigation
 
-```sh
-python3 run.py eleven --threads 8
-python3 run.py open-point
-python3 run.py reset --cerny 12
-```
+| Need | Entry |
+|---|---|
+| What exactly was proved, how it depends on other steps | [Proof roadmap](research/problem4/PROOF_ROUTE.md) |
+| Where complete calculations and necessary domains live | [Certificate manifest](research/problem4/CERTIFICATES.md) |
+| What has and has not been audited | [Preliminary audit](research/problem4/AUDIT.md) |
+| A linear manuscript | [papers/problem4/main.tex](papers/problem4/main.tex) |
+| Small-scale checks and historical reproduction | [docs/RUNNING.md](docs/RUNNING.md) |
+| Historical full notebook, failed avenues, exhaustive case notes | [archive/legacy/PROOF.md](archive/legacy/PROOF.md) |
+| Other mathematical research: reset words, anchors, image extension | [legacy notebook: other chapters](archive/legacy/PROOF.md#extension) and [papers/anchors](papers/anchors/main.tex) |
 
-`eleven` 从源码复算下界、核心分类、第六层覆盖归约和扩大入口域的全部排除；不需要保存的库存或证书。`open-point` 单独重建下界见证。
-完整上界源码在 `scripts/problem4/upper_bound/`：保留三点入口与 K4，检查完整后续前像和任意大小的共同字母表。
-分项复算、早期条件分支和其他研究程序见 [运行说明](docs/RUNNING.md)。生成数据和可执行文件写入忽略的 `build/`。
+The research programs remain in their **existing paths** under scripts/problem4 and scripts/direct_attack. We intentionally did not rename the 489 problem4 source files: many compile/import one another and run.py hardcodes their locations. Exploratory scripts are de-emphasized via the manifest rather than silently breaking reproducibility.
 
-## 目录
+## Reproducibility and attribution
 
-```text
-PROOF.md                 唯一数学研究正文，按问题和章节组织
-README.md                问题与阅读入口
-AGENTS.md                后续研究与编辑约定
-run.py                   统一运行入口
-scripts/
-  problem4/              avoid-or-compress 构造与计算
-    upper_bound/         精确值上界的完整枚举与独立控制
-    experimental/        早期受限探索
-  direct_attack/         像扩张、秩、核与重置字程序
-  anchors/               锚点、商与最优语言程序
-  automata/              小规模 Python 参考实现
-  native/                通用 C++ 搜索内核
-  tests/                 程序实现的局部回归检查
-papers/                  论文 LaTeX 源码
-formal/                  已有 Lean 数学源码
-docs/RUNNING.md          程序运行说明
-build/                   本地生成内容，不提交
-```
-
-新研究写入正文对应章节，必要程序加入 `scripts/` 对应主题；不要另建零散研究 Markdown、
-日期日志、结果库存或发布流程。大规模计算使用多线程 C++，Python 用于小规模参考与编排。
-具体规则见 [AGENTS.md](AGENTS.md)。源码采用 MIT 许可；研究与代码包含 AI 辅助。
-
-早期条件分支与探索源码保持可追溯。论文的二块证明只维护在 `papers/problem4/main.tex` 中。
+Project code and proof records have AI-assisted contributions and substantial collaborative research. Read the original source, assumptions, and audit caveats before treating an exhaustive exclusion as externally verified. The legacy notebook and the earlier manuscript are preserved, not destroyed.
