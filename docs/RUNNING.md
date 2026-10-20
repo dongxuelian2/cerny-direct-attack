@@ -1,5 +1,27 @@
 # Running research programs
 
+## Read or compile the paper without rerunning research
+
+The manuscript in `papers/problem4/main.tex` consolidates the exact
+codimension-four and codimension-five results. Its mathematical supplement
+is [PROOF.md](../PROOF.md#problem4-paper-synthesis), including completed
+finite-domain coverage and the paper exclusion of the sole relaxation survivor.
+Reading or compiling it does not run any search or require saved certificate
+bundles. With a LaTeX installation providing the packages in the source:
+
+```sh
+mkdir -p build/paper
+pdflatex -interaction=nonstopmode -halt-on-error -output-directory=build/paper papers/problem4/main.tex
+pdflatex -interaction=nonstopmode -halt-on-error -output-directory=build/paper papers/problem4/main.tex
+```
+
+The result is `build/paper/main.pdf`; references are embedded, so no BibTeX
+step is needed. The remaining commands in this document are optional research
+computations for replication or further investigation. Several are expensive;
+they are not prerequisites to editing or reviewing the paper.
+
+## Research runtime
+
 Run commands from the repository root. Python 3.10+ and a C++17 compiler are needed
 for the documented tasks. `CXX=clang++` selects another compiler. The launcher uses
 `-O3 -pthread` without `-DNDEBUG`, so the mathematical assertions remain active.
@@ -369,6 +391,31 @@ The count includes repeated and rejected proposals. No failed stochastic run
 proves an upper bound. With zero avoidance audits, `maximum_audited_ac=0`
 means unexamined. An avoidance candidate still requires an independent full
 witness check; the scorer considers at most forty reachable subsets.
+
+The [linear codimension conjecture](../PROOF.md#problem4-linear-codimension-conjecture)
+has a small independent checker for the three low-codimension exceptions and
+the paper construction with unbounded adjacent compression jumps:
+
+```sh
+python3 run.py script scripts/problem4/check_linear_codimension_conjecture.py
+```
+
+To reconstruct the nine binary seeds used in its broader mutation search:
+
+```sh
+python3 run.py script scripts/problem4/check_linear_codimension_conjecture.py \
+  --write-seeds 19 2 "$PWD/build/conjecture_seed_n19_k2.txt"
+python3 run.py script scripts/problem4/mutate_compression.cpp --control
+python3 run.py script scripts/problem4/mutate_compression.cpp \
+  19 6 1 2 100000 8 20261020 "$PWD/build/conjecture_seed_n19_k2.txt" 18
+```
+
+The seed generator supports `n=19,20` and two or three letters. Three-letter
+seeds append the identity or a copy of either original letter, giving 27 seeds.
+Use the other run parameters in the proof's search table for those runs.
+All transition outputs may mutate. The maximum compression of each valid
+proposal is exact; the sequence of automata examined is stochastic and may
+repeat. No negative result from these runs proves the conjecture.
 
 The cover-four branch at layer ten has a separate complete **static** generator:
 
@@ -1077,8 +1124,11 @@ and joint SAT, with no sampling, row-count, core, domain, or omission restrictio
 Its unique surviving domain is core 447/domain 0, excluded by the paper theorem.
 Together with the completed cover-five and eleven-point components this proves
 the [codimension-five exact value](../PROOF.md#problem4-five-exact-fourteen).
-This publication check rebuilds the static domain and reruns small independent
-controls and the single exception; it does not repeat the six-hour full run.
+The earlier codimension-five publication check rebuilt the static domain and
+reran small independent controls and the single exception, without repeating
+the six-hour full run. The subsequent manuscript consolidation inspected
+existing completion records and compiled the paper; it did not repeat those
+research calculations.
 
 The completed full run used the older relaxation without the new pair-entrance
 condition. Current source enables that necessary condition in `--joint-sat`;
