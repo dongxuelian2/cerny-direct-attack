@@ -82,12 +82,24 @@ bool literal_square_control(const CoreActions& solver,const vector<int>& f) {
 }
 
 void generate_low(CoreActions& solver,int core_n,const LowFamily& family,bool common,int threads,bool independent,
-                  bool squares=false,bool square_control=false,const vector<unsigned>& intermediate={},int entrance_layer=0) {
-    const int n=solver.n,nf=solver.nf;assert(nf>=3 && nf<=14);
+                  bool squares=false,bool square_control=false,const vector<unsigned>& intermediate={},int entrance_layer=0,bool early_budget=true,bool paired_control=false) {
+    // Additional maximum rows have very few targets: constrain them first.
+    vector<unsigned>sources=solver.additional_sources;
+    sources.insert(sources.end(),solver.family.begin(),solver.family.end());
+    const int n=solver.n,nf=sources.size();assert(nf>=3 && nf<=14 && threads>=1);
+    assert(!paired_control||!independent);
     const int kernel_defect_cap=solver.m==5?solver.defect_cap:2;
+    const bool incremental_budget=entrance_layer&&early_budget;
+    const bool incremental_square=squares&&early_budget;
     vector<vector<unsigned>>partitions;vector<unsigned>blocks;
     function<void(int)> partition=[&](int x){
-        if(x==n){if(n-int(blocks.size())<=kernel_defect_cap)partitions.push_back(blocks);return;}
+        if(x==n){
+            if(solver.kernel_filter&&!solver.kernel_filter(blocks))return;
+            int pairs=0;for(unsigned block:blocks){int size=__builtin_popcount(block);pairs+=size*(size-1)/2;}
+            if(n-int(blocks.size())<=kernel_defect_cap&&
+                    (!entrance_layer||pairs<=solver.ne-entrance_layer+1))partitions.push_back(blocks);
+            return;
+        }
         for(int b=0;b<int(blocks.size());++b){
             if(x+1-int(blocks.size())>kernel_defect_cap)continue;bool clique=true;
             for(unsigned bits=blocks[b];bits;bits&=bits-1)
@@ -96,9 +108,14 @@ void generate_low(CoreActions& solver,int core_n,const LowFamily& family,bool co
         }
         blocks.push_back(1u<<x);partition(x+1);blocks.pop_back();
     };partition(0);
+    // The source columns depend on the kernel, not on incoming labels.
+    for(auto&kernel:partitions)stable_sort(kernel.begin(),kernel.end(),[&](unsigned a,unsigned b){
+        int ca=0,cb=0;for(unsigned row:sources){ca+=bool(row&a);cb+=bool(row&b);}
+        return min(ca,nf-ca)>min(cb,nf-cb);
+    });
     struct Job{int kernel;unsigned incoming;};vector<Job>jobs;
     vector<unsigned>incoming_sets;auto adjacency=solver.graph.adjacency();
-    for(unsigned in=0;in<(1u<<n);++in)if(__builtin_popcount(in)<=(common?n-solver.m+1:0)){
+    for(unsigned in=0;in<(1u<<n);++in)if(__builtin_popcount(in)<=min(common?n-solver.m+1:0,solver.incoming_cap<0?n:solver.incoming_cap)){
         if(entrance_layer){assert(entrance_layer>=2);unsigned neighborhood=0;int internal=0;
             for(unsigned bits=in;bits;bits&=bits-1){int x=__builtin_ctz(bits);neighborhood|=adjacency[x];internal+=__builtin_popcount(adjacency[x]&in);}
             assert(internal%2==0);
@@ -106,32 +123,160 @@ void generate_low(CoreActions& solver,int core_n,const LowFamily& family,bool co
         }
         incoming_sets.push_back(in);
     }
-    for(int k=0;k<int(partitions.size());++k)for(unsigned in:incoming_sets)jobs.push_back({k,in});
+    struct TargetData {
+        int crossing=0,total=0;unsigned aux=0;uint64_t allowed=0,full_aux=0,hole_aux=0;
+        vector<unsigned>targets;vector<uint64_t>row_allowed,column;
+    };
+    vector<TargetData>target_data(1u<<n);
+    for(unsigned incoming:incoming_sets){
+        int crossing=__builtin_popcount(incoming),total=n+crossing;
+        unsigned aux=((1u<<crossing)-1)<<n;
+        unsigned named_isolates=((1u<<(n-core_n))-1)<<core_n;
+        vector<unsigned>targets;
+        for(unsigned core:family.maximal_small)targets.push_back(core|named_isolates|aux);
+        for(unsigned core:family.extendable)targets.push_back(core|named_isolates|aux);
+        for(unsigned core:family.maximum)for(int z=core_n;z<total;++z)
+            targets.push_back(core|((named_isolates|aux)^(1u<<z)));
+        if(!solver.additional_sources.empty())for(unsigned core:family.maximum)targets.push_back(core|named_isolates|aux);
+        // Every source contains all auxiliary inputs. Their mandatory
+        // outputs must occur in every target; remove impossible targets
+        // before assigning coordinates in the 64-bit target mask.
+        targets.erase(remove_if(targets.begin(),targets.end(),[&](unsigned target){return (target&incoming)!=incoming;}),targets.end());
+        assert(targets.size()<64);
+        uint64_t allowed=0;
+        for(int i=0;i<int(targets.size());++i)
+            if((targets[i]&incoming)==incoming)allowed|=uint64_t(1)<<i;
+        if(!allowed)continue;
+        vector<uint64_t>row_allowed(nf,allowed);
+        {bool possible=true;
+            for(int row=0;row<nf;++row){
+                for(uint64_t bits=allowed;bits;bits&=bits-1){int i=__builtin_ctzll(bits);
+                if(__builtin_popcount(targets[i])!=__builtin_popcount(sources[row])+crossing||
+                   (solver.target_filter&&!solver.target_filter(sources[row],targets[i],aux)))row_allowed[row]&=~(uint64_t(1)<<i);
+                }
+                possible&=row_allowed[row]!=0;
+            }
+            if(!possible)continue;
+        }
+        vector<uint64_t>column(total);
+        for(int y=0;y<total;++y)for(int i=0;i<int(targets.size());++i)
+            if(targets[i]>>y&1)column[y]|=uint64_t(1)<<i;
+        uint64_t full_aux=0,hole_aux=0;
+        for(size_t i=0;i<targets.size();++i){
+            if((targets[i]&aux)==aux)full_aux|=uint64_t(1)<<i;
+            else{assert(__builtin_popcount(aux&~targets[i])==1);hole_aux|=uint64_t(1)<<i;}
+        }
+        target_data[incoming]={crossing,total,aux,allowed,full_aux,hole_aux,move(targets),move(row_allowed),move(column)};
+    }
+    for(int k=0;k<int(partitions.size());++k)for(unsigned in:incoming_sets){
+        if(!target_data[in].allowed)continue;
+        if(entrance_layer){int excess=0;for(unsigned block:partitions[k]){
+                int size=__builtin_popcount(block);excess+=(size-1)*(size-2)/2;}
+            unsigned neighborhood=0;int internal=0;
+            for(unsigned bits=in;bits;bits&=bits-1){int x=__builtin_ctz(bits);neighborhood|=adjacency[x];internal+=__builtin_popcount(adjacency[x]&in);}
+            if(excess+internal/2+__builtin_popcount(neighborhood&~in)>solver.ne-entrance_layer+2)continue;
+        }
+        jobs.push_back({k,in});
+    }
+    // The merged pair set is fixed by the kernel. A target edge is forced
+    // as soon as a pair from two non-completely-adjacent blocks is assigned
+    // to it. Auxiliary inputs are nonadjacent to every other input.
+    vector<unsigned>kernel_merged(partitions.size());
+    vector<vector<unsigned>>prior_complete(partitions.size());
+    vector<vector<unsigned>>edge_bit(n,vector<unsigned>(n));
+    for(int e=0;e<solver.ne;++e){auto[x,y]=solver.edges[e];edge_bit[x][y]=edge_bit[y][x]=1u<<e;}
+    if(entrance_layer)for(size_t k=0;k<partitions.size();++k){const auto&kernel=partitions[k];prior_complete[k].resize(kernel.size());
+        for(size_t at=0;at<kernel.size();++at){
+            for(int e=0;e<solver.ne;++e){auto[x,y]=solver.edges[e];if((kernel[at]>>x&1)&&(kernel[at]>>y&1))kernel_merged[k]|=1u<<e;}
+            for(size_t before=0;before<at;++before){bool missing=false;
+                for(unsigned bits=kernel[at];bits;bits&=bits-1)missing|=(adjacency[__builtin_ctz(bits)]&kernel[before])!=kernel[before];
+                if(!missing)prior_complete[k][at]|=1u<<before;
+            }
+        }
+    }
+    vector<vector<unsigned>>forced_by_outputs;
+    if(incremental_budget){forced_by_outputs.assign(n,vector<unsigned>(1u<<n));
+        for(int y=0;y<n;++y)for(unsigned bits=1;bits<(1u<<n);++bits)
+            forced_by_outputs[y][bits]=forced_by_outputs[y][bits&(bits-1)]|edge_bit[y][__builtin_ctz(bits)];
+    }
     atomic<size_t>next{0};vector<Signatures>local(threads);
-    vector<uint64_t>nodes(threads),maps(threads),square_rejected(threads),square_checked(threads),two_step_rejected(threads);vector<thread>workers;
-    for(int worker=0;worker<threads;++worker)workers.emplace_back([&,worker]{
+    vector<uint64_t>nodes(threads),maps(threads),square_rejected(threads),square_checked(threads),two_step_rejected(threads),layer_rejected(threads),partial_square_rejected(threads);vector<thread>workers;
+    auto work=[&](int worker){
+        int cached_kernel=-1;
+        vector<vector<unsigned char>>prefix_need(nf+1),prefix_index(nf+1);
+        vector<vector<unsigned>>active_patterns(nf+1);vector<unsigned>kernel_patterns;kernel_patterns.reserve(n);
+        vector<int>f;array<int,32>block_output,incoming_index,output_owner;array<uint64_t,32>block_targets;
+        Action scratch;scratch.subset.resize(solver.nf);scratch.pair.resize(solver.ne);
         for(size_t ji;(ji=next.fetch_add(1))<jobs.size();) {
-            auto job=jobs[ji];auto kernel=partitions[job.kernel];
-            int crossing=__builtin_popcount(job.incoming),total=n+crossing;
-            unsigned aux=((1u<<crossing)-1)<<n;
-            unsigned named_isolates=((1u<<(n-core_n))-1)<<core_n;
-            vector<unsigned>targets;
-            for(unsigned core:family.maximal_small)targets.push_back(core|named_isolates|aux);
-            for(unsigned core:family.extendable)targets.push_back(core|named_isolates|aux);
-            for(unsigned core:family.maximum)for(int z=core_n;z<total;++z)
-                targets.push_back(core|((named_isolates|aux)^(1u<<z)));
-            assert(targets.size()<64);
-            uint64_t allowed=0;
-            for(int i=0;i<int(targets.size());++i)
-                if((targets[i]&job.incoming)==job.incoming)allowed|=uint64_t(1)<<i;
-            if(!allowed)continue;
-            vector<uint64_t>column(total);
-            for(int y=0;y<total;++y)for(int i=0;i<int(targets.size());++i)
-                if(targets[i]>>y&1)column[y]|=uint64_t(1)<<i;
-            vector<int>f(total,-1);int ai=0;
+            auto job=jobs[ji];const auto&kernel=partitions[job.kernel];
+            const auto&data=target_data[job.incoming];
+            const int crossing=data.crossing,total=data.total;const unsigned aux=data.aux;
+            assert(total<32);
+            const auto&targets=data.targets;const auto&row_allowed=data.row_allowed;const auto&column=data.column;
+            const uint64_t allowed=data.allowed;
+            f.assign(total,-1);int ai=0;
             for(unsigned bits=job.incoming;bits;bits&=bits-1)f[n+ai++]=__builtin_ctz(bits);
-            auto retain=[&]{
+            const unsigned merged=kernel_merged[job.kernel];const int merged_count=__builtin_popcount(merged);
+            unsigned initial_forced=0;
+            if(incremental_budget)for(int e=0;e<solver.ne;++e){auto[x,y]=solver.edges[e];if((job.incoming>>x&1)&&(job.incoming>>y&1))initial_forced|=1u<<e;}
+            auto budget_ok=[&](unsigned forced){return !entrance_layer||(!(forced&merged)&&merged_count+__builtin_popcount(forced)<=solver.ne-entrance_layer+2);};
+            if(incremental_budget&&!budget_ok(initial_forced))continue;
+            auto extend_forced=[&](int at,int y,unsigned used,unsigned forced){
+                if(!incremental_budget||y>=n)return forced;
+                // Most block pairs contain a nonedge. Start with every used
+                // named output, removing only completely adjacent blocks.
+                // Incoming outputs belong to auxiliary inputs and stay in.
+                unsigned outputs=used&((1u<<n)-1);
+                for(unsigned bits=prior_complete[job.kernel][at];bits;bits&=bits-1)
+                    outputs&=~(1u<<block_output[__builtin_ctz(bits)]);
+                return forced|forced_by_outputs[y][outputs];
+            };
+            using SquareMasks=array<uint64_t,32>;
+            SquareMasks initial_square;fill_n(initial_square.begin(),crossing+1,0);initial_square[0]=incremental_square?data.full_aux:allowed;
+            fill_n(incoming_index.begin(),n,-1);fill_n(output_owner.begin(),n,-1);int incoming_at=0;
+            for(unsigned bits=job.incoming;bits;bits&=bits-1){int z=__builtin_ctz(bits);
+                incoming_index[z]=incoming_at;initial_square[1+incoming_at++]=incremental_square?data.hole_aux:0;}
+            if(incremental_square){
+                fill_n(block_targets.begin(),kernel.size(),0);
+                for(size_t at=0;at<kernel.size();++at)for(unsigned bits=kernel[at];bits;bits&=bits-1)block_targets[at]|=column[__builtin_ctz(bits)];
+                for(auto[x,y]:solver.edges)if((job.incoming>>x&1)&&(job.incoming>>y&1)){
+                    initial_square[0]=0;
+                    for(int i=0;i<crossing;++i)if(i!=incoming_index[x]&&i!=incoming_index[y])initial_square[i+1]=0;
+                }
+            }
+            uint64_t initial_valid=0;for(int i=0;i<=crossing;++i)initial_valid|=initial_square[i];
+            if(incremental_square){bool possible=true;
+                for(int row=int(solver.additional_sources.size());row<nf;++row)possible&=bool(row_allowed[row]&initial_valid);
+                if(!possible){++partial_square_rejected[worker];continue;}
+            }
+            // For each possible first image, accumulate the G edges already
+            // present in its partial second image. A full-auxiliary target
+            // permits none; a one-hole target can repair only edges sharing
+            // one incoming output. Each repair mask only loses targets.
+            auto extend_square=[&](int at,int y,unsigned used,const SquareMasks&current,SquareMasks&updated){
+                copy_n(current.begin(),crossing+1,updated.begin());
+                for(unsigned bits=adjacency[y]&used;bits;bits&=bits-1){int z=__builtin_ctz(bits);
+                    uint64_t affected=block_targets[at];int repair=incoming_index[z];
+                    if(repair<0){assert(output_owner[z]>=0);affected&=block_targets[output_owner[z]];}
+                    updated[0]&=~affected;
+                    for(int i=0;i<crossing;++i)if(i!=repair)updated[i+1]&=~affected;
+                }
+                uint64_t valid=0;for(int i=0;i<=crossing;++i)valid|=updated[i];return valid;
+            };
+            // For this fixed kernel and incoming set, a map is exactly an
+            // injection of its ordered blocks into the n available outputs.
+            // Mixed-radix permutation rank is bijective: use exact integers,
+            // not a fingerprint, and compare sorted complete enumerations.
+            array<vector<uint64_t>,2>raw_ranks;
+            array<vector<__uint128_t>,2>wide_ranks;bool compare_pass=false;
+            auto retain=[&](unsigned known_forced,__uint128_t rank){
                 ++maps[worker];
+                if(paired_control){
+                    if(n<=20){auto&v=raw_ranks[compare_pass];if(!compare_pass)assert(v.empty()||v.back()<uint64_t(rank));v.push_back(uint64_t(rank));}
+                    else{auto&v=wide_ranks[compare_pass];if(!compare_pass)assert(v.empty()||v.back()<rank);v.push_back(rank);}
+                    if(compare_pass)return;
+                }
+                if(solver.map_filter&&!solver.map_filter(f))return;
                 if(!intermediate.empty()) {
                     auto mapped=[&](unsigned row){unsigned out=0;
                         for(unsigned bits=row|aux;bits;bits&=bits-1)out|=1u<<f[__builtin_ctz(bits)];return out;};
@@ -154,125 +299,196 @@ void generate_low(CoreActions& solver,int core_n,const LowFamily& family,bool co
                     }
                     if(!compatible){++square_rejected[worker];return;}
                 }
-                Action action;
-                for(unsigned source:solver.family) {
+                // Most maps share an existing signature. Allocate its row
+                // and pair buffers once, copying only a new map key.
+                auto&action=scratch;action.forced=known_forced;
+                for(int row=0;row<solver.nf;++row) {unsigned source=solver.family[row];
                     unsigned image=0;
                     for(unsigned bits=source|aux;bits;bits&=bits-1)image|=1u<<f[__builtin_ctz(bits)];
                     assert(find(targets.begin(),targets.end(),image)!=targets.end());
-                    int target=nf;
+                    int target=solver.nf;
                     if((image&aux)==aux)
                         target=find(solver.family.begin(),solver.family.end(),image&((1u<<n)-1))-solver.family.begin();
-                    action.subset.push_back(target);
+                    action.subset[row]=target;
                 }
-                for(auto[x,y]:solver.edges)action.pair.push_back(solver.pair_target(f[x],f[y]));
-                for(int x=0;x<total;++x)for(int y=x+1;y<total;++y)
-                    if(solver.pair_target(x,y)==-2) {
-                        int target=solver.pair_target(f[x],f[y]);assert(target!=-1);
-                        if(target>=0)action.forced|=1u<<target;
+                for(int e=0;e<solver.ne;++e){auto[x,y]=solver.edges[e];action.pair[e]=solver.pair_target(f[x],f[y]);}
+                if(!incremental_budget||square_control){unsigned literal_forced=0;
+                    for(int x=0;x<total;++x)for(int y=x+1;y<total;++y)if(solver.pair_target(x,y)==-2){
+                        int target=solver.pair_target(f[x],f[y]);assert(target!=-1);if(target>=0)literal_forced|=1u<<target;
                     }
+                    if(incremental_budget)assert(literal_forced==known_forced);else action.forced=literal_forced;
+                }
+                if(entrance_layer){
+                    if(!budget_ok(action.forced)){assert(!incremental_budget);++layer_rejected[worker];return;}
+                    for(int e=0;e<solver.ne;++e)assert(bool(merged>>e&1)==(action.pair[e]==-1));
+                }
                 auto& arrows=local[worker][action];arrows.resize(n+1);
                 for(int x=0;x<n;++x)arrows[x]|=1u<<min(n,f[x]);
                 arrows[n]|=job.incoming|(1u<<n);
             };
-            if(!independent) {
-                function<void(int,unsigned,int,vector<uint64_t>)>assign;
-                assign=[&](int at,unsigned used,int named,vector<uint64_t> candidates){
+            auto extend_rank=[&](int at,int y,unsigned used,__uint128_t rank){
+                if(!paired_control)return rank;
+                unsigned digit=__builtin_popcount(((1u<<y)-1)&~used);
+                if(n<=20)return __uint128_t(uint64_t(rank)*(n-at)+digit);
+                return rank*(n-at)+digit;
+            };
+            for(int pass=independent?1:0;pass<=(independent||paired_control?1:0);++pass){
+            compare_pass=paired_control&&pass==1;
+            if(pass==0) {
+                // At most fourteen rows: avoid heap allocations at every
+                // search edge, keeping the exact same candidate masks.
+                using Candidates=array<uint64_t,14>;
+                auto assign=[&](auto&&self,int at,unsigned used,int named,const Candidates& candidates,unsigned forced,const SquareMasks&square,uint64_t valid_targets,__uint128_t rank)->void{
                     ++nodes[worker];
-                    if(at==int(kernel.size())){if(named+1>=crossing)retain();return;}
+                    if(at==int(kernel.size())){if(named+1>=crossing)retain(forced,rank);return;}
                     if(int(kernel.size())-at<crossing-1-named)return;
                     for(int y=0;y<total;++y) {
                         if((used>>y&1) || (y>=n && y!=n+named))continue;
-                        auto updated=candidates;bool valid=true;
+                        unsigned next_forced=extend_forced(at,y,used,forced);
+                        if(incremental_budget&&!budget_ok(next_forced)){++layer_rejected[worker];continue;}
+                        Candidates updated;bool valid=true;
                         for(int row=0;row<nf;++row) {
-                            bool selected=solver.family[row]&kernel[at];
-                            updated[row]&=selected?column[y]:~column[y];
+                            bool selected=sources[row]&kernel[at];
+                            updated[row]=candidates[row]&(selected?column[y]:~column[y]);
                             if(!updated[row]){valid=false;break;}
                         }
                         if(!valid)continue;
+                        SquareMasks next_square;const SquareMasks*next_state=&square;uint64_t next_valid=valid_targets;
+                        if(incremental_square&&y<n&&(adjacency[y]&used)){
+                            next_valid=extend_square(at,y,used,square,next_square);next_state=&next_square;
+                            if(next_valid!=valid_targets)for(int row=int(solver.additional_sources.size());row<nf;++row){
+                                updated[row]&=next_valid;if(!updated[row]){valid=false;break;}}
+                            if(!valid){++partial_square_rejected[worker];continue;}
+                        }
                         for(unsigned bits=kernel[at];bits;bits&=bits-1)f[__builtin_ctz(bits)]=y;
-                        assign(at+1,used|(1u<<y),named+(y>=n),updated);
+                        block_output[at]=y;if(y<n)output_owner[y]=at;
+                        self(self,at+1,used|(1u<<y),named+(y>=n),updated,next_forced,*next_state,next_valid,extend_rank(at,y,used,rank));
+                        if(y<n)output_owner[y]=-1;
                     }
-                };assign(0,job.incoming,0,vector<uint64_t>(nf,allowed));
+                };Candidates initial;copy(row_allowed.begin(),row_allowed.end(),initial.begin());
+                if(incremental_square)for(int row=int(solver.additional_sources.size());row<nf;++row)initial[row]&=initial_valid;
+                assign(assign,0,job.incoming,0,initial,initial_forced,initial_square,initial_valid,0);
             }else {
                 // Independently choose all literal target sets first, then
                 // match their membership columns to kernel-block columns.
-                vector<unsigned>choices;for(uint64_t bits=allowed;bits;bits&=bits-1)
-                    choices.push_back(targets[__builtin_ctzll(bits)]);
-                vector<unsigned>selected(nf);
-                vector<vector<int>>prefix_need(nf+1,vector<int>(1u<<nf));
-                for(unsigned block:kernel) {
-                    unsigned pattern=0;
-                    for(int row=0;row<nf;++row) {
-                        if(solver.family[row]&block)pattern|=1u<<row;
-                        ++prefix_need[row+1][pattern];
+                // Reuse each kernel's histogram over all incoming sets.
+                // Only at most n nonzero columns are touched at a node;
+                // zero columns need an inequality, which follows from the
+                // equalities and kernel.size()<=n (n available outputs).
+                if(cached_kernel!=job.kernel){
+                    cached_kernel=job.kernel;kernel_patterns.clear();
+                    for(int row=0;row<=nf;++row){prefix_need[row].assign(1u<<row,0);active_patterns[row].clear();}
+                    for(unsigned block:kernel){unsigned pattern=0;
+                        for(int row=0;row<nf;++row){
+                            if(sources[row]&block)pattern|=1u<<row;
+                            if(pattern&&prefix_need[row+1][pattern]++==0)active_patterns[row+1].push_back(pattern);
+                        }
+                        kernel_patterns.push_back(pattern);
+                    }
+                    for(int row=0;row<=nf;++row){prefix_index[row].assign(1u<<row,0);
+                        for(size_t i=0;i<active_patterns[row].size();++i)prefix_index[row][active_patterns[row][i]]=i+1;
                     }
                 }
-                vector<unsigned>partial_pattern(total);
-                function<void(int)>choose=[&](int row){
+                array<unsigned,32>partial_pattern{};array<unsigned,1u<<14>output_groups;
+                auto choose=[&](auto&&self,int row,uint64_t selected_mask)->void{
                     if(row<nf) {
-                        for(unsigned target:choices) {
-                            selected[row]=target;
-                            for(unsigned bits=target;bits;bits&=bits-1)partial_pattern[__builtin_ctz(bits)]|=1u<<row;
-                            vector<int>available(1u<<(row+1));
-                            for(int y=0;y<total;++y)if(!(job.incoming>>y&1))++available[partial_pattern[y]];
-                            bool possible=true;
-                            for(int p=0;p<int(available.size());++p)
-                                if(prefix_need[row+1][p]>available[p] || (p && prefix_need[row+1][p]!=available[p]))possible=false;
-                            // Every nonzero partial membership column needs
-                            // exactly one distinct kernel block per output.
-                            // Zero columns may leave some outputs unused.
-                            if(possible)choose(row+1);
+                        // A new source row only splits each existing column
+                        // into bit-0 and bit-1 parts. The old nonzero column
+                        // counts already agree, so matching each bit-1 count
+                        // also matches bit-0. For the zero column only its
+                        // bit-1 part needs equality. Use point masks and
+                        // popcounts instead of rebuilding a histogram for
+                        // every target. Build these groups once per prefix.
+                        assert(total<32);array<unsigned,32>groups{};
+                        const auto&active=active_patterns[row];const auto&index=prefix_index[row];
+                        for(int y=0;y<total;++y)if(!(job.incoming>>y&1))groups[index[partial_pattern[y]]]|=1u<<y;
+                        const auto&needed=prefix_need[row+1];unsigned bit=1u<<row;
+                        for(uint64_t choices=allowed;choices;choices&=choices-1){
+                            uint64_t target_bit=choices&-choices;unsigned target=targets[__builtin_ctzll(choices)];
+                            if(__builtin_popcount(target)!=__builtin_popcount(sources[row])+crossing||
+                               (solver.target_filter&&!solver.target_filter(sources[row],target,aux)))continue;
+                            bool possible=__builtin_popcount(groups[0]&target)==needed[bit];
+                            for(size_t i=0;possible&&i<active.size();++i)
+                                possible=__builtin_popcount(groups[i+1]&target)==needed[active[i]|bit];
+                            if(!possible)continue;
+                            if(incremental_square&&row>=int(solver.additional_sources.size())&&!(target_bit&initial_valid))continue;
+                            for(unsigned bits=target;bits;bits&=bits-1)partial_pattern[__builtin_ctz(bits)]|=bit;
+                            self(self,row+1,selected_mask|(row>=int(solver.additional_sources.size())?target_bit:0));
                             for(unsigned bits=target;bits;bits&=bits-1)partial_pattern[__builtin_ctz(bits)]^=1u<<row;
                         }
                         return;
                     }
-                    vector<unsigned>destinations(kernel.size());
-                    vector<int>need(1u<<nf),available(1u<<nf);
-                    vector<int>out_pattern(total);
-                    for(int y=0;y<total;++y) {
-                        for(int i=0;i<nf;++i)if(selected[i]>>y&1)out_pattern[y]|=1<<i;
-                        if(!(job.incoming>>y&1))++available[out_pattern[y]];
+                    // The chosen columns are already available from the
+                    // prefix search. Group their outputs once, reusing the
+                    // cached full kernel columns instead of rebuilding the
+                    // whole source/target incidence matrix at every leaf.
+                    output_groups[0]=0;for(unsigned pattern:kernel_patterns)output_groups[pattern]=0;
+                    for(int y=0;y<total;++y)if(!(job.incoming>>y&1)){
+                        unsigned pattern=partial_pattern[y];assert(!pattern||prefix_need[nf][pattern]);
+                        output_groups[pattern]|=1u<<y;
                     }
-                    for(int b=0;b<int(kernel.size());++b) {
-                        int pattern=0;for(int i=0;i<nf;++i)
-                            if(solver.family[i]&kernel[b])pattern|=1<<i;
-                        ++need[pattern];
-                        for(int y=0;y<total;++y)if(out_pattern[y]==pattern)destinations[b]|=1u<<y;
-                    }
-                    for(int p=0;p<(1<<nf);++p)if(need[p]>available[p] || (p && need[p]!=available[p]))return;
-                    function<void(int,unsigned,int)>assign=[&](int at,unsigned used,int named){
+                    array<unsigned,32>destinations;
+                    for(size_t b=0;b<kernel.size();++b)destinations[b]=output_groups[kernel_patterns[b]];
+                    // The last prefix comparison already checked every
+                    // nonzero full column, and hence the zero inequality.
+                    auto assign=[&](auto&&recur,int at,unsigned used,int named,unsigned forced,const SquareMasks&square,uint64_t valid_targets,__uint128_t rank)->void{
                         ++nodes[worker];
-                        if(at==int(kernel.size())){if(named+1>=crossing)retain();return;}
+                        if(at==int(kernel.size())){if(named+1>=crossing)retain(forced,rank);return;}
                         for(unsigned bits=destinations[at]&~used;bits;bits&=bits-1) {
                             int y=__builtin_ctz(bits);if(y>=n && y!=n+named)continue;
+                            unsigned next_forced=extend_forced(at,y,used,forced);
+                            if(incremental_budget&&!budget_ok(next_forced)){++layer_rejected[worker];continue;}
+                            SquareMasks next_square;const SquareMasks*next_state=&square;uint64_t next_valid=valid_targets;
+                            if(incremental_square&&y<n&&(adjacency[y]&used)){
+                                next_valid=extend_square(at,y,used,square,next_square);next_state=&next_square;
+                                if(selected_mask&~next_valid){++partial_square_rejected[worker];continue;}
+                            }
                             for(unsigned members=kernel[at];members;members&=members-1)f[__builtin_ctz(members)]=y;
-                            assign(at+1,used|(1u<<y),named+(y>=n));
+                            block_output[at]=y;if(y<n)output_owner[y]=at;
+                            recur(recur,at+1,used|(1u<<y),named+(y>=n),next_forced,*next_state,next_valid,extend_rank(at,y,used,rank));
+                            if(y<n)output_owner[y]=-1;
                         }
-                    };assign(0,job.incoming,0);
-                };choose(0);
+                    };assign(assign,0,job.incoming,0,initial_forced,initial_square,initial_valid,0);
+                };choose(choose,0,0);
+            }
+            }
+            if(paired_control){
+                auto compare=[](auto&sets){sort(sets[1].begin(),sets[1].end());assert(adjacent_find(sets[1].begin(),sets[1].end())==sets[1].end());assert(sets[0]==sets[1]);};
+                if(n<=20)compare(raw_ranks);else compare(wide_ranks);
             }
         }
-    });for(auto& w:workers)w.join();
-    Signatures merged;
-    for(auto& part:local)for(auto&[action,arrows]:part) {
+    };
+    if(threads==1)work(0);
+    else for(int worker=0;worker<threads;++worker)workers.emplace_back(work,worker);
+    for(auto& w:workers)w.join();
+    Signatures merged=move(local.front());
+    for(size_t worker=1;worker<local.size();++worker)for(auto&[action,arrows]:local[worker]) {
         auto& all=merged[action];all.resize(n+1);
         for(int x=0;x<=n;++x)all[x]|=arrows[x];
     }
+    const size_t signature_count=merged.size();
     if(independent) {
         assert(merged.size()==solver.actions.size());size_t i=0;
         for(auto&[action,arrows]:merged) {
             assert(!(action<solver.actions[i]) && !(solver.actions[i]<action));
             assert(arrows==solver.state_arrows[i]);++i;
         }
-    }else for(auto&[action,arrows]:merged){solver.actions.push_back(action);solver.state_arrows.push_back(arrows);}
-    cout<<(independent?"PASS independent_low_targets":"COMPLETE low_actions")
+    }else{
+        solver.actions.reserve(solver.actions.size()+signature_count);
+        solver.state_arrows.reserve(solver.state_arrows.size()+signature_count);
+        while(!merged.empty()){auto node=merged.extract(merged.begin());
+            solver.actions.push_back(move(node.key()));solver.state_arrows.push_back(move(node.mapped()));}
+    }
+    if(!solver.quiet)cout<<(independent?"PASS independent_low_targets":"COMPLETE low_actions")
         <<" jobs="<<jobs.size()<<" nodes="<<accumulate(nodes.begin(),nodes.end(),uint64_t(0))
         <<" maps="<<accumulate(maps.begin(),maps.end(),uint64_t(0))
         <<" square_rejected="<<accumulate(square_rejected.begin(),square_rejected.end(),uint64_t(0))
         <<" literal_square_checks="<<accumulate(square_checked.begin(),square_checked.end(),uint64_t(0))
         <<" two_step_rejected="<<accumulate(two_step_rejected.begin(),two_step_rejected.end(),uint64_t(0))
+        <<" layer_budget_rejected="<<accumulate(layer_rejected.begin(),layer_rejected.end(),uint64_t(0))
+        <<" partial_square_pruned="<<accumulate(partial_square_rejected.begin(),partial_square_rejected.end(),uint64_t(0))
         <<" entrance_layer="<<entrance_layer
-        <<" signatures="<<merged.size()<<endl;
+        <<" paired_control="<<paired_control<<" signatures="<<signature_count<<endl;
 }
 
 void positive_control() {
@@ -308,7 +524,7 @@ void positive_control() {
         (extends?family.extendable:family.maximal_small).push_back(row);
     }
     assert(rows.size()==5 && family.maximum.size()==1 && family.maximal_small.size()==6);
-    CoreActions solver(g,4,rows,4,3);solver.defect_cap=2;
+    CoreActions solver(g,4,rows,4,3);solver.defect_cap=2;solver.prune_union_growth=true;
     generate_low(solver,core_n,family,false,2,false);
     generate_low(solver,core_n,family,false,2,true);
     for(auto&letter:letters) {
@@ -397,6 +613,13 @@ void positive_quotient_control() {
     auto unpruned_connected=solver.connected_vectors;
     solver.prune_closed_row_pools=true;solver.descending_rank_bound=true;
     solver.solve(h);assert(solver.connected_vectors==unpruned_connected);
+    solver.prune_quotient_sc=true;
+    solver.solve(h);assert(solver.connected_vectors==unpruned_connected&&solver.joint_vectors==unpruned_connected);
+    if(getenv("CERNY_PAIR_SAT_LIBRARY")){
+        solver.quotient_connectivity=false;solver.sat_distance_only=true;
+        solver.solve(h);assert(solver.joint_vectors==unpruned_connected);
+        solver.sat_joint_only=true;solver.solve(h);assert(solver.joint_vectors==1);
+    }
     Graph negative{4};negative.add(0,1);CoreActions counter(negative,2,{12u},1,1);
     vector<int>bad={1,3,0,2},identity={0,1,2,3};
     assert(!square_compatible(counter,bad) && !literal_square_control(counter,bad));
@@ -405,7 +628,34 @@ void positive_quotient_control() {
 }
 
 #ifndef LOW_COVER_ACTION_LIBRARY
+void column_refinement_control(){
+    uint64_t checked=0,positive=0;
+    // Enumerate all old output-column assignments, every possible surplus
+    // of zero columns, every new kernel bit and every literal target.
+    for(int rows=0;rows<=2;++rows)for(int n=0;n<=5;++n){unsigned bit=1u<<rows;
+        for(unsigned code=0;code<(1u<<(rows*n));++code){vector<unsigned>old(n);int zeros=0;
+            for(int y=0;y<n;++y){old[y]=(code>>(rows*y))&(bit-1);zeros+=old[y]==0;}
+            for(int surplus=0;surplus<=zeros;++surplus){vector<unsigned>kernel;int omitted=0;
+                for(unsigned pattern:old){if(!pattern&&omitted<surplus){++omitted;continue;}kernel.push_back(pattern);}
+                for(unsigned split=0;split<(1u<<kernel.size());++split){array<int,8>need{};array<unsigned,4>groups{};
+                    for(size_t i=0;i<kernel.size();++i)++need[kernel[i]|((split>>i&1)?bit:0)];
+                    for(int y=0;y<n;++y)groups[old[y]]|=1u<<y;
+                    for(unsigned target=0;target<(1u<<n);++target){array<int,8>available{};
+                        for(int y=0;y<n;++y)++available[old[y]|((target>>y&1)?bit:0)];
+                        bool dense=need[0]<=available[0],refined=true;
+                        for(unsigned p=1;p<2*bit;++p)dense&=need[p]==available[p];
+                        for(unsigned p=0;p<bit;++p)refined&=__builtin_popcount(groups[p]&target)==need[p|bit];
+                        assert(dense==refined);++checked;positive+=dense;
+                    }
+                }
+            }
+        }
+    }
+    assert(positive&&positive<checked);
+    cout<<"PASS column_refinement cases="<<checked<<" positive="<<positive<<" old_rows=0..2 outputs=0..5; dense zero-surplus oracle agrees"<<endl;
+}
 int main(int argc,char**argv) {
+    if(argc==2 && string(argv[1])=="--column-control"){column_refinement_control();return 0;}
     if(argc==2 && string(argv[1])=="--positive"){positive_control();return 0;}
     if(argc==2 && string(argv[1])=="--positive-quotient"){positive_quotient_control();return 0;}
     int start=argc>1?stoi(argv[1]):0,limit=argc>2?stoi(argv[2]):1,threads=argc>3?stoi(argv[3]):4;

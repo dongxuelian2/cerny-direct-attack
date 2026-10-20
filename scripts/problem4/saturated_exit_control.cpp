@@ -76,20 +76,78 @@ int main(){
                     assert((image(reached,0)|image(reached,1))&~reached);
                     bool uniform=true;for(unsigned row:rows)uniform&=__builtin_popcount(row)==size;
                     if(!uniform)continue;assert(saturated_row_access(rows,reached));
-                    if(!sync||k!=m-1||size<2)continue;
+                    if(!sync||size<2)continue;
                     int compression=99;for(int x=0;x<n;++x)for(int y=x+1;y<n;++y)
                         if((start>>x&1)&&(start>>y&1))compression=min(compression,distance[x][y]);
                     for(int h=1;h+k+2<=compression;++h){Graph g{n};
                         for(int x=0;x<n;++x)for(int y=x+1;y<n;++y)if(distance[x][y]<=h)g.add(x,y);
                         assert(saturated_exit_possible(g,rows));++exit_controls;
                         unsigned common=all;for(unsigned row:rows)common&=row;
-                        int v=__builtin_ctz(all&~reached);int neighbors=__builtin_popcount(g.adjacency()[v]&common);
-                        if(row_transversal_partition(rows,reached&~common)){assert(neighbors<=1);++transversal_controls;}
+                        unsigned exits=(image(last,0)|image(last,1))&~reached;
+                        int petals=size-__builtin_popcount(common);
+                        for(unsigned bits=exits;bits;bits&=bits-1){int v=__builtin_ctz(bits);int neighbors=__builtin_popcount(g.adjacency()[v]&common);
+                            if(petals>=2)assert(neighbors<petals);
+                            if(row_transversal_partition(rows,reached&~common)){assert(neighbors<=1);++transversal_controls;}
+                        }
                     }
                 }
             }
         }
     }
+    uint64_t block_layers=0,multiple_outside=0,sharp_neighbors=0;
+    for(int p=2;p<=6;++p)for(int t=3;t<=7;++t){
+        int n=p+2*t+1;unsigned all=(1u<<n)-1,start=(1u<<(p+t))-1;
+        vector<vector<int>>letters(2,vector<int>(n));auto&a=letters[0];auto&b=letters[1];
+        iota(a.begin(),a.end(),0);iota(b.begin(),b.end(),0);swap(a[p-2],a[p-1]);
+        for(int j=0;j<2*t+1;++j)a[p+j]=p+(j+1)%(2*t+1);
+        b[0]=p+t;for(int i=1;i<p;++i)b[i]=i-1;
+        for(int j=0;j<2*t;++j)b[p+j]=(j==t-1||j==2*t-1)?p-1:p+j+1;
+        auto image=[&](unsigned row,int letter){unsigned out=0;
+            for(unsigned bits=row;bits;bits&=bits-1)out|=1u<<letters[letter][__builtin_ctz(bits)];return out;};
+        vector<vector<int>>distance(n,vector<int>(n,999));for(int x=0;x<n;++x)distance[x][x]=0;
+        for(int step=0;step<n*n;++step)for(int x=0;x<n;++x)for(int y=x+1;y<n;++y)for(auto&f:letters)
+            distance[x][y]=distance[y][x]=min(distance[x][y],1+distance[f[x]][f[y]]);
+        int compression=999;for(int x=0;x<p+t;++x)for(int y=x+1;y<p+t;++y)compression=min(compression,distance[x][y]);
+        vector<unsigned>rows{start};unsigned reached=start;
+        for(int k=1;k<=t;++k){unsigned previous=reached;vector<unsigned>next=rows;
+            for(unsigned row:rows)for(int letter=0;letter<2;++letter)next.push_back(image(row,letter));
+            sort(next.begin(),next.end());next.erase(unique(next.begin(),next.end()),next.end());rows=move(next);
+            reached=0;unsigned common=all;for(unsigned row:rows){reached|=row;common&=row;}
+            assert(__builtin_popcount(reached)==p+t+k);unsigned last=reached&~previous;
+            int petals=p+t-__builtin_popcount(common);
+            for(int h=1;h+k+2<=compression&&n<=11;++h){Graph g{n};
+                for(int x=0;x<n;++x)for(int y=x+1;y<n;++y)if(distance[x][y]<=h)g.add(x,y);
+                assert(saturated_exit_possible(g,rows));++block_layers;multiple_outside+=__builtin_popcount(all&~reached)>=2;
+                unsigned exits=(image(last,0)|image(last,1))&~reached;
+                for(unsigned bits=exits;bits;bits&=bits-1){int v=__builtin_ctz(bits),neighbors=__builtin_popcount(g.adjacency()[v]&common);
+                    if(petals>=2){assert(neighbors<petals);sharp_neighbors+=neighbors==petals-1&&neighbors>0;}}
+            }
+        }
+    }
+    assert(multiple_outside&&sharp_neighbors);
+    cout<<"PASS two_block_saturated_layers layers="<<block_layers<<" multiple_outside="<<multiple_outside
+        <<" positive_sharp_neighbors="<<sharp_neighbors<<endl;
+    uint64_t pentagon_cases=0;
+    for(int outside=1;outside<=18;++outside){int p=outside+5,n=p+1;
+        vector<int>a(n),b(n);for(int x=0;x<p;++x)a[x]=(x+1)%p;a[p]=p;
+        b[0]=b[2]=p;b[1]=1;b[p]=0;for(int x=3;x<p-1;++x)b[x]=x+1;b[p-1]=2;
+        auto image=[&](unsigned row,const vector<int>&f){unsigned out=0;for(unsigned bits=row;bits;bits&=bits-1)out|=1u<<f[__builtin_ctz(bits)];return out;};
+        unsigned S=(1u<<p)|3u,U=(1u<<p)|31u,Q=(1u<<n)-1;vector<unsigned>D;
+        for(int x=0;x<5;++x)D.push_back((1u<<p)|(1u<<x)|(1u<<((x+1)%5)));
+        assert(!row_transversal_partition(D,31u));
+        vector<unsigned>rows{S};for(int step=0;step<3;++step){vector<unsigned>next=rows;
+            for(unsigned row:rows)for(const auto*f:{&a,&b}){unsigned target=image(row,*f);assert(find(D.begin(),D.end(),target)!=D.end());next.push_back(target);}
+            sort(next.begin(),next.end());next.erase(unique(next.begin(),next.end()),next.end());rows=move(next);}
+        unsigned united=0;for(unsigned row:rows)united|=row;assert(united==U&&rows.size()==5);
+        unsigned reached=Q;for(int j=0;j<p;++j)reached=image(reached,b);assert(reached==S);
+        for(int repeat=0;repeat<2;++repeat){for(int j=0;j<p-1;++j)reached=image(reached,a);reached=image(image(reached,b),b);}assert(__builtin_popcount(reached)==1);
+        vector<vector<int>>dist(n,vector<int>(n,999));for(int x=0;x<n;++x)dist[x][x]=0;
+        for(int step=0;step<n*n;++step)for(int x=0;x<n;++x)for(int y=x+1;y<n;++y)for(const auto*f:{&a,&b})dist[x][y]=dist[y][x]=min(dist[x][y],1+dist[(*f)[x]][(*f)[y]]);
+        assert(min({dist[0][1],dist[0][p],dist[1][p]})==p);
+        for(int v=5;v<p;++v){int rho=v-4;assert((dist[v][p]<=1?1:0)<=rho);}
+        ++pentagon_cases;
+    }
+    cout<<"PASS nontransversal_pentagon_family outside=1..18 cases="<<pentagon_cases<<"; three safe layers, reaching and reset words, exact finite compression checks"<<endl;
     assert(exit_controls&&transversal_controls);
     cout<<"PASS actual_binary_automata n=2..4 automata="<<automata<<" strongly_connected="<<strong
         <<" saturated_reachable_unions="<<saturated<<" short_pair_exit_controls="<<exit_controls

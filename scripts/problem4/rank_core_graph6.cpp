@@ -81,7 +81,7 @@ int main(int argc,char**argv){
     unsigned guard_mask=guard_control&&argc==11?stoul(argv[9]):0;
     int guard_parity=guard_control&&argc==11?stoi(argv[10]):-1;
     if(guard_control&&(argc!=11||minimum_rank!=6||guard_mask>=32||__builtin_popcount(guard_mask)<1||__builtin_popcount(guard_mask)>2||guard_parity<0||guard_parity>1))return 2;
-    if(start<0||limit<1||threads<1||threads>24||(actions&&(m!=5||(minimum_rank!=7&&minimum_rank!=6)||!(minimum_edges==11||(minimum_edges==10&&minimum_rank==6)))))return 2;
+    if(start<0||limit<1||threads<1||threads>24||(actions&&(m!=5||(minimum_rank!=7&&minimum_rank!=6)||!(minimum_edges==11||((minimum_edges==10||minimum_edges==9)&&minimum_rank==6)))))return 2;
     set<pair<int,uint64_t>>cores;uint64_t inputs=0,retained=0;map<tuple<int,int,int,int>,uint64_t>profiles;string line;
     while(getline(cin,line)){
         if(line.empty() || line==">>graph6<<")continue;
@@ -118,7 +118,7 @@ int main(int argc,char**argv){
             int crossing_cap=minimum_rank==6?n-6:n-5;
             CoreActions solver(g,5,family,minimum_rank-1,minimum_rank);solver.defect_cap=3;solver.ordered_pair_control=true;solver.prune_closed_row_pools=minimum_rank==6;
             solver.descending_rank_bound=minimum_rank==6;
-            solver.sat_distance_only=sat_distances;
+            solver.sat_distance_only=sat_distances;solver.prune_union_growth=getenv("CERNY_UNION_GROWTH");
             atomic<uint64_t>power_maps{0},power_accept{0};
             solver.map_filter=[&,n](const vector<int>&f){bool accepted=named_power_safe(f,n,target_length,minimum_rank-1);
                 if(power_control&&int(f.size())-n<=2){literal_power_control(f,n,accepted,target_length,minimum_rank-1);++power_maps;if(accepted)++power_accept;}

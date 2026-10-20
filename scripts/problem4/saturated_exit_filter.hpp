@@ -42,15 +42,18 @@ inline bool saturated_row_access(const std::vector<unsigned>& rows,unsigned univ
     return false;
 }
 
-// Exactly one vertex v is absent from the family; all other vertices occur.
+// A nonempty set of vertices is absent. Apply only when safe depth is at
+// least |union(rows)|-|row|, so the reachable union is saturated.
 // The early graph must contain every single-letter kernel pair. Its neighbors
 // of v in the common intersection must be absent immediately after an exit.
 template<class GraphType>
 bool saturated_exit_possible(const GraphType&g,const std::vector<unsigned>&rows){
     unsigned all=(1u<<g.n)-1,united=0,common=all;
     for(unsigned row:rows){united|=row;common&=row;}
-    unsigned absent=all&~united;assert(__builtin_popcount(absent)==1);
-    int v=__builtin_ctz(absent);auto adjacency=g.adjacency();
+    unsigned absent=all&~united;assert(absent);
+    auto adjacency=g.adjacency();
+    for(unsigned outside=absent;outside;outside&=outside-1){
+    int v=__builtin_ctz(outside);
     int targets=__builtin_popcount(adjacency[v]&common);
     unsigned varying=united&~common;
     for(unsigned zb=varying;zb;zb&=zb-1){unsigned z=zb&-zb;
@@ -81,6 +84,7 @@ bool saturated_exit_possible(const GraphType&g,const std::vector<unsigned>&rows)
             };
             if(choose(choose,0,targets,0,face))return true;
         }
+    }
     }
     return false;
 }
