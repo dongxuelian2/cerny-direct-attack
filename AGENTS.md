@@ -1,44 +1,41 @@
-# 研究工作方式
+# Research and editing rules
 
-本项目以 Černý 猜想及相关同步自动机问题的数学推导为中心。先理解问题、
-精确假设和已有论证，再提出引理、构造、反例与证明。研究进展优先于工程包装。
+This repository studies synchronizing automata. The Open Problem 4 project has been **separated into a reader-facing theorem track**. Mathematical truth and reproducibility take precedence over formatting.
 
-## 数学与程序
+## Evidence categories
 
-- 优先进行数学推导。程序服务于具体的数学问题，不用枚举代替可以完成的论证。
-- 大规模有限域验证、组合枚举和搜索使用 C++17，合理使用多线程；划分互不重叠的
-  搜索域，明确是否穷尽。保留断言、边界条件和必要的正反控制。
-- Python 用于小规模独立核对、符号原型和任务编排，不承担已知的大规模热循环。
-- 明确区分纸面证明、穷尽有限域检查、受限族搜索和猜想。程序验证不自动等于
-  Lean 形式化证明；超时和随机搜索失败不提供数学上界。
-- 每次工作围绕一个明确的研究目标，给出推导和实际运行结果。不要宣称已经解决
-  未完成的参数区域或一般 Černý 猜想。
+Every mathematical statement must be labelled as one of: paper proof; paper reduction plus completed finite exclusion; bounded/restricted search; counterexample; conjecture; or withdrawn/obsolete historical claim.
 
-## 仓库约定
+- A SAT model satisfying necessary constraints is **not** an automaton; an UNSAT result proves an exclusion only after the actual-to-relaxation completeness reduction is justified.
+- Original input letters count individually; never charge a long macro word as one letter.
+- Keep F versus F_bin, ac(S,A) versus pure compression c(S), reachable S versus arbitrary S, and any restrictions on the alphabet or transition family explicit.
+- Random searches, partial intervals, timeouts and absent counterexamples never imply universal upper bounds.
+- The m>=4 conjecture is **not proved**; m=3 has known large-q value 9, not 8.
+- The complete 3,206,988-domain m=5 run is reported from a terminal summary, without a full committed per-domain certificate. Do not silently upgrade its audit status.
 
-- 保留必要源码、数学笔记、论文源码、简洁研究说明，以及无法由构造生成的少量
-  明确数学输入。不要把运行日志、JSON 报告、枚举库存、证书包或二进制提交到 Git。
-- 所有运行、编译与中间文件放在忽略的 `build/`。从干净源码重建需要的内容。
-  使用 `run.py` 在研究副本中运行；不要覆盖源码目录中的研究内容。
-- 不要自行添加哈希封印、来源清单、发布打包、投稿封存、Release 下载恢复流程、
-  CI/CD、自动化报告或形式化验证流水线。只有用户明确要求时才做这些工作。
-- `formal/` 仅保留已有 Lean 数学源码，不要求安装 Lean，不维护编译或声明库存脚本。
-- 不要为了研究脚本建立应用服务、复杂配置系统或依赖管理基础设施。
-- 修改 README 和研究说明时，优先告诉研究者问题是什么、推导在哪里、怎样运行
-  必要程序、哪些边界仍然开放。
-- 不修改共享 Git 历史，不强制推送。删除跟踪文件并不清除旧 Git 对象；不要以此
-  声称已有克隆或历史传输体积已经缩小。
+## Main Open Problem 4 reading and writing locations
 
-## 入口与目录
+1. `research/problem4/PROOF_ROUTE.md`: **concise, linear** final theorem chain and all assumptions/quantifiers.
+2. `research/problem4/CERTIFICATES.md`: claim-to-code and necessary-domain map; record *completed* scopes and surviving relaxations accurately.
+3. `research/problem4/AUDIT.md`: verified checks, open validation gaps and evidence provenance.
+4. `research/problem4/CONJECTURE.md`: explicitly unproved conjectures and targeted negative tests.
+5. `papers/problem4/main.tex`: publication-facing mathematical argument, with figures, theorem statements, sufficient detail of completeness, and references.
+6. `archive/legacy/PROOF.md`: **preserved historical** mathematical notebook (not the new linear proof). Old internal section claims may be superseded. The short root `PROOF.md` is only a compatibility index for legacy deep links.
 
-- `PROOF.md` 是唯一数学研究正文。按数学问题组织章节，每个结论写明假设、推导、
-  适用范围和剩余缺口；已证明、有限穷尽、受限搜索、猜想和撤回必须区分。
-- 新结果直接修改正文对应章节。引用使用 `PROOF.md#稳定锚点`，不要另建专题、日期、
-  continuation 或运行总结 Markdown。不要在代码目录夹放数学笔记。
-- `scripts/` 集中所有计算源码与实现测试，按 `problem4/`、`direct_attack/`、
-  `anchors/` 等数学主题分组；`automata/`、`native/` 是其中的公共参考实现与内核。
-- `run.py` 是根目录的统一运行入口；`docs/RUNNING.md` 仅解释程序运行，
-  `README.md` 只保留问题、当前边界和阅读入口，不复制另一套研究正文。
-- `papers/` 存放论文 LaTeX 源码，`formal/` 存放已有 Lean 数学源码。
-- 先使用已有程序，再添加确实必要的计算。计算结果默认打印到终端，
-  中间文件放 `build/`，不建立新日志或审计体系。
+Do not append raw experiments, intermediate negative branches, abandoned threshold cases, or huge enumerations to the **main route or paper**. Put them in the historical archive or research source, with a summary and exact link from the manifest when the case supports an essential exclusion. Avoid proliferating new standalone Markdown notebooks or multiple competing 'main proofs'.
+
+## Code and reproducibility
+
+- `scripts/problem4/`, `scripts/direct_attack/`, `scripts/anchors/` retain their established relative paths: moving them en masse may break includes, imports and `run.py`.
+- Keep necessary original source and minimal reproducibility commands. Use C++17 for large finite-domain enumerations and Python for symbolic/small independent controls.
+- Place generated builds, large temporary logs, inventories and binaries under ignored `build/`. Do not mistake their absence from Git for an independent successful verification. If a future independent audit requires a portable certificate, document its exact reproducibility and consider an external artifact only with user authorization.
+- `docs/RUNNING.md` is a compact index; `archive/legacy/RUNNING.md` retains the exhaustive historical run catalog.
+- Do not casually edit Git history, delete original evidence or force-push collaborator work. Make organizational changes on a dedicated PR.
+- Don't add CI, releases, archives or substantial new infrastructure without a clear task or explicit permission.
+
+## Publication and audit discipline
+
+- Keep the computational dependence chain readable: precise mathematical reduction; finite domains; actual-to-relaxation inclusion; independently auditable solver predicate; all completed ranges; and paper treatment of every relaxation survivor.
+- New results update **both** the short route and the paper where appropriate; do not resurrect obsolete lines by copying older notebook paragraphs.
+- Distinguish draft/not compiled from PDF checked in a renderer, and computer-assisted theorem from external peer review.
+- Research/AI-assisted contributions should be disclosed accurately; authorship decisions require author review.
