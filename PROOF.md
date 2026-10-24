@@ -2503,7 +2503,7 @@ by n-r<=4, so it does not contradict the exact local maximum above.
 \(y_1,y_2\in Qa\)，因为 \(a\) 最多遗漏一个输出。
 取各自的前像 \(x_i a=y_i\)。由于 \(j\) 是孤点，
 \(\{j,x_i\}\) 不是 \(G\) 的边，而
-\(\{ja,x_i a\}=\{v,y_i\) 是 \(G\) 的边。
+\(\{ja,x_i a\}=\{v,y_i\}\) 是 \(G\) 的边。
 点对最短合并距离满足
 \(d(j,x_i)\le1+d(v,y_i)\)，于是
 \(d(j,x_i)>h\) 强迫 \(d(v,y_i)=h\)。
