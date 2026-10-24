@@ -2432,7 +2432,7 @@ that fail to extend at a particular small n only enlarge the graph.
 | 3 | 02 | 23 | [Path early-type-3 exclusion at codimension three](#problem4-path3-early-exclusion): k=5,4 domains with 24,19 profiles and 120,24 vectors; only the first has one surviving vector, forcing a five-state invariant set. The no-T branch has a complete symbolic domain count at most four. |
 | 4 | 02 | 34 | [Disjoint-tail early-type-4 exclusion at codimension three](#problem4-type4-early-exclusion): two k=6 domains, 33,37 profiles, 720 vectors each, no survivors. This case requires synchronization alone. |
 | 5 | 23 | 02 | [Crossing early-type-5 exclusion](#problem4-type5-early-exclusion): a letter creating 02 necessarily creates the forbidden pair 12 as well, or violates inverse-pair disjointness. No projection is needed. |
-| 6 | 23 | 04 | [Kernel-tail early-type-6 exclusion at codimension three](#problem4-type6-early-exclusion): one k=5 domain, 19 profiles, 120 vectors, one survivor forcing a five-state invariant set; all other branches have symbolic domains of size at most four. |
+| 6 | 23 | 04 | [Kernel-tail early-type-6 exclusion at codimension three](#problem4-type6-early-exclusion): the five-hole closed-II domain is excluded on paper by a single-exit lemma; other branches use symbolic domains of size at most four. The 19-profile / 120-vector check is now a control. |
 | 7 | 23 | 24 | [Second-pair-tail early-type-7 exclusion at codimension three](#problem4-type7-early-exclusion): three k=6 and four k=5 domains, 21,39,37 and 27,23,23,33 profiles. Only C_V has two surviving vectors, each forcing a five-state invariant set. |
 | 8 | 23 | 45 | [Excluding three disjoint early pairs at tight codimension-three compression](#problem4-matching-early-exclusion): eight images, 177 profiles. All 30,240 possible finite vectors with initial distance at least seven fail. No strong-connectivity hypothesis is needed in this case. |
 
@@ -2470,6 +2470,16 @@ by n-r<=4, so it does not contradict the exact local maximum above.
 
 
 <a id="problem4-defect-three-tight-core-paper-exclusion"></a>
+
+**进一步的纸面替换：余维三 type 6 的封闭 II 情形。**
+[五个缺口的单出口引理](#problem4-type6-early-exclusion--orientation-ii)
+说明：只要原字母把五点核心送出自身，它就必须让五个安全缺口中的
+至少两个离开候选域。若退出路径长度达到五，则恰有一个缺口的一步
+退出距离为一，所有原字母因此都保持该核心，违背强连通性。
+这一推理已经替换原先的 19 个投影轮廓和 120 个距离排列检查，
+其余 type 6 方向的符号计算账本仍按原证明保留。
+
+
 #### 余维三：紧边数短对图的整类纸面排除
 
 **纸面结论，适用于任意有限字母表。**
@@ -27934,45 +27944,76 @@ and an outside 03x only if Tx=v. Since T1=a, exactly one of these
 last possibilities exists. The domain has size three, fewer than
 |R4|>=5, so mixing orientation II is impossible.
 
-If a=4, the T,TT domain is precisely the five core holes
+If a=4, the T,TT domain consists of exactly five core holes, in order:
 
-    D={012,023,034,124,134}.
+    D0=012, D1=023, D2=034, D3=124, D4=134.
 
-All five images are reached by depth four, so every letter sends every
-one of them to H. Complete projection to these five vertices and EXIT
-gives 19 profiles. For every permutation d of 1,...,5, include all
-profiles p with d(i)<=1+d(p(i)), d(EXIT)=0, then test whether every
-vertex can exit. Exactly one of the 120 vectors survives: (2,3,4,1,5).
-Its allowed profiles, in the displayed domain order, are
+The domain contains every image reached through depth four: all such images
+lie in this common T,TT-preserving domain and the nonplateau orbit argument
+gives at least five of them. Hence each member of D is an actual image
+reached within four letters, and every original letter sends D into H.
+We exclude a five-letter first exit from D by a paper argument.
 
-    (0,1,2,3,4), (3,0,1,4,2), (0,1,2,-1,2).
+**Five-hole single-exit lemma.** Let C={0,1,2,3,4} and let D be the
+five triples above. Let f be either a permutation or a rank-(n-1)
+transformation whose unique nonsingleton kernel class is {0,1}.
+For a three-hole set J define the next hole set by
 
-EVERY underlying partial row of these profiles maps C into itself.
-If the initial vertex had exit distance five, its finite distances
-would have to be such a permutation and hence C would be invariant.
-This contradicts strong connectivity for n>=6. Otherwise first exit
-has length at most four and compression follows within 4+2+3=9.
+    J.f = Q \ ((Q \ J) f).
 
-The finite projection covers every state count: A,B have four core
-outputs in {0,1,2,3} and one additional output, T likewise has four
-specified core outputs and one additional output. A U or V row has
-two specified outputs on 23 and two other distinct outputs (kernel
-image and image of state 4). At most two fresh outside labels are
-needed, so output labels 0,...,6 cover all five-state partial rows.
-The complete structural enumeration is type6_closed_II_actions.py;
-audit_type6_closed_II.cpp independently generates literal forward rows,
-checks inverse pairs, and searches forward from every domain vertex.
-Every profile and underlying-row closure flag agrees.
+The images of every J in D have n-3 elements under these transformations.
+If f(C) is not a subset of C, then **at least two different members J of D
+satisfy J.f not in D**.
 
-There is a boundary control at n=5 with rows
+*Proof.* Every x in C occurs in exactly three D-triples. Moreover every
+four-subset of C contains exactly two D-triples:
 
-    (1,1,2,3,4), (2,4,1,0,3), S={0,2}.
+    0123: 012,023      0124: 012,124       0134: 034,134
+    0234: 023,034      1234: 124,134.
 
-It is strongly connected and synchronizing, has reaching word abbbababbb
-and reset word abbbabbbabbba. Ordinary BFS gives projected exit FIVE
-and actual compression NINE. This is a positive projected-distance
-control, not a compression-ten witness. No assertion excluding all
-type-6 tightness at n=5 is made here.
+If f is a permutation and x in C maps outside C, the three D-triples
+containing x all have an outside image and leave D.
+
+Now let f be singular, put c=f(0)=f(1), and let e be its unique missing
+output. For i=2,3,4, f(i) has a unique preimage. If one such f(i) lies
+outside C, each of the three D-triples containing i leaves D.
+The only remaining nonclosed case has c outside C and
+f(2),f(3),f(4) in C. Taking complements gives
+
+    D0.f = {e,c,f(2)}          D1.f = {e,f(2),f(3)}
+    D2.f = {e,f(3),f(4)}       D3.f = {e,f(2),f(4)}
+    D4.f = {e,f(3),f(4)}.
+
+D0 leaves D. If e lies outside C, D1,D2,D3 also leave D. Otherwise
+D1,D2,D3 have three different images, all triples of the same four-set
+{e,f(2),f(3),f(4)} contained in C. That four-set contains only two
+members of D, so at least one more image leaves D. This proves the lemma.
+
+**Exit argument.** Because P1={01}, every original letter has one of the
+two forms above. Synchronization ensures that each D-vertex eventually
+exits D. If any D-vertex had shortest exit distance five, a shortest
+path to EXIT would visit all five vertices of D, with remaining exit
+distances 5,4,3,2,1. Thus exactly one D-vertex could have an immediate
+exit; every original letter would send at most one D-vertex outside D.
+The single-exit lemma then forces f(C) subset C for *every* original
+letter f. This is incompatible with strong connectivity when n>=6,
+since C is a nonempty proper invariant set.
+
+Consequently every D-vertex exits within four letters. An exit from D
+fails one of the tests T or TT that define this domain, at cost at most
+two more letters. The resulting hole set leaves H, so a P3 pair is
+present and can be merged in at most three letters. Total compression
+length is at most 4+2+3=9, contradicting ten.
+
+The historical finite projection (19 profiles, 120 distance permutations,
+one compatible distance vector whose letters all preserve C) remains a
+computational control for this paper exclusion. The single-exit lemma
+also has a direct independent small-state exhaustive check.
+
+**Boundary at n=5.** Rows (1,1,2,3,4), (2,4,1,0,3) and S={0,2}
+give a strongly connected synchronizing example with a five-step
+projected exit and nine-step compression. Here C=Q, so the preceding
+strong-connectivity contradiction does not apply.
 
 <a id="problem4-type6-early-exclusion--orientation-i-requires-a-breaker"></a>
 #### Orientation I requires a breaker
