@@ -2433,7 +2433,7 @@ that fail to extend at a particular small n only enlarge the graph.
 | 4 | 02 | 34 | [Disjoint-tail early-type-4 exclusion at codimension three](#problem4-type4-early-exclusion): two k=6 domains, 33,37 profiles, 720 vectors each, no survivors. This case requires synchronization alone. |
 | 5 | 23 | 02 | [Crossing early-type-5 exclusion](#problem4-type5-early-exclusion): a letter creating 02 necessarily creates the forbidden pair 12 as well, or violates inverse-pair disjointness. No projection is needed. |
 | 6 | 23 | 04 | [Kernel-tail early-type-6 exclusion at codimension three](#problem4-type6-early-exclusion): the five-hole closed-II domain is excluded on paper by a single-exit lemma; other branches use symbolic domains of size at most four. The 19-profile / 120-vector check is now a control. |
-| 7 | 23 | 24 | [Second-pair-tail early-type-7 exclusion at codimension three](#problem4-type7-early-exclusion): three k=6 and four k=5 domains, 21,39,37 and 27,23,23,33 profiles. Only C_V has two surviving vectors, each forcing a five-state invariant set. |
+| 7 | 23 | 24 | [Second-pair-tail early-type-7 exclusion at codimension three](#problem4-type7-early-exclusion): three k=6 and four k=5 domains, 21,39,37 and 27,23,23,33 profiles. Only C_V has two surviving vectors: its B four-cycle use now has a paper exit lemma, while the closed B two-cycle use retains the finite invariant-set check. |
 | 8 | 23 | 45 | [Excluding three disjoint early pairs at tight codimension-three compression](#problem4-matching-early-exclusion): eight images, 177 profiles. All 30,240 possible finite vectors with initial distance at least seven fail. No strong-connectivity hypothesis is needed in this case. |
 
 All cases contradict compression length ten. This proves the theorem.
@@ -28335,13 +28335,80 @@ forces an exit within four letters. As C_T is fully reached
 through depth four and defined by tests of at most two letters,
 an exit plus a P3 merger compresses in at most 4+2+3=9 letters.
 The historical 23-profile / 120-vector test remains a control.
-The other six domains retain their existing finite certificates.
+The other five domains and the closed B two-cycle use of C_V retain their
+existing finite certificates.
 
+**Four-cycle exit lemma (paper): the B four-cycle / C_V subcase.**
+Let C={0,1,2,3,4}, n>=6, and name the five holes
 
+    X0=023, X1=024, X2=124, X3=034, X4=134.
 
-Here v,w are a single named outside state, relabeled 5. Every underlying
-partial row of every allowed profile for either surviving C_V vector
-maps C into C. This is incompatible with strong connectivity for n>=6.
+Suppose an automaton is synchronizing, every letter is a permutation
+or a rank-(n-1) transformation with sole nontrivial kernel class {0,1},
+and its alphabet contains the permutation b whose restriction to C is
+
+    b=(2,3,1,0,4).
+
+Then every X_i has an exit from D={X0,...,X4} of length at most four.
+No compatibility enumeration or strong-connectivity hypothesis is needed
+for this exit lemma.
+
+*Proof.* On holes the letter b acts as
+
+    X0 -> 012 (EXIT);
+    X1 -> X2 -> X4 -> X3 -> X1.
+
+Put U={X1,X2,X3,X4}. If any letter f sends a member of U outside
+D, every U-member reaches that hole in at most three powers of b,
+and then f exits; the exit length is at most four.
+
+Suppose instead that f sends all of U into D. If f is a
+permutation, the union of the four holes of U is C, so f(C)
+is contained in C and hence equals C. The complementary pairs
+C\\X_i for X_i in U are 13,03,12,02: a four-cycle on
+{0,1,2,3}. The complementary pairs for the full D add only
+the pendant edge 14. This graph has exactly one four-cycle.
+A permutation maps four-cycles to four-cycles, so f(U)=U:
+no permutation with f(U) contained in D can send U to X0.
+
+If f is singular, let e be its unique omitted output. Each
+U-hole contains exactly one kernel point from {0,1}; hence
+its image hole is e together with the images of its two
+nonkernel points. In particular,
+
+    X1.f = X2.f = {e,f(2),f(4)};
+    X3.f = X4.f = {e,f(3),f(4)}.
+
+If f sends any U-hole to X0, it therefore sends one of
+the adjacent pairs {X1,X2} or {X3,X4} to X0. Every U-member
+reaches that pair in at most two b-steps, then f reaches X0,
+and one last b-step exits D. Again the exit costs at most four.
+
+Consequently, unless every letter preserves U, each U-member
+exits D within four letters. If every letter preserves U,
+the four (n-3)-element images represented by U remain
+(n-3)-element images under every word, contradicting
+synchronization. Finally X0 exits immediately under b.
+This proves the lemma.
+
+For the type-7 B four-cycle b=(2,3,1,0,4), the defining
+b,bb-safe domain is precisely C_V=D and all its five
+images are reached within depth four. Exiting D fails
+a defining test of length at most two; the resulting
+H-exit supplies a P3 merging pair at cost at most three.
+The total compression cost is at most 4+2+3=9.
+
+The full-transformation control is
+scripts/problem4/check_type7_four_cycle_exit.py. It checks
+all permutations and all defect-one maps with sole kernel
+{0,1} for n=6,7,8, without filtering by P2/P3 compatibility.
+The separate closed B two-cycle / C_V subcase still uses
+its existing finite projection.
+
+Here v,w are a single named outside state, relabeled 5. In the remaining
+closed B two-cycle / C_V subcase, every underlying partial row of every
+allowed profile for either surviving C_V vector maps C into C.
+This is incompatible with strong connectivity for n>=6.
 Consequently first exit from a six-member domain occurs by length five,
 and first exit from a five-member domain occurs by length four. The
 charges are respectively 5+1+3=9 and 4+2+3=9.
@@ -28400,8 +28467,10 @@ latter case a simultaneous exchange of labels 0,1 normalizes it to
 
     b=(2,3,1,0,a), a>=4.
 
-For a=4 the b,bb domain is C_V, and its projection excludes this case
-by strong connectivity. For a>=5 put v=b^-1(4). The domain is
+For a=4 the b,bb domain is C_V. The four-cycle exit lemma above
+gives a paper exclusion: every C_V image exits in at most four letters,
+and a failed defining test plus P3 merger compresses within nine.
+For a>=5 put v=b^-1(4). The domain is
 
     a=v:  {023,034,024};
     a!=v: {023,034,02w}, w=b^-1(v) outside C.
