@@ -146,6 +146,28 @@ def main():
         valid, checked, _, _ = verify((cycle, singular))
         assert valid and checked > 0
         print(f'Cerny n={n} tested_layers={checked}')
+    # Exact sharpness examples for the two endpoint entrance cases.
+    # Four states: a defect-one letter enters the degree-two vertex 1,
+    # with a single missing neighbor 0 and unique terminal edge (1, 2).
+    tight_singular = ((3, 3, 2, 1), (3, 1, 0, 2))
+    d, pairs = pair_distances(tight_singular)
+    g = {p for p in pairs if d[p] <= 2}
+    assert g == {(0, 1), (1, 2)}
+    assert {tight_singular[0][j] for j in {3}} == {1}
+    assert set(range(4)) - set(tight_singular[0]) == {0}
+    assert verify(tight_singular)[0]
+    # Nine-state Cerny: the sole isolated input 1 is sent by the
+    # permutation letter to a terminal-layer leaf 2 of the P_7 path.
+    n = 9
+    cerny = (tuple((i + 1) % n for i in range(n)),
+             tuple(0 if i == n - 1 else i for i in range(n)))
+    d, pairs = pair_distances(cerny)
+    g = {p for p in pairs if d[p] <= 7}
+    assert len(g) == 7 and set(range(n)) - {x for edge in g for x in edge} == {1}
+    assert sum(2 in edge for edge in g) == 1
+    assert cerny[0][1] == 2
+    assert verify(cerny)[0]
+    print('PASS tight_entry_controls singular_degree_two_n4 and permutation_leaf_n9')
     assert total_sync == 52081
     assert total_checked == 34152
     assert total_stronger == 25992
