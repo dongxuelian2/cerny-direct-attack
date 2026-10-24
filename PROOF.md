@@ -2514,11 +2514,11 @@ same four-subset {e,f(a),f(b),f(d)} of C, which contains only
 two members of D. Hence another D-hole leaves D. QED.
 
 **Exit corollary.** Suppose n>=6, the automaton is strongly
-connected and synchronizing, every original letter has one
-of the forms in the lemma, and D is a five-vertex common
-safe-image domain containing all images reached from S
-through depth four. Then every D-vertex has an exit from D
-of length at most four.
+connected and synchronizing, and every original letter has
+one of the two forms in the lemma. Then every D-vertex has
+an exit from D of length at most four. This corollary does
+not require that D is an actual-image domain; that property
+is used only when transferring the exit bound to compression.
 
 Indeed synchronization makes every D-vertex's exit distance
 finite. An exit path of length five would visit all five vertices
