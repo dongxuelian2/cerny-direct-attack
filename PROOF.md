@@ -2433,7 +2433,7 @@ that fail to extend at a particular small n only enlarge the graph.
 | 4 | 02 | 34 | [Disjoint-tail early-type-4 exclusion at codimension three](#problem4-type4-early-exclusion): two k=6 domains, 33,37 profiles, 720 vectors each, no survivors. This case requires synchronization alone. |
 | 5 | 23 | 02 | [Crossing early-type-5 exclusion](#problem4-type5-early-exclusion): a letter creating 02 necessarily creates the forbidden pair 12 as well, or violates inverse-pair disjointness. No projection is needed. |
 | 6 | 23 | 04 | [Kernel-tail early-type-6 exclusion at codimension three](#problem4-type6-early-exclusion): the five-hole closed-II domain is excluded on paper by a single-exit lemma; other branches use symbolic domains of size at most four. The 19-profile / 120-vector check is now a control. |
-| 7 | 23 | 24 | [Second-pair-tail early-type-7 exclusion at codimension three](#problem4-type7-early-exclusion): three k=6 and four k=5 domains, 21,39,37 and 27,23,23,33 profiles. Only C_V has two surviving vectors. Paper exit lemmas now exclude all four five-image domains and D6closed; the two mixed six-image domains retain finite certificates. |
+| 7 | 23 | 24 | [Second-pair-tail early-type-7 exclusion at codimension three](#problem4-type7-early-exclusion): three k=6 and four k=5 domains, 21,39,37 and 27,23,23,33 profiles. Only C_V has two surviving vectors. Paper exit lemmas now exclude all four five-image domains, D6closed and D6Amix; D6Tmix retains its finite certificate. |
 | 8 | 23 | 45 | [Excluding three disjoint early pairs at tight codimension-three compression](#problem4-matching-early-exclusion): eight images, 177 profiles. All 30,240 possible finite vectors with initial distance at least seven fail. No strong-connectivity hypothesis is needed in this case. |
 
 All cases contradict compression length ten. This proves the theorem.
@@ -28335,7 +28335,7 @@ forces an exit within four letters. As C_T is fully reached
 through depth four and defined by tests of at most two letters,
 an exit plus a P3 merger compresses in at most 4+2+3=9 letters.
 The historical 23-profile / 120-vector test remains a control.
-The two mixed type-7 six-image domains retain their finite certificates.
+The mixed-T six-image domain retains its finite certificate.
 
 <a id="problem4-type7-pendant-four-cycle"></a>
 **Four-hole twin core: a uniform four-letter exit lemma.**
@@ -28473,6 +28473,63 @@ in at most three. Thus compression is achieved by length
 projection is now an independent control. A full-map
 check for n=6,7,8 is in
 scripts/problem4/check_type7_six_core.py.
+
+<a id="problem4-type7-six-amix-exit"></a>
+**Six-hole mixing-A path lemma (paper).**
+Let v be outside C={0,1,2,3,4}, and set
+
+    D6Amix={023,123,034,134,02v,12v}.
+
+These six holes are obtained by adjoining 0 or 1 to one of
+the three edges of the path
+
+    v -- 2 -- 3 -- 4.
+
+Assume the type-7 permutation-letter classification:
+every permutation f has {f0,f1} equal to {0,1} or {2,3};
+every singular letter has the sole kernel pair {0,1}.
+Then every letter has either zero or at least two one-step
+exits from D6Amix.
+
+*Proof.* The holes occur in three twin pairs (0xy,1xy)
+indexed by the three path edges xy. A rank-(n-1) letter
+with kernel {0,1} maps both twins to the same hole, so
+its exit count is even.
+
+Now consider a permutation f. If {f0,f1}={0,1},
+the images of a twin pair share the same two further
+outputs f(x),f(y); these avoid 0,1. Either the pair
+{f(x),f(y)} is an edge of the displayed path, in which
+case both images remain in D6Amix, or neither does.
+Thus the exit count is even.
+
+If {f0,f1}={2,3}, take a twin pair corresponding to
+an input path edge xy. Its two images are
+
+    {2,f(x),f(y)} and {3,f(x),f(y)}.
+
+For both to belong to D6Amix, the set {f(x),f(y)}
+would need to contain exactly one of 0,1 and one
+common neighbor of 2 and 3 in the path. But
+
+    N(2)={v,3},   N(3)={2,4},
+
+so there is no common neighbor. Hence at least one
+of each of the three twin pairs exits, giving at least
+three exits. This proves the per-letter claim.
+
+As in the six-hole K2,3 lemma, a shortest exit of length
+six would give the six distinct distances 6,5,4,3,2,1,
+yet the direct-exit distance one would occur at least
+twice. Thus every D6Amix hole exits within five letters.
+The domain contains the entire depth-five noncompressing
+image orbit. Appending its failed one-letter test and a
+P3 merge gives compression within 5+1+3=9 letters.
+
+The historic 37-profile / 720-vector projection remains
+a control. scripts/problem4/check_type7_six_amix.py
+independently checks the literal inverse-pair restrictions
+on all full rows for n=6,7,8.
 
 Here v,w are named outside states, relabeled 5 when appropriate. The
 historical C_V projection has two surviving numerical vectors, each
@@ -28633,7 +28690,7 @@ Since |R4|>=5, equality is necessary. Testing its core holes gives:
 C_T follows from the five-cycle lemma. All C_A, C_V, and D_w
 applications follow from the
 [four-hole twin-core lemma](#problem4-type7-pendant-four-cycle).
-The two mixed six-image domains retain their finite exclusions.
+The mixed-T six-image domain retains its finite exclusion.
 This exhausts every alphabet and proves the claim.
 
 <a id="problem4-type7-early-exclusion--audit-records"></a>
