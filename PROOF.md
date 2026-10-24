@@ -27,6 +27,7 @@ F(n,n−5,r)≤min(n−r,18)；[全部十八步候选排除](#problem4-five-glob
 - [1　问题、定义与当前边界](#problem)
 - [2　Avoid-or-compress 的下界构造](#constructions)
 - [3　低余维上界与有限归约](#upper)
+- [计算依赖的纸面替代](#problem4-paper-dependency-reductions)
 - [4　余维四：短对图与第六层三点覆盖](#frontier)
 - [4.1　保护块收缩与余维四无限参数边界](#problem4-protected-collapse-strip)
 - [4.2　q=13 的结构与上界十二](#problem4-q13-second-layer)
@@ -130,6 +131,233 @@ c(S)=min{|w|:|Sw|<s}，而 ac(S,A) 还允许遗漏保护点，故 ac(S,A)≤c(S)
 论文及正文保留输入域定义、必要性论证、精确覆盖数和实现入口，
 原始日志、库存、二进制不提交 Git。独立复算命令保留供研究者选择；
 阅读、编译和整理现有论文不以重新计算或新建证书包为前提。
+
+<a id="problem4-paper-dependency-reductions"></a>
+### 计算依赖的纸面替代：轨迹秩与后层集合族
+
+本节将恢复稿的代数关系与原正文的完整字母分类、测试域推导重新接合。
+**余维三九步上界现在有完整纸面证明**；余维四、五只替代下列明确图族，
+其余有限排除仍是精确极值定理的必要依赖。以下均按原字母计费，
+不要求初始集可达；涉及强连通性的地方单独指出。
+历史章节中的动作数、距离向量与枚举程序保留为独立计算控制，
+不再是本节已经替代分支的证明依赖。没有声称新的结果已获 Lean 形式化或文献优先权。
+
+<a id="problem4-trajectory-rank-growth"></a>
+#### 同一初始集的轨迹空间与共同入口
+
+令 |S|=s≥2，D_w 为词的转移矩阵，
+V_i=span_R{χ_S D_w:|w|≤i}。总有
+V_(i+1)=V_i+Σ_f V_i D_f。一次平台使空间在所有字母下不变，故永久平台。
+强连通同步时，重置到一点后能到达任意状态，最终空间含全部 s e_q，
+所以 V_i 未满 R^Q 前不能平台，dim V_i≥min(i+1,n)。
+只有在 i<c(S) 时，才能把 χ_S D_w 写成实际像的零一行 χ_(Sw)。
+
+还有不需要强连通性的版本：若某个线性空间 W 不含任何重置行 s e_q，
+则同步性已保证 V_i⊆W 时不会平台，因而 dim V_i≥i+1。
+特别是所有行在一个至少两点的块上质量恒为一时，这个版本适用。
+
+若每个字母亏秩至多一，则 dim(V_i D_f)≥dim V_i−1。
+设所有深度≤d的像属于 F={J∪E:E∈E_0}，核心与 J 不交。
+若 J 非空，某 j∈J 被 f 送到核心 z，那么 V_(d−1)D_f 由含 z 的 F 行张成。
+当这样的行至多 t 条且 dim V_(d−1)−1>t 时，不可能存在此入口。
+这是对同一个 S 的轨迹使用维数，不把整个静态安全族误作可达轨道。
+
+<a id="problem4-paper-three-domain-ranks"></a>
+#### 余维三：所有低秩域、五圈域及匹配域
+
+沿用[九类归约](#problem4-codimension-three-upper-proof)的反设 c(S)=10、n≥6。
+全部字母为置换或核对恰为 01 的亏秩一映射；深度≤6的像在 P₃ 中独立。
+以下表格列的是**核心实际像**，不是洞；每行都另含相同的真实集合 J。
+域及包含深度直接取自原章节中的逐字母、逐测试推导，不需要动作投影枚举。
+
+| 分支 | 核心实际像 | 必须包含的轨迹 |
+|---|---|---|
+| 三角形 C；type 4 closed | 24,23,14,13,04,03 | R₅ |
+| type 4 mixing，外点命名5 | 145,135,045,035,124,123 | R₅ |
+| type 7 D6closed | 14,04,13,03,12,02 | R₅ |
+| type 7 D6Tmix，外点命名5 | 135,035,125,025,134,034 | R₅ |
+| type 7 D6Amix，外点命名5 | 145,045,125,025,134,034 | R₅ |
+| type 7 C_A | 34,13,03,12,02 | R₄ |
+| type 7 C_V | 14,13,03,12,02 | R₄ |
+| type 7 D_w，外点命名5 | 135,035,125,025,134 | R₄ |
+
+前五行域按显示次序的行向量满足
+R₁−R₂=R₃−R₄=R₅−R₆；这是两条独立关系，故秩≤4。
+C_A、C_V 有 R₂−R₃=R₄−R₅；D_w 有 R₁−R₂=R₃−R₄，秩也≤4。
+所有关系系数和为零，附加任意 J 不改变关系。
+但 R₄ 已有轨迹秩≥5，矛盾。这同时处理 type 7 的两次 C_V 用途。
+
+type 4 还可加强：反设 c(S)≥9 时，深度≤5的像仍在 P₃ 中独立，
+其必要 missing-1 字母 d 的单步测试域包含 R₄，仍是表中两类六行域。
+因此相同秩矛盾证明
+P₁={01},P₂={01,02},P₃={01,02,34} ⇒ c(S)≤8。
+此处不需要强连通性：每条域行满足总质量=s倍的块 {3,4} 上质量，
+任何重置行 s e_q 均不满足这个齐次关系（s≥2），故空间不含重置行。
+
+余下四个五行域的核心像分别是
+
+| 分支 | 五条核心边 |
+|---|---|
+| type 2 mixing B / closed T | 14,04,23,12,03 |
+| type 3 mixing T | 24,04,13,03,12 |
+| type 6 closed II | 34,14,12,03,02 |
+| type 7 C_T | 34,14,03,12,02 |
+
+每行恰构成五点圈。原测试域包含 R₄，因此 dim V₃≥4。
+任意核心点只属于两条边，dim(V₃D_f)≥3，前述共同入口引理禁止 J 进入核心。
+这里 n≥6 保证 J≠∅；J 在所有字母下不变，违反强连通性。
+这解释了为何不能把结论延伸到 n=5。
+
+最后，type 8 的每个安全像在三块 01、23、45 中各取一点，且包含所有其余状态。
+这些行的三块坐标和均相等，每个外部坐标也等于块和，故行秩≤4。
+假如 c(S)≥8，深度≤4的像全部在 P₃ 中独立，V₄ 被限制在该空间。
+该空间不含任何 s e_q：核心三块的和须相等；若 q在外部，
+它还违反“外部坐标等于块和”的关系。这包括 n=6、J为空的情形。
+由同步版本的秩增长得到矛盾。
+所以 P₃=3K₂ 加孤点 ⇒ c(S)≤7，不需要强连通性。
+
+<a id="problem4-paper-three-four-row-cases"></a>
+#### 余维三：三角形四行域与 closed-T 的实际退出词
+
+三角形 B2 的原测试域包含 R₃；两个域的四行均独立，因此 V₃恰为其行空间。
+等号域为 J 加四个单点 0,1,2,3。若 J 进入核心，每个输出行只能是同一单点行，
+但 dim(V₂D_f)≥2，矛盾。n≥6 保证 J 非空，由强连通性排除此域。
+
+不等号域在 v=3、u=4 的命名下是
+X₁=J∪24，X₂=J∪13，X₃=J∪04，X₄=J∪03。
+其唯一可能核方向 k=e₀−e₁=χ_(X₄)−χ_(X₂)。
+四行独立，故一个三行子族的张成空间含 k，当且仅当含 X₂、X₄。
+
+设字母 f 把 J 中某点送到核心 z。深度≤3的输出仍在此四行域，
+每个核心点最多属于两行，而 dim V₂≥3。因此 f 必须奇异、dim V₂=3，
+并且核 k 必在 V₂ 中。由于四行独立，R₂恰为含 X₂、X₄及另一个 X_i 的三行。
+输出空间至少二维，z 必属于至少两条未被 missing-output 排除的核心边。
+置换和 missing-1 字母均保持原三角形 {0,1,2}，因此 J 只能进入3或4；
+missing-0 字母当然不能进入0，进入1或2则只有一条可用输出边。
+missing-0 时，不含0的边只有24、13，互不相交，每个 z 都至多供一行，矛盾。
+missing-1 且 z=3时只有03可用，也矛盾。
+
+只剩 missing-1、z=4。允许的输出只能是 J∪24 和 J∪04。
+f(0)=f(1)∈{0,2}（原三角形分类），故 X₂f=X₄f；并且这两行中
+恰有一行含 f(0)。若第三输入是 X₃，它也含0，故其输出相同，输出秩仅一。
+若第三输入是 X₁，则 X₁与 X₄的交为 J，且 f 在 X₁∪X₄ 上单射
+（该并不含1，唯一核为01）。所以 |X₁f∩X₄f|=|J|。
+若两输出相等，交大小为 |J|+2；若不同，交为 J∪{4}，大小为 |J|+1。
+两种都不可能。故不存在任何 J 到核心的入口；由 J≠∅和强连通性排除。
+这补齐 B2，不再使用11/38个动作或24个距离排列。
+
+type 3 closed T 的原分类只剩
+D 的洞为023,123,124,035，u=4、v=5，且
+T=(1,3,0,2,5,...)，f=(c,c,3,2,5,1,...)。
+这里外部补全在所显示值之外单射，c 不属于0,1,2,3,5。
+对四个洞依次施 T、TT、ff、f，实际输出洞均为012，且中途不压缩。
+例如124 经 f 得035，再经 f 得012；123 经 T 得023，再经 T 得012。
+012 不在 D。因此从任意初始 D 行至多两步离开 D，
+再接一个长度≤3的失败定义测试及长度≤3的 P₃ 合并词，压缩总长≤8。
+这替代19动作/24距离排列的排除，不把 f 或 TT 视为新的免费字母。
+
+至此九类全部闭合：type 1、5沿用原纸面排除；type 0用本节三角形分析；
+type 2用五圈入口及原奇异混合计数/双立即退出；type 3用五圈、实际退出词
+及原 no-T 计数；type 4、8用低秩；type 6用五圈及原 orientation-I 计数；
+type 7全部七域用低秩或五圈，剩余分类及计数沿用原文。
+所以 n≥6 时每个 (n−3)-集 c(S)≤9 的证明不再依赖有限动作或距离枚举。
+
+<a id="problem4-balanced-bipartite-paper-bound"></a>
+#### 平衡完全二部短对图：统一纸面排除
+
+**定理（只需同步性）。** 若 b≥3、h≥1、P_h=K_(b,b) ⊔ J，
+|S|=n−b−1≥2，则
+
+    c(S) ≤ max(h,2b)+5.
+
+两部为 A、B，全部最大独立集恰为 T_A=A∪J、T_B=B∪J。
+从任一 T 出发，在这两个集合中停留到退出的最短路径长≤2，否则同步性失效。
+退出时或已压缩，或含 P_h 边；所以 c(T_A),c(T_B)≤h+2。
+因此 P_(h+2) 的大小 n−b−1 独立集必为 T_A 或 T_B 删除一点，
+而每个 T 已含 P_(h+2) 边，删除点只能取某条此类边的两个端点。
+每侧至多两行，总数至多四；这包括删除孤点的情形，不暗中假设 J 总被保留。
+
+令 M=max(h,2b)，反设 c(S)≥M+6。深度≤3的像在 P_(h+2) 中独立，
+因为 3+(h+2)≤M+5；严格集合增长给出至少四行，故恰为每侧两条删除行。
+而原 P_h 中孤点不会与任何状态形成字母核对，每个字母在 T_A、T_B 上单射。
+两条同侧行的交在输出中大小为 b+|J|−2>|J|，故包含核心点。
+各行输出均在 P_h 中独立（深度≤4，4+h<M+6），因此同侧两输出
+处在同一部加 J 中；它们的并就是该侧整个 T 的像。
+
+若 Jf进入核心，两侧输出必须处于同一部加 J，整字母秩≤n−b。
+若 Jf⊆J，则 Jf=J；每个 T 的像大小 b+|J|，故映满某一部加 J。
+两部若映入同侧，亏秩≥b；若映入不同侧，f是全局置换。
+于是所有字母均满足“亏秩≥b或置换”。
+[秩下降式 RD1](#problem4-general-rank-descent)在 m=b+1、a=1、d=b 时给出
+c(S)≤2b+5；d=b+1给出 b+3，更大亏秩立即压缩。
+这些均与 c(S)≥M+6矛盾。因此只能全为置换，与同步性冲突，定理得证。
+特别地 b=4、h=9给出 c(S)≤14，统一处理 P₉=K₄,₄ 的全部后层域。
+
+<a id="problem4-unique-maximum-paper-bound"></a>
+#### 唯一最大独立集：近最大行的退出界
+
+**定理（只需同步性）。** G=P_h、h≥1有唯一最大独立集 I，
+α(G)−1=s≥2。设 β 为不包含于 I 的独立 s-集数。则任意 s-集 S 满足
+
+    c(S) ≤ h+β+3.
+
+I 不可能在 P_(h+1) 中独立：否则每个字母将 I 单射地映到 G 的最大独立集，
+由唯一性 If=I，违反同步性。固定 I 内一条新增边。
+P_(h+1) 的独立 s-集中，包含于 I 的至多两条（删除该边一个端点），
+不包含于 I 的至多 β 条，总数≤β+2。
+若 c(S)≥h+β+4，深度≤β+2的像全在 P_(h+1) 中独立，
+但严格集合增长给出 β+3个不同像，矛盾。
+
+对 G=K_(b+1,b) 删除任意匹配并附孤点，b≥3，I为大部加全部孤点。
+跨两部的独立集核心至多两点：一个点缺少至多一个对侧邻点，
+因此不可能在另一部同时选两点。故 I 是唯一最大集，唯一不含于 I 的
+大小 α−1 独立集是小部加全部孤点，即 β=1。
+得到 c(S)≤h+4；b=3、h=7时为十一步。
+这覆盖两种相应匹配删除核心的全部命名后层域，无须逐域动作检查。
+
+<a id="problem4-tight-clique-paper-exclusion"></a>
+#### 紧层团分量的纸面排除
+
+**定理（强连通同步）。** 若 |E(P_h)|=h≥2，P_h 的非孤立核心
+不能为 K_t ⊔ K₂（t≥4）；也不能为带非空孤点的单独 K_t（t≥4）。
+
+短对层在完整图之前严格增长，故每层恰增加一边，P₁只有一对，
+任意字母亏秩≤1。若 G 的非边经字母成为 G 边，目标边只能是唯一的
+第 h 层边，否则源对已属于 G。
+若孤点 j 映到团内顶点 v，v 的至少 t−2≥2个团邻点有输出原像；
+相应的源对均为 G 非边，却给出至少两条不同末层边，矛盾。
+所以没有孤点能进入团。单团且孤点非空时已经违反强连通性。
+
+对于团 C=K_t 和 L=K₂，令 U=Lf∩C、V=Cf∩C。
+U、V不交，否则有跨分量立即合并，源对却不在 P₁⊆G。
+所有 U—V 边均有跨分量非边前像，故 |U||V|≤1。
+但字母至多缺失一个输出且孤点不能进入 C，|U|+|V|≥t−1≥3。
+若 U非空，则V非空（|U|≤2），从而U、V各只能有一个点，矛盾。
+故 L也不能进入 C；团没有外部入口，与强连通性冲突。
+特别地 P₇=K₄⊔K₂⊔J 的整个核心均排除，且不限制末层边在哪个分量。
+余维四候选中的 P₇=K₅⊔J 则由另一条完整秩论证排除：假设 n≥11、
+|S|=n−4、c(S)≥12。前述 RD1 排除所有亏秩≥3的字母，故每个字母亏秩≤2。
+深度≤4的像全是 P₇ 的最大独立集，即 J 加一个团点。于是 dim V₃≥4，
+任意字母作用后的空间维数至少2。若 J 进入某团点，全部这些输出像
+却只能是同一个 J 加单点行，矛盾。J非空且没有到团的入口，违反强连通性。
+这里没有假设 |E(P₇)|=7；K₅有10条边，不能混用紧层团定理的假设。
+
+#### 独立代数控制与仍保留的计算依赖
+
+`check_paper_rank_reductions.py` 从洞重建每条实际像，用有理消元核对显示行秩、
+零和关系、五圈以及三角形核方向；另以真实转移核对 closed-T 的退出词。
+它同时核对 n=5 的强连通同步、可达且 c(S)=10 的边界例子。
+这些有限控制支持抄录和边界检查；一般参数结论由上文推导证明。
+`check_paper_family_reductions.cpp` 另外完整遍历 n=6、7 的全部46656、823543个映射，
+直接检查 K₃,₃ 两侧各两条删除行的安全条件及紧层 K₄⊔K₂ 的局部条件。
+分别有144、360个映射满足前者，576、1728个映射满足后者，全部通过结论。
+这些是局部变换引理的完整小域控制，不声称每个局部映射都能实现短对层。
+已有 `check_rank_descent.py` 的实际子集 BFS 控制也重新运行通过。
+
+余维四、五主定理仍是计算辅助证明。本节没有完成91个四覆盖核心、
+10142个命名域、2294个五覆盖核心和3206988个动态域的全体纸面替代。
+余维三的动作投影依赖已全部替换；平衡二部、指定唯一最大集图族及紧层团分量
+仅替代各自整类。一般 m≥6、q≥3m 的精确极值及一般 Černý 猜想仍开放。
 
 <a id="problem4-linear-codimension-conjecture"></a>
 ### 线性通项猜想：范围、单点归约与可检验的反对路线
@@ -2352,8 +2580,10 @@ with n>=6 states, every (n-3)-subset admits a compressing word of length
 at most nine. The alphabet is any finite alphabet; the subset need not
 be a reachable image.
 
-This proof uses finite, complete action projections after symbolic
-reductions. It does not extrapolate an enumeration at small n.
+The upper bound now has a paper proof: the symbolic classifications below
+combine with [trajectory-rank and image-family arguments](#problem4-paper-dependency-reductions).
+The former finite action projections are retained as independent controls,
+not required proof steps. The n>=6 hypothesis remains essential for pure compression.
 
 <a id="problem4-codimension-three-upper-proof--reduction-to-nine-ordered-early-pair-types"></a>
 #### Reduction to nine ordered early-pair types
@@ -2394,47 +2624,35 @@ until compression: a plateau is invariant under all letters and cannot
 be reset. Thus |R_i|>=i+1 through depth nine.
 
 A domain D defined by H-preservation under test words of length at
-most L contains R_(6-L); it must have at least 7-L members. When its
-size is exactly 7-L, every member is reached by depth 6-L, and every
-letter maps it into H. Project such letters to D and EXIT=H minus D.
-Synchronization forces every D-vertex to exit eventually. With k
-vertices, finite exit distances are at most k. If an initial distance
-equals k, a shortest path visits every vertex, so the distance vector
-is a permutation of 1,...,k. For each such vector d enumerate all
-profiles p satisfying d(i)<=1+d(p(i)), d(EXIT)=0. Any actual alphabet
-is contained in this enlarged graph. If the graph cannot make every
-vertex exit, the distance vector is impossible.
-
-Every surviving vector below has the stronger property that every
-underlying partial row of every allowed profile preserves a set of
-five states. Strong connectivity excludes that for n>=6. Thus maximum
-exit distance is at most k-1. The bound is (k-1)+L+3=9 whenever
-k=7-L. The second path-2 singular domain instead has k=4 and two
-distinct distance-one vertices; its maximum exit distance is at most
-three, with the same 3+3+3=9 charge. Type 8 uses its eight covering
-images directly, with first exit at most six, hence 6+3=9.
+most L contains R_(6-L). The original classifications identify the domains
+listed in the table below. Low-rank domains contradict trajectory growth;
+five-cycle and four-row domains prohibit an entrance from their common
+outside set; the closed-T domain has displayed actual exit words.
+The remaining symbolic counts and invariant-family arguments are unchanged.
+All word-length budgets and the special n=5 boundary are proved in
+[the replacement lemmas](#problem4-paper-dependency-reductions).
+The old action-profile and distance-vector calculations in the detailed
+case sections are now independent controls rather than proof dependencies.
 
 <a id="problem4-codimension-three-upper-proof--complete-case-table"></a>
 #### Complete case table
 
-The cited case notes give the full letter classifications, hole-domain
-calculations and fresh-label coverage arguments. Their finite projections
-enumerate partial rows on at most six named states. Unnamed output states
-are renamed to a bounded supply of fresh labels; this is why the negative
-certificates cover every n and arbitrary alphabets. Included extra rows
-that fail to extend at a particular small n only enlarge the graph.
+The cited case notes supply the symbolic letter classifications and test domains.
+The following paper arguments replace every formerly enumerated action/distance
+step; their full details and row families are in
+[the paper replacements](#problem4-paper-dependency-reductions).
 
-| type | E2 | E3 | complete reduction and certificate |
+| type | E2 | E3 | paper exclusion |
 |---|---|---|---|
-| 0 | 02 | 12 | [Triangle early-pair obstruction at codimension three](#problem4-triangle-early-exclusion); Case A in [Necessary exclusion of one mixing singular letter in early triangle type](#problem4-triangle-mixing-case-a). Remaining domains: k=4,4,6, with 11,38,61 profiles and 24,24,720 vectors. Only the middle domain has three surviving vectors; all force a proper five-state invariant set. |
-| 1 | 02 | 03 | [Necessary early-pair types for tight compression](#problem4-early-pair-types): every letter fixes 0 with no other incoming edge or omits 0. Strong connectivity is impossible. |
-| 2 | 02 | 13 | [Path early-type-2 exclusion at codimension three](#problem4-path2-early-exclusion): one k=5 domain with 22 profiles and 120 vectors; one surviving vector forces a five-state invariant set. Other domains have insufficient size or the two immediate exits described above. |
-| 3 | 02 | 23 | [Path early-type-3 exclusion at codimension three](#problem4-path3-early-exclusion): k=5,4 domains with 24,19 profiles and 120,24 vectors; only the first has one surviving vector, forcing a five-state invariant set. The no-T branch has a complete symbolic domain count at most four. |
-| 4 | 02 | 34 | [Disjoint-tail early-type-4 exclusion at codimension three](#problem4-type4-early-exclusion): two k=6 domains, 33,37 profiles, 720 vectors each, no survivors. This case requires synchronization alone. |
-| 5 | 23 | 02 | [Crossing early-type-5 exclusion](#problem4-type5-early-exclusion): a letter creating 02 necessarily creates the forbidden pair 12 as well, or violates inverse-pair disjointness. No projection is needed. |
-| 6 | 23 | 04 | [Kernel-tail early-type-6 exclusion at codimension three](#problem4-type6-early-exclusion): one k=5 domain, 19 profiles, 120 vectors, one survivor forcing a five-state invariant set; all other branches have symbolic domains of size at most four. |
-| 7 | 23 | 24 | [Second-pair-tail early-type-7 exclusion at codimension three](#problem4-type7-early-exclusion): three k=6 and four k=5 domains, 21,39,37 and 27,23,23,33 profiles. Only C_V has two surviving vectors, each forcing a five-state invariant set. |
-| 8 | 23 | 45 | [Excluding three disjoint early pairs at tight codimension-three compression](#problem4-matching-early-exclusion): eight images, 177 profiles. All 30,240 possible finite vectors with initial distance at least seven fail. No strong-connectivity hypothesis is needed in this case. |
+| 0 | 02 | 12 | Original Case A/B1 counts; four-row common-entry argument for B2; rank at most four for Case C. |
+| 1 | 02 | 03 | Original no-incoming-edge argument at state 0. |
+| 2 | 02 | 13 | Five-cycle common-entry argument; original singular-domain counts and two immediate exits. |
+| 3 | 02 | 23 | Five-cycle common-entry argument; literal T,TT,ff,f exits from the closed-T domain; original no-T counts. |
+| 4 | 02 | 34 | Both six-row domains have rank at most four. In fact this type forces compression by eight. |
+| 5 | 23 | 02 | Original inverse-pair disjointness / additional forbidden pair argument. |
+| 6 | 23 | 04 | Five-cycle common-entry argument for closed II; original orientation-I and mixing-II counts. |
+| 7 | 23 | 24 | All six-row domains and C_A,C_V,D_w have rank at most four; C_T is a five-cycle domain. Original breaker counts complete the reduction. |
+| 8 | 23 | 45 | The matching family has rank at most four and contains no reset row in its span. Compression is at most seven. |
 
 All cases contradict compression length ten. This proves the theorem.
 Binary complete covers at n=11,12,13 are independent historical checks,
@@ -3459,7 +3677,8 @@ C_t=\max_{|R|=n-t}c(R).
 证明：[余维三统一压缩定理](#problem4-codimension-three-upper-proof)给出 C₃≤9，
 所以 (SCT1) 给出 τ(P₉)≥4。将 h=9 代入上一节的 (TC-3)，
 任意 (n−4)-集都在 9+5=14 步内压缩。
-前一结论使用九类的完整有限作用投影，后一结论使用八核心的完整作用检查；
+前一结论现有[轨迹秩的完整纸面证明](#problem4-paper-dependency-reductions)，
+后一结论仍使用八核心的完整作用检查；
 因此 (SCT2) 是这些已建立计算辅助定理的直接推论，不能标为独立纯纸面上界。
 
 对 Problem 4 的全部合法 m=4 参数，由原避开或压缩界再得
@@ -22538,6 +22757,9 @@ interpretations with this independently checked stronger statement.
 <a id="problem4-matching-early-exclusion--excluding-three-disjoint-early-pairs-at-tight-codimension-three-compression"></a>
 ### Excluding three disjoint early pairs at tight codimension-three compression
 
+**当前证明依赖。** 本节的符号分类及测试域推导仍使用；后面的有限动作/距离排除
+现由[纸面替代引理](#problem4-paper-dependency-reductions)代替，保留的枚举描述为历史独立控制。
+
 Suppose a synchronizing automaton on n>=6 has an (n-3)-subset of shortest
 compression length 10. The credited Frankl--Pin refinement and strict pair
 closure growth give |P_h|=h for h=1,2,3. Consider the case
@@ -25139,6 +25361,9 @@ remain outside this cover.
 <a id="problem4-path2-early-exclusion--path-early-type-2-exclusion-at-codimension-three"></a>
 ### Path early-type-2 exclusion at codimension three
 
+**当前证明依赖。** 本节的符号分类及测试域推导仍使用；后面的有限动作/距离排除
+现由[纸面替代引理](#problem4-paper-dependency-reductions)代替，保留的枚举描述为历史独立控制。
+
 **Claim.** For n>=6, a strongly connected synchronizing automaton cannot
 have an (n-3)-set of shortest compression length ten and early merging
 pairs P1={01}, P2={01,02}, P3={01,02,13}. The alphabet is arbitrary finite;
@@ -25334,6 +25559,9 @@ The saved report is path2_domain_audit.json.
 <a id="problem4-path3-early-exclusion"></a>
 <a id="problem4-path3-early-exclusion--path-early-type-3-exclusion-at-codimension-three"></a>
 ### Path early-type-3 exclusion at codimension three
+
+**当前证明依赖。** 本节的符号分类及测试域推导仍使用；后面的有限动作/距离排除
+现由[纸面替代引理](#problem4-paper-dependency-reductions)代替，保留的枚举描述为历史独立控制。
 
 **Claim.** For n>=6, a strongly connected synchronizing automaton cannot
 have an (n-3)-set of shortest compression length ten and
@@ -27055,6 +27283,9 @@ bound and no numerical alphabet separation follows.
 <a id="problem4-triangle-early-exclusion--triangle-early-pair-obstruction-at-codimension-three"></a>
 ### Triangle early-pair obstruction at codimension three
 
+**当前证明依赖。** 本节的符号分类及测试域推导仍使用；后面的有限动作/距离排除
+现由[纸面替代引理](#problem4-paper-dependency-reductions)代替，保留的枚举描述为历史独立控制。
+
 **Claim.** For n>=6, a strongly connected synchronizing automaton with an
 (n-3)-subset of shortest compression length ten cannot have
 
@@ -27571,6 +27802,9 @@ they are not a new theorem proved by finite sampling.
 <a id="problem4-type4-early-exclusion--disjoint-tail-early-type-4-exclusion-at-codimension-three"></a>
 ### Disjoint-tail early-type-4 exclusion at codimension three
 
+**当前证明依赖。** 本节的符号分类及测试域推导仍使用；后面的有限动作/距离排除
+现由[纸面替代引理](#problem4-paper-dependency-reductions)代替，保留的枚举描述为历史独立控制。
+
 **Claim.** For n>=5, a synchronizing automaton cannot have an (n-3)-set
 of shortest compression length ten with
 
@@ -27782,6 +28016,9 @@ solver-unsatisfiability output is used.
 <a id="problem4-type6-early-exclusion"></a>
 <a id="problem4-type6-early-exclusion--kernel-tail-early-type-6-exclusion-at-codimension-three"></a>
 ### Kernel-tail early-type-6 exclusion at codimension three
+
+**当前证明依赖。** 本节的符号分类及测试域推导仍使用；后面的有限动作/距离排除
+现由[纸面替代引理](#problem4-paper-dependency-reductions)代替，保留的枚举描述为历史独立控制。
 
 **Claim.** For n>=6, a strongly connected synchronizing automaton cannot
 have an (n-3)-set of shortest compression length ten with
@@ -28064,6 +28301,9 @@ This completes type 6 in [Uniform codimension-three compression bound](#problem4
 <a id="problem4-type7-early-exclusion"></a>
 <a id="problem4-type7-early-exclusion--second-pair-tail-early-type-7-exclusion-at-codimension-three"></a>
 ### Second-pair-tail early-type-7 exclusion at codimension three
+
+**当前证明依赖。** 本节的符号分类及测试域推导仍使用；后面的有限动作/距离排除
+现由[纸面替代引理](#problem4-paper-dependency-reductions)代替，保留的枚举描述为历史独立控制。
 
 **Claim.** For n>=6, no strongly connected synchronizing automaton has an
 (n-3)-set whose shortest compression length is ten and whose early pairs are
