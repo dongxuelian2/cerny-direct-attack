@@ -2428,8 +2428,8 @@ that fail to extend at a particular small n only enlarge the graph.
 |---|---|---|---|
 | 0 | 02 | 12 | [Triangle early-pair obstruction at codimension three](#problem4-triangle-early-exclusion); Case A in [Necessary exclusion of one mixing singular letter in early triangle type](#problem4-triangle-mixing-case-a). Remaining domains: k=4,4,6, with 11,38,61 profiles and 24,24,720 vectors. Only the middle domain has three surviving vectors; all force a proper five-state invariant set. |
 | 1 | 02 | 03 | [Necessary early-pair types for tight compression](#problem4-early-pair-types): every letter fixes 0 with no other incoming edge or omits 0. Strong connectivity is impossible. |
-| 2 | 02 | 13 | [Path early-type-2 exclusion at codimension three](#problem4-path2-early-exclusion): one k=5 domain with 22 profiles and 120 vectors; one surviving vector forces a five-state invariant set. Other domains have insufficient size or the two immediate exits described above. |
-| 3 | 02 | 23 | [Path early-type-3 exclusion at codimension three](#problem4-path3-early-exclusion): k=5,4 domains with 24,19 profiles and 120,24 vectors; only the first has one surviving vector, forcing a five-state invariant set. The no-T branch has a complete symbolic domain count at most four. |
+| 2 | 02 | 13 | [Path early-type-2 exclusion at codimension three](#problem4-path2-early-exclusion): the five-image domain is now excluded by the five-cycle hole paper lemma; its 22 profiles and 120 vectors remain controls. Other domains use symbolic bounds or two immediate exits. |
+| 3 | 02 | 23 | [Path early-type-3 exclusion at codimension three](#problem4-path3-early-exclusion): the mixing-T five-image domain now follows from the five-cycle hole paper lemma; the closed-T four-image domain retains its 19-profile / 24-vector computation. Other branches have symbolic reductions. |
 | 4 | 02 | 34 | [Disjoint-tail early-type-4 exclusion at codimension three](#problem4-type4-early-exclusion): two k=6 domains, 33,37 profiles, 720 vectors each, no survivors. This case requires synchronization alone. |
 | 5 | 23 | 02 | [Crossing early-type-5 exclusion](#problem4-type5-early-exclusion): a letter creating 02 necessarily creates the forbidden pair 12 as well, or violates inverse-pair disjointness. No projection is needed. |
 | 6 | 23 | 04 | [Kernel-tail early-type-6 exclusion at codimension three](#problem4-type6-early-exclusion): the five-hole closed-II domain is excluded on paper by a single-exit lemma; other branches use symbolic domains of size at most four. The 19-profile / 120-vector check is now a control. |
@@ -2469,15 +2469,94 @@ has shortest compression ten. Its avoid-or-compress value is bounded
 by n-r<=4, so it does not contradict the exact local maximum above.
 
 
+<a id="problem4-defect-three-pentagon-hole-lemma"></a>
+#### Five-cycle hole lemma: one paper replacement for three type branches
+
+**Paper lemma.** Let C be a five-element subset of Q and let
+D={C\e : e is an edge of a five-cycle on C}. Suppose 0,1 in C
+are **nonadjacent** on that cycle. Let f be a permutation of Q
+or a rank-(n-1) transformation with the unique nontrivial kernel
+class {0,1}. For J in D set
+
+    J.f = Q \ ((Q \ J) f).
+
+Every image (Q\J)f has size n-3. If f(C) is not a subset of C,
+then at least **two different** holes J in D have J.f outside D.
+
+*Proof.* Each point of C belongs to exactly three D-holes,
+because it is incident to exactly two cycle edges. For every
+four-subset W=C\{x}, exactly two members of D are contained in W:
+they correspond to the two cycle edges incident to x.
+
+If f is a permutation and x in C maps outside C, all three
+D-holes containing x have an outside point in their images.
+Now assume f is singular, write c=f(0)=f(1), and let e be its
+unique missing output. Each other core point y in C\{0,1}
+has a unique image preimage, so if f(y) is outside C, its
+three containing D-holes leave D.
+
+It remains to consider c outside C, with all three other core
+images in C. Write the cyclic order as
+
+    0 - a - 1 - b - d - 0,
+
+where {a,b,d}=C\{0,1}. The unique D-hole containing *both*
+kernel points is {0,1,a}; its image hole is {e,c,f(a)},
+which leaves D. The other four D-holes contain just one
+kernel point. Their images are, with one repetition, exactly
+
+    {e,f(a),f(b)}, {e,f(a),f(d)}, {e,f(b),f(d)}.
+
+These are three distinct triples because f is injective on
+{a,b,d} and their images differ from e. If e is outside C,
+all three leave D. If e is in C, all three belong to the
+same four-subset {e,f(a),f(b),f(d)} of C, which contains only
+two members of D. Hence another D-hole leaves D. QED.
+
+**Exit corollary.** Suppose n>=6, the automaton is strongly
+connected and synchronizing, every original letter has one
+of the forms in the lemma, and D is a five-vertex common
+safe-image domain containing all images reached from S
+through depth four. Then every D-vertex has an exit from D
+of length at most four.
+
+Indeed synchronization makes every D-vertex's exit distance
+finite. An exit path of length five would visit all five vertices
+and give them distinct distances 5,4,3,2,1. Thus at most one
+D-vertex can exit under any original letter. The lemma makes
+each original letter preserve the proper set C, contrary to
+strong connectivity. This proves the four-letter exit bound.
+
+Three of the codimension-three subcases have precisely these
+five-cycle domains, with v relabeled as 4:
+
+| Earlier branch | Five D-holes | Complementary cycle edges |
+|---|---|---|
+| Type 2, mixing B / closed T | 023,123,014,034,124 | 14,04,23,12,03 |
+| Type 3, mixing T | 013,123,024,124,034 | 24,04,13,03,12 |
+| Type 6, closed orientation II | 012,023,034,124,134 | 34,14,12,03,02 |
+
+Each five-edge graph in the last column is a single 5-cycle
+without edge 01. Thus the same paper lemma applies to all three
+cases, independently of their previously computed 22, 24,
+and 19 action profiles and their 120 exit-distance permutations.
+The original finite tests remain controls; the other subcases
+retain their separate proofs.
+
+Independent literal controls of the lemma, without any early-pair
+or H-compatibility filter, are in
+scripts/problem4/check_type6_single_exit_lemma.py; the legacy filename
+is retained although the test now covers all three domains.
+
 <a id="problem4-defect-three-tight-core-paper-exclusion"></a>
 
-**进一步的纸面替换：余维三 type 6 的封闭 II 情形。**
-[五个缺口的单出口引理](#problem4-type6-early-exclusion--orientation-ii)
-说明：只要原字母把五点核心送出自身，它就必须让五个安全缺口中的
-至少两个离开候选域。若退出路径长度达到五，则恰有一个缺口的一步
-退出距离为一，所有原字母因此都保持该核心，违背强连通性。
-这一推理已经替换原先的 19 个投影轮廓和 120 个距离排列检查，
-其余 type 6 方向的符号计算账本仍按原证明保留。
+**进一步的纸面替换：三个五圈缺口分支。**
+[五圈缺口引理](#problem4-defect-three-pentagon-hole-lemma)
+统一覆盖余维三的 Type 2（mixing B）、Type 3（mixing T）
+和 Type 6（closed II）三个五像域。只要原字母使五状态核心
+不封闭，就必须令至少两个安全缺口退出该域；因此五步退出路径
+与强连通性矛盾。原先 22、24、19 个动作轮廓以及各 120 个距离排列
+不再承担这三个子情形的证明负担，其余分支按各自现有证明处理。
 
 
 #### 余维三：紧边数短对图的整类纸面排除
@@ -25342,28 +25421,27 @@ every possible partial row, for every n; extra labels not in C union {4}
 are interchangeable. Rows that do not extend at a particular small n
 may be included: this only enlarges the candidate action set.
 
-The enumeration gives exactly 22 action profiles, with a separate flag
-recording whether EVERY underlying partial row preserves E=C union {4}.
-Synchronization forces every D-vertex eventually to exit D. Finite exit
-distances are at most five. If the initial vertex has distance five, a
-shortest exit path uses all vertices, whose distance vector must therefore
-be a permutation of 1,...,5. For each of the 120 vectors d, include all
-profiles p satisfying
+The five D-holes, after relabeling v=4, are
 
-    d(i)<=1+d(p(i)),  d(EXIT)=0.
+    023,123,014,034,124.
 
-If even this enlarged graph does not permit every vertex to exit, an
-actual synchronizing alphabet with that vector is impossible. Exactly
-one vector survives: (4,3,5,1,2). Its allowed profiles are precisely
+Their complementary pairs form the 5-cycle
+{14,04,23,12,03}, with 0 and 1 nonadjacent.
+They therefore satisfy the
+[five-cycle hole lemma](#problem4-defect-three-pentagon-hole-lemma).
+Every original letter is a permutation or rank-(n-1) map
+with sole kernel {0,1}, and all five images of D are
+actually reached through depth four. The lemma's exit
+corollary rules out a first exit of length five.
+An exit within four letters followed by a failed defining
+test of length at most two and a P3 merging word
+compresses in at most 4+2+3=9 letters. This excludes mixing B.
 
-    (0,1,2,3,4), (1,0,2,4,3), (2,4,0,3,1), (2,2,0,-1,3).
-
-For every underlying row of these profiles, E is invariant. Since |E|=5
-and n>=6, strong connectivity is impossible. Otherwise the first exit
-has length at most four. Appending a failed defining test of length at
-most two and a merging word of length at most three compresses within
-4+2+3=9. Thus mixing B is excluded, and the preceding cases show that
-all permutations preserve C.
+The historical complete action projection contains 22 profiles
+and 120 potential distance permutations. Its unique
+surviving vector (4,3,5,1,2) allows only letters preserving
+the five-state set C union {v}. It is retained as an
+independent control of the paper lemma.
 
 path2_reduced_actions.py constructs the structural templates and uses
 reverse exit closure. audit_path2_actions.cpp independently enumerates
@@ -25481,17 +25559,20 @@ contradicting |R4|>=5. If v=a, the domain is exactly
 
     D={013,123,02v,12v,03v}.
 
-All its five images are reached by depth four; every letter sends each
-of them to an H-image. Relabel v=4. Complete projection of compatible
-letters gives 24 profiles. As synchronization requires every vertex
-to exit D, a first exit of length five requires the five exit distances
-to be a permutation of 1,...,5. For every such vector d, include ALL
-profiles p with d(i)<=1+d(p(i)), d(EXIT)=0, and check that every vertex
-can exit. Exactly one of the 120 vectors survives: (4,1,5,3,2).
-Every underlying partial row of every allowed profile preserves the
-five-state set C union {v}. This contradicts strong connectivity for
-n>=6. Otherwise first exit has length at most four and a failed T/TT
-test followed by a P3 merging word compresses within 4+2+3=9.
+All five images are reached by depth four, and every
+letter sends each of them into H. Relabel v=4; the
+five D-holes are 013,123,024,124,034. Their complements
+form the 5-cycle {24,04,13,03,12}, with 0 and 1
+nonadjacent. By the
+[five-cycle hole lemma](#problem4-defect-three-pentagon-hole-lemma),
+every D-vertex exits in at most four original letters.
+A failed T/TT test and a P3 merger then compress
+within 4+2+3=9 original letters.
+
+The historical complete projection has 24 profiles and
+120 exit-distance permutations. Its single numerical
+survivor (4,1,5,3,2) permits only letters preserving
+the five-point core. This agrees with the paper lemma.
 
 The finite projection is complete for every n. Only the five distinguished
 input states matter. For singular missing-0 rows the three domain tests
@@ -27954,40 +28035,15 @@ gives at least five of them. Hence each member of D is an actual image
 reached within four letters, and every original letter sends D into H.
 We exclude a five-letter first exit from D by a paper argument.
 
-**Five-hole single-exit lemma.** Let C={0,1,2,3,4} and let D be the
-five triples above. Let f be either a permutation or a rank-(n-1)
-transformation whose unique nonsingleton kernel class is {0,1}.
-For a three-hole set J define the next hole set by
-
-    J.f = Q \ ((Q \ J) f).
-
-The images of every J in D have n-3 elements under these transformations.
-If f(C) is not a subset of C, then **at least two different members J of D
-satisfy J.f not in D**.
-
-*Proof.* Every x in C occurs in exactly three D-triples. Moreover every
-four-subset of C contains exactly two D-triples:
-
-    0123: 012,023      0124: 012,124       0134: 034,134
-    0234: 023,034      1234: 124,134.
-
-If f is a permutation and x in C maps outside C, the three D-triples
-containing x all have an outside image and leave D.
-
-Now let f be singular, put c=f(0)=f(1), and let e be its unique missing
-output. For i=2,3,4, f(i) has a unique preimage. If one such f(i) lies
-outside C, each of the three D-triples containing i leaves D.
-The only remaining nonclosed case has c outside C and
-f(2),f(3),f(4) in C. Taking complements gives
-
-    D0.f = {e,c,f(2)}          D1.f = {e,f(2),f(3)}
-    D2.f = {e,f(3),f(4)}       D3.f = {e,f(2),f(4)}
-    D4.f = {e,f(3),f(4)}.
-
-D0 leaves D. If e lies outside C, D1,D2,D3 also leave D. Otherwise
-D1,D2,D3 have three different images, all triples of the same four-set
-{e,f(2),f(3),f(4)} contained in C. That four-set contains only two
-members of D, so at least one more image leaves D. This proves the lemma.
+**Paper lemma.** The five D-holes have complementary
+pairs {34,14,12,03,02}, a five-cycle without edge 01.
+They satisfy the
+[general five-cycle hole lemma](#problem4-defect-three-pentagon-hole-lemma).
+Every original letter that moves any point of C outside
+C must therefore send at least two members of D
+outside D. This is a direct combinatorial conclusion
+for the complete transformation, with no action-profile
+enumeration.
 
 **Exit argument.** Because P1={01}, every original letter has one of the
 two forms above. Synchronization ensures that each D-vertex eventually
