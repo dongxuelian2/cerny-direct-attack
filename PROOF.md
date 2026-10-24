@@ -2470,7 +2470,7 @@ by n-r<=4, so it does not contradict the exact local maximum above.
 
 
 <a id="problem4-defect-three-pentagon-hole-lemma"></a>
-#### Five-cycle hole lemma: one paper replacement for three type branches
+#### Five-cycle hole lemma: four finite subcases replaced on paper
 
 **Paper lemma.** Let C be a five-element subset of Q and let
 D={C\e : e is an edge of a five-cycle on C}. Suppose 0,1 in C
@@ -2527,36 +2527,38 @@ D-vertex can exit under any original letter. The lemma makes
 each original letter preserve the proper set C, contrary to
 strong connectivity. This proves the four-letter exit bound.
 
-Three of the codimension-three subcases have precisely these
-five-cycle domains, with v relabeled as 4:
+Four codimension-three subcases have these five-cycle domains,
+with v relabeled as 4 where needed:
 
 | Earlier branch | Five D-holes | Complementary cycle edges |
 |---|---|---|
 | Type 2, mixing B / closed T | 023,123,014,034,124 | 14,04,23,12,03 |
 | Type 3, mixing T | 013,123,024,124,034 | 24,04,13,03,12 |
 | Type 6, closed orientation II | 012,023,034,124,134 | 34,14,12,03,02 |
+| Type 7, closed-B / P_T domain C_T | 012,023,124,034,134 | 34,14,03,12,02 |
 
 Each five-edge graph in the last column is a single 5-cycle
-without edge 01. Thus the same paper lemma applies to all three
-cases, independently of their previously computed 22, 24,
-and 19 action profiles and their 120 exit-distance permutations.
+without edge 01. Thus the same paper lemma applies to all four subcases (three distinct
+five-hole domains), independently of their historical 22, 24, 19, and
+23 action profiles and 120 exit-distance permutations in each case.
 The original finite tests remain controls; the other subcases
 retain their separate proofs.
 
 Independent literal controls of the lemma, without any early-pair
 or H-compatibility filter, are in
 scripts/problem4/check_type6_single_exit_lemma.py; the legacy filename
-is retained although the test now covers all three domains.
+is retained although the test now covers all three distinct domains.
 
 <a id="problem4-defect-three-tight-core-paper-exclusion"></a>
 
-**进一步的纸面替换：三个五圈缺口分支。**
+**进一步的纸面替换：四个五圈缺口子情形。**
 [五圈缺口引理](#problem4-defect-three-pentagon-hole-lemma)
 统一覆盖余维三的 Type 2（mixing B）、Type 3（mixing T）
-和 Type 6（closed II）三个五像域。只要原字母使五状态核心
+、Type 6（closed II）与 Type 7（C_T）四个五像子情形。
+只要原字母使五状态核心
 不封闭，就必须令至少两个安全缺口退出该域；因此五步退出路径
-与强连通性矛盾。原先 22、24、19 个动作轮廓以及各 120 个距离排列
-不再承担这三个子情形的证明负担，其余分支按各自现有证明处理。
+与强连通性矛盾。原先 22、24、19、23 个动作轮廓以及各 120 个距离排列
+不再承担这四个子情形的证明负担，其余分支按各自现有证明处理。
 
 
 #### 余维三：紧边数短对图的整类纸面排除
@@ -28324,6 +28326,19 @@ this way can only create possible exits, so absence excludes the vector.
 | C_V | 023,024,124,034,134 | 23 | 120 | (3,1,4,5,2), (5,1,4,2,3) |
 | D_w | 024,124,034,134,02w | 33 | 120 | none |
 
+The C_T row has an entirely paper replacement. Its five holes
+012,023,124,034,134 are the same as type 6's closed-II domain.
+They are complements of a five-cycle on {0,1,2,3,4},
+with 0 and 1 nonadjacent. The
+[five-cycle hole lemma](#problem4-defect-three-pentagon-hole-lemma)
+forces an exit within four letters. As C_T is fully reached
+through depth four and defined by tests of at most two letters,
+an exit plus a P3 merger compresses in at most 4+2+3=9 letters.
+The historical 23-profile / 120-vector test remains a control.
+The other six domains retain their existing finite certificates.
+
+
+
 Here v,w are a single named outside state, relabeled 5. Every underlying
 partial row of every allowed profile for either surviving C_V vector
 maps C into C. This is incompatible with strong connectivity for n>=6.
@@ -28477,7 +28492,7 @@ Since |R4|>=5, equality is necessary. Testing its core holes gives:
   domain is D_w, where w=g^-1(0) is outside C;
 * V has h=4 and domain C_V.
 
-All these five-member domains are excluded by the projections above.
+C_T is excluded by the paper five-cycle lemma; the other five-member domains retain their finite exclusions.
 This exhausts every alphabet and proves the claim.
 
 <a id="problem4-type7-early-exclusion--audit-records"></a>
