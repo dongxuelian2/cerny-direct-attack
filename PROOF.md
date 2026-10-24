@@ -28474,6 +28474,50 @@ projection is now an independent control. A full-map
 check for n=6,7,8 is in
 scripts/problem4/check_type7_six_core.py.
 
+<a id="problem4-type7-six-tmix-single-exit"></a>
+**Mixing-T six-hole domain: classification of the single-exit exception.**
+Let v lie outside C={0,1,2,3,4}, write v=5, and put
+
+    D={024,124,034,134,025,125}.
+
+Assume every letter is a permutation or a defect-one map whose
+unique kernel class is {0,1}; for permutation letters also assume
+the type-7 early-pair condition f({0,1})={0,1} or {2,3}.
+Then a letter with exactly one exit from D must be a permutation
+mapping {0,1} onto {2,3}, preserving {0,1,2,3,4,5}, and restricting
+on the six displayed states to one of the eight rows
+
+    (2,3,0,1,4,5), (2,3,1,0,4,5),
+    (3,2,0,1,4,5), (3,2,1,0,4,5),
+    (2,3,4,5,0,1), (2,3,4,5,1,0),
+    (3,2,4,5,0,1), (3,2,4,5,1,0).
+
+For any singular letter, the holes come in the twin pairs
+(024,124), (034,134), (025,125); each twin pair has the
+same image hole, so the exit count is even. The same parity
+holds for a permutation mapping {0,1} onto itself, since
+the two distinct images in each twin pair either both
+belong to D or both leave D.
+
+For a permutation with f({0,1})={2,3}, having five of
+six image holes remain in D forces f to preserve the
+six-point core C union {v}: any five of the D-holes have
+union equal to that core, and their five image holes do too.
+Within this six-point core, testing the image of each of
+the six displayed triples gives precisely the eight rows.
+This last six-point check is finite; the corresponding
+all-state verification is in
+scripts/problem4/check_type7_six_tmix_single_exit.py.
+
+The two shapes have different behavior: the first four
+fix {4,5} and interchange {0,1} with {2,3}; the latter
+four exchange {0,1} with {4,5}. Their sole exit can be
+one of the holes indexed 2,3,4,5, never the first twin
+pair 024,124. Thus the general two-exit counting
+argument does not establish a five-letter exit bound
+for this domain. The complete 39-profile / 720-vector
+proof remains in force for D6Tmix.
+
 <a id="problem4-type7-six-amix-exit"></a>
 **Six-hole mixing-A path lemma (paper).**
 Let v be outside C={0,1,2,3,4}, and set
