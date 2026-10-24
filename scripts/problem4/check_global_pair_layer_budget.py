@@ -76,6 +76,24 @@ def verify(letters):
             incident = {edge for edge in G if any(v in edge for v in entered)}
             present_incident = {edge for edge in incident if set(edge) <= image}
             hole_incident = {edge for edge in incident if set(edge) & missing}
+            # Every entered support vertex of degree >= 2 needs either
+            # a missing neighboring output or at least two terminal edges.
+            # At e=h the terminal set is a singleton. A permutation can
+            # therefore enter only a degree-one vertex; defect-one letters
+            # entering a degree-two vertex must omit its other neighbor.
+            for v in entered:
+                neighbors = {w for w in range(n) if tuple(sorted((v, w))) in G}
+                forced = {w for w in neighbors if tuple(sorted((v, w))) not in late}
+                assert forced <= missing
+                if len(G) == h:
+                    assert len(neighbors) <= 2
+                    if len(neighbors) == 2:
+                        assert len(missing) == 1
+                        assert forced == missing
+                    if not missing:
+                        assert len(neighbors) == 1
+            if len(G) == h and not missing:
+                assert all(sum(v in edge for edge in G) == 1 for v in entered)
             assert present_incident <= late
             assert incident <= late | hole_incident
             if len(G) == h:
