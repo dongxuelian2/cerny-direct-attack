@@ -2433,7 +2433,7 @@ that fail to extend at a particular small n only enlarge the graph.
 | 4 | 02 | 34 | [Disjoint-tail early-type-4 exclusion at codimension three](#problem4-type4-early-exclusion): two k=6 domains, 33,37 profiles, 720 vectors each, no survivors. This case requires synchronization alone. |
 | 5 | 23 | 02 | [Crossing early-type-5 exclusion](#problem4-type5-early-exclusion): a letter creating 02 necessarily creates the forbidden pair 12 as well, or violates inverse-pair disjointness. No projection is needed. |
 | 6 | 23 | 04 | [Kernel-tail early-type-6 exclusion at codimension three](#problem4-type6-early-exclusion): the five-hole closed-II domain is excluded on paper by a single-exit lemma; other branches use symbolic domains of size at most four. The 19-profile / 120-vector check is now a control. |
-| 7 | 23 | 24 | [Second-pair-tail early-type-7 exclusion at codimension three](#problem4-type7-early-exclusion): three k=6 and four k=5 domains, 21,39,37 and 27,23,23,33 profiles. Only C_V has two surviving vectors; both its B four-cycle and closed B two-cycle uses now have paper exit lemmas. The finite vectors remain controls. |
+| 7 | 23 | 24 | [Second-pair-tail early-type-7 exclusion at codimension three](#problem4-type7-early-exclusion): three k=6 and four k=5 domains, 21,39,37 and 27,23,23,33 profiles. Only C_V has two surviving vectors. The paper pendant-cycle lemma excludes C_A and both uses of C_V; the six-image domains and D_w retain finite certificates. |
 | 8 | 23 | 45 | [Excluding three disjoint early pairs at tight codimension-three compression](#problem4-matching-early-exclusion): eight images, 177 profiles. All 30,240 possible finite vectors with initial distance at least seven fail. No strong-connectivity hypothesis is needed in this case. |
 
 All cases contradict compression length ten. This proves the theorem.
@@ -28335,139 +28335,82 @@ forces an exit within four letters. As C_T is fully reached
 through depth four and defined by tests of at most two letters,
 an exit plus a P3 merger compresses in at most 4+2+3=9 letters.
 The historical 23-profile / 120-vector test remains a control.
-The other five domains retain their existing finite certificates.
+The remaining four type-7 domains (three six-image domains and D_w) retain their finite certificates.
 
-**Four-cycle exit lemma (paper): the B four-cycle / C_V subcase.**
-Let C={0,1,2,3,4}, n>=6, and name the five holes
+<a id="problem4-type7-pendant-four-cycle"></a>
+**Four-cycle with a pendant edge: a uniform four-letter exit lemma.**
+Let C={0,1,2,3,4}. Define four three-point holes
 
-    X0=023, X1=024, X2=124, X3=034, X4=134.
+    X1=024, X2=124, X3=034, X4=134,
 
-Suppose an automaton is synchronizing, every letter is a permutation
-or a rank-(n-1) transformation with sole nontrivial kernel class {0,1},
-and its alphabet contains the permutation b whose restriction to C is
+and let X0 be either 012 or 023. Put D={X0,...,X4}.
+Consider a synchronizing automaton in which every letter is a permutation
+or a rank-(n-1) map whose sole nontrivial kernel class is {0,1}.
+Suppose an original letter b sends the image represented by X0
+outside D. Then every D-hole has an exit from D in at most four letters.
 
-    b=(2,3,1,0,4).
+*Proof.* Synchronization gives each D-hole a finite shortest exit
+distance d(X). Suppose d(X)=5 for some X. Along a shortest five-letter
+exit word, the five successive holes still inside D are distinct and
+have distances 5,4,3,2,1. They exhaust D. Since X0.b is outside D,
+d(X0)=1; consequently the four holes in U={X1,X2,X3,X4} have
+distances 2,3,4,5. In particular no original letter sends a U-hole
+directly outside D.
 
-Then every X_i has an exit from D={X0,...,X4} of length at most four.
-No compatibility enumeration or strong-connectivity hypothesis is needed
-for this exit lemma.
+Let f be any permutation letter. Since f(U) is contained in D,
+and the union of the four U-holes is C, we have f(C)=C.
+The complementary edges C\\Xi for i=1,...,4 are
 
-*Proof.* On holes the letter b acts as
+    13, 03, 12, 02,
 
-    X0 -> 012 (EXIT);
-    X1 -> X2 -> X4 -> X3 -> X1.
+forming a four-cycle on {0,1,2,3}. The fifth complementary edge
+C\\X0 is either 34 or 14, a pendant edge incident with vertex 4.
+Thus the five-edge graph has exactly one four-cycle.
+The four distinct complementary edges of the holes f(U) also form
+a four-cycle, hence coincide with the four edges of U.
+Therefore every permutation letter maps U onto U.
 
-Put U={X1,X2,X3,X4}. If any letter f sends a member of U outside
-D, every U-member reaches that hole in at most three powers of b,
-and then f exits; the exit length is at most four.
+For a singular letter f, write e for its unique omitted output.
+Each U-hole contains exactly one endpoint of the kernel pair {0,1},
+and direct complementation of its rank-(n-3) image gives
 
-Suppose instead that f sends all of U into D. If f is a
-permutation, the union of the four holes of U is C, so f(C)
-is contained in C and hence equals C. The complementary pairs
-C\\X_i for X_i in U are 13,03,12,02: a four-cycle on
-{0,1,2,3}. The complementary pairs for the full D add only
-the pendant edge 14. This graph has exactly one four-cycle.
-A permutation maps four-cycles to four-cycles, so f(U)=U:
-no permutation with f(U) contained in D can send U to X0.
-
-If f is singular, let e be its unique omitted output. Each
-U-hole contains exactly one kernel point from {0,1}; hence
-its image hole is e together with the images of its two
-nonkernel points. In particular,
-
-    X1.f = X2.f = {e,f(2),f(4)};
+    X1.f = X2.f = {e,f(2),f(4)},
     X3.f = X4.f = {e,f(3),f(4)}.
 
-If f sends any U-hole to X0, it therefore sends one of
-the adjacent pairs {X1,X2} or {X3,X4} to X0. Every U-member
-reaches that pair in at most two b-steps, then f reaches X0,
-and one last b-step exits D. Again the exit costs at most four.
+The single U-hole at exit distance two must be sent to X0 by
+some letter, because X0 is the sole hole of exit distance one.
+No permutation can perform this transition. A singular letter
+performing it sends both members of one of the displayed twin pairs
+to X0. Both then have distance at most two, contradicting
+the distinct distances 2,3,4,5 on U. Hence distance five is
+impossible, proving the four-letter bound. QED.
 
-Consequently, unless every letter preserves U, each U-member
-exits D within four letters. If every letter preserves U,
-the four (n-3)-element images represented by U remain
-(n-3)-element images under every word, contradicting
-synchronization. Finally X0 exits immediately under b.
-This proves the lemma.
+**Type-7 applications.** The three uses below have the required
+b-letter, with the displayed effect on the pendant hole:
 
-For the type-7 B four-cycle b=(2,3,1,0,4), the defining
-b,bb-safe domain is precisely C_V=D and all its five
-images are reached within depth four. Exiting D fails
-a defining test of length at most two; the resulting
-H-exit supplies a P3 merging pair at cost at most three.
-The total compression cost is at most 4+2+3=9.
+| Subcase | Five-hole domain | b on C | Pendant exit |
+|---|---|---|---|
+| B four-cycle | C_V = 023,024,124,034,134 | (2,3,1,0,4) | 023 -> EXIT |
+| Closed B two-cycle, P_A/U_A | C_A = 012,024,124,034,134 | (2,3,0,1,4) | 012 -> EXIT |
+| Closed B two-cycle, V | C_V = 023,024,124,034,134 | (2,3,0,1,4) | 023 -> EXIT |
 
-The full-transformation control is
-scripts/problem4/check_type7_four_cycle_exit.py. It checks
-all permutations and all defect-one maps with sole kernel
-{0,1} for n=6,7,8, without filtering by P2/P3 compatibility.
-The companion B two-cycle case follows from a second paper argument below.
+Both C_A breaker subtypes, P_A and U_A, yield the *same* five-hole
+domain and use the same b. Each domain is fully reached by depth four
+and defined by tests of length at most two. Therefore a first exit
+in at most four letters, its failed defining test, and a P3 merge
+give compression in at most 4+2+3=9 letters.
 
-**Closed B two-cycle / V exit lemma (paper).**
-Retain the type-7 early-pair restrictions
-P1={01}, P2={01,23}, P3={01,23,24}. Suppose the alphabet contains
-a B two-cycle b=(2,3,0,1,4) on C and a V letter g with
-omitted output 2 and core row (c,c,1,0,4), where c=3 or c is outside C.
-The missing-output action of g does not depend on c.
-On the same D=(X0,...,X4) the two prescribed letters act as
+This single paper argument replaces the C_A 27-profile / 120-vector
+check and both C_V 23-profile / 120-vector uses. The earlier
+independent projections remain computational controls. The literal
+full-transformation control
+scripts/problem4/check_type7_pendant_cycle.py tests both domains and
+both b-variants for n=6,7,8 without imposing P2/P3 compatibility.
 
-    b: X0->EXIT, X1->X1, X2<->X3, X4->X4;
-    g: X0->EXIT, X1->X2, X2->X2, X3->X1, X4->X1.
-
-Every X_i exits D within four original letters.
-
-*Proof.* Put U={X1,X2,X3,X4} and A={X1,X2,X3}.
-The paths X1 -g-> X2 -b-> X3 -g-> X1 form a directed
-three-cycle, and X4 -g-> X1. Thus every member of U can reach
-any prescribed member of A within three letters from {b,g}.
-If some original letter f sends an A-member outside D, every
-U-member exits in at most 3+1=4 letters.
-
-Next suppose f sends all U into D but sends one of its holes
-to X0. The unique-four-cycle argument from the preceding lemma
-excludes this for permutations. For singular f, the twin identities
-X1.f=X2.f and X3.f=X4.f apply. A twin pair is sent to X0.
-From every U-member, the pair {X1,X2} can be reached in
-at most one {b,g}-step; the pair {X3,X4} in at most two.
-Appending f and then b exits within at most 2+1+1=4 letters.
-
-It remains to show that no compatible letter can leave D
-*only from X4* while preserving the other three U-holes.
-For singular letters X3.f=X4.f, so an X4 exit also exits X3.
-For a permutation, if X1.f, X2.f, X3.f all belong to D,
-then f(C)=C because X1 union X2 union X3=C.
-The type-7 inverse-pair restrictions classify the core permutation
-row as one of
-
-    A: (k0,k1,l0,l1,4),
-    B: (l0,l1,k0,k1,4),
-    T: (k0,k1,l0,4,l1),
-
-where {k0,k1}={0,1} and {l0,l1}={2,3}.
-Rows A and B permute U internally. For row T, the two images
-X1.f and X2.f are {k0,2,3} and {k1,2,3}; one is X0=023
-and the other is 123 outside D. Hence a T row exits at
-X1 or X2. The alleged sole X4 exit cannot occur.
-
-If no letter exits from A and no letter carries U into X0,
-the preceding paragraph also excludes any X4 exit, so all
-letters preserve U. This contradicts synchronization, since
-the images of the four U-holes keep cardinality n-3 forever.
-Therefore an A exit or a twin-pair passage through X0 exists,
-and both alternatives give the four-letter bound.
-
-In the type-7 closed B two-cycle case, the equality domain
-for the V breaker is exactly C_V=D, and its defining tests have
-length at most two. The same 4+2+3=9 compression argument
-excludes this remaining C_V occurrence. Both uses of C_V
-now have paper proofs, replacing its 23-profile / 120-vector
-exit-distance search. The historical projection stays as
-an independent computational control.
-
-Here v,w are a single named outside state, relabeled 5. The historical
-C_V projection has two numerical surviving vectors, and all their
-allowed underlying rows preserve C. The paper lemmas now exclude both
-uses of C_V directly, with the numerical observation as a control.
+Here v,w are named outside states, relabeled 5 when appropriate. The
+historical C_V projection has two surviving numerical vectors, each
+forcing a five-state invariant core. The uniform pendant-cycle lemma
+now excludes both C_V applications and C_A on paper.
 Consequently first exit from a six-member domain occurs by length five,
 and first exit from a five-member domain occurs by length four. The
 charges are respectively 5+1+3=9 and 4+2+3=9.
@@ -28526,9 +28469,9 @@ latter case a simultaneous exchange of labels 0,1 normalizes it to
 
     b=(2,3,1,0,a), a>=4.
 
-For a=4 the b,bb domain is C_V. The four-cycle exit lemma above
-gives a paper exclusion: every C_V image exits in at most four letters,
-and a failed defining test plus P3 merger compresses within nine.
+For a=4 the b,bb domain is C_V. The
+[pendant-cycle lemma](#problem4-type7-pendant-four-cycle)
+gives a four-letter exit bound and compression within nine.
 For a>=5 put v=b^-1(4). The domain is
 
     a=v:  {023,034,024};
@@ -28620,7 +28563,10 @@ Since |R4|>=5, equality is necessary. Testing its core holes gives:
   domain is D_w, where w=g^-1(0) is outside C;
 * V has h=4 and domain C_V.
 
-C_T is excluded by the five-cycle lemma and C_V by the two-cycle/V lemma; the other five-member domains retain their finite exclusions.
+C_T follows from the five-cycle lemma. C_A (both P_A and U_A cases)
+and C_V (the V case) follow from the
+[pendant-cycle lemma](#problem4-type7-pendant-four-cycle).
+The remaining D_w case retains its finite exclusion.
 This exhausts every alphabet and proves the claim.
 
 <a id="problem4-type7-early-exclusion--audit-records"></a>
