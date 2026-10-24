@@ -30,7 +30,7 @@ bool fourteen_core(const Graph& g, vector<unsigned>& rows) {
 // Count terminal-edge orbits rather than individual labelled edges.
 // These counts concern necessary graph/layer signatures, not automata.
 struct TightEdgeOrbits {
-    int total=0, excluded=0, restricted=0;
+    int total=0, excluded_leafless=0, excluded_clique_pair=0, restricted=0;
 };
 TightEdgeOrbits tight_edge_orbits(const Graph& g) {
     assert(g.n>=5 && g.n<=8);
@@ -75,11 +75,25 @@ TightEdgeOrbits tight_edge_orbits(const Graph& g) {
     } while(next_permutation(perm.begin(),perm.end()));
     TightEdgeOrbits result;
     bool leafless=all_of(degree.begin(),degree.end(),[](int d){return d>=2;});
+    // Paper lemma (GLB-cut): a K4 component is invariant if the other
+    // component is K2 and the sole terminal edge lies inside K4.
+    pair<int,int> isolated_edge{-1,-1};
+    if(g.n==6) for(auto edge:edges)
+        if(degree[edge.first]==1 && degree[edge.second]==1) {
+            bool clique=true;
+            for(auto [x,y]:pairs)
+                if(x!=edge.first && x!=edge.second &&
+                   y!=edge.first && y!=edge.second && !g.edge(x,y))
+                    clique=false;
+            if(clique) isolated_edge=edge;
+        }
     for(int i=0;i<int(edges.size());++i) if(root(i)==i) {
         ++result.total;
         auto [x,y]=edges[i];
         if(degree[x]>=3 && degree[y]>=3) {
-            if(leafless)++result.excluded;
+            if(leafless)++result.excluded_leafless;
+            else if(isolated_edge.first>=0 && edges[i]!=isolated_edge)
+                ++result.excluded_clique_pair;
             else ++result.restricted;
         }
     }
@@ -171,7 +185,8 @@ int main(int argc,char**argv) {
         auto kept=accumulate(accepted.begin(),accepted.end(),uint64_t(0));
         total+=checked;retained+=kept;classes+=cores.size();
         map<pair<int,int>,int> profile;
-        int tight_cores=0, terminal_orbits=0, excluded_orbits=0, restricted_orbits=0;
+        int tight_cores=0, terminal_orbits=0, excluded_leafless=0,
+            excluded_clique_pair=0, restricted_orbits=0;
         for(uint64_t mask:cores) {
             Graph g{n,mask};vector<unsigned> rows;assert(fourteen_core(g,rows));
             int rank=rank_rows(rows,n);++profile[{rank,rows.size()}];
@@ -179,7 +194,8 @@ int main(int argc,char**argv) {
                 auto stats=tight_edge_orbits(g);
                 ++tight_cores;
                 terminal_orbits+=stats.total;
-                excluded_orbits+=stats.excluded;
+                excluded_leafless+=stats.excluded_leafless;
+                excluded_clique_pair+=stats.excluded_clique_pair;
                 restricted_orbits+=stats.restricted;
             }
             if(actions || control) {
@@ -201,9 +217,10 @@ int main(int argc,char**argv) {
         }
         if(edge_orbits)cout<<"TIGHT_TERMINAL_ORBITS n="<<n
             <<" cores="<<tight_cores<<" total="<<terminal_orbits
-            <<" excluded_leafless_high_degree="<<excluded_orbits
+            <<" excluded_leafless_high_degree="<<excluded_leafless
+            <<" excluded_clique_pair="<<excluded_clique_pair
             <<" restricted_leafy_high_degree="<<restricted_orbits
-            <<" unresolved="<<terminal_orbits-excluded_orbits<<'\n';
+            <<" unresolved="<<terminal_orbits-excluded_leafless-excluded_clique_pair<<'\n';
         cout<<"COMPLETE n="<<n<<" degree_bounded_graphs="<<checked
             <<" retained_labelled="<<kept<<" classes="<<cores.size()<<'\n';
         for(auto[key,count]:profile)
