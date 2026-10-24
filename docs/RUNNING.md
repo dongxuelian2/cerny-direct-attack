@@ -111,6 +111,25 @@ See the [quadratic theorem](../PROOF.md#problem4-quadratic-exit-sparsification),
 [rank obstruction](../PROOF.md#problem4-real-safe-family-rank-barrier), and
 [protected-cover saturation](../PROOF.md#problem4-protected-cover-saturation).
 
+## Small controls for paper dependency replacements
+
+```sh
+python3 run.py script scripts/problem4/check_paper_rank_reductions.py
+python3 run.py script scripts/problem4/check_paper_family_reductions.cpp
+```
+
+This standard-library control reconstructs the displayed images from their
+holes, checks ranks and row relations by rational elimination, and applies
+the literal closed-T exit words. It includes the reachable, strongly connected
+synchronizing five-state example with pure compression length ten. The
+[uniform proofs](../PROOF.md#problem4-paper-dependency-reductions) provide
+the all-parameter conclusions. The C++17 control exhausts all 870,199 maps
+on six and seven states for the local balanced-bipartite and tight-clique
+conditions; it does not claim that these local maps realize short-pair layers.
+The historical `upper` task remains available for independent computational
+checks; its action/distance enumerations are no longer prerequisites for the
+codimension-three upper proof.
+
 ## Individual research sources
 
 The arbitrary-core-cycle rigidity proof has a C++17 word-level control and

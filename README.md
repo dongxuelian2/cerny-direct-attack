@@ -10,6 +10,7 @@
 
 - [论文源码](papers/problem4/main.tex)：余维四、五主定理、完整匹配构造、计算归约与覆盖表、唯一 K₄,₄ 松弛幸存域的纸面排除，以及小参数构造附录。
 - [论文主线与计算依据](PROOF.md#problem4-paper-synthesis)：各证明组成的入口、已有运行记录的范围和计算可信性依赖。
+- [计算依赖的纸面替代](PROOF.md#problem4-paper-dependency-reductions)：余维三九步上界的完整纸面证明，以及平衡完全二部图、唯一最大独立集和指定团核心的整类排除；余维四、五其余计算依赖仍保留。论文稿尚未展开这些替代证明。
 - [问题与全部当前边界](PROOF.md#problem)：完整成果表；[PROOF.md](PROOF.md)是唯一维护的数学研究正文。
 - [余维四精确值](PROOF.md#problem4-four-exact-eleven)与[余维五精确值](PROOF.md#problem4-five-exact-fourteen)：最终依赖链及全部参数的匹配。
 - [下界构造](PROOF.md#constructions)与[上界和有限归约](PROOF.md#upper)：一般方法和低余维基础。
