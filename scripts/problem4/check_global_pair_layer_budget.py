@@ -69,6 +69,24 @@ def verify(letters):
             image = set(f)
             missing = set(range(n)) - image
             assert len(missing) <= len(K)  # sum(fiber size - 1) <= #merged pairs
+            # The union of incident edges at *all* entered vertices
+            # has at most one nonterminal part: edges meeting a missing
+            # output. All remaining edges share the terminal-layer pool.
+            entered = {f[j] for j in isolated if f[j] in support}
+            incident = {edge for edge in G if any(v in edge for v in entered)}
+            present_incident = {edge for edge in incident if set(edge) <= image}
+            hole_incident = {edge for edge in incident if set(edge) & missing}
+            assert present_incident <= late
+            assert incident <= late | hole_incident
+            if len(G) == h:
+                assert len(late) == 1
+                assert len(missing) <= 1
+                if not missing:
+                    assert incident <= late
+                else:
+                    assert incident <= late | {
+                        edge for edge in G if set(edge) & missing
+                    }
             forbidden_outputs = set()
             for v in {f[j] for j in isolated if f[j] in support}:
                 degree = 0
