@@ -4223,7 +4223,7 @@ T_{\rm ent}=\bigcup_{\substack{a\in\Sigma,\ j\in J\\ja\in V}}
 现有余维四的 91 类核心与 10142 域的完整动态排除仍保持原证明依赖；
 (GLB) 目前不计作已消除其中任何一类。
 
-**独立有限控制。** \`scripts/problem4/check_global_pair_layer_budget.py\`
+**独立有限控制。** `scripts/problem4/check_global_pair_layer_budget.py`
 逐字面穷尽二至四状态的 66281 个有序二字母转移表，
 其中 52081 个同步；核对 34152 个非终止短对层及其第一、末层集合。
 25992 个层的全字母累计值严格大于各单字母对应累计值的最大值。
