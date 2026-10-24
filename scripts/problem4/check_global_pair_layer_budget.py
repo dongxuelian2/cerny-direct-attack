@@ -57,6 +57,42 @@ def verify(letters):
                     single_late.add(image)
             late.update(single_late)
             single_letter_bounds.append(len(single_first) + len(single_late))
+        # A G-isolated source cannot collide with another state: all
+        # directly merged pairs lie in K, which is contained in G.
+        # Entering a G-support vertex therefore forces every available
+        # neighbor edge to belong to the globally shared terminal set.
+        n = len(letters[0])
+        support = {x for edge in G for x in edge}
+        isolated = set(range(n)) - support
+        entry_edges = set()
+        for f in letters:
+            image = set(f)
+            missing = set(range(n)) - image
+            assert len(missing) <= len(K)  # sum(fiber size - 1) <= #merged pairs
+            forbidden_outputs = set()
+            for v in {f[j] for j in isolated if f[j] in support}:
+                degree = 0
+                for w in range(n):
+                    edge = tuple(sorted((v, w)))
+                    if edge not in G:
+                        continue
+                    degree += 1
+                    if w in image:
+                        assert edge in late
+                        entry_edges.add(edge)
+                    elif edge not in late:
+                        forbidden_outputs.add(w)
+                assert degree <= len(late) + len(missing)
+                assert degree <= len(G) - h + 2
+                if len(G) == h and not missing:
+                    assert degree == 1
+                    assert next(edge for edge in G if v in edge) in late
+            assert forbidden_outputs <= missing
+            if len(G) == h:
+                assert len(K) == 1 and len(late) == 1
+                assert len(missing) <= 1
+        assert entry_edges <= late
+        assert len(K) + len(entry_edges) <= len(G) - h + 2
         assert K.isdisjoint(late)
         assert all(any(d[p] == j for p in G) for j in range(2, h))
         assert len(K) + len(late) <= len(G) - h + 2
