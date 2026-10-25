@@ -145,6 +145,30 @@ def run():
                             inequalities += 1
     assert checked > 200 and inequalities > 100
     print(f"PASS real DFAs: {checked} SC synchronizing tables; {inequalities} inequalities")
+    # Synchronizing automata without strong connectivity: the rank budget
+    # still holds whenever no reset row belongs to the safe-family span.
+    sync_only = sync_only_checks = 0
+    for vals in product(range(3), repeat=6):
+        alphabet = (vals[:3], vals[3:])
+        if strongly_connected(3, alphabet):
+            continue
+        if any(compression(3, alphabet, frozenset(p)) is None
+               for p in combinations(range(3), 2)):
+            continue
+        sync_only += 1
+        cmax = max(compression(3, alphabet, frozenset(I))
+                   for I in combinations(range(3), 2))
+        for h in range(1, 4):
+            edges = short_pair_graph(3, alphabet, h)
+            for a in range(3):
+                family = safe_word_family(3, 2, edges, alphabet, a)
+                r = rank(family, 3)
+                if r < 3 and all(rank(family + [frozenset((q,))], 3) > r
+                                     for q in range(3)):
+                    assert cmax <= h + a + r
+                    sync_only_checks += 1
+    assert sync_only_checks > 0
+    print(f"PASS reset-free synchronization-only: {sync_only} non-SC tables, {sync_only_checks} inequalities")
 
 
 if __name__ == "__main__":
