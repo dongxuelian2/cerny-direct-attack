@@ -4651,7 +4651,7 @@ V_t(S)=\operatorname{span}\{\chi_SD_u:|u|\le t\},\qquad d_t=\dim V_t(S).
 \(\chi_A+\chi_D=\chi_B+\chi_C\)；
 两条独立的集合翻转发生在不相交的坐标块上。
 
-**一步双出口定理。** 当 \(R=\rho_{h,0}(s)<n\)，
+**一步双出口定理。** 当 \(3\le R=\rho_{h,0}(s)<n\)，
 存在两个原字母 \(a,b\) 满足 \(S,Sa,Sb\)
 是三个两两不同的 \(s\)-集时，\(d_1\ge3\)，
 由 (SWR10) 推出
