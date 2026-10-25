@@ -94,6 +94,11 @@ def main():
                 assert (rank == 5) == (orbit[0] not in unique_matching)
             if rank <= 5:
                 assert rank == 5
+                # Adding an isolated state preserves the five-dimensional
+                # independent-set span predicted by the paper argument.
+                expanded_rank = exact_rank(
+                    independent_rows([e for e in edges if e != orbit[0]], 12), 12)
+                assert expanded_rank == 5, (core_index, orbit[0], expanded_rank)
                 good += 1
         counts[n][0] += len(orbits)
         counts[n][1] += good
