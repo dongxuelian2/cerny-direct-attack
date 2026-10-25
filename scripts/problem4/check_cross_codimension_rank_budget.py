@@ -98,6 +98,42 @@ def run():
     for n in (7, 8, 11):
         F = safe_word_family(n, n - 4, graph, (), 0)
         assert len(F) == 8 and rank(F, n) == 5
+    # An (i+1)-dimensional span of equal-weight Boolean rows contains at
+    # most 2**i distinct rows. For i=1 the row is unique beyond its seed;
+    # for i=2 four rows necessarily form a disjoint-swap rectangle.
+    cube_tests = rectangle_tests = 0
+    for m in (3, 4):
+        n_cube = 2 * m + 2
+        cube = [frozenset([2 * j + bit for j, bit in enumerate(bits)] +
+                          [2 * m, 2 * m + 1])
+                for bits in product((0, 1), repeat=m)]
+        for dim in (1, 2):
+            for idx in combinations(range(len(cube)), dim + 1):
+                basis = [cube[j] for j in idx]
+                if rank(basis, n_cube) != dim + 1:
+                    continue
+                section = [x for x in cube
+                           if rank(basis + [x], n_cube) == dim + 1]
+                assert len(section) <= (1 << dim)
+                cube_tests += 1
+                if dim == 1:
+                    assert len(section) == 2
+                elif len(section) == 4:
+                    a, b, c, d = section
+                    rows = [[int(k in x) for k in range(n_cube)]
+                            for x in (a, b, c, d)]
+                    assert any(all(rows[i][k] + rows[j][k] ==
+                                   rows[p][k] + rows[q][k]
+                                   for k in range(n_cube))
+                               for (i, j), (p, q) in
+                               (((0, 1), (2, 3)),
+                                ((0, 2), (1, 3)),
+                                ((0, 3), (1, 2))))
+                    rectangle_tests += 1
+    forced = {(0, 1), (2, 3), (4, 5), (6, 7), (0, 8)}
+    assert rank(safe_word_family(9, 5, forced, (), 0), 9) == 4
+    print(f"PASS Boolean affine sections: {cube_tests} independent bases, "
+          f"{rectangle_tests} rectangles; unmatched-neighbor rank 4")
     print("PASS synthetic rank families: m=3 matching 4; m=4 double triangle 5")
     # Seven representative eight-vertex, seven-edge tight cores from the
     # established graph atlas classification; no solver is used for this check.
@@ -137,6 +173,26 @@ def run():
                            for I in combinations(range(n), s))
                 for h in range(1, 4):
                     edges = short_pair_graph(n, alphabet, h)
+                    family0 = safe_word_family(n, s, edges, alphabet, 0)
+                    r0 = rank(family0, n)
+                    if r0 < n:
+                        for I in combinations(range(n), s):
+                            start = frozenset(I)
+                            distance = compression(n, alphabet, start)
+                            for t in (1, 2):
+                                if distance <= h + t:
+                                    continue
+                                all_rows = {start}
+                                frontier = {start}
+                                for _ in range(t):
+                                    frontier = {image(J, f)
+                                                for J in frontier for f in alphabet}
+                                    all_rows |= frontier
+                                d = rank(all_rows, n)
+                                assert d <= r0
+                                assert distance <= h + t + r0 - d + 1
+                                if t == 1 and len(all_rows) >= 3:
+                                    assert distance <= h + r0 - 1
                     for a in (0, 1, 2):
                         family = safe_word_family(n, s, edges, alphabet, a)
                         r = rank(family, n)
