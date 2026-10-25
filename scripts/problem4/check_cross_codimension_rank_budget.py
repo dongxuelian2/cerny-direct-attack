@@ -99,6 +99,26 @@ def run():
         F = safe_word_family(n, n - 4, graph, (), 0)
         assert len(F) == 8 and rank(F, n) == 5
     print("PASS synthetic rank families: m=3 matching 4; m=4 double triangle 5")
+    # Seven representative eight-vertex, seven-edge tight cores from the
+    # established graph atlas classification; no solver is used for this check.
+    eight_core_edges = (
+        "01 15 16 27 36 45 56",
+        "07 12 23 25 36 45 56",
+        "01 07 12 13 14 36 45",
+        "04 12 13 14 25 26 57",
+        "01 07 13 14 26 36 45",
+        "01 13 14 26 27 36 45",
+        "01 06 12 23 34 45 57",
+    )
+    for spec in eight_core_edges:
+        edge_set = {tuple(map(int, edge)) for edge in spec.split()}
+        assert len(edge_set) == 7
+        family = safe_word_family(8, 4, edge_set, (), 0)
+        assert family and rank(family, 8) == 5
+        assert not safe_word_family(8, 5, edge_set, (), 0)
+        assert any(len(set().union(*chosen)) == 8
+                   for chosen in combinations(edge_set, 4))
+    print("PASS seven tight eight-vertex cores: tau=nu=4, rank 5")
 
     checked = inequalities = 0
     for n in (3, 4):
