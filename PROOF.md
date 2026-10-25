@@ -4444,6 +4444,128 @@ K_4\sqcup K_2,
 此外核对五、七、九、十一状态的标准 Černý 自动机全部非终止层。
 一般命题的依据是上述纸面证明，控制仅用于发现实现或边界错误。
 
+<a id="problem4-uniform-safe-word-rank-budget"></a>
+#### 统一的安全词秩预算：从余维三到余维四
+
+**纸面引理（任意余维、任意有限字母表）。** 设自动机有 \(n\) 个状态，强连通且同步；
+\(S\subseteq Q\) 且 \(|S|=s\ge2\)。对 \(h\ge1\)，令 \(P_h\) 为最短合并距离
+不超过 \(h\) 的点对图。对 \(a\ge0\)，定义 **共同 \(a\) 步安全族**
+
+\[
+\mathcal F_{h,a}(s)=
+\{I\subseteq Q: |I|=s,\;
+  |Iu|=s\text{ 且 }Iu\text{ 在 }P_h\text{ 中独立，对所有 }|u|\le a\}.
+\]
+
+令 \(\rho_{h,a}(s)=\dim_{\mathbb R}
+\operatorname{span}\{\chi_I:I\in\mathcal F_{h,a}(s)\}\)。
+若 \(\rho_{h,a}(s)<n\)，则对所有这样的 \(S\)，
+
+\[
+\boxed{c(S)\le h+a+\rho_{h,a}(s).}\tag{SWR1}
+\]
+
+这不是对未指定自动机的数值界：\(\rho_{h,a}\) 取决于实际字母表，
+并且定义中的词是原字母词；不得把不同单步规范模型的匿名孤点标签
+组合成可复合的词。
+
+**证明。** 记 \(r=\rho_{h,a}(s)<n\)，反设 \(c(S)\ge h+a+r+1\)。
+对任意 \(|w|\le r\) 和 \(|u|\le a\)，集合 \(Swu\) 尚未压缩，
+也不能包含一条 \(P_h\) 边，否则再用至多 \(h\) 个字母便在
+\(r+a+h<c(S)\) 步内压缩 \(S\)。因此每个 \(Sw\) 都属于
+\(\mathcal F_{h,a}(s)\)。在压缩之前，
+\(\chi_S D_w=\chi_{Sw}\)，从而
+\[
+ V_r=\operatorname{span}\{\chi_SD_w:|w|\le r\}
+ \subseteq\operatorname{span}\{\chi_I:I\in\mathcal F_{h,a}(s)\},
+ \qquad\dim V_r\le r.
+\]
+另一方面，\(V_{i+1}=V_i+\sum_{f\in\Sigma}V_iD_f\)；
+只要 \(V_i\) 未满，一次平台将使它对所有字母不变。
+同步词之后接任意状态的强连通路径，说明最终轨迹空间包含
+\(s e_q\) 对全部 \(q\in Q\)，即为 \(\mathbb R^Q\)。
+因此 \(\dim V_r\ge r+1\)（这里必须使用 \(r<n\)），矛盾。
+
+**任意测试词集版本。** 若 \(\mathcal W\) 是任意有限、非空的真实词集，
+令 \(a=\max_{u\in\mathcal W}|u|\)，并将上述安全条件只对
+\(u\in\mathcal W\) 量化，所得行空间秩记为 \(\rho_{\mathcal W}<n\)，则
+同一证明给出
+\[
+\boxed{c(S)\le h+a+\rho_{\mathcal W}.}\tag{SWR2}
+\]
+这允许直接将余维三证明中由指定测试词得到的五圈、六行域放入一个
+统一的维数框架；只有在域的符号分类已经证明完整时才使用其秩上界。
+
+**前缀—后缀兼容条件。** 写 \(\mathcal F_{h,0}(s)=\mathcal F\)，
+对一个真实词 \(u\) 定义
+\(\mathcal F(u)=\{I\in\mathcal F: |Iu|=s,\ Iu\in\mathcal F\}\)。
+(SWR2) 取 \(\mathcal W=\{\varepsilon,u\}\) 给出
+\[
+\operatorname{rank}\operatorname{span}\mathcal F(u)
+  \ge L-h-|u|
+\quad\text{若 }c(S)\ge L,\ L-h-|u|\in\{1,\ldots,n-1\}.\tag{SWR3}
+\]
+更强地，若 \(\mathcal W\) 同时列出全部实际原字母，
+\(\mathcal F_{\mathcal W}=\bigcap_{f\in\Sigma}\mathcal F(f)\)；
+必须对**共同源行族**取秩，而不是分别检查每个字母的秩并相加。
+对两字母及更长实际词可迭代取共同安全族，保留字母与孤点身份。
+
+**余维三的回代。** 若 \(P_3=3K_2\sqcup J\)，取 \(|S|=n-3\)。
+全部 \(P_3\)-独立的 \((n-3)\)-集恰好在三个不交边中各取一个端点，
+并包含全部孤点。其特征行空间由一个基行与三个独立端点差向量张成，
+故 \(\rho_{3,0}(n-3)=4\)。由 (SWR1) 得到
+\[
+\boxed{P_3=3K_2\sqcup J\quad\Longrightarrow\quad c(S)\le3+4=7.}\tag{SWR4}
+\]
+这恢复余维三 matching/type-8 的纸面结果；其他余维三类型并未由
+这个仅用 \(P_3\) 的全安全族秩界统一排除，它们还需相应的测试词域与分类。
+
+**余维四的直接代入与距离十一的剩余障碍。** 若
+\(c(S)\ge12\)、\(|S|=n-4\)、\(n\ge11\)，并且 \(\tau(P_7)=4\)，
+则 \(\mathcal F_{7,0}(n-4)\) 是全部最大独立集，(SWR1) 强迫
+\[
+\boxed{\rho_{7,0}\ge5,\qquad
+       \rho_{7,1}\ge4,\qquad
+       \rho_{7,2}\ge3,\qquad
+       \rho_{7,3}\ge2,\qquad
+       \rho_{7,4}\ge1.}\tag{SWR5}
+\]
+例如六点核心为两个三角形 \(012\)、\(345\) 与桥边 \(03\)，
+再附任意非空孤点时，最大独立集恰有八个，行秩为五；
+(SWR1) 取 \(h=7,a=0\) 仅给 \(c(S)\le12\)，尚差十一字界一步。
+要用此统一预算排除该候选，必须从真实字母作用再推出
+\(\rho_{7,a}\le4-a\) 对某个 \(0\le a\le4\)，与 (SWR5) 矛盾。
+这并非已证明的普遍不等式；特别在单步秩四仍可实现的局部
+字母模型中，不能仅凭 \(\rho_{7,0}=5\) 推断 \(\rho_{7,1}\le3\)。
+
+**共同孤点入口与词像秩。** 设 \(J\) 是 \(P_h\) 孤点集，
+\(U=Ju\cap(Q\setminus J)\)，并令
+\(\mathcal F_U=\{I\in\mathcal F:U\subseteq I\}\)。
+若 \(c(S)\ge L\) 且 \(t+|u|+h<L\)，则
+\(V_tD_u\) 由 \(\mathcal F_U\) 中的目标行张成。因此
+\[
+\boxed{
+\operatorname{rank}\operatorname{span}\mathcal F_U
+ \ge \min(t+1,n)-\bigl(n-\operatorname{rank}D_u\bigr).}\tag{SWR6}
+\]
+(SWR6) 对单字母、任意亏秩都成立；在七边紧层的
+\(|E(P_7)|=7\) 分支，字母亏秩至多一，取 \(t=3\)
+得到孤点入口至少三维，置换入口至少四维。
+这是对 (GLB-hole) 的另一项局部筛选，不替代全字母距离供应。
+对于长词 \(u\)，必须使用**实际复合变换** \(D_u\) 的亏秩；
+匿名孤点的单步代表不能用于计算 \(u^2\) 或 \(uv\)。
+
+**已核对的控制与证明依赖。** 
+\`scripts/problem4/check_cross_codimension_rank_budget.py\`
+以有理数消元复算三个不交边（\(n=6,7,11\)）的秩四、
+双三角桥核心（\(n=7,8,11\)）的秩五，
+再在 702 台真实的三、四状态强连通同步二字母自动机上用
+普通子集 BFS 核对 10177 条 (SWR1) 数值不等式。
+这些是小规模实现控制；(SWR1)–(SWR6) 的一般性来自上述纸面证明。
+此处新增的是跨余维的统一**证明预算公式**，不是
+\(F(n,n-m,r)\) 的精确通项，也不改变已完成的
+91 核心与 10142 命名域计算辅助排除的依赖状态。
+
 <a id="problem4-twelve-seventh-layer"></a>
 #### 十二步候选的七层覆盖分支
 
