@@ -157,6 +157,10 @@ check the four-step budget. These maps are not prescribed-P_h realizations.
 For arbitrary exception counts, it checks the Johnson triangle structure on
 all small unique-maximum graphs, eight clique-family templates, and 1,068
 admissible local maps forcing the kernel in a three-row far clique.
+The common-hole negative control has one row exit and a two-edge maximum-set
+image; it prevents reusing the five-row container classification with only
+four safe rows. Its unresolved branch is described in the
+[four-row obstacle](../PROOF.md#problem4-common-hole-four-row-obstacle).
 Its separate `--coverage` mode rebuilds all 4,658 existing cover-four cores,
 then uses the production domain generator and static filters for the selected
 unique-maximum branches: 521 cores, 7,960 raw domains, and 7,519 previously

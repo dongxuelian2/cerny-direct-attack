@@ -133,6 +133,22 @@ void cluster_templates(){
  cout<<"PASS complete forced-M->K local domains for k=3 J=0/1: "<<permutations<<" M-image permutations, "<<assignments
  <<" constrained outside assignments, "<<domains<<" admissible maps, all force u f=b f\n";
 }
+void common_hole_control(){
+ for(int j=0;j<=1;++j){TGraph g(7+j);
+  for(int a:vector<int>{0,4,5,6})for(int b:vector<int>{0,4,5,6})if(a<b)g.add(a,b);
+  for(int i=1;i<=3;++i)g.add(i,i+3);g.prepare();
+  TM J=j?128u:0,M=15u|J,A=14u|J,C1=28u|J,C2=42u|J,C3=70u|J;
+  assert(g.M==M&&g.exceptions.size()==3);vector<TM>D={A,C1,C2,C3};
+  vector<int>f={4,5,1,3,0,1,3};if(j)f.push_back(7);
+  set<TM>kernels;for(int x=0;x<g.n;++x)for(int y=x+1;y<g.n;++y)if(f[x]==f[y])kernels.insert((1u<<x)|(1u<<y));
+  assert((kernels==set<TM>{36u,72u}));int exits=0;
+  for(TM X:D){TM Y=timage(X,f);assert(tpc(Y)==g.alpha-1&&!g.edges(Y));exits+=find(D.begin(),D.end(),Y)==D.end();}
+  assert(exits==1&&timage(A,f)==C2&&timage(C1,f)==(M&~4u)&&timage(C2,f)==C2&&timage(C3,f)==C2);
+  assert(f[4]==0&&g.edges(timage(M,f))==2);
+  assert(timage(5u,f)==18u&&timage(3u,f)==48u&&timage(18u,f)==33u);
+ }
+ cout<<"PASS common-hole J=0/1 negative controls: one D exit with a center-to-common-point entrance and a two-edge M image; no short-pair realization inferred\n";
+}
 void word_budget_control(){
  TC inputs=1;for(int i=0;i<8;++i)inputs*=5;TC reachable=0,exact_four=0,unreachable=0;
  for(TC code=0;code<inputs;++code){TC z=code;int f[2][4];for(int a=0;a<2;++a)for(int x=0;x<4;++x){f[a][x]=z%5;z/=5;}
@@ -194,6 +210,7 @@ int main(int argc,char**argv){
  <<", M->La "<<m.to_La<<", M->Lb "<<m.to_Lb<<", good Lb orientations "<<m.lb_good<<", three-step-merger orientations "<<m.lb_three
  <<", M-fixed uncompressed/compressed Lb branches "<<m.lb_identity<<'/'<<m.lb_compressed<<"\n";
  cluster_templates();
+ common_hole_control();
  word_budget_control();
  cout<<"PASS actual local-map compositions give two/three-step mergers; the full reachable-container budget is four, requiring h>=4.\n"
  <<"Finite controls only: local maps need not realize G=P_h, and merger branches are proof-step negative controls, not theorem counterexamples.\n";
