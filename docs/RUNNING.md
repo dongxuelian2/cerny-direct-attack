@@ -117,6 +117,7 @@ See the [quadratic theorem](../PROOF.md#problem4-quadratic-exit-sparsification),
 python3 run.py script scripts/problem4/check_paper_rank_reductions.py
 python3 run.py script scripts/problem4/check_paper_family_reductions.cpp
 python3 run.py script scripts/problem4/check_single_edge_obstruction.cpp
+python3 run.py script scripts/problem4/check_two_exception_closure.cpp
 ```
 
 This standard-library control reconstructs the displayed images from their
@@ -135,6 +136,16 @@ six subsets without strong connectivity. The exhaustive binary domain through
 four states has no qualifying P_h and is explicitly reported as an empty
 applicability domain, rather than as successful instances of the bound.
 See the [general theorem and exchange structure](../PROOF.md#problem4-single-edge-obstruction).
+The two-exception control checks the single-edge image classification on all
+simple graphs through order six and exhausts 5,998,081 local transformations
+on twelve small representative graphs, including deleted isolated points.
+Its private-pair control enumerates all center-edge graphs for three private
+pairs and zero/one isolate. Among 1,183,488 four-row-safe local maps, every map
+leaving the proposed support causes at least two row exits; the third exception
+is deliberately allowed to be unsafe. These are local lemma controls rather
+than global short-pair graph realizations. See the
+[two-exception](../PROOF.md#problem4-two-exception-closure) and
+[disjoint-hole](../PROOF.md#problem4-disjoint-exchange-holes) proofs.
 The historical `upper` task remains available for independent computational
 checks; its action/distance enumerations are no longer prerequisites for the
 codimension-three upper proof.
