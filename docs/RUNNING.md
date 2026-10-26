@@ -118,6 +118,8 @@ python3 run.py script scripts/problem4/check_paper_rank_reductions.py
 python3 run.py script scripts/problem4/check_paper_family_reductions.cpp
 python3 run.py script scripts/problem4/check_single_edge_obstruction.cpp
 python3 run.py script scripts/problem4/check_two_exception_closure.cpp
+python3 run.py script scripts/problem4/check_three_exception_closure.cpp
+python3 run.py script scripts/problem4/check_three_exception_closure.cpp --coverage
 ```
 
 This standard-library control reconstructs the displayed images from their
@@ -146,6 +148,22 @@ is deliberately allowed to be unsafe. These are local lemma controls rather
 than global short-pair graph realizations. See the
 [two-exception](../PROOF.md#problem4-two-exception-closure) and
 [disjoint-hole](../PROOF.md#problem4-disjoint-exchange-holes) proofs.
+The three-exception control checks the single-edge classification on all
+33,867 labelled graphs through six vertices, then checks complete forced-image
+local domains on two hard-case cores with zero/one isolate. It retains the
+orientations that would give two/three-step mergers, so those proof steps
+have nonempty negative controls. Four-container transition tables independently
+check the four-step budget. These maps are not prescribed-P_h realizations.
+For arbitrary exception counts, it checks the Johnson triangle structure on
+all small unique-maximum graphs, eight clique-family templates, and 1,068
+admissible local maps forcing the kernel in a three-row far clique.
+Its separate `--coverage` mode rebuilds all 4,658 existing cover-four cores,
+then uses the production domain generator and static filters for the selected
+unique-maximum branches: 521 cores, 7,960 raw domains, and 7,519 previously
+dynamic domains. It runs no dynamic solver. Of the latter, 7,499 belong to
+the five-to-ten-point branch and 20 to the separate eleven-point branch.
+See the [three-exception theorem](../PROOF.md#problem4-three-exception-closure)
+and the [general Johnson-cluster theorem](../PROOF.md#problem4-exception-cluster-kernel).
 The historical `upper` task remains available for independent computational
 checks; its action/distance enumerations are no longer prerequisites for the
 codimension-three upper proof.
@@ -1168,6 +1186,12 @@ reran small independent controls and the single exception, without repeating
 the six-hour full run. The subsequent manuscript consolidation inspected
 existing completion records and compiled the paper; it did not repeat those
 research calculations.
+
+The later [two/three-exception paper reductions](../PROOF.md#problem4-three-exception-closure)
+replace the dynamic dependency for 7,499 of those 3,206,988 domains and for
+20 domains in the separate eleven-point branch. The `--coverage` control above
+reconstructs this overlap with the old domain definition; it does not repeat
+the historical dynamic run or alter its completion count.
 
 The completed full run used the older relaxation without the new pair-entrance
 condition. Current source enables that necessary condition in `--joint-sat`;
