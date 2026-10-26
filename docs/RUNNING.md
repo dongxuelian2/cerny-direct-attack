@@ -120,6 +120,8 @@ python3 run.py script scripts/problem4/check_single_edge_obstruction.cpp
 python3 run.py script scripts/problem4/check_two_exception_closure.cpp
 python3 run.py script scripts/problem4/check_three_exception_closure.cpp
 python3 run.py script scripts/problem4/check_three_exception_closure.cpp --coverage
+python3 run.py script scripts/problem4/commonhole_exit.cpp
+python3 run.py script scripts/problem4/commonhole_exit.cpp --coverage
 ```
 
 This standard-library control reconstructs the displayed images from their
@@ -159,9 +161,25 @@ all small unique-maximum graphs, eight clique-family templates, and 1,068
 admissible local maps forcing the kernel in a three-row far clique.
 The common-hole negative control has one row exit and a two-edge maximum-set
 image; it prevents reusing the five-row container classification with only
-four safe rows. Its unresolved branch is described in the
-[four-row obstacle](../PROOF.md#problem4-common-hole-four-row-obstacle).
-Its separate `--coverage` mode rebuilds all 4,658 existing cover-four cores,
+four safe rows. The [four-row obstacle](../PROOF.md#problem4-common-hole-four-row-obstacle)
+leads to the later two-layer resolution below.
+The common-hole exit control exhausts the local domains with one row exit
+on zero/one isolate (528 and 1,446 maps). It checks the entry normal forms,
+the protected-pair implication and the private-pair successor classification.
+A separate construction enumerates the local domains for k=2,...,5, with
+zero/one isolate, and checks the general versions of these implications.
+Ordinary pair BFS on actual Cerny automata checks the shortest-path closure
+lemma, including a nonclosed two-pair counterexample to dropping its hypothesis.
+See the [general common-hole double-exit theorem](../PROOF.md#problem4-common-hole-double-exit).
+The additional five-row control checks that an image of A in the extra row B
+has at least k preimages from D, and that keeping A in D allows at most one
+D exit. The two-layer proof uses the actual first image layer to exclude A
+mapping to B. Thus it covers the full named P9 domain, including a fifth
+P8-safe row, rather than assuming the two layers have the same safe family.
+The separate `--coverage` mode rebuilds only the common-hole core's 14 named
+domains and identifies the one covered domain (canonical core 2069024,
+local index 6); the other 13 remain outside this theorem.
+The three-exception program's `--coverage` mode rebuilds all 4,658 existing cover-four cores,
 then uses the production domain generator and static filters for the selected
 unique-maximum branches: 521 cores, 7,960 raw domains, and 7,519 previously
 dynamic domains. It runs no dynamic solver. Of the latter, 7,499 belong to
