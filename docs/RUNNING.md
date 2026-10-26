@@ -116,6 +116,7 @@ See the [quadratic theorem](../PROOF.md#problem4-quadratic-exit-sparsification),
 ```sh
 python3 run.py script scripts/problem4/check_paper_rank_reductions.py
 python3 run.py script scripts/problem4/check_paper_family_reductions.cpp
+python3 run.py script scripts/problem4/check_single_edge_obstruction.cpp
 ```
 
 This standard-library control reconstructs the displayed images from their
@@ -126,6 +127,14 @@ synchronizing five-state example with pure compression length ten. The
 the all-parameter conclusions. The C++17 control exhausts all 870,199 maps
 on six and seven states for the local balanced-bipartite and tight-clique
 conditions; it does not claim that these local maps realize short-pair layers.
+The single-edge control checks the equivalent graph conditions on every
+simple labelled graph through six vertices. Thirty explicit synchronizing
+strongly connected automata realize the prescribed P1 graphs; ordinary subset
+BFS checks 1,199 independent subsets. A separate three-letter example checks
+six subsets without strong connectivity. The exhaustive binary domain through
+four states has no qualifying P_h and is explicitly reported as an empty
+applicability domain, rather than as successful instances of the bound.
+See the [general theorem and exchange structure](../PROOF.md#problem4-single-edge-obstruction).
 The historical `upper` task remains available for independent computational
 checks; its action/distance enumerations are no longer prerequisites for the
 codimension-three upper proof.
