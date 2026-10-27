@@ -13,8 +13,8 @@
 - [计算依赖的纸面替代](PROOF.md#problem4-paper-dependency-reductions)：余维三九步上界的完整纸面证明；[单边障碍与一点交换结构](PROOF.md#problem4-single-edge-obstruction)给出任意余维的条件压缩界，统一加强多部图和删除匹配图族。余维四、五其余计算依赖仍保留，论文稿尚未展开这些替代证明。
 - [两例外闭合](PROOF.md#problem4-two-exception-closure)与[不交交换孔](PROOF.md#problem4-disjoint-exchange-holes)：统一移除十五类核心、196 个命名域的动态计算依赖；后一条件压缩界 `h+4` 适用于任意多个私人叶子对。
 - [三个例外的整支闭合](PROOF.md#problem4-three-exception-closure)：四步核约束给出一般界 `h+5`，与两例外定理合计替代余维五的 521 类核心、7519 个动态域。[任意例外数的容器闭合](PROOF.md#problem4-exception-container-closure)、[支撑逐点闭包](PROOF.md#problem4-exception-support-bootstrap)及[远例外团的核闭合](PROOF.md#problem4-exception-cluster-kernel)给出更一般的 Johnson 图判据；余维四、五全域仍含计算依赖。
-- [公共孔核心的完整纸面上界](PROOF.md#problem4-common-hole-complete-core)：P₇为K₄附三个私人叶子及任意孤点时，每个(n−4)集在十一字母内压缩。证明按后层删除行数分类，最后[私人删除行的三行族](PROOF.md#problem4-common-hole-one-deletion-B)由实际第一层的支撑闭合排除。该核心全部十四个命名域均已替代，与上述十五核心合计十六个完整核心、210个命名域；余维四其他核心仍含计算依赖。任意k、h的条件结果见[双退出](PROOF.md#problem4-common-hole-double-exit)、[星形路径](PROOF.md#problem4-common-hole-star-geodesics)及[后层核强迫](PROOF.md#problem4-common-hole-late-kernel)。
-- [双点最大部的八步入口](PROOF.md#problem4-doubleton-eighth-entry)：P₇为K₅删一边并附孤点时，缺边八步可合并的分支已有纸面十一字母上界；[单孤点删除行](PROOF.md#problem4-doubleton-one-deletion)又由共同集封闭排除。目标状态数范围还剩两种含额外核心删除行的P₈行族。
+- [公共孔核心的完整纸面上界](PROOF.md#problem4-common-hole-complete-core)：P₇为K₄附三个私人叶子及任意孤点时，每个(n−4)集在十一字母内压缩。证明按后层删除行数分类，最后[私人删除行的三行族](PROOF.md#problem4-common-hole-one-deletion-B)由实际第一层的支撑闭合排除。该核心全部十四个命名域均已替代。任意k、h的条件结果见[双退出](PROOF.md#problem4-common-hole-double-exit)、[星形路径](PROOF.md#problem4-common-hole-star-geodesics)及[后层核强迫](PROOF.md#problem4-common-hole-late-kernel)。
+- [K₅删边核心的完整纸面上界](PROOF.md#problem4-doubleton-complete-core)：P₇为K₅删一边并附至少两个孤点时，每个(n−4)集在十一字母内压缩。证明以[实际锚点及跨字母核对](PROOF.md#problem4-doubleton-actual-anchors)闭合全部残余行族，替代该核心十一域。连同上述分支，现明确覆盖十七个完整核心、221个命名域；余维四、五的其他计算依赖仍保留。
 - [问题与全部当前边界](PROOF.md#problem)：完整成果表；[PROOF.md](PROOF.md)是唯一维护的数学研究正文。
 - [余维四精确值](PROOF.md#problem4-four-exact-eleven)与[余维五精确值](PROOF.md#problem4-five-exact-fourteen)：最终依赖链及全部参数的匹配。
 - [下界构造](PROOF.md#constructions)与[上界和有限归约](PROOF.md#upper)：一般方法和低余维基础。
