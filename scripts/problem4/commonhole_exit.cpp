@@ -435,12 +435,61 @@ void one_deletion_controls(){
  }
  assert(all_maps&&all_next&&all_gate);
 }
+void last_common_hole_support_controls(){
+ for(int k=3;k<=5;++k)for(int j=0;j<=1;++j)for(int mode=0;mode<4;++mode){
+  int n=2*k+1+j;Mask J=j?(1u<<(2*k+1)):0,M=((1u<<(k+1))-1)|J,A=M&~1u,B=M&~2u;
+  std::vector<Mask>adj(n),C(k+1),F{A,B};auto add=[&](int a,int b){adj[a]|=1u<<b;adj[b]|=1u<<a;};
+  for(int a=0;a<=k;++a)for(int b=a+1;b<=k;++b)add(a?k+a:0,k+b);
+  for(int i=1;i<=k;++i){add(i,k+i);C[i]=(A&~(1u<<i))|(1u<<(k+i));F.push_back(C[i]);}
+  auto edges=[&](Mask X){int e=0;for(int a=0;a<n;++a)if(X>>a&1)e+=pc(adj[a]&X);return e/2;};
+  std::vector<Mask>E{B,C[1],C[2]},R1=mode<2?std::vector<Mask>{B,C[1]}:mode==2?std::vector<Mask>{C[1],C[2]}:std::vector<Mask>{B,C[2]};
+  std::vector<Mask>targets;for(Mask T=0;T<(1u<<n);++T)if(pc(T)==pc(M)&&edges(T)<=1)targets.push_back(T);assert(targets.size()==size_t(1+2*k));
+  Mask Z=M|(1u<<(k+1))|(1u<<(k+2));std::vector<int>source;for(int a=0;a<n;++a)if(M>>a&1)source.push_back(a);
+  std::vector<int>f(n,-1);Count kept=0,closed=0,first_stable=0;
+  for(Mask T:targets){std::vector<int>out;for(int a=0;a<n;++a)if(T>>a&1)out.push_back(a);
+   do{for(size_t a=0;a<source.size();++a)f[source[a]]=out[a];
+    if(edges(image(A,f))||std::find(F.begin(),F.end(),image(B,f))==F.end())continue;
+    for(int a=0;a<n;++a){f[k+1]=a;Mask C1f=image(C[1],f);if(std::find(F.begin(),F.end(),C1f)==F.end())continue;
+     for(int b=0;b<n;++b){f[k+2]=b;Mask C2f=image(C[2],f);if(std::find(F.begin(),F.end(),C2f)==F.end())continue;bool safe=true;
+      for(Mask R:R1)if(std::find(E.begin(),E.end(),image(R,f))==E.end())safe=false;
+      if(!safe)continue;
+      if(mode<2&&std::find(R1.begin(),R1.end(),image(R1[mode],f))==R1.end())continue;
+      ++kept;
+      if(mode<2){assert(image(B,f)!=C[2]&&C1f!=C[2]);++first_stable;}
+      else{assert(!(image(Z,f)&~Z));++closed;}
+     }
+    }
+   }while(std::next_permutation(out.begin(),out.end()));
+  }
+  assert(kept&&(closed||first_stable));
+  std::cout<<"PASS final common-hole support k="<<k<<" J="<<j<<" R1-mode="<<mode<<": partial Z maps="<<kept<<", first-family stable="<<first_stable<<", proper Z closed="<<closed<<"\n";
+ }
+}
+void complete_core_row_structure_control(){
+ for(int j=0;j<=2;++j){int n=7+j;Mask J=((1u<<j)-1)<<7,M=15u|J,A=M&~1u;std::vector<Mask>C{(A&~2u)|16u,(A&~4u)|32u,(A&~8u)|64u},all;
+  for(int a=0;a<n;++a)if(M>>a&1)all.push_back(M&~(1u<<a));all.insert(all.end(),C.begin(),C.end());
+  Count closed=0,two_deletions=0,D=0,one_A=0,one_B=0;
+  for(Mask choice=0;choice<(1u<<all.size());++choice){if(pc(choice)<3)continue;std::vector<Mask>F;for(size_t a=0;a<all.size();++a)if(choice>>a&1)F.push_back(all[a]);
+   auto has=[&](Mask X){return std::find(F.begin(),F.end(),X)!=F.end();};
+   auto cooccur=[&](Mask X){for(int a=0;a<n;++a)for(int b=a+1;b<n;++b)if((X>>a&1)&&(X>>b&1)){Mask P=(1u<<a)|(1u<<b);bool present=false;for(Mask R:F)present|=(R&P)==P;if(!present)return false;}return true;};
+   if(cooccur(M))continue;bool saturated=true;for(Mask X:all)if(cooccur(X)&&!has(X))saturated=false;if(!saturated)continue;++closed;
+   std::vector<Mask>holes;int exceptions=0;for(Mask R:F)if(!(R&~M))holes.push_back(M^R);for(Mask X:C)exceptions+=has(X);
+   assert(!holes.empty()&&holes.size()<=2);if(holes.size()==2){++two_deletions;continue;}
+   assert(exceptions>=2);
+   if(has(A)){if(exceptions==3)++D;else{assert(exceptions==2);++one_A;}}
+   else{assert(exceptions==2);Mask hole=holes[0];bool own=false;for(int i=0;i<3;++i)own|=hole==(1u<<(i+1))&&has(C[i]);assert(own);++one_B;}
+  }
+  assert(closed&&two_deletions&&D&&one_A&&one_B);
+  std::cout<<"PASS complete-core row structure J="<<j<<": pair-closed families="<<closed<<", two deletion rows="<<two_deletions<<", full D="<<D<<", A/two exceptions="<<one_A<<", private deletion/two exceptions="<<one_B<<"\n";
+ }
+}
 int main(int argc,char**argv){
 #ifdef NDEBUG
  std::cerr<<"Assertions must be enabled.\n";return 1;
 #endif
  if(argc==2&&std::string(argv[1])=="--star-controls"){star_pair_closure_control();tight_star_three_row_control();late_exception_kernel_control();return 0;}
  if(argc==2&&std::string(argv[1])=="--one-deletion-controls"){one_deletion_controls();return 0;}
+ if(argc==2&&std::string(argv[1])=="--final-support-controls"){last_common_hole_support_controls();complete_core_row_structure_control();return 0;}
  if(argc==2&&std::string(argv[1])=="--coverage"){
   Graph g{7,2069024};LowFamily family;assert(low_core(g,family,7));
   std::vector<std::vector<unsigned>>keys;auto counts=later_domains(g,family,true,&keys);
@@ -454,7 +503,7 @@ int main(int argc,char**argv){
   std::sort(geometric_D.begin(),geometric_D.end());
   assert(geometric_D==std::vector<unsigned>(covered.begin()+2,covered.end()));
   int selected=std::count(keys.begin(),keys.end(),covered);assert(selected==1);
-  std::vector<int>full_D,two_deletions,own_triangle,off_triangle,unmatched,isolate_star,one_A,all;
+  std::vector<int>full_D,two_deletions,own_triangle,off_triangle,unmatched,isolate_star,one_A,one_B,all;
   for(size_t at=0;at<keys.size();++at){const auto&key=keys[at];int z=key[0];Mask isolates=((1u<<z)-1)<<g.n,M=family.maximum[0]|isolates;
    std::vector<Mask>rows(key.begin()+2,key.end());bool contains_D=true;
    for(Mask R:geometric_D)contains_D&=std::find(rows.begin(),rows.end(),R|isolates)!=rows.end();
@@ -470,17 +519,19 @@ int main(int argc,char**argv){
    }
    if(has(A)&&exceptional>=1)for(int x=g.n;x<g.n+z;++x)isolated|=has(M&~(1u<<x));
    bool single_A=rows.size()==3&&has(A)&&exceptional==2&&holes.size()==1&&holes[0]==(1u<<v);
+   bool single_B=false;if(rows.size()==3&&!has(A)&&exceptional==2&&holes.size()==1)
+    for(int u=0;u<g.n;++u)if(pc(adj[u])==4&&(adj[u]&leaves)==holes[0])single_B|=has((A&~holes[0])|(1u<<u));
    if(contains_D)full_D.push_back(at);if(non_v_pair)two_deletions.push_back(at);if(own)own_triangle.push_back(at);if(off)off_triangle.push_back(at);if(other)unmatched.push_back(at);if(isolated)isolate_star.push_back(at);
-   if(single_A)one_A.push_back(at);if(contains_D||non_v_pair||own||off||other||isolated||single_A)all.push_back(at);
+   if(single_A)one_A.push_back(at);if(single_B)one_B.push_back(at);if(contains_D||non_v_pair||own||off||other||isolated||single_A||single_B)all.push_back(at);
   }
   assert(full_D==std::vector<int>({2,6,12}));assert(two_deletions==std::vector<int>({7,8,13}));
   assert(own_triangle==std::vector<int>({0,1,2}));assert(off_triangle==std::vector<int>({2,4}));assert(unmatched==std::vector<int>({3,4}));assert(isolate_star==std::vector<int>({10,11,12}));
-  assert(one_A==std::vector<int>({5}));assert(all==std::vector<int>({0,1,2,3,4,5,6,7,8,10,11,12,13}));
-  std::cout<<"PASS existing common-hole core mask=2069024: 14 complete named P9 domains; D at 2,6,12; non-v holes at 7,8,13; own triangle at 0,1,2; unmatched exception at 3,4; all off-index exceptions at 2,4; isolate star at 10,11,12; single-A family at 5; exactly 13 covered, only index 9 outside these results.\n";
+  assert(one_A==std::vector<int>({5}));assert(one_B==std::vector<int>({9}));std::vector<int>expected(14);std::iota(expected.begin(),expected.end(),0);assert(all==expected);
+  std::cout<<"PASS complete common-hole core mask=2069024: all 14 named P9 domains covered; final private-deletion family at 9, single-A family at 5; the paper whole-core theorem uses row structure rather than this finite inventory.\n";
   return 0;
  }
  assert(argc==1);
- local_control(0);local_control(1);general_common_hole_control();complete_next_layer_control();geodesic_control();layer_capacity_control();shared_hole_control();star_pair_closure_control();tight_star_three_row_control();late_exception_kernel_control();one_deletion_controls();
+ local_control(0);local_control(1);general_common_hole_control();complete_next_layer_control();geodesic_control();layer_capacity_control();shared_hole_control();star_pair_closure_control();tight_star_three_row_control();late_exception_kernel_control();one_deletion_controls();last_common_hole_support_controls();complete_core_row_structure_control();
  std::cout<<"Finite local controls only; no complete P7 realization or general-proof claim is inferred from the map counts.\n";
 }
 
