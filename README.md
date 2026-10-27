@@ -6,22 +6,16 @@
 
 一般 Černý 猜想与完整 Problem 4 尚未解决。已确定区域为全部 m≤5，以及 m≥6、q≤3m−1；剩余精确极值区域为 m≥6、q≥3m。`min(q,3m−1)` 在 m≥4 时的通项仍是猜想。
 
-## 从哪里读
+## 阅读路线
 
-- [论文源码](papers/problem4/main.tex)：余维四、五主定理、完整匹配构造、计算归约与覆盖表、唯一 K₄,₄ 松弛幸存域的纸面排除，以及小参数构造附录。
-- [论文主线与计算依据](PROOF.md#problem4-paper-synthesis)：各证明组成的入口、已有运行记录的范围和计算可信性依赖。
-- [计算依赖的纸面替代](PROOF.md#problem4-paper-dependency-reductions)：余维三九步上界的完整纸面证明；[单边障碍与一点交换结构](PROOF.md#problem4-single-edge-obstruction)给出任意余维的条件压缩界，统一加强多部图和删除匹配图族。余维四、五其余计算依赖仍保留，论文稿尚未展开这些替代证明。
-- [两例外闭合](PROOF.md#problem4-two-exception-closure)与[不交交换孔](PROOF.md#problem4-disjoint-exchange-holes)：统一移除十五类核心、196 个命名域的动态计算依赖；后一条件压缩界 `h+4` 适用于任意多个私人叶子对。
-- [三个例外的整支闭合](PROOF.md#problem4-three-exception-closure)：四步核约束给出一般界 `h+5`，与两例外定理合计替代余维五的 521 类核心、7519 个动态域。[任意例外数的容器闭合](PROOF.md#problem4-exception-container-closure)、[支撑逐点闭包](PROOF.md#problem4-exception-support-bootstrap)及[远例外团的核闭合](PROOF.md#problem4-exception-cluster-kernel)给出更一般的 Johnson 图判据；余维四、五全域仍含计算依赖。
-- [公共孔核心的完整纸面上界](PROOF.md#problem4-common-hole-complete-core)：P₇为K₄附三个私人叶子及任意孤点时，每个(n−4)集在十一字母内压缩。证明按后层删除行数分类，最后[私人删除行的三行族](PROOF.md#problem4-common-hole-one-deletion-B)由实际第一层的支撑闭合排除。该核心全部十四个命名域均已替代。任意k、h的条件结果见[双退出](PROOF.md#problem4-common-hole-double-exit)、[星形路径](PROOF.md#problem4-common-hole-star-geodesics)及[后层核强迫](PROOF.md#problem4-common-hole-late-kernel)。
-- [K₅删边核心的完整纸面上界](PROOF.md#problem4-doubleton-complete-core)：P₇为K₅删一边并附至少两个孤点时，每个(n−4)集在十一字母内压缩。证明以[实际锚点及跨字母核对](PROOF.md#problem4-doubleton-actual-anchors)闭合全部残余行族，替代该核心十一域。
-- [三角交换孔的三个纸面分支](PROOF.md#problem4-triangle-exchange-classification)：[Johnson外边界分离](PROOF.md#problem4-johnson-exterior-boundary)改善完整安全族计数界；[实际分量前缀](PROOF.md#problem4-johnson-component-prefix)与[单删除行的快对容量](PROOF.md#problem4-triangle-exchange-one-deletion)进一步闭合第三种行族。该核心仍有两种行族开放，完整命名域替代数保持223：十七个完整核心的221域，另加部分核心的两域。余维四、五全域仍含计算依赖。
-- [问题与全部当前边界](PROOF.md#problem)：完整成果表；[PROOF.md](PROOF.md)是唯一维护的数学研究正文。
-- [余维四精确值](PROOF.md#problem4-four-exact-eleven)与[余维五精确值](PROOF.md#problem4-five-exact-fourteen)：最终依赖链及全部参数的匹配。
-- [下界构造](PROOF.md#constructions)与[上界和有限归约](PROOF.md#upper)：一般方法和低余维基础。
-- [全状态循环类精确值](PROOF.md#problem4-full-cycle-exact)、[完整安全族退出稀疏化](PROOF.md#problem4-quadratic-exit-sparsification)、[大余维覆盖加强](PROOF.md#problem4-large-codimension-cover-improvement)：主定理以外的结构成果，适用范围各有明确限制。
-- [线性通项猜想](PROOF.md#problem4-linear-codimension-conjecture)：单保护点归约、余维六的 `[17,24]` 饱和值区间，以及同一自动机内部逐维递推的反例；没有反驳或证明全局通项。
-- [其他研究方向](PROOF.md#extension)与[探索记录](PROOF.md#exploration)：像扩张、秩核、重置字及受限观察。
+- [正式论文](papers/problem4/main.tex)：余维四、五精确值、匹配二字母构造、完整有限归约与计算证据。
+- [论文主线与计算依据](PROOF.md#problem4-paper-synthesis)：证明依赖、有限域覆盖与复现范围。
+- [共用结构机制](PROOF.md#problem4-shared-proof-mechanisms)：实际前缀严格增长、Johnson 邻接保持与支撑封闭；[前缀外边界](PROOF.md#problem4-johnson-prefix-exterior)、[计数界](PROOF.md#problem4-johnson-exterior-boundary)和[分量闭合](PROOF.md#problem4-johnson-component-prefix)作为多核心共用工具。
+- [余维三纸笔证明](PROOF.md#problem4-paper-dependency-reductions)：九步压缩上界；[单边障碍](PROOF.md#problem4-single-edge-obstruction)及[两例外](PROOF.md#problem4-two-exception-closure)、[三例外](PROOF.md#problem4-three-exception-closure)、[交换孔](PROOF.md#problem4-disjoint-exchange-holes)结构界。
+- [余维四核心归约](PROOF.md#problem4-common-hole-complete-core)：公共孔整核、[K₅删边整核](PROOF.md#problem4-doubleton-complete-core)和[三角交换孔](PROOF.md#problem4-triangle-exchange-classification)。十七个完整核心覆盖221个命名域，另有部分核心2域，共223域；三角交换孔仍有两种后层形状未闭合。
+- [余维五结构替代](PROOF.md#problem4-three-exception-closure)：521类核心、7,519个曾需动态检查的域已有纸笔替代；其他分支继续使用完整计算证明。
+- [全部参数与开放问题](PROOF.md#problem)：余维四、五精确值；[下界构造](PROOF.md#constructions)、[余维六界](PROOF.md#problem4-six-upper-twenty-four)与[线性通项猜想](PROOF.md#problem4-linear-codimension-conjecture)。
+
 
 论文整理沿用已完成计算，不要求重新运行大型枚举。完成日志说明执行范围，不能充当独立逐域证明证书；计算依赖和唯一松弛幸存者的处理在正文中明确说明。原始日志、生成库存和二进制不提交 Git。
 
