@@ -1,4 +1,4 @@
-// Finite local controls for the common-hole four-row paper argument.
+// Finite local controls for the common-hole paper arguments.
 // These local maps are not claimed to realize a complete P_7 graph.
 #include <algorithm>
 #include <array>
@@ -365,11 +365,82 @@ void late_exception_kernel_control(){
  assert(image(d.D[0],f)!=d.D[0]&&pc(image(18u,f))==2);
  std::cout<<"PASS own-index negative control: changing A need not merge its own private edge\n";
 }
+bool one_deletion_gate_compatible(const Domain&d,const std::vector<int>&f,
+ const std::vector<std::pair<Mask,int>>&fast,std::vector<Mask>last){
+ std::vector<Mask>first;auto add=[](std::vector<Mask>&set,Mask P){if(std::find(set.begin(),set.end(),P)==set.end())set.push_back(P);};
+ auto known=[&](Mask P){for(auto [Q,distance]:fast)if(P==Q)return distance;return 0;};
+ for(auto [P,distance]:fast)if(distance==1)add(first,P);
+ for(int a=0;a<d.n;++a)for(int b=a+1;b<d.n;++b){Mask P=(1u<<a)|(1u<<b),U=image(P,f);bool long_source=std::find(last.begin(),last.end(),P)!=last.end();
+  if(pc(U)==1){if((known(P)&&known(P)!=1)||long_source||!d.pair_edge(P))return false;add(first,P);continue;}
+  if(!d.pair_edge(U))continue;
+  if(!d.pair_edge(P)){if(known(U))return false;add(last,U);}
+  if(long_source&&known(U))return false;
+ }
+ for(Mask P:first)if(std::find(last.begin(),last.end(),P)!=last.end())return false;
+ return first.size()+last.size()<=4;
+}
+void one_deletion_controls(){
+ Count all_maps=0,all_next=0,all_gate=0;
+ for(int j=0;j<=1;++j)for(int x:std::vector<int>{1,2,3,7})for(int extra=0;extra<=1;++extra)for(int mode=0;mode<=1;++mode){
+  if(x==7&&!j)continue;Domain d(j);Mask A=d.D[0],B=d.M&~(1u<<x),Ci=d.D[1],Cj=d.D[2];std::vector<Mask>E{A,Ci,Cj},R1{A,Ci},F{A,B,Ci,Cj};if(extra)F.push_back(d.D[3]);
+  std::vector<Mask>targets;for(Mask T=0;T<=d.full;++T)if(pc(T)==pc(d.M)&&d.edges(T)<=1)targets.push_back(T);
+  std::vector<int>source;for(int q=0;q<d.n;++q)if(d.M>>q&1)source.push_back(q);
+  std::vector<int>f(d.n);Count kept=0,next=0,gate=0,late_gate=0,reduced_exits=0,gate_survivors=0;
+  for(Mask T:targets){std::vector<int>out;for(int q=0;q<d.n;++q)if(T>>q&1)out.push_back(q);
+   do{for(size_t q=0;q<source.size();++q)f[source[q]]=out[q];
+    for(int a=0;a<d.n;++a)for(int b=0;b<d.n;++b)for(int c=0;c<d.n;++c){f[4]=a;f[5]=b;f[6]=c;if(d.n-pc(image(d.full,f))>2)continue;bool safe=true;
+     for(int q=0;q<d.n;++q)for(int r=q+1;r<d.n;++r)if(f[q]==f[r]&&!d.edge[q][r])safe=false;
+     for(Mask X:F){Mask U=image(X,f);if(pc(U)!=pc(X)||d.edges(U))safe=false;}
+     for(Mask X:E)if(std::find(F.begin(),F.end(),image(X,f))==F.end())safe=false;
+     for(Mask X:R1)if(std::find(E.begin(),E.end(),image(X,f))==E.end())safe=false;
+     Mask S=mode?Ci:A;if(std::find(R1.begin(),R1.end(),image(S,f))==R1.end())safe=false;
+     if(!safe)continue;++kept;
+     Mask Af=image(A,f),Cif=image(Ci,f),Cjf=image(Cj,f);
+     if(!mode){
+      if(Cif==Cj){++next;assert(Af==A&&f[1]==2&&f[4]==5);}
+      if(Af==Ci){++gate;assert(f[x]==4&&(T==(A|16u)||T==((d.M&~2u)|16u)));if(x!=1)assert(f[1]==f[4]);if(x!=2)assert(f[2]==f[5]);
+       if(T==((d.M&~2u)|16u))for(int pj_distance=1;pj_distance<=2;++pj_distance){if(x!=2&&pj_distance!=1)continue;
+        if(one_deletion_gate_compatible(d,f,{{18u,1},{36u,pj_distance}},{72u,17u})){
+         ++gate_survivors;assert((x==3&&f[6]==6)||(x==2&&pj_distance==2&&(f[6]==0||f[6]==6)));
+        }
+       }
+      }
+      if(T!=(A|16u)&&T!=(A|32u)&&f[0]!=0){++reduced_exits;assert(T==(A|64u)&&f[0]==6&&f[x]==3);if(x==1)assert(Cif==A&&f[1]==f[4]);}
+     }else if(Af==Cj){++late_gate;assert(x==1&&Cif==A&&Cjf==Cj&&f[1]==5&&f[4]==2&&f[2]==f[5]);
+      if(T==((d.M&~4u)|32u))assert(!one_deletion_gate_compatible(d,f,{{18u,1},{36u,1}},{72u,33u}));
+     }
+    }
+   }while(std::next_permutation(out.begin(),out.end()));
+  }
+  assert(kept);if(mode&&x!=1)assert(!late_gate);
+  all_maps+=kept;all_next+=next;all_gate+=gate+late_gate;
+  std::cout<<"PASS one-deletion shapes J="<<j<<" hole="<<x<<" extra="<<extra<<" S="<<(mode?"Ci":"A")<<": maps="<<kept<<", Ci-to-Cj="<<next<<", A-to-Ci="<<gate<<", A-to-Cj="<<late_gate<<", reduced M exits="<<reduced_exits<<", gate budget survivors="<<gate_survivors<<"\n";
+ }
+ // The singleton-pr closure used after the three-terminal budget. Only
+ // the already derived M forms and P1={pi} are imposed here.
+ for(int j=0;j<=1;++j){Domain d(j);Mask A=d.D[0],pi=18u,pj=36u,pr=72u;std::vector<Mask>targets{d.M,(d.M&~2u)|16u,A|64u};
+  std::vector<int>source;for(int q=0;q<d.n;++q)if(d.M>>q&1)source.push_back(q);std::vector<int>f(d.n);Count kept=0,steps=0;
+  for(Mask T:targets){std::vector<int>out;for(int q=0;q<d.n;++q)if(T>>q&1)out.push_back(q);
+   do{for(size_t q=0;q<source.size();++q)f[source[q]]=out[q];if(T==d.M&&f[0]!=0)continue;
+    if(T==((d.M&~2u)|16u)&&(f[0]!=0||f[2]!=4))continue;
+    if(T==(A|64u)&&(f[0]!=6||f[2]!=3))continue;
+    for(int a=0;a<d.n;++a)for(int b=0;b<d.n;++b)for(int c=0;c<d.n;++c){f[4]=a;f[5]=b;f[6]=c;bool kernel=true;
+     for(int q=0;q<d.n;++q)for(int r=q+1;r<d.n;++r)if(f[q]==f[r]&&((1u<<q)|(1u<<r))!=pi)kernel=false;
+     if(!kernel)continue;Mask U=image(pr,f);if(U==pi||U==pj)continue;++kept;
+     assert(pc(U)==2);if(d.pair_edge(U)){++steps;assert(U==pr);}
+    }
+   }while(std::next_permutation(out.begin(),out.end()));
+  }
+  assert(kept&&steps);std::cout<<"PASS one-deletion singleton-pr closure J="<<j<<": maps="<<kept<<", graph-valued successors="<<steps<<", all fixed pr\n";
+ }
+ assert(all_maps&&all_next&&all_gate);
+}
 int main(int argc,char**argv){
 #ifdef NDEBUG
  std::cerr<<"Assertions must be enabled.\n";return 1;
 #endif
  if(argc==2&&std::string(argv[1])=="--star-controls"){star_pair_closure_control();tight_star_three_row_control();late_exception_kernel_control();return 0;}
+ if(argc==2&&std::string(argv[1])=="--one-deletion-controls"){one_deletion_controls();return 0;}
  if(argc==2&&std::string(argv[1])=="--coverage"){
   Graph g{7,2069024};LowFamily family;assert(low_core(g,family,7));
   std::vector<std::vector<unsigned>>keys;auto counts=later_domains(g,family,true,&keys);
@@ -383,7 +454,7 @@ int main(int argc,char**argv){
   std::sort(geometric_D.begin(),geometric_D.end());
   assert(geometric_D==std::vector<unsigned>(covered.begin()+2,covered.end()));
   int selected=std::count(keys.begin(),keys.end(),covered);assert(selected==1);
-  std::vector<int>full_D,two_deletions,own_triangle,off_triangle,unmatched,isolate_star,all;
+  std::vector<int>full_D,two_deletions,own_triangle,off_triangle,unmatched,isolate_star,one_A,all;
   for(size_t at=0;at<keys.size();++at){const auto&key=keys[at];int z=key[0];Mask isolates=((1u<<z)-1)<<g.n,M=family.maximum[0]|isolates;
    std::vector<Mask>rows(key.begin()+2,key.end());bool contains_D=true;
    for(Mask R:geometric_D)contains_D&=std::find(rows.begin(),rows.end(),R|isolates)!=rows.end();
@@ -398,17 +469,18 @@ int main(int argc,char**argv){
     other|=has(A)&&has(M&~leaf)&&!has((A&~leaf)|(1u<<u))&&exceptional>0;
    }
    if(has(A)&&exceptional>=1)for(int x=g.n;x<g.n+z;++x)isolated|=has(M&~(1u<<x));
+   bool single_A=rows.size()==3&&has(A)&&exceptional==2&&holes.size()==1&&holes[0]==(1u<<v);
    if(contains_D)full_D.push_back(at);if(non_v_pair)two_deletions.push_back(at);if(own)own_triangle.push_back(at);if(off)off_triangle.push_back(at);if(other)unmatched.push_back(at);if(isolated)isolate_star.push_back(at);
-   if(contains_D||non_v_pair||own||off||other||isolated)all.push_back(at);
+   if(single_A)one_A.push_back(at);if(contains_D||non_v_pair||own||off||other||isolated||single_A)all.push_back(at);
   }
   assert(full_D==std::vector<int>({2,6,12}));assert(two_deletions==std::vector<int>({7,8,13}));
   assert(own_triangle==std::vector<int>({0,1,2}));assert(off_triangle==std::vector<int>({2,4}));assert(unmatched==std::vector<int>({3,4}));assert(isolate_star==std::vector<int>({10,11,12}));
-  assert(all==std::vector<int>({0,1,2,3,4,6,7,8,10,11,12,13}));
-  std::cout<<"PASS existing common-hole core mask=2069024: 14 complete named P9 domains; D at 2,6,12; non-v holes at 7,8,13; own triangle at 0,1,2; unmatched exception at 3,4; all off-index exceptions at 2,4; isolate star at 10,11,12; exactly 12 covered, other 2 outside these results.\n";
+  assert(one_A==std::vector<int>({5}));assert(all==std::vector<int>({0,1,2,3,4,5,6,7,8,10,11,12,13}));
+  std::cout<<"PASS existing common-hole core mask=2069024: 14 complete named P9 domains; D at 2,6,12; non-v holes at 7,8,13; own triangle at 0,1,2; unmatched exception at 3,4; all off-index exceptions at 2,4; isolate star at 10,11,12; single-A family at 5; exactly 13 covered, only index 9 outside these results.\n";
   return 0;
  }
  assert(argc==1);
- local_control(0);local_control(1);general_common_hole_control();complete_next_layer_control();geodesic_control();layer_capacity_control();shared_hole_control();star_pair_closure_control();tight_star_three_row_control();late_exception_kernel_control();
+ local_control(0);local_control(1);general_common_hole_control();complete_next_layer_control();geodesic_control();layer_capacity_control();shared_hole_control();star_pair_closure_control();tight_star_three_row_control();late_exception_kernel_control();one_deletion_controls();
  std::cout<<"Finite local controls only; no complete P7 realization or general-proof claim is inferred from the map counts.\n";
 }
 
