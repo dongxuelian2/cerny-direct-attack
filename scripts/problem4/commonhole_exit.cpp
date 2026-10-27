@@ -189,6 +189,74 @@ void geodesic_control(){
  <<", failed closure "<<failed_closure<<", largest verified distance "<<maximum_bound
  <<"; C3's two-pair nonclosed family is an explicit negative control\n";
 }
+void layer_capacity_control(){
+ Count templates=0,actual=0;
+ for(int k=2;k<=8;++k)for(int j=0;j<=2;++j){
+  int n=2*k+1+j;Mask J=((1u<<j)-1)<<(2*k+1),M=((1u<<(k+1))-1)|J,A=M&~1u;
+  std::vector<Mask>adj(n),D{A};auto add=[&](int a,int b){adj[a]|=1u<<b;adj[b]|=1u<<a;};
+  for(int a=0;a<=k;++a)for(int b=a+1;b<=k;++b)add(a?k+a:0,k+b);
+  for(int i=1;i<=k;++i){add(i,k+i);D.push_back((A&~(1u<<i))|(1u<<(k+i)));}
+  for(int x=0;x<n;++x)if(A>>x&1){
+   std::vector<Mask>F=D;F.push_back(M&~(1u<<x));Mask only=1u|(1u<<x);int allowed=0;
+   for(int a=0;a<n;++a)for(int b=a+1;b<n;++b)if(!(adj[a]>>b&1)){
+    Mask P=(1u<<a)|(1u<<b);bool cooccur=false;for(Mask R:F)cooccur|=(R&P)==P;
+    if(!cooccur){++allowed;assert(P==only);}
+   }
+   assert(allowed==1);++templates;
+  }
+ }
+ // Use actual pair distances, rather than imposing a desired P_h graph.
+ for(int n=2;n<=6;++n){std::vector<std::vector<int>>rows(2,std::vector<int>(n));
+  for(int x=0;x<n;++x){rows[0][x]=(x+1)%n;rows[1][x]=x;}rows[1][n-1]=0;
+  std::vector<Mask>pairs;std::vector<int>distance;int maximum=0;
+  for(int a=0;a<n;++a)for(int b=a+1;b<n;++b){Mask P=(1u<<a)|(1u<<b);int d=pair_distance(rows,P);pairs.push_back(P);distance.push_back(d);maximum=std::max(maximum,d);}
+  for(int h=1;h<maximum;++h)for(int t=1;t<=3;++t)for(int s=2;s<=n;++s){
+   std::vector<Mask>F;for(Mask R=0;R<(1u<<n);++R)if(pc(R)==s){bool safe=true;
+    for(size_t p=0;p<pairs.size();++p)if((R&pairs[p])==pairs[p]&&distance[p]<=h+t)safe=false;
+    if(safe)F.push_back(R);
+   }
+   if(F.empty())continue;int allowed=0;
+   for(size_t p=0;p<pairs.size();++p)if(distance[p]>h){bool cooccur=false;for(Mask R:F)cooccur|=(R&pairs[p])==pairs[p];allowed+=!cooccur;}
+   assert(allowed>=t);++actual;
+  }
+ }
+ assert(templates&&actual);
+ std::cout<<"PASS layer capacity: "<<templates<<" general common-hole D-plus-deletion templates, exactly one available new pair; "<<actual<<" nonempty actual Cerny safe-family/horizon inputs\n";
+}
+void shared_hole_control(){
+ for(int k=3;k<=5;++k)for(int j=0;j<=1;++j){
+  int n=2*k+1+j;Mask J=j?(1u<<(2*k+1)):0,M=((1u<<(k+1))-1)|J,A=M&~1u,Z=M|(1u<<(k+1))|(1u<<(k+2));
+  std::vector<Mask>adj(n);auto add=[&](int a,int b){adj[a]|=1u<<b;adj[b]|=1u<<a;};
+  for(int a=0;a<=k;++a)for(int b=a+1;b<=k;++b)add(a?k+a:0,k+b);
+  for(int i=1;i<=k;++i)add(i,k+i);
+  auto edges=[&](Mask X){int e=0;for(int x=0;x<n;++x)if(X>>x&1)e+=pc(adj[x]&X);return e/2;};
+  std::vector<Mask>F{M&~2u,M&~4u,(A&~2u)|(1u<<(k+1)),(A&~4u)|(1u<<(k+2))},targets;
+  for(Mask T=0;T<(1u<<n);++T)if(pc(T)==pc(M)&&edges(T)<=1)targets.push_back(T);
+  assert(targets.size()==size_t(1+2*k));
+  std::vector<int>source;for(int x=0;x<n;++x)if(M>>x&1)source.push_back(x);
+  std::vector<int>f(n,-1);Count tried=0,kept=0,escape=0,two_exit=0;
+  // Complete maps on Z only. Outputs of all other centers are irrelevant to
+  // this local implication and are deliberately not assigned or counted.
+  for(Mask T:targets){std::vector<int>out;for(int x=0;x<n;++x)if(T>>x&1)out.push_back(x);
+   do{for(size_t a=0;a<source.size();++a)f[source[a]]=out[a];
+    for(int a=0;a<n;++a)for(int b=0;b<n;++b){++tried;f[k+1]=a;f[k+2]=b;bool safe=true;int exits=0;
+     for(Mask R:F){Mask U=image(R,f);if(pc(U)!=pc(R)||edges(U))safe=false;exits+=std::find(F.begin(),F.end(),U)==F.end();}
+     if(!safe)continue;++kept;
+     if(image(Z,f)&~Z){++escape;assert(exits>=2);two_exit+=exits==2;}
+    }
+   }while(std::next_permutation(out.begin(),out.end()));
+  }
+  assert(kept&&escape&&two_exit);
+  std::cout<<"PASS shared-hole two-deletion Z maps k="<<k<<" J="<<j<<": tried="<<tried<<", four-row safe="<<kept<<", support exits="<<escape<<", all have >=2 row exits (exactly two="<<two_exit<<")\n";
+ }
+ // Deleting v instead of a second private leaf does allow one-exit maps.
+ // This is a negative control for the exact hypothesis, not a slow automaton.
+ Domain d(0);std::vector<Mask>F{d.D[0],d.M&~2u,d.D[1],d.D[2]};Mask Z=d.M|16u|32u;
+ std::vector<int>f{0,1,3,2,0,6,0};int exits=0;
+ for(Mask R:F){Mask U=image(R,f);assert(pc(U)==pc(R)&&!d.edges(U));exits+=std::find(F.begin(),F.end(),U)==F.end();}
+ assert(exits==1&&(image(Z,f)&~Z));
+ std::cout<<"PASS negative control: a v/private-leaf deletion pair can have a one-row support exit; it is outside the shared-hole two-deletion lemma\n";
+}
 int main(int argc,char**argv){
 #ifdef NDEBUG
  std::cerr<<"Assertions must be enabled.\n";return 1;
@@ -206,11 +274,21 @@ int main(int argc,char**argv){
   std::sort(geometric_D.begin(),geometric_D.end());
   assert(geometric_D==std::vector<unsigned>(covered.begin()+2,covered.end()));
   int selected=std::count(keys.begin(),keys.end(),covered);assert(selected==1);
-  std::cout<<"PASS existing common-hole core mask=2069024: 14 complete named P9 domains; exactly "<<selected
-   <<" covered by the full-D theorem (index 6, key 0,1,7,19,37,70); the other 13 remain outside this result.\n";
+  std::vector<int>full_D,two_deletions,all;
+  for(size_t at=0;at<keys.size();++at){const auto&key=keys[at];int z=key[0];Mask isolates=((1u<<z)-1)<<g.n,M=family.maximum[0]|isolates;
+   std::vector<Mask>rows(key.begin()+2,key.end());bool contains_D=true;
+   for(Mask R:geometric_D)contains_D&=std::find(rows.begin(),rows.end(),R|isolates)!=rows.end();
+   std::vector<Mask>holes;for(Mask R:rows)if(!(R&~M)&&pc(R)==pc(M)-1)holes.push_back(M^R);
+   bool non_v_pair=holes.size()==2&&holes[0]!=(1u<<v)&&holes[1]!=(1u<<v);
+   if(contains_D)full_D.push_back(at);if(non_v_pair)two_deletions.push_back(at);if(contains_D||non_v_pair)all.push_back(at);
+  }
+  assert(full_D==std::vector<int>({2,6,12}));assert(two_deletions==std::vector<int>({7,8,13}));
+  assert(all==std::vector<int>({2,6,7,8,12,13}));
+  std::cout<<"PASS existing common-hole core mask=2069024: 14 complete named P9 domains; D contained at indices 2,6,12; two non-v deletion holes at 7,8,13; exactly 6 covered, other 8 outside these results.\n";
   return 0;
  }
  assert(argc==1);
- local_control(0);local_control(1);general_common_hole_control();complete_next_layer_control();geodesic_control();
+ local_control(0);local_control(1);general_common_hole_control();complete_next_layer_control();geodesic_control();layer_capacity_control();shared_hole_control();
  std::cout<<"Finite local controls only; no complete P7 realization or general-proof claim is inferred from the map counts.\n";
 }
+

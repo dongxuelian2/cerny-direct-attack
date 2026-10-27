@@ -13,7 +13,7 @@
 - [计算依赖的纸面替代](PROOF.md#problem4-paper-dependency-reductions)：余维三九步上界的完整纸面证明；[单边障碍与一点交换结构](PROOF.md#problem4-single-edge-obstruction)给出任意余维的条件压缩界，统一加强多部图和删除匹配图族。余维四、五其余计算依赖仍保留，论文稿尚未展开这些替代证明。
 - [两例外闭合](PROOF.md#problem4-two-exception-closure)与[不交交换孔](PROOF.md#problem4-disjoint-exchange-holes)：统一移除十五类核心、196 个命名域的动态计算依赖；后一条件压缩界 `h+4` 适用于任意多个私人叶子对。
 - [三个例外的整支闭合](PROOF.md#problem4-three-exception-closure)：四步核约束给出一般界 `h+5`，与两例外定理合计替代余维五的 521 类核心、7519 个动态域。[任意例外数的容器闭合](PROOF.md#problem4-exception-container-closure)、[支撑逐点闭包](PROOF.md#problem4-exception-support-bootstrap)及[远例外团的核闭合](PROOF.md#problem4-exception-cluster-kernel)给出更一般的 Johnson 图判据；余维四、五全域仍含计算依赖。
-- [公共孔的双退出定理](PROOF.md#problem4-common-hole-double-exit)：任意多个公共孔的条件排除；结合两层完整安全族得到[统一 `h+4` 界](PROOF.md#problem4-common-hole-two-layer-bound)，再替代余维四一个完整命名域。[最短路径闭包](PROOF.md#problem4-pair-geodesic-closure)将封闭点对族的合并长度压到其大小。
+- [公共孔的双退出定理](PROOF.md#problem4-common-hole-double-exit)：结合两层安全族得到[统一 `h+4` 界](PROOF.md#problem4-common-hole-two-layer-bound)；[层容量](PROOF.md#problem4-safe-family-layer-capacity)与[双删除孔闭合](PROOF.md#problem4-common-hole-two-deletion-bound)把该核心的纸面覆盖由一域增至六域，余维四合计202个命名域。双删除孔定理不限制字母亏秩；该核心其余八域及全域仍含计算依赖。[最短路径闭包](PROOF.md#problem4-pair-geodesic-closure)将封闭点对族的合并长度压到其大小。
 - [问题与全部当前边界](PROOF.md#problem)：完整成果表；[PROOF.md](PROOF.md)是唯一维护的数学研究正文。
 - [余维四精确值](PROOF.md#problem4-four-exact-eleven)与[余维五精确值](PROOF.md#problem4-five-exact-fourteen)：最终依赖链及全部参数的匹配。
 - [下界构造](PROOF.md#constructions)与[上界和有限归约](PROOF.md#upper)：一般方法和低余维基础。
@@ -62,3 +62,4 @@ build/                   本地生成内容，不提交
 具体规则见 [AGENTS.md](AGENTS.md)。源码采用 MIT 许可；研究与代码包含 AI 辅助。
 
 早期条件分支与探索源码保持可追溯；引用时以当前完整定理及其适用范围为准。
+
