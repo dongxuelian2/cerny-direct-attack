@@ -15,7 +15,7 @@
 - [三个例外的整支闭合](PROOF.md#problem4-three-exception-closure)：四步核约束给出一般界 `h+5`，与两例外定理合计替代余维五的 521 类核心、7519 个动态域。[任意例外数的容器闭合](PROOF.md#problem4-exception-container-closure)、[支撑逐点闭包](PROOF.md#problem4-exception-support-bootstrap)及[远例外团的核闭合](PROOF.md#problem4-exception-cluster-kernel)给出更一般的 Johnson 图判据；余维四、五全域仍含计算依赖。
 - [公共孔核心的完整纸面上界](PROOF.md#problem4-common-hole-complete-core)：P₇为K₄附三个私人叶子及任意孤点时，每个(n−4)集在十一字母内压缩。证明按后层删除行数分类，最后[私人删除行的三行族](PROOF.md#problem4-common-hole-one-deletion-B)由实际第一层的支撑闭合排除。该核心全部十四个命名域均已替代。任意k、h的条件结果见[双退出](PROOF.md#problem4-common-hole-double-exit)、[星形路径](PROOF.md#problem4-common-hole-star-geodesics)及[后层核强迫](PROOF.md#problem4-common-hole-late-kernel)。
 - [K₅删边核心的完整纸面上界](PROOF.md#problem4-doubleton-complete-core)：P₇为K₅删一边并附至少两个孤点时，每个(n−4)集在十一字母内压缩。证明以[实际锚点及跨字母核对](PROOF.md#problem4-doubleton-actual-anchors)闭合全部残余行族，替代该核心十一域。
-- [三角交换孔的两个纸面分支](PROOF.md#problem4-triangle-exchange-classification)：[Johnson外边界分离](PROOF.md#problem4-johnson-exterior-boundary)把完整安全族计数界改善一步；结合实际前两层与原字母平方，得到两个任意孤点数的条件上界。该六点核心仅部分完成，另替代两个命名域；连同十七个完整核心的221域，共明确替代223域。余维四、五全域仍含计算依赖。
+- [三角交换孔的三个纸面分支](PROOF.md#problem4-triangle-exchange-classification)：[Johnson外边界分离](PROOF.md#problem4-johnson-exterior-boundary)改善完整安全族计数界；[实际分量前缀](PROOF.md#problem4-johnson-component-prefix)与[单删除行的快对容量](PROOF.md#problem4-triangle-exchange-one-deletion)进一步闭合第三种行族。该核心仍有两种行族开放，完整命名域替代数保持223：十七个完整核心的221域，另加部分核心的两域。余维四、五全域仍含计算依赖。
 - [问题与全部当前边界](PROOF.md#problem)：完整成果表；[PROOF.md](PROOF.md)是唯一维护的数学研究正文。
 - [余维四精确值](PROOF.md#problem4-four-exact-eleven)与[余维五精确值](PROOF.md#problem4-five-exact-fourteen)：最终依赖链及全部参数的匹配。
 - [下界构造](PROOF.md#constructions)与[上界和有限归约](PROOF.md#upper)：一般方法和低余维基础。
