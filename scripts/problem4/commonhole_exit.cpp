@@ -257,10 +257,119 @@ void shared_hole_control(){
  assert(exits==1&&(image(Z,f)&~Z));
  std::cout<<"PASS negative control: a v/private-leaf deletion pair can have a one-row support exit; it is outside the shared-hole two-deletion lemma\n";
 }
+void star_pair_closure_control(){
+ for(int k=2;k<=5;++k)for(int j=0;j<=1;++j)for(int mode=0;mode<=1;++mode){
+  if(mode&&!j)continue;
+  int n=2*k+1+j,x=mode?2*k+1:1;Mask J=j?(1u<<(2*k+1)):0,M=((1u<<(k+1))-1)|J,A=M&~1u,B=M&~(1u<<x);
+  std::vector<Mask>adj(n),C(k+1),F{A,B},P;auto add=[&](int a,int b){adj[a]|=1u<<b;adj[b]|=1u<<a;};
+  for(int a=0;a<=k;++a)for(int b=a+1;b<=k;++b)add(a?k+a:0,k+b);
+  for(int i=1;i<=k;++i){add(i,k+i);C[i]=(A&~(1u<<i))|(1u<<(k+i));F.push_back(C[i]);P.push_back((1u<<i)|(1u<<(k+i)));}
+  if(!mode)P.push_back(1u|(1u<<(k+1)));
+  auto edges=[&](Mask X){int e=0;for(int a=0;a<n;++a)if(X>>a&1)e+=pc(adj[a]&X);return e/2;};
+  std::vector<Mask>targets;for(Mask T=0;T<(1u<<n);++T)if(pc(T)==pc(M)&&edges(T)<=1)targets.push_back(T);
+  std::vector<int>source;for(int a=0;a<n;++a)if(M>>a&1)source.push_back(a);
+  std::vector<int>f(n,-1);Count kept=0,external_triangle=0,closed_maps=0,pair_steps=0,exits=0;
+  Mask H=3u|(1u<<(k+1)),own_v=A|(1u<<(k+1)),own_w=(M&~2u)|(1u<<(k+1));
+  for(Mask T:targets){std::vector<int>out;for(int a=0;a<n;++a)if(T>>a&1)out.push_back(a);
+   do{for(size_t a=0;a<source.size();++a)f[source[a]]=out[a];
+    Mask Af=image(A,f),Bf=image(B,f);if(std::find(F.begin(),F.end(),Af)==F.end()||std::find(F.begin(),F.end(),Bf)==F.end())continue;
+    std::function<void(int)>visit=[&](int i){
+     if(i<=k){Mask base=image(C[i]&M,f);for(int a=0;a<n;++a){Mask U=base|(1u<<a);if(pc(U)!=pc(C[i])||edges(U))continue;
+       if(!mode&&i==1&&std::find(F.begin(),F.end(),U)==F.end())continue;
+       f[k+i]=a;visit(i+1);
+      }return;
+     }
+     ++kept;
+     if(!mode){Mask U=image(H,f);if(U&~H){++external_triangle;assert(pc(U)==2&&std::find(P.begin(),P.end()-1,U)!=P.end()-1);assert(image(3u,f)==U);int t=0;for(int r=2;r<=k;++r)if(U==((1u<<r)|(1u<<(k+r))))t=r;assert(t&&T==(A|(1u<<(k+t))));}}
+     if(!mode&&(T==own_v||T==own_w))return;
+     ++closed_maps;exits+=T!=M;
+     for(Mask R:P){Mask U=image(R,f);if(pc(U)==2&&edges(U)){++pair_steps;assert(std::find(P.begin(),P.end(),U)!=P.end());}}
+    };visit(1);
+   }while(std::next_permutation(out.begin(),out.end()));
+  }
+  assert(kept&&closed_maps&&pair_steps&&exits);if(!mode)assert(external_triangle);
+  std::cout<<"PASS star pair closure k="<<k<<" J="<<j<<" hole="<<(mode?"isolate":"own-leaf")<<": local maps="<<kept<<", triangle departures="<<external_triangle<<", reduced maps="<<closed_maps<<", M exits="<<exits<<", graph-valued pair successors="<<pair_steps<<"\n";
+ }
+}
+void tight_star_three_row_control(){
+ for(int j=0;j<=1;++j){Domain d(j);Mask A=d.D[0],B=d.M&~2u,C=d.D[1],L=A|32u,H=19u;
+  std::vector<Mask>F{A,B,C,d.D[2]},E{A,B,C};
+  const Mask pi=18u,pj=36u,pr=72u,vui=17u,vuj=33u,uiuj=48u;
+  std::vector<Mask>fast{pi,vui,vuj,uiuj},pair_family{pj,pr};
+  std::vector<Mask>targets;for(Mask T=0;T<=d.full;++T)if(pc(T)==pc(d.M)&&d.edges(T)<=1)targets.push_back(T);
+  std::vector<int>source;for(int x=0;x<d.n;++x)if(d.M>>x&1)source.push_back(x);
+  std::vector<int>f(d.n,-1);Count local=0,triangles=0,reduced=0,swaps=0,exits=0,steps=0,private_step=0;
+  for(Mask T:targets){std::vector<int>out;for(int x=0;x<d.n;++x)if(T>>x&1)out.push_back(x);
+   do{for(size_t x=0;x<source.size();++x)f[source[x]]=out[x];
+    if(std::find(F.begin(),F.end(),image(A,f))==F.end()||std::find(F.begin(),F.end(),image(B,f))==F.end())continue;
+    for(int a=0;a<d.n;++a)for(int b=0;b<d.n;++b)for(int c=0;c<d.n;++c){f[4]=a;f[5]=b;f[6]=c;bool ok=true;
+     for(int x=0;x<d.n;++x)for(int y=x+1;y<d.n;++y)if(f[x]==f[y]&&!d.edge[x][y])ok=false;
+     for(Mask R:F){Mask U=image(R,f);if(pc(U)!=pc(R)||d.edges(U))ok=false;}
+     if(!ok||std::find(F.begin(),F.end(),image(C,f))==F.end())continue;++local;
+     Mask U=image(H,f);if(U&~H){++triangles;assert(U==pj&&image(3u,f)==pj&&T==L);}
+     if(T==(A|16u)||T==((d.M&~2u)|16u))continue;
+     assert(T==d.M||T==L);
+     // Actual R1={A,C}, S=C; the other orientation was excluded in the paper.
+     if(image(C,f)!=A&&image(C,f)!=C)continue;
+     if(std::find(E.begin(),E.end(),image(A,f))==E.end())continue;
+     std::vector<Mask>kernel{pi,vuj};bool compatible=true;
+     for(int x=0;x<d.n;++x)for(int y=x+1;y<d.n;++y)if(f[x]==f[y]){Mask Q=(1u<<x)|(1u<<y);
+      if(std::find(fast.begin(),fast.end(),Q)==fast.end())compatible=false;
+      if(std::find(kernel.begin(),kernel.end(),Q)==kernel.end())kernel.push_back(Q);
+     }
+     if(!compatible||kernel.size()>3)continue;
+     bool short_target=false;for(Mask R:pair_family){Mask V=image(R,f);if(std::find(fast.begin(),fast.end(),V)!=fast.end())short_target=true;}
+     if(short_target)continue;
+     ++reduced;
+     if(T==L){++exits;assert(f[0]==5&&f[1]==2&&f[4]==2);}
+     if(T==d.M&&f[0]==1){++swaps;assert(f[1]==0&&f[4]==4&&f[5]==1);assert(image(vui,f)==pi&&image(uiuj,f)==pi&&pc(image(vuj,f))==1);}
+     for(Mask R:pair_family){Mask V=image(R,f);assert(pc(V)==2);if(d.pair_edge(V)){++steps;assert(std::find(pair_family.begin(),pair_family.end(),V)!=pair_family.end());private_step+=R==pj&&V==pr;}}
+    }
+   }while(std::next_permutation(out.begin(),out.end()));
+  }
+  assert(local&&triangles&&reduced&&swaps&&exits&&steps&&private_step);
+  std::cout<<"PASS tight three-row star J="<<j<<": local maps="<<local<<", triangle departures="<<triangles<<", distance-compatible reduced maps="<<reduced<<", swaps="<<swaps<<", M exits="<<exits<<", graph-valued two-pair steps="<<steps<<", pj-to-pr="<<private_step<<"\n";
+ }
+}
+void late_exception_kernel_control(){
+ for(int k=2;k<=5;++k)for(int j=0;j<=1;++j)for(int mode=0;mode<=1;++mode)for(int count=1;count<=2;++count){
+  if(mode&&!j)continue;if(!mode&&count>k-1)continue;
+  int n=2*k+1+j,x=mode?2*k+1:1;Mask J=j?(1u<<(2*k+1)):0,M=((1u<<(k+1))-1)|J,A=M&~1u,B=M&~(1u<<x),N=M&~3u;
+  std::vector<Mask>C(k+1),F{A,B};for(int i=1;i<=k;++i){C[i]=(A&~(1u<<i))|(1u<<(k+i));F.push_back(C[i]);}
+  std::vector<int>late;for(int i=0;i<count;++i)late.push_back(mode?i+1:i+2);
+  std::vector<Mask>targets{M};for(int i=1;i<=k;++i){targets.push_back(A|(1u<<(k+i)));if(!mode&&i==1)targets.push_back((M&~2u)|(1u<<(k+1)));}
+  std::vector<int>source;for(int i=0;i<n;++i)if(M>>i&1)source.push_back(i);
+  std::vector<int>f(n,-1);Count kept=0,changed_A=0,swaps=0,second_orientation=0,fixed_N=0;
+  for(Mask T:targets){std::vector<int>out;for(int i=0;i<n;++i)if(T>>i&1)out.push_back(i);
+   do{for(size_t i=0;i<source.size();++i)f[source[i]]=out[i];
+    Mask Af=image(A,f),Bf=image(B,f);if(std::find(F.begin(),F.end(),Af)==F.end()||std::find(F.begin(),F.end(),Bf)==F.end())continue;
+    std::function<void(int)>visit=[&](int at){
+     if(at<int(late.size())){int i=late[at];Mask base=image(C[i]&M,f);for(int value=0;value<n;++value){Mask U=base|(1u<<value);
+       if(std::find(F.begin(),F.end(),U)==F.end())continue;f[k+i]=value;visit(at+1);
+      }return;
+     }
+     ++kept;if(Af!=A){++changed_A;for(int i:late)assert(f[i]==f[k+i]);}
+     if(Af==B||(!mode&&Af==C[1]))for(int i:late)assert(image(C[i],f)==Af);
+     if(T==M&&Af==B){++swaps;for(int i:late)assert(image(C[i],f)==B);}
+     if(T!=M&&Af!=A&&Bf==A){++second_orientation;for(int i:late)assert(image(C[i],f)==Af);}
+     if(!mode&&(T==M||T==(A|(1u<<(k+1)))||T==((M&~2u)|(1u<<(k+1))))){++fixed_N;assert(image(N,f)==N);}
+    };visit(0);
+   }while(std::next_permutation(out.begin(),out.end()));
+  }
+  assert(kept&&changed_A&&second_orientation);if(mode)assert(swaps);else assert(fixed_N);
+  std::cout<<"PASS late-exception kernels k="<<k<<" J="<<j<<" hole="<<(mode?"isolate":"private-leaf")<<" late="<<count<<": partial maps="<<kept<<", A changes="<<changed_A<<", swaps="<<swaps<<", second orientations="<<second_orientation<<", fixed-N maps="<<fixed_N<<"\n";
+ }
+ // An own-index exception does not force its private pair to merge.
+ Domain d(0);std::vector<int>f{1,0,2,3,4,5,6};std::vector<Mask>F(d.D.begin(),d.D.end());F.push_back(d.M&~2u);
+ for(Mask R:std::vector<Mask>{d.D[0],d.M&~2u,d.D[1]})assert(std::find(F.begin(),F.end(),image(R,f))!=F.end());
+ assert(image(d.D[0],f)!=d.D[0]&&pc(image(18u,f))==2);
+ std::cout<<"PASS own-index negative control: changing A need not merge its own private edge\n";
+}
 int main(int argc,char**argv){
 #ifdef NDEBUG
  std::cerr<<"Assertions must be enabled.\n";return 1;
 #endif
+ if(argc==2&&std::string(argv[1])=="--star-controls"){star_pair_closure_control();tight_star_three_row_control();late_exception_kernel_control();return 0;}
  if(argc==2&&std::string(argv[1])=="--coverage"){
   Graph g{7,2069024};LowFamily family;assert(low_core(g,family,7));
   std::vector<std::vector<unsigned>>keys;auto counts=later_domains(g,family,true,&keys);
@@ -274,21 +383,32 @@ int main(int argc,char**argv){
   std::sort(geometric_D.begin(),geometric_D.end());
   assert(geometric_D==std::vector<unsigned>(covered.begin()+2,covered.end()));
   int selected=std::count(keys.begin(),keys.end(),covered);assert(selected==1);
-  std::vector<int>full_D,two_deletions,all;
+  std::vector<int>full_D,two_deletions,own_triangle,off_triangle,unmatched,isolate_star,all;
   for(size_t at=0;at<keys.size();++at){const auto&key=keys[at];int z=key[0];Mask isolates=((1u<<z)-1)<<g.n,M=family.maximum[0]|isolates;
    std::vector<Mask>rows(key.begin()+2,key.end());bool contains_D=true;
    for(Mask R:geometric_D)contains_D&=std::find(rows.begin(),rows.end(),R|isolates)!=rows.end();
    std::vector<Mask>holes;for(Mask R:rows)if(!(R&~M)&&pc(R)==pc(M)-1)holes.push_back(M^R);
    bool non_v_pair=holes.size()==2&&holes[0]!=(1u<<v)&&holes[1]!=(1u<<v);
-   if(contains_D)full_D.push_back(at);if(non_v_pair)two_deletions.push_back(at);if(contains_D||non_v_pair)all.push_back(at);
+   auto has=[&](Mask R){return std::find(rows.begin(),rows.end(),R)!=rows.end();};
+   bool own=false,off=false,other=false,isolated=false;Mask A=leaves|isolates;int exceptional=0;
+   for(int u=0;u<g.n;++u)if(pc(adj[u])==4){Mask leaf=adj[u]&leaves,C=(A&~leaf)|(1u<<u);exceptional+=has(C);own|=has(A)&&has(M&~leaf)&&has(C);}
+   for(int u=0;u<g.n;++u)if(pc(adj[u])==4){Mask leaf=adj[u]&leaves;bool others=true;
+    for(int t=0;t<g.n;++t)if(t!=u&&pc(adj[t])==4)others&=has((A&~(adj[t]&leaves))|(1u<<t));
+    off|=has(A)&&has(M&~leaf)&&others;
+    other|=has(A)&&has(M&~leaf)&&!has((A&~leaf)|(1u<<u))&&exceptional>0;
+   }
+   if(has(A)&&exceptional>=1)for(int x=g.n;x<g.n+z;++x)isolated|=has(M&~(1u<<x));
+   if(contains_D)full_D.push_back(at);if(non_v_pair)two_deletions.push_back(at);if(own)own_triangle.push_back(at);if(off)off_triangle.push_back(at);if(other)unmatched.push_back(at);if(isolated)isolate_star.push_back(at);
+   if(contains_D||non_v_pair||own||off||other||isolated)all.push_back(at);
   }
   assert(full_D==std::vector<int>({2,6,12}));assert(two_deletions==std::vector<int>({7,8,13}));
-  assert(all==std::vector<int>({2,6,7,8,12,13}));
-  std::cout<<"PASS existing common-hole core mask=2069024: 14 complete named P9 domains; D contained at indices 2,6,12; two non-v deletion holes at 7,8,13; exactly 6 covered, other 8 outside these results.\n";
+  assert(own_triangle==std::vector<int>({0,1,2}));assert(off_triangle==std::vector<int>({2,4}));assert(unmatched==std::vector<int>({3,4}));assert(isolate_star==std::vector<int>({10,11,12}));
+  assert(all==std::vector<int>({0,1,2,3,4,6,7,8,10,11,12,13}));
+  std::cout<<"PASS existing common-hole core mask=2069024: 14 complete named P9 domains; D at 2,6,12; non-v holes at 7,8,13; own triangle at 0,1,2; unmatched exception at 3,4; all off-index exceptions at 2,4; isolate star at 10,11,12; exactly 12 covered, other 2 outside these results.\n";
   return 0;
  }
  assert(argc==1);
- local_control(0);local_control(1);general_common_hole_control();complete_next_layer_control();geodesic_control();layer_capacity_control();shared_hole_control();
+ local_control(0);local_control(1);general_common_hole_control();complete_next_layer_control();geodesic_control();layer_capacity_control();shared_hole_control();star_pair_closure_control();tight_star_three_row_control();late_exception_kernel_control();
  std::cout<<"Finite local controls only; no complete P7 realization or general-proof claim is inferred from the map counts.\n";
 }
 
