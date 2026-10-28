@@ -279,33 +279,70 @@ in $P_h$. Thus
 \end{equation}
 This is the short-pair viewpoint on subset compression; see also the
 computational compression framework in~\cite{kisielewicz2016}.
-Figure~\ref{fig:short-pair-cover} illustrates the equivalence.
+Let $K_h=\{v\in Q:\deg_{P_h}(v)>0\}$ be the nonisolated core and
+$J_h=Q\setminus K_h$ the isolated-state reservoir.
+If $T$ is an independent $(n-m)$-set, its complement $C=Q\setminus T$
+is a vertex cover of size $m$. As isolated vertices cover no edges,
+$C\cap K_h$ is also a vertex cover. Consequently
+\begin{equation}\label{eq:core-localization}
+ |(Q\setminus T)\cap J_h|\le m-\tau(P_h).
+\end{equation}
+In particular, when $\tau(P_h)=m$, every such $T$ contains all of $J_h$:
+\[
+ J_h\subseteq T,\qquad Q\setminus T\subseteq K_h.
+\]
+Thus, independently of how large $n$ is, all $m$ omitted states lie in
+the nonisolated core. Figure~\ref{fig:short-pair-cover} depicts this
+localization for $m=4$; its graph is schematic, not a classified core.
 
 \begin{figure}[!htbp]
 \centering
-\begin{tikzpicture}[>=Latex,
-  vertex/.style={circle,draw,minimum size=9mm,font=\small},
-  chosen/.style={vertex,fill=blue!13},
-  cover/.style={vertex,fill=orange!16}]
-\node[chosen] (v1) at (0,0) {$1$};
-\node[cover] (v2) at (2,0) {$2$};
-\node[chosen] (v3) at (4,0) {$3$};
-\node[cover] (v4) at (6,0) {$4$};
-\node[chosen] (v5) at (8,0) {$5$};
-\foreach \u/\v in {v1/v2,v2/v3,v3/v4,v4/v5}
-  {\draw[semithick] (\u)--(\v);}
-\node[anchor=west,font=\footnotesize] at (9,0.35)
-  {$S=\{1,3,5\}$};
-\node[anchor=west,font=\footnotesize] at (9,-0.32)
-  {$C=\{2,4\}$};
+\begin{tikzpicture}[
+    vertex/.style={circle,draw,semithick,minimum size=7mm,inner sep=0pt,font=\footnotesize},
+    retained/.style={vertex,fill=blue!13},
+    omitted/.style={vertex,fill=orange!27},
+    panel/.style={draw,rounded corners=3pt,gray!75,thick},
+    every node/.style={font=\small}
+]
+\draw[panel] (0,0) rectangle (6.35,4.15);
+\draw[panel] (6.75,0) rectangle (11.8,4.15);
+\node[font=\small\bfseries] at (3.175,3.85) {Nonisolated core $K_h$};
+\node[font=\small\bfseries] at (9.275,3.85) {Isolated-state pool $J_h$};
+\foreach \i/\y in {1/3.12,2/2.36,3/1.60,4/0.84} {
+  \node[retained] (u\i) at (1.35,\y) {$u_{\i}$};
+  \node[omitted] (v\i) at (4.95,\y) {$v_{\i}$};
+  \draw[semithick] (u\i)--(v\i);
+}
+\node[font=\scriptsize,align=center] at (3.17,0.28)
+  {$N=|K_h|$; four omitted vertices shown};
+\foreach \i/\x in {1/7.6,2/8.6,3/9.6} {
+  \node[retained] at (\x,2.35) {$j_{\i}$};
+}
+\node[font=\large] at (10.55,2.35) {$\cdots$};
+\node[font=\footnotesize,align=center] at (9.25,1.12)
+  {All $j_i$ belong to $T$;\\[2pt]no incident edges};
+\node[font=\scriptsize] at (9.25,0.37) {$|J_h|=n-N$ may be arbitrarily large};
+\node[retained,minimum size=5mm] at (3.1,-0.55) {};
+\node[font=\footnotesize,anchor=west] at (3.48,-0.55) {in $T$};
+\node[omitted,minimum size=5mm] at (5.55,-0.55) {};
+\node[font=\footnotesize,anchor=west] at (5.93,-0.55) {in $Q\setminus T$};
 \end{tikzpicture}
-\caption{An illustrative short-pair graph $P_h$.
-The blue set $S$ is independent, so its three states cannot be merged
-by any word of length at most $h$. The orange set $C$ is a minimum
-vertex cover, with $\tau(P_h)=2$; thus $|S|=5-\tau(P_h)$.}
+\caption{Nonisolated core and isolated-state reservoir in a schematic
+short-pair graph $P_h$ with $\tau(P_h)=m=4$.
+The four orange vertices are the omitted states $Q\setminus T$;
+every state in the isolated pool belongs to the independent set $T$.
+The reservoir can grow with $n$ without changing the location of omissions.
+A bound on the core size $N$ comes from the separate structural
+reductions, not from $\tau(P_h)=m$ alone.}
 \label{fig:short-pair-cover}
 \end{figure}
 
+If $\tau(P_h)=m-1$, equation~\eqref{eq:core-localization} allows at most
+one omitted isolated state in each row. The lower-cover branches
+retain these exceptional omissions by name, alongside the nonisolated
+early core; only the common, never-omitted isolated states form the
+unbounded reservoir. The short-image and row-rank reductions in
+\texttt{PROOF.md} bound this entire named support independently of $n$.
 
 \begin{lemma}[Safety and union of actual short images]\label{lem:short-images}
 Suppose $|S|=n-m\ge2$, $c(S)\ge L$, and $0\le d\le L-2$.
@@ -322,13 +359,13 @@ Starting at $|U_0|=n-m$ proves the union bound.
 \end{proof}
 
 For an early layer $G=P_h$ and a later layer $P_H$, the reductions retain
-the \emph{complete} later maximum-independent-set family $\mathcal D$,
-not a chosen sample. Nonisolated core states and every early isolated state
-omitted by a row of $\mathcal D$ are named consistently across all rows.
-The remaining common isolated states form a reservoir whose possible
-entrances and exits are represented by the finite letter signatures.
-The support bounds and row-rank restrictions in the supplement make
-this necessary domain independent of the original $n$.
+the \emph{complete} later maximum-independent-set family $\mathcal D$.
+Every nonisolated early-core state and every early isolated state omitted
+by some row is named consistently across all rows.
+The other isolated states lie in the common reservoir. Finite letter
+signatures record their possible entrances and exits.
+The structural support bounds and row-rank restrictions in the supplement
+then reduce arbitrary $n$ to finitely many named domains.
 
 Every original letter projects to an admissible signature. The finite
 domains enforce the one-step pair-distance inequalities, the existence
