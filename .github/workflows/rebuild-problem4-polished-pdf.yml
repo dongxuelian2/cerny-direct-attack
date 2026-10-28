@@ -1,0 +1,42 @@
+name: Rebuild polished Problem 4 PDF
+on:
+  push:
+    branches:
+      - codex/problem4-manuscript-final-edit-20261028
+permissions:
+  contents: write
+jobs:
+  rebuild-pdf:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile amsart manuscript with BibTeX
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: papers/problem4/main.tex
+          work_in_root_file_dir: true
+      - name: Inspect typeset result and bibliography
+        shell: bash
+        run: |
+          set -e
+          test -s papers/problem4/main.pdf
+          test "$(head -c4 papers/problem4/main.pdf)" = "%PDF"
+          pdfinfo papers/problem4/main.pdf | grep -E 'Pages:|Page size:|File size:'
+          pdftotext -layout papers/problem4/main.pdf /tmp/problem4-layout.txt
+          grep -niE 'References|Acknowledgments|Marek Szyku|Frankl|Pin|Figure [1-4]' /tmp/problem4-layout.txt | head -n 28
+          if grep -E 'LaTeX Warning: (There were undefined references|Citation .* undefined)|Overfull \\hbox' papers/problem4/main.log; then
+            echo "Typesetting warning detected"
+          fi
+          if grep -q -F '??' /tmp/problem4-layout.txt; then
+            echo "Unresolved reference marker found"
+            exit 1
+          fi
+      - name: Commit rebuilt PDF
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f papers/problem4/main.pdf
+          git diff --cached --quiet || git commit -m "Rebuild arXiv-style manuscript PDF with figures and references"
+          git push origin "HEAD:$GITHUB_REF_NAME"
