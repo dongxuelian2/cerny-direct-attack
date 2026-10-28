@@ -6,17 +6,18 @@ The manuscript in `papers/problem4/main.tex` consolidates the exact
 codimension-four and codimension-five results. Its mathematical supplement
 is [PROOF.md](../PROOF.md#problem4-paper-synthesis), including completed
 finite-domain coverage and the paper exclusion of the sole relaxation survivor.
-Reading or compiling it does not run any search or require saved certificate
-bundles. With a LaTeX installation providing the packages in the source:
+Compiling the arXiv-style `amsart` manuscript uses LaTeXmk and
+BibTeX. From the repository root:
 
 ```sh
 mkdir -p build/paper
-pdflatex -interaction=nonstopmode -halt-on-error -output-directory=build/paper papers/problem4/main.tex
-pdflatex -interaction=nonstopmode -halt-on-error -output-directory=build/paper papers/problem4/main.tex
+cp papers/problem4/main.tex papers/problem4/references.bib build/paper/
+(cd build/paper && latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex)
 ```
 
-The result is `build/paper/main.pdf`; references are embedded, so no BibTeX
-step is needed. The remaining commands in this document are optional research
+The result is `build/paper/main.pdf`. LaTeXmk invokes BibTeX and the
+required reruns automatically; figure generation uses TikZ and needs no
+external image files. The proof computations remain separate from typesetting. The remaining commands in this document are optional research
 computations for replication or further investigation. Several are expensive;
 they are not prerequisites to editing or reviewing the paper.
 
