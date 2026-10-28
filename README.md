@@ -11,6 +11,7 @@
 - [正式论文](papers/problem4/main.tex)：余维四、五精确值、匹配二字母构造、完整有限归约与计算证据。
 - [论文主线与计算依据](PROOF.md#problem4-paper-synthesis)：证明依赖、有限域覆盖与复现范围。
 - [共用结构机制](PROOF.md#problem4-shared-proof-mechanisms)：实际前缀严格增长、Johnson 邻接保持与支撑封闭；[前缀外边界](PROOF.md#problem4-johnson-prefix-exterior)、[计数界](PROOF.md#problem4-johnson-exterior-boundary)和[分量闭合](PROOF.md#problem4-johnson-component-prefix)作为多核心共用工具。
+- [证明结构压缩](PROOF.md#problem4-proof-structure-compression)：暂时冻结新增核心覆盖；五个已有分支改为一般引理的推论，另吸收一个实际第二层锚点步骤，并逐项说明仍需局部论证的假设障碍。
 - [余维三纸笔证明](PROOF.md#problem4-paper-dependency-reductions)：九步压缩上界；[单边障碍](PROOF.md#problem4-single-edge-obstruction)及[两例外](PROOF.md#problem4-two-exception-closure)、[三例外](PROOF.md#problem4-three-exception-closure)、[交换孔](PROOF.md#problem4-disjoint-exchange-holes)结构界。
 - [余维四核心归约](PROOF.md#problem4-common-hole-complete-core)：公共孔整核、[K₅删边整核](PROOF.md#problem4-doubleton-complete-core)和[三角交换孔](PROOF.md#problem4-triangle-exchange-classification)。十七个完整核心覆盖221个命名域，另有部分核心2域，共223域；三角交换孔仍有两种后层形状未闭合。
 - [余维五结构替代](PROOF.md#problem4-three-exception-closure)：521类核心、7,519个曾需动态检查的域已有纸笔替代；其他分支继续使用完整计算证明。

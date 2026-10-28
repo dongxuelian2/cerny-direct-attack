@@ -100,6 +100,78 @@ void boundary_negatives(){
  }
  std::cout<<"PASS two local boundary negatives: deleting either geometric hypothesis permits a support exit; these are not automaton counterexamples.\n";
 }
+void absorption_geometry_controls(){
+ ECount templates=0,paths=0,three_rows=0,exterior_rows=0,prefixes=0,failed_boundary=0,full_support=0;
+ for(bool shared:{false,true})for(int k=3;k<=(shared?6:4);++k)for(int j=0;j<=2;++j){
+  const int core=shared?2*k+1:3*k,n=core+j;
+  const EMask J=((1u<<j)-1)<<core,M=J|((1u<<(shared?k+1:2*k))-1),full=(1u<<n)-1;
+  const int center0=shared?k+1:2*k,center1=center0+1,leaf0=shared?1:0,leaf1=2;
+  const EMask C0=(M&~(shared?(1u|2u):3u))|(1u<<center0);
+  const EMask C1=(M&~(shared?(1u|4u):12u))|(1u<<center1);
+  const EMask B0=M&~(1u<<leaf0),B1=M&~(1u<<leaf1);
+  const int variants=shared?1:1<<(k*(k-1)/2);
+  for(int bits=0;bits<variants;++bits){
+   std::vector<EMask>adj(n);auto add=[&](int a,int b){adj[a]|=1u<<b;adj[b]|=1u<<a;};
+   if(shared){
+    std::vector<int>clique{0};for(int i=0;i<k;++i){clique.push_back(k+1+i);add(1+i,k+1+i);}
+    for(int a:clique)for(int b:clique)if(a<b)add(a,b);
+   }else{
+    for(int i=0;i<k;++i){add(2*i,2*k+i);add(2*i+1,2*k+i);}
+    int bit=0;for(int a=0;a<k;++a)for(int b=a+1;b<k;++b,++bit)if(bits>>bit&1)add(2*k+a,2*k+b);
+   }
+   auto independent=[&](EMask X){for(EMask b=X;b;b&=b-1)if(adj[__builtin_ctz(b)]&X)return false;return true;};
+   const int s=epc(M)-1;std::vector<EMask>rows;int alpha=0,maxima=0;
+   for(EMask R=0;R<=full;++R)if(independent(R)){
+    if(epc(R)>alpha){alpha=epc(R);maxima=0;}if(epc(R)==alpha)++maxima;
+    if(epc(R)==s)rows.push_back(R);
+   }
+   assert(alpha==s+1&&maxima==1&&independent(M));++templates;
+   auto check=[&](std::vector<EMask>F,const std::vector<EMask>&extra,bool isolated){
+    std::vector<EMask>later;for(EMask R:rows){bool safe=true;for(EMask edge:extra)safe&=(R&edge)!=edge;if(safe)later.push_back(R);}
+    auto ordered=F;std::sort(ordered.begin(),ordered.end());assert(ordered==later);
+    EMask Z=0;std::vector<int>degree;for(EMask R:F){Z|=R;int d=0;for(EMask T:F)d+=adjacent_rows(R,T);degree.push_back(d);}
+    assert(Z!=full);std::sort(degree.begin(),degree.end());
+    assert(degree==(isolated?std::vector<int>{0,1,1}:std::vector<int>{1,1,2,2}));
+    int exterior=0;for(EMask R:rows)if(R&~Z){++exterior;for(EMask T:F)assert(!adjacent_rows(R,T));}
+    assert(exterior==k-2);exterior_rows+=exterior;
+    if(!isolated){++paths;return;}++three_rows;
+    for(int omit=0;omit<3;++omit){++prefixes;std::vector<EMask>B;for(int r=0;r<3;++r)if(r!=omit)B.push_back(F[r]);
+     if(adjacent_rows(B[0],B[1])){
+      // This connected B is a full Johnson component: JCP handles it.
+      assert(!adjacent_rows(F[omit],B[0])&&!adjacent_rows(F[omit],B[1]));
+     }else{
+      // The omitted row has a neighbor in B: check JPB condition 1 literally.
+      EMask W=B[0]|B[1];for(int x=0;x<n;++x)if((Z&~W)>>x&1){bool witnessed=false;
+       for(EMask P:F)for(EMask N:B)witnessed|=adjacent_rows(P,N)&&(P&~N)==(1u<<x);assert(witnessed);
+      }
+     }
+    }
+   };
+   check({B0,B1,C0,C1},{(1u<<leaf0)|(1u<<leaf1)},false);
+   if(shared){
+    check({B0,C0,C1},{1u|(1u<<leaf0),(1u<<leaf0)|(1u<<leaf1)},true);
+    // A and two exceptions have an exterior neighbor containing v.
+    EMask A=M&~1u,Z=A|C0|C1;assert(B0&~Z);assert(adjacent_rows(B0,A));++failed_boundary;
+   }
+  }
+ }
+ for(int j=1;j<=3;++j){
+  const int n=5+j,s=j+1;const EMask J=((1u<<j)-1)<<5,full=(1u<<n)-1;
+  std::vector<EMask>F{(J&~32u)|3u,J|4u,J|8u,J|16u},literal;
+  for(EMask R=0;R<=full;++R)if(epc(R)==s){bool safe=true;
+   for(int a=0;a<5;++a)for(int b=a+1;b<5;++b)if((a!=0||b!=1)&&(R>>a&1)&&(R>>b&1))safe=false;
+   if((R&33u)==33u||(R&34u)==34u)safe=false;if(safe)literal.push_back(R);
+  }
+  auto ordered=F;std::sort(ordered.begin(),ordered.end());assert(ordered==literal);
+  EMask Z=0;for(int a=0;a<4;++a){Z|=F[a];for(int b=0;b<a;++b)assert(adjacent_rows(F[a],F[b])==(b!=0));}
+  assert(Z==full);++full_support;
+ }
+ assert(templates==228&&paths==228&&three_rows==12&&prefixes==36&&failed_boundary==12);
+ std::cout<<"PASS proof absorption geometry: "<<templates<<" literal graphs, "<<paths<<" complete four-row Johnson paths, "
+  <<three_rows<<" complete edge-plus-isolate families, "<<exterior_rows<<" exterior rows all separated, "<<prefixes
+  <<" two-row prefixes covered by JCP or JPB; "<<failed_boundary<<" A-only families fail the boundary hypothesis; "
+  <<full_support<<" doubleton families have full support and a three-row Johnson component.\n";
+}
 void family_classification(){
  ECount choices=0,closed=0;std::array<int,5>shapes{};
  for(int j=0;j<=3;++j){ExchangeDomain d(j,false);std::vector<EMask>rows;
@@ -138,7 +210,7 @@ int main(int argc,char**argv){
  std::cerr<<"Assertions must be enabled.\n";return 1;
 #endif
  if(argc==2&&std::string(argv[1])=="--coverage"){coverage();return 0;}assert(argc==1);
- boundary_controls();boundary_negatives();family_classification();ExchangeCounts c;for(int j=0;j<=2;++j)local_controls(j,false,c);for(int j=1;j<=2;++j)local_controls(j,true,c);square_negative();
+ boundary_controls();boundary_negatives();absorption_geometry_controls();family_classification();ExchangeCounts c;for(int j=0;j<=2;++j)local_controls(j,false,c);for(int j=1;j<=2;++j)local_controls(j,true,c);square_negative();
  std::cout<<"PASS local total "<<c.inputs<<" inputs, "<<c.basic<<" one-step-safe maps, "<<c.prefix<<" row-prefix combinations, "<<c.closed<<" closed-support combinations and "<<c.exits<<" forbidden-square exits.\n"
   <<"The arbitrary-isolate conclusions are paper proofs; these finite controls do not realize prescribed P_h graphs.\n";return 0;
 }

@@ -29,6 +29,52 @@ void johnson_check(const TGraph&g){
   }
 }
 struct StructureCounts{TC graphs=0,eligible=0,one_edges=0,hard=0;array<TC,4>singletons{};};
+array<TC,6> absorption_routes{};
+void absorption_route(const TGraph&g){
+ if(!g.M||g.alpha<3)return;
+ const int beta=g.exceptions.size();if(beta<2||beta>3||g.n-g.alpha<beta+1)return;
+ const TM full=(1u<<g.n)-1;TM support=g.M;int singles=0;
+ for(TM B:g.exceptions){support|=B;singles+=tpc(B&~g.M)==1;}
+ if(!singles){
+  set<TM>containers{g.M};for(TM B:g.exceptions)for(TM C:g.exceptions)if(B!=C&&tpc(B|C)==g.alpha)containers.insert(B|C);
+  assert(containers.size()<=size_t(beta==2?2:4));++absorption_routes[beta==2?0:2];return;
+ }
+ TM W=g.M;for(;;){TM next=W;for(TM B:g.exceptions)if(tpc(B&~W)==1)next|=B;if(next==W)break;W=next;}
+ assert(tpc(W&~g.M)<=beta&&W!=full);vector<TM>far;
+ for(TM B:g.exceptions){assert(tpc(B&~W)!=1);if(B&~W)far.push_back(B);}
+ if(beta==2){assert(far.size()<=1);++absorption_routes[1];return;}
+ if(support!=full){++absorption_routes[3];return;}
+ bool edge=false;for(TM B:far)for(TM C:far)edge|=B!=C&&tpc(B|C)==g.alpha;
+ if(!edge){++absorption_routes[4];return;}
+ // The only remaining beta=3 route must meet every ECK hypothesis, E=1.
+ assert(singles==1&&far.size()==2&&tpc(W&~g.M)==1);
+ TM K=far[0]|far[1];assert(tpc(K)==g.alpha&&(K&~W)==(full&~W)&&tpc(K&~W)>=3);
+ for(TM B:far)assert(tpc(B&~W)>=2);++absorption_routes[5];
+}
+void absorption_route_templates(){
+ // Literal nonedge lists, including disjoint, chained, two-singleton, and
+ // full-support far-edge cases absent from the n<=6 labelled graph domain.
+ const vector<pair<int,vector<pair<int,int>>>>templates={
+  {6,{{0,1},{0,2},{1,2},{3,4},{3,5}}},
+  {6,{{0,1},{0,2},{1,2},{2,3},{4,5}}},
+  {7,{{0,1},{0,2},{1,2},{3,4},{3,5},{3,6}}},
+  {7,{{0,1},{0,2},{1,2},{2,3},{3,4},{5,6}}},
+  {8,{{0,1},{0,2},{1,2},{2,3},{4,5},{6,7}}},
+  {7,{{0,1},{0,2},{1,2},{2,3},{4,5},{4,6}}},
+  {7,{{0,1},{0,2},{1,2},{2,3},{1,4},{5,6}}},
+  {7,{{0,1},{0,2},{1,2},{0,3},{1,4},{2,5}}}
+ };
+ for(const auto&[n,nonedges]:templates){TGraph g(n);
+  for(int a=0;a<n;++a)for(int b=a+1;b<n;++b)
+   if(find(nonedges.begin(),nonedges.end(),pair<int,int>{a,b})==nonedges.end())g.add(a,b);
+  g.prepare();assert(g.M==7&&g.exceptions.size()>=2&&g.exceptions.size()<=3);absorption_route(g);
+ }
+ for(TC count:absorption_routes)assert(count);
+ cout<<"PASS proof absorption routes (all applicable labelled graphs n<=6, four hard representatives, eight templates): ECC2="
+  <<absorption_routes[0]<<", bootstrap2="<<absorption_routes[1]<<", ECC3="<<absorption_routes[2]
+  <<", proper-support3="<<absorption_routes[3]<<", bootstrap3="<<absorption_routes[4]<<", ECK3="<<absorption_routes[5]
+  <<"; every ECK3 route has exactly one far edge and at least three exterior container states.\n";
+}
 void structure_check(const TGraph&g,StructureCounts&c){
  ++c.graphs;johnson_check(g);if(!g.M||g.alpha<3||g.exceptions.size()!=3)return;++c.eligible;int singles=0;
  for(TM B:g.exceptions){TM T=B&~g.M,N=0;for(int x=0;x<g.n;++x)if(T>>x&1)N|=g.adj[x]&g.M;
@@ -52,6 +98,7 @@ TGraph from_mask(int n,uint64_t mask){TGraph g(n);int k=0;for(int x=0;x<n;++x)fo
 struct MapCounts{TC permutations=0,maps=0,domains=0,to_K=0,to_La=0,to_Lb=0,lb_good=0,lb_three=0,lb_identity=0,lb_compressed=0;};
 void hard_maps(TGraph g,int isolate,MapCounts&c){
  if(isolate){TGraph h(g.n+1);for(int x=0;x<g.n;++x)for(int y=x+1;y<g.n;++y)if(g.adj[x]>>y&1)h.add(x,y);h.prepare();g=move(h);}
+ absorption_route(g);
  assert(g.M&&g.exceptions.size()==3&&g.n-g.alpha==4);int i=0;while(tpc(g.exceptions[i]&~g.M)!=1)++i;
  TM B0=g.exceptions[i],U=B0&~g.M;int u=__builtin_ctz(U);vector<TM>far;for(int j=0;j<3;++j)if(j!=i)far.push_back(g.exceptions[j]);
  TM W=g.M|U,K=far[0]|far[1];assert(tpc(K)==g.alpha&&g.edges(K)==1&&tpc(K&~W)>=3);
@@ -201,9 +248,10 @@ int main(int argc,char**argv){
   return 0;
  }
  assert(argc==1);
- for(int n=1;n<=6;++n){int e=n*(n-1)/2;for(uint64_t mask=0;mask<(uint64_t(1)<<e);++mask){TGraph g=from_mask(n,mask);structure_check(g,s);}}
+ for(int n=1;n<=6;++n){int e=n*(n-1)/2;for(uint64_t mask=0;mask<(uint64_t(1)<<e);++mask){TGraph g=from_mask(n,mask);structure_check(g,s);absorption_route(g);}}
  print_structure(s,"all labeled simple graphs n<=6");MapCounts m;
  for(auto item:vector<pair<int,uint64_t>>{{7,1900468},{8,11492464}})for(int j=0;j<=1;++j)hard_maps(from_mask(item.first,item.second),j,m);
+ absorption_route_templates();
  assert(m.to_K&&m.to_La&&m.lb_good&&m.lb_three&&m.lb_identity&&m.lb_compressed);
  cout<<"PASS four hard-subcase representatives (two cores, J=0/1), complete forced-M-image local domains: "<<m.permutations
  <<" permutations, "<<m.maps<<" outside assignments, "<<m.domains<<" five-safe-row maps; M->K "<<m.to_K

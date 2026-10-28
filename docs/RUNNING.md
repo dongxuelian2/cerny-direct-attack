@@ -120,6 +120,8 @@ python3 run.py script scripts/problem4/check_single_edge_obstruction.cpp
 python3 run.py script scripts/problem4/check_two_exception_closure.cpp
 python3 run.py script scripts/problem4/check_three_exception_closure.cpp
 python3 run.py script scripts/problem4/check_three_exception_closure.cpp --coverage
+python3 run.py script scripts/problem4/check_triangle_exchange.cpp
+python3 run.py script scripts/problem4/check_triangle_one_deletion.cpp
 python3 run.py script scripts/problem4/commonhole_exit.cpp
 python3 run.py script scripts/problem4/commonhole_exit.cpp --coverage
 ```
@@ -186,6 +188,22 @@ dynamic domains. It runs no dynamic solver. Of the latter, 7,499 belong to
 the five-to-ten-point branch and 20 to the separate eleven-point branch.
 See the [three-exception theorem](../PROOF.md#problem4-three-exception-closure)
 and the [general Johnson-cluster theorem](../PROOF.md#problem4-exception-cluster-kernel).
+For the [proof-structure compression](../PROOF.md#problem4-proof-structure-compression),
+the three-exception control also checks the ECC/bootstrap/ECK case split on every
+applicable labelled graph through six vertices, the four hard representatives,
+and eight explicit graph templates. Each of the six routes has nonempty controls;
+the ECK route always has exactly one far Johnson edge and at least three exterior
+container states. The triangular-exchange control reconstructs all independent
+rows on 228 literal graphs: disjoint-hole cores with three/four centers and every
+center-edge graph, and common-hole cores with three through six centers, each
+with zero through two isolates. It checks 228 complete four-row paths, 12 complete
+edge-plus-isolate families, all 468 exterior rows, and all 36 two-row prefixes of
+the three-row families. Twelve A-only families explicitly fail the exterior
+boundary hypothesis. Three doubleton families with one through three isolates
+check the full-support obstruction and the three-row component used by JCP.
+The one-deletion control supplies the actual-prefix JCP
+checks and its depth-zero negative control. These checks add no core coverage
+and do not require rerunning the historical domain enumerations.
 The historical `upper` task remains available for independent computational
 checks; its action/distance enumerations are no longer prerequisites for the
 codimension-three upper proof.
