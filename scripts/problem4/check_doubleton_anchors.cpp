@@ -29,18 +29,22 @@ struct AnchorDomain{
 struct AnchorMap{
  std::vector<int>f;std::array<AMask,32>target{};AMask kernel=0,forced=0;int entry=-1,q=-1;bool M_fixed=false,I_fixed=false;
 };
-bool local(const AnchorDomain&d,const std::vector<int>&f,AnchorMap&z,bool allow_double=false){
+bool local_rows(const AnchorDomain&d,const std::vector<int>&f,AnchorMap&z){
  for(int a=0;a<d.n;++a)for(int b=a+1;b<d.n;++b)if(f[a]==f[b]&&!d.edge(a,b))return false;
  for(AMask R:d.F){AMask Y=aimage(R,f);if(apc(Y)!=apc(R)||!d.independent(Y))return false;}
+ z.f=f;z.M_fixed=aimage(d.M,f)==d.M;z.I_fixed=aimage(d.I,f)==d.I;
+ z.kernel=d.kernels(f);z.forced=d.foreign(f);z.target[0]=0;
+ for(int mask=1;mask<(1<<d.m);++mask){int i=__builtin_ctz(unsigned(mask));z.target[mask]=z.target[mask&(mask-1)]|(1u<<d.row(aimage(d.F[i],f)));}
+ return true;
+}
+bool local(const AnchorDomain&d,const std::vector<int>&f,AnchorMap&z,bool allow_double=false){
+ if(!local_rows(d,f,z))return false;
  AMask Jf=aimage(d.J,f),added=Jf&31u;
  // Keep the historical single-entry subdomain as a control. The relaxed
  // proof only excludes U entries, and also admits both missing-edge ends.
  if((added&~9u)||(!allow_double&&apc(added)>1))return false;
- z.f=f;z.entry=apc(added)==2?4:added?__builtin_ctz(added):-1;
+ z.entry=apc(added)==2?4:added?__builtin_ctz(added):-1;
  z.q=apc(added)==1?__builtin_ctz(d.J&~Jf):-1;
- z.M_fixed=aimage(d.M,f)==d.M;z.I_fixed=aimage(d.I,f)==d.I;
- z.kernel=d.kernels(f);z.forced=d.foreign(f);z.target[0]=0;
- for(int mask=1;mask<(1<<d.m);++mask){int i=__builtin_ctz(unsigned(mask));z.target[mask]=z.target[mask&(mask-1)]|(1u<<d.row(aimage(d.F[i],f)));}
  return true;
 }
 struct AnchorCounts{ACount literal=0,maps=0,prefixes=0,missing_B=0,missing_A=0,no_b=0,with_b=0,witnesses=0,conflicts=0,compatible=0,empty_I=0,unsupplied_B=0,row_conflicts=0,blocks=0;};
@@ -141,6 +145,64 @@ void core_only_controls(int j,bool five,CoreOnlyCounts&all){
   <<" double-entry prefix witnesses="<<c.double_witnesses<<" gf comparisons="<<c.comparisons<<" protected-row collapses="<<c.collapsed
   <<" invariant two-row blocks="<<c.blocks<<'\n';
 }
+void u_return_controls(){
+ ACount literal=0,maps_count=0,total_u=0,witnesses=0,ff=0,comparisons=0,closed=0,fgf=0,gf=0,gg=0;
+ for(int j=1;j<=3;++j)for(bool five:{false,true}){
+  AnchorDomain d(j,five);std::vector<AnchorMap>maps;std::vector<int>f(d.n);ACount uc=0;
+  std::function<void(int)>visit=[&](int at){
+   if(at<d.n){for(int v=0;v<d.n;++v){f[at]=v;visit(at+1);}return;}++literal;
+   AnchorMap z;if(local_rows(d,f,z)&&d.n-apc(aimage((1u<<d.n)-1,f))<=2){
+    uc+=(aimage(d.J,f)&22u)!=0;maps.push_back(std::move(z));}
+  };visit(0);assert(!five||!uc);maps_count+=maps.size();total_u+=uc;int full=(1<<d.m)-1;
+  for(int R3=0;R3<=full;++R3)if(apc(R3)>=4)for(int R2=R3;R2;R2=(R2-1)&R3)if(apc(R2)>=3&&apc(R2)<apc(R3))
+   for(int R1=R2;R1;R1=(R1-1)&R2)if(apc(R1)>=2&&apc(R1)<apc(R2))for(int S=0;S<d.m;++S)if(R1>>S&1){
+    std::vector<const AnchorMap*>pool;
+    for(const auto&z:maps)if(!(z.target[1u<<S]&~AMask(R1))&&!(z.target[R1]&~AMask(R2))&&!(z.target[R2]&~AMask(R3)))pool.push_back(&z);
+    for(auto fp:pool){const auto&f=fp->f;AMask added=aimage(d.J,f)&31u;if(!(added&22u))continue;++witnesses;
+     assert(!five&&apc(added)==1);int w=__builtin_ctz(added);assert(w==1||w==2);
+     int q=f[0],source=5;while(f[source]!=w)++source;
+     assert(q>=5&&f[0]==f[1]&&f[1]==f[2]&&f[5]==w);
+     auto exterior=[](int x){return x==3||x==4;};
+     if(!exterior(f[3])||!exterior(f[4])){
+      int z=exterior(f[3])?4:3;assert(!d.edge(source,z)&&f[f[source]]==f[f[z]]);++ff;continue;
+     }
+     assert(f[3]!=f[4]&&R2==14&&R3==15&&(R1&(1u<<(w+1))));
+     for(auto gp:pool){const auto&g=gp->f;++comparisons;
+      if(exterior(g[3])&&exterior(g[4])){++closed;continue;}
+      AMask Jg=aimage(d.J,g);
+      if(Jg==d.J){
+       assert(g[w]<=2);int y=!exterior(g[3])?3:4,z=f[3]==y?3:4;
+       assert(!d.edge(source,z)&&f[g[f[source]]]==f[g[f[z]]]);++fgf;
+      }else{
+       AMask core=Jg&31u;assert(apc(core)==1&&(core&7u));int e=__builtin_ctz(core),p=5;while(g[p]!=e)++p;
+       int z=g[3]<=2?3:g[4]<=2?4:-1;
+       if(z>=0){assert(!d.edge(p,z)&&f[g[p]]==f[g[z]]);++gf;}
+       else{int hole=__builtin_ctz(d.J&~Jg);
+        assert(e==0&&(R1&2)&&g[0]==hole&&g[w]==hole&&g[3]==4&&g[4]==hole);
+        assert(!d.edge(p,3)&&g[g[p]]==g[g[3]]);++gg;}
+      }
+     }
+    }
+   }
+ }
+ assert(literal==35294830&&maps_count==7470&&total_u==324&&witnesses==1512&&ff==1368);
+ assert(comparisons==41836&&closed==12328&&fgf==12956&&gf==16432&&gg==120);
+ std::cout<<"PASS U-entry returns: "<<literal<<" literal maps, "<<maps_count<<" maps protecting G nonedges and all source rows, of defect at most two; "<<total_u
+  <<" U entries (none in the five-row family); "<<ff<<" of "<<witnesses<<" prefix witnesses fail ff. Of "<<comparisons
+  <<" remaining cross-letter comparisons, "<<closed<<" preserve {b,r}; fgf/gf/gg merge original G nonedges in "
+  <<fgf<<'/'<<gf<<'/'<<gg<<" cases. No first/last-layer budget is imposed.\n";
+}
+void u_return_negative(){
+ AnchorDomain d(2,false);const std::vector<int>f{5,5,5,3,4,1,6},g{5,5,3,4,5,0,6},h{0,2,0,3,4,5,6};
+ std::vector<AMask>rows{d.F[1]};
+ for(int depth=1;depth<=3;++depth){
+  auto next=rows;for(auto letter:{f,g,h}){AnchorMap z;assert(local_rows(d,letter,z)&&d.n-apc(aimage((1u<<d.n)-1,letter))<=2);
+   for(AMask R:rows){AMask Y=aimage(R,letter);if(std::find(next.begin(),next.end(),Y)==next.end())next.push_back(Y);}}
+  rows=next;AMask prefix=0;for(AMask R:rows)prefix|=1u<<d.row(R);assert(prefix==(depth==1?6u:depth==2?14u:15u));
+ }
+ assert(!d.edge(5,3)&&g[g[5]]==g[g[3]]&&g[4]>=5);
+ std::cout<<"PASS U-entry actual-prefix negative: three row-safe maps of defect at most two supply the full 2/3/4-row prefix, but gg merges the original G nonedge zb in two letters.\n";
+}
 void double_entry_negative(){
  AnchorDomain d(2,false);const std::vector<int>f{6,6,5,5,4,3,0},g{5,5,3,1,4,0,6};
  AnchorMap w,z;assert(!local(d,f,w)&&local(d,f,w,true)&&local(d,g,z,true));
@@ -183,7 +245,8 @@ int main(int argc,char**argv){
  if(argc==2&&std::string(argv[1])=="--coverage"){coverage();return 0;}assert(argc==1);
  AnchorCounts c;for(int j=1;j<=3;++j)for(bool five:{false,true})anchor_controls(j,five,c);cross_control();
  CoreOnlyCounts relaxed;for(int j=1;j<=3;++j)for(bool five:{false,true})core_only_controls(j,five,relaxed);
- double_entry_negative();assert(relaxed.double_maps&&relaxed.rank_two_double&&relaxed.double_witnesses&&relaxed.rank_two_witnesses&&relaxed.collapsed&&relaxed.blocks);
+ double_entry_negative();u_return_controls();u_return_negative();
+ assert(relaxed.double_maps&&relaxed.rank_two_double&&relaxed.double_witnesses&&relaxed.rank_two_witnesses&&relaxed.collapsed&&relaxed.blocks);
  std::cout<<"PASS relaxed core-only domain: "<<relaxed.literal<<" literal maps, "<<relaxed.maps<<" local maps including "
   <<relaxed.double_maps<<" double entries ("<<relaxed.rank_two_double<<" of defect two), "<<relaxed.prefixes<<" prefix candidates, "<<relaxed.double_witnesses
   <<" double-entry witnesses ("<<relaxed.rank_two_witnesses<<" of defect two); "<<relaxed.collapsed<<" of "<<relaxed.comparisons

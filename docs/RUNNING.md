@@ -307,6 +307,26 @@ budget. This is a nonsynchronizing local model, not a prescribed-P7 automaton;
 it checks why actual-prefix and known-word protection alone do not settle the
 remaining global layer condition.
 
+The shared [protected-reset support rule](../PROOF.md#problem4-reset-support-propagation)
+records the literal two-letter gf and three-letter fgf costs used by both
+doubleton branches. The [U-entry proof](../PROOF.md#problem4-doubleton-double-entry)
+first completes the original four safe rows to the four/five-row family using
+the unique maximum set. In the five-row family, four petals force defect at
+least three. In the four-row family, the actual reset excludes B from R2 and closes {b,r}; gg
+rejects the last possible exit into an isolate hole. The whole-core upper
+proof therefore no longer uses the joint first/last-layer budget. Its numerical
+bound remains an auxiliary statement with the original hypotheses.
+
+check_doubleton_anchors.cpp also revisits the same 35,294,830 literal maps
+without pre-excluding U entries. One-letter G-nonedge protection, source-row
+safety and defect at most two leave 7,470 maps, including 324 U entries (none
+in the five-row family). The 972 strict
+prefix candidates yield 1,512 U-entry witnesses; 1,368 fail ff. Of the remaining
+41,836 cross-letter comparisons, 12,328 preserve {b,r}; fgf, gf and gg merge an
+original G nonedge in 12,956, 16,432 and 120 cases. No layer-budget filter is
+used. Three explicit row-safe maps also generate an actual 2/3/4-row prefix
+but merge the protected zb under gg, checking the final hole-exit case.
+
 The strengthened [doubleton anchor proof](../PROOF.md#problem4-doubleton-actual-anchors)
 also runs the same complete 35,294,830-map domain with only Jf contained in M,
 allowing simultaneous entries into a and b. Its 9,708 local maps include 1,120
