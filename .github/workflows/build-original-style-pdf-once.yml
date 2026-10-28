@@ -1,0 +1,46 @@
+name: Build original-style manuscript PDF
+on:
+  push:
+    branches:
+      - codex/problem4-manuscript-final-edit-20261028
+permissions:
+  contents: write
+jobs:
+  manuscript:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile paper and BibTeX references
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: papers/problem4/main.tex
+          work_in_root_file_dir: true
+      - name: Inspect PDF and first-page authors
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq poppler-utils >/dev/null
+          test -s papers/problem4/main.pdf
+          test "$(head -c4 papers/problem4/main.pdf)" = "%PDF"
+          pdfinfo papers/problem4/main.pdf | grep -E 'Pages:|Page size:|File size:'
+          pdftotext -f 1 -l 1 -layout papers/problem4/main.pdf /tmp/problem4-first.txt
+          cat /tmp/problem4-first.txt | head -n 42
+          grep -F 'Qichao Wang' /tmp/problem4-first.txt
+          grep -F 'Daoyu Dong' /tmp/problem4-first.txt
+          grep -F 'Hebei University of Technology' /tmp/problem4-first.txt
+          grep -F 'University of Electronic Science' /tmp/problem4-first.txt
+          if grep -E 'LaTeX Warning: (There were undefined references|Citation .* undefined)|Overfull \\hbox' papers/problem4/main.log; then
+            echo 'Reference or typesetting warning'
+            exit 1
+          fi
+          pdftoppm -f 1 -l 1 -scale-to 1200 -png -singlefile papers/problem4/main.pdf papers/problem4/.title-review
+      - name: Commit compiled paper and review image
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f papers/problem4/main.pdf papers/problem4/.title-review.png
+          git diff --cached --quiet || git commit -m "Rebuild paper using submitted arXiv article format"
+          git push origin "HEAD:$GITHUB_REF_NAME"
