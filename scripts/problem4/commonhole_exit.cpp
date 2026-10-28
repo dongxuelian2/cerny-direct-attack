@@ -379,13 +379,22 @@ bool one_deletion_gate_compatible(const Domain&d,const std::vector<int>&f,
  for(Mask P:first)if(std::find(last.begin(),last.end(),P)!=last.end())return false;
  return first.size()+last.size()<=4;
 }
+struct RowLetter{std::vector<int>f;std::array<Mask,256>images{};};
+int compression_depth(Mask start,std::initializer_list<const RowLetter*>letters){
+ std::array<int,256>distance;distance.fill(-1);std::array<Mask,256>queue{};int head=0,tail=1;
+ queue[0]=start;distance[start]=0;const int size=pc(start);
+ while(head<tail){Mask X=queue[head++];for(auto f:letters){Mask Y=f->images[X];if(pc(Y)<size)return distance[X]+1;
+  if(distance[Y]<0){distance[Y]=distance[X]+1;queue[tail++]=Y;}
+ }}return -1;
+}
 void one_deletion_controls(){
  Count all_maps=0,all_next=0,all_gate=0;
+ Count joint=0;std::array<Count,6>lengths{};
  for(int j=0;j<=1;++j)for(int x:std::vector<int>{1,2,3,7})for(int extra=0;extra<=1;++extra)for(int mode=0;mode<=1;++mode){
   if(x==7&&!j)continue;Domain d(j);Mask A=d.D[0],B=d.M&~(1u<<x),Ci=d.D[1],Cj=d.D[2];std::vector<Mask>E{A,Ci,Cj},R1{A,Ci},F{A,B,Ci,Cj};if(extra)F.push_back(d.D[3]);
   std::vector<Mask>targets;for(Mask T=0;T<=d.full;++T)if(pc(T)==pc(d.M)&&d.edges(T)<=1)targets.push_back(T);
   std::vector<int>source;for(int q=0;q<d.n;++q)if(d.M>>q&1)source.push_back(q);
-  std::vector<int>f(d.n);Count kept=0,next=0,gate=0,late_gate=0,reduced_exits=0,gate_survivors=0;
+  std::vector<int>f(d.n);std::vector<RowLetter>maps;Count kept=0,next=0,gate=0,late_gate=0,reduced_exits=0,gate_survivors=0;
   for(Mask T:targets){std::vector<int>out;for(int q=0;q<d.n;++q)if(T>>q&1)out.push_back(q);
    do{for(size_t q=0;q<source.size();++q)f[source[q]]=out[q];
     for(int a=0;a<d.n;++a)for(int b=0;b<d.n;++b)for(int c=0;c<d.n;++c){f[4]=a;f[5]=b;f[6]=c;if(d.n-pc(image(d.full,f))>2)continue;bool safe=true;
@@ -394,7 +403,7 @@ void one_deletion_controls(){
      for(Mask X:E)if(std::find(F.begin(),F.end(),image(X,f))==F.end())safe=false;
      for(Mask X:R1)if(std::find(E.begin(),E.end(),image(X,f))==E.end())safe=false;
      Mask S=mode?Ci:A;if(std::find(R1.begin(),R1.end(),image(S,f))==R1.end())safe=false;
-     if(!safe)continue;++kept;
+     if(!safe)continue;++kept;maps.push_back({f,{}});
      Mask Af=image(A,f),Cif=image(Ci,f),Cjf=image(Cj,f);
      if(!mode){
       if(Cif==Cj){++next;assert(Af==A&&f[1]==2&&f[4]==5);}
@@ -413,9 +422,28 @@ void one_deletion_controls(){
    }while(std::next_permutation(out.begin(),out.end()));
   }
   assert(kept);if(mode&&x!=1)assert(!late_gate);
+  std::vector<const RowLetter*>aa,bb,tt;
+  for(auto&z:maps){for(Mask X=1;X<=d.full;++X){int q=__builtin_ctz(X);z.images[X]=z.images[X&(X-1)]|(1u<<z.f[q]);}
+   if(z.images[A]==(mode?Cj:Ci))aa.push_back(&z);if(z.images[Ci]==Cj)bb.push_back(&z);if(z.images[Cj]==B)tt.push_back(&z);
+  }
+  for(auto a:aa){if(!mode){Mask Li=A|16u,Lj=A|32u;
+    assert(a->images[Ci]==A||a->images[Ci]==Ci);assert(a->images[Cj]==A||a->images[Cj]==Ci);
+    assert(a->images[Ci]!=A||a->images[Cj]!=A);
+    for(auto b:bb){assert(b->images[A]==A);int li_depth=compression_depth(Li,{a,b}),lj_depth=compression_depth(Lj,{a,b});
+     assert(1<=li_depth&&li_depth<=2&&1<=lj_depth&&lj_depth<=2);
+     for(auto t:tt){++joint;assert(t->images[A]==A);int depth=compression_depth(d.M,{a,b,t});assert(1<=depth&&depth<=5);++lengths[depth];}
+    }
+   }else for(auto t:tt){++joint;assert(x==1&&t->images[A]==A&&t->images[Ci]==A);
+    int depth=compression_depth(d.M,{a,t});assert(1<=depth&&depth<=3);++lengths[depth];
+   }
+  }
   all_maps+=kept;all_next+=next;all_gate+=gate+late_gate;
   std::cout<<"PASS one-deletion shapes J="<<j<<" hole="<<x<<" extra="<<extra<<" S="<<(mode?"Ci":"A")<<": maps="<<kept<<", Ci-to-Cj="<<next<<", A-to-Ci="<<gate<<", A-to-Cj="<<late_gate<<", reduced M exits="<<reduced_exits<<", gate budget survivors="<<gate_survivors<<"\n";
  }
+ assert(joint&&lengths[2]&&lengths[3]&&lengths[4]);
+ std::cout<<"PASS actual third-row suppliers: "<<joint<<" small-alphabet inputs with A/Ci and Ci/Cj gates plus Cj-to-B; ordinary subset BFS compresses the protected M at depths 1..5=";
+ for(int depth=1;depth<=5;++depth)std::cout<<lengths[depth]<<(depth==5?'\n':'/');
+ std::cout<<"No first/last-layer, P2 saturation or shortest-pair budget filter is used by this supplier control.\n";
  // The singleton-pr closure used after the three-terminal budget. Only
  // the already derived M forms and P1={pi} are imposed here.
  for(int j=0;j<=1;++j){Domain d(j);Mask A=d.D[0],pi=18u,pj=36u,pr=72u;std::vector<Mask>targets{d.M,(d.M&~2u)|16u,A|64u};

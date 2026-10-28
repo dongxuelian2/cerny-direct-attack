@@ -24,7 +24,7 @@ EMask row_component(EMask family,int seed){
   if(next==reached)return reached;reached=next;
  }
 }
-struct FoldCounts{ECount inputs=0,protected_cases=0,nontrivial=0,fixers=0;};
+struct FoldCounts{ECount inputs=0,protected_cases=0,nontrivial=0,fixers=0,rank_cases=0,proper_witnesses=0,rank_fixers=0;};
 void actual_fold_controls(EMask S,EMask R2,const std::array<std::array<EMask,16>,2>&letters,
                           const std::vector<std::array<EMask,16>>&words,FoldCounts&count){
  if(!R2)return;
@@ -33,6 +33,14 @@ void actual_fold_controls(EMask S,EMask R2,const std::array<std::array<EMask,16>
   bool folds=true;for(EMask rows=R2&~(1u<<B);rows;rows&=rows-1)folds&=f[__builtin_ctz(rows)]==B;
   if(!folds)continue;++count.inputs;bool protected_union=true;
   for(const auto&v:words)protected_union&=epc(v[A|B])==epc(A|B);
+  bool protected_rank=false;for(EMask K=A|B;K;K=(K-1)&(A|B))if(epc(K)>epc(A)){
+   bool independent=true;for(const auto&v:words)independent&=epc(v[K])==epc(K);
+   protected_rank|=independent;
+  }
+  if(protected_rank){++count.rank_cases;count.proper_witnesses+=!protected_union;
+   EMask R1=(1u<<S)|(1u<<letters[0][S])|(1u<<letters[1][S]);assert(R1&(1u<<B));
+   for(const auto&g:letters)if(g[A]==A){++count.rank_fixers;assert(g[B]==B);}
+  }
   if(!protected_union)continue;++count.protected_cases;count.nontrivial+=epc(R2)>2;
   EMask R1=(1u<<S)|(1u<<letters[0][S])|(1u<<letters[1][S]);assert(R1&(1u<<B));
   for(const auto&g:letters)if(g[A]==A){++count.fixers;assert(g[B]==B);}
@@ -106,6 +114,8 @@ void actual_component_controls(){
  std::cout<<"PASS two-target folds: "<<gates.folds.inputs<<" actual (automaton,S,f,A,B) folds on R2, "<<gates.folds.protected_cases
   <<" with P2-independent union ("<<gates.folds.nontrivial<<" with more than two rows), "<<gates.folds.fixers
   <<" A-fixing letter comparisons all fix B; depth-one and P1-only negatives pass.\n";
+ std::cout<<"PASS protected-rank folds: "<<gates.folds.rank_cases<<" actual folds whose row union contains an independent set larger than a row, "
+  <<gates.folds.proper_witnesses<<" with a nonindependent whole union; all "<<gates.folds.rank_fixers<<" A-fixing comparisons fix B.\n";
 }
 void one_deletion_controls(){
  ECount inputs=0,basic=0,prefix=0,closed_R2=0,no_entry=0,closed_R1=0,entries=0,normals=0,ordinary=0;
@@ -157,9 +167,64 @@ void one_deletion_negatives(){
  std::cout<<"PASS rank-unrestricted ordinary lemma: all "<<inputs<<" six-core maps, "<<safe<<" source-safe, "<<ordinary<<" R2 cases, "<<closed<<" avoid both pairs and fix A; "
   <<negative[0]<<'/'<<negative[1]<<" moving cases hit just the first/second pair. Six explicit rank-two square-safe negative extensions pass.\n";
 }
+void mixed_return_controls(){
+ ECount core_maps=0,ordinary=0,entries=0,comparisons=0,moving=0,fg=0,gf=0,fgg=0;
+ for(int j=1;j<=3;++j){auto d=one_deletion_domain(j);std::array<std::vector<std::vector<int>>,2>pool;
+  std::vector<int>g(d.n);std::function<void(int)>generate=[&](int at){
+   if(at<6){for(int y=0;y<6;++y){g[at]=y;generate(at+1);}return;}++core_maps;
+   std::vector<int>isolates;for(int y=6;y<d.n;++y)isolates.push_back(y);
+   do{for(int x=6;x<d.n;++x)g[x]=isolates[x-6];if(!d.basic(g))continue;
+    for(int p=1;p<=2;++p)if(!(image_row_choices(d,3|(1u<<(p+1)),g)&~15u)){pool[p-1].push_back(g);++ordinary;}
+   }while(std::next_permutation(isolates.begin(),isolates.end()));
+  };generate(0);
+  for(int p=1;p<=2;++p){int m=3-p;const EMask A=d.F[0],B=d.F[p+1],C=d.F[1],D=d.F[m+1];
+   const int R2=3|(1u<<(p+1));
+   for(int q=6;q<d.n;++q){std::vector<int>outputs;for(int y=6;y<d.n;++y)if(y!=q)outputs.push_back(y);outputs.push_back(p);std::sort(outputs.begin(),outputs.end());
+    do{std::vector<int>f(d.n);f[0]=p+3;f[p]=q;f[m]=m;f[3]=q;f[p+3]=p+3;f[m+3]=0;
+     for(int x=6;x<d.n;++x)f[x]=outputs[x-6];++entries;
+     assert(d.basic(f)&&d.square_nonedge(f)&&eimage(d.M,f)==(A|B));
+     assert(eimage(A,f)==A&&eimage(B,f)==B&&eimage(C,f)==B);
+     for(int R1:{3,2|(1<<(p+1))})for(int s=0;s<4;++s)if(R1>>s&1){EMask S=d.F[s];
+      if(image_row_choices(d,1u<<s,f)&~EMask(R1))continue;
+      assert(!(image_row_choices(d,R1,f)&~EMask(R2)));
+      for(const auto&g:pool[p-1]){
+       if((image_row_choices(d,1u<<s,g)&~EMask(R1))||(image_row_choices(d,R1,g)&~EMask(R2)))continue;
+       ++comparisons;EMask Ag=eimage(A,g),Bg=eimage(B,g);if(Ag==A)continue;++moving;
+       EMask Mfg=eimage(eimage(d.M,f),g);
+       if(epc(Mfg)<epc(d.M)){++fg;continue;}
+       assert(Ag!=Bg&&(Ag==B||Ag==D)&&Bg==A&&eimage(D,g)==Ag);
+       if(Ag==D){++fgg;assert(epc(eimage(Mfg,g))<epc(d.M));}
+       else{++gf;assert(R1==(2|(1<<(p+1)))&&S==C&&eimage(C,g)==C);
+        assert(epc(eimage(eimage(d.M,g),f))<epc(d.M));
+       }
+      }
+     }
+    }while(std::next_permutation(outputs.begin(),outputs.end()));
+   }
+  }
+ }
+ assert(fg&&gf&&fgg&&moving==fg+gf+fgg);
+ std::cout<<"PASS mixed returns without kernel guards: "<<core_maps<<" six-core inputs with all isolate permutations J=1..3, "
+  <<ordinary<<" ordinary map/p choices, "<<entries<<" constructed entrance maps, "<<comparisons<<" joint prefix comparisons; "
+  <<moving<<" move A and compress the protected M by fg/gf/fgg in "<<fg<<'/'<<gf<<'/'<<fgg<<" cases. No ordinary defect or pair-layer budget is imposed.\n";
+ auto d=one_deletion_domain(1);const std::vector<int>f{4,6,2,6,4,0,1},g{0,2,5,3,1,2,6},no_prefix{2,1,4,5,2,1,6};
+ EMask family=2;for(EMask expected:{6u,7u,15u}){family|=image_row_choices(d,family,f)|image_row_choices(d,family,g);assert(family==expected);}
+ for(int x=0;x<d.n;++x)for(int y=x+1;y<d.n;++y)if(!d.edge(x,y))for(const auto&a:{f,g})for(const auto&b:{f,g})
+  assert(epc(eimage(eimage((1u<<x)|(1u<<y),a),b))==2);
+ assert(epc(eimage(eimage(eimage(d.M,f),g),g))<epc(d.M));
+ assert(d.basic(no_prefix)&&d.n-epc(eimage(d.Z,no_prefix))==2&&eimage(d.F[0],no_prefix)!=d.F[0]);
+ std::vector<EMask>orbit;for(int x=0;x<d.n;++x)for(int y=x+1;y<d.n;++y)if(!d.edge(x,y))orbit.push_back((1u<<x)|(1u<<y));
+ for(size_t at=0;at<orbit.size();++at)for(const auto&a:{f,no_prefix}){EMask Y=eimage(orbit[at],a);assert(epc(Y)==2);
+  if(std::find(orbit.begin(),orbit.end(),Y)==orbit.end())orbit.push_back(Y);
+ }
+ int joint=0;for(int R1:{3,6})for(int s=0;s<3;++s)if(R1>>s&1){bool valid=true;for(const auto&a:{f,no_prefix})
+  valid&=!(image_row_choices(d,1u<<s,a)&~EMask(R1))&&!(image_row_choices(d,R1,a)&~7u);joint+=valid;
+ }assert(!joint);
+ std::cout<<"PASS mixed-return negatives: an actual R1/R2/R3=2/3/4 prefix preserves every G nonedge for two letters but fgg compresses M; a defect-two moving map preserves the entire nonedge pair orbit with f but has no compatible two-row R1.\n";
+}
 int main(){
 #ifdef NDEBUG
  std::cerr<<"Assertions must be enabled.\n";return 1;
 #endif
- std::cout<<std::unitbuf;actual_component_controls();one_deletion_controls();one_deletion_negatives();std::cout<<"The arbitrary-isolate theorem is a paper proof; local maps do not construct prescribed-P_h automata.\n";return 0;
+ std::cout<<std::unitbuf;actual_component_controls();one_deletion_controls();one_deletion_negatives();mixed_return_controls();std::cout<<"The arbitrary-isolate theorem is a paper proof; local maps do not construct prescribed-P_h automata.\n";return 0;
 }

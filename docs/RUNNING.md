@@ -258,6 +258,38 @@ kernel conflict. The triangular ordinary-letter controls now also check the
 forced row identification before the second kernel guard, both with and
 without the rank restriction; the two independent guard negatives remain.
 
+The [triangular mixed-return proof](../PROOF.md#problem4-triangle-exchange-one-deletion)
+now uses the actual two-row R1 and an entrance letter. Its control enumerates
+all 139,968 six-core inputs for one through three isolates and every permutation
+of those isolates, retaining 2,196 ordinary-map/direction choices and constructing
+all 46 entrance maps. Of 32,292 compatible joint prefix comparisons, 15,444 move
+A0; all compress the protected maximum independent set M by fg, gf, or fgg,
+in 14,040 / 468 / 936 cases. The ordinary maps have no defect or pair-layer
+budget filter. The previous one-letter two-kernel-guard controls remain valid
+but are no longer prerequisites for the upper proof. An actual prefix of sizes
+2/3/4 protects all G nonedges for two letters and is first rejected by fgg;
+another defect-two moving map preserves the full nonedge pair orbit with the
+entrance but has no compatible two-row R1. These check the three-letter cost
+and actual-first-layer hypotheses separately.
+
+The generalized row-fibre argument requires only an independent subset of the
+row union larger than either row. The complete binary-automaton fold control
+also checks this rank condition: it finds the same 5,520 applicable cases as
+the full-union condition through four states, with no extra proper-subset
+folds in that small actual-automaton domain.
+
+The [common-hole single-A proof](../PROOF.md#problem4-common-hole-one-deletion-A)
+now requires an actual third-layer supplier C_j t=B_x. In commonhole_exit.cpp,
+the existing zero/one-isolate, all-hole, four/five-row, and two-initial-row map
+domains retain the original-letter defect-two condition, but no first/last-layer
+or P2 saturation filter is used in the new supplier check. Ordinary subset BFS
+on 1,401,372 small alphabets compresses M in two letters in 1,115,822 cases,
+three in 282,226 cases, and four in 3,324 cases. The paper proof works for
+arbitrary isolates with explicit bounds of five and three original letters;
+the observed finite four-letter maximum is not claimed as that general bound.
+The old layer-budget and private-pair controls remain as separate historical
+checks; neither is a dependency of this branch's new closing argument.
+
 The strengthened [doubleton anchor proof](../PROOF.md#problem4-doubleton-actual-anchors)
 also runs the same complete 35,294,830-map domain with only Jf contained in M,
 allowing simultaneous entries into a and b. Its 9,708 local maps include 1,120
