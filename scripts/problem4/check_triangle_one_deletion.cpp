@@ -24,7 +24,21 @@ EMask row_component(EMask family,int seed){
   if(next==reached)return reached;reached=next;
  }
 }
-struct GateCounts{ECount inputs=0,one=0,two=0;};
+struct FoldCounts{ECount inputs=0,protected_cases=0,nontrivial=0,fixers=0;};
+void actual_fold_controls(EMask S,EMask R2,const std::array<std::array<EMask,16>,2>&letters,
+                          const std::vector<std::array<EMask,16>>&words,FoldCounts&count){
+ if(!R2)return;
+ for(const auto&f:letters)for(EMask bs=R2;bs;bs&=bs-1){EMask B=__builtin_ctz(bs),A=f[B];
+  if(A==B||!(R2&(1u<<A))||f[A]!=B)continue;
+  bool folds=true;for(EMask rows=R2&~(1u<<B);rows;rows&=rows-1)folds&=f[__builtin_ctz(rows)]==B;
+  if(!folds)continue;++count.inputs;bool protected_union=true;
+  for(const auto&v:words)protected_union&=epc(v[A|B])==epc(A|B);
+  if(!protected_union)continue;++count.protected_cases;count.nontrivial+=epc(R2)>2;
+  EMask R1=(1u<<S)|(1u<<letters[0][S])|(1u<<letters[1][S]);assert(R1&(1u<<B));
+  for(const auto&g:letters)if(g[A]==A){++count.fixers;assert(g[B]==B);}
+ }
+}
+struct GateCounts{ECount inputs=0,one=0,two=0;FoldCounts folds;};
 void actual_gate_controls(int n,EMask S,const std::array<std::array<EMask,16>,2>&letter_images,
                           const std::vector<std::array<EMask,16>>&word_images,GateCounts&count){
  std::array<EMask,5>prefix{};prefix[0]=1u<<S;const int size=epc(S);
@@ -33,6 +47,7 @@ void actual_gate_controls(int n,EMask S,const std::array<std::array<EMask,16>,2>
    if(epc(Y)!=size)compressed=true;else next|=1u<<Y;
   }if(compressed)break;prefix[d]=next;
  }
+ actual_fold_controls(S,prefix[2],letter_images,word_images,count.folds);
  EMask universe=0;for(EMask R=1;R<(1u<<n);++R)if(epc(R)==size)universe|=1u<<R;
  for(size_t w=0;w<word_images.size();++w){int length=w<2?1:2;EMask actual=prefix[2*length];if(!actual)continue;
   const auto&v=word_images[w];EMask free=universe&~actual;
@@ -65,12 +80,32 @@ void actual_component_controls(){
  const EMask C=(1u<<3)|(1u<<6);const std::vector<int>rotate{1,2,0};
  assert(eimage(3,rotate)==6&&eimage(6,rotate)==5&&!(C&(1u<<5)));
  // C is the actual R1 of C3, but R2 leaves it: one layer is insufficient.
+ // At depth one a permutation pair can satisfy the fold on R1 and still
+ // move B outside it. At depth two, protection only through P1 is insufficient.
+ auto advance=[](EMask family,const std::vector<int>&f,const std::vector<int>&g){EMask next=family;
+  for(EMask rows=family;rows;rows&=rows-1){EMask R=__builtin_ctz(rows);next|=(1u<<eimage(R,f))|(1u<<eimage(R,g));}return next;
+ };
+ const EMask A=3,B=5,D=10;const std::vector<int>swap{0,2,1,3},move{0,1,3,2};
+ assert(eimage(A,swap)==B&&eimage(B,swap)==A&&eimage(A,move)==A&&eimage(B,move)==9);
+ assert(eimage(15,swap)==15&&eimage(15,move)==15);
+ assert(advance(1u<<A,swap,move)==((1u<<A)|(1u<<B)));
+ const std::vector<int>fold{0,2,1,0},escape{1,0,3,2};
+ assert(eimage(A,fold)==B&&eimage(B,fold)==A&&eimage(D,fold)==B);
+ assert(eimage(A,escape)==A&&eimage(B,escape)==D&&eimage(D,escape)==B);
+ assert(epc(eimage(A|B,fold))==3&&epc(eimage(A|B,escape))==3);
+ assert(eimage(eimage(A,escape),fold)==eimage(eimage(B,escape),fold));
+ const EMask folded=(1u<<A)|(1u<<B)|(1u<<D);
+ assert(advance(1u<<B,fold,escape)==folded&&advance(folded,fold,escape)==folded);
+ assert(gates.folds.inputs&&gates.folds.protected_cases&&gates.folds.nontrivial&&gates.folds.fixers);
  std::cout<<"PASS actual Johnson-component prefixes: "<<automata<<" complete binary automata n=2..4, "<<strict<<" growing uncompressed depths d>=1, "
   <<platforms<<" filled-component platforms; all obey closure. Explicit strongly connected synchronizing d=0 negative passes.\n";
  std::cout<<"PASS connectivity propagation: "<<connected<<" connected positive-depth prefixes, "<<connected_growth
   <<" with strict growth; all next prefixes connected.\n";
  std::cout<<"PASS single-target gates: "<<gates.inputs<<" actual (automaton,S,C,word) inputs, "<<gates.one
   <<" one-letter and "<<gates.two<<" two-letter singleton intersections all yield a fixed actual anchor; the C3 one-layer negative passes.\n";
+ std::cout<<"PASS two-target folds: "<<gates.folds.inputs<<" actual (automaton,S,f,A,B) folds on R2, "<<gates.folds.protected_cases
+  <<" with P2-independent union ("<<gates.folds.nontrivial<<" with more than two rows), "<<gates.folds.fixers
+  <<" A-fixing letter comparisons all fix B; depth-one and P1-only negatives pass.\n";
 }
 void one_deletion_controls(){
  ECount inputs=0,basic=0,prefix=0,closed_R2=0,no_entry=0,closed_R1=0,entries=0,normals=0,ordinary=0;
@@ -81,8 +116,11 @@ void one_deletion_controls(){
   EMask Jf=eimage(d.J,f),core=Jf&63u;assert(epc(core)<=1);if(core)assert(core==1||core==2||core==4);
   EMask K=kernel_flags(f),T=foreign_targets(d,f);std::array<EMask,16>to{};for(int R=1;R<16;++R)to[R]=image_row_choices(d,R,f);
   // The ordinary-letter step only needs avoidance of two immediate pairs.
-  if(Jf==d.J)for(int p=1;p<=2;++p){int m=3-p,R2=3|(1u<<(p+1));if(to[R2]&~15u)continue;++ordinary_prefix;ordinary_moving+=eimage(d.F[0],f)!=d.F[0];
-   EMask forbidden=terminal[p-1]|pair_flag(p,m+3);if(K&forbidden)continue;++ordinary;assert(eimage(d.F[0],f)==d.F[0]);
+  if(Jf==d.J)for(int p=1;p<=2;++p){int m=3-p,R2=3|(1u<<(p+1));if(to[R2]&~15u)continue;++ordinary_prefix;bool moving=eimage(d.F[0],f)!=d.F[0];ordinary_moving+=moving;
+   // Once the first protected edge has distinct images, moving the centre
+   // identifies it with the other leaf. The second guard forbids that fibre.
+   if(moving&&!(K&terminal[p-1]))assert(eimage(d.F[0],f)==eimage(d.F[m+1],f));
+   EMask forbidden=terminal[p-1]|pair_flag(p,m+3);if(K&forbidden)continue;++ordinary;assert(!moving);
   }
   for(int R2=1;R2<16;++R2)if(epc(R2)==3&&!(to[R2]&~15u))for(int R1=1;R1<16;++R1)if(epc(R1)==2&&!(R1&~R2)&&!(to[R1]&~EMask(R2)))for(int S=0;S<4;++S)if((R1>>S&1)&&!(to[1u<<S]&~EMask(R1))){
    ++prefix;if(R2==13){assert(!(to[R2]&~EMask(R2)));++closed_R2;continue;}
@@ -106,7 +144,9 @@ void one_deletion_negatives(){
  auto d=one_deletion_domain(0);ECount inputs=0,safe=0,ordinary=0,closed=0;std::array<ECount,2>negative{};std::vector<int>f(6);
  std::function<void(int)>visit=[&](int at){if(at<6){for(int v=0;v<6;++v){f[at]=v;visit(at+1);}return;}++inputs;if(!d.basic(f))return;++safe;
   EMask K=kernel_flags(f);for(int p=1;p<=2;++p){int m=3-p,R2=3|(1<<(p+1));if(image_row_choices(d,R2,f)&~15u)continue;++ordinary;
-   EMask a=pair_flag(m,p+3),b=pair_flag(p,m+3);bool moving=eimage(d.F[0],f)!=d.F[0];if(!(K&(a|b))){assert(!moving);++closed;}
+   EMask a=pair_flag(m,p+3),b=pair_flag(p,m+3);bool moving=eimage(d.F[0],f)!=d.F[0];
+   if(moving&&!(K&a))assert(eimage(d.F[0],f)==eimage(d.F[m+1],f));
+   if(!(K&(a|b))){assert(!moving);++closed;}
    if(moving&&bool(K&a)!=bool(K&b))++negative[(K&a)?0:1];
   }
  };visit(0);assert(inputs==46656&&safe&&closed&&negative[0]&&negative[1]);

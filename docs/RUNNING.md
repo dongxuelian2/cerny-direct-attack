@@ -246,6 +246,17 @@ check_doubleton_anchors.cpp retains its 972 prefix candidates and identifies
 87 candidates that cannot supply B in R2 from R1 when X_a is absent in R2
 and B absent in R1, even using the entire compatible letter pool. The existing
 three cross-letter gf controls still verify the two-original-letter kernel conflict.
+The [two-target fold](../PROOF.md#problem4-row-fibre-separation) control extends
+the same complete binary-automaton domain: 18,432 actual R2 folds, with 5,520
+P2-independent protected unions (1,248 on prefixes of more than two rows).
+All 2,376 comparisons with a letter fixing A also fix B. Actual four-state
+counterexamples retain the depth-two and two-original-letter requirements.
+The doubleton control separately compares the two row images under gf:
+15,192 comparisons identify the protected rows, and the other 97,392 preserve
+the two-row block itself, including all 95,664 comparisons without any witness
+kernel conflict. The triangular ordinary-letter controls now also check the
+forced row identification before the second kernel guard, both with and
+without the rank restriction; the two independent guard negatives remain.
 The historical `upper` task remains available for independent computational
 checks; its action/distance enumerations are no longer prerequisites for the
 codimension-three upper proof.

@@ -41,7 +41,7 @@ bool local(const AnchorDomain&d,const std::vector<int>&f,AnchorMap&z){
  for(int mask=1;mask<(1<<d.m);++mask){int i=__builtin_ctz(unsigned(mask));z.target[mask]=z.target[mask&(mask-1)]|(1u<<d.row(aimage(d.F[i],f)));}
  return true;
 }
-struct AnchorCounts{ACount literal=0,maps=0,prefixes=0,missing_B=0,missing_A=0,no_b=0,with_b=0,witnesses=0,conflicts=0,compatible=0,empty_I=0,unsupplied_B=0;};
+struct AnchorCounts{ACount literal=0,maps=0,prefixes=0,missing_B=0,missing_A=0,no_b=0,with_b=0,witnesses=0,conflicts=0,compatible=0,empty_I=0,unsupplied_B=0,row_conflicts=0,blocks=0;};
 void anchor_controls(int j,bool five,AnchorCounts&all){
  AnchorDomain d(j,five);std::vector<AnchorMap>maps;std::vector<int>f(d.n);ACount literal=0;
  std::function<void(int)>visit=[&](int at){if(at<d.n){for(int v=0;v<d.n;++v){f[at]=v;visit(at+1);}return;}++literal;AnchorMap z;if(local(d,f,z))maps.push_back(std::move(z));};visit(0);
@@ -71,10 +71,18 @@ void anchor_controls(int j,bool five,AnchorCounts&all){
     if(witnesses.empty()){++c.no_b;for(auto z:pool)assert(z->target[2u]==2u);continue;}
     ++c.with_b;assert(R1&1u);
     for(auto w:witnesses){++c.witnesses;assert(w->q==5&&w->f[0]==0&&w->f[3]==5&&w->f[5]==3&&w->M_fixed);
+     assert(w->target[1u]==2u&&w->target[2u]==1u&&w->target[R2&~1u]==1u);
      for(int i=1;i<d.m;++i)if(R2>>i&1)assert(w->target[1u<<i]==1u);
      for(auto z:pool){
+      assert(z->target[2u]==1u||z->target[2u]==2u);
+      // Compare the row fibres directly, independently of the bit flags
+      // for state-kernel conflicts. Both composites are the actual word gf.
+      bool collapsed=w->target[z->target[1u]]==w->target[z->target[2u]];
+      assert(collapsed==(aimage(aimage(d.F[0],z->f),w->f)==aimage(aimage(d.F[1],z->f),w->f)));
+      if(collapsed){++c.row_conflicts;assert(z->target[2u]==2u&&z->target[1u]!=1u&&(w->kernel&z->forced));}
+      else{++c.blocks;assert(z->target[3u]==3u&&z->M_fixed);}
       if(!z->M_fixed){++c.conflicts;assert(z->entry==0&&z->f[5]==0&&w->kernel&z->forced);}
-      if(!(w->kernel&z->forced)){++c.compatible;assert(z->M_fixed);}
+      if(!(w->kernel&z->forced)){++c.compatible;assert(z->M_fixed&&!collapsed&&z->target[3u]==3u);}
      }
     }
    }
@@ -82,6 +90,7 @@ void anchor_controls(int j,bool five,AnchorCounts&all){
  assert(c.prefixes==(five?300u:24u)&&c.missing_B&&c.missing_A&&c.with_b&&c.conflicts);
  all.literal+=c.literal;all.maps+=c.maps;all.prefixes+=c.prefixes;all.missing_B+=c.missing_B;all.missing_A+=c.missing_A;all.no_b+=c.no_b;all.with_b+=c.with_b;all.witnesses+=c.witnesses;all.conflicts+=c.conflicts;all.compatible+=c.compatible;all.empty_I+=c.empty_I;
  all.unsupplied_B+=c.unsupplied_B;
+ all.row_conflicts+=c.row_conflicts;all.blocks+=c.blocks;
  std::cout<<"PASS actual-prefix control J="<<j<<" rows="<<d.m<<": literal="<<c.literal<<" local_maps="<<c.maps<<" nested_prefixes="<<c.prefixes
   <<" missing B/A="<<c.missing_B<<'/'<<c.missing_A<<" b-entry prefixes="<<c.with_b<<" shared-kernel conflicts="<<c.conflicts<<'\n';
 }
@@ -92,6 +101,8 @@ void cross_control(){
   AnchorMap z,w;assert(local(d,f,z)&&local(d,g,w));int R1=3,R2=7,R3=15,S=1;
   for(auto p:{&z,&w})assert(!(p->target[1u<<S]&~AMask(R1))&&!(p->target[R1]&~AMask(R2))&&!(p->target[R2]&~AMask(R3)));
   assert(z.M_fixed&&!w.M_fixed&&(z.kernel&w.forced));
+  assert(w.target[2u]==2u&&w.target[1u]!=1u);
+  assert(aimage(aimage(d.F[0],g),f)==aimage(aimage(d.F[1],g),f));
   assert(d.independent(40u)&&apc(aimage(aimage(40u,g),f))==1); // zb, first g then f
  }
  std::cout<<"PASS three cross-letter negative controls: both one-step maps pass, but the original word gf merges the G nonedge zb in two steps.\n";
@@ -116,5 +127,7 @@ int main(int argc,char**argv){
   <<" prefix candidates with X_a absent from R2 and B absent from R1 cannot supply B at depth two, even using every compatible letter.\n";
  std::cout<<"PASS total: "<<c.literal<<" literal maps, "<<c.maps<<" local maps, "<<c.prefixes<<" strict nested prefix candidates; "<<c.witnesses
   <<" witness/prefix selections, "<<c.conflicts<<" cross-letter escape comparisons, "<<c.compatible<<" comparisons without a witness-kernel conflict all preserve M. Empty-I prefix boundaries="<<c.empty_I<<".\n"
+  <<"PASS row-fibre closure: "<<c.row_conflicts<<" comparisons merge the protected B/X_a rows under gf; all "<<c.blocks
+  <<" comparisons with distinct composite rows preserve the two-row block itself.\n"
   <<"No prescribed-P_h realization is inferred. The paper theorem uses arbitrary |J|>=2; the empty-I controls retain the J=1 boundary.\n";return 0;
 }

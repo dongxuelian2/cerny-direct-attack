@@ -13,6 +13,7 @@
 - [共用结构机制](PROOF.md#problem4-shared-proof-mechanisms)：实际前缀严格增长、Johnson 邻接保持与支撑封闭；[前缀外边界](PROOF.md#problem4-johnson-prefix-exterior)、[计数界](PROOF.md#problem4-johnson-exterior-boundary)和[分量闭合](PROOF.md#problem4-johnson-component-prefix)作为多核心共用工具。
 - [证明结构压缩](PROOF.md#problem4-proof-structure-compression)：暂时冻结新增核心覆盖；一般闭合与Johnson引理吸收已有分支，[共同交像容量](PROOF.md#problem4-common-intersection-capacity)进一步压缩全支撑证明，[实际前缀退出容量](PROOF.md#problem4-prefix-exit-capacity)合并高重数出口论证，并记录剩余假设障碍。
 - [实际锚点](PROOF.md#problem4-johnson-component-prefix)：连通传播将孤立行提前到第一层；[单目标入口](PROOF.md#problem4-prefix-single-target)固定原词的实际返回像，容量等号与Johnson叶子邻接合并补点和两类入口计算。
+- [两目标返回](PROOF.md#problem4-row-fibre-separation)：受保护行的纤维分离以原词gf的两步成本直接封闭双点两行族，也合并三角普通字母的两条邻接限制。
 - [余维三纸笔证明](PROOF.md#problem4-paper-dependency-reductions)：九步压缩上界；[单边障碍](PROOF.md#problem4-single-edge-obstruction)及[两例外](PROOF.md#problem4-two-exception-closure)、[三例外](PROOF.md#problem4-three-exception-closure)、[交换孔](PROOF.md#problem4-disjoint-exchange-holes)结构界。
 - [余维四核心归约](PROOF.md#problem4-common-hole-complete-core)：公共孔整核、[K₅删边整核](PROOF.md#problem4-doubleton-complete-core)和[三角交换孔](PROOF.md#problem4-triangle-exchange-classification)。十七个完整核心覆盖221个命名域，另有部分核心2域，共223域；三角交换孔仍有两种后层形状未闭合。
 - [余维五结构替代](PROOF.md#problem4-three-exception-closure)：521类核心、7,519个曾需动态检查的域已有纸笔替代；其他分支继续使用完整计算证明。
