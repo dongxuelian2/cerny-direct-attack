@@ -6,8 +6,8 @@ The manuscript in `papers/problem4/main.tex` consolidates the exact
 codimension-four and codimension-five results. Its mathematical supplement
 is [PROOF.md](../PROOF.md#problem4-paper-synthesis), including completed
 finite-domain coverage and the paper exclusion of the sole relaxation survivor.
-Compiling the arXiv-style `amsart` manuscript uses LaTeXmk and
-BibTeX. From the repository root:
+Compiling the `article`-style manuscript (matching the previously
+submitted arXiv paper) uses LaTeXmk and BibTeX. From the repository root:
 
 ```sh
 mkdir -p build/paper
