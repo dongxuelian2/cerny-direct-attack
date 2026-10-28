@@ -143,6 +143,31 @@ void remainder_control(){
  }
  std::cout<<"PASS all "<<graphs<<" graph supergraphs in J=1..3 controls: "<<retained<<" retained graphs, "<<families<<" distinct remainder families, "<<flowers<<" separate flower graphs.\n";
 }
+void protected_support_control(){
+ Count entrances=0,square_negatives=0,comparisons=0,closed=0,conflicts=0;
+ for(int j=1;j<=3;++j)for(int extra:{3,4}){Domain d(j,false,extra);const Mask O=24u;
+  for(int q=5;q<d.n;++q){std::vector<int>out;for(int y=5;y<d.n;++y)if(y!=q)out.push_back(y);out.push_back(0);std::sort(out.begin(),out.end());
+   do{std::vector<int>f(d.n);f[0]=f[1]=f[2]=q;f[extra]=3;int omitted=extra==3?4:3;f[omitted]=4;
+    for(int x=5;x<d.n;++x)f[x]=out[x-5];++entrances;assert(image(O,f)==O);
+    int source=5;while(f[source]!=0)++source;
+    for(int wrong:{1,2}){auto bad=f;bad[omitted]=wrong;assert(bad[bad[source]]==bad[bad[omitted]]);++square_negatives;}
+    std::vector<int>g(d.n);std::function<void(int)>visit=[&](int at){
+     if(at<5){for(int y=0;y<5;++y){g[at]=y;visit(at+1);}return;}if(g[0]>2)return;
+     std::vector<int>isolates;for(int y=5;y<d.n;++y)isolates.push_back(y);
+     do{for(int x=5;x<d.n;++x)g[x]=isolates[x-5];++comparisons;
+      if(!(image(O,g)&~O)){++closed;continue;}++conflicts;
+      int target=3;while(g[target]>2)++target;int exterior=3;while(f[exterior]!=target)++exterior;
+      assert(f[g[f[source]]]==f[g[f[exterior]]]);
+     }while(std::next_permutation(isolates.begin(),isolates.end()));
+    };visit(0);
+   }while(std::next_permutation(out.begin(),out.end()));
+  }
+ }
+ assert(entrances==46&&square_negatives==92&&comparisons==438750&&closed==70200&&conflicts==368550);
+ std::cout<<"PASS protected exterior support: "<<entrances<<" entrances with all J permutations J=1..3, "<<square_negatives
+  <<" wrong-complement maps rejected by ff; "<<comparisons<<" ordinary comparisons without rank or kernel filters, "<<closed
+  <<" preserve {b,r} and the other "<<conflicts<<" merge an original G nonedge under fgf.\n";
+}
 int main(){
 #ifdef NDEBUG
  std::cerr<<"Assertions must be enabled.\n";return 1;
@@ -150,6 +175,7 @@ int main(){
  Counts all;for(int j=1;j<=2;++j)for(bool outside:{false,true})for(int extra:{3,4})check(j,outside,extra,all);
  five_row_control();
  remainder_control();
+ protected_support_control();
  controls();assert(all.normal&&all.admitted&&all.five&&all.moving_pair);
  std::cout<<"PASS complete local domain: "<<all.inputs<<" literal maps, "<<all.basic<<" basic maps, "<<all.entries
   <<" cumulative entries, "<<all.normal<<" entries with one permitted last edge, "<<all.admitted

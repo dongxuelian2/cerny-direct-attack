@@ -15,6 +15,7 @@
 - [实际锚点](PROOF.md#problem4-johnson-component-prefix)：连通传播将孤立行提前到第一层；[单目标入口](PROOF.md#problem4-prefix-single-target)固定原词的实际返回像，容量等号与Johnson叶子邻接合并补点和两类入口计算。
 - [受保护行的返回](PROOF.md#problem4-row-fibre-separation)：并内较大的独立集已足以分离行纤维。[双点锚点](PROOF.md#problem4-doubleton-actual-anchors)容许双核心入口；[三角分支](PROOF.md#problem4-triangle-exchange-one-deletion)用真实第一层与fg、gf、fgg移除第二层预算和两条预设核限制。
 - [公共孔的实际第三层供给](PROOF.md#problem4-common-hole-one-deletion-A)：删除行必须由前缀供应；两个快容器以至多五步、三步原词替代九边预算和私人边路径收尾。
+- [双点花瓣支撑闭合](PROOF.md#problem4-doubleton-eighth-entry)：容量补点与fgf直接封闭两个外点，移除唯一第二层边和五点对路径论证。
 - [余维三纸笔证明](PROOF.md#problem4-paper-dependency-reductions)：九步压缩上界；[单边障碍](PROOF.md#problem4-single-edge-obstruction)及[两例外](PROOF.md#problem4-two-exception-closure)、[三例外](PROOF.md#problem4-three-exception-closure)、[交换孔](PROOF.md#problem4-disjoint-exchange-holes)结构界。
 - [余维四核心归约](PROOF.md#problem4-common-hole-complete-core)：公共孔整核、[K₅删边整核](PROOF.md#problem4-doubleton-complete-core)和[三角交换孔](PROOF.md#problem4-triangle-exchange-classification)。十七个完整核心覆盖221个命名域，另有部分核心2域，共223域；三角交换孔仍有两种后层形状未闭合。
 - [余维五结构替代](PROOF.md#problem4-three-exception-closure)：521类核心、7,519个曾需动态检查的域已有纸笔替代；其他分支继续使用完整计算证明。

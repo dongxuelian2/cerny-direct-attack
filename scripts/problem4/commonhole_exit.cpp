@@ -463,6 +463,25 @@ void one_deletion_controls(){
  }
  assert(all_maps&&all_next&&all_gate);
 }
+void layer_budget_barrier(){
+ Domain d(0);const std::vector<int>f{1,0,2,3,1,1,6},g{5,2,1,3,2,0,6};
+ const std::vector<Mask>F{d.D[0],d.M&~2u,d.D[1],d.D[2]};std::vector<Mask>actual{d.D[1]};
+ for(auto expected:std::vector<std::vector<Mask>>{{F[0],F[2]},{F[0],F[1],F[2]},F}){
+  auto next=actual;for(Mask X:actual)for(const auto&a:{f,g})next.push_back(image(X,a));
+  std::sort(next.begin(),next.end());next.erase(std::unique(next.begin(),next.end()),next.end());
+  std::sort(expected.begin(),expected.end());assert(next==expected);actual=next;
+ }
+ std::vector<Mask>kernel,protected_pairs;
+ for(int x=0;x<d.n;++x)for(int y=x+1;y<d.n;++y){Mask P=(1u<<x)|(1u<<y);
+  if(f[x]==f[y]||g[x]==g[y]){kernel.push_back(P);assert(d.edge[x][y]);}else protected_pairs.push_back(P);
+ }
+ assert(kernel.size()==4&&protected_pairs.size()==17);
+ for(Mask P:protected_pairs)for(const auto&a:{f,g}){Mask Y=image(P,a);
+  assert(pc(Y)==2&&std::find(protected_pairs.begin(),protected_pairs.end(),Y)!=protected_pairs.end());
+ }
+ assert(4+(7-1)>9);
+ std::cout<<"PASS layer-budget barrier: an actual 2/3/4-row prefix and a 17-pair forward-closed protected family preserve every G nonedge under all mixed words; four distinct P1 pairs violate the nine-edge/seven-layer budget. This nonsynchronizing local model is not a P7 realization.\n";
+}
 void last_common_hole_support_controls(){
  for(int k=3;k<=5;++k)for(int j=0;j<=1;++j)for(int mode=0;mode<4;++mode){
   int n=2*k+1+j;Mask J=j?(1u<<(2*k+1)):0,M=((1u<<(k+1))-1)|J,A=M&~1u,B=M&~2u;
@@ -599,7 +618,7 @@ int main(int argc,char**argv){
   return 0;
  }
  assert(argc==1);
- prefix_hit_control();local_control(0);local_control(1);general_common_hole_control();complete_next_layer_control();geodesic_control();layer_capacity_control();shared_hole_control();star_pair_closure_control();tight_star_three_row_control();late_exception_kernel_control();one_deletion_controls();last_common_hole_support_controls();complete_core_row_structure_control();
+ prefix_hit_control();local_control(0);local_control(1);general_common_hole_control();complete_next_layer_control();geodesic_control();layer_capacity_control();shared_hole_control();star_pair_closure_control();tight_star_three_row_control();late_exception_kernel_control();one_deletion_controls();layer_budget_barrier();last_common_hole_support_controls();complete_core_row_structure_control();
  std::cout<<"Finite local controls only; no complete P7 realization or general-proof claim is inferred from the map counts.\n";
 }
 

@@ -290,6 +290,23 @@ the observed finite four-letter maximum is not claimed as that general bound.
 The old layer-budget and private-pair controls remain as separate historical
 checks; neither is a dependency of this branch's new closing argument.
 
+The [doubleton flower support proof](../PROOF.md#problem4-doubleton-eighth-entry)
+replaces its five-pair shortest-path closing argument with a proper two-point
+support. check_doubleton_flower.cpp constructs all 46 entrances for one through
+three isolates and every isolate permutation. It rejects 92 wrong complement
+images by ff and checks 438,750 ordinary comparisons without rank or kernel
+filters. Of these, 70,200 preserve {b,r}; all other 368,550 merge an original
+G nonedge under the three-original-letter word fgf. The old P1/P2 and five-pair
+controls remain independent historical checks.
+
+The remaining common-hole CHT3 layer-budget obstacle also has a concrete control:
+two explicit seven-state maps produce an actual 2/3/4-row prefix while keeping
+a 17-pair family containing every G nonedge forward closed under all words.
+Their four distinct immediate kernel pairs violate the nine-edge/seven-layer
+budget. This is a nonsynchronizing local model, not a prescribed-P7 automaton;
+it checks why actual-prefix and known-word protection alone do not settle the
+remaining global layer condition.
+
 The strengthened [doubleton anchor proof](../PROOF.md#problem4-doubleton-actual-anchors)
 also runs the same complete 35,294,830-map domain with only Jf contained in M,
 allowing simultaneous entries into a and b. Its 9,708 local maps include 1,120
