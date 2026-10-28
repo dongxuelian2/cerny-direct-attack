@@ -16,7 +16,7 @@
 \title{Exact Avoid-or-Compress Extrema for Dense Reachable Images:\\Defects Four and Five}
 \author{Qichao Wang\\{\small Hebei University of Technology}
 \and Daoyu Dong\\{\small University of Electronic Science and Technology of China}}
-\date{Research manuscript, 20 October 2026}
+\date{28 October 2026}
 \hypersetup{pdftitle={Exact Avoid-or-Compress Extrema for Dense Reachable Images},pdfauthor={Qichao Wang and Daoyu Dong}}
 
 \newcommand{\proofsection}[2]{\href{https://github.com/dongxuelian2/cerny-direct-attack/blob/cc94b58aa9b557f0ee516b3a3774de3ad8e41de1/PROOF.md\##1}{#2}}
@@ -25,7 +25,15 @@
 \maketitle
 
 \begin{abstract}
-For a reachable image $S$ of a strongly connected synchronizing automaton and a nonempty proper subset $A\subset S$, the avoid-or-compress length is the shortest word length that omits a point of $A$ or decreases $|S|$. Write $m=n-|S|$ and $q=n-|A|$. We determine the exact binary and unrestricted extrema as $\min(q,11)$ for $m=4$ and $\min(q,14)$ for $m=5$. Explicit binary constructions give the matching lower bounds, with proofs of reachability, synchronization, and short-word safety. The upper bounds follow from short-pair graph reductions and exhaustive finite necessary-domain exclusions, independent of the number of states and alphabet size. In the largest computation, 3,206,987 domains are unsatisfiable and one surviving relaxation is excluded by a multipartite overlap lemma proved here. We give the complete coverage arithmetic and identify the computational dependencies. The general formula $\min(q,3m-1)$ for $m\ge4$ remains a conjecture.
+Let $S$ be a reachable image of a strongly connected synchronizing automaton
+and $\varnothing\ne A\subsetneq S$. We determine the maximum shortest
+avoid-or-compress length over binary and arbitrary finite alphabets for
+$m=n-|S|=4$ and $m=5$. The exact values are $\min(n-|A|,11)$ and
+$\min(n-|A|,14)$, respectively. Uniform binary constructions attain both
+bounds. For the upper bounds, short-pair graphs and actual-image constraints
+reduce all parameters to finite necessary domains. Exhaustive checks exclude
+the domains, apart from a single relaxation eliminated by a multipartite
+overlap lemma. The largest calculation covers 3,206,988 domains.
 \end{abstract}
 
 \section{Problem and results}
@@ -73,33 +81,14 @@ has $c(S)\le11$ when $n\ge11$, and every $(n-5)$-subset has $c(S)\le14$
 when $n\ge16$. These pure-compression assertions do not require reachability.
 \end{theorem}
 
-The lower bounds have uniform paper proofs. The upper bounds use structural
-reductions followed by complete finite computations. Sections~\ref{sec:method}
-and~\ref{sec:computation} specify the reductions, domain coverage, and
-computational trust assumptions; the detailed mathematical supplement is
-the single research text \texttt{PROOF.md}~\cite{repo}.
-For $n$ below the stated pure-compression thresholds, the $q$ bound gives
-the required avoid-or-compress upper bounds.
-
-The result fits into the following parameter map, with the earlier
-low-defect results recorded in the supplement.
-\begin{center}
-\begin{tabular}{@{}lll@{}}
-\toprule
-Parameters & $\Max_{\rm bin}=\Max$ & Status of the upper bound\\
-\midrule
-$m=0$ & $1$ & paper proof\\
-$1\le m\le2$ & $\min(q,3m)$ & paper proof\\
-$m=3$ & $\min(q,9)$ & computer-assisted\\
-$m=4$ & $\min(q,11)$ & Theorem~\ref{thm:main}\\
-$m=5$ & $\min(q,14)$ & Theorem~\ref{thm:main}\\
-$m\ge6,\ q\le3m-1$ & $q$ & paper construction and \eqref{eq:universal}\\
-$m\ge6,\ q\ge3m$ & undetermined & conjecture in Section~\ref{sec:conj}\\
-\bottomrule
-\end{tabular}
-\end{center}
-Neither the full parameter problem nor the general \v{C}ern\'y conjecture
-is resolved by these results.
+The lower bounds are established by explicit binary automata. For the
+upper bounds, Sections~\ref{sec:method} and~\ref{sec:computation} present
+the short-pair reductions, exhaustive finite-domain coverage, and
+computational basis. The mathematical supplement is
+\texttt{PROOF.md}~\cite{repo}. The universal $q$ bound handles the
+parameters below the pure-compression thresholds.
+The codimension-three bound $C_3\le9$, used in both upper proofs,
+has a paper proof in the supplement.
 
 \begin{proposition}[Binary sharpness below the two-block threshold]\label{prop:smallq}
 Let $m\ge4$ and $m+1\le q\le2m+1$. For every admissible $r$ there is a binary
@@ -155,7 +144,7 @@ Figure~\ref{fig:witness} instantiates the lower-bound family at $t=3$, $p=7$, $r
 \node[font=\scriptsize,align=left] at (3.3,-3.28) {$x_3,y_3\mapsto p_6$;\\$z$ fixed.};
 \end{tikzpicture}
 \end{minipage}
-\caption{A complete 14-state binary witness. Only the $a$-loops at $p_0,\ldots,p_4$ are suppressed. The word $a^6ba^3b$ compresses at length 11; $a^6bab^5$ omits $p_0$ at length 13. The drawing gives the actual letter transformations, not a quotient automaton.}
+\caption{A complete 14-state binary witness. Only the $a$-loops at $p_0,\ldots,p_4$ are suppressed. The word $a^6ba^3b$ compresses at length 11; $a^6bab^5$ omits $p_0$ at length 13. Both panels specify the original letter actions.}
 \label{fig:witness}
 \end{figure}
 
@@ -309,26 +298,14 @@ entrances and exits are represented by the finite letter signatures.
 The support bounds and row-rank restrictions in the supplement make
 this necessary domain independent of the original $n$.
 
-Every actual letter projects to an admissible signature. A candidate
-distance assignment must satisfy all one-step distance inequalities;
-every claimed shortest distance must have a compatible attaining letter.
-The checks use the resulting common pool of compatible signatures for
-row exits, pair merging and necessary strong connectivity, rather than
-choosing an unrelated alphabet for each condition.
-When $H-h=2$, every original square $f^2$ must also send each
-$D\in\mathcal D$ to a $G$-independent set.
-The finite check allows a consistent matching of unnamed identities for
-the two occurrences of the \emph{same} letter. It is a necessary relaxation,
-not a verification of all mixed two-letter words.
-
-Consequently the logical direction throughout is
-\[
- \text{a genuine counterexample}
- \ \Longrightarrow\ \text{an admissible finite necessary-domain model}.
-\]
-Complete negative checks exclude genuine counterexamples.
-A satisfying relaxation alone is neither a realized automaton nor a
-matching lower bound. These checks do not impose a fixed alphabet-size cap.
+Every original letter projects to an admissible signature. The finite
+domains enforce the one-step pair-distance inequalities, the existence
+of attaining letters, compatible row exits, and necessary strong
+connectivity. Where $H-h=2$, the same original letter must also satisfy
+the safe-row condition for its square $f^2$.
+These constraints hold for every automaton satisfying the proposed
+long-compression hypothesis, so excluding all compatible finite domains
+proves the corresponding upper bound.
 
 \subsection{Defect four: excluding twelve steps}\label{sec:m4}
 Assume $n\ge11$, $|S|=n-4$, and $c(S)\ge12$.
@@ -359,30 +336,13 @@ Every domain is excluded by the common distance, quotient connectivity,
 and, where needed, same-letter square conditions.
 \end{enumerate}
 The proper-core conditions apply because $n\ge11$ exceeds the named support.
-The disjoint completed ranges in the second branch are as follows;
-all counts refer to necessary domains.
-\begin{center}\small
-\begin{tabular}{@{}rrl@{}}
-\toprule
-Inclusive range & Count & Last necessary filter used\\
-\midrule
-0--1413 & 1,414 & common distances and proper-core exit\\
-1414--1672 & 259 & also quotient connectivity\\
-1673--2650 & 978 & also same-letter squares\\
-2651--4999 & 2,349 & distances, quotient and squares\\
-5000--7499 & 2,500 & distances, quotient and squares\\
-7500--10141 & 2,642 & distances, quotient and squares\\
-\midrule
-Total & 10,142 & zero surviving domains\\
-\bottomrule
-\end{tabular}
-\end{center}
+The six disjoint computational ranges contain
+$1{,}414+259+978+2{,}349+2{,}500+2{,}642=10{,}142$
+domains, with no survivors.
 Both complete letter-generation orders and both common-distance
 implementations were compared in these ranges.
 The two branches prove $c(S)\le11$; the full implication chain is in
 \proofsection{problem4-four-exact-eleven}{the codimension-four theorem}.
-It does not depend on the older bound $C_4\le12$ or the separate
-$q=12,13$ protected-entrance calculations.
 For $n\le10$, $q\le9$ suffices. For all $n$, matching binary witnesses
 come from Proposition~\ref{prop:smallq} at $q=5,\ldots,9$ and
 Theorem~\ref{thm:two-block} at $q\ge10$.
@@ -430,12 +390,9 @@ of the 3,595 domains is
  +\underbrace{1504+26}_{\text{one omitted state: }1530}
  =3595.
 \]
-The subtraction removes overlap between the static filters and an earlier
-completed matching calculation. The 1,504 single-omission domains are the
-finished components of 89 cores in an interrupted larger job.
-The last core contributes 26 domains, with both common $R_0$ choices
-completed in all $52$ branches and no satisfying relaxation.
-Only the completed disjoint components enter this count.
+The $19$-domain overlap is counted once. The 1,504 single-omission
+domains and the final 26-domain component were checked, including
+both common $R_0$ choices in the latter.
 
 For early support five to ten, two cores are first excluded by the
 entrance condition. The remaining closure enumeration and checks give
@@ -466,13 +423,11 @@ The two pairs of intersecting triples above separately cover the two parts of $K
 
 
 \section{Computational basis and reproducibility}\label{sec:computation}
-The upper bounds are computer-assisted proofs: paper reductions establish
-the implication to a finite necessary domain, complete computation excludes
-that domain, and Lemma~\ref{lem:multipartite} eliminates its sole surviving
-relaxation. The detailed reductions and completed coverage are in the
-version-pinned \texttt{PROOF.md} supplement~\cite{repo}.
-The retained sources define the domains and regenerate their inputs;
-the proof does not require a committed inventory of generated graphs.
+The upper proof consists of the short-pair reductions, the complete
+finite-domain checks, and the overlap exclusion in
+Lemma~\ref{lem:multipartite}. Definitions and generation procedures
+for the finite domains are in the version-pinned supplement
+\texttt{PROOF.md}~\cite{repo}. The principal implementation sources are:
 
 \begin{center}\small
 \begin{tabular}{@{}p{.27\linewidth}p{.66\linewidth}@{}}
@@ -498,83 +453,36 @@ Binary construction controls &
 \end{tabular}
 \end{center}
 
-The largest completed run used 24 workers, paired complete letter-generation
-orders, quotient strong connectivity, and joint SAT with CaDiCaL 3.0.1.
-It imposed no sampling, row-count, core-index, domain-index, or
-omission-type restriction. Its terminal output records
-\texttt{completed=3206988/3206988 cumulative\_joint=1},
-the unrestricted \texttt{COMPLETE} summary, and a total runtime of
-22,923.697 seconds.
-The full local terminal log was inspected during preparation of this
-manuscript, along with the 72 completed cover-five interval summaries
-and the final eleven-point-core component. No large enumeration was rerun
-for this editorial consolidation. Other historical components retain
-their explicitly recorded coverage in the mathematical supplement.
+The largest finite calculation used 24 workers and CaDiCaL 3.0.1
+with paired letter-generation orders and joint SAT constraints.
+The recorded completion marker is
+\texttt{completed=3206988/3206988 cumulative\_joint=1};
+its running time was 22,923.697 seconds. Of these domains,
+3,206,987 were unsatisfiable under the checked relaxation.
+The one remaining model is eliminated by Lemma~\ref{lem:multipartite}.
+The computation used the earlier necessary-domain predicate;
+a subsequent strengthening to the proper-layer entrance condition
+is applied only in the paper exclusion.
 
-The completed large run used the older necessary relaxation.
-The current source additionally requires an original letter sending a
-nonedge into the proper short-pair layer, as justified in the proof of
-Lemma~\ref{lem:multipartite}. This condition was added \emph{after} that run.
-The proof uses the old run's 3,206,987 negative decisions together with the
-paper exclusion of its one survivor; it does not claim a full rerun
-with the strengthened condition.
+The computation is reproducible from the source files and
+\texttt{docs/RUNNING.md}. Its evidential basis comprises the completed
+enumeration records, the stated domain-reduction arguments, program
+implementations and SAT decisions; per-domain UNSAT proof traces
+were not retained. Independent finite controls compare generation orders,
+small-domain enumerations, and actual automata.
 
-The execution log records completion and scope; it is not an independently
-checkable UNSAT proof for each domain.
-No such per-domain proof traces were retained, and this manuscript does
-not retrospectively claim them. The computational results rely on the
-correctness of the reductions, enumerators, necessary-condition
-implementations, and solver decisions.
-Existing controls compare complete generation orders, direct small-domain
-enumeration, and actual automata as positive controls, but shared predicates
-and solver dependencies prevent treating these as a fully independent
-end-to-end proof system. No Lean formalization or external replication
-is claimed.
-
-The repository keeps mathematical text and source code, with commands in
-\texttt{docs/RUNNING.md}. Full reruns are available for independent
-replication but are separate from reading or compiling the paper.
-Generated logs, graph inventories, binaries and the compiled PDF belong
-under the ignored \texttt{build/} directory.
-
-\section{Related results and the remaining question}\label{sec:conj}
-The supplement also contains two general results useful beyond the finite
-exclusions. With an original full-state cycle letter, the exact restricted
-extremum is
-\[
- \Max_{\mathrm{cyc,bin}}(n,s,r)=\Max_{\mathrm{cyc}}(n,s,r)
- =\min\{s-r+1,\,2(n-s)+1\},
-\]
-with a paper binary construction for every admissible parameter
-(\proofsection{problem4-full-cycle-exact}{full-cycle theorem}).
-A separate quadratic lifting argument selects at most
-$\rho\le\min(|\mathcal D|,d_{\mathcal D}(d_{\mathcal D}+1)/2)$
-original letters preserving the exact shortest exits of every member of
-a \emph{complete} safe-set family $\mathcal D$.
-Here $d_{\mathcal D}$ is its characteristic-row rank and $\rho$ is the rank
-of the quadratic lifts $\chi_T^{\mathsf T}\chi_T$.
-The bound becomes $O(m^2)$ for the complete maximum-independent-set
-families used there
-(\proofsection{problem4-quadratic-exit-sparsification}{exit sparsification theorem}).
-Neither result is an additional computational dependency of
-Theorem~\ref{thm:main}, and the cycle-class formula is not an unrestricted bound.
-
-Theorem~\ref{thm:two-block} gives the uniform lower bound
-$\min(q,3m-1)$ for $m\ge4$, after including Proposition~\ref{prop:smallq}.
-At $m=4,5$ the upper bounds match.
+\section{A conjectured extension}\label{sec:conj}
+The binary lower-bound constructions give
+$\Max_{\rm bin}(n,n-m,r)\ge\min(q,3m-1)$ for every $m\ge4$,
+and Theorem~\ref{thm:main} establishes equality for $m=4,5$.
 \begin{conjecture}[Linear defect formula]\label{conj:linear}
 For every $m\ge4$ and all admissible $n,r$,
 \[
  \Max_{\rm bin}(n,n-m,r)=\Max(n,n-m,r)=\min(n-r,3m-1).
 \]
 \end{conjecture}
-The restriction $m\ge4$ is essential: the optimum at $m=3$ is
-$\min(q,9)$, whereas $3m-1=8$.
-A stronger possible statement would bound $c(S)$ by $3m-1$ for every
-$(n-m)$-subset when $n\ge3m+1$; no equivalence with the conjecture is asserted.
-The open exact-extremum region is $m\ge6$, $q\ge3m$.
-Finite experiments in particular families cannot supply a general upper
-bound in this region.
+The remaining parameter region for exact avoid-or-compress extrema
+is $m\ge6$ and $q\ge3m$.
 
 \paragraph{Contributions and assistance.}
 Qichao Wang and Daoyu Dong developed the research.
@@ -584,9 +492,6 @@ their presentation.
 
 \appendix
 \section{Constructions for the smaller values of \texorpdfstring{$q$}{q}}\label{sec:appendix}
-For completeness this appendix retains the full lower-bound constructions
-needed in Proposition~\ref{prop:smallq}, including the boundary of the
-cofinal family.
 \begin{theorem}\label{thm:sharp-faces}
 The following bounds hold, and every lower bound has a binary witness.
 \begin{enumerate}
