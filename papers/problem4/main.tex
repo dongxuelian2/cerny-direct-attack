@@ -1,35 +1,44 @@
-\documentclass[11pt,reqno]{amsart}
+\documentclass[11pt]{article}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
-\usepackage[a4paper,margin=29mm]{geometry}
+\usepackage[margin=1in]{geometry}
 \usepackage{amsmath,amssymb,amsthm,booktabs,needspace}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,positioning,calc,fit,backgrounds}
 \usepackage{microtype}
 \usepackage[section]{placeins}
 \usepackage[colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!55!black]{hyperref}
-\newtheorem{theorem}{Theorem}[section]
+\newtheorem{theorem}{Theorem}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{conjecture}[theorem]{Conjecture}
-\numberwithin{equation}{section}
 \newcommand{\ac}{\operatorname{ac}}
 \newcommand{\Max}{\mathcal F}
 \newcommand{\one}{\mathbf 1}
-\title[Dense-image avoid-or-compress extrema]{Exact Avoid-or-Compress Extrema for Dense Reachable Images: Defects Four and Five}
-\author{Qichao Wang}
-\address{Hebei University of Technology, Tianjin, China}
-\author{Daoyu Dong}
-\address{University of Electronic Science and Technology of China, Chengdu, China}
+\title{Exact Avoid-or-Compress Extrema for Dense Reachable Images:\\Defects Four and Five}
+\author{%
+  \begin{minipage}[t]{0.44\textwidth}
+  \centering
+  Qichao Wang\\[0.3em]
+  {\small Hebei University of Technology}\\[-0.1em]
+  {\small Tianjin, China}
+  \end{minipage}
+  \and
+  \begin{minipage}[t]{0.44\textwidth}
+  \centering
+  Daoyu Dong\\[0.3em]
+  {\small University of Electronic Science and Technology of China}\\[-0.1em]
+  {\small Chengdu, China}
+  \end{minipage}
+}
 \date{28 October 2026}
-\subjclass[2020]{68Q45, 68Q70}
-\keywords{Synchronizing automata, avoid-or-compress, subset compression, short-pair graphs}
 \hypersetup{pdftitle={Exact Avoid-or-Compress Extrema for Dense Reachable Images},pdfauthor={Qichao Wang and Daoyu Dong}}
 
 \newcommand{\proofsection}[2]{\href{https://github.com/dongxuelian2/cerny-direct-attack/blob/8bd89de6bc516f8c29d1ab0f68b7e56a27f76e23/PROOF.md\##1}{#2}}
 \newcommand{\source}[1]{\href{https://github.com/dongxuelian2/cerny-direct-attack/blob/8bd89de6bc516f8c29d1ab0f68b7e56a27f76e23/scripts/problem4/#1}{\nolinkurl{#1}}}
 \begin{document}
+\maketitle
 \begin{abstract}
 Let $S$ be a reachable image of a strongly connected synchronizing automaton
 and $\varnothing\ne A\subsetneq S$. We determine the maximum shortest
@@ -41,7 +50,6 @@ reduce all parameters to finite necessary domains. Exhaustive checks exclude
 the domains, apart from a single relaxation eliminated by a multipartite
 overlap lemma. The largest calculation covers 3,206,988 domains.
 \end{abstract}
-\maketitle
 
 \section{Problem and results}
 All words act on the right and length counts \emph{original alphabet letters}.
