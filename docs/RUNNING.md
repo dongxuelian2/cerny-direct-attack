@@ -124,6 +124,7 @@ python3 run.py script scripts/problem4/check_triangle_exchange.cpp
 python3 run.py script scripts/problem4/check_triangle_one_deletion.cpp
 python3 run.py script scripts/problem4/check_doubleton_remainder.cpp
 python3 run.py script scripts/problem4/check_doubleton_flower.cpp
+python3 run.py script scripts/problem4/check_doubleton_anchors.cpp
 python3 run.py script scripts/problem4/commonhole_exit.cpp
 python3 run.py script scripts/problem4/commonhole_exit.cpp --coverage
 ```
@@ -224,6 +225,27 @@ family E containing the actual R_d and words through length three. Of these,
 and charging aa as two original letters. The existing common-hole, doubleton,
 and triangular-exchange local controls remain necessary application checks;
 these runs add no core or named-domain coverage.
+
+The [connectivity propagation](../PROOF.md#problem4-johnson-component-prefix)
+checks extend check_triangle_one_deletion.cpp on all 66,281 binary automata of
+orders two through four. All 124,494 connected positive-depth uncompressed
+prefixes have connected next prefixes; 84,126 of these grow strictly. The same
+automata supply 3,916,812 (automaton,S,C,word) inputs for the
+[single-target rule](../PROOF.md#problem4-prefix-single-target), with C ranging
+over every same-size row family containing R_(2|word|), for words of length one
+or two. The 554,648 one-letter and 1,306,024 two-letter singleton intersections
+all fix their actual anchors. Nonsynchronizing inputs are included because
+these two prefix statements do not require synchronization. The existing
+depth-zero propagation negative and a C3 example with only R1 in C check the
+two depth requirements.
+check_doubleton_remainder.cpp also checks the capacity-equality complement on
+all 3,412 maps of orders two through five and 97,504 nonempty proper supports:
+15,674 saturated cases, including 11,698 with nonzero defect. Wrong global
+defect and strict-capacity negatives check the global defect and equality hypotheses.
+check_doubleton_anchors.cpp retains its 972 prefix candidates and identifies
+87 candidates that cannot supply B in R2 from R1 when X_a is absent in R2
+and B absent in R1, even using the entire compatible letter pool. The existing
+three cross-letter gf controls still verify the two-original-letter kernel conflict.
 The historical `upper` task remains available for independent computational
 checks; its action/distance enumerations are no longer prerequisites for the
 codimension-three upper proof.

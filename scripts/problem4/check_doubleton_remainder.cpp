@@ -30,6 +30,23 @@ struct Domain{
  bool in_family(Mask X)const{return std::find(F.begin(),F.end(),X)!=F.end();}
 };
 struct Counts{Count inputs=0,basic=0,budget=0,entries=0,R2=0,entry_R2=0,closed_I=0,missing_B=0,unfiltered_R2=0,over_budget_R2=0;};
+void capacity_equality_control(){
+ Count maps=0,subsets=0,equalities=0,deficient=0;
+ for(int n=2;n<=5;++n){const Mask Q=(1u<<n)-1;Count limit=1;for(int x=0;x<n;++x)limit*=n;
+  for(Count code=0;code<limit;++code){++maps;Count value=code;std::vector<int>f(n);for(int&x:f){x=value%n;value/=n;}
+   int defect=n-pc(image(Q,f));for(Mask W=1;W<Q;++W){++subsets;Mask T=image(W,f);if(pc(T)!=pc(W)-defect)continue;
+    ++equalities;deficient+=defect>0;Mask outside=Q&~W,U=image(outside,f);
+    assert(!(U&T)&&pc(U)==pc(outside));
+   }
+  }
+ }
+ const std::vector<int>extra_loss{0,0,2,2},slack{0,1,1};
+ assert(pc(image(3u,extra_loss))==1&&4-pc(image(15u,extra_loss))==2&&pc(image(12u,extra_loss))==1);
+ assert(image(4u,slack)&image(3u,slack)); // A strict capacity inequality need not separate complements.
+ assert(maps==3412&&subsets&&equalities&&deficient);
+ std::cout<<"PASS capacity equality: all "<<maps<<" maps n=2..5, "<<subsets<<" nonempty proper input supports, "
+  <<equalities<<" saturated cases ("<<deficient<<" with nonzero defect) have injective exterior images disjoint from the interior; wrong-global-defect and strict-inequality negatives pass.\n";
+}
 void intersection_capacity_control(){
  Count graphs=0,maps=0,families=0,full_support=0,deficient=0;
  for(int n=2;n<=4;++n){
@@ -163,7 +180,7 @@ int main(){
 #ifdef NDEBUG
  std::cerr<<"Assertions must be enabled.\n";return 1;
 #endif
- intersection_capacity_control();Counts all;for(int j=1;j<=3;++j)literal(j,all);negative_controls();
+ capacity_equality_control();intersection_capacity_control();Counts all;for(int j=1;j<=3;++j)literal(j,all);negative_controls();
  double_entry_controls();fixed_point_controls();assert(all.unfiltered_R2==1440&&all.over_budget_R2==72);
  std::cout<<"PASS all "<<all.inputs<<" literal maps: "<<all.basic<<" four-safe maps, "<<all.budget<<" layer-budget maps, "<<all.entries
   <<" normal-form entries; "<<all.closed_I<<" map/R2 combinations preserve I, "<<all.missing_B

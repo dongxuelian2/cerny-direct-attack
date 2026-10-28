@@ -17,24 +17,60 @@ EMask foreign_targets(const ExchangeDomain&d,const std::vector<int>&f){
 }
 EMask pair_flag(int a,int b){if(a>b)std::swap(a,b);int i=0;for(int x=0;x<6;++x)for(int y=x+1;y<6;++y,++i)if(x==a&&y==b)return 1u<<i;assert(false);return 0;}
 EMask kernel_flags(const std::vector<int>&f){EMask K=0;for(int a=0;a<6;++a)for(int b=a+1;b<6;++b)if(f[a]==f[b])K|=pair_flag(a,b);return K;}
+EMask row_component(EMask family,int seed){
+ EMask reached=1u<<seed;for(;;){EMask next=reached;
+  for(EMask a=reached;a;a&=a-1)for(EMask b=family;b;b&=b-1)
+   if(adjacent_rows(__builtin_ctz(a),__builtin_ctz(b)))next|=b&-b;
+  if(next==reached)return reached;reached=next;
+ }
+}
+struct GateCounts{ECount inputs=0,one=0,two=0;};
+void actual_gate_controls(int n,EMask S,const std::array<std::array<EMask,16>,2>&letter_images,
+                          const std::vector<std::array<EMask,16>>&word_images,GateCounts&count){
+ std::array<EMask,5>prefix{};prefix[0]=1u<<S;const int size=epc(S);
+ for(int d=1;d<=4;++d){EMask next=prefix[d-1];bool compressed=false;
+  for(EMask bits=prefix[d-1];bits;bits&=bits-1)for(const auto&f:letter_images){EMask Y=f[__builtin_ctz(bits)];
+   if(epc(Y)!=size)compressed=true;else next|=1u<<Y;
+  }if(compressed)break;prefix[d]=next;
+ }
+ EMask universe=0;for(EMask R=1;R<(1u<<n);++R)if(epc(R)==size)universe|=1u<<R;
+ for(size_t w=0;w<word_images.size();++w){int length=w<2?1:2;EMask actual=prefix[2*length];if(!actual)continue;
+  const auto&v=word_images[w];EMask free=universe&~actual;
+  for(EMask extra=free;;extra=(extra-1)&free){EMask C=actual|extra,inside=0;
+   for(EMask rows=C;rows;rows&=rows-1)inside|=1u<<v[__builtin_ctz(rows)];inside&=C;++count.inputs;
+   assert(inside);if(epc(inside)==1){int A=__builtin_ctz(inside);assert(v[S]==EMask(A)&&v[A]==EMask(A));
+    if(length==1)++count.one;else ++count.two;
+   }if(!extra)break;
+  }
+ }
+}
 void actual_component_controls(){
- ECount automata=0,strict=0,platforms=0;
+ ECount automata=0,strict=0,platforms=0,connected=0,connected_growth=0;GateCounts gates;
  for(int n=2;n<=4;++n){ECount limit=1;for(int i=0;i<2*n;++i)limit*=n;for(ECount code=0;code<limit;++code){++automata;ECount value=code;
    std::array<std::vector<int>,2>letters{std::vector<int>(n),std::vector<int>(n)};for(auto&f:letters)for(int&x:f){x=value%n;value/=n;}
-   for(EMask S=1;S<(1u<<n);++S)if(epc(S)>=2){EMask R=1u<<S;for(int d=0;;++d){EMask next=R;bool compressed=false;
+   std::array<std::array<EMask,16>,2>letter_images{};for(int a=0;a<2;++a)for(EMask R=0;R<(1u<<n);++R)letter_images[a][R]=eimage(R,letters[a]);
+   std::vector<std::array<EMask,16>>word_images{letter_images[0],letter_images[1]};
+   for(int a=0;a<2;++a)for(int b=0;b<2;++b){std::array<EMask,16>word{};for(EMask R=0;R<(1u<<n);++R)word[R]=letter_images[b][letter_images[a][R]];word_images.push_back(word);}
+   for(EMask S=1;S<(1u<<n);++S)if(epc(S)>=2){actual_gate_controls(n,S,letter_images,word_images,gates);EMask R=1u<<S;for(int d=0;;++d){EMask next=R;bool compressed=false;
      for(EMask bits=R;bits;bits&=bits-1){int row=__builtin_ctz(bits);for(const auto&f:letters){EMask Y=eimage(row,f);if(epc(Y)!=epc(S))compressed=true;else next|=1u<<Y;}}
-     if(compressed)break;if(d>=1){EMask component=1u<<S;for(;;){EMask enlarged=component;for(EMask a=component;a;a&=a-1)for(EMask b=next;b;b&=b-1)
-        if(adjacent_rows(__builtin_ctz(a),__builtin_ctz(b)))enlarged|=b&-b;
-       if(enlarged==component)break;component=enlarged;
-      }if(component==R){assert(next==R);++platforms;}if(next!=R)++strict;
+     if(compressed)break;if(d>=1){
+      if(row_component(R,S)==R){++connected;assert(row_component(next,S)==next);connected_growth+=next!=R;}
+      EMask component=row_component(next,S);if(component==R){assert(next==R);++platforms;}if(next!=R)++strict;
      }if(next==R)break;R=next;
     }}
-  }}assert(automata==66281&&strict&&platforms);
+  }}assert(automata==66281&&strict&&platforms&&connected&&connected_growth&&gates.one&&gates.two);
  std::vector<int>cycle{2,3,1,0},collapse{0,1,0,0};EMask orbit=0;int x=0;for(int i=0;i<4;++i){orbit|=1u<<x;x=cycle[x];}
  assert(orbit==15&&x==0&&eimage(3,cycle)==12&&eimage(3,collapse)==3&&!adjacent_rows(3,12));
  assert(epc(eimage(eimage(eimage(15,collapse),cycle),collapse))==1);
+ const EMask C=(1u<<3)|(1u<<6);const std::vector<int>rotate{1,2,0};
+ assert(eimage(3,rotate)==6&&eimage(6,rotate)==5&&!(C&(1u<<5)));
+ // C is the actual R1 of C3, but R2 leaves it: one layer is insufficient.
  std::cout<<"PASS actual Johnson-component prefixes: "<<automata<<" complete binary automata n=2..4, "<<strict<<" growing uncompressed depths d>=1, "
   <<platforms<<" filled-component platforms; all obey closure. Explicit strongly connected synchronizing d=0 negative passes.\n";
+ std::cout<<"PASS connectivity propagation: "<<connected<<" connected positive-depth prefixes, "<<connected_growth
+  <<" with strict growth; all next prefixes connected.\n";
+ std::cout<<"PASS single-target gates: "<<gates.inputs<<" actual (automaton,S,C,word) inputs, "<<gates.one
+  <<" one-letter and "<<gates.two<<" two-letter singleton intersections all yield a fixed actual anchor; the C3 one-layer negative passes.\n";
 }
 void one_deletion_controls(){
  ECount inputs=0,basic=0,prefix=0,closed_R2=0,no_entry=0,closed_R1=0,entries=0,normals=0,ordinary=0;
