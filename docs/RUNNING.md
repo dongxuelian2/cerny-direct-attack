@@ -257,6 +257,24 @@ the two-row block itself, including all 95,664 comparisons without any witness
 kernel conflict. The triangular ordinary-letter controls now also check the
 forced row identification before the second kernel guard, both with and
 without the rank restriction; the two independent guard negatives remain.
+
+The strengthened [doubleton anchor proof](../PROOF.md#problem4-doubleton-actual-anchors)
+also runs the same complete 35,294,830-map domain with only Jf contained in M,
+allowing simultaneous entries into a and b. Its 9,708 local maps include 1,120
+double entries, of which 480 have defect two. The same 972 nested prefix
+candidates supply 1,200 double-entry witness selections, including 180 of
+defect two. Every applicable double entry supplies both actual anchors and
+the two-target fold. Of 316,488 gf comparisons, 39,688 identify the protected
+rows; the other 276,800 preserve their two-row block. No single-entry, defect,
+or first/last-layer budget filter is applied in this relaxed control. An
+explicit seven-state defect-two double entry and a second letter pass the
+one-step prefix conditions, but gf merges the G nonedge zb. This retains the
+two-original-letter protection requirement and checks that the relaxed domain
+has genuine new cases. The historical single-entry and matched-kernel controls
+remain separate; the matched-kernel fixed-point argument is no longer a
+dependency of the whole-core upper proof. These are finite local application
+controls, not realizations of prescribed short-pair layers or added coverage.
+
 The historical `upper` task remains available for independent computational
 checks; its action/distance enumerations are no longer prerequisites for the
 codimension-three upper proof.

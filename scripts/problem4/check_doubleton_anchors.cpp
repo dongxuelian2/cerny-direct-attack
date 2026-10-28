@@ -29,13 +29,15 @@ struct AnchorDomain{
 struct AnchorMap{
  std::vector<int>f;std::array<AMask,32>target{};AMask kernel=0,forced=0;int entry=-1,q=-1;bool M_fixed=false,I_fixed=false;
 };
-bool local(const AnchorDomain&d,const std::vector<int>&f,AnchorMap&z){
+bool local(const AnchorDomain&d,const std::vector<int>&f,AnchorMap&z,bool allow_double=false){
  for(int a=0;a<d.n;++a)for(int b=a+1;b<d.n;++b)if(f[a]==f[b]&&!d.edge(a,b))return false;
  for(AMask R:d.F){AMask Y=aimage(R,f);if(apc(Y)!=apc(R)||!d.independent(Y))return false;}
  AMask Jf=aimage(d.J,f),added=Jf&31u;
- // DTR-single-entry is an input to this structural proof-step control.
- if(added&&(apc(added)!=1||!(added&9u)))return false;
- z.f=f;z.entry=added?__builtin_ctz(added):-1;z.q=added?__builtin_ctz(d.J&~Jf):-1;
+ // Keep the historical single-entry subdomain as a control. The relaxed
+ // proof only excludes U entries, and also admits both missing-edge ends.
+ if((added&~9u)||(!allow_double&&apc(added)>1))return false;
+ z.f=f;z.entry=apc(added)==2?4:added?__builtin_ctz(added):-1;
+ z.q=apc(added)==1?__builtin_ctz(d.J&~Jf):-1;
  z.M_fixed=aimage(d.M,f)==d.M;z.I_fixed=aimage(d.I,f)==d.I;
  z.kernel=d.kernels(f);z.forced=d.foreign(f);z.target[0]=0;
  for(int mask=1;mask<(1<<d.m);++mask){int i=__builtin_ctz(unsigned(mask));z.target[mask]=z.target[mask&(mask-1)]|(1u<<d.row(aimage(d.F[i],f)));}
@@ -94,6 +96,63 @@ void anchor_controls(int j,bool five,AnchorCounts&all){
  std::cout<<"PASS actual-prefix control J="<<j<<" rows="<<d.m<<": literal="<<c.literal<<" local_maps="<<c.maps<<" nested_prefixes="<<c.prefixes
   <<" missing B/A="<<c.missing_B<<'/'<<c.missing_A<<" b-entry prefixes="<<c.with_b<<" shared-kernel conflicts="<<c.conflicts<<'\n';
 }
+struct CoreOnlyCounts{
+ ACount literal=0,maps=0,double_maps=0,rank_two_double=0,prefixes=0,double_witnesses=0,rank_two_witnesses=0,comparisons=0,collapsed=0,blocks=0;
+};
+void core_only_controls(int j,bool five,CoreOnlyCounts&all){
+ AnchorDomain d(j,five);std::vector<AnchorMap>maps;std::vector<int>f(d.n);CoreOnlyCounts c;
+ std::function<void(int)>visit=[&](int at){
+  if(at<d.n){for(int v=0;v<d.n;++v){f[at]=v;visit(at+1);}return;}++c.literal;
+  AnchorMap z;if(local(d,f,z,true)){++c.maps;c.double_maps+=z.entry==4;
+   c.rank_two_double+=z.entry==4&&d.n-apc(aimage((1u<<d.n)-1,f))==2;maps.push_back(std::move(z));}
+ };visit(0);int full=(1<<d.m)-1;
+ for(int R3=0;R3<=full;++R3)if(apc(R3)>=4)for(int R2=R3;R2;R2=(R2-1)&R3)if(apc(R2)>=3&&apc(R2)<apc(R3))
+  for(int R1=R2;R1;R1=(R1-1)&R2)if(apc(R1)>=2&&apc(R1)<apc(R2))for(int S=0;S<d.m;++S)if(R1>>S&1){
+   ++c.prefixes;std::vector<const AnchorMap*>pool;
+   for(const auto&z:maps)if(!(z.target[1u<<S]&~AMask(R1))&&!(z.target[R1]&~AMask(R2))&&!(z.target[R2]&~AMask(R3)))pool.push_back(&z);
+   assert(!pool.empty());
+   if((R2&3u)!=3u){
+    // A double entry supplies B from any initial row and then X_a from B.
+    // Thus a prefix missing either anchor cannot contain such a letter.
+    for(auto z:pool)assert(z->entry!=4);
+    continue;
+   }
+   std::vector<const AnchorMap*>witnesses;
+   for(auto z:pool){
+    assert(z->target[2u]==1u||z->target[2u]==2u);
+    if(z->entry==3||z->entry==4){
+     assert(z->target[1u]==2u&&z->target[2u]==1u&&z->target[R2&~1u]==1u);
+     assert(z->M_fixed&&(R1&1u)&&z->f[3]==5&&z->f[5]==3);
+     witnesses.push_back(z);c.double_witnesses+=z->entry==4;
+     c.rank_two_witnesses+=z->entry==4&&d.n-apc(aimage((1u<<d.n)-1,z->f))==2;
+    }else assert(z->target[2u]==2u);
+   }
+   for(auto w:witnesses)for(auto z:pool){++c.comparisons;
+    bool collapsed=aimage(aimage(d.F[0],z->f),w->f)==aimage(aimage(d.F[1],z->f),w->f);
+    assert(collapsed==(w->target[z->target[1u]]==w->target[z->target[2u]]));
+    if(collapsed){++c.collapsed;assert(z->target[2u]==2u&&z->target[1u]!=1u);}
+    else{++c.blocks;assert(z->target[3u]==3u&&z->M_fixed);}
+   }
+  }
+ all.literal+=c.literal;all.maps+=c.maps;all.double_maps+=c.double_maps;all.rank_two_double+=c.rank_two_double;all.prefixes+=c.prefixes;
+ all.double_witnesses+=c.double_witnesses;all.comparisons+=c.comparisons;all.collapsed+=c.collapsed;all.blocks+=c.blocks;
+ all.rank_two_witnesses+=c.rank_two_witnesses;
+ std::cout<<"PASS core-only entries J="<<j<<" rows="<<d.m<<": maps="<<c.maps<<" double-entry maps="<<c.double_maps
+  <<" double-entry prefix witnesses="<<c.double_witnesses<<" gf comparisons="<<c.comparisons<<" protected-row collapses="<<c.collapsed
+  <<" invariant two-row blocks="<<c.blocks<<'\n';
+}
+void double_entry_negative(){
+ AnchorDomain d(2,false);const std::vector<int>f{6,6,5,5,4,3,0},g{5,5,3,1,4,0,6};
+ AnchorMap w,z;assert(!local(d,f,w)&&local(d,f,w,true)&&local(d,g,z,true));
+ assert(w.entry==4&&d.n-apc(aimage((1u<<d.n)-1,f))==2);
+ assert(w.target[1u]==2u&&w.target[2u]==1u&&w.target[4u]==1u);
+ const int S=1,R1=3,R2=7,R3=15;for(auto p:{&w,&z}){
+  assert(!(p->target[1u<<S]&~AMask(R1))&&!(p->target[R1]&~AMask(R2))&&!(p->target[R2]&~AMask(R3)));
+ }
+ assert(z.target[2u]==2u&&z.target[1u]!=1u);
+ assert(d.independent(40u)&&apc(aimage(aimage(40u,g),f))==1);
+ std::cout<<"PASS explicit defect-two double entry: both one-step maps obey the relaxed prefixes, but gf merges the protected G nonedge zb; the historical single-entry filter would discard the fold witness.\n";
+}
 void cross_control(){
  for(int j=1;j<=3;++j){AnchorDomain d(j,false);std::vector<int>f(d.n),g(d.n);for(int x=0;x<d.n;++x)f[x]=g[x]=x;
   f[0]=f[1]=0;f[2]=f[3]=5;f[5]=3;
@@ -123,6 +182,12 @@ int main(int argc,char**argv){
 #endif
  if(argc==2&&std::string(argv[1])=="--coverage"){coverage();return 0;}assert(argc==1);
  AnchorCounts c;for(int j=1;j<=3;++j)for(bool five:{false,true})anchor_controls(j,five,c);cross_control();
+ CoreOnlyCounts relaxed;for(int j=1;j<=3;++j)for(bool five:{false,true})core_only_controls(j,five,relaxed);
+ double_entry_negative();assert(relaxed.double_maps&&relaxed.rank_two_double&&relaxed.double_witnesses&&relaxed.rank_two_witnesses&&relaxed.collapsed&&relaxed.blocks);
+ std::cout<<"PASS relaxed core-only domain: "<<relaxed.literal<<" literal maps, "<<relaxed.maps<<" local maps including "
+  <<relaxed.double_maps<<" double entries ("<<relaxed.rank_two_double<<" of defect two), "<<relaxed.prefixes<<" prefix candidates, "<<relaxed.double_witnesses
+  <<" double-entry witnesses ("<<relaxed.rank_two_witnesses<<" of defect two); "<<relaxed.collapsed<<" of "<<relaxed.comparisons
+  <<" gf comparisons identify the protected rows, and the other "<<relaxed.blocks<<" preserve their two-row block. No single-entry, defect or layer-budget filter is used.\n";
  assert(c.unsupplied_B);std::cout<<"PASS early isolated-row anchor: "<<c.unsupplied_B
   <<" prefix candidates with X_a absent from R2 and B absent from R1 cannot supply B at depth two, even using every compatible letter.\n";
  std::cout<<"PASS total: "<<c.literal<<" literal maps, "<<c.maps<<" local maps, "<<c.prefixes<<" strict nested prefix candidates; "<<c.witnesses
