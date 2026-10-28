@@ -110,47 +110,48 @@ Proposition~\ref{prop:gaps}. Then $g\ge2$, $M\ge2g$,
 $n=r+M+1$, $s=r+g+1=n-m$, and $\ac(S,A)=M+1=q$.
 \end{proof}
 \section{The binary witness}\label{sec:diagram}
-Figure~\ref{fig:witness} instantiates the lower-bound family at $t=3$, $p=7$, $r=1$ ($n=14$, $s=10$, $m=4$). The blue states are $S=P\cup X$, and $p_0$ is protected. The drawing records both transformations, including the sole nontrivial kernel of $b$.
+Figure~\ref{fig:witness} gives a block-and-chain view of the two original
+letter actions for a fourteen-state instance. The diagram isolates the
+single merger under $b$ and the cycle structure that makes the lower bound
+sharp.
 
-\begin{figure}[ht]
+\begin{figure}[tbp]
 \centering
-\begin{minipage}{0.49\linewidth}
-\centering{\small (a) Letter $a$}\\[-1pt]
-\begin{tikzpicture}[x=.90cm,y=.92cm,>=Stealth,
- state/.style={circle,draw,inner sep=1pt,minimum size=6mm,font=\footnotesize},
- active/.style={state,fill=blue!17},
- protected/.style={active,draw=red!85!black,line width=.7pt}]
-\node[protected] (p0) at (0,0) {$p_0$};
-\foreach \k in {1,...,6} {\node[active] (p\k) at (\k,0) {$p_{\k}$};}
-\foreach \k in {1,...,3} {\node[active] (x\k) at ({1.1*(\k-1)+.7},-1.45) {$x_{\k}$};}
-\foreach \k in {1,...,3} {\node[state] (y\k) at ({1.1*(\k-1)+.7},-2.55) {$y_{\k}$};}
-\node[state] (z) at (5.2,-2.1) {$z$};
-\draw[->,bend left=38] (p5) to (p6);
-\draw[->,bend left=38] (p6) to (p5);
-\foreach \u/\v in {x1/x2,x2/x3,y1/y2,y2/y3,x3/y1,y3/z,z/x1}
- {\draw[->] (\u) to[bend left=12] (\v);}
-\node[font=\scriptsize,align=left] at (3.1,-3.28) {$p_0,\dots,p_4$ fixed;\\$a$ cycles $X,Y,z$.};
+\begin{tikzpicture}[>=Latex, font=\small,
+  unit/.style={draw,rounded corners=2pt,inner xsep=7pt,inner ysep=5pt},
+  flow/.style={-Latex,semithick}]
+\node[anchor=west,font=\bfseries] at (0,3.95) {(a) Letter $a$};
+\node[unit,fill=blue!9] at (2.45,3.15)
+  {$p_5\longleftrightarrow p_6$};
+\node[unit,fill=blue!9] at (9.30,3.15)
+  {$x_1\to x_2\to x_3\to y_1\to y_2\to y_3\to z\to x_1$};
+\node[anchor=west,font=\footnotesize] at (0.5,2.43)
+  {$p_0,\ldots,p_4$ are fixed by $a$.};
+\draw[gray!40] (0,2.10)--(14,2.10);
+\node[anchor=west,font=\bfseries] at (0,1.67) {(b) Letter $b$};
+\node[unit,fill=blue!9] (pb) at (3.40,0.70)
+  {$p_6\to p_5\to\cdots\to p_0$};
+\node[unit] (yb) at (10.35,0.70)
+  {$y_1\to y_2\to y_3$};
+\node[unit,fill=blue!9] (xb) at (3.40,-0.93)
+  {$x_1\to x_2\to x_3$};
+\node[unit] (zb) at (10.35,-0.93) {$z$};
+\draw[flow] (pb.east)--node[above,font=\scriptsize]{$p_0\mapsto y_1$}(yb.west);
+\draw[flow] (yb.north) to[out=95,in=85,looseness=1.2]
+ node[above,font=\scriptsize]{$y_3\mapsto p_6$}(pb.north);
+\draw[flow] (xb.north)--node[left,font=\scriptsize]{$x_3\mapsto p_6$}(pb.south);
+\draw[flow] (zb) edge[loop right,looseness=5] node[right,font=\scriptsize]{$b$}(zb);
+\node[anchor=west,font=\footnotesize] at (5.25,-1.77)
+  {The two chains meet at $p_6$.};
 \end{tikzpicture}
-\end{minipage}
-\begin{minipage}{0.49\linewidth}
-\centering{\small (b) Letter $b$}\\[-1pt]
-\begin{tikzpicture}[x=.90cm,y=.92cm,>=Stealth,
- state/.style={circle,draw,inner sep=1pt,minimum size=6mm,font=\footnotesize},
- active/.style={state,fill=blue!17},
- protected/.style={active,draw=red!85!black,line width=.7pt}]
-\node[protected] (p0) at (0,0) {$p_0$};
-\foreach \k in {1,...,6} {\node[active] (p\k) at (\k,0) {$p_{\k}$};}
-\foreach \k in {1,...,3} {\node[active] (x\k) at ({1.1*(\k-1)+.7},-1.45) {$x_{\k}$};}
-\foreach \k in {1,...,3} {\node[state] (y\k) at ({1.1*(\k-1)+.7},-2.55) {$y_{\k}$};}
-\node[state] (z) at (5.2,-2.1) {$z$};
-\foreach \j in {1,...,6} {\pgfmathtruncatemacro{\prev}{\j-1}\draw[->] (p\j) to (p\prev);}
-\foreach \u/\v in {p0/y1,x1/x2,x2/x3,y1/y2,y2/y3,x3/p6,y3/p6}
- {\draw[->] (\u) to[bend left=11] (\v);}
-\draw[->] (z) edge[loop below] (z);
-\node[font=\scriptsize,align=left] at (3.3,-3.28) {$x_3,y_3\mapsto p_6$;\\$z$ fixed.};
-\end{tikzpicture}
-\end{minipage}
-\caption{A complete 14-state binary witness. Only the $a$-loops at $p_0,\ldots,p_4$ are suppressed. The word $a^6ba^3b$ compresses at length 11; $a^6bab^5$ omits $p_0$ at length 13. Both panels specify the original letter actions.}
+\caption{The original-letter actions in the binary witness
+$t=3$, $p=7$, $r=1$ ($n=14$).
+The initially occupied states are $S=P\cup X$ (blue blocks),
+and $A=\{p_0\}$ is protected. Letter $a$ is a permutation;
+the only nontrivial kernel of $b$ is
+$\{x_3,y_3\}\mapsto p_6$.
+The word $a^6ba^3b$ compresses $S$ in $11$ letters,
+and $a^6bab^5$ avoids $p_0$ in $13$ letters.}
 \label{fig:witness}
 \end{figure}
 
