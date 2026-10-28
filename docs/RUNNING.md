@@ -111,6 +111,292 @@ See the [quadratic theorem](../PROOF.md#problem4-quadratic-exit-sparsification),
 [rank obstruction](../PROOF.md#problem4-real-safe-family-rank-barrier), and
 [protected-cover saturation](../PROOF.md#problem4-protected-cover-saturation).
 
+<a id="codimension-three-independent-controls"></a>
+## Codimension-three independent controls (PR #18)
+
+The codimension-three paper proof uses trajectory rank and actual image
+families. These four independent controls preserve shorter alternative
+five-cycle and tight-layer arguments and the two type-7 four-cycle tests.
+All use the Python standard library and leave the main proof unchanged.
+
+```sh
+python3 run.py script scripts/problem4/check_defect_three_tight_cores.py
+python3 run.py script scripts/problem4/check_type6_single_exit_lemma.py
+python3 run.py script scripts/problem4/check_type7_four_cycle_exit.py
+python3 run.py script scripts/problem4/check_type7_two_cycle_exit.py
+```
+
+The five-cycle script checks all permutations and all rank-`n-1`
+transformations with sole kernel pair 01 for n=6,7,8, without early-pair
+filters. The type-7 controls separately test the four-cycle permutation
+action and the inverse-pair-compatible two-cycle/V action. The tight-core
+control checks the finite graph classification, not the arbitrary-n
+exclusion. Mathematical arguments and precise scopes are in the
+[independent defect-three lemmas](../PROOF.md#problem4-defect-three-independent-lemmas).
+
+## Small controls for paper dependency replacements
+
+```sh
+python3 run.py script scripts/problem4/check_paper_rank_reductions.py
+python3 run.py script scripts/problem4/check_paper_family_reductions.cpp
+python3 run.py script scripts/problem4/check_single_edge_obstruction.cpp
+python3 run.py script scripts/problem4/check_two_exception_closure.cpp
+python3 run.py script scripts/problem4/check_three_exception_closure.cpp
+python3 run.py script scripts/problem4/check_three_exception_closure.cpp --coverage
+python3 run.py script scripts/problem4/check_triangle_exchange.cpp
+python3 run.py script scripts/problem4/check_triangle_one_deletion.cpp
+python3 run.py script scripts/problem4/check_doubleton_remainder.cpp
+python3 run.py script scripts/problem4/check_doubleton_flower.cpp
+python3 run.py script scripts/problem4/check_doubleton_anchors.cpp
+python3 run.py script scripts/problem4/commonhole_exit.cpp
+python3 run.py script scripts/problem4/commonhole_exit.cpp --coverage
+```
+
+This standard-library control reconstructs the displayed images from their
+holes, checks ranks and row relations by rational elimination, and applies
+the literal closed-T exit words. It includes the reachable, strongly connected
+synchronizing five-state example with pure compression length ten. The
+[uniform proofs](../PROOF.md#problem4-paper-dependency-reductions) provide
+the all-parameter conclusions. The C++17 control exhausts all 870,199 maps
+on six and seven states for the local balanced-bipartite and tight-clique
+conditions; it does not claim that these local maps realize short-pair layers.
+The single-edge control checks the equivalent graph conditions on every
+simple labelled graph through six vertices. Thirty explicit synchronizing
+strongly connected automata realize the prescribed P1 graphs; ordinary subset
+BFS checks 1,199 independent subsets. A separate three-letter example checks
+six subsets without strong connectivity. The exhaustive binary domain through
+four states has no qualifying P_h and is explicitly reported as an empty
+applicability domain, rather than as successful instances of the bound.
+See the [general theorem and exchange structure](../PROOF.md#problem4-single-edge-obstruction).
+The two-exception control checks the single-edge image classification on all
+simple graphs through order six and exhausts 5,998,081 local transformations
+on twelve small representative graphs, including deleted isolated points.
+Its private-pair control enumerates all center-edge graphs for three private
+pairs and zero/one isolate. Among 1,183,488 four-row-safe local maps, every map
+leaving the proposed support causes at least two row exits; the third exception
+is deliberately allowed to be unsafe. These are local lemma controls rather
+than global short-pair graph realizations. See the
+[two-exception](../PROOF.md#problem4-two-exception-closure) and
+[disjoint-hole](../PROOF.md#problem4-disjoint-exchange-holes) proofs.
+The three-exception control checks the single-edge classification on all
+33,867 labelled graphs through six vertices, then checks complete forced-image
+local domains on two hard-case cores with zero/one isolate. It retains the
+orientations that would give two/three-step mergers, so those proof steps
+have nonempty negative controls. Four-container transition tables independently
+check the four-step budget. These maps are not prescribed-P_h realizations.
+For arbitrary exception counts, it checks the Johnson triangle structure on
+all small unique-maximum graphs, eight clique-family templates, and 1,068
+admissible local maps forcing the kernel in a three-row far clique.
+The common-hole negative control has one row exit and a two-edge maximum-set
+image; it prevents reusing the five-row container classification with only
+four safe rows. The [four-row obstacle](../PROOF.md#problem4-common-hole-four-row-obstacle)
+leads to the later two-layer resolution below.
+The common-hole exit control exhausts the local domains with one row exit
+on zero/one isolate (528 and 1,446 maps). It checks the entry normal forms,
+the protected-pair implication and the private-pair successor classification.
+A separate construction enumerates the local domains for k=2,...,5, with
+zero/one isolate, and checks the general versions of these implications.
+Ordinary pair BFS on actual Cerny automata checks the shortest-path closure
+lemma, including a nonclosed two-pair counterexample to dropping its hypothesis.
+See the [general common-hole double-exit theorem](../PROOF.md#problem4-common-hole-double-exit).
+The additional five-row control checks that an image of A in the extra row B
+has at least k preimages from D, and that keeping A in D allows at most one
+D exit. The two-layer proof uses the actual first image layer to exclude A
+mapping to B. Thus it covers the full named P9 domain, including a fifth
+P8-safe row, rather than assuming the two layers have the same safe family.
+The separate `--coverage` mode rebuilds only the common-hole core's 14 named
+domains and identifies the one covered domain (canonical core 2069024,
+local index 6); the other 13 remain outside this theorem.
+The three-exception program's `--coverage` mode rebuilds all 4,658 existing cover-four cores,
+then uses the production domain generator and static filters for the selected
+unique-maximum branches: 521 cores, 7,960 raw domains, and 7,519 previously
+dynamic domains. It runs no dynamic solver. Of the latter, 7,499 belong to
+the five-to-ten-point branch and 20 to the separate eleven-point branch.
+See the [three-exception theorem](../PROOF.md#problem4-three-exception-closure)
+and the [general Johnson-cluster theorem](../PROOF.md#problem4-exception-cluster-kernel).
+For the [proof-structure compression](../PROOF.md#problem4-proof-structure-compression),
+the three-exception control also checks the ECC/bootstrap/ECK case split on every
+applicable labelled graph through six vertices, the four hard representatives,
+and eight explicit graph templates. Each of the six routes has nonempty controls;
+the ECK route always has exactly one far Johnson edge and at least three exterior
+container states. The triangular-exchange control reconstructs all independent
+rows on 228 literal graphs: disjoint-hole cores with three/four centers and every
+center-edge graph, and common-hole cores with three through six centers, each
+with zero through two isolates. It checks 228 complete four-row paths, 12 complete
+edge-plus-isolate families, all 468 exterior rows, and all 36 two-row prefixes of
+the three-row families. Twelve A-only families explicitly fail the exterior
+boundary hypothesis. Three doubleton families with one through three isolates
+check the full-support obstruction and the three-row component used by JCP.
+The one-deletion control supplies the actual-prefix JCP
+checks and its depth-zero negative control. These checks add no core coverage
+and do not require rerunning the historical domain enumerations.
+
+The [common-intersection capacity](../PROOF.md#problem4-common-intersection-capacity)
+control in check_doubleton_remainder.cpp exhausts all 74 labelled graphs through
+four vertices and all 16,608 graph/map inputs. It checks 85,572 safe row families
+with nonempty intersection, including 8,556 with full support, and retains
+unsafe-row and omitted-defect negative controls. Before the first/last-layer
+budget, all 1,440 admissible map/R2 combinations containing B preserve I;
+72 violate the old budget. The old 1,368 budget-filtered controls and the
+one-isolate empty-I boundary remain present.
+The [prefix exit-capacity](../PROOF.md#problem4-prefix-exit-capacity) control in
+commonhole_exit.cpp uses ordinary subset BFS on actual Cerny automata of orders
+two through five. It checks 229,320 (S,d,E,word) inputs, enumerating every same-size
+family E containing the actual R_d and words through length three. Of these,
+183,456 use words of length two/three, 70,920 have positive prefix depth, and
+5,814 attain the bound. Separate negative controls check the slow-row threshold
+and charging aa as two original letters. The existing common-hole, doubleton,
+and triangular-exchange local controls remain necessary application checks;
+these runs add no core or named-domain coverage.
+
+The [connectivity propagation](../PROOF.md#problem4-johnson-component-prefix)
+checks extend check_triangle_one_deletion.cpp on all 66,281 binary automata of
+orders two through four. All 124,494 connected positive-depth uncompressed
+prefixes have connected next prefixes; 84,126 of these grow strictly. The same
+automata supply 3,916,812 (automaton,S,C,word) inputs for the
+[single-target rule](../PROOF.md#problem4-prefix-single-target), with C ranging
+over every same-size row family containing R_(2|word|), for words of length one
+or two. The 554,648 one-letter and 1,306,024 two-letter singleton intersections
+all fix their actual anchors. Nonsynchronizing inputs are included because
+these two prefix statements do not require synchronization. The existing
+depth-zero propagation negative and a C3 example with only R1 in C check the
+two depth requirements.
+check_doubleton_remainder.cpp also checks the capacity-equality complement on
+all 3,412 maps of orders two through five and 97,504 nonempty proper supports:
+15,674 saturated cases, including 11,698 with nonzero defect. Wrong global
+defect and strict-capacity negatives check the global defect and equality hypotheses.
+check_doubleton_anchors.cpp retains its 972 prefix candidates and identifies
+87 candidates that cannot supply B in R2 from R1 when X_a is absent in R2
+and B absent in R1, even using the entire compatible letter pool. The existing
+three cross-letter gf controls still verify the two-original-letter kernel conflict.
+The [two-target fold](../PROOF.md#problem4-row-fibre-separation) control extends
+the same complete binary-automaton domain: 18,432 actual R2 folds, with 5,520
+P2-independent protected unions (1,248 on prefixes of more than two rows).
+All 2,376 comparisons with a letter fixing A also fix B. Actual four-state
+counterexamples retain the depth-two and two-original-letter requirements.
+The doubleton control separately compares the two row images under gf:
+15,192 comparisons identify the protected rows, and the other 97,392 preserve
+the two-row block itself, including all 95,664 comparisons without any witness
+kernel conflict. The triangular ordinary-letter controls now also check the
+forced row identification before the second kernel guard, both with and
+without the rank restriction; the two independent guard negatives remain.
+
+The [triangular mixed-return proof](../PROOF.md#problem4-triangle-exchange-one-deletion)
+now uses the actual two-row R1 and an entrance letter. Its control enumerates
+all 139,968 six-core inputs for one through three isolates and every permutation
+of those isolates, retaining 2,196 ordinary-map/direction choices and constructing
+all 46 entrance maps. Of 32,292 compatible joint prefix comparisons, 15,444 move
+A0; all compress the protected maximum independent set M by fg, gf, or fgg,
+in 14,040 / 468 / 936 cases. The ordinary maps have no defect or pair-layer
+budget filter. The previous one-letter two-kernel-guard controls remain valid
+but are no longer prerequisites for the upper proof. An actual prefix of sizes
+2/3/4 protects all G nonedges for two letters and is first rejected by fgg;
+another defect-two moving map preserves the full nonedge pair orbit with the
+entrance but has no compatible two-row R1. These check the three-letter cost
+and actual-first-layer hypotheses separately.
+
+The generalized row-fibre argument requires only an independent subset of the
+row union larger than either row. The complete binary-automaton fold control
+also checks this rank condition: it finds the same 5,520 applicable cases as
+the full-union condition through four states, with no extra proper-subset
+folds in that small actual-automaton domain.
+
+The [common-hole single-A proof](../PROOF.md#problem4-common-hole-one-deletion-A)
+now requires an actual third-layer supplier C_j t=B_x. In commonhole_exit.cpp,
+the existing zero/one-isolate, all-hole, four/five-row, and two-initial-row map
+domains retain the original-letter defect-two condition, but no first/last-layer
+or P2 saturation filter is used in the new supplier check. Ordinary subset BFS
+on 1,401,372 small alphabets compresses M in two letters in 1,115,822 cases,
+three in 282,226 cases, and four in 3,324 cases. The paper proof works for
+arbitrary isolates with explicit bounds of five and three original letters;
+the observed finite four-letter maximum is not claimed as that general bound.
+The old layer-budget and private-pair controls remain as separate historical
+checks; neither is a dependency of this branch's new closing argument.
+
+The [doubleton flower support proof](../PROOF.md#problem4-doubleton-eighth-entry)
+replaces its five-pair shortest-path closing argument with a proper two-point
+support. check_doubleton_flower.cpp constructs all 46 entrances for one through
+three isolates and every isolate permutation. It rejects 92 wrong complement
+images by ff and checks 438,750 ordinary comparisons without rank or kernel
+filters. Of these, 70,200 preserve {b,r}; all other 368,550 merge an original
+G nonedge under the three-original-letter word fgf. The old P1/P2 and five-pair
+controls remain independent historical checks.
+
+The common-hole two-letter barrier remains a scope control. Two explicit
+seven-state maps produce an actual 2/3/4-row prefix while keeping a 17-pair
+family containing every G nonedge forward closed under all words. The private
+pairs pj and pr never merge, so this nonsynchronizing model is not a prescribed-P7
+automaton. Its four immediate kernel pairs also violate the old layer budget.
+The new closing argument uses the finite geodesics of actual G edges.
+
+The [private-leaf anchor corollary](../PROOF.md#problem4-private-leaf-anchor-closure)
+applies the existing pair-geodesic rule to all three private edges. In CHT3,
+the actual initial row Ci forces every private leaf other than wi to map into
+the leaves/isolates; pi is already immediate and needs no leaf condition.
+All private distances are at most three, contradicting the distance-h private
+edge in a maximum-set exit. This removes the Af-to-Bi supplier, four-edge P2
+saturation, the prohibition on kernels incident to ur, and the two-pair distance
+classification from the main proof. The original k=3, h>=7 scope is retained.
+
+commonhole_exit.cpp checks all 490 local maps over zero/one isolates with the
+derived M-image forms, one-letter G-nonedge protection, F-row safety and actual
+prefix identities. All 162 G-valued successors of the other private edges stay
+private. No rank, layer-budget or pair-distance filter is used. The control
+retains 40 old triangle-swap cases and 260 maps with kernels incident to ur;
+the old four-edge/two-pair controls remain separate historical domains.
+
+The [pair-geodesic rule](../PROOF.md#problem4-pair-geodesic-closure) itself now
+only requires closure for successors inside P_(h-1). Distance-h boundary
+escapes cannot be a shortest-path descent. This absorbs the separate two-pair
+argument for CHT2; the former G-closed condition remains a sufficient special
+case. The same 2,168 actual Cerny horizon/family cases for orders two through
+five admit 68 strict-interior-closed families, including all 55 former positive
+cases and 13 additional cases. Every observed distance meets the family-size
+bound. C3 retains both a genuine missing-fast-pair negative and a boundary-only
+escape positive. The D-family center-entry case retains its necessary global
+budget but directly invokes the existing joint-word first/last-layer count.
+
+The shared [protected-reset support rule](../PROOF.md#problem4-reset-support-propagation)
+records the literal two-letter gf and three-letter fgf costs used by both
+doubleton branches. The [U-entry proof](../PROOF.md#problem4-doubleton-double-entry)
+first completes the original four safe rows to the four/five-row family using
+the unique maximum set. In the five-row family, four petals force defect at
+least three. In the four-row family, the actual reset excludes B from R2 and closes {b,r}; gg
+rejects the last possible exit into an isolate hole. The whole-core upper
+proof therefore no longer uses the joint first/last-layer budget. Its numerical
+bound remains an auxiliary statement with the original hypotheses.
+
+check_doubleton_anchors.cpp also revisits the same 35,294,830 literal maps
+without pre-excluding U entries. One-letter G-nonedge protection, source-row
+safety and defect at most two leave 7,470 maps, including 324 U entries (none
+in the five-row family). The 972 strict
+prefix candidates yield 1,512 U-entry witnesses; 1,368 fail ff. Of the remaining
+41,836 cross-letter comparisons, 12,328 preserve {b,r}; fgf, gf and gg merge an
+original G nonedge in 12,956, 16,432 and 120 cases. No layer-budget filter is
+used. Three explicit row-safe maps also generate an actual 2/3/4-row prefix
+but merge the protected zb under gg, checking the final hole-exit case.
+
+The strengthened [doubleton anchor proof](../PROOF.md#problem4-doubleton-actual-anchors)
+also runs the same complete 35,294,830-map domain with only Jf contained in M,
+allowing simultaneous entries into a and b. Its 9,708 local maps include 1,120
+double entries, of which 480 have defect two. The same 972 nested prefix
+candidates supply 1,200 double-entry witness selections, including 180 of
+defect two. Every applicable double entry supplies both actual anchors and
+the two-target fold. Of 316,488 gf comparisons, 39,688 identify the protected
+rows; the other 276,800 preserve their two-row block. No single-entry, defect,
+or first/last-layer budget filter is applied in this relaxed control. An
+explicit seven-state defect-two double entry and a second letter pass the
+one-step prefix conditions, but gf merges the G nonedge zb. This retains the
+two-original-letter protection requirement and checks that the relaxed domain
+has genuine new cases. The historical single-entry and matched-kernel controls
+remain separate; the matched-kernel fixed-point argument is no longer a
+dependency of the whole-core upper proof. These are finite local application
+controls, not realizations of prescribed short-pair layers or added coverage.
+
+The historical `upper` task remains available for independent computational
+checks; its action/distance enumerations are no longer prerequisites for the
+codimension-three upper proof.
+
 ## Individual research sources
 
 The arbitrary-core-cycle rigidity proof has a C++17 word-level control and
@@ -1129,6 +1415,12 @@ reran small independent controls and the single exception, without repeating
 the six-hour full run. The subsequent manuscript consolidation inspected
 existing completion records and compiled the paper; it did not repeat those
 research calculations.
+
+The later [two/three-exception paper reductions](../PROOF.md#problem4-three-exception-closure)
+replace the dynamic dependency for 7,499 of those 3,206,988 domains and for
+20 domains in the separate eleven-point branch. The `--coverage` control above
+reconstructs this overlap with the old domain definition; it does not repeat
+the historical dynamic run or alter its completion count.
 
 The completed full run used the older relaxation without the new pair-entrance
 condition. Current source enables that necessary condition in `--joint-sat`;
