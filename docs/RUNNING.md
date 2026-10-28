@@ -111,6 +111,29 @@ See the [quadratic theorem](../PROOF.md#problem4-quadratic-exit-sparsification),
 [rank obstruction](../PROOF.md#problem4-real-safe-family-rank-barrier), and
 [protected-cover saturation](../PROOF.md#problem4-protected-cover-saturation).
 
+<a id="codimension-three-independent-controls"></a>
+## Codimension-three independent controls (PR #18)
+
+The codimension-three paper proof uses trajectory rank and actual image
+families. These four independent controls preserve shorter alternative
+five-cycle and tight-layer arguments and the two type-7 four-cycle tests.
+All use the Python standard library and leave the main proof unchanged.
+
+```sh
+python3 run.py script scripts/problem4/check_defect_three_tight_cores.py
+python3 run.py script scripts/problem4/check_type6_single_exit_lemma.py
+python3 run.py script scripts/problem4/check_type7_four_cycle_exit.py
+python3 run.py script scripts/problem4/check_type7_two_cycle_exit.py
+```
+
+The five-cycle script checks all permutations and all rank-`n-1`
+transformations with sole kernel pair 01 for n=6,7,8, without early-pair
+filters. The type-7 controls separately test the four-cycle permutation
+action and the inverse-pair-compatible two-cycle/V action. The tight-core
+control checks the finite graph classification, not the arbitrary-n
+exclusion. Mathematical arguments and precise scopes are in the
+[independent defect-three lemmas](../PROOF.md#problem4-defect-three-independent-lemmas).
+
 ## Small controls for paper dependency replacements
 
 ```sh
