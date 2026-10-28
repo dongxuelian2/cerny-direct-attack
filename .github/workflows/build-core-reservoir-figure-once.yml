@@ -32,7 +32,7 @@ jobs:
           pages=$(pdfinfo papers/problem4/main.pdf | awk '/^Pages:/ {print $2}')
           found=0
           for page in $(seq 1 "$pages"); do
-            if pdftotext -f "$page" -l "$page" papers/problem4/main.pdf - | grep -q 'Figure 2'; then
+            if pdftotext -f "$page" -l "$page" papers/problem4/main.pdf - | grep -q 'Nonisolated core and isolated-state reservoir in a schematic'; then
               pdftoppm -f "$page" -l "$page" -scale-to 1450 -png -singlefile papers/problem4/main.pdf papers/problem4/.core-figure-review
               echo "Rendered Figure 2 on page $page of $pages"
               found=1
