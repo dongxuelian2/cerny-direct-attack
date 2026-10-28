@@ -483,6 +483,46 @@ void complete_core_row_structure_control(){
   std::cout<<"PASS complete-core row structure J="<<j<<": pair-closed families="<<closed<<", two deletion rows="<<two_deletions<<", full D="<<D<<", A/two exceptions="<<one_A<<", private deletion/two exceptions="<<one_B<<"\n";
  }
 }
+void prefix_hit_control(){
+ Count inputs=0,multiple_letters=0,positive_depth=0,tight=0;
+ for(int n=2;n<=5;++n){
+  const Mask Q=(1u<<n)-1;std::vector<std::vector<int>>letters(2,std::vector<int>(n));
+  for(int x=0;x<n;++x){letters[0][x]=(x+1)%n;letters[1][x]=x;}letters[1][n-1]=0;
+  std::vector<int>compression(1u<<n);
+  for(Mask start=1;start<=Q;++start)if(pc(start)>=2){
+   std::vector<int>distance(1u<<n,-1);std::vector<Mask>queue{start};distance[start]=0;
+   for(size_t at=0;at<queue.size();++at){Mask X=queue[at];if(pc(X)<pc(start)){compression[start]=distance[X];break;}
+    for(const auto&f:letters){Mask Y=image(X,f);if(distance[Y]<0){distance[Y]=distance[X]+1;queue.push_back(Y);}}
+   }assert(compression[start]>0);
+  }
+  std::vector<std::pair<int,std::vector<int>>>words;std::vector<int>identity(n);std::iota(identity.begin(),identity.end(),0);words.push_back({0,identity});
+  for(size_t at=0;at<words.size();++at){auto[length,word]=words[at];if(length==3)continue;
+   for(const auto&f:letters){std::vector<int>next(n);for(int x=0;x<n;++x)next[x]=f[word[x]];words.push_back({length+1,next});}
+  }
+  for(int s=2;s<=n;++s){std::vector<Mask>rows;for(Mask R=1;R<=Q;++R)if(pc(R)==s)rows.push_back(R);
+   for(Mask S:rows)for(int d=0;d<=3;++d){Mask actual=0;bool uncompressed=true;
+    for(const auto&[length,word]:words)if(length<=d){Mask Y=image(S,word);if(pc(Y)<s){uncompressed=false;break;}
+     actual|=1u<<int(std::find(rows.begin(),rows.end(),Y)-rows.begin());
+    }if(!uncompressed)continue;assert(pc(actual)>=d+1);
+    for(Mask E=actual;E<(1u<<rows.size());++E)if((E&actual)==actual)
+     for(const auto&[length,word]:words){std::vector<int>costs;
+      for(size_t r=0;r<rows.size();++r)if(E>>r&1){Mask Y=image(rows[r],word);costs.push_back(pc(Y)<s?0:compression[Y]);}
+      std::sort(costs.rbegin(),costs.rend());int b=costs[d]; // The least b leaving at most d slow rows.
+      assert(compression[S]<=d+length+b);++inputs;multiple_letters+=length>=2;positive_depth+=d>0;tight+=compression[S]==d+length+b;
+     }
+   }
+  }
+ }
+ const std::vector<std::vector<int>>C3{{1,2,0},{0,1,0}};
+ Mask S=3u,Y=image(image(S,C3[0]),C3[0]);
+ assert(pair_distance(C3,S)==3&&pair_distance(C3,Y)==1&&3>1+1); // aa costs two letters.
+ assert(pc(image(5u,C3[1]))==1&&image(S,C3[1])==S&&pair_distance(C3,S)>1);
+ // E={01,02}, d=b=0 has one slow row; dropping the slow-row threshold would fail.
+ assert(inputs&&multiple_letters&&positive_depth&&tight);
+ std::cout<<"PASS prefix hitting on actual Cerny automata n=2..5: "<<inputs<<" (S,d,E,word) inputs with every E containing R_d, "
+  <<multiple_letters<<" words of length two/three, "<<positive_depth<<" positive-depth inputs, "<<tight
+  <<" tight bounds; word-cost and slow-row-threshold negatives pass.\n";
+}
 int main(int argc,char**argv){
 #ifdef NDEBUG
  std::cerr<<"Assertions must be enabled.\n";return 1;
@@ -531,7 +571,7 @@ int main(int argc,char**argv){
   return 0;
  }
  assert(argc==1);
- local_control(0);local_control(1);general_common_hole_control();complete_next_layer_control();geodesic_control();layer_capacity_control();shared_hole_control();star_pair_closure_control();tight_star_three_row_control();late_exception_kernel_control();one_deletion_controls();last_common_hole_support_controls();complete_core_row_structure_control();
+ prefix_hit_control();local_control(0);local_control(1);general_common_hole_control();complete_next_layer_control();geodesic_control();layer_capacity_control();shared_hole_control();star_pair_closure_control();tight_star_three_row_control();late_exception_kernel_control();one_deletion_controls();last_common_hole_support_controls();complete_core_row_structure_control();
  std::cout<<"Finite local controls only; no complete P7 realization or general-proof claim is inferred from the map counts.\n";
 }
 

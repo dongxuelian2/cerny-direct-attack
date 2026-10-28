@@ -29,13 +29,55 @@ struct Domain{
  Mask immediate(const std::vector<int>&f)const{Mask pairs=0;int idx=0;for(int a=0;a<5;++a)for(int b=a+1;b<5;++b,++idx)if(f[a]==f[b])pairs|=1u<<idx;return pairs;}
  bool in_family(Mask X)const{return std::find(F.begin(),F.end(),X)!=F.end();}
 };
-struct Counts{Count inputs=0,basic=0,budget=0,entries=0,R2=0,entry_R2=0,closed_I=0,missing_B=0;};
+struct Counts{Count inputs=0,basic=0,budget=0,entries=0,R2=0,entry_R2=0,closed_I=0,missing_B=0,unfiltered_R2=0,over_budget_R2=0;};
+void intersection_capacity_control(){
+ Count graphs=0,maps=0,families=0,full_support=0,deficient=0;
+ for(int n=2;n<=4;++n){
+  std::vector<Mask>pairs;for(int a=0;a<n;++a)for(int b=a+1;b<n;++b)pairs.push_back((1u<<a)|(1u<<b));
+  Count limit=1;for(int x=0;x<n;++x)limit*=n;
+  for(Mask edges=0;edges<(1u<<pairs.size());++edges){++graphs;
+   auto independent=[&](Mask X){for(size_t p=0;p<pairs.size();++p)if((edges>>p&1)&&(X&pairs[p])==pairs[p])return false;return true;};
+   for(Count code=0;code<limit;++code){++maps;Count z=code;std::vector<int>f(n);for(int&x:f){x=z%n;z/=n;}
+    const Mask Q=(1u<<n)-1;const int defect=n-pc(image(Q,f));
+    for(int s=2;s<n;++s){std::vector<Mask>safe;
+     for(Mask R=1;R<=Q;++R)if(pc(R)==s&&pc(image(R,f))==s&&independent(image(R,f)))safe.push_back(R);
+     for(Mask choice=1;choice<(1u<<safe.size());++choice){Mask W=0,I=Q;
+      for(size_t r=0;r<safe.size();++r)if(choice>>r&1){W|=safe[r];I&=safe[r];}if(!I)continue;
+      Mask T=image(I,f),capacity=0;for(int y=0;y<n;++y)if(independent(T|(1u<<y)))capacity|=1u<<y;
+      assert(!(image(W,f)&~capacity));assert(pc(W)-defect<=pc(capacity));
+      ++families;full_support+=W==Q;deficient+=defect>0;
+     }
+    }
+   }
+  }
+ }
+ assert(graphs==74&&families&&full_support&&deficient);
+ // Both hypotheses have content: an unsafe row invalidates containment;
+ // a rank-deficient safe map invalidates the bound with defect omitted.
+ const std::vector<Mask>F{3u,5u};const Mask W=7u,I=1u;
+ auto independent=[](Mask R){return (R&5u)!=5u;};Mask capacity=0;
+ for(int y=0;y<3;++y)if(independent(I|(1u<<y)))capacity|=1u<<y;
+ assert(capacity==3u&&!independent(F[1]));
+ const std::vector<int>identity{0,1,2},collapse{0,1,1};
+ assert(image(W,identity)&~capacity);assert(image(W,collapse)==capacity);
+ for(Mask R:F)assert(pc(image(R,collapse))==2&&image(R,collapse)==3u);
+ assert(pc(W)>pc(capacity)&&pc(W)-(3-pc(image(W,collapse)))==pc(capacity));
+ std::cout<<"PASS common-intersection capacity: "<<graphs<<" labelled graphs n=2..4, "<<maps<<" graph/map inputs, "
+  <<families<<" safe nonempty-intersection families, "<<full_support<<" with full support, "<<deficient
+  <<" with nonzero defect; unsafe-row and omitted-defect negatives pass.\n";
+}
 void literal(int j,Counts&all){
  Domain d(j);std::vector<int>f(d.n);Counts c;
  std::function<void(int)>visit=[&](int at){
   if(at<d.n){for(int v=0;v<d.n;++v){f[at]=v;visit(at+1);}return;}++c.inputs;
   int merged=0;if(!d.basic(f,merged))return;++c.basic;
-  Mask foreign=d.foreign(f);if(merged+pc(foreign)>4)return;++c.budget;
+  Mask foreign=d.foreign(f);
+  // Check the new proof before any first/last-layer or foreign-target filter.
+  for(int omitted=1;omitted<4;++omitted){bool safe=true;
+   for(int r=0;r<4;++r)if(r!=omitted&&!d.in_family(image(d.F[r],f)))safe=false;
+   if(safe){++c.unfiltered_R2;c.over_budget_R2+=merged+pc(foreign)>4;assert(image(d.I,f)==d.I);}
+  }
+  if(merged+pc(foreign)>4)return;++c.budget;
   Mask Jf=image(d.J,f),If=image(d.I,f);bool entry=Jf!=d.J;int q=-1;
   if(entry){++c.entries;
    Mask added=Jf&~d.J,missing=d.J&~Jf;assert(pc(added)==1&&pc(missing)==1&&(added&9u));
@@ -60,6 +102,7 @@ void literal(int j,Counts&all){
  };
  visit(0);assert(c.budget&&c.entries&&c.entry_R2&&c.missing_B&&c.closed_I);
  all.inputs+=c.inputs;all.basic+=c.basic;all.budget+=c.budget;all.entries+=c.entries;all.R2+=c.R2;all.entry_R2+=c.entry_R2;all.closed_I+=c.closed_I;all.missing_B+=c.missing_B;
+ all.unfiltered_R2+=c.unfiltered_R2;all.over_budget_R2+=c.over_budget_R2;
  std::cout<<"PASS J="<<j<<": inputs="<<c.inputs<<" four-safe="<<c.basic<<" layer-budget="<<c.budget<<" entries="<<c.entries
   <<" R2-map combinations="<<c.R2<<" entry-R2="<<c.entry_R2<<" I-closed="<<c.closed_I<<" missing-B cumulative failures="<<c.missing_B<<'\n';
 }
@@ -120,11 +163,13 @@ int main(){
 #ifdef NDEBUG
  std::cerr<<"Assertions must be enabled.\n";return 1;
 #endif
- Counts all;for(int j=1;j<=3;++j)literal(j,all);negative_controls();
- double_entry_controls();fixed_point_controls();
+ intersection_capacity_control();Counts all;for(int j=1;j<=3;++j)literal(j,all);negative_controls();
+ double_entry_controls();fixed_point_controls();assert(all.unfiltered_R2==1440&&all.over_budget_R2==72);
  std::cout<<"PASS all "<<all.inputs<<" literal maps: "<<all.basic<<" four-safe maps, "<<all.budget<<" layer-budget maps, "<<all.entries
   <<" normal-form entries; "<<all.closed_I<<" map/R2 combinations preserve I, "<<all.missing_B
   <<" entry combinations with B absent violate the cumulative first image.\n"
+ <<"PASS before the first/last-layer budget: "<<all.unfiltered_R2<<" map/R2 combinations containing B preserve I, including "
+ <<all.over_budget_R2<<" over-budget combinations; the J=1 empty-I boundary is retained.\n"
   <<"Finite local controls only; the paper proof uses arbitrary J>=2 and strong connectivity, not this enumeration.\n";
  return 0;
 }

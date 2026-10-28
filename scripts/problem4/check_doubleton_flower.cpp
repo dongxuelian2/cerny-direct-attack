@@ -106,6 +106,7 @@ void five_row_control(){
    for(int a=0;a<d.n;++a)for(int b=a+1;b<d.n;++b)if(f[a]==f[b]&&!d.edge(a,b))return;
    for(int v=0;v<5;++v){Mask Y=image(d.J|(1u<<v),f);if(pc(Y)!=pc(d.J)+1||!d.independent(Y))return;}
    ++safe;if(image(d.J,f)==d.J)return;++entries;assert(pc(image(31u,f))<=2);
+   assert(d.n-pc(image((1u<<d.n)-1,f))>=3); // IC-cap excludes this under the RD1 defect-two bound.
    int merged=0;for(int a=0;a<d.n;++a)for(int b=a+1;b<d.n;++b)merged+=f[a]==f[b];assert(merged>=4);
   };visit(0);
  }

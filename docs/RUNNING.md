@@ -122,6 +122,8 @@ python3 run.py script scripts/problem4/check_three_exception_closure.cpp
 python3 run.py script scripts/problem4/check_three_exception_closure.cpp --coverage
 python3 run.py script scripts/problem4/check_triangle_exchange.cpp
 python3 run.py script scripts/problem4/check_triangle_one_deletion.cpp
+python3 run.py script scripts/problem4/check_doubleton_remainder.cpp
+python3 run.py script scripts/problem4/check_doubleton_flower.cpp
 python3 run.py script scripts/problem4/commonhole_exit.cpp
 python3 run.py script scripts/problem4/commonhole_exit.cpp --coverage
 ```
@@ -204,6 +206,24 @@ check the full-support obstruction and the three-row component used by JCP.
 The one-deletion control supplies the actual-prefix JCP
 checks and its depth-zero negative control. These checks add no core coverage
 and do not require rerunning the historical domain enumerations.
+
+The [common-intersection capacity](../PROOF.md#problem4-common-intersection-capacity)
+control in check_doubleton_remainder.cpp exhausts all 74 labelled graphs through
+four vertices and all 16,608 graph/map inputs. It checks 85,572 safe row families
+with nonempty intersection, including 8,556 with full support, and retains
+unsafe-row and omitted-defect negative controls. Before the first/last-layer
+budget, all 1,440 admissible map/R2 combinations containing B preserve I;
+72 violate the old budget. The old 1,368 budget-filtered controls and the
+one-isolate empty-I boundary remain present.
+The [prefix exit-capacity](../PROOF.md#problem4-prefix-exit-capacity) control in
+commonhole_exit.cpp uses ordinary subset BFS on actual Cerny automata of orders
+two through five. It checks 229,320 (S,d,E,word) inputs, enumerating every same-size
+family E containing the actual R_d and words through length three. Of these,
+183,456 use words of length two/three, 70,920 have positive prefix depth, and
+5,814 attain the bound. Separate negative controls check the slow-row threshold
+and charging aa as two original letters. The existing common-hole, doubleton,
+and triangular-exchange local controls remain necessary application checks;
+these runs add no core or named-domain coverage.
 The historical `upper` task remains available for independent computational
 checks; its action/distance enumerations are no longer prerequisites for the
 codimension-three upper proof.
