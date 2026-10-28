@@ -7,7 +7,7 @@
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,positioning,calc,fit,backgrounds}
 \usepackage{microtype}
-\usepackage{float}
+\usepackage[section]{placeins}
 \usepackage[colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!55!black]{hyperref}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
@@ -116,7 +116,7 @@ letter actions for a fourteen-state instance. The diagram isolates the
 single merger under $b$ and the cycle structure that makes the lower bound
 sharp.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[>=Latex, font=\small,
   unit/.style={draw,rounded corners=2pt,inner xsep=7pt,inner ysep=5pt},
@@ -283,7 +283,7 @@ This is the short-pair viewpoint on subset compression; see also the
 computational compression framework in~\cite{kisielewicz2016}.
 Figure~\ref{fig:short-pair-cover} illustrates the equivalence.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[>=Latex,
   vertex/.style={circle,draw,minimum size=9mm,font=\small},
@@ -345,7 +345,7 @@ The upper-bound exclusions use the short-pair cover number
 to split the finite search. Figure~\ref{fig:coverage} summarizes
 the two exact computations.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[>=Latex,font=\small,
   entry/.style={draw,rounded corners=2pt,align=center,minimum width=26mm,minimum height=8mm},
@@ -483,7 +483,7 @@ All rows also contain the common isolated states.
 Figure~\ref{fig:multipartite} shows the two overlapping
 row families and the edges that the final exclusion uses.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[font=\small,
   vertex/.style={circle,draw,minimum size=7.2mm,inner sep=1pt},
