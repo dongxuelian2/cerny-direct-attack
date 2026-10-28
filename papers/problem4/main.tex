@@ -7,6 +7,7 @@
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,positioning,calc,fit,backgrounds}
 \usepackage{microtype}
+\usepackage{float}
 \usepackage[colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!55!black]{hyperref}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
@@ -115,7 +116,7 @@ letter actions for a fourteen-state instance. The diagram isolates the
 single merger under $b$ and the cycle structure that makes the lower bound
 sharp.
 
-\begin{figure}[tbp]
+\begin{figure}[H]
 \centering
 \begin{tikzpicture}[>=Latex, font=\small,
   unit/.style={draw,rounded corners=2pt,inner xsep=7pt,inner ysep=5pt},
@@ -123,7 +124,7 @@ sharp.
 \node[anchor=west,font=\bfseries] at (0,3.95) {(a) Letter $a$};
 \node[unit,fill=blue!9] at (2.45,3.15)
   {$p_5\longleftrightarrow p_6$};
-\node[unit,fill=blue!9] at (9.30,3.15)
+\node[unit] at (9.30,3.15)
   {$x_1\to x_2\to x_3\to y_1\to y_2\to y_3\to z\to x_1$};
 \node[anchor=west,font=\footnotesize] at (0.5,2.43)
   {$p_0,\ldots,p_4$ are fixed by $a$.};
@@ -137,8 +138,8 @@ sharp.
   {$x_1\to x_2\to x_3$};
 \node[unit] (zb) at (10.35,-0.93) {$z$};
 \draw[flow] (pb.east)--node[above,font=\scriptsize]{$p_0\mapsto y_1$}(yb.west);
-\draw[flow] (yb.north) to[out=95,in=85,looseness=1.2]
- node[above,font=\scriptsize]{$y_3\mapsto p_6$}(pb.north);
+\node[font=\scriptsize,anchor=west] at (8.55,-0.11)
+  {$y_3\mapsto p_6$ closes the cycle};
 \draw[flow] (xb.north)--node[left,font=\scriptsize]{$x_3\mapsto p_6$}(pb.south);
 \draw[flow] (zb) edge[loop right,looseness=5] node[right,font=\scriptsize]{$b$}(zb);
 \node[anchor=west,font=\footnotesize] at (5.25,-1.77)
@@ -146,7 +147,7 @@ sharp.
 \end{tikzpicture}
 \caption{The original-letter actions in the binary witness
 $t=3$, $p=7$, $r=1$ ($n=14$).
-The initially occupied states are $S=P\cup X$ (blue blocks),
+The initially occupied states are $S=P\cup X$,
 and $A=\{p_0\}$ is protected. Letter $a$ is a permutation;
 the only nontrivial kernel of $b$ is
 $\{x_3,y_3\}\mapsto p_6$.
@@ -282,7 +283,7 @@ This is the short-pair viewpoint on subset compression; see also the
 computational compression framework in~\cite{kisielewicz2016}.
 Figure~\ref{fig:short-pair-cover} illustrates the equivalence.
 
-\begin{figure}[tbp]
+\begin{figure}[H]
 \centering
 \begin{tikzpicture}[>=Latex,
   vertex/.style={circle,draw,minimum size=9mm,font=\small},
@@ -344,7 +345,7 @@ The upper-bound exclusions use the short-pair cover number
 to split the finite search. Figure~\ref{fig:coverage} summarizes
 the two exact computations.
 
-\begin{figure}[tbp]
+\begin{figure}[H]
 \centering
 \begin{tikzpicture}[>=Latex,font=\small,
   entry/.style={draw,rounded corners=2pt,align=center,minimum width=26mm,minimum height=8mm},
@@ -361,18 +362,18 @@ the two exact computations.
 \draw[gray!45] (0,1.4)--(13.6,1.4);
 \node[entry] (m5) at (1.55,0) {$m=5$\\$c(S)\ge15$};
 \node[entry] (a5) at (6.2,0.65) {$\tau(P_9)=5$\\2,294 cores};
-\node[entry] (b5) at (6.2,-0.65) {$\tau(P_9)=4$\\3,595 + 3,206,988 domains};
+\node[entry] (b5) at (6.2,-0.65) {$\tau(P_9)=4$\\3,210,583 domains};
 \node[result] (r5) at (11.5,0) {$c(S)\le14$};
 \draw[arr] (m5.east)--(a5.west);
 \draw[arr] (m5.east)--(b5.west);
 \draw[arr] (a5.east)--node[above,font=\scriptsize]{excluded}(r5.north west);
-\draw[arr] (b5.east)--node[below,font=\scriptsize]{finite checks + Lemma~\ref{lem:multipartite}}(r5.south west);
+\draw[arr] (b5.east)--node[below,font=\scriptsize]{excluded}(r5.south west);
 \end{tikzpicture}
 \caption{Case splits for the two pure-compression upper bounds.
 Every branch derives a finite necessary-domain contradiction;
-in the lower defect-five branch the final relaxed model is
-excluded by the multipartite overlap lemma. The domain counts
-refer to the classifications detailed in the text.}
+the lower defect-five branch includes 3,595 eleven-support
+domains and 3,206,988 smaller-support domains. Its sole surviving
+relaxation is excluded by Lemma~\ref{lem:multipartite}.}
 \label{fig:coverage}
 \end{figure}
 
@@ -482,7 +483,7 @@ All rows also contain the common isolated states.
 Figure~\ref{fig:multipartite} shows the two overlapping
 row families and the edges that the final exclusion uses.
 
-\begin{figure}[tbp]
+\begin{figure}[H]
 \centering
 \begin{tikzpicture}[font=\small,
   vertex/.style={circle,draw,minimum size=7.2mm,inner sep=1pt},
