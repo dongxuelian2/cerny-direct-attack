@@ -17,6 +17,7 @@
 - [公共孔的实际第三层供给](PROOF.md#problem4-common-hole-one-deletion-A)：删除行必须由前缀供应；两个快容器以至多五步、三步原词替代九边预算和私人边路径收尾。
 - [双点花瓣支撑闭合](PROOF.md#problem4-doubleton-eighth-entry)：容量补点与fgf直接封闭两个外点，移除唯一第二层边和五点对路径论证。
 - [受保护复位的支撑传播](PROOF.md#problem4-reset-support-propagation)：以两步gf和三步fgf统一外点封闭；[U入口](PROOF.md#problem4-doubleton-double-entry)另用gg处理孤点孔，双点整核主链不再需要首末层联合预算。
+- [私人叶锚闭包](PROOF.md#problem4-private-leaf-anchor-closure)：实际第一层只留一片危险叶，其私人边已立即合并；公共孔三行边界由三条私人边的统一路径闭包收尾，移除四边第二层饱和。[路径闭包](PROOF.md#problem4-pair-geodesic-closure)也只需严格内层后继，允许距离h的边界出口。
 - [余维三纸笔证明](PROOF.md#problem4-paper-dependency-reductions)：九步压缩上界；[单边障碍](PROOF.md#problem4-single-edge-obstruction)及[两例外](PROOF.md#problem4-two-exception-closure)、[三例外](PROOF.md#problem4-three-exception-closure)、[交换孔](PROOF.md#problem4-disjoint-exchange-holes)结构界。
 - [余维四核心归约](PROOF.md#problem4-common-hole-complete-core)：公共孔整核、[K₅删边整核](PROOF.md#problem4-doubleton-complete-core)和[三角交换孔](PROOF.md#problem4-triangle-exchange-classification)。十七个完整核心覆盖221个命名域，另有部分核心2域，共223域；三角交换孔仍有两种后层形状未闭合。
 - [余维五结构替代](PROOF.md#problem4-three-exception-closure)：521类核心、7,519个曾需动态检查的域已有纸笔替代；其他分支继续使用完整计算证明。

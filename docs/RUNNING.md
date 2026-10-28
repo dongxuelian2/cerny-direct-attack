@@ -299,13 +299,39 @@ filters. Of these, 70,200 preserve {b,r}; all other 368,550 merge an original
 G nonedge under the three-original-letter word fgf. The old P1/P2 and five-pair
 controls remain independent historical checks.
 
-The remaining common-hole CHT3 layer-budget obstacle also has a concrete control:
-two explicit seven-state maps produce an actual 2/3/4-row prefix while keeping
-a 17-pair family containing every G nonedge forward closed under all words.
-Their four distinct immediate kernel pairs violate the nine-edge/seven-layer
-budget. This is a nonsynchronizing local model, not a prescribed-P7 automaton;
-it checks why actual-prefix and known-word protection alone do not settle the
-remaining global layer condition.
+The common-hole two-letter barrier remains a scope control. Two explicit
+seven-state maps produce an actual 2/3/4-row prefix while keeping a 17-pair
+family containing every G nonedge forward closed under all words. The private
+pairs pj and pr never merge, so this nonsynchronizing model is not a prescribed-P7
+automaton. Its four immediate kernel pairs also violate the old layer budget.
+The new closing argument uses the finite geodesics of actual G edges.
+
+The [private-leaf anchor corollary](../PROOF.md#problem4-private-leaf-anchor-closure)
+applies the existing pair-geodesic rule to all three private edges. In CHT3,
+the actual initial row Ci forces every private leaf other than wi to map into
+the leaves/isolates; pi is already immediate and needs no leaf condition.
+All private distances are at most three, contradicting the distance-h private
+edge in a maximum-set exit. This removes the Af-to-Bi supplier, four-edge P2
+saturation, the prohibition on kernels incident to ur, and the two-pair distance
+classification from the main proof. The original k=3, h>=7 scope is retained.
+
+commonhole_exit.cpp checks all 490 local maps over zero/one isolates with the
+derived M-image forms, one-letter G-nonedge protection, F-row safety and actual
+prefix identities. All 162 G-valued successors of the other private edges stay
+private. No rank, layer-budget or pair-distance filter is used. The control
+retains 40 old triangle-swap cases and 260 maps with kernels incident to ur;
+the old four-edge/two-pair controls remain separate historical domains.
+
+The [pair-geodesic rule](../PROOF.md#problem4-pair-geodesic-closure) itself now
+only requires closure for successors inside P_(h-1). Distance-h boundary
+escapes cannot be a shortest-path descent. This absorbs the separate two-pair
+argument for CHT2; the former G-closed condition remains a sufficient special
+case. The same 2,168 actual Cerny horizon/family cases for orders two through
+five admit 68 strict-interior-closed families, including all 55 former positive
+cases and 13 additional cases. Every observed distance meets the family-size
+bound. C3 retains both a genuine missing-fast-pair negative and a boundary-only
+escape positive. The D-family center-entry case retains its necessary global
+budget but directly invokes the existing joint-word first/last-layer count.
 
 The shared [protected-reset support rule](../PROOF.md#problem4-reset-support-propagation)
 records the literal two-letter gf and three-letter fgf costs used by both

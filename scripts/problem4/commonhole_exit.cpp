@@ -168,15 +168,17 @@ int pair_distance(const std::vector<std::vector<int>>&rows,Mask start){
  while(!q.empty()){Mask X=q.front();q.pop();if(pc(X)==1)return d[X];for(auto&f:rows){Mask Y=image(X,f);if(d[Y]<0){d[Y]=d[X]+1;q.push(Y);}}}return -1;
 }
 void geodesic_control(){
- Count families=0,positive=0,failed_closure=0;int maximum_bound=0;
+ Count families=0,positive=0,failed_closure=0,interior_positive=0,interior_extra=0;int maximum_bound=0;
  for(int n=2;n<=5;++n){std::vector<std::vector<int>>rows(2,std::vector<int>(n));for(int x=0;x<n;++x){rows[0][x]=(x+1)%n;rows[1][x]=x;}rows[1][n-1]=0;
   std::vector<Mask>pairs;std::vector<int>distance;int maximum=0;
   for(int x=0;x<n;++x)for(int y=x+1;y<n;++y){Mask P=(1u<<x)|(1u<<y);int d=pair_distance(rows,P);assert(d>=1);pairs.push_back(P);distance.push_back(d);maximum=std::max(maximum,d);}
-  for(int h=1;h<=maximum;++h)for(Mask selection=1;selection<(1u<<pairs.size());++selection){bool within=true,closed=true;int observed=0;
+  for(int h=1;h<=maximum;++h)for(Mask selection=1;selection<(1u<<pairs.size());++selection){bool within=true,closed=true,interior=true;int observed=0;
    for(size_t i=0;i<pairs.size();++i)if(selection>>i&1){within&=distance[i]<=h;observed=std::max(observed,distance[i]);}
    if(!within)continue;++families;
-   for(size_t i=0;i<pairs.size();++i)if((selection>>i&1)&&distance[i]>1)for(auto&f:rows){Mask Q=image(pairs[i],f);auto it=std::find(pairs.begin(),pairs.end(),Q);assert(it!=pairs.end());size_t k=it-pairs.begin();if(distance[k]<=h&&!(selection>>k&1))closed=false;}
-   if(!closed){++failed_closure;continue;}++positive;assert(observed<=pc(selection));maximum_bound=std::max(maximum_bound,observed);
+   for(size_t i=0;i<pairs.size();++i)if((selection>>i&1)&&distance[i]>1)for(auto&f:rows){Mask Q=image(pairs[i],f);auto it=std::find(pairs.begin(),pairs.end(),Q);assert(it!=pairs.end());size_t k=it-pairs.begin();
+    if(!(selection>>k&1)){if(distance[k]<=h)closed=false;if(distance[k]<h)interior=false;}}
+   if(closed)++positive;else ++failed_closure;
+   if(interior){++interior_positive;interior_extra+=!closed;assert(observed<=pc(selection));maximum_bound=std::max(maximum_bound,observed);}
   }
  }
  // C3: 01 has distance three, 12 distance two, 02 distance one. Omitting
@@ -184,10 +186,15 @@ void geodesic_control(){
  std::vector<std::vector<int>>C3={{1,2,0},{0,1,0}};
  assert(pair_distance(C3,3u)==3&&pair_distance(C3,6u)==2&&pair_distance(C3,5u)==1);
  assert(image(6u,C3[0])==5u);assert(3>pc(3u));
- assert(positive&&failed_closure);
+ // {02,12} has a boundary escape 12b=01 of distance h=3, but its
+ // strict-interior successors stay in the family and its maximum distance is two.
+ assert(image(6u,C3[1])==3u&&pair_distance(C3,3u)==3);
+ assert(positive&&failed_closure&&interior_extra);
  std::cout<<"PASS real Cerny automata n=2..5, ordinary pair BFS: "<<families<<" (P_h,family) inputs, geodesic-closed "<<positive
  <<", failed closure "<<failed_closure<<", largest verified distance "<<maximum_bound
  <<"; C3's two-pair nonclosed family is an explicit negative control\n";
+ std::cout<<"PASS strict-interior pair closure: "<<interior_positive<<" of the same "<<families<<" actual inputs satisfy the relaxed P_(h-1) condition, "
+  <<interior_extra<<" beyond the stronger G-closed domain. C3's boundary-only escape is admitted; its missing-fast-pair negative still fails.\n";
 }
 void layer_capacity_control(){
  Count templates=0,actual=0;
@@ -330,6 +337,37 @@ void tight_star_three_row_control(){
   assert(local&&triangles&&reduced&&swaps&&exits&&steps&&private_step);
   std::cout<<"PASS tight three-row star J="<<j<<": local maps="<<local<<", triangle departures="<<triangles<<", distance-compatible reduced maps="<<reduced<<", swaps="<<swaps<<", M exits="<<exits<<", graph-valued two-pair steps="<<steps<<", pj-to-pr="<<private_step<<"\n";
  }
+}
+void leaf_anchor_controls(){
+ Count total=0,steps=0,triangles=0,ur_kernels=0;
+ for(int j=0;j<=1;++j){Domain d(j);const Mask A=d.D[0],B=d.M&~2u,Ci=d.D[1],Cj=d.D[2],pi=18u,pj=36u,pr=72u;
+  const std::vector<Mask>F{A,B,Ci,Cj},E{A,B,Ci},R1{A,Ci};
+  std::vector<int>source;for(int x=0;x<d.n;++x)if(d.M>>x&1)source.push_back(x);
+  std::vector<int>f(d.n);Count kept=0,graph_steps=0,triangle_swaps=0,incident_ur=0;
+  auto has=[](const auto&rows,Mask X){return std::find(rows.begin(),rows.end(),X)!=rows.end();};
+  for(Mask T:{d.M,A|32u}){std::vector<int>out;for(int x=0;x<d.n;++x)if(T>>x&1)out.push_back(x);
+   do{for(size_t q=0;q<source.size();++q)f[source[q]]=out[q];
+    for(int a=0;a<d.n;++a)for(int b=0;b<d.n;++b)for(int c=0;c<d.n;++c){f[4]=a;f[5]=b;f[6]=c;
+     bool safe=true;for(int x=0;x<d.n;++x)for(int y=x+1;y<d.n;++y)if(f[x]==f[y]&&!d.edge[x][y])safe=false;
+     for(Mask X:F){Mask Y=image(X,f);if(pc(Y)!=pc(X)||d.edges(Y))safe=false;}
+     for(Mask X:E)if(!has(F,image(X,f)))safe=false;
+     for(Mask X:R1)if(!has(E,image(X,f)))safe=false;
+     if(!has(R1,image(Ci,f))||!safe)continue;++kept;
+     if(T==d.M){assert(f[0]==0||f[0]==1);assert(f[1]==(f[0]==0?1:0));}
+     else assert(f[0]==5&&f[1]==2&&f[4]==2);
+     assert((A>>f[2]&1)&&(A>>f[3]&1));
+     for(Mask R:{pj,pr}){Mask U=image(R,f);if(d.pair_edge(U)){++graph_steps;assert(U==pi||U==pj||U==pr);}}
+     triangle_swaps+=image(A,f)==B&&f[4]==1&&f[5]==1;
+     bool incident=false;for(int x=0;x<d.n;++x)if(x!=6&&f[x]==f[6])incident=true;incident_ur+=incident;
+    }
+   }while(std::next_permutation(out.begin(),out.end()));
+  }
+  total+=kept;steps+=graph_steps;triangles+=triangle_swaps;ur_kernels+=incident_ur;
+  std::cout<<"PASS three-private-edge leaf anchors J="<<j<<": "<<kept<<" locally safe maps with the actual-prefix identities and derived M forms, "
+   <<graph_steps<<" G-valued successors stay private; "<<triangle_swaps<<" old triangle-swap cases and "<<incident_ur
+   <<" maps with a kernel incident to ur are retained. No rank, layer-budget or pair-distance filter is used.\n";
+ }
+ assert(total==490&&steps==162&&triangles==40&&ur_kernels==260);
 }
 void late_exception_kernel_control(){
  for(int k=2;k<=5;++k)for(int j=0;j<=1;++j)for(int mode=0;mode<=1;++mode)for(int count=1;count<=2;++count){
@@ -476,11 +514,13 @@ void layer_budget_barrier(){
   if(f[x]==f[y]||g[x]==g[y]){kernel.push_back(P);assert(d.edge[x][y]);}else protected_pairs.push_back(P);
  }
  assert(kernel.size()==4&&protected_pairs.size()==17);
+ assert(std::find(protected_pairs.begin(),protected_pairs.end(),36u)!=protected_pairs.end());
+ assert(std::find(protected_pairs.begin(),protected_pairs.end(),72u)!=protected_pairs.end());
  for(Mask P:protected_pairs)for(const auto&a:{f,g}){Mask Y=image(P,a);
   assert(pc(Y)==2&&std::find(protected_pairs.begin(),protected_pairs.end(),Y)!=protected_pairs.end());
  }
  assert(4+(7-1)>9);
- std::cout<<"PASS layer-budget barrier: an actual 2/3/4-row prefix and a 17-pair forward-closed protected family preserve every G nonedge under all mixed words; four distinct P1 pairs violate the nine-edge/seven-layer budget. This nonsynchronizing local model is not a P7 realization.\n";
+ std::cout<<"PASS local-realization barrier: an actual 2/3/4-row prefix and a 17-pair forward-closed protected family preserve every G nonedge under all mixed words, but pj and pr never merge. Its four P1 pairs also violate the old nine-edge/seven-layer budget. This nonsynchronizing local model is not a P7 realization; the new leaf-anchor proof uses finite geodesics of actual G edges.\n";
 }
 void last_common_hole_support_controls(){
  for(int k=3;k<=5;++k)for(int j=0;j<=1;++j)for(int mode=0;mode<4;++mode){
@@ -574,7 +614,7 @@ int main(int argc,char**argv){
 #ifdef NDEBUG
  std::cerr<<"Assertions must be enabled.\n";return 1;
 #endif
- if(argc==2&&std::string(argv[1])=="--star-controls"){star_pair_closure_control();tight_star_three_row_control();late_exception_kernel_control();return 0;}
+ if(argc==2&&std::string(argv[1])=="--star-controls"){star_pair_closure_control();tight_star_three_row_control();leaf_anchor_controls();late_exception_kernel_control();return 0;}
  if(argc==2&&std::string(argv[1])=="--one-deletion-controls"){one_deletion_controls();return 0;}
  if(argc==2&&std::string(argv[1])=="--final-support-controls"){last_common_hole_support_controls();complete_core_row_structure_control();return 0;}
  if(argc==2&&std::string(argv[1])=="--coverage"){
@@ -618,7 +658,7 @@ int main(int argc,char**argv){
   return 0;
  }
  assert(argc==1);
- prefix_hit_control();local_control(0);local_control(1);general_common_hole_control();complete_next_layer_control();geodesic_control();layer_capacity_control();shared_hole_control();star_pair_closure_control();tight_star_three_row_control();late_exception_kernel_control();one_deletion_controls();layer_budget_barrier();last_common_hole_support_controls();complete_core_row_structure_control();
+ prefix_hit_control();local_control(0);local_control(1);general_common_hole_control();complete_next_layer_control();geodesic_control();layer_capacity_control();shared_hole_control();star_pair_closure_control();tight_star_three_row_control();leaf_anchor_controls();late_exception_kernel_control();one_deletion_controls();layer_budget_barrier();last_common_hole_support_controls();complete_core_row_structure_control();
  std::cout<<"Finite local controls only; no complete P7 realization or general-proof claim is inferred from the map counts.\n";
 }
 
