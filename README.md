@@ -1,68 +1,35 @@
 # Černý 猜想与同步自动机研究
 
-本项目研究同步自动机的重置字、像扩张，以及 avoid-or-compress 问题。
-设可达像 S 的大小为 s，非空真保护子集 A 的大小为 r，m=n−s、q=n−r。
-**余维四、五全部参数现已确定：`F_bin(n,n−4,r) = F(n,n−4,r) = min(q,11)`，`F_bin(n,n−5,r) = F(n,n−5,r) = min(q,14)`。** 上界为纸面归约加完整有限域排除的计算辅助证明，下界有二字母可达构造的纸面证明。
+本项目研究同步自动机、子集压缩以及 avoid-or-compress 问题。设状态数为 `n`，初始像大小 `s=n−m`，保护子集大小 `r`，并记 `q=n−r`。
 
-一般 Černý 猜想与完整 Problem 4 尚未解决。已确定区域为全部 m≤5，以及 m≥6、q≤3m−1；剩余精确极值区域为 m≥6、q≥3m。`min(q,3m−1)` 在 m≥4 时的通项仍是猜想。
+## 主要结果
 
-## 阅读路线
+- **余维三（纸面证明）：** 对每个 `n≥5`、`1≤r<n−3`，
+  `F_bin(n,n−3,r) = F(n,n−3,r) = min(q,9)`。其中 `n≥6` 的九字母压缩上界由早期短对结构分类、轨迹秩与原字母作用证明；二字母构造给出匹配下界。
+- **余维四（计算辅助证明）：** `F_bin(n,n−4,r) = F(n,n−4,r) = min(q,11)`。
+- **余维五（计算辅助证明）：** `F_bin(n,n−5,r) = F(n,n−5,r) = min(q,14)`。
 
-- [正式论文](papers/problem4/main.tex)：余维四、五精确值、匹配二字母构造、完整有限归约与计算证据。
-- [论文主线与计算依据](PROOF.md#problem4-paper-synthesis)：证明依赖、有限域覆盖与复现范围。
-- [共用结构机制](PROOF.md#problem4-shared-proof-mechanisms)：实际前缀严格增长、Johnson 邻接保持与支撑封闭；[前缀外边界](PROOF.md#problem4-johnson-prefix-exterior)、[计数界](PROOF.md#problem4-johnson-exterior-boundary)和[分量闭合](PROOF.md#problem4-johnson-component-prefix)作为多核心共用工具。
-- [证明结构压缩](PROOF.md#problem4-proof-structure-compression)：暂时冻结新增核心覆盖；一般闭合与Johnson引理吸收已有分支，[共同交像容量](PROOF.md#problem4-common-intersection-capacity)进一步压缩全支撑证明，[实际前缀退出容量](PROOF.md#problem4-prefix-exit-capacity)合并高重数出口论证，并记录剩余假设障碍。
-- [实际锚点](PROOF.md#problem4-johnson-component-prefix)：连通传播将孤立行提前到第一层；[单目标入口](PROOF.md#problem4-prefix-single-target)固定原词的实际返回像，容量等号与Johnson叶子邻接合并补点和两类入口计算。
-- [受保护行的返回](PROOF.md#problem4-row-fibre-separation)：并内较大的独立集已足以分离行纤维。[双点锚点](PROOF.md#problem4-doubleton-actual-anchors)容许双核心入口；[三角分支](PROOF.md#problem4-triangle-exchange-one-deletion)用真实第一层与fg、gf、fgg移除第二层预算和两条预设核限制。
-- [公共孔的实际第三层供给](PROOF.md#problem4-common-hole-one-deletion-A)：删除行必须由前缀供应；两个快容器以至多五步、三步原词替代九边预算和私人边路径收尾。
-- [双点花瓣支撑闭合](PROOF.md#problem4-doubleton-eighth-entry)：容量补点与fgf直接封闭两个外点，移除唯一第二层边和五点对路径论证。
-- [受保护复位的支撑传播](PROOF.md#problem4-reset-support-propagation)：以两步gf和三步fgf统一外点封闭；[U入口](PROOF.md#problem4-doubleton-double-entry)另用gg处理孤点孔，双点整核主链不再需要首末层联合预算。
-- [私人叶锚闭包](PROOF.md#problem4-private-leaf-anchor-closure)：实际第一层只留一片危险叶，其私人边已立即合并；公共孔三行边界由三条私人边的统一路径闭包收尾，移除四边第二层饱和。[路径闭包](PROOF.md#problem4-pair-geodesic-closure)也只需严格内层后继，允许距离h的边界出口。
-- [余维三纸笔证明](PROOF.md#problem4-paper-dependency-reductions)：九步压缩上界；[单边障碍](PROOF.md#problem4-single-edge-obstruction)及[两例外](PROOF.md#problem4-two-exception-closure)、[三例外](PROOF.md#problem4-three-exception-closure)、[交换孔](PROOF.md#problem4-disjoint-exchange-holes)结构界。
-- [余维四核心归约](PROOF.md#problem4-common-hole-complete-core)：公共孔整核、[K₅删边整核](PROOF.md#problem4-doubleton-complete-core)和[三角交换孔](PROOF.md#problem4-triangle-exchange-classification)。十七个完整核心覆盖221个命名域，另有部分核心2域，共223域；三角交换孔仍有两种后层形状未闭合。
-- [余维五结构替代](PROOF.md#problem4-three-exception-closure)：521类核心、7,519个曾需动态检查的域已有纸笔替代；其他分支继续使用完整计算证明。
-- [全部参数与开放问题](PROOF.md#problem)：余维四、五精确值；[下界构造](PROOF.md#constructions)、[余维六界](PROOF.md#problem4-six-upper-twenty-four)与[线性通项猜想](PROOF.md#problem4-linear-codimension-conjecture)。
+余维四、五的上界使用数学归约与完整有限域计算，匹配下界来自二字母构造。一般 Černý 猜想及 `m≥6, q≥3m` 的全部精确极值仍是开放问题。
 
+## 论文与证明
 
-论文整理沿用已完成计算，不要求重新运行大型枚举。完成日志说明执行范围，不能充当独立逐域证明证书；计算依赖和唯一松弛幸存者的处理在正文中明确说明。原始日志、生成库存和二进制不提交 Git。
+- [现有论文源码](papers/problem4/main.tex)：余维四、五精确结果、构造及计算辅助证明。保持现有主定理和有限覆盖；不追加大批局部纸面特例。
+- [余维三的完整证明主线](PROOF.md#problem4-codimension-three-upper-proof)：九种短对类型及 `c(S)≤9`；[统一秩与实际像引理](PROOF.md#problem4-paper-three-domain-ranks) 给出纸面替代。
+- [余维三的独立证明](PROOF.md#problem4-defect-three-independent-lemmas)：来自 PR #18 的五圈出口和紧层核心引理，作为交叉核验；[验证命令](docs/RUNNING.md#codimension-three-independent-controls)。
+- [完整研究正文](PROOF.md)：余维四、五计算归约、覆盖范围、历史引理和其他结构结果。
+- [运行说明](docs/RUNNING.md)：论文编译、验证程序及大型计算的复现命令。
 
-## 编译论文与运行程序
+论文以余维三的纸面证明和余维四、五的完整计算辅助结果为重点。局部结构替代、探索记录及对应小域控制在研究正文中保存，不扩张论文的主证明链。
 
-[运行说明](docs/RUNNING.md)首先给出只编译论文的命令，输出为 `build/paper/main.pdf`，不触发研究计算。
-研究程序使用 Python 3.10+ 和 C++17，通过根目录 `run.py` 在忽略的 `build/` 研究副本中运行。例如：
+## 运行
+
+Python 3.10+ 与 C++17。研究程序通过 `run.py` 启动；编译论文不会自动运行枚举。
 
 ```sh
+python3 run.py upper
+python3 run.py script scripts/problem4/check_paper_rank_reductions.py
+python3 run.py script scripts/problem4/check_type6_single_exit_lemma.py
 python3 run.py open-point
-python3 run.py reset --cerny 12
 ```
 
-完整复算命令及其参数域也在运行说明中；它们供独立复算或继续研究时选择，不是阅读或编辑论文的前置步骤。
-
-## 目录
-
-```text
-PROOF.md                 唯一数学研究正文，按问题和章节组织
-README.md                问题与阅读入口
-AGENTS.md                后续研究与编辑约定
-run.py                   统一运行入口
-scripts/
-  problem4/              avoid-or-compress 构造与计算
-    upper_bound/         精确值上界的完整枚举与独立控制
-    experimental/        早期受限探索
-  direct_attack/         像扩张、秩、核与重置字程序
-  anchors/               锚点、商与最优语言程序
-  automata/              小规模 Python 参考实现
-  native/                通用 C++ 搜索内核
-  tests/                 程序实现的局部回归检查
-papers/                  论文 LaTeX 源码
-formal/                  已有 Lean 数学源码
-docs/RUNNING.md          程序运行说明
-build/                   本地生成内容，不提交
-```
-
-新研究写入正文对应章节，必要程序加入 `scripts/` 对应主题；不要另建零散研究 Markdown、
-日期日志、结果库存或发布流程。大规模计算使用多线程 C++，Python 用于小规模参考与编排。
-具体规则见 [AGENTS.md](AGENTS.md)。源码采用 MIT 许可；研究与代码包含 AI 辅助。
-
-早期条件分支与探索源码保持可追溯；引用时以当前完整定理及其适用范围为准。
-
+更多运行方式见 [RUNNING.md](docs/RUNNING.md)。临时构建产物保存在被忽略的 `build/` 下，源码及数学正文保留版本记录。项目代码采用 MIT 许可。
