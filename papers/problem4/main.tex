@@ -563,14 +563,11 @@ Binary construction controls &
 \end{tabular}
 \end{center}
 
-The largest finite calculation used 24 workers and CaDiCaL 3.0.1
-with paired letter-generation orders and joint SAT constraints.
-The completed run records
-\texttt{completed=3206988/3206988} and
-\texttt{cumulative\_joint=1};
-its running time was 22,923.697 seconds. Of these domains,
+The largest finite calculation covered 3,206,988 necessary domains
+using 24 workers, paired letter-generation orders, and CaDiCaL 3.0.1
+with joint SAT constraints (22,923.697 seconds). Of these,
 3,206,987 were unsatisfiable under the checked relaxation.
-The one remaining model is eliminated by Lemma~\ref{lem:multipartite}.
+The remaining model is eliminated by Lemma~\ref{lem:multipartite}.
 The computation used the earlier necessary-domain predicate;
 a subsequent strengthening to the proper-layer entrance condition
 is applied only in the paper exclusion.
@@ -594,15 +591,6 @@ For every $m\ge4$ and all admissible $n,r$,
 \end{conjecture}
 The remaining parameter region for exact avoid-or-compress extrema
 is $m\ge6$ and $q\ge3m$.
-
-\section*{Acknowledgments}
-We thank Marek Szyku{\l}a for correspondence concerning Open Problem~4
-and the theory of synchronizing automata.
-
-Large language models, including OpenAI's ChatGPT, assisted with mathematical
-exploration, code development and checking, and manuscript drafting and editing.
-The authors directed and reviewed these contributions and take responsibility
-for the results presented here.
 
 \appendix
 \section{Constructions for the smaller values of \texorpdfstring{$q$}{q}}\label{sec:appendix}
@@ -807,6 +795,15 @@ Each $be$ removes one further point of $B$ while retaining $u_{2g}$.
 Hence $b^{g+1}e(be)^{s-1}$ resets $Q$.
 \end{proof}
 Taking $g=s-r-1$ and $M=n-r-1$ proves part~(3) of Theorem~\ref{thm:sharp-faces}.
+
+\section*{Acknowledgments}
+We thank Marek Szyku{\l}a for correspondence concerning Open Problem~4
+and the theory of synchronizing automata.
+
+Large language models, including OpenAI's ChatGPT, assisted with mathematical
+exploration, code development and checking, and manuscript drafting and editing.
+The authors directed and reviewed these contributions and take responsibility
+for the results presented here.
 
 \bibliographystyle{amsplain}
 \bibliography{references}
