@@ -6,17 +6,18 @@ The manuscript in `papers/problem4/main.tex` consolidates the exact
 codimension-four and codimension-five results. Its mathematical supplement
 is [PROOF.md](../PROOF.md#problem4-paper-synthesis), including completed
 finite-domain coverage and the paper exclusion of the sole relaxation survivor.
-Reading or compiling it does not run any search or require saved certificate
-bundles. With a LaTeX installation providing the packages in the source:
+Compiling the `article`-style manuscript (matching the previously
+submitted arXiv paper) uses LaTeXmk and BibTeX. From the repository root:
 
 ```sh
 mkdir -p build/paper
-pdflatex -interaction=nonstopmode -halt-on-error -output-directory=build/paper papers/problem4/main.tex
-pdflatex -interaction=nonstopmode -halt-on-error -output-directory=build/paper papers/problem4/main.tex
+cp papers/problem4/main.tex papers/problem4/references.bib build/paper/
+(cd build/paper && latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex)
 ```
 
-The result is `build/paper/main.pdf`; references are embedded, so no BibTeX
-step is needed. The remaining commands in this document are optional research
+The result is `build/paper/main.pdf`. LaTeXmk invokes BibTeX and the
+required reruns automatically; figure generation uses TikZ and needs no
+external image files. The proof computations remain separate from typesetting. The remaining commands in this document are optional research
 computations for replication or further investigation. Several are expensive;
 they are not prerequisites to editing or reviewing the paper.
 
@@ -1266,6 +1267,21 @@ on the same complete geng stream of orders 6 through 10. There are 2294 cores.
 Use `--letter-control` for the separate full generation comparison. This branch
 alone cannot establish the upper bound fourteen.
 
+For example, the first 32-core interval is reproduced with the following
+complete graph input (nauty/Traces `geng` 2.9.3, no connectedness restriction):
+
+```sh
+set -o pipefail
+export CERNY_PAIR_SAT_LIBRARY="$PWD/build/tools/cadical-3.0.1/build/libcadical.so"
+for n in 6 7 8 9 10; do "$NAUTY_GENG" -q -d1 -D5 "$n" || exit; done |
+  python3 run.py script scripts/problem4/rank_core_graph6.cpp 5 6 9 --actions 0 32 8 --sat-distances
+```
+
+The complete historical coverage uses `START=32*j, COUNT=32` for `j=0,...,70`,
+then `START=2272, COUNT=22`. Each interval reads the complete graph stream;
+`START` and `COUNT` select the canonical retained-core order, not graph6 input
+lines. This is an optional expensive reproduction, not a paper-build step.
+
 For the cover-four branch, the generalized closed-family generator retains
 rank at least four, at most two absent states, and named support up to eleven.
 It uses 128 bits for the 66 pair/coexistence positions; the previous 64-bit
@@ -1355,17 +1371,28 @@ automaton or a count of all models. In particular, core 447/domain 0 in the
 The current `--joint-sat` path also requires at least one compatible letter
 with a nonedge entering the complete proper early pair layer; see the
 [pair entrance condition](../PROOF.md#problem4-proper-pair-layer-entrance).
-This strengthens the old relaxation. Already running binaries retain the old
-condition set; their negative results remain valid and need no rerun for this
-reason. The completed full run had exactly one surviving domain, this K4,4
-case; the paper exclusion closes the final exception. Other SAT survivors,
+This strengthens the old relaxation. The historical full run used the older
+predicate and had 3,206,987 UNSAT domains and exactly one surviving domain,
+this K4,4 case; the paper exclusion closes that exception. Its negative results
+remain valid under the stronger necessary condition. Other SAT survivors,
 if encountered in a different selected domain, still require analysis.
+
+For a narrow comparison, `--historical-no-pair-entrance` explicitly disables
+only this additional SAT condition in the current implementation. It requires
+both `--distances` and `--joint-sat`; the stronger predicate remains the default.
+The following two selected-domain runs generate the same 1,768 signatures.
+The default reports `SOLVED joint=0`; the historical-predicate run reports
+`SOLVED joint=1` (a relaxation, not an automaton). The terminal summary records
+`pair_entrance` and `historical_no_pair_entrance` to distinguish the predicates.
+This comparison does not repeat the full 3,206,988-domain dynamic calculation.
 
 ```sh
 CERNY_PAIR_SAT_LIBRARY="$PWD/build/tools/cadical-3.0.1/build/libcadical.so" \
   python3 run.py script scripts/problem4/check_joint_sat.cpp --pair-entrance
 CERNY_PAIR_SAT_LIBRARY="$PWD/build/tools/cadical-3.0.1/build/libcadical.so" \
   python3 run.py script scripts/problem4/fifteen_low_cover_domains.cpp 5 10 1 --distances --letter-control --quotient-sc --joint-sat --core-index 447 --domain-index 0
+CERNY_PAIR_SAT_LIBRARY="$PWD/build/tools/cadical-3.0.1/build/libcadical.so" \
+  python3 run.py script scripts/problem4/fifteen_low_cover_domains.cpp 5 10 1 --distances --letter-control --quotient-sc --joint-sat --historical-no-pair-entrance --core-index 447 --domain-index 0
 ```
 
 ```sh
@@ -1424,8 +1451,10 @@ the historical dynamic run or alter its completion count.
 
 The completed full run used the older relaxation without the new pair-entrance
 condition. Current source enables that necessary condition in `--joint-sat`;
-the old negative decisions plus the paper exception exclusion suffice. For a
-full rerun from source with the current stronger condition:
+the old negative decisions plus the paper exception exclusion suffice. The
+opt-in `--historical-no-pair-entrance` reconstructs the older SAT predicate,
+not the byte-for-byte historical executable. For an optional full rerun from
+source with the current stronger condition (not needed for paper compilation):
 
 ```sh
 LD_PRELOAD=/usr/lib/libmimalloc.so \
