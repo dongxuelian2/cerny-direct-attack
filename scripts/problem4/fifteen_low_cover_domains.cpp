@@ -69,7 +69,7 @@ int main(int argc,char**argv){
     int first=control?5:(argc>1?stoi(argv[1]):5);
     int last=control?6:(argc>2?stoi(argv[2]):11);
     int threads=control?4:(argc>3?stoi(argv[3]):int(max(1u,min(24u,thread::hardware_concurrency()))));
-    bool dynamic=false,letter_control=false,matching_only=false,parallel_domains=false,quotient_sc=false,plateau=false,joint_sat=false,single_omission=false,profile_time=false,late_budget_control=false,separate_letter_control=false;int selected_core=-1,selected_domain=-1,sample_domains=0,min_rows=0;
+    bool dynamic=false,letter_control=false,matching_only=false,parallel_domains=false,quotient_sc=false,plateau=false,joint_sat=false,single_omission=false,profile_time=false,late_budget_control=false,separate_letter_control=false,historical_no_pair_entrance=false;int selected_core=-1,selected_domain=-1,sample_domains=0,min_rows=0;
     for(int i=4;i<argc;++i){string flag=argv[i];
         if(flag=="--distances")dynamic=true;
         else if(flag=="--letter-control")letter_control=true;
@@ -78,6 +78,7 @@ int main(int argc,char**argv){
         else if(flag=="--quotient-sc")quotient_sc=true;
         else if(flag=="--plateau")plateau=true;
         else if(flag=="--joint-sat")joint_sat=true;
+        else if(flag=="--historical-no-pair-entrance")historical_no_pair_entrance=true;
         else if(flag=="--single-omission")single_omission=true;
         else if(flag=="--profile-time")profile_time=true;
         else if(flag=="--late-budget-control"){late_budget_control=true;letter_control=true;}
@@ -88,6 +89,9 @@ int main(int argc,char**argv){
         else if(flag=="--domain-index"&&i+1<argc)selected_domain=stoi(argv[++i]);else return 2;
     }
     const bool paired_letters=letter_control&&!late_budget_control&&!separate_letter_control;
+    if(historical_no_pair_entrance&&(!dynamic||!joint_sat)){
+        cerr<<"--historical-no-pair-entrance requires --distances and --joint-sat"<<endl;return 2;
+    }
     if((matching_only||parallel_domains||letter_control||plateau)&&!dynamic)return 2;
     if(plateau&&(first!=11||last!=11))return 2;
     if(selected_core<-1||selected_domain<-1||min_rows<0||min_rows>14||sample_domains<0||(sample_domains&&!parallel_domains))return 2;
@@ -135,7 +139,9 @@ int main(int argc,char**argv){
                 solver.additional_sources.push_back(family.maximum[maximum_guard]|named_isolates);
             }
             solver.descending_rank_bound=true;solver.sat_distance_only=true;solver.sat_joint_only=joint_sat;solver.prune_union_growth=true;solver.prune_quotient_sc=quotient_sc;
-            solver.require_pair_entrance=joint_sat;
+            // The historical full run omitted this later necessary condition.
+            // Keep the stronger predicate as the default; opt out only explicitly.
+            solver.require_pair_entrance=joint_sat&&!historical_no_pair_entrance;
             if(matching_only){
                 vector<unsigned>face;
                 for(unsigned assignment=0;assignment<8;++assignment){unsigned row=common;
@@ -271,6 +277,6 @@ int main(int argc,char**argv){
         <<" entry_excluded_cores="<<entry<<" domains="<<total<<" max_rows="<<max_rows
         <<" saturated_excluded="<<saturated_excluded<<" neighbor_excluded="<<neighbor_excluded
         <<" additional_ped_excluded="<<ped_excluded<<" matching_only="<<matching_only<<" selected_dynamic="<<selected_dynamic
-        <<" paired_letters="<<paired_letters<<" min_rows="<<min_rows<<" late_budget_control="<<late_budget_control<<" sample_domains="<<sample_domains<<" single_omission="<<single_omission<<" selected_core="<<selected_core<<" selected_domain="<<selected_domain<<" joint_sat="<<joint_sat<<" plateau="<<plateau<<" quotient_sc="<<quotient_sc<<" parallel_domains="<<parallel_domains<<" dynamic="<<dynamic<<" letter_control="<<letter_control<<" joint="<<joint
+        <<" paired_letters="<<paired_letters<<" min_rows="<<min_rows<<" late_budget_control="<<late_budget_control<<" sample_domains="<<sample_domains<<" single_omission="<<single_omission<<" selected_core="<<selected_core<<" selected_domain="<<selected_domain<<" joint_sat="<<joint_sat<<" pair_entrance="<<(joint_sat&&!historical_no_pair_entrance)<<" historical_no_pair_entrance="<<historical_no_pair_entrance<<" plateau="<<plateau<<" quotient_sc="<<quotient_sc<<" parallel_domains="<<parallel_domains<<" dynamic="<<dynamic<<" letter_control="<<letter_control<<" joint="<<joint
         <<"; selected early-support domain only; survivors are not automata"<<endl;
 }
