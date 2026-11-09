@@ -1,0 +1,199 @@
+"""Independent literal checks for the global endpoint-layer edge budget.
+
+Exhaust all ordered binary transition tables on two to four states;
+then check longer pair-distance spectra in standard Cerny automata.
+No output is used as a proof of an all-n statement.
+"""
+from collections import deque
+from itertools import combinations, product
+
+
+def pair_distances(letters):
+    n = len(letters[0])
+    pairs = list(combinations(range(n), 2))
+    predecessors = {p: [] for p in pairs}
+    first = set()
+    for pair in pairs:
+        for f in letters:
+            u, v = f[pair[0]], f[pair[1]]
+            if u == v:
+                first.add(pair)
+            else:
+                predecessors[tuple(sorted((u, v)))].append(pair)
+    distance = {p: 1 for p in first}
+    queue = deque(first)
+    while queue:
+        target = queue.popleft()
+        for source in predecessors[target]:
+            if source not in distance:
+                distance[source] = distance[target] + 1
+                queue.append(source)
+    return distance, pairs
+
+
+def verify(letters):
+    d, pairs = pair_distances(letters)
+    if len(d) != len(pairs):
+        return False, 0, 0, None
+    K = {p for p in pairs if d[p] == 1}
+    checked = stronger = 0
+    first_witness = None
+    for h in range(2, max(d.values(), default=0)):
+        G = {p for p in pairs if d[p] <= h}
+        late = set()
+        single_letter_bounds = []
+        for f in letters:
+            single_first = {p for p in pairs if f[p[0]] == f[p[1]]}
+            single_late = set()
+            for p in pairs:
+                if p in G:
+                    continue
+                u, v = f[p[0]], f[p[1]]
+                if u == v:
+                    continue  # impossible for a P_h nonedge, since h >= 1
+                image = tuple(sorted((u, v)))
+                if image in G:
+                    assert d[image] == h
+                    single_late.add(image)
+            late.update(single_late)
+            single_letter_bounds.append(len(single_first) + len(single_late))
+        # A G-isolated source cannot collide with another state: all
+        # directly merged pairs lie in K, which is contained in G.
+        # Entering a G-support vertex therefore forces every available
+        # neighbor edge to belong to the globally shared terminal set.
+        n = len(letters[0])
+        support = {x for edge in G for x in edge}
+        isolated = set(range(n)) - support
+        entry_edges = set()
+        for f in letters:
+            image = set(f)
+            missing = set(range(n)) - image
+            assert len(missing) <= len(K)  # sum(fiber size - 1) <= #merged pairs
+            # The union of incident edges at *all* entered vertices
+            # has at most one nonterminal part: edges meeting a missing
+            # output. All remaining edges share the terminal-layer pool.
+            entered = {f[j] for j in isolated if f[j] in support}
+            incident = {edge for edge in G if any(v in edge for v in entered)}
+            present_incident = {edge for edge in incident if set(edge) <= image}
+            hole_incident = {edge for edge in incident if set(edge) & missing}
+            # Every entered support vertex of degree >= 2 needs either
+            # a missing neighboring output or at least two terminal edges.
+            # At e=h the terminal set is a singleton. A permutation can
+            # therefore enter only a degree-one vertex; defect-one letters
+            # entering a degree-two vertex must omit its other neighbor.
+            for v in entered:
+                neighbors = {w for w in range(n) if tuple(sorted((v, w))) in G}
+                forced = {w for w in neighbors if tuple(sorted((v, w))) not in late}
+                assert forced <= missing
+                if len(G) == h:
+                    assert len(neighbors) <= 2
+                    if len(neighbors) == 2:
+                        assert len(missing) == 1
+                        assert forced == missing
+                    if not missing:
+                        assert len(neighbors) == 1
+            if len(G) == h and not missing:
+                assert all(sum(v in edge for edge in G) == 1 for v in entered)
+            assert present_incident <= late
+            assert incident <= late | hole_incident
+            if len(G) == h:
+                assert len(late) == 1
+                assert len(missing) <= 1
+                if not missing:
+                    assert incident <= late
+                else:
+                    assert incident <= late | {
+                        edge for edge in G if set(edge) & missing
+                    }
+            forbidden_outputs = set()
+            for v in {f[j] for j in isolated if f[j] in support}:
+                degree = 0
+                for w in range(n):
+                    edge = tuple(sorted((v, w)))
+                    if edge not in G:
+                        continue
+                    degree += 1
+                    if w in image:
+                        assert edge in late
+                        entry_edges.add(edge)
+                    elif edge not in late:
+                        forbidden_outputs.add(w)
+                assert degree <= len(late) + len(missing)
+                assert degree <= len(G) - h + 2
+                if len(G) == h and not missing:
+                    assert degree == 1
+                    assert next(edge for edge in G if v in edge) in late
+            assert forbidden_outputs <= missing
+            if len(G) == h:
+                assert len(K) == 1 and len(late) == 1
+                assert len(missing) <= 1
+        assert entry_edges <= late
+        assert len(K) + len(entry_edges) <= len(G) - h + 2
+        assert K.isdisjoint(late)
+        assert all(any(d[p] == j for p in G) for j in range(2, h))
+        assert len(K) + len(late) <= len(G) - h + 2
+        if len(K) + len(late) > max(single_letter_bounds):
+            stronger += 1
+            if first_witness is None:
+                first_witness = (letters, h, len(G), len(K), len(late))
+        checked += 1
+    return True, checked, stronger, first_witness
+
+
+def main():
+    total_checked = total_stronger = total_sync = 0
+    witness = None
+    for n in (2, 3, 4):
+        maps = list(product(range(n), repeat=n))
+        sync = layers = stronger = 0
+        for letters in product(maps, repeat=2):
+            valid, checked, count, example = verify(letters)
+            sync += valid
+            layers += checked
+            stronger += count
+            if witness is None and example is not None:
+                witness = example
+        print(f'n={n} tables={n**(2*n)} synchronizing={sync} '
+              f'tested_layers={layers} strict_global={stronger}')
+        total_checked += layers
+        total_stronger += stronger
+        total_sync += sync
+    for n in (5, 7, 9, 11):
+        cycle = tuple((i + 1) % n for i in range(n))
+        singular = tuple(0 if i == n - 1 else i for i in range(n))
+        valid, checked, _, _ = verify((cycle, singular))
+        assert valid and checked > 0
+        print(f'Cerny n={n} tested_layers={checked}')
+    # Exact sharpness examples for the two endpoint entrance cases.
+    # Four states: a defect-one letter enters the degree-two vertex 1,
+    # with a single missing neighbor 0 and unique terminal edge (1, 2).
+    tight_singular = ((3, 3, 2, 1), (3, 1, 0, 2))
+    d, pairs = pair_distances(tight_singular)
+    g = {p for p in pairs if d[p] <= 2}
+    assert g == {(0, 1), (1, 2)}
+    assert {tight_singular[0][j] for j in {3}} == {1}
+    assert set(range(4)) - set(tight_singular[0]) == {0}
+    assert verify(tight_singular)[0]
+    # Nine-state Cerny: the sole isolated input 1 is sent by the
+    # permutation letter to a terminal-layer leaf 2 of the P_7 path.
+    n = 9
+    cerny = (tuple((i + 1) % n for i in range(n)),
+             tuple(0 if i == n - 1 else i for i in range(n)))
+    d, pairs = pair_distances(cerny)
+    g = {p for p in pairs if d[p] <= 7}
+    assert len(g) == 7 and set(range(n)) - {x for edge in g for x in edge} == {1}
+    assert sum(2 in edge for edge in g) == 1
+    assert cerny[0][1] == 2
+    assert verify(cerny)[0]
+    print('PASS tight_entry_controls singular_degree_two_n4 and permutation_leaf_n9')
+    assert total_sync == 52081
+    assert total_checked == 34152
+    assert total_stronger == 25992
+    assert witness is not None
+    print(f'PASS binary_tables=66281 synchronizing={total_sync} '
+          f'layers={total_checked} stronger_than_per_letter={total_stronger}; '
+          f'first_witness={witness}')
+
+
+if __name__ == '__main__':
+    main()
