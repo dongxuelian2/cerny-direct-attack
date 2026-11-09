@@ -1,0 +1,33 @@
+name: Figure 3 editorial validation and PDF rebuild
+on:
+  push:
+    branches:
+      - editorial/figure3-final-corrections-20261109
+    paths:
+      - .github/workflows/figure3-editorial-validation.yml
+permissions:
+  contents: write
+jobs:
+  check-and-build:
+    if: github.event.head_commit.message == 'Run Figure 3 editorial validation and PDF rebuild'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Exact reset thresholds and original transition table
+        run: python scripts/direct_attack/check_figure3_exact_rt.py --max-p 10
+      - uses: xu-cheng/latex-action@v4
+        with:
+          root_file: main.tex
+          working_directory: papers/figure3
+      - name: Commit updated paper PDF
+        run: |
+          git add papers/figure3/main.pdf
+          if ! git diff --cached --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "Rebuild Figure 3 manuscript PDF after review corrections"
+            git push
+          fi
