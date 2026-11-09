@@ -9,7 +9,7 @@ permissions:
   contents: write
 jobs:
   check-and-build:
-    if: github.event.head_commit.message == 'Run Figure 3 editorial validation and PDF rebuild'
+    if: github.event.head_commit.message == 'Re-run Figure 3 validation and PDF rebuild after layout fixes'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
