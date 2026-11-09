@@ -347,11 +347,11 @@ For the automata $\mathcal A_p$, the uniform hypothesis gives $4p\leq3p\alpha+o(
 \section{Computational checks and reproducibility}
 The checkers and source files are available at
 \url{https://github.com/dongxuelian2/cerny-direct-attack}
-(in \texttt{papers/figure3/} and \texttt{scripts/direct\_attack/}). The earlier verification programs can be inspected at the permanent revision
+(in \texttt{papers/figure3/} and \nolinkurl{scripts/direct_attack/}). The earlier verification programs can be inspected at the permanent revision
 \href{https://github.com/dongxuelian2/cerny-direct-attack/tree/e8e9cf4f48fe774c09042110f1e094323370a61c}{\texttt{e8e9cf4f}}.
-The checker \texttt{check\_figure3\_manuscript.py} reconstructs the transitions and verifies the kernel distances and reset-image identities for $3\leq p\leq128$. Separate certificate tests cover $p=3,\ldots,64$ and $p=100,128,256,512,1024$.
+The checker \nolinkurl{check_figure3_manuscript.py} reconstructs the transitions and verifies the kernel distances and reset-image identities for $3\leq p\leq128$. Separate certificate tests cover $p=3,\ldots,64$ and $p=100,128,256,512,1024$.
 
-An exhaustive breadth-first search of reachable subsets, implemented in \texttt{check\_figure3\_exact\_rt.py}, computes exact reset thresholds for $p=3,\ldots,10$:
+An exhaustive breadth-first search of reachable subsets, implemented in \nolinkurl{check_figure3_exact_rt.py}, computes exact reset thresholds for $p=3,\ldots,10$:
 \[
 \begin{array}{c|rrrrrrrr}
 p&3&4&5&6&7&8&9&10\\\hline
