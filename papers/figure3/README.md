@@ -22,9 +22,10 @@ latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build/figure3 paper
 python -c "import shutil; shutil.copyfile('build/figure3/main.pdf', 'papers/figure3/main.pdf')"
 ```
 
-The checked-in `main.pdf` is the compiled PDF from the previous manuscript
-revision; it must be regenerated from the updated `main.tex` before this
-editorial PR is merged. Intermediate files
+The checked-in `main.pdf` has been rebuilt from the revised `main.tex`
+and contains nine pages. The pull-request revision was compiled with pdfLaTeX
+and latexmk on 9 November 2026, with resolved references and no final-pass
+box warnings. Intermediate files
 belong in `build/`. Standard packages used are Latin Modern, AMS, TikZ,
 geometry, booktabs, array, needspace, and hyperref.
 
