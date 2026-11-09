@@ -22,7 +22,9 @@ latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build/figure3 paper
 python -c "import shutil; shutil.copyfile('build/figure3/main.pdf', 'papers/figure3/main.pdf')"
 ```
 
-The checked-in `main.pdf` is an actual compiled PDF. Intermediate files
+The checked-in `main.pdf` is the compiled PDF from the previous manuscript
+revision; it must be regenerated from the updated `main.tex` before this
+editorial PR is merged. Intermediate files
 belong in `build/`. Standard packages used are Latin Modern, AMS, TikZ,
 geometry, booktabs, array, needspace, and hyperref.
 
@@ -56,8 +58,10 @@ does not claim a Lean proof of the concrete theorem or a fresh Lean build.
 
 ## Literature and author review
 
-The completed transition rules are compared with the diagram and printed
-formulas in [Szykuła's public v1](https://arxiv.org/abs/2608.24245v1).
+The paper now documents the missing boundary assignments in the original
+piecewise formulas and separates the numerical $4n/3$ statement from the
+printed $4p+1$-letter witness in Conjecture 8. The comparison uses the diagram
+and printed formulas in [Szykuła's public v1](https://arxiv.org/abs/2608.24245v1).
 Dżyga's thesis metadata is supported by that survey and the supervisor's
 thesis list; the thesis text itself was not consulted. Independent public
 work by Korea Superintelligence Labs (using Machina Mathematica) and Aidan
@@ -68,5 +72,7 @@ assistance. Before submission, the human author must review the revised
 proofs and disclosure and confirm the understanding, verification, and
 responsibility required by the
 [DMTCS ethical charter](https://manager.episciences.org/dmtcs/page/ethical-charter).
-No coauthor has been added. This is a revision for author review, not a
-submission to DMTCS or arXiv.
+The LaTeX file currently lists Qichao Wang and Daoyu Dong. The latter's
+coauthorship is provisional pending both authors' contribution review and
+explicit approval of the final manuscript. This is a revision for author
+review, not a submission to DMTCS or arXiv.
