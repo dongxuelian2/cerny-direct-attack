@@ -1,7 +1,7 @@
 # Figure 3 manuscript
 
-This directory contains the paper on the exact specified-state compression
-threshold of the completed Szykuła family. The main theorem is
+This directory contains the paper on the compress-with-another threshold
+of the completed Szykuła Figure 3 family. The main theorem is
 `mu(q_0) = 4p = 4n/3` for `p >= 3`; a separate construction gives the reset
 upper bound `3p^2 + 4p - 1`. Neither statement settles the general Černý
 conjecture.
@@ -22,12 +22,9 @@ latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build/figure3 paper
 python -c "import shutil; shutil.copyfile('build/figure3/main.pdf', 'papers/figure3/main.pdf')"
 ```
 
-The checked-in `main.pdf` has been rebuilt from the revised `main.tex`
-and contains nine pages. The pull-request revision was compiled with pdfLaTeX
-and latexmk on 9 November 2026, with resolved references and no final-pass
-box warnings. Intermediate files
-belong in `build/`. Standard packages used are Latin Modern, AMS, TikZ,
-geometry, booktabs, array, needspace, and hyperref.
+The checked-in `main.pdf` is built from `main.tex` with pdfLaTeX and
+latexmk. Intermediate files belong in `build/`. Standard packages used
+are Latin Modern, AMS, TikZ, geometry, booktabs, array, and hyperref.
 
 ## Reproduce the finite checks
 
@@ -39,6 +36,7 @@ python run.py script scripts/direct_attack/check_compress_other_lower_bound.py
 python run.py script scripts/direct_attack/compress_other_short_reset.py
 python run.py script scripts/direct_attack/check_compress_other_short_reset.py
 python run.py script scripts/direct_attack/check_figure3_manuscript.py --max-p 128
+python scripts/direct_attack/check_figure3_exact_rt.py --max-p 10
 ```
 
 The first four commands regenerate and independently check the existing
@@ -50,8 +48,13 @@ The two exact kernel distances hold in every tested case, covering
 Expanded reset words are also checked for `p=3,...,24`; larger cases use
 exact composition of original-letter transition rows. The existing suites
 cover `p=3,...,64,100,128,256,512,1024`, including the `p=3` exhaustive
-short-word test and corruption controls. Finite checks
-corroborate the written all-parameter proofs; they do not replace them.
+short-word test and corruption controls. The independent subset BFS in `check_figure3_exact_rt.py` computes the exact
+reset thresholds for `p=3,...,10`: `38,63,94,131,174,223,278,339`.
+They coincide with `3*p*p+4*p-1` at every tested parameter. The checker
+also compares all defined values in Szykuła's published piecewise formulas
+against the completed transition table; exactly two assignments are missing
+for each parameter. Finite checks support the written all-parameter proofs;
+they do not replace them.
 
 `formal/LayeredPairBarrier.lean` proves a conditional abstract mechanism.
 The concrete Figure 3 hypotheses are not instantiated there. This revision
@@ -59,17 +62,23 @@ does not claim a Lean proof of the concrete theorem or a fresh Lean build.
 
 ## Literature and author review
 
-The paper now documents the missing boundary assignments in the original
-piecewise formulas and separates the numerical $4n/3$ statement from the
-printed $4p+1$-letter witness in Conjecture 8. The comparison uses the diagram
+The paper now supplies a numbered table for the two omitted boundary
+transitions per parameter: `q_0 b = q_1` and, for odd `p`,
+`q_(3p-1) b = q_(3p-2)`, or for even `p`,
+`q_(3p-1) a = q_(3p-2)`. The other terminal letter is explicitly fixed
+by the original formulas. The paper also separates the numerical `4n/3`
+statement from the printed `4p+1`-letter witness in Conjecture 8. The comparison uses the diagram
 and printed formulas in [Szykuła's public v1](https://arxiv.org/abs/2608.24245v1).
 Dżyga's thesis metadata is supported by that survey and the supervisor's
 thesis list; the thesis text itself was not consulted. Independent public
 work by Korea Superintelligence Labs (using Machina Mathematica) and Aidan
 Lawson remains credited. No priority claim is made.
 
-The AI disclosure records substantive mathematical and editorial
-assistance. Before submission, the human author must review the revised
+The AI disclosure names OpenAI ChatGPT and Codex and their substantive
+mathematical and editorial contributions, as required by the DMTCS charter.
+The DMTCS manuscript class is required for accepted papers according to
+the journal's current author instructions; this preprint remains a standalone
+article until its target submission requirements are settled. Before submission, the human author must review the revised
 proofs and disclosure and confirm the understanding, verification, and
 responsibility required by the
 [DMTCS ethical charter](https://manager.episciences.org/dmtcs/page/ethical-charter).
