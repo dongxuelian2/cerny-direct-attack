@@ -7,7 +7,7 @@
 \usepackage{needspace}
 \usetikzlibrary{arrows.meta}
 \usepackage[colorlinks=true,allcolors=blue]{hyperref}
-\hypersetup{pdftitle={An exact compress-with-another threshold in a binary automaton family},pdfauthor={Qichao Wang and Daoyu Dong},pdfsubject={Exact pair distances in synchronizing automata},pdfkeywords={synchronizing automata, compress-with-another threshold, pair automaton}}
+\hypersetup{pdftitle={An exact compress-with-another threshold in a binary automaton family},pdfauthor={Qichao Wang and Daoyu Dong},pdfsubject={Exact pair distances in synchronizing automata},pdfkeywords={synchronizing automata, compress-with-another threshold, pair automata, reset words}}
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
@@ -290,11 +290,17 @@ For the preparation stage, we take
 \[
  v_p=c^p u^{p-1}a^4c^{p-2},\qquad |v_p|=6p-2.
 \]
-The image of $R$ under $u^{p-1}$ is
+For $1\leq i\leq p-1$ the even states satisfy $\M{2i}u^{i-1}=\M2$. The $u$-cycle in~\eqref{eq:cycles} and the outer $u$-chain also give
 \[
- \{\M0,\M1,\M3,\ldots,\M{2p-1},\Ost{2p-1}\}.
+ \M0u^{p-1}=\M2u^p,\qquad
+ \M1u^{p-1}=\M2u^{p+1},\qquad
+ \M{2p}u^{p-1}=\Ost{2p-1}.
 \]
-This follows from the $u$-cycle and the $u$-chain used above. Under $a^4$, the two states $\M{2p-1}$ and $\Ost{2p-1}$ both reach $\M4$, while all remaining displayed states are fixed. The resulting image is $\{\M0,\M1,\M3,\ldots,\M{2p-3},\M4\}$. Applying $c^{p-2}$ gives, in $R$-positions,
+Thus the images of $\M0,\M1,\M2,\M4,\ldots,\M{2p-2}$ under $u^{p-1}$ are the $p+1$ distinct cycle states $\M2u,\ldots,\M2u^{p+1}$; these are precisely the states of $T$ other than $\M2$. Consequently,
+\[
+ Ru^{p-1}=\{\M0,\M1,\M3,\ldots,\M{2p-1},\Ost{2p-1}\}.
+\]
+Under $a^4$, the two states $\M{2p-1}$ and $\Ost{2p-1}$ both reach $\M4$, while all remaining displayed states are fixed. The resulting image is $\{\M0,\M1,\M3,\ldots,\M{2p-3},\M4\}$. Applying $c^{p-2}$ gives, in $R$-positions,
 \begin{equation}\label{eq:prepare}
  Qv_p=\rho(I_{p-2}),\qquad I_t=\{0,\ldots,t\}\cup\{p,p+1\}\ (0\leq t\leq p-2),\quad I_{-1}=\{p,p+1\}.
 \end{equation}
