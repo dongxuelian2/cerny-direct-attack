@@ -45,7 +45,7 @@ Here $p=k+2\geq3$ and $n=3p$. For the completed family $\mathcal A_p$ defined in
  \mu(q_0)=4p,\qquad
  \operatorname{rt}(\mathcal A_p)\leq3p^2+4p-1.
 \]
-The first equality gives a lower bound of $4/3$ on the coefficient of any uniform linear upper bound; the existence of such a bound remains open. The piecewise definition in~\cite{szykula} omits $q_0b$ and one terminal transition, depending on the parity of $p$; we use the edges drawn in its Figure~3 to complete them.
+The first equality forces a coefficient of at least $4/3$ in any uniform linear upper bound. The piecewise definition in~\cite{szykula} omits $q_0b$ and one terminal transition, depending on the parity of $p$; we use the edges drawn in its Figure~3 to complete them.
 
 The collision lower bound uses pair-graph entrance estimates, and the synchronization proof constructs a reset word separately. Related analyses of this family appeared in September 2026 in reports by Korea Superintelligence Labs and Lawson~\cite{machina,modal30}.
 
@@ -361,7 +361,7 @@ p&3&4&5&6&7&8&9&10\\\hline
 These values equal $3p^2+4p-1$ throughout the tested range. The same checker compares every transition assigned by the original piecewise formulas with the completed family. These checks corroborate the transition identities and reset-word construction used in Sections~3 and~4.
 
 \section{Conclusion}
-The family $\mathcal A_p$ attains the specified-state collision threshold $4n/3$ and admits a reset word of length $3p^2+4p-1$, asymptotic to $n^2/3$ and below the conjectured \v Cern\'y threshold $(n-1)^2$. Whether a uniform linear bound for $\mu(q)$ holds in the strongly connected case remains open.
+The family $\mathcal A_p$ attains the specified-state collision threshold $4n/3$ and admits a reset word of length $3p^2+4p-1$, asymptotic to $n^2/3$ and below the conjectured \v Cern\'y threshold $(n-1)^2$.
 
 Three questions arise: Is $4/3$ optimal as a lower-bound coefficient within the binary strongly connected class? Does the reset-word construction attain $\operatorname{rt}(\mathcal A_p)$ for every $p$, as it does for $3\leq p\leq10$? Can similar pair-graph entrance bounds be established for other families?
 
