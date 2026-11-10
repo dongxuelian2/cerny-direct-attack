@@ -47,7 +47,7 @@ Here $p=k+2\geq3$ and $n=3p$. For the completed family $\mathcal A_p$ defined in
 \]
 The first equality gives a lower bound of $4/3$ on the coefficient of any uniform linear upper bound; the existence of such a bound remains open. The piecewise definition in~\cite{szykula} omits $q_0b$ and one terminal transition, depending on the parity of $p$; we use the edges drawn in its Figure~3 to complete them.
 
-The collision lower bound uses pair-graph entrance estimates, and the synchronization proof constructs a reset word separately. Earlier online treatments of the same family appeared in September 2026, including the reports of Korea Superintelligence Labs and Lawson~\cite{machina,modal30}.
+The collision lower bound uses pair-graph entrance estimates, and the synchronization proof constructs a reset word separately. Related analyses of this family appeared in September 2026 in reports by Korea Superintelligence Labs and Lawson~\cite{machina,modal30}.
 
 \section[The automaton family]{The automaton family $\mathcal A_p$}
 Let $\mathcal A_p$ have $Q=\{q_0,\ldots,q_{3p-1}\}$ and alphabet $\{a,b\}$. The transitions are specified by matchings and a few exceptional edges. Letter $a$ fixes $q_0$, swaps $q_{2j-1}$ and $q_{2j}$ for $1\leq j\leq p-1$, and has
@@ -358,10 +358,10 @@ p&3&4&5&6&7&8&9&10\\\hline
 \operatorname{rt}(\mathcal A_p)&38&63&94&131&174&223&278&339
 \end{array}
 \]
-These values equal $3p^2+4p-1$ throughout the tested range. The same checker compares every transition assigned by the original piecewise formulas with the completed family. The computations verify finite cases; the all-parameter bounds are proved in Sections~3 and~4.
+These values equal $3p^2+4p-1$ throughout the tested range. The same checker compares every transition assigned by the original piecewise formulas with the completed family. These checks corroborate the transition identities and reset-word construction used in Sections~3 and~4.
 
 \section{Conclusion}
-The family $\mathcal A_p$ attains the specified-state collision threshold $4n/3$ and admits a reset word of length $3p^2+4p-1$, asymptotic to $n^2/3$ and well below the \v Cern\'y bound $(n-1)^2$. Whether a uniform linear bound for $\mu(q)$ holds in the strongly connected case remains open.
+The family $\mathcal A_p$ attains the specified-state collision threshold $4n/3$ and admits a reset word of length $3p^2+4p-1$, asymptotic to $n^2/3$ and below the conjectured \v Cern\'y threshold $(n-1)^2$. Whether a uniform linear bound for $\mu(q)$ holds in the strongly connected case remains open.
 
 Three questions arise: Is $4/3$ optimal as a lower-bound coefficient within the binary strongly connected class? Does the reset-word construction attain $\operatorname{rt}(\mathcal A_p)$ for every $p$, as it does for $3\leq p\leq10$? Can similar pair-graph entrance bounds be established for other families?
 
@@ -369,7 +369,7 @@ Three questions arise: Is $4/3$ optimal as a lower-bound coefficient within the 
 Qichao Wang thanks Marek Szyku\l a for correspondence.
 
 \paragraph{AI Disclosure.}
-OpenAI ChatGPT and Codex assisted exploratory proof search, review of the entrance-potential bounds and reset construction in Sections~3--4, implementation and verification of finite checks in Section~5, and LaTeX and editorial revision. The human authors are responsible for correctness, originality, attribution, and approval of the final manuscript.
+OpenAI ChatGPT and Codex assisted exploratory proof search, review of the entrance-potential bounds and reset construction in Sections~3--4, implementation and verification of finite checks in Section~5, and LaTeX and editorial revision.
 
 % Bibliography is embedded so this file also compiles in a standalone editor.
 \begin{thebibliography}{9}
