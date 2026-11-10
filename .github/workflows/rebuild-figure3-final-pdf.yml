@@ -3,13 +3,19 @@ on:
   push:
     branches:
       - editorial/figure3-chronology-wording-20261110
+  pull_request:
+    branches:
+      - main
 permissions:
   contents: write
 jobs:
   rebuild:
+    if: ${{ github.event_name == 'push' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: editorial/figure3-chronology-wording-20261110
       - uses: xu-cheng/latex-action@v4
         with:
           root_file: main.tex
@@ -25,5 +31,5 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git commit -m "Rebuild Figure 3 PDF from final editorial source"
-            git push
+            git push origin HEAD:editorial/figure3-chronology-wording-20261110
           fi
