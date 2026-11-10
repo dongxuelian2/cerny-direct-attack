@@ -37,9 +37,9 @@ python scripts/direct_attack/check_figure3_exact_rt.py --max-p 10
 ```
 
 The first four commands regenerate and independently check the existing
-finite certificates. The final checker reconstructs the transitions from
-piecewise formulas, without importing those implementations, and tests
-the manuscript's kernel distances and image identities for `p=3,...,128`.
+finite certificates. The final checker independently reconstructs transitions from the published
+piecewise formulas and tests the manuscript's kernel distances and image
+identities for `p=3,...,128`.
 The two exact kernel distances hold in every tested case, covering
 1,812,783 reachable distinct pairs and 3,625,566 outgoing letter edges.
 Expanded reset words are also checked for `p=3,...,24`; larger cases use
