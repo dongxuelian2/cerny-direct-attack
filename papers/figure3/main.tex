@@ -24,7 +24,7 @@ Daoyu Dong\\[0.15em]
 \begin{document}
 \maketitle
 \begin{abstract}
-For a state $q$ in a synchronizing automaton, let $\mu(q)$ be the minimum length of a word merging $q$ with another initial state. Szyku\l a asked whether $\mu(q)=O(n)$ for strongly connected synchronizing automata and, following D\.{z}yga, proposed a binary family on $n=3p$ states with threshold $4n/3$. We specify the boundary transitions omitted from the published piecewise definition and prove that the resulting automata $\mathcal A_p$ satisfy $\mu(q_0)=4p=4n/3$ for all $p\geq3$. A shortest merging word is $(ba)^p(ab)^p$. We also construct a reset word of length $3p^2+4p-1$. Consequently, any uniform linear upper bound for $\mu(q)$ on binary strongly connected synchronizing automata with corank-one letters has leading constant at least $4/3$.
+For a state $q$ in a synchronizing automaton, let $\mu(q)$ be the minimum length of a word merging $q$ with another initial state. Szyku\l a asked whether $\mu(q)=O(n)$ for strongly connected synchronizing automata and described a binary family attributed to D\.{z}yga, with $n=3p$ states and a conjectured threshold $4n/3$. We specify the boundary transitions omitted from the published piecewise definition and prove that the resulting automata $\mathcal A_p$ satisfy $\mu(q_0)=4p=4n/3$ for all $p\geq3$. A shortest merging word is $(ba)^p(ab)^p$. We also construct a reset word of length $3p^2+4p-1$. Consequently, any uniform linear upper bound for $\mu(q)$ on binary strongly connected synchronizing automata with corank-one letters has leading constant at least $4/3$.
 \end{abstract}
 \medskip
 \noindent\textbf{Keywords.} Synchronizing automata; compress-with-another threshold; pair automata; reset words.
@@ -38,7 +38,7 @@ A complete deterministic semiautomaton $\mathcal A=(Q,\Sigma,\delta)$ is \emph{s
 \]
 Unlike the reset threshold, $\mu(q)$ concerns a collision involving one prescribed initial state. The problem is related to the \v Cern\'y conjecture on reset words~\cite{cerny,volkov}.
 
-Every pair of states in a synchronizing automaton can be merged. Removing cycles from a shortest path in the distinct-pair graph gives the elementary general bound $\mu(q)\leq\binom n2$. Szyku\l a's Conjecture~6~\cite{szykula} asks whether $\mu(q)=O(n)$ holds uniformly for \emph{strongly connected} synchronizing automata. Strong connectivity matters: Proposition~7 of~\cite{szykula} constructs synchronizing automata with $\mu(q)=\Theta(n^2)$ without it. Figure~3 and Conjecture~8 of the same survey, attributed to D\.{z}yga~\cite{dzyga}, propose a binary family on $3k+6$ states conjectured to attain $\mu(q_0)=4n/3$.
+Every pair of states in a synchronizing automaton can be merged. Removing cycles from a shortest path in the distinct-pair graph gives the elementary general bound $\mu(q)\leq\binom n2$. Szyku\l a's Conjecture~6~\cite{szykula} asks whether $\mu(q)=O(n)$ holds uniformly for \emph{strongly connected} synchronizing automata. Strong connectivity matters: Proposition~7 of~\cite{szykula} constructs synchronizing automata with $\mu(q)=\Theta(n^2)$ without it. Figure~3 of the same survey depicts a binary family on $3k+6$ states attributed to D\.{z}yga~\cite{dzyga}; Conjecture~8 predicts $\mu(q_0)=4n/3$ for that family.
 
 Here $p=k+2\geq3$ and $n=3p$. For the completed family $\mathcal A_p$ defined in Section~2, we prove
 \[
@@ -47,7 +47,7 @@ Here $p=k+2\geq3$ and $n=3p$. For the completed family $\mathcal A_p$ defined in
 \]
 The first equality gives a lower bound of $4/3$ on the coefficient of any uniform linear upper bound; the existence of such a bound remains open. The piecewise definition in~\cite{szykula} omits $q_0b$ and one terminal transition, depending on the parity of $p$; we use the edges drawn in its Figure~3 to complete them.
 
-The collision lower bound uses pair-graph entrance estimates, and the synchronization proof constructs a reset word separately. Other publicly available accounts of this family appear in~\cite{machina,modal30}.
+The collision lower bound uses pair-graph entrance estimates, and the synchronization proof constructs a reset word separately. Earlier online treatments of the same family appeared in September 2026, including the reports of Korea Superintelligence Labs and Lawson~\cite{machina,modal30}.
 
 \section[The automaton family]{The automaton family $\mathcal A_p$}
 Let $\mathcal A_p$ have $Q=\{q_0,\ldots,q_{3p-1}\}$ and alphabet $\{a,b\}$. The transitions are specified by matchings and a few exceptional edges. Letter $a$ fixes $q_0$, swaps $q_{2j-1}$ and $q_{2j}$ for $1\leq j\leq p-1$, and has
@@ -399,7 +399,7 @@ Online claim ledger (Machina Mathematica), version 1, September 2026; accessed 9
 
 \bibitem{modal30} A. Lawson.
 Applied Case: I Gave a Mathematician Homework.
-\emph{Modal Path Ethics}, 30 September 2026. Accessed 9 November 2026.
+\emph{Modal Path Ethics}, 30 September 2026; accessed 9 November 2026.
 \url{https://modalpathethics.com/applied-case-i-gave-a-mathematician-homework/}.
 \end{thebibliography}
 \end{document}
