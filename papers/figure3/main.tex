@@ -36,9 +36,9 @@ A complete deterministic semiautomaton $\mathcal A=(Q,\Sigma,\delta)$ is \emph{s
 \[
  \mu(q)=\min\{|w|:qw=rw\text{ for some }r\in Q\setminus\{q\}\}.
 \]
-Unlike the reset threshold, $\mu(q)$ concerns a collision involving one prescribed initial state. The problem is related to the \v Cern\'y conjecture on reset words~\cite{cerny,volkov}.
+The invariant $\mu(q)$ measures the minimum collision time of a prescribed initial state $q$. It arises naturally alongside the \v Cern\'y conjecture on reset words~\cite{cerny,volkov}.
 
-Every pair of states in a synchronizing automaton can be merged. Removing cycles from a shortest path in the distinct-pair graph gives the elementary general bound $\mu(q)\leq\binom n2$. Szyku\l a's Conjecture~6~\cite{szykula} asks whether $\mu(q)=O(n)$ holds uniformly for \emph{strongly connected} synchronizing automata. Strong connectivity matters: Proposition~7 of~\cite{szykula} constructs synchronizing automata with $\mu(q)=\Theta(n^2)$ without it. Figure~3 of the same survey depicts a binary family on $3k+6$ states attributed to D\.{z}yga~\cite{dzyga}; Conjecture~8 predicts $\mu(q_0)=4n/3$ for that family.
+Every pair of states in a synchronizing automaton can be merged. Removing cycles from a shortest path in the distinct-pair graph gives the elementary general bound $\mu(q)\leq\binom n2$. Szyku\l a's Conjecture~6~\cite{szykula} asks whether $\mu(q)=O(n)$ holds uniformly for \emph{strongly connected} synchronizing automata. Proposition~7 of~\cite{szykula} gives quadratic examples $\mu(q)=\Theta(n^2)$ among synchronizing automata outside the strongly connected class. Figure~3 of the same survey depicts a binary family on $3k+6$ states attributed to D\.{z}yga~\cite{dzyga}; Conjecture~8 predicts $\mu(q_0)=4n/3$ for that family.
 
 Here $p=k+2\geq3$ and $n=3p$. For the completed family $\mathcal A_p$ defined in Section~2, we prove
 \[
