@@ -3,17 +3,14 @@
 This directory contains the paper on the compress-with-another threshold
 of the completed Szykuła Figure 3 family. The main theorem is
 `mu(q_0) = 4p = 4n/3` for `p >= 3`; a separate construction gives the reset
-upper bound `3p^2 + 4p - 1`. Neither statement settles the general Černý
-conjecture.
+upper bound `3p^2 + 4p - 1`.
 
 ## Source and build
 
 The first commit adding `main.tex`, `0fb68c9`, preserves that file byte for
 byte from the [arXiv:2610.07044 source](https://arxiv.org/src/2610.07044v1).
-It is the baseline for this revision, not `papers/problem4/main.tex`.
 The original title was *The compress-with-another threshold of Szykuła's
-Figure 3 family*. The bibliography and TikZ diagram are embedded, so no
-external figure or bibliography file is needed.
+Figure 3 family*. The source includes its bibliography and TikZ diagram.
 
 From the repository root, with a working TeX Live installation and latexmk:
 
@@ -40,9 +37,9 @@ python scripts/direct_attack/check_figure3_exact_rt.py --max-p 10
 ```
 
 The first four commands regenerate and independently check the existing
-finite certificates. The final checker reconstructs the transitions from
-piecewise formulas, without importing those implementations, and tests
-the manuscript's kernel distances and image identities for `p=3,...,128`.
+finite certificates. The final checker independently reconstructs transitions from the published
+piecewise formulas and tests the manuscript's kernel distances and image
+identities for `p=3,...,128`.
 The two exact kernel distances hold in every tested case, covering
 1,812,783 reachable distinct pairs and 3,625,566 outgoing letter edges.
 Expanded reset words are also checked for `p=3,...,24`; larger cases use
@@ -53,12 +50,10 @@ reset thresholds for `p=3,...,10`: `38,63,94,131,174,223,278,339`.
 They coincide with `3*p*p+4*p-1` at every tested parameter. The checker
 also compares all defined values in Szykuła's published piecewise formulas
 against the completed transition table; exactly two assignments are missing
-for each parameter. Finite checks support the written all-parameter proofs;
-they do not replace them.
+for each parameter. The all-parameter proof arguments are in Sections 3 and 4 of the manuscript.
 
-`formal/LayeredPairBarrier.lean` proves a conditional abstract mechanism.
-The concrete Figure 3 hypotheses are not instantiated there. This revision
-does not claim a Lean proof of the concrete theorem or a fresh Lean build.
+`formal/LayeredPairBarrier.lean` formalizes a conditional abstract mechanism;
+the concrete Figure 3 hypotheses remain to be instantiated in Lean.
 
 ## Literature and author review
 
@@ -69,20 +64,18 @@ transitions per parameter: `q_0 b = q_1` and, for odd `p`,
 by the original formulas. The paper also separates the numerical `4n/3`
 statement from the printed `4p+1`-letter witness in Conjecture 8. The comparison uses the diagram
 and printed formulas in [Szykuła's public v1](https://arxiv.org/abs/2608.24245v1).
-Dżyga's thesis metadata is supported by that survey and the supervisor's
-thesis list; the thesis text itself was not consulted. Independent public
+Dżyga's thesis citation follows the bibliographic information in the survey
+and the supervisor's thesis list. The manuscript cites related September 2026
 work by Korea Superintelligence Labs (using Machina Mathematica) and Aidan
-Lawson remains credited. No priority claim is made.
+Lawson.
 
-The AI disclosure names OpenAI ChatGPT and Codex and their substantive
-mathematical and editorial contributions, as required by the DMTCS charter.
-The DMTCS manuscript class is required for accepted papers according to
-the journal's current author instructions; this preprint remains a standalone
-article until its target submission requirements are settled. Before submission, the human author must review the revised
-proofs and disclosure and confirm the understanding, verification, and
-responsibility required by the
+The AI disclosure identifies OpenAI ChatGPT and Codex and their mathematical,
+computational, and editorial contributions, following the
 [DMTCS ethical charter](https://manager.episciences.org/dmtcs/page/ethical-charter).
-The LaTeX file currently lists Qichao Wang and Daoyu Dong. The latter's
-coauthorship is provisional pending both authors' contribution review and
-explicit approval of the final manuscript. This is a revision for author
-review, not a submission to DMTCS or arXiv.
+The preprint uses a standalone article class; journal-specific formatting
+can be applied at the required stage.
+
+The manuscript lists Qichao Wang and Daoyu Dong. Daoyu Dong's agreement to
+coauthorship has been confirmed by the project team. Final author review
+of the updated manuscript and PDF precedes the planned arXiv version update
+and any DMTCS resubmission.

@@ -24,7 +24,7 @@ Daoyu Dong\\[0.15em]
 \begin{document}
 \maketitle
 \begin{abstract}
-For a state $q$ in a synchronizing automaton, let $\mu(q)$ be the minimum length of a word merging $q$ with another initial state. Szyku\l a asked whether $\mu(q)=O(n)$ for strongly connected synchronizing automata and, following D\.{z}yga, proposed a binary family on $n=3p$ states with threshold $4n/3$. We specify the boundary transitions omitted from the published piecewise definition and prove that the resulting automata $\mathcal A_p$ satisfy $\mu(q_0)=4p=4n/3$ for all $p\geq3$. A shortest merging word is $(ba)^p(ab)^p$. We also construct a reset word of length $3p^2+4p-1$. Consequently, any uniform linear upper bound for $\mu(q)$ on binary strongly connected synchronizing automata with corank-one letters has leading constant at least $4/3$.
+For a state $q$ in a synchronizing automaton, let $\mu(q)$ be the minimum length of a word merging $q$ with another initial state. Szyku\l a asked whether $\mu(q)=O(n)$ for strongly connected synchronizing automata and described a binary family attributed to D\.{z}yga, with $n=3p$ states and a conjectured threshold $4n/3$. We specify the boundary transitions omitted from the published piecewise definition and prove that the resulting automata $\mathcal A_p$ satisfy $\mu(q_0)=4p=4n/3$ for all $p\geq3$. A shortest word merging $q_0$ with another state is $(ba)^p(ab)^p$. We also construct a reset word of length $3p^2+4p-1$. Consequently, any uniform linear upper bound for $\mu(q)$ on binary strongly connected synchronizing automata with corank-one letters has leading constant at least $4/3$.
 \end{abstract}
 \medskip
 \noindent\textbf{Keywords.} Synchronizing automata; compress-with-another threshold; pair automata; reset words.
@@ -36,18 +36,18 @@ A complete deterministic semiautomaton $\mathcal A=(Q,\Sigma,\delta)$ is \emph{s
 \[
  \mu(q)=\min\{|w|:qw=rw\text{ for some }r\in Q\setminus\{q\}\}.
 \]
-Unlike the reset threshold, $\mu(q)$ concerns a collision involving one prescribed initial state. The problem is related to the \v Cern\'y conjecture on reset words~\cite{cerny,volkov}.
+The invariant $\mu(q)$ measures the minimum collision time of a prescribed initial state $q$. It arises naturally alongside the \v Cern\'y conjecture on reset words~\cite{cerny,volkov}.
 
-Every pair of states in a synchronizing automaton can be merged. Removing cycles from a shortest path in the distinct-pair graph gives the elementary general bound $\mu(q)\leq\binom n2$. Szyku\l a's Conjecture~6~\cite{szykula} asks whether $\mu(q)=O(n)$ holds uniformly for \emph{strongly connected} synchronizing automata. Strong connectivity matters: Proposition~7 of~\cite{szykula} constructs synchronizing automata with $\mu(q)=\Theta(n^2)$ without it. Figure~3 and Conjecture~8 of the same survey, attributed to D\.{z}yga~\cite{dzyga}, propose a binary family on $3k+6$ states conjectured to attain $\mu(q_0)=4n/3$.
+Every pair of states in a synchronizing automaton can be merged. Removing cycles from a shortest path in the distinct-pair graph gives the elementary general bound $\mu(q)\leq\binom n2$. Szyku\l a's Conjecture~6~\cite{szykula} asks whether $\mu(q)=O(n)$ holds uniformly for \emph{strongly connected} synchronizing automata. Proposition~7 of~\cite{szykula} gives quadratic examples $\mu(q)=\Theta(n^2)$ among synchronizing automata outside the strongly connected class. Figure~3 of the same survey depicts a binary family on $3k+6$ states attributed to D\.{z}yga~\cite{dzyga}; Conjecture~8 predicts $\mu(q_0)=4n/3$ for that family.
 
 Here $p=k+2\geq3$ and $n=3p$. For the completed family $\mathcal A_p$ defined in Section~2, we prove
 \[
  \mu(q_0)=4p,\qquad
  \operatorname{rt}(\mathcal A_p)\leq3p^2+4p-1.
 \]
-The first equality gives a lower bound of $4/3$ on the coefficient of any uniform linear upper bound; the existence of such a bound remains open. The piecewise definition in~\cite{szykula} omits $q_0b$ and one terminal transition, depending on the parity of $p$; we use the edges drawn in its Figure~3 to complete them.
+The first equality forces a coefficient of at least $4/3$ in any uniform linear upper bound. The piecewise definition in~\cite{szykula} omits $q_0b$ and one terminal transition, depending on the parity of $p$; we use the edges drawn in its Figure~3 to complete them.
 
-The collision lower bound uses pair-graph entrance estimates, and the synchronization proof constructs a reset word separately. Other publicly available accounts of this family appear in~\cite{machina,modal30}.
+In September 2026, Korea Superintelligence Labs~\cite{machina} reported the uniform merging word $(ba)^p(ab)^p$ and verified the exact threshold for $3\leq p\leq62$. Lawson~\cite{modal30} subsequently presented a computer-assisted candidate proof of the all-parameter threshold and synchronizability. The present paper develops a self-contained lower-bound proof using explicit entrance potentials in the pair graph, together with a closed-form reset-word construction for every $p\geq3$.
 
 \section[The automaton family]{The automaton family $\mathcal A_p$}
 Let $\mathcal A_p$ have $Q=\{q_0,\ldots,q_{3p-1}\}$ and alphabet $\{a,b\}$. The transitions are specified by matchings and a few exceptional edges. Letter $a$ fixes $q_0$, swaps $q_{2j-1}$ and $q_{2j}$ for $1\leq j\leq p-1$, and has
@@ -99,7 +99,7 @@ Figure~\ref{fig:automaton} illustrates the two branches and their exceptional co
 \draw[->] (mp.north) to[out=95,in=85,looseness=.8] node[above]{$b$}(m2.north);
 \draw[->] (m0) to[loop left] node[left]{$a$}(m0);
 \end{tikzpicture}
-\caption{The transition structure of $\mathcal A_p$ (adapted from Figure~3 of~\cite{szykula}, published under CC BY), shown schematically for $p\geq5$. A labelled line without arrowheads represents a two-way transposition; a directed arrow represents a one-way transition. Unlabelled segments continue the alternating matchings. The outer bottom $O_{p+1}$ is fixed by its decreasing letter. For $p=4$, the outer branch is $O_7,O_6,O_5$ with no intermediate vertex; for $p=3$, it is $O_5,O_4$ and the displayed labels $O_{2p-2}$ and $O_{p+1}$ denote the same vertex. The diagram is schematic.}\label{fig:automaton}
+\caption{The transition structure of $\mathcal A_p$ (adapted from Figure~3 of~\cite{szykula}, published under CC BY), shown schematically for $p\geq5$. A labelled line without arrowheads represents a two-way transposition; a directed arrow represents a one-way transition. Unlabelled segments continue the alternating matchings. The outer bottom $O_{p+1}$ is fixed by its decreasing letter. For $p=4$, the outer branch is $O_7,O_6,O_5$ with no intermediate vertex; for $p=3$, it is $O_5,O_4$ and the displayed labels $O_{2p-2}$ and $O_{p+1}$ denote the same vertex.}\label{fig:automaton}
 \end{figure}
 
 Both letters have rank $3p-1$. Indeed, their only double fibers are
@@ -161,7 +161,7 @@ For every $p\geq3$,
 \]
 \end{lemma}
 \begin{proof}
-We prove the lower bounds first. Fix an arbitrary path $P_0\xrightarrow{x_1}P_1\xrightarrow{x_2}\cdots\xrightarrow{x_\ell}P_\ell$ in the distinct-pair graph, where $P_0\in S_p$ and $x_t\in\{a,b\}$. All time bounds refer to its vertex $P_t$ after $t$ original letters. We first obtain lower bounds and then give matching paths.
+Fix an arbitrary path $P_0\xrightarrow{x_1}P_1\xrightarrow{x_2}\cdots\xrightarrow{x_\ell}P_\ell$ in the distinct-pair graph, where $P_0\in S_p$ and $x_t\in\{a,b\}$. All time bounds refer to the vertex $P_t$ after $t$ letters. We first establish the lower bounds and then construct paths attaining them.
 
 \paragraph{1. The index bound and excluded region.}
 Every original state index increases by at most one in one letter. Thus the trajectory starting at $q_0$ can have index no greater than the elapsed time $t$. Since one member of $P_t$ is this trajectory, we obtain
@@ -242,7 +242,7 @@ To control $K_a$, we define
 \]
 These tracks are disjoint. Their union $U$ contains $K_a$ and no initial pair. Its only admissible entrance from outside $U$ is the $a$-transition from $K_b$ to $K_a$. In fact, ordinary inverse matchings preserve the sum $2p+3$ in $B$, or the difference $2$ in $D$. At the outer bottom the decreasing letter joins $B$ at main coordinate $p+2$ to $D$ at main coordinate $p+3$. The only $U$-target containing the outer top is the $x=4$ member of $B$, namely $K_a$, whose $a$-preimage is $K_b$. A $b$-jump lands at $\M2$, and an outer-to-main $a$-jump at $\M3$, whereas every main coordinate in $U$ is at least $4$. Targets with main coordinate $2p$ have no $b$-preimage; those with main coordinate $2p-1$ have no $a$-preimage. The other top endpoint of $D$, namely $\pair{\M{2p}}{\Ost{2p-2}}$, has its ordinary $a$-preimage in $D$ for $p\geq4$, and in $B$ for $p=3$. For $p=3$, $D=\{\pair{\M6}{\Ost4}\}$, whose $a$-preimage is the $x=5$ member of $B$ because $\Ost4$ is fixed by $a$.
 
-Every path reaching $U$ has a first entrance immediately preceded by a visit to $K_b$. Hence its first entrance has length at least $4p$, and later visits cannot occur earlier. This proves $\dist(S_p,K_a)\geq4p$. A final $b$-collapse costs at least $4p$, and a final $a$-collapse at least $4p+1$.
+Every path reaching $U$ has a first entrance immediately preceded by a visit to $K_b$. Hence its first entrance occurs at time at least $4p$. This proves $\dist(S_p,K_a)\geq4p$. A final $b$-collapse costs at least $4p$, and a final $a$-collapse at least $4p+1$.
 
 \paragraph{5. Matching paths and the upper word.}
 Put $c=ba$ and $u=ab$. Direct substitution in the transition rules gives cycles, in the displayed order,
@@ -307,7 +307,7 @@ Under $a^4$, the two states $\M{2p-1}$ and $\Ost{2p-1}$ both reach $\M4$, while 
 \begin{equation}\label{eq:prepare}
  Qv_p=\rho(I_{p-2}),\qquad I_t=\{0,\ldots,t\}\cup\{p,p+1\}\ (0\leq t\leq p-2),\quad I_{-1}=\{p,p+1\}.
 \end{equation}
-Indeed, the odd states yield positions $p-4,p-5,\ldots,0,p+1$ when $p\geq4$, while $\M0,\M1,\M4$ give $p-2,p-3,p$. For $p=3$, the prepared set before the final $c$ is $\{\M0,\M1,\M3,\M4\}$; its image has positions $\{0,1,3,4\}=I_1$. This yields $I_1$ directly for $p=3$.
+Indeed, the odd states yield positions $p-4,p-5,\ldots,0,p+1$ when $p\geq4$, while $\M0,\M1,\M4$ give $p-2,p-3,p$. For $p=3$, the prepared set before the final $c$ is $\{\M0,\M1,\M3,\M4\}$; its image has positions $\{0,1,3,4\}=I_1$. 
 
 For $0\leq t\leq p-2$, equation~\eqref{eq:return} gives
 \begin{equation}\label{eq:shrink}
@@ -358,10 +358,10 @@ p&3&4&5&6&7&8&9&10\\\hline
 \operatorname{rt}(\mathcal A_p)&38&63&94&131&174&223&278&339
 \end{array}
 \]
-These values equal $3p^2+4p-1$ throughout the tested range. The same checker compares every transition assigned by the original piecewise formulas with the completed family. The computations verify finite cases; the all-parameter bounds are proved in Sections~3 and~4.
+These values equal $3p^2+4p-1$ throughout the tested range. The same checker compares every transition assigned by the original piecewise formulas with the completed family. These checks corroborate the transition identities and reset-word construction used in Sections~3 and~4.
 
 \section{Conclusion}
-The family $\mathcal A_p$ attains the specified-state collision threshold $4n/3$ and admits a reset word of length $3p^2+4p-1$, asymptotic to $n^2/3$ and well below the \v Cern\'y bound $(n-1)^2$. Whether a uniform linear bound for $\mu(q)$ holds in the strongly connected case remains open.
+The family $\mathcal A_p$ attains the specified-state collision threshold $4n/3$ and admits a reset word of length $3p^2+4p-1$, asymptotic to $n^2/3$ and below the conjectured \v Cern\'y threshold $(n-1)^2$.
 
 Three questions arise: Is $4/3$ optimal as a lower-bound coefficient within the binary strongly connected class? Does the reset-word construction attain $\operatorname{rt}(\mathcal A_p)$ for every $p$, as it does for $3\leq p\leq10$? Can similar pair-graph entrance bounds be established for other families?
 
@@ -369,7 +369,7 @@ Three questions arise: Is $4/3$ optimal as a lower-bound coefficient within the 
 Qichao Wang thanks Marek Szyku\l a for correspondence.
 
 \paragraph{AI Disclosure.}
-OpenAI ChatGPT and Codex assisted exploratory proof search, review of the entrance-potential bounds and reset construction in Sections~3--4, implementation and verification of finite checks in Section~5, and LaTeX and editorial revision. The human authors are responsible for correctness, originality, attribution, and approval of the final manuscript.
+OpenAI ChatGPT and Codex assisted exploratory proof search, review of the entrance-potential bounds and reset construction in Sections~3--4, implementation and verification of finite checks in Section~5, and LaTeX and editorial revision.
 
 % Bibliography is embedded so this file also compiles in a standalone editor.
 \begin{thebibliography}{9}
@@ -399,7 +399,7 @@ Online claim ledger (Machina Mathematica), version 1, September 2026; accessed 9
 
 \bibitem{modal30} A. Lawson.
 Applied Case: I Gave a Mathematician Homework.
-\emph{Modal Path Ethics}, 30 September 2026. Accessed 9 November 2026.
+\emph{Modal Path Ethics}, 30 September 2026; accessed 9 November 2026.
 \url{https://modalpathethics.com/applied-case-i-gave-a-mathematician-homework/}.
 \end{thebibliography}
 \end{document}
