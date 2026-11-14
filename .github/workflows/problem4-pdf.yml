@@ -20,7 +20,7 @@ jobs:
       - name: Install TeX and PDF inspection tools
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y -qq --no-install-recommends latexmk texlive-latex-extra texlive-latex-recommended texlive-fonts-recommended texlive-pictures poppler-utils
+          sudo apt-get install -y -qq --no-install-recommends latexmk lmodern texlive-latex-extra texlive-latex-recommended texlive-fonts-recommended texlive-pictures poppler-utils
       - name: Compile bibliography and manuscript
         working-directory: papers/problem4
         run: |
