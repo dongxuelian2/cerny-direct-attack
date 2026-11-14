@@ -1,0 +1,43 @@
+name: Build and commit Avoid-or-Compress PDF
+on:
+  push:
+    branches:
+      - codex/avoid-compress-restructure-verified
+    paths:
+      - papers/problem4/main.tex
+      - papers/problem4/references.bib
+      - .github/workflows/problem4-pdf.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  paper:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Install TeX and PDF inspection tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq --no-install-recommends latexmk lmodern texlive-latex-extra texlive-latex-recommended texlive-fonts-recommended texlive-pictures poppler-utils
+      - name: Compile bibliography and manuscript
+        working-directory: papers/problem4
+        run: |
+          latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error main.tex
+          pdfinfo main.pdf | grep -E '^(Pages|Page size|File size):'
+          pdftotext main.pdf - | grep -F 'Computer-assisted verification' >/dev/null
+          pdftotext main.pdf - | grep -F 'Declaration of generative AI' >/dev/null
+          if pdftotext main.pdf - | grep -F 'PROOF.md'; then
+            echo 'External proof-document reference remains'
+            exit 1
+          fi
+      - name: Commit reviewed PDF on this PR branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f papers/problem4/main.pdf
+          if ! git diff --cached --quiet; then
+            git commit -m "Build revised Avoid-or-Compress manuscript PDF"
+            git push origin HEAD:codex/avoid-compress-restructure-verified
+          fi
