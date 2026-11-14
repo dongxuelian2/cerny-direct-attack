@@ -5,7 +5,6 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath,amssymb,amsthm,booktabs,needspace}
 \usepackage{longtable,array,calc}
-\providecommand{\tightlist}{}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,positioning,calc,fit,backgrounds}
 \usepackage{microtype}
@@ -33,7 +32,6 @@ Daoyu Dong\\[0.15em]
 \hypersetup{pdftitle={Avoid-or-Compress Words for Reachable Images Missing Four or Five States},pdfauthor={Qichao Wang and Daoyu Dong}}
 
 
-\newcommand{\source}[1]{\nolinkurl{#1}}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -119,8 +117,8 @@ verification details and codimension-three compression argument.
 
 \section{Preliminaries}\label{sec:prelim}
 Words act on the right, and $|w|$ denotes length over $\Sigma$.
-The alphabet is finite but otherwise unrestricted. Subsets are not
-assumed reachable unless this is stated. An automaton is strongly
+The alphabet is finite but otherwise unrestricted. Throughout, subsets
+are arbitrary unless reachability is explicitly required. An automaton is strongly
 connected if every state reaches every other state, and synchronizing
 if $|Qw|=1$ for some word $w$.
 For a subset $R$, let $\chi_R$ be its characteristic row vector.
@@ -358,13 +356,13 @@ Appendix~\ref{sec:reduction-appendix}. The compression estimate with
 three missing states, used to determine the possible cover numbers,
 is proved in Appendix~\ref{app:codimension-three}.
 \section{Computer-assisted verification}\label{sec:computation}
-The finite-support reductions associate to a putative counterexample
-one of finitely many configurations. For each configuration $\mathcal C$,
+The finite-support reductions associate a putative counterexample
+with one of finitely many configurations. For each configuration $\mathcal C$,
 we test a predicate $\Pi_0(\mathcal C)$ expressing compatible row and
 pair distances, safe images and their rank bounds, and connectivity of
 the selected alphabet. The applicable square and auxiliary-source
-conditions are included. The exact predicate and the complete
-configuration enumeration are given in
+conditions are included. The exact predicate and complete
+configuration enumeration appear in
 Appendix~\ref{app:finite-verification}.
 
 \begin{proposition}[Finite verification]\label{prop:finite-verification}
@@ -411,12 +409,12 @@ Remark~\ref{lem:pair-entrance} excludes the exceptional configuration
 in a separate check.
 \end{remark}
 
-The validation compares two complete signature-generation orders,
+The verification compares two complete signature-generation orders,
 bounded graph and row-family enumerations against literal enumeration,
 and the distance encoding against an independent bounded calculation.
-No DRAT or LRAT certificates are supplied for the complete UNSAT runs;
-these results rely on the implementation, solver outputs and the stated
-independent checks.
+The verification record consists of the versioned implementation,
+solver outputs, and bounded comparisons. The full UNSAT runs have no
+DRAT/LRAT proof certificates.
 
 \section{The cases of four and five missing states}\label{sec:cases}
 Throughout this section the automaton is strongly connected and synchronizing.
@@ -654,7 +652,7 @@ tools used in the reduction, and then prove the statements from
 Section~\ref{sec:method}.
 Throughout the automaton statements below, the automaton is strongly
 connected and synchronizing, and $d(u)=n-|Qu|$ denotes the rank defect
-of a word $u$. Graph statements do not require an automaton.
+of a word $u$. The graph lemmas apply to arbitrary finite graphs.
 
 
 \begin{lemma}[Support bound from near-maximum independent sets]\label{lem:near-support}
@@ -945,7 +943,7 @@ Thus the maximum sequence length $p$ over any graph obeys
 $p\ge\min(|E|,3m-1)$.
 
 The Frankl--Pin refinement~\cite{kisielewicz2016} gives $c(S)\le B_m-p+h$.
-For completeness, if a shortest compressing word has length $L'>h$,
+If a shortest compressing word has length $L'>h$,
 take its first $L'-h$ prefix images and at each prefix a pair merged
 by the corresponding suffix. A later selected pair belongs to no
 earlier image, since otherwise that suffix would shorten the word.
@@ -1209,13 +1207,11 @@ Lemma~\ref{lem:auxiliary-source} is chosen for the whole alphabet.
 The two possible choices are tested separately.
 \end{enumerate}
 Other branch-specific power and defect bounds are those established in
-the reductions. The strong-connectivity condition concerns the selected
-alphabet, not each signature separately. With the reservoir contracted
-to a vertex $*$, it means that every distinguished vertex both reaches
-$*$ and is reachable from $*$ in the union of selected arrows.
-The weaker proper-core exit condition requires only the former paths.
-Some branches are already excluded by this weaker condition; such an
-exclusion also excludes $\Pi_0$.
+the reductions. Strong connectivity is tested on the union of selected-letter arrows.
+With the reservoir contracted to a vertex $*$, every distinguished vertex
+both reaches $*$ and is reachable from $*$ in this union. The proper-core
+exit relaxation requires each distinguished vertex to reach $*$.
+Excluding a branch under this relaxation also excludes $\Pi_0$.
 
 The lower-cover tests also retain short-image union growth. Among the
 slow rows there must be an $R$ for which, at every $0\le j<\lambda$,
@@ -1233,9 +1229,9 @@ $\Pi_0(\mathcal C)$: select its signatures and use its true shortest
 merging and exit distances. The shortest-distance recurrence gives
 condition~(2); projection of state paths gives condition~(3).
 Conditions~(1) and~(4) follow from the short-image and auxiliary-source
-lemmas. Thus infeasibility excludes a counterexample. Feasibility,
-conversely, need not produce an automaton, since the finite signatures
-retain only the specified constraints.
+lemmas. Thus infeasibility excludes a counterexample. The SAT test is
+one-directional: a feasible signature assignment satisfies necessary
+constraints without establishing automaton realizability.
 
 \subsection{Enumeration of configurations}
 \label{sec:certificate-contract}
@@ -1292,8 +1288,8 @@ For a fixed configuration, the signature enumeration runs over the
 admissible kernel partitions on distinguished states, the incoming images of
 reservoir states, and injections of the kernel blocks into available
 output labels. It records pair images, row images and reservoir
-cardinalities. This is a finite representation of every admissible
-one-letter action, rather than a restriction on alphabet size.
+cardinalities. The finite signature pool covers admissible one-letter
+actions for arbitrary finite alphabets.
 
 \subsection{Exact rank computation}
 The row ranks computed over $\mathbb F_{1009}$ equal rational ranks.
@@ -1508,7 +1504,6 @@ Every image reached within three letters therefore lies in \(D\).
 The four tests give the following restrictions:
 
 \begin{itemize}
-\tightlist
 \item
   \(C\) is in \(D\) only if \(c=u\) (test \(fgf\));
 \item
@@ -1528,8 +1523,6 @@ kernel image. If \(c\ne u\), \(C\) is absent. These restrictions give
 to be reached within three letters. Equality has only two possibilities:
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   \(c=u=v\). Then \(D\) is \(\{012,01v,02v,12v\}\).
 \item
@@ -2014,14 +2007,13 @@ is at most six.
 There are exactly two domain shapes:
 
 \begin{itemize}
-\tightlist
 \item
-  c in \(G\): c,\(t\) are the two members of \(G\) and
+  \(c\in G\): \(c,t\) are the two members of \(G\) and
   \(D_{\mathrm{closed}}=\{013,014,023,024,123,124\}\);
 \item
-  c outside \(C\): let \(v\) be the unique outside preimage under \(d\)
+  \(c\notin C\): let \(v\) be the unique outside preimage under \(d\)
   of the other member of \(G\). Then
-  \(D_{\mathrm{mixing}}={023,024,123,124,03v,04v}\).
+  \(D_{\mathrm{mixing}}=\{023,024,123,124,03v,04v\}\).
 \end{itemize}
 
 Both are the type-4 families in the rank table, contradicting \(\dim V_4\ge5\).
@@ -2064,7 +2056,6 @@ pairs of \(23\) belong to \(\{01,23,04\}\). Permutations have precisely three
 forms:
 
 \begin{itemize}
-\tightlist
 \item
   \(A\): preserve each pair \(01\),\(23\);
 \item
@@ -2086,7 +2077,6 @@ be none of the permitted pairs. If it omits 0 or 1, it must map \(23\) onto
 \(23\). Thus all singular letters have one of these forms:
 
 \begin{itemize}
-\tightlist
 \item
   \(U\): missing \(e\) in \(\{0,1\}\), map \(23\) onto \(23\), kernel image c in
   \(\{1-e\}\cup\{4,5,\ldots\}\);
@@ -2248,7 +2238,6 @@ to the core holes and the two outside types. The restrictions on outside
 \(02x\) reduce to unique preimages of these target sets:
 
 \begin{itemize}
-\tightlist
 \item
   permutation bad rows: \(\{4\}\);
 \item
@@ -2509,7 +2498,6 @@ Since \(|R_{4}|\ge 5\), equality is necessary. Testing its core holes
 gives:
 
 \begin{itemize}
-\tightlist
 \item
   \(P_A\) has \(h=4\) and domain \(C_A\);
 \item
@@ -2736,8 +2724,6 @@ Taking $g=s-r-1$ and $M=n-r-1$ proves part~(3) of Theorem~\ref{thm:sharp-faces}.
 
 \section*{Acknowledgments}
 We thank Marek Szyku\l a for correspondence on Open Problem~4 and subset compression.
-ChatGPT assisted with exploration, code development and manuscript preparation.
-The computational evidence and its scope are described in Section~\ref{sec:computation}.
 
 \section*{Data and code availability}
 The implementation and reproduction instructions are available at
@@ -2745,6 +2731,14 @@ The implementation and reproduction instructions are available at
 The accompanying \texttt{docs/RUNNING.md} records input partitions,
 commands and completion records, distinguishing full calculations from
 bounded validation runs.
+
+\section*{Declaration of generative AI and AI-assisted technologies in the manuscript preparation process}
+During the preparation of this work, the authors used OpenAI ChatGPT for
+exploratory technical discussions, assistance with code development,
+LaTeX preparation, and English-language drafting and editing. The authors
+reviewed and edited the resulting material and take full responsibility
+for the mathematical arguments, software, computational results, and
+content of the manuscript.
 
 \bibliographystyle{plain}
 \bibliography{references}
