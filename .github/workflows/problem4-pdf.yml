@@ -2,7 +2,7 @@ name: Build and commit Avoid-or-Compress PDF
 on:
   push:
     branches:
-      - codex/avoid-compress-standalone-paper-20261114
+      - codex/avoid-compress-restructure-verified
     paths:
       - papers/problem4/main.tex
       - papers/problem4/references.bib
@@ -26,7 +26,8 @@ jobs:
         run: |
           latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error main.tex
           pdfinfo main.pdf | grep -E '^(Pages|Page size|File size):'
-          pdftotext main.pdf - | grep -F 'Computational' >/dev/null
+          pdftotext main.pdf - | grep -F 'Computer-assisted verification' >/dev/null
+          pdftotext main.pdf - | grep -F 'Declaration of generative AI' >/dev/null
           if pdftotext main.pdf - | grep -F 'PROOF.md'; then
             echo 'External proof-document reference remains'
             exit 1
@@ -38,5 +39,5 @@ jobs:
           git add -f papers/problem4/main.pdf
           if ! git diff --cached --quiet; then
             git commit -m "Build revised Avoid-or-Compress manuscript PDF"
-            git push origin HEAD:codex/avoid-compress-standalone-paper-20261114
+            git push origin HEAD:codex/avoid-compress-restructure-verified
           fi
