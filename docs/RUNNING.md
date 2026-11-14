@@ -1583,3 +1583,141 @@ returned `joint=1`.
 These checks do not constitute a rerun of the large historical dynamic
 partitions. The paper keeps those completion totals separate from this
 revision's checks and identifies the predicate used for each result.
+
+
+## Paper presentation and computational provenance
+
+The paper separates the mathematical feasibility predicate from implementation history. The following details accompany the presentation revision.
+
+## Computation provenance accompanying the formal-paper revision
+
+The manuscript uses `Π₀` for the branch-dependent joint feasibility
+conditions: shared row and pair distances, equality-supplying selected
+letters, safe-row and rank constraints, and strong connectivity of the
+**union** of selected-letter arrows. Same-letter square/power tests apply
+only where the branch's reductions supply them. The eleven-point early-core
+branch fixes its auxiliary maximum source before generating the alphabet.
+It does not choose a different source for each letter.
+
+The cover-five graph6 driver has `prune_quotient_sc=false` by default:
+it checks that every named state can reach the reservoir, rather than
+encoding reverse reservoir reachability as well. Excluding this weaker
+proper-core-exit relaxation excludes the manuscript's stronger `Π₀`.
+The large lower-cover runs explicitly enabled `--quotient-sc` and check
+both directions. The low-cover drivers also check the union growth from
+at least one slow starting row; the cover-five driver enables that extra
+filter only when `CERNY_UNION_GROWTH` is set. These distinctions must not
+be rewritten as a claim that every branch executed identical CNF clauses.
+
+### Predicate and result provenance
+
+The completed large five-to-ten-point calculation used the relaxation
+without the subsequent proper-layer pair-entrance clause. This is the
+manuscript's `Π₀`. The source's default joint-SAT mode includes the entrance
+clause; `--historical-no-pair-entrance`, together with `--distances` and
+`--joint-sat`, disables that additional clause. It reconstructs the prior
+predicate, not a byte-identical historical executable.
+
+The full-run completion record reports
+`completed=3206988/3206988 cumulative_joint=1`, an unrestricted `COMPLETE`
+summary, exit completion, and `Completed in 22923.697s`. This is an existing
+user-supplied terminal record, not a full calculation rerun for the paper
+restructuring. It used 24 workers, paired full letter generation, quotient
+strong connectivity, and CaDiCaL 3.0.1. An earlier run interrupted at 285952
+is incomplete and contributes no extra coverage. The sole survivor under
+this predicate is core 447/domain 0, with a `K4,4` early core; the multipartite
+overlap lemma excludes it mathematically. The entrance-enabled selected
+check excludes it computationally as well.
+
+The manuscript's table combines finite distance checks and the SAT-based
+checks. Its defect-four cover-four row must not be described as 91 certified
+SAT-UNSAT results: joint enumeration leaves 152 distance vectors, which
+are excluded by the proper-core exit condition. “Infeasible” in the table
+is broader than “UNSAT proof certificate”. No DRAT or LRAT files have been
+produced or independently checked for the reported complete calculations.
+The bounded independent controls are not proof certificates for every
+large-domain negative decision.
+
+### Coverage partitions
+
+* Defect four, cover four: 91 early core classes, distributed as
+  `1,17,47,26` at support orders `5,6,7,8`.
+* Defect four, cover three: 117 early core classes; six disjoint ranges
+  contribute `1414+259+978+2349+2500+2642=10142` closed configurations.
+  Both complete generation orders and both distance implementations were
+  compared in these ranges.
+* Defect five, cover five: 2294 retained cores, partitioned into ranges
+  `[32j,32j+31]` for `0 <= j <= 70` and `[2272,2293]`, giving
+  `71*32+22=2294`. The graph6 input is the union of `geng` 2.9.3 outputs
+  for orders `6..10` with `-d1 -D5`, **without** a connectedness filter.
+* Defect five, cover four: 4658 early cores, comprising 90 eleven-point
+  cores and 4568 cores of orders five through ten.
+* Eleven-point early support: `[883+(1201-19)]+[1504+26]=3595` distinct
+  configurations. The overlap of 19 is counted once. The former execution
+  covered 89 core components before interruption; the last component's
+  two-omission cases were covered by the complete matching run. The final
+  26 single-omission configurations completed both common auxiliary-source
+  choices, giving 52 UNSAT decisions, with exit code zero. This is assembled
+  coverage, not a claim of one normally completed unrestricted 90-core run.
+* Early support five through ten: two cores are removed by the entrance
+  bound. The static count is `3245386`; removing `38398` static exclusions
+  leaves `3206988` dynamic configurations. Under `Π₀`, `3206987` are
+  UNSAT and one is feasible. The `--core-index` and `--domain-index` values
+  refer to the complete static order for the selected support range.
+
+### Source map and fixed revision
+
+Implementation reference:
+[d95182946a1bf3f8307bcef6452c84a412862b54](https://github.com/dongxuelian2/cerny-direct-attack/tree/d95182946a1bf3f8307bcef6452c84a412862b54).
+No Zenodo deposit or DOI is asserted. The source file map, under
+`scripts/problem4/`, is:
+
+| Component | Sources |
+| --- | --- |
+| Defect four, cover four | `compression_fourteen_cores.cpp` |
+| Defect four, cover three | `low_cover_core_domains.cpp`, `low_cover_actions.cpp` |
+| Defect five, cover five | `rank_core_graph6.cpp`, `near_max_rank_cores.cpp`, `near_max_rank_actions.cpp` |
+| Defect five, cover four | `fifteen_low_cover_domains.cpp` |
+| Joint feasibility and bounded controls | `pair_sat_control.hpp`, `check_joint_sat.cpp` |
+| Binary construction controls | `check_two_block.py`, `two_block_potential.py` |
+
+The graph6 driver's parameters are `5 6 9 --actions START COUNT THREADS
+--sat-distances`. Exact graph generation and all complete-run invocations
+remain in the preceding reproduction sections of this document.
+
+### Checks actually rerun during restructuring
+
+With `CERNY_PAIR_SAT_LIBRARY` set to a built CaDiCaL 3.0.1 shared library,
+the following five invocations completed with exit status zero:
+
+```sh
+python3 run.py script scripts/problem4/check_joint_sat.cpp --pair-entrance
+python3 run.py script scripts/problem4/fifteen_low_cover_domains.cpp --capacity-control
+python3 run.py script scripts/problem4/fifteen_low_cover_domains.cpp --control
+python3 run.py script scripts/problem4/fifteen_low_cover_domains.cpp 5 10 1 --distances --letter-control --quotient-sc --joint-sat --core-index 447 --domain-index 0
+python3 run.py script scripts/problem4/fifteen_low_cover_domains.cpp 5 10 1 --distances --letter-control --quotient-sc --joint-sat --historical-no-pair-entrance --core-index 447 --domain-index 0
+```
+
+Results:
+
+* Joint-SAT control: 100686 bounded instances, 3570 feasible.
+* Capacity control: 4658 cores, 4390434 incoming cases, maximum 42 admissible
+  targets (raw maximum 84).
+* Literal graph control: 33792 labeled five/six-point graphs, 30 retained
+  classes, and closed-family comparisons with at most two named isolates.
+* Selected `K4,4` configuration: both predicate modes generate 1768
+  signatures; the entrance-enabled mode reports `SOLVED joint=0` and
+  the historical mode `SOLVED joint=1`.
+
+The selected runs rebuild the static classification, but dynamically solve
+only the requested configuration (`selected_dynamic=1`). They do **not**
+repeat the full multi-million-configuration calculation. No full new
+entrance-enabled run is claimed. These checks also do not establish that a
+satisfiable relaxed model is realizable as an automaton.
+
+A full reproduction should retain source and solver versions, graph6 input,
+all interval boundaries, selected and completed counts, result totals, exit
+statuses, and terminal summaries. Count static generation separately from
+dynamic solving. The named-pair representation uses 128 bits, enough for
+all 66 diagonal/off-diagonal positions on eleven vertices. Signature-order
+comparisons use exact permutation ranks, rather than hash equality alone.
