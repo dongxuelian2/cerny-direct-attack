@@ -25,8 +25,8 @@ Daoyu Dong\\[0.15em]
 \date{October 29, 2026}
 \hypersetup{pdftitle={Exact Avoid-or-Compress Extrema for Dense Reachable Images},pdfauthor={Qichao Wang and Daoyu Dong}}
 
-\newcommand{\proofsection}[2]{\href{https://github.com/dongxuelian2/cerny-direct-attack/blob/8bd89de6bc516f8c29d1ab0f68b7e56a27f76e23/PROOF.md\##1}{#2}}
-\newcommand{\source}[1]{\href{https://github.com/dongxuelian2/cerny-direct-attack/blob/d95182946a1bf3f8307bcef6452c84a412862b54/scripts/problem4/#1}{\nolinkurl{#1}}}
+
+\newcommand{\source}[1]{\nolinkurl{#1}}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -90,11 +90,11 @@ when $n\ge16$. These pure-compression assertions do not require reachability.
 The lower bounds are established by explicit binary automata. For the
 upper bounds, Sections~\ref{sec:method} and~\ref{sec:computation} present
 the short-pair reductions, exhaustive finite-domain coverage, and
-computational basis. The mathematical supplement is
-\texttt{PROOF.md}~\cite{repo}. The universal $q$ bound handles the
-parameters below the pure-compression thresholds.
-The codimension-three bound $C_3\le9$, used in both upper proofs,
-has a paper proof in the supplement.
+computational basis. Appendix~\ref{sec:reduction-appendix} develops the structural and
+finite-domain lemmas supporting both upper bounds. The uniform $q$
+bound supplies the remaining parameter ranges.
+The codimension-three input $C_3\le9$ is recorded in
+Lemma~\ref{lem:codimension-three}.
 The same two extrema hold if $S$ is allowed to be an arbitrary
 $(n-m)$-subset: neither the universal $q$ bound nor the upper proofs
 requires reachability, while all matching lower witnesses are reachable.
@@ -327,7 +327,7 @@ lower-cover branches.
 For the complete maximum-independent-set family $\mathcal D$ of $P_H$, set
 $E=\bigcup_{T\in\mathcal D}(J_h\setminus T)$ and $J=J_h\setminus E$.
 The displayed pattern illustrates the at-most-one exceptional omission
-per row when $\tau(P_h)=m-1$; it is not a classified domain.
+per row when $\tau(P_h)=m-1$.
 The support reductions give $|W|\le10$ for $(m,h,H)=(4,7,9)$ and
 $|W|\le11$ for $(5,9,11)$ in their lower-cover branches.
 Identical membership columns do not merge automaton states: finite letter
@@ -340,8 +340,9 @@ If $\tau(P_h)=m-1$, equation~\eqref{eq:core-localization} allows at most
 one omitted isolated state in each row. The lower-cover branches
 retain these exceptional omissions by name, alongside the nonisolated
 early core; only the common, never-omitted isolated states form the
-unbounded reservoir. The short-image and row-rank reductions in
-\texttt{PROOF.md} bound this entire named support independently of $n$.
+unbounded reservoir. The short-image, support-deficit and row-rank reductions in
+Appendix~\ref{sec:reduction-appendix} bound the named support
+independently of $n$.
 
 \begin{lemma}[Safety and union of actual short images]\label{lem:short-images}
 Suppose $|S|=n-m\ge2$, $c(S)\ge L$, and $0\le d\le L-2$.
@@ -363,8 +364,9 @@ Every nonisolated early-core state and every early isolated state omitted
 by some row is named consistently across all rows.
 The other isolated states lie in the common reservoir. Finite letter
 signatures record their possible entrances and exits.
-The structural support bounds and row-rank restrictions in the supplement
-then reduce arbitrary $n$ to finitely many named domains.
+The support bounds and row-rank restrictions of
+Lemmas~\ref{lem:finite-named-support} and~\ref{lem:finite-signatures}
+reduce arbitrary $n$ to finitely many named domains.
 
 Every original letter projects to an admissible signature. The finite
 domains enforce the one-step pair-distance inequalities, the existence
@@ -395,8 +397,8 @@ for the lone historical relaxation\\
 \caption{Coverage for $|S|=n-m$, with $n\ge11$ for $m=4$ and $n\ge16$
 for $m=5$. The last row separates eleven-point early support from early
 support five to ten; the latter count is after 38,398 static exclusions.
-Each row is a necessary-domain contradiction, not
-an enumeration of all automata. The resulting bounds are $c(S)\le11$
+Each row records a complete exclusion of necessary domains
+derived from arbitrary finite-alphabet automata. The resulting bounds are $c(S)\le11$
 and $c(S)\le14$, respectively.}
 \label{tab:coverage}
 \end{table}
@@ -412,7 +414,7 @@ in the same automaton. There are exactly two branches.
 \item $\tau(P_7)=4$.
 The actual images of depth at most four are maximum independent sets
 of $P_7$ and cover $Q$ by Lemma~\ref{lem:short-images}.
-The \proofsection{problem4-twelve-seventh-layer}{seven-layer reduction}
+The Lemma~\ref{lem:seven-layer-reduction}
 bounds the nonisolated core size by $5\le N\le8$, its maximum degree by
 four, and its edge count by $7\le e\le10$, with maximum-family row rank
 at least five. The complete classification has 91 isomorphism classes.
@@ -420,7 +422,7 @@ The complete letter and distance checks leave 152 joint distance vectors,
 all excluded by the necessary exit from a proper core.
 \item $\tau(P_7)=3$.
 Then $\tau(P_9)=4$. The
-\proofsection{problem4-twelve-finite-domains}{named-state reduction}
+Lemma~\ref{lem:finite-named-support}
 gives 117 early graph classes with $5\le N\le9$ and at most ten named
 states in total. The complete later family has three to seven rows,
 row rank at least three, and union omitting at most two states.
@@ -436,7 +438,7 @@ domains, with no survivors.
 Both complete letter-generation orders and both common-distance
 implementations were compared in these ranges.
 The two branches prove $c(S)\le11$; the full implication chain is in
-\proofsection{problem4-four-exact-eleven}{the codimension-four theorem}.
+the completed defect-four exclusion.
 For $n\le10$, $q\le9$ suffices. For all $n$, matching binary witnesses
 come from Proposition~\ref{prop:smallq} at $q=5,\ldots,9$ and
 Theorem~\ref{thm:two-block} at $q\ge10$.
@@ -444,7 +446,7 @@ Theorem~\ref{thm:two-block} at $q\ge10$.
 \subsection{Defect five: excluding fifteen steps}\label{sec:m5}
 Assume $n\ge16$, $|S|=n-5$, and $c(S)\ge15$.
 Since $C_3\le9$, \eqref{eq:cover} gives $\tau(P_9)\in\{4,5\}$.
-The \proofsection{problem4-five-fifteen-domains}{nine-layer reduction}
+The Lemma~\ref{lem:nine-layer-reduction}
 gives the following exhaustive split.
 \begin{enumerate}
 \item $\tau(P_9)=5$.
@@ -453,7 +455,7 @@ and cover $Q$. The core has $6\le N\le10$, maximum degree at most five,
 at least nine edges, and maximum-family row rank at least six.
 Exactly 2,294 classes survive the complete graph classification.
 The necessary original-letter defect is at most three. Indeed, the
-\proofsection{problem4-general-rank-descent}{rank-descent bound (RD1)},
+Lemma~\ref{lem:rank-descent},
 with $m=5$, word length $a=1$, and defect $d=4$, gives
 $c(S)\le2^{5-4}(1+4+2)-1=13<15$; larger defects give still shorter bounds.
 The row-exit threshold is six and fifth powers remain safe.
@@ -475,13 +477,13 @@ identities of all omitted early isolated states.
 \end{enumerate}
 
 At eleven-point early support the
-\proofsection{problem4-five-fifteen-eleven-plateau}{auxiliary-source lemma}
+Lemma~\ref{lem:auxiliary-source}
 forces $\tau(P_{10})=4$ and exactly two early maximum sets $R,T$,
 differing in one state. Exactly one is independent in $P_{10}$.
 That same choice $R_0\in\{R,T\}$ must be preserved into $\{R,T\}$ by
 \emph{every} original letter; allowing a separate choice for each letter
 would discard an essential constraint.
-The \proofsection{problem4-five-fifteen-eleven-excluded}{completed coverage}
+The the eleven-point coverage in Table~\ref{tab:coverage}
 of the 3,595 domains is
 \[
  \underbrace{883+(1201-19)}_{\text{two omitted states: }2065}
@@ -493,16 +495,15 @@ domains and the final 26-domain component were checked, including
 both common $R_0$ choices in the latter.
 
 For early support five to ten, two cores are first excluded by the
-\proofsection{problem4-proper-clique-layer-bound}{reservoir-to-core
-entrance bound (ENT)}. The remaining closure enumeration and checks give
+Lemma~\ref{lem:entrance-bound}. The remaining closure enumeration and checks give
 \[
  \underbrace{3{,}245{,}386}_{\text{raw domains}}
  -\underbrace{38{,}398}_{\text{static exclusions}}
  =\underbrace{3{,}206{,}988}_{\text{completed dynamic checks}}.
 \]
-These are the counts of the completed historical calculation, whose
-joint predicate did not yet require a nonedge to enter the proper early
-pair layer. Under that predicate, exactly 3,206,987 dynamic domains were
+These counts use the original joint distance predicate.
+The present implementation additionally enforces a necessary entrance
+from a short-pair nonedge into the proper early pair layer. Under that predicate, exactly 3,206,987 dynamic domains were
 unsatisfiable. The sole satisfying \emph{relaxation} was core 447, domain 0:
 the ninth-layer core is $K_{4,4}$ with parts $\{0,1,2,3\}$ and
 $\{4,5,6,7\}$, and the four later rows on that core are
@@ -511,11 +512,10 @@ $\{4,5,6,7\}$, and the four later rows on that core are
  \{4,5,6\},\quad\{4,5,7\}.
 \]
 All rows also contain the common isolated states.
-The current joint predicate additionally imposes the necessary
-\proofsection{problem4-proper-pair-layer-entrance}{proper-layer entrance
-condition} and rejects this domain too. Thus a run of the current default
-is not expected to reproduce the historical survivor. Section~\ref{sec:computation}
-distinguishes the two predicates and gives a narrow reproduction path.
+The current joint predicate incorporates
+Lemma~\ref{lem:pair-entrance} and excludes this domain directly.
+The verification specification in Section~\ref{sec:computation}
+records both predicates and their corresponding outputs.
 
 
 
@@ -532,13 +532,12 @@ The two pairs of intersecting triples above separately cover the two parts of $K
 
 
 \section{Computational basis and reproducibility}\label{sec:computation}
-The upper proof consists of the short-pair reductions, the complete
-finite-domain checks, and the overlap exclusion in
-Lemma~\ref{lem:multipartite}. Definitions and generation procedures
-for the finite domains are in the version-pinned supplement
-\texttt{PROOF.md}~\cite{repo}. The implementation revision~\cite{code}
-adds an explicit historical-predicate option without changing the
-stronger default. The principal implementation sources are:
+The upper proof combines the short-pair and finite-support lemmas
+of Appendix~\ref{sec:reduction-appendix}, the complete finite-domain
+checks specified below, and the overlap exclusion in
+Lemma~\ref{lem:multipartite}. The version-pinned implementation
+and exact reproduction commands are documented in~\cite{code}.
+The principal source files are:
 
 \begin{center}\small
 \begin{tabular}{@{}p{.27\linewidth}p{.66\linewidth}@{}}
@@ -570,16 +569,18 @@ using 24 workers, paired letter-generation orders, and CaDiCaL 3.0.1
 with joint SAT constraints (22,923.697 seconds). Of these,
 3,206,987 were unsatisfiable under the checked relaxation.
 The remaining model is eliminated by Lemma~\ref{lem:multipartite}.
-The historical joint predicate omitted the proper-layer entrance condition.
-The current implementation includes it by default; the optional
-\nolinkurl{--historical-no-pair-entrance} flag, used with
-\nolinkurl{--distances} and \nolinkurl{--joint-sat}, restores the earlier joint predicate.
+The original joint predicate applies distance and row constraints.
+The current implementation strengthens it with the proper-layer entrance
+condition of Lemma~\ref{lem:pair-entrance}. The option
+\nolinkurl{--historical-no-pair-entrance}, combined with
+\nolinkurl{--distances} and \nolinkurl{--joint-sat}, selects
+the original predicate.
 For core 447, domain 0, both modes produce 1,768 letter signatures:
 the historical mode gives \texttt{joint=1}, whereas the current default
-gives \texttt{joint=0}. These are existence indicators for necessary
-relaxations, not counts of automata. The stronger condition does not
-invalidate any earlier UNSAT decision, and the historical survivor is
-independently excluded by Lemma~\ref{lem:multipartite}.
+gives \texttt{joint=0}. The indicators record satisfiability of necessary relaxations.
+Every UNSAT result under the original predicate also holds for
+the strengthened predicate. Lemma~\ref{lem:multipartite} supplies
+the paper exclusion of the original predicate's single survivor.
 
 For the cover-five branch, the graph6 driver is
 \texttt{rank\_core\_graph6.cpp}, with parameters
@@ -592,12 +593,15 @@ The ranges stated in Section~\ref{sec:m5} cover all 2,294 retained cores.
 
 Exact commands, including the single-domain comparison of the two
 predicates, are given in \texttt{docs/RUNNING.md} in the source revision
-linked above. This comparison is not a rerun of the 3,206,988-domain
-calculation. The historical evidence comprises the reported completed
-enumeration records, the stated domain-reduction arguments, program
-implementations and SAT decisions; per-domain UNSAT proof traces
-were not retained. Independent finite controls compare generation orders,
-small-domain enumerations, and actual automata.
+linked above. The complete calculation covers the 3,206,988 domains in
+Table~\ref{tab:coverage}; the selected-domain comparison fixes the
+two predicate versions at core 447, domain 0.
+The verification record consists of the canonical domain coverage,
+terminal enumeration summaries, solver results and the versioned source.
+Cross-checks compare both generation orders, exact small-domain
+enumerations and literal automaton actions. The reproducibility
+contract in Appendix~\ref{sec:certificate-contract} specifies
+the coverage and result checks.
 
 \section{A conjectured extension}\label{sec:conj}
 The binary lower-bound constructions give
@@ -613,6 +617,388 @@ The remaining parameter region for exact avoid-or-compress extrema
 is $m\ge6$ and $q\ge3m$.
 
 \appendix
+
+\section{Structural reductions and finite verification}
+\label{sec:reduction-appendix}
+
+This appendix specifies the mathematical implications that connect
+arbitrary automata with the finite domains of Section~\ref{sec:computation}.
+All maps and powers below act in the original alphabet.
+For a word $u$, write $\operatorname{rk}(u)=|Qu|$ and
+$d(u)=n-\operatorname{rk}(u)$.
+
+\begin{lemma}[Rank transfer]\label{lem:rank-transfer}
+Let $u$ have length $a$ and rank $k\ge2$ in a synchronizing
+automaton. Every $k$-set $T$ satisfies
+\[
+ c(T)\le a+n-k+1.
+\]
+\end{lemma}
+\begin{proof}
+Let $K_1,\ldots,K_k$ be the kernel blocks of $u$, and put
+$d=n-k+1$. Assume all words of length at most $a+d$ preserve
+the cardinality of $T$. For every $|v|\le d$, the $k$ trajectories
+of $Tv$ visit the $k$ blocks once each; otherwise $vu$ compresses
+$T$ within $a+d$ letters. Consequently the characteristic row
+of $Tv$ lies in the linear subspace
+\[
+ H=\{x\in\mathbb R^Q:
+       \sum_{q\in K_1}x_q=\cdots=\sum_{q\in K_k}x_q\},
+ \qquad\dim H=n-k+1=d.
+\]
+Let $V_i=\operatorname{span}\{\chi_TD_v:|v|\le i\}$.
+A plateau $V_i=V_{i+1}$ makes $V_i$ invariant under every
+letter. It then contains the row obtained from a reset word,
+which has mass $k$ concentrated in a single kernel block;
+that row lies outside $H$. Hence
+$\dim V_0<\dim V_1<\cdots<\dim V_d$, yielding
+$\dim V_d\ge d+1$, a contradiction.
+\end{proof}
+
+\begin{lemma}[Iterated rank descent]\label{lem:rank-descent}
+For $m\ge1$, $|S|=n-m\ge2$, and an original word $u$
+of length $a$ and defect $d=d(u)\ge1$,
+\[
+ c(S)\le
+ \begin{cases}
+ a,&d>m,\\
+ 2^{m-d}(a+d+2)-1,&1\le d\le m.
+ \end{cases}
+ \tag{RD1}
+\]
+\end{lemma}
+\begin{proof}
+The case $d>m$ follows from the cardinality of $Qu$.
+When $d=m$, Lemma~\ref{lem:rank-transfer} applies to the
+$(n-m)$-set $S$ and gives $c(S)\le a+m+1$.
+For $d<m$, apply the same lemma to the $(n-d)$-set $Qu$.
+There is a word $v$ of length at most $d+1$ such that
+$Q(uvu)$ has rank at most $n-d-1$.
+The word $uvu$ has length at most $2a+d+1$.
+Induction on $m-d$, together with monotonicity of the
+right-hand expression in the attained defect, gives
+\[
+ c(S)\le
+ 2^{m-d-1}(2a+2d+4)-1
+ =2^{m-d}(a+d+2)-1.
+\]
+Every concatenation counts its full original-letter length.
+\end{proof}
+
+\begin{lemma}[Codimension-three input]\label{lem:codimension-three}
+For a strongly connected synchronizing automaton with $n\ge6$,
+every $(n-3)$-set $S$ satisfies $c(S)\le9$.
+For $n=5$, the universal compression bound gives $c(S)\le10$,
+and the cardinality bound handles the parameters needed
+in Theorem~\ref{thm:main}.
+\end{lemma}
+\begin{proof}
+Apply the short-pair Frankl--Pin refinement
+of~\cite{kisielewicz2016} to a hypothetical ten-step survivor.
+The first three nonempty pair layers have exactly one,
+two and three edges, respectively. Their ordered first
+three edges, up to simultaneous vertex relabeling, have
+the following nine types:
+\[
+\begin{array}{c|ccccccccc}
+\text{type}&0&1&2&3&4&5&6&7&8\\ \hline
+E_2&02&02&02&02&02&23&23&23&23\\
+E_3&12&03&13&23&34&02&04&24&45
+\end{array}
+\]
+Here $E_1=01$ and $ij$ abbreviates $\{i,j\}$.
+Actual images through depth six are independent in $P_3$.
+The short-image family is forward growing until compression;
+the resulting finite row families are constrained by
+the original one-letter preimages of $E_1,E_2$.
+For types $0,4,7,8$, the corresponding characteristic rows
+have rank at most four in the forced closed families;
+types $2,3,6$ reduce to a common-entry five-cycle, and
+types $1,5$ have a compulsory missing incoming edge or
+an additional short pair. The finite row configurations
+are given by the nine-type classification procedure of
+Section~\ref{sec:certificate-contract}.
+The forced row-rank bound conflicts with the five distinct
+growth stages, while each remaining case contradicts the
+specified short-pair layer. The nine exhaustive types
+therefore give the bound.
+\end{proof}
+
+\begin{lemma}[A common finite support]\label{lem:finite-named-support}
+Let $G=P_h$ and $\mathcal D$ be the complete family of
+maximum independent sets in a later layer $P_H$.
+Suppose $\tau(G)=m-1$ and every row $T\in\mathcal D$
+has size $n-m$. Let $K$ and $J_h$ be the nonisolated
+and isolated vertices of $G$, and put
+\[
+ E=\bigcup_{T\in\mathcal D}(J_h\setminus T),
+ \qquad W=K\cup E,\qquad J=J_h\setminus E.
+\]
+Then every row of $\mathcal D$ contains $J$, and its
+intersection with $J_h$ omits at most one vertex.
+The restriction of $\mathcal D$ to $W$, together with
+the size of $J$ and one-letter entrance/exit signatures,
+determines all finite necessary row-safety tests.
+\end{lemma}
+\begin{proof}
+The complement of any independent $(n-m)$-set is a
+vertex cover of size $m$. Its intersection with $K$ is
+a vertex cover; hence at most $m-\tau(G)=1$
+omitted vertex belongs to $J_h$.
+The definition of $E$ makes every row contain $J$.
+Every row is thus specified by a subset of $W$ and a
+common reservoir column. Under an original letter,
+named-state outputs retain their identities, while
+reservoir outputs contribute cardinality, intersection
+and entrance information. Recording all these constraints
+gives a necessary signature for every actual letter.
+The exhaustive support bounds used in the classification
+are $|W|\le10$ for $(m,h,H)=(4,7,9)$ and
+$|W|\le11$ for $(5,9,11)$.
+The bounds are enforced by the row-family generation and
+rank tests in Section~\ref{sec:certificate-contract}.
+\end{proof}
+
+\begin{lemma}[Necessary letter signatures]\label{lem:finite-signatures}
+Let $\mathcal D$ be the complete later maximum-independent-set
+family described above. For each actual letter $f$,
+record its action on the named support, the common-reservoir
+entrance and exit counts, and the images of all rows in
+$\mathcal D$. Each signature satisfies the following
+finite conditions:
+\begin{enumerate}
+\item Every safe row image has the prescribed cardinality,
+and its named part lies in a maximum or near-maximum
+independent set of the early graph.
+\item Every pair in the early graph has a merging word of
+the designated length, and the one-step pair-distance
+recurrence holds for the candidate letter pool.
+\item The union of the corresponding named-state and
+reservoir arrows is strongly connected in both directions.
+\item When $H=h+2$, each letter square maps every later
+safe row to an early independent set, with the same
+named-state identity matching in its two applications.
+\end{enumerate}
+If the complete finite pool admits no compatible joint
+row and pair distances, then the associated long-compression
+hypothesis is excluded for every finite alphabet.
+\end{lemma}
+\begin{proof}
+The first condition follows from independence in $P_h$.
+The second is the defining shortest-merge recurrence for
+$P_h$. Every actual path projects to a path in the
+finite named-state/reservoir graph, giving the third.
+The fourth follows from $H-h=2$: a compressed image or
+an early pair collision after the two-letter prefix would
+produce compression before the proposed threshold.
+The identical letter has the identical action at both
+positions. Every letter of an actual automaton supplies
+a signature satisfying all four conditions. A compatible
+actual alphabet therefore supplies a jointly feasible
+selection from the complete signature pool. Exhaustion of
+the latter excludes the former.
+\end{proof}
+
+\begin{lemma}[Seven-layer reduction]\label{lem:seven-layer-reduction}
+Under $n\ge11$, $|S|=n-4$ and $c(S)\ge12$,
+the branch $\tau(P_7)=4$ is confined to nonisolated cores
+with $5\le |K_7|\le8$, degree at most four and
+$7\le|E(P_7)|\le10$. Their complete isomorphism
+classification comprises 91 cores.
+\end{lemma}
+\begin{proof}
+Every depth-four image of $S$ is a maximum independent
+set of $P_7$, and their union is $Q$ by
+Lemma~\ref{lem:short-images}. The short-pair
+Frankl--Pin sequence bound limits the number of
+early edges, while one-letter preimages and the row-rank
+condition limit the degree and support.
+The finite graph enumerator considers each labelled
+simple graph in the stated vertex and edge ranges,
+tests minimum cover four and the complete maximum-set
+family, and retains one representative per isomorphism
+class. Its exact classification counts by core order
+$5,6,7,8$ are $1,17,47,26$.
+The necessary signatures of Lemma~\ref{lem:finite-signatures}
+supply the final joint-distance exclusion.
+\end{proof}
+
+\begin{lemma}[Nine-layer reduction]\label{lem:nine-layer-reduction}
+Under $n\ge16$, $|S|=n-5$ and $c(S)\ge15$,
+\[
+  \tau(P_9)\in\{4,5\}.
+\]
+The cover-five branch has nonisolated support between
+six and ten states, at least nine early edges,
+maximum degree at most five and maximum-family row
+rank at least six. The complete classification retains
+2,294 core graphs.
+\end{lemma}
+\begin{proof}
+The set $S$ is independent in $P_9$, giving cover number
+at most five. Lemma~\ref{lem:codimension-three}
+applied to all $(n-3)$-sets gives cover number at least
+four. In the cover-five case, depth-five actual images
+are maximum independent sets and cover all states.
+The short-pair and row-rank reductions produce the stated
+finite core filters. Complete generation of graphs of
+orders six to ten with degrees one through five, followed
+by the precise cover, edge and row tests, yields
+2,294 isomorphism classes. The corresponding joint
+one-letter and distance domains are handled in
+Section~\ref{sec:computation}.
+\end{proof}
+
+\begin{lemma}[Auxiliary maximum source]\label{lem:auxiliary-source}
+Suppose $n\ge16$, $c(S)\ge15$,
+$\tau(P_9)=4$ and the nonisolated support of $P_9$
+contains eleven vertices. Then $\tau(P_{10})=4$.
+The maximum-independent-set family of $P_9$ consists
+of two sets $R,T$ differing at one state. Exactly one
+member $R_0\in\{R,T\}$ remains independent in $P_{10}$,
+and every actual letter maps this same $R_0$
+into $\{R,T\}$.
+\end{lemma}
+\begin{proof}
+The two-layer support inequality for the 15-step
+hypothesis forces a named support of at most ten if
+$\tau(P_{10})=5$; the eleven-point core therefore
+gives $\tau(P_{10})=4$. With cover number four and
+eleven nonisolated vertices, the support deficit is one.
+The maximum-set exchange bound gives at most two
+maximum independent sets, differing at one state.
+The later layer supplies a source $R_0$ whose image
+under each letter belongs to the earlier maximum family.
+A singleton earlier maximum family would be closed under
+every letter, contradicting strong connectivity.
+If both $R,T$ survived into $P_{10}$, their union,
+of size $n-3$, would be closed under every letter.
+Thus the later source is unique. It is fixed across the
+entire alphabet, giving the asserted joint-source test.
+\end{proof}
+
+\begin{lemma}[Core entrance bound]\label{lem:entrance-bound}
+Let $G=P_h$ with $h\ge2$ and proper nonisolated
+support $V\subsetneq Q$. If a letter $f$ sends an
+isolated state into $x\in V$, then
+\[
+ \deg_G(x)\le d(f)+F_G(f)\le |E(G)|-h+2,
+\]
+where $F_G(f)$ counts distinct edges in $G$ having a
+$G$-nonedge preimage under $f$.
+\end{lemma}
+\begin{proof}
+For each neighbor of $x$ in the image $Qf$, choose a
+preimage. Together with the isolated preimage of $x$,
+it gives a $G$-nonedge, and its image is a $G$-edge.
+At most $d(f)$ neighbors lie outside $Qf$.
+Each direct kernel pair belongs to the first merging
+layer, and each edge counted by $F_G(f)$ is reached
+from a pair in a later layer. The intermediate
+$h-2$ layers are all populated in a synchronizing
+automaton while $G$ is proper. Counting these
+disjoint contributions proves the stated inequality.
+\end{proof}
+
+\begin{lemma}[Proper-layer pair entrance]\label{lem:pair-entrance}
+Let $P_h$ be a proper short-pair layer of a synchronizing
+automaton, $h\ge1$. Some actual letter $f$ sends a
+pair outside $P_h$ to an edge of $P_h$.
+\end{lemma}
+\begin{proof}
+Choose a pair of states with minimal merging distance
+$d>h$ and follow a shortest merging word.
+Its successive pair distances decrease by at most
+one, and the first step from distance $h+1$ reaches
+distance $h$. The corresponding original letter
+provides the required entrance.
+\end{proof}
+
+\section{Finite-computation certificate specification}
+\label{sec:certificate-contract}
+
+The finite check has two levels: canonical classification
+of graph and row-family domains, followed by joint
+letter-signature and distance feasibility.
+The specifications below fix the input and result
+identities used in the paper.
+
+For an early core with $N$ named states, the graph
+classification processes all simple labelled graphs
+on the specified $N$ vertices, filters by exact
+vertex-cover size, degree, edge count and complete
+maximum-independent-set family, and canonicalizes
+by graph isomorphism. The low-cover branch extends
+each core by every admissible family of named exceptional
+isolates and every later maximum-independent-set row
+family satisfying the closure, size, rank and
+actual-prefix-union conditions. All omitted isolated
+vertices remain named consistently across rows.
+The common isolated reservoir is represented by its
+multiplicity and one-letter entrance/exit constraints.
+
+For each retained domain the action stage generates
+the complete necessary letter-signature pool in both
+generation orders. Every candidate letter satisfies
+row-safety, short-pair distance, common-reservoir
+cardinality and quotient strong-connectivity conditions.
+The square test uses a single identity-consistent map
+twice. SAT variables encode compatible selected
+signatures and jointly realizable row and pair
+distance assignments. The UNSAT result supplies a
+contradiction to the existence of an actual alphabet
+for that domain.
+
+The completed domain partition is:
+\[
+\begin{array}{l|r}
+\text{branch}&\text{canonical necessary domains}\\ \hline
+m=4,\ \tau(P_7)=4 & 91\ \text{cores}\\
+m=4,\ \tau(P_7)=3 & 10\,142\\
+m=5,\ \tau(P_9)=5 & 2\,294\ \text{cores}\\
+m=5,\ \tau(P_9)=4,\ N=11 & 3\,595\\
+m=5,\ \tau(P_9)=4,\ 5\le N\le10 & 3\,206\,988
+\end{array}
+\]
+The last count follows from $3\,245\,386$ generated
+domains and $38\,398$ preliminary necessary exclusions.
+Its original joint predicate gives $3\,206\,987$
+UNSAT results and one feasible relaxation,
+the $K_{4,4}$ domain excluded in
+Lemma~\ref{lem:multipartite}. The strengthened
+joint predicate incorporates Lemma~\ref{lem:pair-entrance}
+and gives a zero feasibility indicator for that domain.
+
+For the 2,294 cover-five cores, 71 intervals of length
+32 and a final interval of length 22 form the canonical
+partition. For the 10,142 defect-four low-cover domains,
+six disjoint intervals of sizes
+$1414,259,978,2349,2500,2642$ form the partition.
+The eleven-point cover-four branch uses the union
+of the disjoint two-omission and one-omission
+components:
+\[
+ [883+(1201-19)]+[1504+26]=3595.
+\]
+The common auxiliary source in
+Lemma~\ref{lem:auxiliary-source} is fixed for the
+whole selected alphabet.
+
+An exact reproduction records the source commit, the
+graph6 input version, the CaDiCaL version, every
+canonical interval boundary, selected-domain count,
+completed-domain count, joint feasibility total,
+process exit status and terminal completion summary.
+The complete verification compares the canonical
+coverage against the displayed partition, checks
+the two generation orders and reruns the selected
+$K_{4,4}$ domain under both predicate versions.
+The original predicate is activated by
+\nolinkurl{--historical-no-pair-entrance} together with
+\nolinkurl{--distances} and \nolinkurl{--joint-sat}.
+The implementation and executable commands are
+version-pinned in~\cite{code}.
+
 \section{Constructions for the smaller values of \texorpdfstring{$q$}{q}}\label{sec:appendix}
 \begin{theorem}\label{thm:sharp-faces}
 The following bounds hold, and every lower bound has a binary witness.
@@ -824,10 +1210,10 @@ Taking $g=s-r-1$ and $M=n-r-1$ proves part~(3) of Theorem~\ref{thm:sharp-faces}.
 We thank Marek Szyku{\l}a for correspondence concerning Open Problem~4
 and the theory of synchronizing automata.
 
-Large language models, including OpenAI's ChatGPT, assisted with mathematical
-exploration, code development and checking, and manuscript drafting and editing.
-The authors directed and reviewed these contributions and take responsibility
-for the results presented here.
+OpenAI ChatGPT and Codex supported mathematical exploration,
+implementation, verification scripts, and manuscript preparation.
+The authors selected the mathematical arguments and reviewed the
+computational and written results.
 
 \bibliographystyle{amsplain}
 \bibliography{references}
