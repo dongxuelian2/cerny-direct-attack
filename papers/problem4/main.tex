@@ -1600,8 +1600,7 @@ outside \(01\), its unique preimage pair is disjoint from \(\{0,1\}\), again
 impossible in \(P_2\). Hence \(d\) is 0 or 1. If \(d=1\), examine \(02\).
 When c is in \(02\), its two preimages \(\{0,z\}\),\(\{1,z\}\) cannot both
 belong to \(P_3\). When c is outside \(02\), its unique preimage pair is
-disjoint from \(\{0,1\}\) and cannot belong to \(P_3\). Thus \(d=0\). \(N_o\)
-state therefore maps to 0 under a singular letter.
+disjoint from \(\{0,1\}\) and cannot belong to \(P_3\). Thus \(d=0\). No state therefore maps to 0 under a singular letter.
 
 Every letter either fixes 0 with no other incoming edge, or omits 0
 entirely. State 0 is unreachable from every other state, contradicting
@@ -1684,7 +1683,7 @@ singular \(f\) that does not preserve \(C\). Retain \(f(0)=f(1)=c\),
 \begin{center}
 \begin{tabular}{llll}
 \toprule
-\(Good images among t,z\) &  Tests  & \(L\) &  Domain bound \\
+Good images among \(t,z\) &  Tests  & \(L\) &  Domain bound \\
 \midrule
 
 neither & \(B,f\) & \(1\) & \(4\)\\
@@ -2019,10 +2018,10 @@ Both are the type-4 families in the rank table, contradicting \(\dim V_4\ge5\).
 
 \subsection{Type 5: a crossing edge}\label{crossing-early-type-5-exclusion}
 
-where \(P_h\) denotes the unordered distinct-state pairs merging in at
-most \(h\) letters. \(N_o\) strong-connectivity, synchronization,
-alphabet-size or reachable-image assumption is needed. The labels
-require \(n\ge 4\).
+Here \(P_h\) denotes the unordered distinct-state pairs merging in at
+most \(h\) letters. No strong-connectivity, synchronization,
+alphabet-size, or reachable-image assumption is needed. The labels
+require \(n\ge4\).
 
 Pair \(02\) is new at
 level three, so some letter \(f\) must send it to a distinct pair in
@@ -2650,7 +2649,7 @@ For $w=\ell_1\cdots\ell_t$, iteration gives
  \chi_SM_wC=\one_s+
  \sum_{\substack{1\le i\le t\\\ell_i=b}}
  \mu_i(e_g-e_1)T_{\ell_{i+1}\cdots\ell_t},
- \qquad \mu_i=(\chi_SD_{\ell_1\cdots\ell_{i-1}})_{u_M}\ge0.
+ \qquad \mu_i=(\chi_SM_{\ell_1\cdots\ell_{i-1}})_{u_M}\ge0.
 \end{equation}
 This counts trajectories even after collisions, with products in word order.
 A trajectory from $S$ needs at least $M-g$ letters to reach $u_M$:
@@ -2721,6 +2720,7 @@ Hence $b^{g+1}e(be)^{s-1}$ resets $Q$.
 \end{proof}
 Taking $g=s-r-1$ and $M=n-r-1$ proves part~(3) of Theorem~\ref{thm:sharp-faces}.
 
+\enlargethispage{2\baselineskip}
 \section*{Acknowledgments}
 We thank Marek Szyku\l a for correspondence on Open Problem~4 and subset compression.
 
