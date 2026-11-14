@@ -4,6 +4,8 @@
 \usepackage{lmodern}
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath,amssymb,amsthm,booktabs,needspace}
+\usepackage{longtable,array,calc}
+\providecommand{\tightlist}{}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,positioning,calc,fit,backgrounds}
 \usepackage{microtype}
@@ -22,7 +24,7 @@
 {\normalsize Hebei University of Technology}\\[0.45em]
 Daoyu Dong\\[0.15em]
 {\normalsize University of Electronic Science and Technology of China}}
-\date{October 29, 2026}
+\date{November 14, 2026}
 \hypersetup{pdftitle={Exact Avoid-or-Compress Extrema for Dense Reachable Images},pdfauthor={Qichao Wang and Daoyu Dong}}
 
 
@@ -414,7 +416,7 @@ in the same automaton. There are exactly two branches.
 \item $\tau(P_7)=4$.
 The actual images of depth at most four are maximum independent sets
 of $P_7$ and cover $Q$ by Lemma~\ref{lem:short-images}.
-The Lemma~\ref{lem:seven-layer-reduction}
+Lemma~\ref{lem:seven-layer-reduction}
 bounds the nonisolated core size by $5\le N\le8$, its maximum degree by
 four, and its edge count by $7\le e\le10$, with maximum-family row rank
 at least five. The complete classification has 91 isomorphism classes.
@@ -437,8 +439,7 @@ $1{,}414+259+978+2{,}349+2{,}500+2{,}642=10{,}142$
 domains, with no survivors.
 Both complete letter-generation orders and both common-distance
 implementations were compared in these ranges.
-The two branches prove $c(S)\le11$; the full implication chain is in
-the completed defect-four exclusion.
+Together, the two branches prove $c(S)\le11$.
 For $n\le10$, $q\le9$ suffices. For all $n$, matching binary witnesses
 come from Proposition~\ref{prop:smallq} at $q=5,\ldots,9$ and
 Theorem~\ref{thm:two-block} at $q\ge10$.
@@ -446,7 +447,7 @@ Theorem~\ref{thm:two-block} at $q\ge10$.
 \subsection{Defect five: excluding fifteen steps}\label{sec:m5}
 Assume $n\ge16$, $|S|=n-5$, and $c(S)\ge15$.
 Since $C_3\le9$, \eqref{eq:cover} gives $\tau(P_9)\in\{4,5\}$.
-The Lemma~\ref{lem:nine-layer-reduction}
+Lemma~\ref{lem:nine-layer-reduction}
 gives the following exhaustive split.
 \begin{enumerate}
 \item $\tau(P_9)=5$.
@@ -454,7 +455,7 @@ The actual images of depth at most five are maximum independent sets
 and cover $Q$. The core has $6\le N\le10$, maximum degree at most five,
 at least nine edges, and maximum-family row rank at least six.
 Exactly 2,294 classes survive the complete graph classification.
-The necessary original-letter defect is at most three. Indeed, the
+The necessary original-letter defect is at most three. Indeed,
 Lemma~\ref{lem:rank-descent},
 with $m=5$, word length $a=1$, and defect $d=4$, gives
 $c(S)\le2^{5-4}(1+4+2)-1=13<15$; larger defects give still shorter bounds.
@@ -476,14 +477,14 @@ at most two later rows. The finite closure enumeration retains the
 identities of all omitted early isolated states.
 \end{enumerate}
 
-At eleven-point early support the
+At eleven-point early support
 Lemma~\ref{lem:auxiliary-source}
 forces $\tau(P_{10})=4$ and exactly two early maximum sets $R,T$,
 differing in one state. Exactly one is independent in $P_{10}$.
 That same choice $R_0\in\{R,T\}$ must be preserved into $\{R,T\}$ by
 \emph{every} original letter; allowing a separate choice for each letter
 would discard an essential constraint.
-The the eleven-point coverage in Table~\ref{tab:coverage}
+The eleven-point coverage in Table~\ref{tab:coverage}
 of the 3,595 domains is
 \[
  \underbrace{883+(1201-19)}_{\text{two omitted states: }2065}
@@ -494,7 +495,7 @@ The $19$-domain overlap is counted once. The 1,504 single-omission
 domains and the final 26-domain component were checked, including
 both common $R_0$ choices in the latter.
 
-For early support five to ten, two cores are first excluded by the
+For early support five to ten, two cores are first excluded by
 Lemma~\ref{lem:entrance-bound}. The remaining closure enumeration and checks give
 \[
  \underbrace{3{,}245{,}386}_{\text{raw domains}}
@@ -502,8 +503,7 @@ Lemma~\ref{lem:entrance-bound}. The remaining closure enumeration and checks giv
  =\underbrace{3{,}206{,}988}_{\text{completed dynamic checks}}.
 \]
 These counts use the original joint distance predicate.
-The present implementation additionally enforces a necessary entrance
-from a short-pair nonedge into the proper early pair layer. Under that predicate, exactly 3,206,987 dynamic domains were
+Under the original predicate, exactly 3,206,987 dynamic domains were
 unsatisfiable. The sole satisfying \emph{relaxation} was core 447, domain 0:
 the ninth-layer core is $K_{4,4}$ with parts $\{0,1,2,3\}$ and
 $\{4,5,6,7\}$, and the four later rows on that core are
@@ -671,8 +671,9 @@ of length $a$ and defect $d=d(u)\ge1$,
 The case $d>m$ follows from the cardinality of $Qu$.
 When $d=m$, Lemma~\ref{lem:rank-transfer} applies to the
 $(n-m)$-set $S$ and gives $c(S)\le a+m+1$.
-For $d<m$, apply the same lemma to the $(n-d)$-set $Qu$.
-There is a word $v$ of length at most $d+1$ such that
+For $d<m$, the proof of Lemma~\ref{lem:rank-transfer},
+applied to $T=Qu$, supplies a prefix $v$ of length at most $d+1$
+for which $vu$ compresses $Qu$. Thus
 $Q(uvu)$ has rank at most $n-d-1$.
 The word $uvu$ has length at most $2a+d+1$.
 Induction on $m-d$, together with monotonicity of the
@@ -686,77 +687,1832 @@ Every concatenation counts its full original-letter length.
 \end{proof}
 
 \begin{lemma}[Codimension-three input]\label{lem:codimension-three}
-For a strongly connected synchronizing automaton with $n\ge6$,
-every $(n-3)$-set $S$ satisfies $c(S)\le9$.
-For $n=5$, the universal compression bound gives $c(S)\le10$,
-and the cardinality bound handles the parameters needed
-in Theorem~\ref{thm:main}.
+In a strongly connected synchronizing automaton with $n\ge6$, every
+$(n-3)$-set has a compressing word of length at most nine.
 \end{lemma}
 \begin{proof}
-Apply the short-pair Frankl--Pin refinement
-of~\cite{kisielewicz2016} to a hypothetical ten-step survivor.
-The first three nonempty pair layers have exactly one,
-two and three edges, respectively. Their ordered first
-three edges, up to simultaneous vertex relabeling, have
-the following nine types:
-\[
-\begin{array}{c|ccccccccc}
-\text{type}&0&1&2&3&4&5&6&7&8\\ \hline
-E_2&02&02&02&02&02&23&23&23&23\\
-E_3&12&03&13&23&34&02&04&24&45
-\end{array}
-\]
-Here $E_1=01$ and $ij$ abbreviates $\{i,j\}$.
-Actual images through depth six are independent in $P_3$.
-The short-image family is forward growing until compression;
-the resulting finite row families are constrained by
-the original one-letter preimages of $E_1,E_2$.
-For types $0,4,7,8$, the corresponding characteristic rows
-have rank at most four in the forced closed families;
-types $2,3,6$ reduce to a common-entry five-cycle, and
-types $1,5$ have a compulsory missing incoming edge or
-an additional short pair. The finite row configurations
-are given by the nine-type classification procedure of
-Section~\ref{sec:certificate-contract}.
-The forced row-rank bound conflicts with the five distinct
-growth stages, while each remaining case contradicts the
-specified short-pair layer. The nine exhaustive types
-therefore give the bound.
+The complete nine-case argument is provided below. All lengths refer to
+original letters, and all hole sets are complements of actual images.
 \end{proof}
 
-\begin{lemma}[A common finite support]\label{lem:finite-named-support}
-Let $G=P_h$ and $\mathcal D$ be the complete family of
-maximum independent sets in a later layer $P_H$.
-Suppose $\tau(G)=m-1$ and every row $T\in\mathcal D$
-has size $n-m$. Let $K$ and $J_h$ be the nonisolated
-and isolated vertices of $G$, and put
-\[
- E=\bigcup_{T\in\mathcal D}(J_h\setminus T),
- \qquad W=K\cup E,\qquad J=J_h\setminus E.
-\]
-Then every row of $\mathcal D$ contains $J$, and its
-intersection with $J_h$ omits at most one vertex.
-The restriction of $\mathcal D$ to $W$, together with
-the size of $J$ and one-letter entrance/exit signatures,
-determines all finite necessary row-safety tests.
+\subsection{The codimension-three input}
+\subsubsection*{Tight layers, actual images and rank}
+
+Assume \(c(S)=10\), which is the only remaining case under the
+Frankl--Pin bound. The refinement of \cite{kisielewicz2016} gives
+\(c(S)\le10-p(P_h)+h\), where \(p(P_h)\) is the maximum length of an
+\((n-3)\)-set Frankl--Pin sequence using pairs from \(P_h\). Any
+\(q\le4\) distinct pairs admit a sequence of length \(q\): for its
+\(i\)th pair choose three holes outside that pair, including an endpoint
+outside it of each later pair, and fill the remaining holes arbitrarily.
+There are at most three required endpoints and \(n-2\ge4\) available
+states. The pair is in its own subset and absent from every earlier
+subset. Consequently \(|P_h|\le h\) for \(h=1,2,3\). Pair layers grow
+strictly until complete, so \(|P_h|=h\) at these three depths. In
+particular every letter is a permutation or has defect one with the
+common kernel \(01\).
+
+Write \(R_i=\{Sw:|w|\le i\}\) and
+\(V_i=\operatorname{span}\{\chi_SD_w:|w|\le i\}\). Until compression
+\(R_i\subsetneq R_{i+1}\): a plateau is forward invariant and
+contradicts synchronization. Also \(\dim V_i\ge\min(i+1,n)\). Indeed
+a plateau in the vector spaces is invariant under all letters; a
+reset word followed by a path to any state yields all rows
+\(|S|e_q\). Before compression these trajectory rows equal the
+characteristic rows of the actual images. Every image through depth six
+is independent in \(P_3\). If \(\mathcal H\) is its three-hole cover
+family and tests have maximum length \(L\), the domain preserving
+\(\mathcal H\) under these tests contains \(R_{6-L}\). Such a domain
+therefore has at least \(7-L\) rows. Exiting it permits compression with
+at most \(L+3\) additional letters. For a permutation \(f\), the
+hole action is \(H\mapsto Hf\). For a defect-one letter with missing
+output \(e\), it is \(H\mapsto\{e\}\cup Hf\) when \(01\subseteq H\), and
+\(H\mapsto\{e\}\cup(H\setminus\{0,1\})f\) otherwise, for the safe covers
+under discussion. Thus the case tables below are direct set
+substitutions.
+
+\subsubsection*{Common low-rank and five-cycle exclusions}
+
+For the low-rank cases the following table lists the \emph{occupied core
+sets}; a common true outside set \(J\) is adjoined to every row.
+
+\begin{center}\small
+\begin{tabular}{lll}
+case & occupied core rows & contains\\\hline
+triangle C; type 4 closed & $24,23,14,13,04,03$ & $R_5$\\
+type 4 mixing & $145,135,045,035,124,123$ & $R_5$\\
+type 7 D6closed & $14,04,13,03,12,02$ & $R_5$\\
+type 7 D6Tmix & $135,035,125,025,134,034$ & $R_5$\\
+type 7 D6Amix & $145,045,125,025,134,034$ & $R_5$\\
+type 7 $C_A$ & $34,13,03,12,02$ & $R_4$\\
+type 7 $C_V$ & $14,13,03,12,02$ & $R_4$\\
+type 7 $D_w$ & $135,035,125,025,134$ & $R_4$
+\end{tabular}
+\end{center}
+
+In the first five rows, characteristic rows \(X_i\) in the displayed
+order satisfy \(X_1-X_2=X_3-X_4=X_5-X_6\); these are two independent
+relations. For \(C_A,C_V\), \(X_2-X_3=X_4-X_5\); for \(D_w\),
+\(X_1-X_2=X_3-X_4\). Every rank is at most four. All coefficients sum to
+zero, so adjoining \(J\) preserves the relations. This contradicts
+\(\dim V_4\ge5\).
+
+The following occupied-core families each form a five-cycle on five
+states: \[
+\begin{array}{c|l}
+\text{type 2 mixing B / closed T}&14,04,23,12,03\\
+\text{type 3 mixing T}&24,04,13,03,12\\
+\text{type 6 closed II}&34,14,12,03,02\\
+\text{type 7 }C_T&34,14,03,12,02
+\end{array}
+\] Each contains \(R_4\), with the common set \(J\) adjoined. Since
+every letter has defect at most one, \(\dim(V_3D_f)\ge3\). If a
+point of \(J\) entered a core point \(z\), every row of \(V_3D_f\)
+would be spanned by domain rows containing \(z\); there are only two,
+a contradiction. Thus every letter preserves the nonempty proper
+\(J\) (nonempty because \(n\ge6\)), contradicting strong connectivity.
+The classifications below identify exactly where these families arise;
+the remaining cases use the displayed direct counts.
+
+Write \(E_1=\{0,1\}\). Up to simultaneous state relabeling the ordered
+three pairs, for \(n\ge 6\), have precisely these nine types:
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+type & \(E_2\) & \(E_3\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+0 & \{0,2\} & \{1,2\} \\
+1 & \{0,2\} & \{0,3\} \\
+2 & \{0,2\} & \{1,3\} \\
+3 & \{0,2\} & \{2,3\} \\
+4 & \{0,2\} & \{3,4\} \\
+5 & \{2,3\} & \{0,2\} \\
+6 & \{2,3\} & \{0,4\} \\
+7 & \{2,3\} & \{2,4\} \\
+8 & \{2,3\} & \{4,5\} \\
+\end{longtable}
+
+Proof of completeness: \(E_2\) shares one endpoint with \(E_1\) or is
+disjoint. In the first case normalize it to \{0,2\}; the ordered pair
+stabilizer fixes 0,1,2, and \(E_3\) can be the remaining old edge, an
+edge from each of those three vertices to one new vertex, or an edge on
+two new vertices. In the disjoint case normalize \(E_2\) to \{2,3\}. Its
+stabilizer independently swaps the endpoints of the first two pairs.
+Thus \(E_3\) joins the pairs, joins either pair to a new point, or
+uses two new points. These give the five and four types above. No
+missing-state or alphabet-size assumption is used in this
+classification.
+
+\paragraph{Type 1 is incompatible with strong
+connectivity}\label{type-1-is-incompatible-with-strong-connectivity}
+
+Suppose \(P_1={01}\), \(P_2=\{01,02\}\), \(P_3=\{01,02,03\}\). For every
+letter \(f\), preimages of 01 are in \(P_2\), and preimages of 02 are in
+\(P_3\).
+
+If \(f\) is a permutation, \(f\)\^{}\{-1\}(01) is 01 or 02, and
+\(f\)\^{}\{-1\}(02) is a different edge of the three-edge star.
+Their intersection is \{0\}. Since 01 and 02 also intersect at \{0\},
+bijectivity gives \(f\)\^{}\{-1\}(0)=0. In particular no other state
+maps to 0 under \(f\).
+
+If \(f\) is singular, let \(d\) be its unique missing output and c the
+common image of 0,1. If \(d\) is not in 01 and c is in 01, the preimages
+of 01 are the two distinct pairs \{0,\(z\)\},\{1,\(z\)\}, for \(z\)
+outside \{0,1\}; both cannot lie in \(P_2\). If \(d\) and c are both
+outside 01, its unique preimage pair is disjoint from \{0,1\}, again
+impossible in \(P_2\). Hence \(d\) is 0 or 1. If \(d=1\), examine 02.
+When c is in 02, its two preimages \{0,\(z\)\},\{1,\(z\)\} cannot both
+belong to \(P_3\). When c is outside 02, its unique preimage pair is
+disjoint from \{0,1\} and cannot belong to \(P_3\). Thus \(d=0\). No
+state therefore maps to 0 under a singular letter.
+
+Every letter either fixes 0 with no other incoming edge, or omits 0
+entirely. State 0 is unreachable from every other state, contradicting
+strong connectivity. The argument works for any alphabet size and any
+\(n\) where this type is defined; it gives only a necessary
+exclusion.
+
+\subsubsection{Triangle early-pair obstruction at codimension
+three}\label{triangle-early-pair-obstruction-at-codimension-three}
+
+\textbf{Claim.} For \(n\ge 6\), a strongly connected synchronizing
+automaton with an (\(n\)-3)-subset of shortest compression length ten
+cannot have
+
+\begin{verbatim}
+P1={01}, P2=\{01,02\}, P3=\{01,02,12\}.
+\end{verbatim}
+
+The alphabet is arbitrary and finite; reachability of the subset is not
+assumed. Throughout \(C=\{0,1,2\}\). \(A\) hole set covers \(P_{3}\)
+exactly when it is \(C\) or is \{\(i\),\(j\),\(x\)\}, with
+\{\(i\),\(j\)\} a core pair and \(x\) outside \(C\). Every image
+reached within six letters must have such holes, else a \(P_{3}\)
+word compresses the original subset within nine letters.
+
+The distinct images reached within \(i\) letters grow strictly at each
+step until a compressed image is included. \(A\) plateau would be
+invariant under every letter and contradict synchronization. Thus the
+assumptions imply at least \(i\)+1 distinct images within \(i\) letters
+for 0\textless=\(i\le 9\).
+
+\paragraph{Letter structure}\label{letter-structure}
+
+The credited short-pair refinement forces every letter to be a
+permutation or a rank-(\(n\)-1) map with common kernel 01. Inverse
+pairs of 01 lie in \(P_{2}\); inverse pairs of 02 lie in \(P_{3}\).
+\(A\) permutation therefore preserves \(C\). \(A\) singular letter has
+missing output 0 or 1. If it omits 1, inverse pairs of 02 force it to
+map \(C\) onto \{0,2\}. If it omits 0, write its kernel image
+\(c=f\)(0)=\(f(1)\) and its other core image \(t=f\)(2), with \(c\ne t\)
+and c,\(t\ne 0\).
+
+Some permutation \(g\) satisfies \(g\)\^{}\{-1\}(01)=02, since singular
+letters have no two-point preimages of 01. In particular \(g(02)=01\)
+and \(g\) preserves \(C\) and its complement. Strong connectivity
+requires a singular letter that does not preserve \(C\): otherwise
+every letter preserves this proper set. Such a letter omits 0. Its
+possibilities are:
+
+\begin{itemize}
+\tightlist
+\item
+  \(A\): c in \{1,2\}, \(t\) outside \(C\);
+\item
+  \(B_{1}\): c outside \(C\), \(t=1\);
+\item
+  \(B_{2}\): c outside \(C\), \(t=2\);
+\item
+  \(C\): c,\(t\) outside \(C\).
+\end{itemize}
+
+\paragraph{\texorpdfstring{Case \(A\): pure
+exclusion}{Case A: pure exclusion}}\label{case-a-pure-exclusion}
+
+For Case \(A\), the domain \(D_f\) of \(P_{3}\)-covering holes whose
+\(f\)-images also cover \(P_{3}\) consists of \(C\), \{0,2,\(v\)\},
+\{1,2,\(v\)\}, and all \{0,1,\(x\)\}, where \(v\) is the unique external
+preimage of the other point in \{1,2\}. Its intersection with
+\(g\)\^{}\{-1\}(\(D_f\)) has at most four elements. Because \(g\) sends
+01 to a different core pair, at most one hole 01\(x\) survives its
+test, namely \(x=g\)\^{}\{-1\}(\(v\)); the other three holes contribute
+at most three. All images reached within four letters must be in that
+intersection, contradicting strict image growth.
+
+\paragraph{\texorpdfstring{Case \(B_{1}\): pure
+exclusion}{Case B\_\{1\}: pure exclusion}}\label{case-b_1-pure-exclusion}
+
+Let \(v\) be the unique external preimage of 2. Then
+
+\begin{verbatim}
+D_f={C,{0,1,v}}
+    union {{0,2,x},{1,2,x}: x outside C}.
+\end{verbatim}
+
+Define \(D=D\)\_\(f\) intersection \(g\)\^{}\{-1\}(\(D_f\)) intersection
+\(f\)\^{}\{-1\}(\(D_f\)). All images reached within four letters lie in
+\(D\): appending \(f\), gf or ff must still cover \(P_{3}\) within six
+letters.
+
+The core pair 02 has at most one external choice in \(D\), because \(g\)
+sends 02 to 01. For pair 12, membership in \(f\)\^{}\{-1\}(\(D_f\))
+forces \(x=v\) or \(f(x)=v\), so there are at most two external choices.
+The pair 01 has at most its single choice \(v\). The hole \(C\) belongs
+to \(f\)\^{}\{-1\}(\(D_f\)) only if \(c=v\). If \(c=v\), there is no
+external preimage of \(v\) (it is the kernel image), so the pair 12 has
+only its choice \(v\). Thus \(|D|\le 4\) in both cases \(c=v\) and
+\(c\ne v\). Strict image growth within four letters gives a
+contradiction.
+
+This argument excludes \(B_{1}\) for every singular letter in any
+putative tight triangle automaton. It is subsequently used as a
+necessary cut.
+
+\paragraph{\texorpdfstring{Case \(B_{2}\): reduction to two four-image
+domains}{Case B\_\{2\}: reduction to two four-image domains}}\label{case-b_2-reduction-to-two-four-image-domains}
+
+Now \(f(2)=2\). Let \(v=f\)\^{}\{-1\}(1) outside \(C\) and let
+\(u=g\)\^{}\{-1\}(\(v\)), also outside \(C\). Again \(D_f\) consists of
+\(C\), \{0,1,\(v\)\}, and all \{0,2,\(x\)\},\{1,2,\(x\)\}. Put
+
+\begin{verbatim}
+D=D_f intersection g^{-1}(D_f)
+      intersection f^{-1}(D_f) intersection (fg)^{-1}(D_f).
+\end{verbatim}
+
+The tests correspond to \(f\),gf,ff,fgf, all of length at most three.
+Every image reached within three letters therefore lies in \(D\).
+
+The following direct restrictions hold:
+
+\begin{itemize}
+\tightlist
+\item
+  \(C\) is in \(D\) only if \(c=u\) (test fgf);
+\item
+  \{0,1,\(v\)\} is in \(D\) only if \(c=v\) (test ff);
+\item
+  core pair 02 has at most external choice \(u\) (test gf); it further
+  requires \(u=v\) or \(f(u)=u\) (test fgf);
+\item
+  core pair 12 has at most external choices \(v\) and
+  \(w=f\)\^{}\{-1\}(\(u\)), where \(w\) is included only if it exists
+  outside \(C\) (test fgf).
+\end{itemize}
+
+If \(c=u\), \(w\) does not exist outside \(C\), since \(u\) is then the
+kernel image. If \(c\ne u\), \(C\) is absent. These restrictions give
+\(|D|\le 4\). Strict growth forces equality and all four domain images
+to be reached within three letters. Equality has only two possibilities:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(c=u\)=\(v\). Then \(D\) is \{012,01\(v\),02\(v\),12\(v\)\}.
+\item
+  \(c=v\)!=\(u\) and \(f(u)=u\). Then \(D\) is
+  \{01\(v\),02\(u\),12\(v\),12\(u\)\}.
+\end{enumerate}
+
+Every letter must send every image in \(D\) to a \(P_{3}\)-covering
+image: each was reached within three letters. In particular the letter
+assumptions \(A\) and \(B_{1}\) are excluded by the pure arguments
+above.
+
+For the equal-parameter \(B_{2}\) domain, the occupied core rows are the
+four singletons of \(C\cup\{v\}\), with a common \(J\). The four
+rows are independent and contain \(R_3\). If \(J\) enters a core
+point under \(f\), every row of \(V_2D_f\) is proportional to the same
+occupied-core singleton row. But \(\dim(V_2D_f)\ge2\), a
+contradiction. Hence \(J\) is invariant, contradicting strong
+connectivity.
+
+For the other \(B_{2}\) domain, relabel \(v=3,u=4\) and write its
+occupied rows \(X_1=J\cup24\), \(X_2=J\cup13\), \(X_3=J\cup04\),
+\(X_4=J\cup03\). These four rows are independent. The sole kernel
+direction of a singular letter is \(k=e_0-e_1=X_4-X_2\). \(A\)
+three-row subspace contains \(k\) exactly when its rows include
+\(X_2,X_4\). If some letter \(f\) sends a point of \(J\) to a
+core point \(z\), the output space \(V_2D_f\) is spanned by at most two
+domain rows containing \(z\). Thus \(f\) is singular, \(\dim V_2=3\),
+and \(R_2\) consists of \(X_2,X_4\) and one further row. At least two
+possible output rows must contain \(z\). Permutations and missing-1
+letters preserve \(012\), hence \(J\) can enter only \(3\) or \(4\)
+under those letters. Missing-0 letters have only one available row at
+\(1\) or \(2\); their rows without \(0\) are \(24,13\), disjoint, so
+every entry is impossible. For a missing-1 letter entry at \(3\)
+permits only \(03\). The only remaining possibility is missing-1 and
+\(z=4\), with outputs \(24,04\). Its kernel image is in \(\{0,2\}\),
+hence \(X_2f=X_4f\). If the third row is \(X_3\), it also contains
+\(0\), so all three outputs coincide. If it is \(X_1\), then
+\(X_1\cup X_4\) excludes \(1\) and \(f\) is injective there, giving
+\(|X_1f\cap X_4f|=|J|\). Equal output rows instead have intersection
+size \(|J|+2\), and distinct rows \(24,04\) have intersection size
+\(|J|+1\). Both alternatives contradict injectivity. Thus \(J\) has no
+entry into the core and is invariant, again impossible.
+
+\paragraph{\texorpdfstring{Case \(C\): a six-image
+domain}{Case C: a six-image domain}}\label{case-c-a-six-image-domain}
+
+Let \(v_1\),\(v_2\) be the distinct external preimages of 1,2. The
+domain \(D_f\) is exactly the six holes formed by one core pair and one
+of \(v_1\),\(v_2\); \(C\) itself is not in \(D_f\). Every image reached
+within five letters lies in \(D_f\), because its \(f\)-image reached
+within six letters must cover \(P_{3}\). Strict growth gives all six
+domain images by depth five. Every letter sends every domain image to
+a \(P_{3}\)-covering image.
+
+The six occupied rows are the triangle-\(C\) low-rank family listed
+above, so the trajectory-rank contradiction excludes this case.
+
+\subsubsection{Path early-type-2 exclusion at codimension
+three}\label{path-early-type-2-exclusion-at-codimension-three}
+
+\textbf{Claim.} For \(n\ge 6\), a strongly connected synchronizing
+automaton cannot have an (\(n\)-3)-set of shortest compression length
+ten and early merging pairs \(P_{1}={01}\), \(P_{2}=\{01,02\}\),
+\(P_{3}=\{01,02,13\}\). The alphabet is arbitrary finite; reachability of
+the set is not needed for this necessary exclusion.
+
+The short-pair refinement and its hypotheses are in Necessary short-pair
+structure for tight compression and Necessary early-pair types for tight
+compression. They force every letter to be a permutation or a
+rank-(\(n\)-1) transformation with common kernel 01. Every inverse pair
+of 01 lies in \(P_{2}\) and every inverse pair of 02 lies in \(P_{3}\).
+Write \(C=\{0,1,2,3\}\); an outside state means a state outside \(C\).
+
+\paragraph{Images, domains and the accounting of
+lengths}\label{images-domains-and-the-accounting-of-lengths}
+
+The three-hole sets covering \(P_{3}\) are exactly the four triples in
+\(C\) and 01\(x\),03\(x\),12\(x\) for outside \(x\). Let \(H\) be this
+family. Every image of the initial set reached within six letters has
+holes in \(H\); otherwise a further word of length at most three
+compresses the initial set within nine letters.
+
+Let \(R_i\) be the distinct images reached within \(i\) letters. Until
+compression occurs this family grows strictly: equality
+\(R_i=R\)\_(\(i\)+1) would make it invariant under every letter, and
+a reset word could not compress any member. Thus
+\(|R_i|\ge i+1\) for \(i\le 9\).
+
+For a finite list \(W\) of test words of maximum length \(L\), let
+D(W) consist of \(H\) in \(H\) for which every test word preserves the
+set size and produces holes again in \(H\). Then \(R_{6-L}\) is
+contained in D(W). Consequently \(|D(W)|\) must be at least 7-\(L\).
+Failure of a test from D(W) gives compression in at most \(L\)+3
+further letters (or already compresses during the test). Hole actions
+below always mean complements of actual images, not preimages of
+subsets.
+
+\paragraph{Compatible letters}\label{compatible-letters}
+
+Every singular letter omits 0. Indeed its missing output must be 0 or 1,
+because otherwise inverse pairs of 01 either are disjoint from 01 or
+contain both 0\(z\) and 1\(z\), incompatible with \(P_{2}\). If it
+omitted 1, inverse pairs of 02 would similarly either be disjoint from
+01 or contain both 0\(z\) and 1\(z\). Neither possibility belongs to
+\(P_{3}\). Write such a letter \(f\) as \(f0=f1\)=c, \(f2=t\),
+\(f3=z\), where c,\(t\),\(z\) are distinct and nonzero.
+
+Permutations fall into three classes, by their specified core rows:
+
+\begin{itemize}
+\tightlist
+\item
+  \(A\): (0,1,2,*) on \(C\);
+\item
+  B: (0,2,1,*) on \(C\);
+\item
+  \(T\): (\emph{,},\emph{,}) with \(T_{0}=1\), \(T_{1}=0\), \(T_{3}=2\).
+\end{itemize}
+
+The free image in B is 3 or outside \(C\); that in \(T\) is \(T_{2}=3\)
+or outside \(C\). Call these closed and mixing respectively. There is
+a B permutation: the new inverse pair 02 of 01 must arise from a
+permutation, and class \(T\) has inverse pair 01 instead. There is also
+a \(T\) permutation: only it has inverse pair 13 of 02. Singular
+letters omit 0, so create neither of those new inverse pairs. The
+classification follows directly by intersecting the inverse pairs of 01
+and 02; their common inverse endpoint is the preimage of 0.
+
+\paragraph{Permutation mixing}\label{permutation-mixing}
+
+Direct hole substitution gives the following domain bounds.
+Juxtaposition of letters is right action, so TB means first \(T\), then
+B.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1765}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1765}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2353}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2353}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1765}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Letters
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Tests \(W\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(L\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Maximum
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Core holes and outside restrictions
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+B mixing, \(T\) mixing & B,\(T\) & 1 & 5 & 012,023; at most one outside
+choice for each of 01,03,12 \\
+B mixing, \(T\) closed & B,TB & 2 & 5 & 023,123;
+01\(v\),03\(v\),12\(u\), where \(v=B^{-1}\)(3), \(u=T^{-1}\)(\(v\)) \\
+B closed, \(T\) mixing & B,\(T\),TT & 2 & 4 & At most three core holes
+and one outside hole, or two core holes and two outside holes \\
+B,\(T\) closed, A mixing & \(A\),B,TA & 2 & 4 & 012,013; at most
+03\(v\) and 12\(T^{-1}(v)\), \(v=A^{-1}\)(3) \\
+\end{longtable}
+
+In the first row \(v=B^{-1}\)(3) fixes the outside choice for 01 and
+03, and \(T^{-1}(3)\) fixes it for 12. The bound five contradicts
+\(|R_{5}|\ge 6\).
+
+In the second row, membership of 01\(v\) further requires \(T(v)=v\).
+Equality five therefore forces \(u=v\), and its domain is exactly
+
+\begin{verbatim}
+D={023,123,01v,03v,12v},  v outside C, T(v)=v.
+\end{verbatim}
+
+If its size is smaller than five, \(|R_{4}|\ge 5\) gives a
+contradiction. The equality case is treated by the five-cycle argument
+below.
+
+For the third row put \(a=T_{2}\) outside \(C\) and \(v=T^{-1}\)(3). If
+\(v=a\), the possible core holes are 012,013,023 and the only outside
+hole is 12\(v\): \(T^{-2}(3)=2\) is in \(C\). If \(v\ne a\), only
+012,013 remain among core holes, and at most 12\(v\),03\(T^{-2}(3)\)
+remain outside. Both give the stated four. In the last row \(A\)
+preserves 012 and sends 3 outside. The B test deletes all 01\(x\); the
+\(A\) and TA tests restrict the other two types to the listed unique
+preimages. These two rows contradict \(|R_{4}|\ge 5\).
+
+The equality domain has the type-2 five-cycle occupied rows listed
+above, so the common-entry argument excludes it. Thus all permutations
+preserve \(C\).
+
+\paragraph{\texorpdfstring{Singular mixing once permutations preserve
+\(C\)}{Singular mixing once permutations preserve C}}\label{singular-mixing-once-permutations-preserve-c}
+
+Choose a closed B and \(T\). Strong connectivity requires a
+singular \(f\) that does not preserve \(C\). Retain \(f0=f1\)=c,
+\(f2=t\), \(f3=z\). Say \(t\) or \(z\) is good when it belongs to
+\{1,3\}. Direct substitution gives:
+
+\begin{longtable}[]{@{}llrr@{}}
+\toprule\noalign{}
+Good images among \(t\),\(z\) & Tests & \(L\) & Domain bound \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+neither & B,\(f\) & 1 & 4 \\
+exactly one & B,\(f\),Tf & 2 & 4 \\
+both & B,fB,TfB & 3 & 4 \\
+\end{longtable}
+
+For the first row B excludes 01\(x\). The holes 023,123 fail \(f\). If c
+is 1 or 3, the two other core holes may remain, but only the other
+member of \{1,3\} has an outside preimage; each of 03\(x\) and 12\(x\)
+has at most that one choice. If c is neither, no core hole remains and
+each outside type has at most two choices. Both counts are at most four.
+
+In the second row \(T\) swaps 012 with 013, so the tests \(f\),Tf retain
+either both of these holes or neither. The holes 023,123 are similarly
+paired. Each outside type has at most the unique outside preimage of the
+other member of \{1,3\}. If all four core holes remain, c must be that
+other member, so this outside preimage does not exist. Thus again the
+count is at most four. The first two rows contradict respectively
+\(|R_{5}|\ge 6\) and \(|R_{4}|\ge 5\).
+
+In the last row \{\(t\),\(z\)\}=\{1,3\}; mixing forces c outside \(C\).
+Let \(v=f^{-1}\)(2), \(u=T^{-1}\)(\(v\)), both outside \(C\). The
+domain has exactly FOUR holes:
+
+\begin{verbatim}
+t=1,z=3: D={023,123,12v,03u};
+t=3,z=1: D={023,123,03v,12u}.
+\end{verbatim}
+
+It is not a two-image domain. Both 023 and 123 have \(f\)-image
+holes 013, which is outside \(D\), so two distinct vertices have exit
+distance one. Every vertex must exit under synchronization. In a
+four-vertex graph with two distinct distance-one vertices, maximum exit
+distance is at most three: a shortest distance-four path would use
+distinct vertices of all four levels, leaving only one vertex at level
+one. The initial vertex is in \(D\). Its exit takes at most three
+letters; a failed defining test takes at most three more, and a
+\(P_{3}\) merge at most three more. Thus compression has length at most
+nine. This excludes the last singular mixing possibility and contradicts
+strong connectivity.
+
+\subsubsection{Path early-type-3 exclusion at codimension
+three}\label{path-early-type-3-exclusion-at-codimension-three}
+
+\textbf{Claim.} For \(n\ge 6\), a strongly connected synchronizing
+automaton cannot have an (\(n\)-3)-set of shortest compression length
+ten and
+
+\begin{verbatim}
+P1={01}, P2=\{01,02\}, P3=\{01,02,23\}.
+\end{verbatim}
+
+The alphabet is arbitrary finite, and reachability of the set is not
+needed. Necessary short-pair structure for tight compression supplies
+the credited short-pair reduction. Let \(C=\{0,1,2,3\}\). Three-hole sets
+covering \(P_{3}\) form the family \(H\) consisting of the four triples
+in \(C\) and 02\(x\),03\(x\),12\(x\) for \(x\) outside \(C\).
+
+As in Path early-type-2 exclusion at codimension three, every image
+reached within six letters has holes in \(H\). Distinct reachable images
+grow strictly until compression, so \(|R_i|\ge i+1\)
+through depth nine. For tests of maximum length \(L\), their common
+\(H\)-preserving domain must contain \(R_{6-L}\), hence have at least
+7-\(L\) vertices. Exiting that domain gives compression after at most
+\(L\)+3 further letters. These length charges always use original
+letters.
+
+\paragraph{Compatible letters}\label{compatible-letters-1}
+
+Every letter is a permutation or a rank-(\(n\)-1) map with
+common kernel 01. Its inverse pairs of 01 belong to \(P_{2}\), and those
+of 02 belong to \(P_{3}\). The permutation templates are:
+
+\begin{verbatim}
+A: (0,1,2,*) on C;
+B: (0,2,1,*) on C;
+T: (1,*,0,2) on C.
+\end{verbatim}
+
+\(A\),B are closed when their last core image is 3; \(T\) is closed when
+\(T_{1}=3\). Otherwise that image is outside \(C\). Singular letters
+either omit 0, with \(f0=f1\)=c, \(f2=t\), \(f3=z\) distinct and
+nonzero, or omit 1 with one of
+
+\begin{verbatim}
+D0: (c,c,0,2),  D2: (c,c,2,0),  c>=3.
+\end{verbatim}
+
+These last letters are closed when \(c=3\), otherwise mixing. To check
+completeness, a singular missing output is 0 or 1 by the
+inverse-pair 01 test. If it omits 1, its kernel image cannot belong to
+02: that would create both 0\(x\) and 1\(x\) as inverse pairs, which
+cannot both lie in \(P_{3}\). The inverse pair of 02 must therefore be
+the disjoint pair 23, giving the two displayed orientations. The
+permutation templates follow by intersecting the inverse pairs of 01 and
+02. Growth from \(P_{1}\) to \(P_{2}\) requires B or \(T\); growth from
+\(P_{2}\) to \(P_{3}\) requires \(T\) or \(D_{0}\) or \(D_{2}\).
+
+\paragraph{\texorpdfstring{A mixing \(T\)
+permutation}{A mixing T permutation}}\label{a-mixing-t-permutation}
+
+Put \(a=T_{1}\) outside \(C\) and \(v=T^{-1}\)(3). Test \(T\) and TT.
+If \(v\ne a\), their common domain is contained in
+\{02\(v\),12\(v\),03\(v\),03\(T^{-1}(v)\)\}, of size at most four,
+contradicting \(|R_{4}|\ge 5\). If \(v=a\), the domain is exactly
+
+\begin{verbatim}
+D={013,123,02v,12v,03v}.
+\end{verbatim}
+
+The occupied core rows are the type-3 five-cycle family listed above.
+The common-entry argument excludes mixing \(T\).
+
+\paragraph{\texorpdfstring{A closed \(T\)
+permutation}{A closed T permutation}}\label{a-closed-t-permutation}
+
+Now \(T\) on \(C\) is (1,3,0,2). Its outside action is a
+permutation. For an additional letter \(g\), let \(D_{2}(T,g)\) be the
+domain preserving \(H\) under all words of length at most two on
+\(T\),\(g\). Direct substitution gives:
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+Mixing \(g\) & Domain is contained in & Definition of \(v\),\(u\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(A\) & 123,03\(v\),12\(u\) & \(v=g^{-1}\)(3), \(u=T^{-1}\)(\(v\)) \\
+B & 012,03\(v\),12\(u\) & same \\
+\(D_{0}\) & 013,03\(u\),12\(v\) & same \\
+\(D_{2}\) & 023,123,12\(u\) & same \\
+\end{longtable}
+
+For \(A\), the tests \(g\),gT,Tg remove respectively core 013,023,012;
+for B they remove 023,013,123. Their outside constraints require
+\(gx=3\) for 03\(x\) and \(g(Tx)=3\) for 12\(x\). In the \(D_{0}\) case
+gg removes 023,123 and \(g\) removes 012; its 013 survives only if
+\(g(g0)=3\), equivalently \(g0=v\), while the outside restrictions give
+the displayed unique preimages. In \(D_{2}\), \(g\) removes 013, Tg
+removes 012, and gg removes every possible 03\(x\). These observations
+verify all four rows. Every domain has size at most three, contradicting
+\(|R_{4}|\ge 5\). Thus every permutation and every missing-1 letter
+preserves \(C\). Strong connectivity requires a mixing missing-0
+letter \(f\) with core images c,\(t\),\(z\).
+
+Call a core output good if it is 2 or 3. If at most one of
+c,\(t\),\(z\) is good, \(D_{2}(T,f)\) has at most four vertices. With
+none good there are no core holes, and each outside type 03\(x\),12\(x\)
+has at most the two outside preimages of 2,3. With only c good, there is
+at most core 012 and one outside choice for each type. With only \(t\)
+good, core holes are among 023,123, with at most
+03\(v\),12\(T^{-1}(v)\); with only \(z\) good they are among 013,123,
+with at most 12\(v\),03\(T^{-1}(v)\). Here \(v\) is the outside preimage
+of the other good output. These counts are at most four.
+
+If c and one of \(t\),\(z\) are the two good outputs, the remaining core
+image is outside \(C\) (otherwise \(f\) is not mixing). All outside
+holes are removed by \(f\) and Tf. At least one core hole is removed by
+fT: if \(c=2\) it is 013 when \(z\) is outside, or 012 when \(t\) is
+outside; if \(c=3\) the holes 023,123 are removed. The domain then has
+size at most three.
+
+It remains that c is outside and \{\(t\),\(z\)\}=\{2,3\}. Set
+\(v=f^{-1}\)(1) and \(u=T^{-1}\)(\(v\)), both outside \(C\). Compute
+\(D_{3}(T,f)\), the domain preserving \(H\) under all words of length at
+most three:
+
+\begin{verbatim}
+t=2,z=3: D3={013,123,03u};
+t=3,z=2: D3={023,123,03v}, plus 12u iff f(u)=v.
+\end{verbatim}
+
+For completeness the two-step domains before the last tests are
+
+\begin{verbatim}
+t=2,z=3: {013,023,123,12v} union {03x: x outside C};
+t=3,z=2: {012,023,123,03v} union {12x: x outside C}.
+\end{verbatim}
+
+Requiring their \(T\)- and \(f\)-successors to remain in those domains
+gives the displayed \(D_{3}\) sets directly. Their sizes must be at
+least four because \(|R_{3}|\ge 4\). Only \(t=3\),\(z=2\) and \(f(u)=v\)
+survive. Since \(f(v)=1\), \(u\ne v\). Relabel \(u=4\),\(v=5\) and order
+the remaining domain as
+
+\begin{verbatim}
+D=\{023,123,124,035\}.
+\end{verbatim}
+
+Here \(T=(1,3,0,2,5,\ldots)\) and \(f=(c,c,3,2,5,1,\ldots)\), with
+distinct unspecified outputs and \(c\notin\{0,1,2,3,5\}\). For the holes
+\(023,123,124,035\), respectively, apply \(T,TT,ff,f\). Each yields
+holes \(012\), outside the domain, without intermediate compression. For
+example \(124f=035\) and \(123T=023\). Thus every domain row exits
+within two letters; a failed defining test costs at most three and
+a \(P_3\) merge at most three more, giving compression in at most
+eight letters.
+
+\paragraph{\texorpdfstring{No \(T\)
+permutation}{No T permutation}}\label{no-t-permutation}
+
+There must now be a B permutation and a \(D_{0}\) or \(D_{2}\)
+letter. A closed \(D_{0}\) is impossible even alone: its common
+domain for \(D_{0}\),\(D_{0}D_{0}\) is precisely the four core holes,
+fewer than \(|R_{4}|\ge 5\). A mixing \(D_{0}\) together with B also
+has a two-step domain of size at most four. To see this write
+\(v=D_{0}^{-1}\)(3). The \(D_{0}\) and \(D_{0}D_{0}\) tests leave at
+most core 013, only if \(D_{0}(v)=3\) with \(v=D_{0}\)(0), and outside
+holes 12\(v\),02\(v\),03\(x\) with \(x=v\) or \(x=D_{0}^{-1}\)(\(v\)).
+If B is closed it removes 02\(v\); if core 013 is present,
+\(D_{0}^{-1}(v)\) is not outside, giving at most three vertices. If B is
+mixing, its test forces \(x=B^{-1}\)(3) for 03\(x\) and for 02\(x\).
+There are then at most one core hole and three outside holes. Both
+counts are at most four. Thus no \(D_{0}\) letter exists, and a
+\(D_{2}\) letter is necessary.
+
+If the alphabet consisted solely of \(A\),B permutations and \(D_{2}\)
+letters, the family of holes 12\(x\) (\(x\ne 1\),2, including \(x=0\),3)
+would be invariant. \(A\),B preserve the pair 12. \(A\) \(D_{2}\) letter
+sends 120 to 12c and any other 12\(x\) to 12\(D_{2}(x)\); these are
+again three distinct holes. This invariant family of uncompressed
+(\(n\)-3)-images contradicts synchronization. There is therefore a
+missing-0 letter \(f\).
+
+Choose one \(B=b\), one \(D_{2}=d\) and such an \(f\). Let beta be 1
+when \(b\) is mixing, epsilon be 1 when \(d\) is mixing. In their common
+\(H\)-domain, 02\(x\) has at most the single outside choice
+\(b^{-1}(3)\), available only when \(beta=1\); 03\(x\) has at most the
+outside choice \(d^{-1}(3)\), available only when \(epsilon=1\). Core
+023 is absent if \(beta=1\), and core 013 is absent if \(epsilon=1\).
+Let \(c=f0\)=f1, \(t=f2\), \(z=f3\).
+
+First suppose \(t\) is neither 2 nor 3. If neither c nor \(z\) is good,
+all core holes fail and each outside type 02\(x\),12\(x\) requires fx in
+\{2,3\}; there are at most two 12\(x\) and at most one of each other
+type, totaling four. If only c is good, core holes are among 012,013,
+and all outside types require the unique outside preimage \(v\) of the
+other good output. There are at most three outside holes; if all three
+are present, both \(b\) and \(d\) are mixing and core 013 is absent,
+again totaling at most four. If only \(z\) is good, core holes are among
+013,023,123; the possible 02\(x\),03\(x\) are paid for by the respective
+losses of 023,013, leaving at most three core/outside-extra holes plus
+the one possible 12\(x\). If both c,\(z\) are good, 02\(x\) and 12\(x\)
+are impossible since neither good output has an outside preimage. The
+possible 03\(x\) is paid for by the absence of core 013. In each case
+the one-step domain has size at most four.
+
+Now suppose \(t=2\) or \(t=3\) and use all tests of length at most two
+on \(b\),\(d\),\(f\). Define a two-element output-target set \(V\)
+by
+
+\begin{verbatim}
+t=2: V={1,b^-1(3)};
+t=3: V={2,w}, w=1 if d is closed, w=d^-1(3) if d is mixing.
+\end{verbatim}
+
+The test fb in the first case, or fd in the second, forces fx in \(V\)
+for every allowed outside 12\(x\). Put a={[}c in \(V\){]},
+\(h\)={[}\(z\) in \(V\){]}. The kernel output c and core output \(z\)
+have no outside preimages, so at most 2-a-\(h\) outside 12\(x\)
+survive. The same test requires c in \(V\) for core 012, and \(z\) in
+\(V\) for core 023,123. Hence the core count is at most
+
+\begin{verbatim}
+a + h(2-beta) + (1-epsilon).
+\end{verbatim}
+
+The last term bounds core 013, and the beta term removes 023 under
+mixing B. The other two outside types contribute at most beta+epsilon.
+The total domain size is therefore at most
+
+\begin{verbatim}
+a+h(2-beta)+(1-epsilon)+(2-a-h)+beta+epsilon
+   = 3+h(1-beta)+beta <= 4.
+\end{verbatim}
+
+This also covers the common-kernel issue in fd: when \(d\) is closed,
+preimages of output 3 are 0,1, but \(f\) omits 0, leaving only target 1.
+When \(d\) is mixing the preimage is the unique outside state
+\(d^{-1}(3)\). All targets in \(V\) are distinct and neither equals
+\(t\).
+
+Thus the common two-step domain on \(b\),\(d\),\(f\) has at most four
+images, contradicting \(|R_{4}|\ge 5\). This completes the no-\(T\)
+branch and the claim.
+
+\subsubsection{Disjoint-tail early-type-4 exclusion at codimension
+three}\label{disjoint-tail-early-type-4-exclusion-at-codimension-three}
+
+\textbf{Claim.} For \(n\ge 5\), a synchronizing automaton cannot
+have an (\(n\)-3)-set of shortest compression length ten with
+
+\begin{verbatim}
+P1={01}, P2=\{01,02\}, P3=\{01,02,34\}.
+\end{verbatim}
+
+No alphabet-size, strong-connectivity or image-reachability hypothesis
+is needed for this exclusion. Necessary short-pair structure for tight
+compression gives the credited short-pair refinement. Write
+\(C=\{0,1,2,3,4\}\) and \(G=\{3,4\}\). The three-hole sets covering
+\(P_{3}\) form \(H\): the seven core holes
+
+\begin{verbatim}
+013,014,023,024,034,123,124
+\end{verbatim}
+
+and 03\(x\),04\(x\) for \(x\) outside \(C\). Every image reached within
+six letters must have holes in \(H\). The distinct images reached within
+\(i\) letters grow strictly until compression, giving
+\(|R_i|\ge i+1\) for \(i\le 9\). Equality at a step
+would make all reached uncompressed images invariant under every letter,
+contrary to the existence of a reset word.
+
+\paragraph{All compatible letters}\label{all-compatible-letters}
+
+Every letter is a permutation or a rank-(\(n\)-1) transformation
+with common kernel 01. Inverse pairs of 01 belong to \(P_{2}\) and
+inverse pairs of 02 belong to \(P_{3}\). Permutations have core prefix
+\(A\)=(0,1,2) or B=(0,2,1); they fix 0 and preserve the pair 12. An
+inverse pair 34 of 02 cannot occur in a permutation: its inverse
+pair of 01 is 01 or 02 and would be disjoint from 34, whereas the target
+pairs intersect at 0.
+
+\(A\) singular letter omits 0 or 1, by the inverse-pair 01 test. If it
+omits 1, its kernel image cannot be 0 or 2: that would produce both
+0\(x\) and 1\(x\) as inverse pairs of 02, incompatible with \(P_{3}\).
+Its unique inverse pair of 02 must therefore be 34. It has one of the
+core rows
+
+\begin{verbatim}
+(c,c,t,0,2), (c,c,t,2,0),  c,t>=3, c!=t.
+\end{verbatim}
+
+\(A\) singular letter omitting 0 has unrestricted distinct nonzero
+images on the common kernel and the other core states. Some missing-1
+letter is necessary, because only such a letter can add the new pair
+34 to \(P_{3}\). Call it \(d\). Swapping 3 and 4 if needed, write
+\(d\)=(c,c,\(t\),0,2) on \(C\). This relabeling preserves the whole
+early-pair type.
+
+\paragraph{\texorpdfstring{The domain of \(d\) has six
+images}{The domain of d has six images}}\label{the-domain-of-d-has-six-images}
+
+Let \(D\) be the holes in \(H\) whose \(d\)-images also have holes in
+\(H\). The hole 034 always has \(d\)-image holes 012, so is absent. Core
+holes 013,014 survive exactly when c is in \(G\); holes 023,024,123,124
+survive exactly when \(t\) is in \(G\). An outside 03\(x\) or 04\(x\)
+survives exactly when dx is in \(G\). Among the two outputs in \(G\),
+every one not occupied by c or \(t\) has one outside preimage. Thus,
+writing a={[}c in \(G\){]}, \(b\)={[}\(t\) in \(G\){]},
+
+\begin{verbatim}
+|D|=2a+4b+2(2-a-b)=4+2b.
+\end{verbatim}
+
+This exact count also follows by direct complement-of-image
+substitution. For example, 013 has holes \{1,c,0\}, 014 has \{1,c,2\};
+023 and 123 have \{1,\(t\),0\}, 024 and 124 have \{1,\(t\),2\}; outside
+holes have \{1,0,dx\} or \{1,2,dx\}. In each case the remaining
+condition is to meet \(G\).
+
+All images reached within five letters belong to \(D\); hence
+\(|D|\ge 6\). We must have \(t\) in \(G\) and \(|D|=6\), so every
+\(D\)-image is reached within five letters. In particular EVERY letter
+sends EVERY \(D\)-image to an \(H\)-image, because the resulting depth
+is at most six.
+
+There are exactly two domain shapes:
+
+\begin{itemize}
+\tightlist
+\item
+  c in \(G\): c,\(t\) are the two members of \(G\) and
+  \(D_closed=\{013,014,023,024,123,124\}\);
+\item
+  c outside \(C\): let \(v\) be the unique outside preimage under \(d\)
+  of the other member of \(G\). Then
+  \(D_mixing={023,024,123,124,03v,04v}\).
+\end{itemize}
+
+The second shape requires \(n\ge 6\). The first is already meaningful at
+\(n=5\).
+
+Both occupied row families are the type-4 low-rank families listed
+above; their rank is at most four, contradicting the trajectory rank.
+
+\subsubsection{Crossing early-type-5
+exclusion}\label{crossing-early-type-5-exclusion}
+
+This is one elementary case of Uniform codimension-three compression
+bound.
+
+\textbf{Claim.} No automaton can have exactly
+
+\begin{verbatim}
+P1={01}, P2=\{01,23\}, P3=\{01,23,02\},
+\end{verbatim}
+
+where \(P_h\) denotes the unordered distinct-state pairs merging in at
+most \(h\) letters. No strong-connectivity, synchronization,
+alphabet-size or reachable-image assumption is needed. The labels
+require \(n\ge 4\).
+
+The single pair in \(P_{1}\) forces each letter to be a permutation
+or a rank-(\(n\)-1) map with common kernel 01. Pair 02 is new at
+level three, so some letter \(f\) must send it to a distinct pair in
+\(P_{2}\). It cannot send it to 01, since that would put 02 in
+\(P_{2}\). Thus 02\(f=23\) is necessary.
+
+If \(f\) is a permutation, its inverse pair of 01 is either 01 or 23
+by the definition of \(P_{2}\). Its inverse pair of 23 would have to be
+02. Inverse pairs of the disjoint target pairs 01 and 23 must be
+disjoint, but 02 intersects BOTH possible inverse pairs of 01. This is
+impossible.
+
+If \(f\) is singular, its common kernel is 01. For 02\(f=23\), f0 is an
+endpoint of 23 and f2 the other endpoint. Since \(f1=f0\), also
+12\(f=23\). This would put the additional pair 12 in \(P_{3}\),
+contradicting the three specified pairs. The two cases exhaust every
+letter and prove the claim.
+
+\subsubsection{Kernel-tail early-type-6 exclusion at codimension
+three}\label{kernel-tail-early-type-6-exclusion-at-codimension-three}
+
+\textbf{Claim.} For \(n\ge 6\), a strongly connected synchronizing
+automaton cannot have an (\(n\)-3)-set of shortest compression length
+ten with
+
+\begin{verbatim}
+P1={01}, P2=\{01,23\}, P3=\{01,23,04\}.
+\end{verbatim}
+
+The alphabet is arbitrary finite and the set need not be reachable. The
+credited short-pair refinement is in Necessary short-pair structure for
+tight compression. Let \(C=\{0,1,2,3,4\}\). The three-hole \(P_{3}\)
+covers form \(H\): core holes 012,013,023,024,034,124,134 and outside
+holes 02\(x\),03\(x\), \(x\) outside \(C\). Every image reached within
+six letters has holes in \(H\). The distinct images grow strictly until
+compression (a plateau would be invariant under all letters and
+contradict synchronization), hence \(|R_i|\ge i+1\) for
+\(i\le 9\). Tests of maximum length \(L\) have a common
+\(H\)-preserving domain containing \(R_{6-L}\). If a word leaves
+that domain, a failed test and a \(P_{3}\) word compress in at
+most \(L\)+3 additional letters.
+
+\paragraph{Complete letter
+classification}\label{complete-letter-classification}
+
+Each letter is a permutation or a rank-(\(n\)-1) map with common
+kernel 01. Its inverse pairs of 01 belong to \{01,23\}, and inverse
+pairs of 23 belong to \{01,23,04\}. Permutations have precisely three
+forms:
+
+\begin{itemize}
+\tightlist
+\item
+  \(A\): preserve each pair 01,23;
+\item
+  B: exchange those two pairs;
+\item
+  \(T\): map 23 onto 01 and 04 onto 23, with the image of state 1
+  outside \{0,1,2,3\}.
+\end{itemize}
+
+The first two have core images in \{0,1,2,3\} and arbitrary outside
+images. In \(T\) the four images of 0,2,3,4 are all of \{0,1,2,3\}.
+
+\(A\) singular letter cannot have its kernel image in a target pair
+whose inverse pairs are required: that would give both 0\(x\) and
+1\(x\), which cannot both lie in either allowed early-pair family. If
+its missing output is outside 01, it must map 23 onto 01. Its missing
+output must then be 2 or 3, since otherwise its inverse pair of 23 could
+be none of the permitted pairs. If it omits 0 or 1, it must map 23 onto
+23. Thus all singular letters have one of these forms:
+
+\begin{itemize}
+\tightlist
+\item
+  \(U\): missing \(e\) in \{0,1\}, map 23 onto 23, kernel image c in
+  \{1-\(e\)\} union \{4,5,\ldots\};
+\item
+  \(V\): missing \(e\) in \{2,3\}, map 23 onto 01, kernel image c in
+  \{5-\(e\)\} union \{4,5,\ldots\}.
+\end{itemize}
+
+Their images of other states are distinct and omit \(e\) and c.~Only
+\(T\) can create the new pair 04, so some \(T\) permutation is
+necessary. Swapping labels 2 and 3, the chosen \(T\) has one of the
+normalized core rows
+
+\begin{verbatim}
+I:  (2,a,0,1,3),   II: (2,a,1,0,3),   a>=4.
+\end{verbatim}
+
+Call it closed when \(a=4\) and mixing otherwise. The swap fixes 0,1,4
+and preserves the ordered early-pair type.
+
+\paragraph{Orientation II}\label{orientation-ii}
+
+If \(a\ge 5\), put \(v=T^{-1}\)(4). The common domain for \(T\) and TT
+is exactly
+
+\begin{verbatim}
+a=v:  \{013,034,134\};
+a!=v: {034,134,03w},  w=T^-1(v) outside C.
+\end{verbatim}
+
+For example the one-step domain is 013,023,034,134,02\(v\) and all
+outside 03\(x\). The second test removes 023 and 02\(v\); it retains 013
+only if \(a=v\), and an outside 03\(x\) only if \(Tx=v\). Since
+\(T_{1}=a\), exactly one of these last possibilities exists. The domain
+has size three, fewer than \(|R_{4}|\ge 5\), so mixing orientation II is
+impossible.
+
+If \(a=4\), the \(T\),TT domain is precisely the five core holes
+
+\begin{verbatim}
+D=\{012,023,034,124,134\}.
+\end{verbatim}
+
+Its occupied rows form the type-6 five-cycle listed above. The
+common-entry argument excludes closed orientation II.
+
+\paragraph{\texorpdfstring{Orientation \(I\) requires a
+breaker}{Orientation I requires a breaker}}\label{orientation-i-requires-a-breaker}
+
+Let \(T\)=(2,a,0,1,3) on \(C\), put \(v=T^{-1}\)(4), and
+sigma={[}\(a=v\){]}. The domain for \(T\),TT is exactly
+
+\begin{verbatim}
+closed: \{012,013,023,024,134\} union {02x: x outside C};
+mixing: {012,023,024,03v} union {02x: x outside C},
+        with 124 added only when sigma=1.
+\end{verbatim}
+
+In the closed case \(v=1\). In the mixing case \(v\) is outside \(C\).
+These identities follow by applying \(T\) to each of the seven core
+holes and to 02\(x\),03\(x\) separately; the one-step mixing domain is
+\{012,023,024,124,03\(v\)\} union \{02\(x\): \(x\) outside \(C\)\}.
+
+For a permutation \(g\), call it a keeper when
+\{g0,g2\}=\{0,2\}. For a singular \(g\) with missing output \(e\),
+call it a keeper when \{\(e\),g2\}=\{0,2\}. If every letter were
+a keeper, the family of holes 02\(x\) for all \(x\ne 0\),2
+(including \(x=1\),3,4) would be invariant. For singular letters, the
+hole 012 maps to 02c, and every other 02\(x\) maps to 02gx; each is
+again three distinct holes. Thus these (\(n\)-3)-images could never
+compress, contradicting synchronization. There is a breaker \(g\).
+
+All orientation-II letters have already been excluded, so the complete
+breaker list is as follows. Below \(h\) denotes g4, except in the \(T\)
+row where \(h=g1\); each free output obeys the rank and missing-output
+rules.
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+Name & Core row or conditions \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(A_{03}\) & (0,1,3,2,\(h\)) \\
+\(B_{03}\) & (3,2,0,1,\(h\)) \\
+\(A_bad\) & (1,0,\(k\),\(l\),\(h\)), \{\(k\),\(l\)\}=\{2,3\} \\
+\(B_bad\) & (\(k\),\(l\),1,0,\(h\)), \{\(k\),\(l\)\}=\{2,3\} \\
+\(T_other\) & (3,\(h\),1,0,2), \(h\ge 4\) \\
+\(U_{03}\) & (c,c,3,2,\(h\)), missing 0 \\
+\(V_{03}\) & (c,c,0,1,\(h\)), missing 3 \\
+\(U_bad\) & \(U\) missing 1 \\
+\(V_bad\) & \(V\) with \(g2=1\), \(g3=0\) \\
+\end{longtable}
+
+This is exhaustive from the \(A\),B,\(T\),\(U\),\(V\) classification by
+checking whether the carrier of the holes 02\(x\) is 02,03,12 or 13.
+Carrier 02 is precisely the keeper case. It is important that carrier 12
+or 13 also covers \(P_{3}\) when its third point is 0, as well as when
+it is 4; that boundary is retained in the counts below.
+
+\paragraph{Uniform two-step counting
+ledger}\label{uniform-two-step-counting-ledger}
+
+Let D(T,g) be the \(H\)-domain of ALL words of length at most two on
+\(T\),\(g\). Its core holes are among the displayed \(T\),TT core holes.
+Its outside holes are only 02\(x\) and, in the mixing case, at most the
+single 03\(v\). Write \(C_i\)={[}\(c=i\){]}, \(H_i\)={[}\(h=i\){]}. Each
+triple in the tables bounds
+
+\begin{verbatim}
+(number of core holes, number of outside 02x, number of outside 03x).
+\end{verbatim}
+
+The closed-\(I\) ledger is:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Breaker
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Component bounds
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(A_{03}\) & (4,0,0) \\
+\(B_{03}\) & (3,0,0) \\
+\(A_bad\), \(B_bad\) & (3+\(H_{4}\),1-\(H_{4}\),0) \\
+\(T_other\) & (2+\(H_{4}\),1-\(H_{4}\),0) \\
+\(U_{03}\) & (3+\(C_{1}\)+\(H_{1}\),1-\(C_{1}\)-\(H_{1}\),0) \\
+\(V_{03}\) &
+(1+\(C_{2}\)+\(H_{2}\)+\(H_{4}\),1-\(C_{2}\)-\(H_{2}\),0) \\
+\(U_bad\) & (2\(C\)+2\(H\),2-\(C\)-\(H\),0), \(C=C_{0}\)+\(C_{4}\),
+\(H=H_{0}\)+\(H_{4}\) \\
+\(V_bad\) & (3+\(C_{4}\)+\(H_{4}\),1-\(C_{4}\)-\(H_{4}\),0) \\
+\end{longtable}
+
+Every sum is at most four. For \(U_bad\), c,\(h\) are distinct so
+\(C\),\(H\) are each indicators, giving sum 2+\(C\)+\(H\le 4\).
+Negative-looking terms are nonnegative under the distinct-output
+conditions.
+
+The mixing-\(I\) ledger is:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Breaker
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Component bounds
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(A_{03}\) & (1+Hv+sigma \(H_{4}\),1-Hv,\(H_{4}\)) \\
+\(B_{03}\) & (1+Hv+sigma,1-Hv,0) \\
+\(A_bad\) & (1+\(H_{4}\)+sigma(1-\(H_{4}\)),1-\(H_{4}\),1-\(H_{4}\)) \\
+\(B_bad\) & (1+\(H_{4}\)(1+sigma),1-\(H_{4}\),\(H_{4}\)) \\
+\(T_other\) & (sigma \(H_{4}\),1-\(H_{4}\),\(H_{4}\)) \\
+\(U_{03}\) & (1+Cv+Hv(1+sigma),1-Cv-Hv,1) \\
+\(V_{03}\) & (\(C\)+\(H\)(1+sigma),2-\(C\)-\(H\),0), \(C=C_{2}\)+Cv,
+\(H=H_{2}\)+Hv \\
+\(U_bad\) & (\(C\)+\(H\)(1+sigma),2-\(C\)-\(H\),1),
+\(C=C_{0}\)+\(C_{4}\), \(H=H_{0}\)+\(H_{4}\) \\
+\(V_bad\) &
+(1+\(C_{4}\)+\(H_{4}\)(1+sigma),1-\(C_{4}\)-\(H_{4}\),\(H_{4}\)) \\
+\end{longtable}
+
+Here \(v\ge 5\), so the indicator sums in the \(V_{03}\) row are again
+indicators. Every row sums to at most four (some have the smaller upper
+three).
+
+To verify the ledger algebraically, apply the hole formula given below
+to the core holes and the two outside types. The restrictions on outside
+02\(x\) reduce to unique preimages of these target sets:
+
+\begin{itemize}
+\tightlist
+\item
+  permutation bad rows: \{4\};
+\item
+  \(U_{03}\): \{\(v\)\}, with \(v=1\) in the closed case;
+\item
+  \(V_{03}\): \{2,\(v\)\}, with target 1 already having core preimage 3
+  when closed;
+\item
+  \(U_bad\): \{0,4\};
+\item
+  \(V_bad\): \{4\}, since output 0 already has core preimage 3.
+\end{itemize}
+
+Every target occupied by kernel image c or core image \(h\) has no
+outside preimage. This gives all the negative terms in the second
+column. For permutation \(A_{03}\)/\(B_{03}\) the targets of gT on
+02\(x\) are \{2,\(v\)\}, but output 2 already has a core preimage,
+leaving only \(v\); when closed, output \(v=1\) also has a core
+preimage, leaving none.
+
+Core counts are obtained by substituting the five/four candidate core
+holes of \(T\),TT into \(g\),gT,Tg,gg. For illustration, \(U_{03}\) has
+three possible unconditional closed core holes 013,023,134 and the two
+extra holes 012,024 only if \(c=1\),\(h=1\). In the mixing case it has
+unconditional 023, 012 only if \(c=v\), and 024 (also 124 if
+\(sigma=1\)) only if \(h=v\).
+
+For \(V_{03}\) the closed hole 013 cannot survive: its first image would
+require \(c=4\) and be 134, but its second image then requires \(h=4\),
+contradicting distinct outputs. The remaining core candidates are
+023,012 if \(c=2\), 024 if \(h=2\) and 134 if \(h=4\). In the mixing
+case 023 fails gT, and 03\(v\) also fails gT: its possible first images
+013 or 134 both fail \(T\). The displayed \(C\),\(H\) restrictions on
+012,024,124 then give its table row. The bad \(U\) core counts simply
+test whether c,\(h\) belong to \{0,4\}; the bad \(V\) rows have three
+unconditional possible closed core holes, with 012/024 requiring
+\(c=4\),\(h=4\). In the mixing bad \(V\) case only 023 is unconditional,
+012 requires \(c=4\), and 024, the optional 124 and 03\(v\) require
+\(h=4\). The permutation rows follow from their explicit core templates
+in exactly the same substitution.
+
+The hole formula is: a permutation sends holes \(J\) to \(g(J)\);
+a singular common-kernel letter missing \(e\) sends \(J\) to
+\{\(e\)\} union \(g(J)\) if \(J\) contains both 0,1, and to \{\(e\)\}
+union \(g\)(\(J\) minus \{0,1\}) otherwise. In particular it correctly
+includes the kernel image when BOTH kernel points are holes. This proves
+the entire finite ledger for arbitrary \(n\), without extrapolation from
+numerical instances.
+
+It follows that \(|D(T,g)|\le4\). But every image
+reached within four letters belongs to it, whereas \(|R_{4}|\ge 5\).
+This contradiction excludes orientation \(I\) and completes the claim.
+
+\subsubsection{Second-pair-tail early-type-7 exclusion at codimension
+three}\label{second-pair-tail-early-type-7-exclusion-at-codimension-three}
+
+\textbf{Claim.} For \(n\ge 6\), no strongly connected synchronizing
+automaton has an (\(n\)-3)-set whose shortest compression length is ten
+and whose early pairs are
+
+\begin{verbatim}
+P1={01}, P2=\{01,23\}, P3=\{01,23,24\}.
+\end{verbatim}
+
+The alphabet is arbitrary finite; reachability of the set is
+unnecessary. This claim alone is one case of the complete nine-type
+exclusion, rather than an asserted all-parameter avoid-or-compress
+formula.
+
+Put \(C=\{0,1,2,3,4\}\). The three-hole covers \(H\) of \(P_{3}\) are the
+seven core holes 012, 023, 024, 123, 124, 034, 134 and outside holes
+02\(x\),12\(x\), \(x\) outside \(C\). Every image reached in at most six
+letters has holes in \(H\): otherwise a pair in \(P_{3}\) is still
+in the image and a word of length at most three compresses it before
+ten. The reached images \(R_i\) grow strictly until compression, since
+a plateau is invariant under every letter and contradicts
+synchronization. Thus \(|R_i|\ge i+1\) for \(i\le 9\).
+
+For tests of maximum length \(L\), their common domain of holes that
+stay in \(H\) contains \(R_{6-L}\), and consequently has at least
+7-\(L\) members. Upon leaving this domain, one failed test followed by
+a merging word of length at most three gives compression within
+\(L\)+3 additional letters.
+
+\paragraph{Complete letter
+classification}\label{complete-letter-classification-1}
+
+Every letter is a permutation or a rank-(\(n\)-1) map with
+common kernel 01. Inverse pairs of 01 must be 01 or 23; inverse pairs of
+23 must be 01,23, or 24. The compatible permutation core rows are
+precisely
+
+\begin{verbatim}
+A: (k0,k1,l0,l1,h),
+B: (l0,l1,k0,k1,h),
+T: (k0,k1,l0,h,l1),
+\end{verbatim}
+
+where (k0,k1) orders 0,1, (l0,l1) orders 2,3, and \(h\ge 4\). Their
+outside outputs are distinct and avoid the four specified outputs.
+
+For a singular letter, write \(e\) for its omitted output and
+\(c=f0\)=f1. If \(e\) is outside 01, the inverse pair of 01 must be 23.
+Its kernel image cannot lie in 01, since then both 0\(z\) and 1\(z\)
+would be inverse pairs. If \(e\) were also outside 23, its inverse pair
+of 23 would be disjoint from 23, hence could only be 01. That would put
+c in 23 and give two forbidden inverse pairs there. Therefore \(e\) is
+in 23. If \(e\) is in 01, the inverse pair of 23 is 23 or 24, with c
+outside 23. This gives precisely
+
+\begin{verbatim}
+U_A: missing e=0 or 1, (c,c,l0,l1,h),
+U_T: missing e=0 or 1, (c,c,l0,h,l1),
+V:   missing e=2 or 3, (c,c,k0,k1,h).
+\end{verbatim}
+
+For \(U\), c is 1-\(e\) or at least 4; for \(V\), c is 5-\(e\) or at
+least 4. The other images are distinct and avoid \(e\),c and the
+specified pair. These conditions also suffice for compatibility.
+Identity letters impose no additional restrictions; omitting them
+from full-row pools does not affect any domain or impossibility
+statement.
+
+\paragraph{The seven forced domains}\label{the-seven-forced-domains}
+
+The following are hole sets, not occupied core sets. An outside point
+\(v\) or \(w\) is relabeled 5.
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+name & hole domain & contains \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(D_{6}closed\) & 023,123,024,124,034,134 & \(R_{5}\) \\
+\(D_{6}Tmix\) & 024,124,034,134,02\(v\),12\(v\) & \(R_{5}\) \\
+\(D_{6}Amix\) & 023,123,034,134,02\(v\),12\(v\) & \(R_{5}\) \\
+\(C_A\) & 012,024,124,034,134 & \(R_{4}\) \\
+\(C_T\) & 012,023,124,034,134 & \(R_{4}\) \\
+\(C_V\) & 023,024,124,034,134 & \(R_{4}\) \\
+\(D_w\) & 024,124,034,134,02\(w\) & \(R_{4}\) \\
+\end{longtable}
+
+Taking complements in the named support gives the occupied families
+above. All except \(C_T\) are excluded by rank at most four; \(C_T\) is
+excluded by the five-cycle common-entry argument. The following
+substitutions derive the domains exhaustively.
+
+\paragraph{Eliminate all letters taking 2 to
+3}\label{eliminate-all-letters-taking-2-to-3}
+
+For a permutation \(f\) with \(f2=3\), its free core output is f4 in
+form \(A\), or f3 in form \(T\). If that output is 4, the one-step
+\(H\)-preserving domain is \(D_{6}closed\). Otherwise \(v=f^{-1}\)(4)
+is outside \(C\), and the domain is \(D_{6}Amix\) or \(D_{6}Tmix\)
+respectively. These are checked by mapping the seven core holes and the
+families 02\(x\),12\(x\) directly.
+
+For a singular \(U\) row with \(f2=3\) the domain size is
+6-{[}\(c=4\){]}. To see the count, let \(z\) be its free core output.
+Hole 012 survives exactly when \(c=4\); the two holes 023,123 (form
+\(A\)) or 024,124 (form \(T\)) survive exactly when \(z=4\). The four
+other core holes survive. An outside preimage of 4 supplies two outside
+holes unless 4 is already c or \(z\). Since c and \(z\) are distinct,
+the count is
+
+\begin{verbatim}
+[c=4]+2[z=4]+4+2(1-[c=4]-[z=4]) = 6-[c=4].
+\end{verbatim}
+
+If \(c=4\), size five contradicts \(|R_{5}|\ge 6\). Otherwise it is
+precisely \(D_{6}closed\) when \(z=4\), or \(D_{6}Amix\)/\(D_{6}Tmix\)
+with \(v=f^{-1}\)(4) outside \(C\). The six-member low-rank families
+therefore exclude every letter with \(f2=3\).
+
+\paragraph{\texorpdfstring{Eliminate \(V\) rows omitting
+3}{Eliminate V rows omitting 3}}\label{eliminate-v-rows-omitting-3}
+
+For \(V\) missing 3 put \(A\)={[}c in \{2,4\}{]}, B={[}\(h\) in
+\{2,4\}{]}. Its one-step domain has size 4-\(A\)+2B: hole 012
+contributes \(A\), holes 023,123 fail, the other four core holes
+contribute 4B, and the outside holes contribute 2(2-\(A\)-B). If \(B=0\)
+it has at most four members. If \(B=1\) and \(A=1\) it has five. The
+only remaining case has six members, \(c\ge 5\) and \(h\) in \{2,4\},
+and is \(D_{6}Tmix\) with \(v\) the outside preimage of the other member
+of \{2,4\}. It too is excluded.
+
+\paragraph{Eliminate B four-cycles}\label{eliminate-b-four-cycles}
+
+After the preceding cuts a B permutation has \(B^{2}(2)=2\) or 3. In
+the latter case a simultaneous exchange of labels 0,1 normalizes it
+to
+
+\begin{verbatim}
+b=(2,3,1,0,a), a>=4.
+\end{verbatim}
+
+For \(a=4\) the \(b\),bb domain is \(C_V\), and its low-rank family
+excludes this case. For \(a\ge 5\) put \(v=b^{-1}\)(4). The domain is
+
+\begin{verbatim}
+a=v:  \{023,034,024\};
+a!=v: {023,034,02w}, w=b^-1(v) outside C.
+\end{verbatim}
+
+It has only three members, contradicting \(|R_{4}|\ge 5\).
+
+\paragraph{\texorpdfstring{\(A\) B two-cycle and a breaker are
+necessary}{A B two-cycle and a breaker are necessary}}\label{a-b-two-cycle-and-a-breaker-are-necessary}
+
+If no B permutation remains, every letter preserves the family \(I\) of
+three-hole sets containing 2 and at least one of 0,1. The remaining
+\(A\),\(T\) permutations fix 2 and preserve 01; \(U\) maps the two
+carriers to \{\(e\),2\}; \(V\) omitting 2 maps them to \{2,f2\}. The
+both-kernel-endpoints case also preserves \(I\). Images with these holes
+never compress, contrary to synchronization. Choose a B two-cycle
+and normalize it by exchanging 0,1 to
+
+\begin{verbatim}
+b=(2,3,0,1,a), a>=4.
+\end{verbatim}
+
+Call a permutation a keeper if \{g0,g2\}=\{0,2\}, and a
+singular row a keeper if \{\(e\),g2\}=\{0,2\}. Every keeper
+preserves the family \(F\) of all holes 02\(x\), \(x\ne 0\),2. Thus
+synchronization requires a breaker. After the preceding cuts the
+exhaustive breaker forms are
+
+\begin{verbatim}
+P_A: (1,0,2,3,h),       P_T: (1,0,2,h,3),
+P_B: (3,2,1,0,h),
+U_A: missing 1, (c,c,2,3,h),
+U_T: missing 1, (c,c,2,h,3),
+V:   missing 2, (c,c,1,0,h).
+\end{verbatim}
+
+Here \(h\ge 4\) for permutations; c is 0 or \(\ge4\) for \(U\) and
+3 or \(\ge4\) for \(V\). In singular rows \(h\) avoids the missing
+output, c, and the specified pair.
+
+\paragraph{Mixing B two-cycles}\label{mixing-b-two-cycles}
+
+If \(a\ge 5\) put \(v=b^{-1}\)(4). Directly testing \(b\) and bb gives
+the domain
+
+\begin{verbatim}
+F union {12v} union ({034} if a=v, otherwise empty).
+\end{verbatim}
+
+In particular it has at most two members outside \(F\). For a
+breaker \(g\), write Nc for the count of core holes in D(b,g) intersect
+\(F\), and No for the count of its outside holes. The following upper
+bounds follow by mapping the carriers of 02\(x\) under \(g\) and then
+under \(b\). For \(U\) set \(C\)={[}c in \{0,\(v\)\}{]}, \(H\)={[}\(h\)
+in \{0,\(v\)\}{]}; for \(V\) set \(C\)={[}\(c=v\){]},
+\(H\)={[}\(h=v\){]}; for \(P_A\),\(P_T\) set \(H\)={[}\(h=v\){]}.
+
+\begin{longtable}[]{@{}lrr@{}}
+\toprule\noalign{}
+breaker & Nc & No \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(P_A\),\(P_T\) & 1+\(H\) & 1-\(H\) \\
+\(P_B\) & 0 & 1-{[}\(h=4\){]} \\
+\(U_A\),\(U_T\) & \(C\)+\(H\) & 2-\(C\)-\(H\) \\
+\(V\) & 1+\(C\)+\(H\) & 1-\(C\)-\(H\) \\
+\end{longtable}
+
+For example \(U\) converts the carriers to 12; after \(b\) these are 03.
+The third output must be 0 or \(v\) so that its \(b\)-image is 2 or 4.
+The outputs already occupied by c or \(h\) remove precisely \(C\)+\(H\)
+available outside preimages. The analogous \(V\) carrier is 12 with
+output 0 already on input 3, leaving only the target \(v\). The bounds
+sum to at most two; adding the at most two non-\(F\) members gives
+\(|D(b,g)|\le4\), contradicting \(|R_{4}|\ge 5\).
+Hence \(a=4\).
+
+\paragraph{Closed B two-cycles}\label{closed-b-two-cycles}
+
+For \(a=4\) the \(b\),bb domain is \(F\) union \{124,034,134\}. Count
+core and outside 02\(x\) members of D(b,g) as Nc,No.~For \(U\) put
+\(C\)={[}c in \{0,4\}{]}, \(H\)={[}\(h\) in \{0,4\}{]},
+\(H_{0}\)={[}\(h=0\){]}, \(H_{4}\)={[}\(h=4\){]}; for \(V\) put
+\(C_{4}\)={[}\(c=4\){]}, \(H_{4}\)={[}\(h=4\){]}.
+
+\begin{longtable}[]{@{}lrr@{}}
+\toprule\noalign{}
+breaker & Nc & No \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(P_A\),\(P_T\) & 1+4\(H_{4}\) & 1-\(H_{4}\) \\
+\(P_B\) & 1+3\(H_{4}\) & 1-\(H_{4}\) \\
+\(U_A\) & \(C\)+2\(H_{0}\)+4\(H_{4}\) & 2-\(C\)-\(H\) \\
+\(U_T\) & \(C\)+\(H_{0}\)+3\(H_{4}\) & 2-\(C\)-\(H\) \\
+\(V\) & 3+\(C_{4}\)+2\(H_{4}\) & 1-\(C_{4}\)-\(H_{4}\) \\
+\end{longtable}
+
+These bounds are obtained by testing the six core holes individually and
+counting outside preimages of the same carrier targets. Their sums are
+at most five; \(P_B\) and \(U_T\) have sums at most four. For \(U\) the
+cases \(h=0\) and \(h=4\) must be distinguished: \(h=0\) does not
+preserve 034,134.
+
+Since \(|R_{4}|\ge 5\), equality is necessary. Testing its core holes
+gives:
+
+\begin{itemize}
+\tightlist
+\item
+  \(P_A\) has \(h=4\) and domain \(C_A\);
+\item
+  \(P_T\) has \(h=4\) and domain \(C_T\);
+\item
+  \(U_A\) has \(h=4\). If \(c=0\) its domain is \(C_A\); otherwise
+  \(c\ge 5\) and its domain is \(D_w\), where \(w=g^{-1}\)(0) is
+  outside \(C\);
+\item
+  \(V\) has \(h=4\) and domain \(C_V\).
+\end{itemize}
+
+All these five-member domains are excluded by the rank and common-entry
+arguments above. This exhausts every alphabet and proves the claim.
+
+\subsubsection*{Type 8: three disjoint pairs}
+
+Here every safe image selects one vertex from each of \(01,23,45\) and
+contains every state outside those six. The three block-coordinate sums
+are equal, and each outside coordinate equals their common sum. The row
+space has dimension at most four and contains no reset row \(|S|e_q\)
+(also when \(n=6\) and the outside set is empty). The reset-row version
+of the plateau argument thus gives \(\dim V_4\ge5\), whereas \(R_4\)
+lies in this space. This is a contradiction. The nine cases exhaust
+the possible early pair layers, proving
+Lemma\textasciitilde{}\ref{lem:codimension-three}.
+
+\subsection{Graph support and the named-state bound}
+
+For a graph $G$, write $N_G(X)$ for the open neighborhood of $X$,
+$\alpha(G)$ for its independence number, and $\tau(G)=|V(G)|-\alpha(G)$.
+The following graph statements apply to isolated vertices as well.
+
+\begin{lemma}[Near-maximum support]\label{lem:near-support}
+Suppose every vertex of $G$ lies in an independent set of size at least
+$\alpha(G)-d$, where $d\ge0$, and let $t=\tau(G)$.
+The number $N$ of nonisolated vertices satisfies $N\le t(d+2)$
+(the support inequality of Gitler--Valencia~\cite{gitler2010}).
+If $d>0$ and $\delta=t(d+2)-N$, the number of maximum independent
+sets is at most $2^{\lfloor\delta/d\rfloor}$.
 \end{lemma}
 \begin{proof}
-The complement of any independent $(n-m)$-set is a
-vertex cover of size $m$. Its intersection with $K$ is
-a vertex cover; hence at most $m-\tau(G)=1$
-omitted vertex belongs to $J_h$.
-The definition of $E$ makes every row contain $J$.
-Every row is thus specified by a subset of $W$ and a
-common reservoir column. Under an original letter,
-named-state outputs retain their identities, while
-reservoir outputs contribute cardinality, intersection
-and entrance information. Recording all these constraints
-gives a necessary signature for every actual letter.
-The exhaustive support bounds used in the classification
-are $|W|\le10$ for $(m,h,H)=(4,7,9)$ and
-$|W|\le11$ for $(5,9,11)$.
-The bounds are enforced by the row-family generation and
-rank tests in Section~\ref{sec:certificate-contract}.
+Fix a maximum independent set $I$ and put $C=V(G)\setminus I$.
+For each $c\in C$, choose an independent set of size at least
+$|I|-d$ containing $c$, and let $X_c$ be its intersection with $C$.
+Then $|N_I(X_c)|\le|X_c|+d$. For any independent $Y\subseteq C$,
+maximality of $I$ gives $|N_I(Y)|\ge|Y|$.
+If $A$ is a union of previously chosen $X_c$, neighborhood submodularity
+and independence of $A\cap X_c$ give
+\[
+ |N_I(A\cup X_c)|-|A\cup X_c|
+ \le |N_I(A)|-|A|+d.
+\]
+At most $t$ choices cover $C$, so $|N_I(C)|\le t+td$.
+Every vertex of $C$ is nonisolated, and the nonisolated vertices of $I$
+are precisely $N_I(C)$, proving the first assertion.
+
+Every maximum independent set has the unique form
+$(I\setminus N_I(X))\cup X$, where $X\subseteq C$ is independent
+and $|N_I(X)|=|X|$. Let $U$ be the union of these tight exchange sets.
+The same submodularity argument with $d=0$ gives
+$|N_I(U)|-|U|\le0$. Add at most $t-|U|$ of the sets $X_c$ to cover
+$C$. Thus $N-2t\le(t-|U|)d$, or $|U|d\le\delta$.
+The maximum sets are indexed by subsets of $U$.
+\end{proof}
+
+\begin{lemma}[Independent-neighborhood ratio]\label{lem:neighborhood-ratio}
+Under the hypotheses of Lemma~\ref{lem:near-support}, every independent
+set $I$ containing no isolated vertex satisfies
+$|I|\le(d+1)|N_G(I)|$.
+\end{lemma}
+\begin{proof}
+Suppose $|I|>(d+1)|A|$, where $A=N_G(I)$.
+If the bipartite graph between $A$ and $I$ has no matching saturating $A$,
+choose $Y\subseteq A$ with $|N_I(Y)|<|Y|$. Replace $I$ by
+$I\setminus N_I(Y)$ and $A$ by its actual neighborhood, a subset of
+$A\setminus Y$. The strict inequality persists. Repetition terminates
+with a nonempty violating pair admitting a matching saturating $A$;
+a nonempty set of originally nonisolated vertices cannot have empty
+actual neighborhood.
+
+There is a maximum independent set $R$ containing this $I$.
+Indeed, in any maximum set $T$, replace $T\cap(I\cup A)$ by $I$.
+The matching assigns distinct points of $I\setminus T$ to $T\cap A$,
+so the replacement preserves maximal cardinality and is independent.
+Put $C=V(G)\setminus R$. For each $a\in A\subseteq C$, choose a
+near-maximum set containing $a$ and write its intersection with $C$
+as $X_a=Y_a\sqcup Z_a$, with $Y_a\subseteq A$ and $Z_a\cap A=\varnothing$.
+Since $Z_a$ has no neighbors in $I$, and $|N_R(Z_a)|\ge|Z_a|$,
+\[
+ |N_I(Y_a)|+|Z_a|\le|N_R(X_a)|\le|X_a|+d,
+ \qquad |N_I(Y_a)|\le|Y_a|+d.
+\]
+The $Y_a$ cover $A$. The saturating matching ensures
+$|N_I(Y)|\ge|Y|$ for every $Y\subseteq A$.
+Neighborhood submodularity, adding at most $|A|$ sets $Y_a$, now gives
+$|I|=|N_I(A)|\le(d+1)|A|$, a contradiction.
+\end{proof}
+
+\begin{lemma}[Maximum-family intersection and equality]\label{lem:max-family}
+Let $\mathcal D$ be all maximum independent sets of a graph $H$,
+all of size $s$. Put $I_0=\bigcap\mathcal D$, $U_0=\bigcup\mathcal D$,
+and $B=U_0\setminus I_0$. Then $|I_0|+|U_0|\ge2s$.
+If equality holds, $H[B]$ has a perfect matching, and each member
+of $\mathcal D$ selects exactly one endpoint of each matching edge,
+together with all of $I_0$.
+\end{lemma}
+\begin{proof}
+Fix $R\in\mathcal D$. Every member is
+$(R\setminus N_R(X))\cup X$ for a tight independent exchange
+$X\subseteq V(H)\setminus R$, with $|N_R(X)|=|X|$.
+Let $A$ be the union of the tight exchanges and $D=N_R(A)$.
+Submodularity as in Lemma~\ref{lem:near-support} gives $|D|\le|A|$.
+Since $I_0=R\setminus D$ and $U_0=R\cup A$, the inequality follows.
+
+In the equality case $|D|=|A|$. Process the tight exchanges successively.
+Their intermediate union $A'$ has nonpositive neighborhood deficit
+$|N_R(A')|-|A'|$, which cannot increase; its final value is zero.
+Consequently every intermediate deficit is zero. When adding $X$,
+equality forces
+\[
+ N_R(A')\cap N_R(X)=N_R(A'\cap X),\qquad
+ |N_R(A'\cap X)|=|A'\cap X|.
+\]
+Every subset of the independent set $X$ satisfies Hall's inequality,
+by maximality of $R$. A matching of $X$ onto $N_R(X)$ therefore exists,
+and it matches $A'\cap X$ onto its equal-size neighborhood.
+Its remaining edges extend any already constructed matching of
+$A'$ onto $N_R(A')$. Induction gives a matching of $A$ onto $D$.
+These are the two halves of $B$. Every maximum set has $|A|$ points
+in $B$ and at most one on each matching edge, proving the assertion.
+\end{proof}
+
+\begin{lemma}[Actual-image rank]\label{lem:image-rank}
+In a strongly connected synchronizing automaton, the span $V_i$ of the
+trajectory rows $\chi_SD_w$ for $|w|\le i$ has dimension at least
+$\min(i+1,n)$. Consequently, if these images are uncompressed members
+of a family $\mathcal F$, then $\operatorname{rank}\mathcal F\ge\min(i+1,n)$.
+\end{lemma}
+\begin{proof}
+A plateau $V_i=V_{i+1}$ makes the space invariant under every letter.
+A reset word followed by a path to any state $q$ supplies the row
+$|S|e_q$, so the eventual span is $\mathbb R^Q$.
+Starting with dimension one, the dimensions strictly increase until $n$.
+\end{proof}
+
+\begin{lemma}[Saturated transversal support]\label{lem:transversal-exit}
+Let $U\subsetneq Q$ be partitioned into $s\ge2$ nonempty blocks,
+let $\mathcal T$ be their transversal family, and put $k=|U|-s\ge1$.
+Suppose every image of an $s$-set $S\in\mathcal T$ through depth $k$
+belongs to $\mathcal T$, in a strongly connected synchronizing automaton.
+There is a state $z\in U$ such that every transition from $U$ to its
+complement has source $z$. Every transversal avoiding $z$ maps to a
+transversal under every letter. The shortest path from $S$ to $z$ has
+length $k$, and $z$ lies in a nonsingleton block.
+
+Write $a=|Q\setminus U|$, $m=k+a$, and let $J$ consist of the singleton
+blocks. If $c(S)\ge h+m+1$, then
+\[
+ \sum_{v\notin U}|N_{P_h}(v)\cap J|\le a(a+1)/2.
+\]
+\end{lemma}
+\begin{proof}
+The reachable unions $U_i=\bigcup_{|w|\le i}Sw$ grow strictly while
+proper. Since $|U_k|\le|U|=s+k$, each of the first $k$ steps adds
+exactly one state, and $U_k=U$. Write $z$ for the last added state.
+Every transition from $U_{k-1}$ already lands in $U$, so every exit
+from $U$ has source $z$. Every short image contains every singleton
+block, hence $z$ is not such a block.
+
+Let $W$ consist of rows supported on $U$ with equal sums on all $s$
+blocks. It has dimension $k+1$, and $W_z=W\cap\{x_z=0\}$ has dimension
+$k$. The space $V_{k-1}$ of Lemma~\ref{lem:image-rank} lies in $W_z$
+and has dimension at least $k$, hence equals $W_z$.
+For any letter $f$, $V_{k-1}D_f\subseteq V_k\subseteq W$.
+Thus the row of every transversal avoiding $z$ maps into $W$.
+Its nonnegative integer coordinates have total $s$, so each block sum
+is one and its image is again a transversal.
+
+For $v\notin U$, let $\rho(v)$ be its distance from $z$.
+A shortest such path stays outside $U$ after its first step:
+returning to $U$ would require another passage through $z$ before
+exiting, and that cycle could be removed. Thus $\rho(v)\le a$.
+For an uncompressed $s$-set $T$, put
+$\varepsilon(T)=\min_{X\in\mathcal T}|T\setminus X|$.
+Changing at most one point in a transversal makes it avoid $z$.
+Since function images do not increase one-sided set difference,
+\[
+ |Tf|=s\quad\Longrightarrow\quad
+ \varepsilon(Tf)\le\varepsilon(T)+1.
+\]
+Reach an actual transversal containing $z$ in $k$ steps and then
+follow the $\rho(v)$-step path. If compression has not occurred,
+the resulting image contains $v$ and omits at most $\rho(v)$ points
+of $J$. More than $\rho(v)$ neighbors of $v$ in $J$ would therefore
+produce a $P_h$ edge and compression within $k+\rho(v)+h\le m+h$,
+a contradiction. Hence $|N_{P_h}(v)\cap J|\le\rho(v)$.
+The positive distance layers are consecutive; on $a$ vertices their
+sum is at most $1+\cdots+a$, proving the stated bound.
+\end{proof}
+
+\begin{lemma}[Finite named support]\label{lem:finite-named-support}
+Suppose $|S|=n-m\ge2$, $c(S)\ge h+m+1$, $h\ge1$, and
+$1\le\ell\le m-1$. Let $G=P_h$, $H=P_{h+\ell}$,
+$t=\tau(G)$, $d=m-t$, and suppose $\alpha(H)=n-m$.
+For the complete maximum family $\mathcal D$ of $H$, put
+$I_0=\bigcap\mathcal D$, $A_0=Q\setminus\bigcup\mathcal D$,
+$a=|A_0|$, and $W=K_h\cup(Q\setminus I_0)$.
+Then $a\le\ell$, $|W|\le2m+ad$; if $d\ge1$ and $\ell\le2d$,
+\[
+ |W|\le2m+\ell d-1.
+\]
+Each row omits at most $d$ early isolated states.
+In particular the named bounds for $(m,h,\ell,t)=(4,7,2,3)$ and
+$(5,9,2,4)$ are $10$ and $11$, respectively; the former already
+follows from $2m+ad\le10$.
+\end{lemma}
+\begin{proof}
+All depth-$m$ images are independent in $G$ and cover $Q$.
+Every vertex of $G$ therefore belongs to an independent set of size
+$n-m=\alpha(G)-d$.
+All depth-$(m-\ell)$ images belong to $\mathcal D$; their union has
+at least $n-\ell$ points, so $a\le\ell$.
+Put $B=(\bigcup\mathcal D)\setminus I_0$ and
+$p=|K_h\cap I_0|$. Lemma~\ref{lem:max-family} gives
+$|B|\le2(m-a)$. Every $G$-neighbor of $I_0$ belongs to $A_0$.
+The independent-neighborhood ratio gives $p\le a(d+1)$.
+Thus $|W|=a+|B|+p\le2m+ad$.
+
+For the strict bound it remains to consider $a=\ell$ and
+$|B|=2(m-a)$, since either strict inequality saves at least one.
+Lemma~\ref{lem:max-family} provides a perfect matching on $B$.
+Partition $U=Q\setminus A_0$ into its matching edges and the
+singletons $I_0$. The family $\mathcal D$ is contained in the
+transversals of this partition, whose defect is $k=m-\ell\ge1$.
+All depth-$k$ actual images are transversals. Apply
+Lemma~\ref{lem:transversal-exit}: $p\le a(a+1)/2$ because each
+nonisolated point of $I_0$ has a neighbor in $A_0$.
+Consequently
+\[
+ |W|\le2m+\ell(\ell-1)/2\le2m+\ell d-1
+ \quad(1\le\ell\le2d).
+\]
+Finally the complement of each row is a cover of size $m$;
+at least $t$ of its vertices are nonisolated in $G$.
+\end{proof}
+
+\begin{lemma}[Early-core filters]\label{lem:early-core-filters}
+Under $|S|=n-m\ge2$, $c(S)\ge L$, and $1\le h\le L-m-1$,
+put $t=\tau(P_h)$ and $T=\binom{m+2}{2}$. Then
+\[
+ \Delta(P_h)\le m,\qquad |K_h|\le t(m-t+2),\qquad |E(P_h)|\ge h.
+\]
+If $0\le b=T+h-L\le3m-2$, then $|E(P_h)|\le b$.
+When $t=m$, the maximum-independent-set row rank is at least
+$\min(L-h,n)$.
+\end{lemma}
+\begin{proof}
+The depth-$m$ images are independent in $P_h$ and cover $Q$.
+An independent $(n-m)$-set containing a vertex excludes all its
+neighbors, giving the degree bound. Lemma~\ref{lem:near-support}
+with $d=m-t$ gives the support bound.
+A short-pair layer cannot plateau before becoming complete:
+its recurrence closes under one-letter preimages and direct kernels,
+and a plateau would prevent any remaining pair from ever merging.
+Since $S$ is independent and has at least two points, the first $h$
+layers are proper and contribute at least one new edge each.
+
+For the upper edge bound, consider any graph of maximum degree at
+most $m$ and cover number at most $m$ with fewer than $3m$ edges.
+It admits an $(n-m)$-set inducing exactly one edge. Indeed, take a
+minimum cover $C$ of size $t'$ and its independent complement $I$.
+If $c\in C$ has $d_I(c)\le m-t'+2$, retain one of its neighbors,
+delete the others from $I$, and add $c$, then trim to size $n-m$.
+If no such $c$ exists, $t'\le2$ contradicts the degree bound;
+for $3\le t'\le m$ there are at least
+$t'(m-t'+3)\ge3m$ edges, again a contradiction.
+Deleting the one induced edge and repeating gives a Frankl--Pin
+sequence using every edge: no later edge lies in an earlier chosen set.
+Thus the maximum sequence length $p$ over any graph obeys
+$p\ge\min(|E|,3m-1)$.
+
+The Frankl--Pin refinement~\cite{kisielewicz2016} gives $c(S)\le T-p+h$.
+For completeness, if a shortest compressing word has length $L'>h$,
+take its first $L'-h$ prefix images and at each prefix a pair merged
+by the corresponding suffix. A later selected pair belongs to no
+earlier image, since otherwise that suffix would shorten the word.
+None of the images contains a pair merging within $h$ letters.
+Appending a length-$p$ sequence over $P_h$ gives a Frankl--Pin
+sequence of length $L'-h+p\le T$.
+If $|E(P_h)|\ge b+1$, this implies $c(S)\le T-(b+1)+h=L-1$.
+Finally depth-$(L-h-1)$ images are maximum independent sets when
+$t=m$, and Lemma~\ref{lem:image-rank} gives their rank bound.
+\end{proof}
+
+\begin{lemma}[Defect-five low-cover core size]\label{lem:low-cover-core-size}
+Suppose $n\ge16$, $|S|=n-5$, $c(S)\ge15$, and $\tau(P_9)=4$.
+Then $|K_9|\le11$. If $|K_9|=11$, the maximum-independent-set
+family of $P_9$ has exactly two members differing by one state;
+$P_{10}$ retains exactly one of these members, which every letter
+maps into that same two-member family.
+\end{lemma}
+\begin{proof}
+Lemma~\ref{lem:early-core-filters} first gives $|K_9|\le12$.
+Suppose $|K_9|\ge11$. Since $S$ is independent in $P_{10}$,
+$4\le\tau(P_{10})\le5$.
+If $\tau(P_{10})=5$, apply Lemma~\ref{lem:finite-named-support}
+with $m=5$, $h=9$, $\ell=1$, $d=1$ to obtain $|W|\le10$,
+contradicting $K_9\subseteq W$. Thus $\tau(P_{10})=4$.
+Every maximum independent set of $P_{10}$ maps under every letter,
+injectively, into a maximum independent set of $P_9$.
+
+In Lemma~\ref{lem:near-support}, the parameters $t=4$, $d=1$
+give deficit $\delta=12-|K_9|$.
+If $|K_9|=12$, there is a unique maximum set $R$ of $P_9$.
+It is also the unique maximum set of $P_{10}$ and satisfies $Rf=R$
+for every letter, contradicting strong connectivity.
+For $|K_9|=11$, the proof of that lemma gives a tight-exchange union
+of size at most one. Hence there are at most two maximum sets,
+and if two exist they differ by one state. A unique maximum set
+is excluded as above. Denote the two by $R,T$.
+If both remained independent in $P_{10}$, each letter would map
+both into $\{R,T\}$ and preserve their proper union of size $n-3$,
+again contradicting strong connectivity. Exactly one remains;
+its identity is common to the entire alphabet.
+\end{proof}
+
+\begin{lemma}[Low-cover row capacity]\label{lem:row-capacity}
+Let $G\subseteq H$ be graphs with $\alpha(G)=s+1$ and
+$\alpha(H)=s$. Write $\mathcal M$ for the maximum independent
+sets of $G$, $\mathcal B$ for its inclusion-maximal independent
+sets of size $s$, and $\mathcal D$ for the maximum family of $H$.
+Then $|\mathcal D|\le|\mathcal B|+2|\mathcal M|$.
+If $Z$ is the union of the $G$-isolates omitted by members of
+$\mathcal D$, then $|Z|\le\max(2,|\mathcal M|)$.
+\end{lemma}
+\begin{proof}
+A row of $\mathcal D$ is either in $\mathcal B$ or is obtained
+by deleting one point from a member $R$ of $\mathcal M$.
+There are at most two such deletions for a fixed $R$:
+three deletions would make every pair of $R$ co-occur in an
+$H$-independent row, contrary to $\alpha(H)=s$.
+This proves the cardinality bound, allowing overcounting between
+maximum sets.
+
+If a row omits an isolated vertex $z$ of $G$, adding $z$ gives
+a member of $\mathcal M$. If some $R$ supplies two such rows,
+$R\setminus\{z\}$ and $R\setminus\{z'\}$, then $zz'$ is
+an edge of $H$: it is the only pair of $R$ absent from both rows,
+and some edge must occur in $H[R]$.
+Every row of $\mathcal D$ must omit $z$ or $z'$.
+Its complement, a size-$(|V|-s)$ cover of $G$, can omit at most
+one $G$-isolate since $\tau(G)=|V|-s-1$.
+Thus $Z\subseteq\{z,z'\}$.
+Otherwise each member of $\mathcal M$ supplies at most one omitted
+isolate, giving $|Z|\le|\mathcal M|$.
 \end{proof}
 
 \begin{lemma}[Necessary letter signatures]\label{lem:finite-signatures}
@@ -773,8 +2529,9 @@ independent set of the early graph.
 \item Every pair in the early graph has a merging word of
 the designated length, and the one-step pair-distance
 recurrence holds for the candidate letter pool.
-\item The union of the corresponding named-state and
-reservoir arrows is strongly connected in both directions.
+\item For the selected alphabet as a whole, the union of its
+named-state and reservoir arrows is strongly connected.
+This condition is imposed on the joint selection, not on an individual letter.
 \item When $H=h+2$, each letter square maps every later
 safe row to an early independent set, with the same
 named-state identity matching in its two applications.
@@ -807,20 +2564,13 @@ $7\le|E(P_7)|\le10$. Their complete isomorphism
 classification comprises 91 cores.
 \end{lemma}
 \begin{proof}
-Every depth-four image of $S$ is a maximum independent
-set of $P_7$, and their union is $Q$ by
-Lemma~\ref{lem:short-images}. The short-pair
-Frankl--Pin sequence bound limits the number of
-early edges, while one-letter preimages and the row-rank
-condition limit the degree and support.
-The finite graph enumerator considers each labelled
-simple graph in the stated vertex and edge ranges,
-tests minimum cover four and the complete maximum-set
-family, and retains one representative per isomorphism
-class. Its exact classification counts by core order
-$5,6,7,8$ are $1,17,47,26$.
-The necessary signatures of Lemma~\ref{lem:finite-signatures}
-supply the final joint-distance exclusion.
+Apply Lemma~\ref{lem:early-core-filters} with $(m,L,h)=(4,12,7)$.
+It gives degree at most four, support at most eight, seven through
+ten edges and row rank at least five. Cover number four forces
+at least five nonisolated vertices. Complete isomorphism enumeration
+with these filters gives $1,17,47,26$ cores at orders $5,6,7,8$,
+respectively. Section~\ref{sec:certificate-contract} specifies the
+complete finite-domain generation and necessary joint-distance test.
 \end{proof}
 
 \begin{lemma}[Nine-layer reduction]\label{lem:nine-layer-reduction}
@@ -840,8 +2590,8 @@ at most five. Lemma~\ref{lem:codimension-three}
 applied to all $(n-3)$-sets gives cover number at least
 four. In the cover-five case, depth-five actual images
 are maximum independent sets and cover all states.
-The short-pair and row-rank reductions produce the stated
-finite core filters. Complete generation of graphs of
+Lemma~\ref{lem:early-core-filters}, with $(m,L,h)=(5,15,9)$,
+gives the stated degree, support, edge and rank filters. Complete generation of graphs of
 orders six to ten with degrees one through five, followed
 by the precise cover, edge and row tests, yields
 2,294 isomorphism classes. The corresponding joint
@@ -860,25 +2610,13 @@ and every actual letter maps this same $R_0$
 into $\{R,T\}$.
 \end{lemma}
 \begin{proof}
-The two-layer support inequality for the 15-step
-hypothesis forces a named support of at most ten if
-$\tau(P_{10})=5$; the eleven-point core therefore
-gives $\tau(P_{10})=4$. With cover number four and
-eleven nonisolated vertices, the support deficit is one.
-The maximum-set exchange bound gives at most two
-maximum independent sets, differing at one state.
-The later layer supplies a source $R_0$ whose image
-under each letter belongs to the earlier maximum family.
-A singleton earlier maximum family would be closed under
-every letter, contradicting strong connectivity.
-If both $R,T$ survived into $P_{10}$, their union,
-of size $n-3$, would be closed under every letter.
-Thus the later source is unique. It is fixed across the
-entire alphabet, giving the asserted joint-source test.
+This is the eleven-vertex case of Lemma~\ref{lem:low-cover-core-size}.
+In particular, its source is selected by $P_{10}$, once for the
+entire alphabet, rather than separately for individual letters.
 \end{proof}
 
 \begin{lemma}[Core entrance bound]\label{lem:entrance-bound}
-Let $G=P_h$ with $h\ge2$ and proper nonisolated
+Let $G=P_h$ in a synchronizing automaton, with $h\ge2$ and proper nonisolated
 support $V\subsetneq Q$. If a letter $f$ sends an
 isolated state into $x\in V$, then
 \[
@@ -892,12 +2630,15 @@ For each neighbor of $x$ in the image $Qf$, choose a
 preimage. Together with the isolated preimage of $x$,
 it gives a $G$-nonedge, and its image is a $G$-edge.
 At most $d(f)$ neighbors lie outside $Qf$.
-Each direct kernel pair belongs to the first merging
-layer, and each edge counted by $F_G(f)$ is reached
-from a pair in a later layer. The intermediate
-$h-2$ layers are all populated in a synchronizing
-automaton while $G$ is proper. Counting these
-disjoint contributions proves the stated inequality.
+The nontrivial fibers of $f$ give at least $d(f)$ distinct
+kernel pairs in $P_1$. Every edge counted by $F_G(f)$ has
+merging distance exactly $h$: a shorter merge, preceded by $f$,
+would merge its nonedge preimage within $h$ letters.
+The layers $P_i\setminus P_{i-1}$, $2\le i\le h-1$,
+are nonempty. Indeed, a pair of merging distance greater than $h$
+exists because $G$ is proper; the suffixes of a shortest merging
+word supply every intermediate distance. These disjoint layers
+contain at least $d(f)+(h-2)+F_G(f)$ edges in total.
 \end{proof}
 
 \begin{lemma}[Proper-layer pair entrance]\label{lem:pair-entrance}
@@ -914,42 +2655,118 @@ distance $h$. The corresponding original letter
 provides the required entrance.
 \end{proof}
 
-\section{Finite-computation certificate specification}
+\section{Finite-domain generation and joint feasibility}
 \label{sec:certificate-contract}
 
-The finite check has two levels: canonical classification
-of graph and row-family domains, followed by joint
-letter-signature and distance feasibility.
-The specifications below fix the input and result
-identities used in the paper.
+The finite calculation uses the support and rank bounds of
+Appendix~\ref{sec:reduction-appendix} to specify its input domain.
+Within these bounds it enumerates graphs, closed row families and
+necessary one-letter signatures. A joint feasibility test then asks
+whether some collection of signatures supports the required distances.
 
-For an early core with $N$ named states, the graph
-classification processes all simple labelled graphs
-on the specified $N$ vertices, filters by exact
-vertex-cover size, degree, edge count and complete
-maximum-independent-set family, and canonicalizes
-by graph isomorphism. The low-cover branch extends
-each core by every admissible family of named exceptional
-isolates and every later maximum-independent-set row
-family satisfying the closure, size, rank and
-actual-prefix-union conditions. All omitted isolated
-vertices remain named consistently across rows.
-The common isolated reservoir is represented by its
-multiplicity and one-letter entrance/exit constraints.
+\subsection{Graph and row-family coverage}
+For the defect-five cover-five branch, the graph6 input contains one
+representative of each graph of orders $6,\ldots,10$ with minimum degree
+at least one and maximum degree at most five. The driver filters by
+cover number, edge count, union of the maximum independent sets and
+row rank. The input includes disconnected graphs. The cover-four
+classification instead fixes a four-vertex cover $C$. Its complement
+is independent, so its vertices are represented by nonempty
+neighborhoods in $C$. The generator enumerates multisets of these
+neighborhoods and all $2^{\binom42}=64$ possible edge sets inside $C$,
+then applies the stated filters and graph-isomorphism reduction.
+Every eligible graph has such a representation: choose a minimum
+cover, label it by $0,1,2,3$, and order the remaining vertices by their
+neighborhoods. This proves completeness of the presentations before
+isomorphism reduction.
 
-For each retained domain the action stage generates
-the complete necessary letter-signature pool in both
-generation orders. Every candidate letter satisfies
-row-safety, short-pair distance, common-reservoir
-cardinality and quotient strong-connectivity conditions.
-The square test uses a single identity-consistent map
-twice. SAT variables encode compatible selected
-signatures and jointly realizable row and pair
-distance assignments. The UNSAT result supplies a
-contradiction to the existence of an actual alphabet
-for that domain.
+For a fixed early core $K$, name all exceptional isolated vertices $E$
+that are absent from at least one later row. The remaining isolated
+reservoir $J$ belongs to every row. Each candidate later row is either
+an early maximum independent set with one vertex deleted, or a
+nonextendable near-maximum independent set, with the appropriate
+isolated vertices included. These are all possibilities because a
+later row is early-independent and has size one below the early
+independence number.
 
-The completed domain partition is:
+Closure uses the pairs that co-occur in selected rows, including
+diagonal pairs to record whether a vertex occurs at all. For a
+candidate family $\mathcal F$, let $U(\mathcal F)$ be this set of pairs
+and define
+\[
+ \operatorname{cl}(\mathcal F)=
+ \{R:\text{$R$ is a candidate row and every pair of $R$
+ belongs to $U(\mathcal F)$}\}.
+\]
+A complete maximum-independent-set family is closed: any candidate
+whose pairs all occur in independent rows is itself independent.
+A selection is rejected if the same pair data makes an early maximum
+set independent in the later layer. The implementation stores the
+pair data in 128 bits, sufficient for the 66 diagonal and off-diagonal
+positions on eleven named vertices.
+
+The recursive enumeration adds a row, closes the selection, and
+rejects a branch if closure introduces a previously skipped earlier
+row. For any target closed family, its first missing row specifies
+the next branch; closure remains inside that target. Thus every
+closed family is reached, and the earlier-row rule gives it a unique
+construction path. Rank, union and cardinality filters are applied
+with their proved bounds. Core automorphisms and a single consistent
+renaming of exceptional isolates remove equivalent representations.
+The common reservoir is kept separate from the named exceptional
+isolates throughout this construction.
+
+The rank computation uses the field $\mathbb F_{1009}$ and agrees
+with rational rank on these row matrices. Every zero--one minor of
+order at most ten has absolute determinant below $522$, by the
+bordered Hadamard bound $(k+1)^{(k+1)/2}/2^k$. At eleven named vertices,
+the only additional case is an $11\times11$ minor of later rows,
+each of weight six. Its determinant is divisible by six: replace one
+column by the sum of all columns and factor out six. The same bound
+is $1458$, below $6\cdot1009$. Thus a nonzero integer minor cannot
+vanish modulo $1009$. This also applies to every subfamily used in
+the safe-tail rank constraints.
+
+\subsection{One-letter signatures and the SAT implication}
+A safe letter is injective on every later row. Its kernel on the named
+support therefore consists of blocks compatible with the early pair
+graph. The generator enumerates these partitions and the possible
+incoming images of common isolated states. For a fixed kernel and
+incoming set, it enumerates injections of the ordered kernel blocks
+into available output labels. The independent generation order
+enumerates the same finite maps in a different order; comparison uses
+exact permutation ranks. Cardinalities, row images and pair images
+are retained in the signature. Common-reservoir input and output
+labels are distinguished; a square test identifies them consistently
+when applying the same letter twice.
+
+Let $d_R$ be the exit distance of a retained row and $d_p$ the merging
+distance of a retained pair. Every chosen signature obeys the
+one-step inequalities
+\[
+ d_x\le 1+d_{xf},
+\]
+with terminal distance zero. Each nonterminal row or pair has at
+least one chosen signature attaining equality. These are Bellman
+conditions for shortest distance. The encoding additionally enforces
+the safe-tail rank bounds and the required slow row. Strong
+connectivity is imposed on the \emph{union} of the named-state and
+reservoir arrows of the compatible alphabet, in both directions.
+In the eleven-point branch the auxiliary source $R_0$ is fixed
+before generating the whole alphabet; the two possible choices are
+separate branches. In the strengthened predicate, an existential
+clause requires a chosen signature supplying the proper-layer
+entrance of Lemma~\ref{lem:pair-entrance}.
+
+An actual automaton supplies its letter signatures and true shortest
+distances, and hence satisfies every constraint above. Consequently
+UNSAT excludes an actual alphabet in the specified domain. A feasible
+assignment records a necessary relaxation; the paper overlap lemma
+resolves the historical exceptional assignment.
+
+\subsection{Reported coverage and reproduction}
+The historical completion records summarized in Section~\ref{sec:computation}
+use the following partition:
 \[
 \begin{array}{l|r}
 \text{branch}&\text{canonical necessary domains}\\ \hline
@@ -960,44 +2777,44 @@ m=5,\ \tau(P_9)=4,\ N=11 & 3\,595\\
 m=5,\ \tau(P_9)=4,\ 5\le N\le10 & 3\,206\,988
 \end{array}
 \]
-The last count follows from $3\,245\,386$ generated
-domains and $38\,398$ preliminary necessary exclusions.
-Its original joint predicate gives $3\,206\,987$
-UNSAT results and one feasible relaxation,
-the $K_{4,4}$ domain excluded in
-Lemma~\ref{lem:multipartite}. The strengthened
-joint predicate incorporates Lemma~\ref{lem:pair-entrance}
-and gives a zero feasibility indicator for that domain.
+For cover five, 71 intervals of length 32 and a final interval of
+length 22 cover the retained-core order. The defect-four low-cover
+partition has six intervals of sizes $1414,259,978,2349,2500,2642$.
+The eleven-point branch combines
+$[883+(1201-19)]+[1504+26]=3595$ domains, counting the 19-domain
+overlap once. For early support five to ten,
+$3\,245\,386-38\,398=3\,206\,988$.
+The original predicate yielded $3\,206\,987$ UNSAT decisions and
+the single $K_{4,4}$ relaxation treated in
+Lemma~\ref{lem:multipartite}.
 
-For the 2,294 cover-five cores, 71 intervals of length
-32 and a final interval of length 22 form the canonical
-partition. For the 10,142 defect-four low-cover domains,
-six disjoint intervals of sizes
-$1414,259,978,2349,2500,2642$ form the partition.
-The eleven-point cover-four branch uses the union
-of the disjoint two-omission and one-omission
-components:
-\[
- [883+(1201-19)]+[1504+26]=3595.
-\]
-The common auxiliary source in
-Lemma~\ref{lem:auxiliary-source} is fixed for the
-whole selected alphabet.
+The source revision in~\cite{code} provides executable commands.
+Its explicit option
+\[\texttt{--historical-no-pair-entrance}\]
+used
+with \nolinkurl{--distances} and \nolinkurl{--joint-sat}, disables
+the later entrance clause. This reconstructs the older predicate
+within the current implementation. Each full reproduction records
+the source and solver versions, graph6 input, all canonical interval
+boundaries, selected and completed domain counts, feasibility total,
+exit status and terminal completion summary. Static classification
+counts and dynamic completion counts are recorded separately.
 
-An exact reproduction records the source commit, the
-graph6 input version, the CaDiCaL version, every
-canonical interval boundary, selected-domain count,
-completed-domain count, joint feasibility total,
-process exit status and terminal completion summary.
-The complete verification compares the canonical
-coverage against the displayed partition, checks
-the two generation orders and reruns the selected
-$K_{4,4}$ domain under both predicate versions.
-The original predicate is activated by
-\nolinkurl{--historical-no-pair-entrance} together with
-\nolinkurl{--distances} and \nolinkurl{--joint-sat}.
-The implementation and executable commands are
-version-pinned in~\cite{code}.
+The present revision's checks comprise the bounded joint-SAT
+control, the complete target-capacity control, the bounded literal
+graph/closed-family control, and the selected $K_{4,4}$ comparison.
+The entrance-enabled joint-SAT control checked 100,686 instances,
+including 3,570 feasible instances. The capacity control examined
+4,390,434 incoming sets over 4,658 cores, with at most 42 admissible
+targets. The graph control compared all 33,792 labelled graphs of
+orders five and six, retaining 30 classes, and checked their closed
+families with up to two added isolates against literal subset
+selection. Both selected-domain runs generated 1,768 signatures at core 447,
+domain 0; the historical mode returned \texttt{joint=1}, and the
+entrance-enabled default returned \texttt{joint=0}. The large-domain totals above retain
+the provenance of the historical completed calculations; these
+bounded and selected checks constitute the checks performed for this
+revision.
 
 \section{Constructions for the smaller values of \texorpdfstring{$q$}{q}}\label{sec:appendix}
 \begin{theorem}\label{thm:sharp-faces}

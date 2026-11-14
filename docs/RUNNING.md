@@ -1548,3 +1548,38 @@ and a different 1021-domain selection (only the first domain overlaps). Its
 additional benefit was not reliable enough to make it a required build step.
 The recommended build remains C++17/O3 with assertions; a local compiler
 wrapper may add `-march=native -mtune=native`.
+
+## Standalone-paper verification, 2026-11-14
+
+The expanded `papers/problem4/main.tex` includes the codimension-three
+nine-case proof, graph-support and rank lemmas, the shared eleven-point
+auxiliary source, and a finite-generation/SAT implication appendix. Its PDF
+is built from the same checked-in TeX and bibliography:
+
+```sh
+cd papers/problem4
+latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+```
+
+This revision reran the four bounded/selected controls documented above:
+
+```sh
+# Set CERNY_PAIR_SAT_LIBRARY to the built CaDiCaL 3.0.1 shared library.
+python3 run.py script scripts/problem4/check_joint_sat.cpp --pair-entrance
+python3 run.py script scripts/problem4/fifteen_low_cover_domains.cpp --capacity-control
+python3 run.py script scripts/problem4/fifteen_low_cover_domains.cpp --control
+python3 run.py script scripts/problem4/fifteen_low_cover_domains.cpp 5 10 1 --distances --letter-control --quotient-sc --joint-sat --core-index 447 --domain-index 0
+python3 run.py script scripts/problem4/fifteen_low_cover_domains.cpp 5 10 1 --distances --letter-control --quotient-sc --joint-sat --historical-no-pair-entrance --core-index 447 --domain-index 0
+```
+
+All five invocations completed with exit status zero. Results: 100,686 SAT
+control instances (3,570 feasible); 4,658 cores and 4,390,434 capacity inputs
+(maximum 42 admissible targets); 33,792 labelled five/six-point graphs and
+30 retained classes, plus literal closed-family comparisons with at most
+two named isolates. Both selected-domain modes generated 1,768 signatures;
+the entrance-enabled mode returned `joint=0`, and the historical mode
+returned `joint=1`.
+
+These checks do not constitute a rerun of the large historical dynamic
+partitions. The paper keeps those completion totals separate from this
+revision's checks and identifies the predicate used for each result.
