@@ -1,29 +1,51 @@
-# Černý 猜想与同步自动机研究
+# Černý conjecture and synchronizing automata
 
-本项目研究同步自动机、子集压缩以及 avoid-or-compress 问题。设状态数为 `n`，初始像大小 `s=n−m`，保护子集大小 `r`，并记 `q=n−r`。
+This repository studies synchronizing automata, subset compression, and the
+avoid-or-compress problem. Let `n` be the number of states, `s = n − m` the
+size of the initial image, `r` the size of the protected subset, and
+`q = n − r`. The extrema below concern strongly connected synchronizing
+finite automata, reachable images, and `1 ≤ r < s`; the binary extrema
+restrict the alphabet to two letters.
 
-## 主要结果
+## Results
 
-- **余维三（纸面证明）：** 对每个 `n≥5`、`1≤r<n−3`，
-  `F_bin(n,n−3,r) = F(n,n−3,r) = min(q,9)`。其中 `n≥6` 的九字母压缩上界由早期短对结构分类、轨迹秩与原字母作用证明；二字母构造给出匹配下界。
-- **余维四（计算辅助证明）：** `F_bin(n,n−4,r) = F(n,n−4,r) = min(q,11)`。
-- **余维五（计算辅助证明）：** `F_bin(n,n−5,r) = F(n,n−5,r) = min(q,14)`。
+- **Codimension three, paper proof:** for `n ≥ 5` and `1 ≤ r < n − 3`,
+  `F_bin(n,n−3,r) = F(n,n−3,r) = min(q,9)`. For `n ≥ 6`, the upper
+  compression bound follows from the short-pair classification, trajectory
+  ranks, and the action of the original letters. Binary constructions give
+  the matching lower bound.
+- **Codimension four, computer-assisted proof:** for admissible `n,r`,
+  `F_bin(n,n−4,r) = F(n,n−4,r) = min(q,11)`.
+- **Codimension five, computer-assisted proof:** for admissible `n,r`,
+  `F_bin(n,n−5,r) = F(n,n−5,r) = min(q,14)`.
 
-余维四、五的上界使用数学归约与完整有限域计算，匹配下界来自二字母构造。一般 Černý 猜想及 `m≥6, q≥3m` 的全部精确极值仍是开放问题。
+The upper bounds in codimensions four and five combine mathematical reductions
+with exhaustive finite computations; binary constructions give the matching
+lower bounds. The general Černý conjecture and the complete exact extrema
+for `m ≥ 6, q ≥ 3m` remain open.
 
-## 论文与证明
+## Proofs and paper
 
-- [现有论文源码](papers/problem4/main.tex)：余维四、五精确结果、构造及计算辅助证明。保持现有主定理和有限覆盖；不追加大批局部纸面特例。
-- [余维三的完整证明主线](PROOF.md#problem4-codimension-three-upper-proof)：九种短对类型及 `c(S)≤9`；[统一秩与实际像引理](PROOF.md#problem4-paper-three-domain-ranks) 给出纸面替代。
-- [余维三的独立证明](PROOF.md#problem4-defect-three-independent-lemmas)：来自 PR #18 的五圈出口和紧层核心引理，作为交叉核验；[验证命令](docs/RUNNING.md#codimension-three-independent-controls)。
-- [完整研究正文](PROOF.md)：余维四、五计算归约、覆盖范围、历史引理和其他结构结果。
-- [运行说明](docs/RUNNING.md)：论文编译、验证程序及大型计算的复现命令。
+- [Paper source](papers/problem4/main.tex): exact results, constructions,
+  and computer-assisted proofs for codimensions four and five, with the
+  codimension-three compression proof in an appendix.
+- [Codimension-three proof](PROOF.md#problem4-codimension-three-upper-proof):
+  nine short-pair types and `c(S) ≤ 9`; the
+  [rank and image lemmas](PROOF.md#problem4-paper-three-domain-ranks) give
+  a paper argument.
+- [Independent codimension-three lemmas](PROOF.md#problem4-defect-three-independent-lemmas):
+  five-cycle exit and compact-layer core arguments; their
+  [controls](docs/RUNNING.md#codimension-three-independent-controls) provide
+  cross-checks.
+- [Research body](PROOF.md): computational reductions, coverage, auxiliary
+  lemmas, and structural results.
+- [Running guide](docs/RUNNING.md): paper compilation, verification programs,
+  and commands for larger computations.
 
-论文以余维三的纸面证明和余维四、五的完整计算辅助结果为重点。局部结构替代、探索记录及对应小域控制在研究正文中保存，不扩张论文的主证明链。
+## Run
 
-## 运行
-
-Python 3.10+ 与 C++17。研究程序通过 `run.py` 启动；编译论文不会自动运行枚举。
+Python 3.10+ and a C++17 compiler are used for the research programs.
+`run.py` is the entry point; paper compilation and enumeration are separate.
 
 ```sh
 python3 run.py upper
@@ -32,4 +54,6 @@ python3 run.py script scripts/problem4/check_type6_single_exit_lemma.py
 python3 run.py open-point
 ```
 
-更多运行方式见 [RUNNING.md](docs/RUNNING.md)。临时构建产物保存在被忽略的 `build/` 下，源码及数学正文保留版本记录。项目代码采用 MIT 许可。
+The [running guide](docs/RUNNING.md) explains the expected cost and output of
+these commands. Temporary build artifacts are stored under `build/`. The code
+is distributed under the MIT license.
