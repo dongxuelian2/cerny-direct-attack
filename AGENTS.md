@@ -1,60 +1,46 @@
-# 研究工作方式
+# Research workflow
 
-本项目以 Černý 猜想及相关同步自动机问题的数学推导为中心。先理解问题、
-精确假设和已有论证，再提出引理、构造、反例与证明。研究进展优先于工程包装。
+## Mandatory English-language policy
 
-## 数学与程序
+- English is the sole language for repository-authored explanatory prose. Write and maintain `README.md`, `AGENTS.md`, `PROOF.md`, research notes, Markdown documentation, manuscript exposition, source-code comments/docstrings, and pull-request descriptions in English. Use English for new or revised public-facing messages and instructions.
+- Audit **all tracked Markdown files**, including nested directories and archives, for Chinese-language explanatory text. Translate existing Chinese proofs and documentation into precise, idiomatic mathematical English in dedicated PRs. Preserve definitions, hypotheses, quantifiers, equations, proof dependencies, numbering, cross-references, bibliographic details, code behavior, and the exact strength of every claim. Never silently shorten or reinterpret a proof during translation.
+- Keep mathematical notation, source identifiers, and faithful quotations or official titles in their original form when required; provide an English explanation around any unavoidable original-language quotation. Do not leave mixed-language paragraphs, headings, tables, or code comments.
+- Before completing a documentation PR, inspect every changed file for residual Chinese prose and broken links/references. Review mathematical equivalence against the original and run existing relevant checks. A character scan is a useful audit aid, not a replacement for reading or proof review.
+- This requirement applies to all future contributions and edits, not only the present translation cleanup. Do not create new Chinese prose or alternate Chinese documentation copies. Keep English clear, direct, and technically specific; avoid defensive boilerplate and unsupported claims.
 
-- 优先进行数学推导。程序服务于具体的数学问题，不用枚举代替可以完成的论证。
-- 大规模有限域验证、组合枚举和搜索使用 C++17，合理使用多线程；划分互不重叠的
-  搜索域，明确是否穷尽。保留断言、边界条件和必要的正反控制。
-- Python 用于小规模独立核对、符号原型和任务编排，不承担已知的大规模热循环。
-- 明确区分纸面证明、穷尽有限域检查、受限族搜索和猜想。程序验证不自动等于
-  Lean 形式化证明；超时和随机搜索失败不提供数学上界。
-- 每次工作围绕一个明确的研究目标，给出推导和实际运行结果。不要宣称已经解决
-  未完成的参数区域或一般 Černý 猜想。
+This repository focuses on mathematical derivations for the Černý conjecture and related synchronizing automata. Understand the exact problem, assumptions, and existing arguments before proposing lemmas, constructions, counterexamples, or proofs. Research progress takes priority over engineering packaging.
 
-## 结构归约与证明篇幅
+## Mathematics and computation
 
-- 当前阶段暂时冻结新增核心及命名域覆盖，优先检验已有一般引理能否吸收
-  冗长局部证明；依赖核对及未被吸收的具体假设见
-  `PROOF.md#problem4-proof-structure-compression`。
-- 余维四、五的精确极值已有计算机辅助证明。当前纸笔研究优先减少独立的
-  证明机制与个案分支，而不是以清零有限域计算作为完成标准。
-- 优先复用 PROOF.md 中的 (PFX)、(JMAP)、(SUP)、(JPB)、(JEB)、(JCP)
-  及已有秩界。每增加一个核心专用引理，先说明上述共用条件在哪一步失效，
-  再只证明不可复用的部分。
-- 结构压缩必须保持每个引理的量词、参数范围、原字母长度和同步/强连通假设；
-  一个后层形状被排除不自动等于其整个命名域被替代。
-- 研究正文保留必要完整证明；论文正文只选择直接服务于主定理的引理，
-  有限域覆盖及其他结构结果在附属研究正文引用。修改前后逐条核对依赖，
-  不用重新编号或缩短名称冒充逻辑简化。
+- Prioritize mathematical arguments. Use programs to answer specific mathematical questions; do not substitute enumeration for a proof that can be completed.
+- Use C++17 for large-scale finite-field verification, combinatorial enumeration, and searches, with appropriate multithreading. Partition the search space into disjoint pieces and state whether coverage is exhaustive. Retain assertions, boundary cases, and necessary positive and negative controls.
+- Use Python for small independent checks, symbolic prototypes, and orchestration, not for established large-scale hot loops.
+- Distinguish written proof, exhaustive finite-domain verification, restricted-family search, and conjecture. Program checks are not automatically Lean formal proofs; timeouts and failed random searches do not establish upper bounds.
+- Work toward one well-defined research target at a time, reporting the actual derivation and executed results. Do not claim unproved parameter regions or the general Černý conjecture have been solved.
 
-## 仓库约定
+## Structural reduction and proof length
 
-- 保留必要源码、数学笔记、论文源码、简洁研究说明，以及无法由构造生成的少量
-  明确数学输入。不要把运行日志、JSON 报告、枚举库存、证书包或二进制提交到 Git。
-- 所有运行、编译与中间文件放在忽略的 `build/`。从干净源码重建需要的内容。
-  使用 `run.py` 在研究副本中运行；不要覆盖源码目录中的研究内容。
-- 不要自行添加哈希封印、来源清单、发布打包、投稿封存、Release 下载恢复流程、
-  CI/CD、自动化报告或形式化验证流水线。只有用户明确要求时才做这些工作。
-- `formal/` 仅保留已有 Lean 数学源码，不要求安装 Lean，不维护编译或声明库存脚本。
-- 不要为了研究脚本建立应用服务、复杂配置系统或依赖管理基础设施。
-- 修改 README 和研究说明时，优先告诉研究者问题是什么、推导在哪里、怎样运行
-  必要程序、哪些边界仍然开放。
-- 不修改共享 Git 历史，不强制推送。删除跟踪文件并不清除旧 Git 对象；不要以此
-  声称已有克隆或历史传输体积已经缩小。
+- Freeze new cores and named-domain coverage for the current phase. First test whether existing general lemmas absorb lengthy case-specific arguments; see `PROOF.md#problem4-proof-structure-compression` for dependency checks and assumptions that remain necessary.
+- Computer-assisted proofs already establish exact extrema at codimensions four and five. Current pen-and-paper work should reduce independent proof mechanisms and case splits, not erase validated finite-field computations.
+- Reuse the established (PFX), (JMAP), (SUP), (JPB), (JEB), (JCP), and rank bounds in `PROOF.md` when applicable. Before adding a core-specific lemma, identify the precise failure of those common hypotheses and prove only the missing case.
+- Structural compression must preserve the quantifiers, parameter ranges, original word lengths, and synchronization/strong-connectivity assumptions of every lemma. Eliminating one later-stage shape does not automatically replace the entire named domain.
+- Keep genuinely necessary complete proofs in the research body. Select for the paper only lemmas directly serving the main theorem; refer to auxiliary finite-domain coverage and other structural findings in the research body. Check dependencies before and after edits; renaming or renumbering is not a proof simplification.
 
-## 入口与目录
+## Repository conventions
 
-- `PROOF.md` 是唯一数学研究正文。按数学问题组织章节，每个结论写明假设、推导、
-  适用范围和剩余缺口；已证明、有限穷尽、受限搜索、猜想和撤回必须区分。
-- 新结果直接修改正文对应章节。引用使用 `PROOF.md#稳定锚点`，不要另建专题、日期、
-  continuation 或运行总结 Markdown。不要在代码目录夹放数学笔记。
-- `scripts/` 集中所有计算源码与实现测试，按 `problem4/`、`direct_attack/`、
-  `anchors/` 等数学主题分组；`automata/`、`native/` 是其中的公共参考实现与内核。
-- `run.py` 是根目录的统一运行入口；`docs/RUNNING.md` 仅解释程序运行，
-  `README.md` 只保留问题、当前边界和阅读入口，不复制另一套研究正文。
-- `papers/` 存放论文 LaTeX 源码，`formal/` 存放已有 Lean 数学源码。
-- 先使用已有程序，再添加确实必要的计算。计算结果默认打印到终端，
-  中间文件放 `build/`，不建立新日志或审计体系。
+- Retain necessary source code, mathematical notes, manuscript sources, concise research guidance, and a small number of essential mathematical inputs that cannot be regenerated. Do not commit runtime logs, JSON reports, enumeration inventories, certificate bundles, or binaries.
+- Put runtime, compilation, and intermediate artifacts in ignored `build/`. Rebuild from clean sources. Run `run.py` in a research copy without overwriting tracked research material.
+- Do not introduce cryptographic seals, provenance manifests, release packaging, submission snapshots, release-download restoration, CI/CD, automated reports, or formal-verification pipelines unless explicitly requested.
+- Keep the existing Lean mathematical source in `formal/`; do not require Lean installation or maintain build/declaration inventories.
+- Do not build application services, elaborate configuration frameworks, or dependency-management infrastructure around a research script.
+- Let README and research instructions directly explain the problem, proof location, how to run essential programs, and which questions remain open.
+- Preserve shared Git history; do not force-push. Removing tracked files does not erase old Git objects or shrink existing clones.
+
+## Entry points and layout
+
+- `PROOF.md` is the single mathematical research body. Organize by mathematical question, recording exact assumptions, derivations, applicability, and open gaps. Distinguish proved results, exhaustive finite checks, restricted searches, conjectures, and withdrawn claims.
+- Update the relevant section of `PROOF.md` for new results. Use stable `PROOF.md#...` anchors; avoid additional topical, dated, continuation, or run-summary Markdown notes. Do not put mathematical notes into code directories.
+- Put computational sources and implementation tests in `scripts/`, grouped by topics such as `problem4/`, `direct_attack/`, and `anchors/`. `automata/` and `native/` are shared reference implementations and kernels within that layout.
+- `run.py` is the unified root execution entry point. `docs/RUNNING.md` covers execution only; `README.md` is a concise index of the question, current boundary, and reading entry points. Do not duplicate the research body.
+- Store LaTeX manuscripts in `papers/` and existing Lean sources in `formal/`.
+- Reuse existing scripts before introducing necessary new computations. Print results to the terminal by default, put intermediate files in `build/`, and avoid extra logs or audit infrastructure.
